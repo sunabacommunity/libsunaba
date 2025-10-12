@@ -40,6 +40,75 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
 
+### > LUAU STUFF
+
+# lua_env = env.Clone()
+
+# # if env["target"] == "template_debug":
+# #     lua_env.Append(CCFLAGS=["-g"])
+
+# if lua_env["platform"] == "linux":
+#     lua_env.Append(CPPDEFINES=["LUA_USE_POSIX"])
+# elif lua_env["platform"] == "ios":
+#     lua_env.Append(CPPDEFINES=["LUA_USE_IOS"])
+
+# lua_env.Append(CPPDEFINES = ["MAKE_LIB"])
+# # lua_env.Append(CXXFLAGS = ["-std=c++17"])
+# lua_env.Append(CFLAGS = ["-std=c99"])
+
+lua_cpp_paths = []
+
+luau_paths = [
+    "Common",
+    "Ast",
+    "Compiler",
+    "CodeGen",
+    "Analysis",
+    "Config",
+    "VM",
+    "EqSat",
+]
+
+luau_include_paths = [os.path.join("luau", x, "include") for x in luau_paths]
+luau_source_paths = [os.path.join("luau", x, "src") for x in luau_paths]
+lua_cpp_paths.extend(luau_include_paths)
+lua_cpp_paths.extend(luau_source_paths)
+
+env.Append(CPPPATH=lua_cpp_paths)
+# env.AppendUnique(CPPPATH=lua_cpp_paths, delete_existing=True)
+
+
+lua_includes = []
+lua_sources = []
+for path in luau_include_paths:
+    lua_includes.extend(Glob(path + "/*.hpp"))
+    lua_includes.extend(Glob(path + "/*.h"))
+    # lua_includes.extend(Glob(path + "/*.cpp"))
+    # lua_includes.extend(Glob(path + "/*.c"))
+
+for path in luau_source_paths:
+    # lua_sources.extend(Glob(path + "/*.hpp"))
+    # lua_sources.extend(Glob(path + "/*.h"))
+    lua_sources.extend(Glob(path + "/*.cpp"))
+    lua_sources.extend(Glob(path + "/*.c"))
+
+luabridge_include = "LuaBridge3/Source"
+
+lua_includes.extend(Glob(luabridge_include + "/*.hpp"))
+lua_includes.extend(Glob(luabridge_include + "/*.h"))
+lua_sources.extend(Glob(luabridge_include + "/*.cpp"))
+lua_sources.extend(Glob(luabridge_include + "/*.c"))
+
+
+sources.extend(lua_sources)
+
+# lua_file = "{}{}{}".format("luau", env["suffix"], env["SHLIBSUFFIX"])
+# lua_libraryfile = "bin/{}/{}".format(env["platform"], lua_file)
+# lua_library = lua_env.StaticLibrary(lua_libraryfile, source=lua_sources)
+
+### < LUAU STUFF
+
+
 if env["target"] in ["editor", "template_debug"]:
     try:
         doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
