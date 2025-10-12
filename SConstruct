@@ -56,48 +56,20 @@ sources = Glob("src/*.cpp")
 # # lua_env.Append(CXXFLAGS = ["-std=c++17"])
 # lua_env.Append(CFLAGS = ["-std=c99"])
 
-lua_cpp_paths = []
-
-luau_paths = [
-    "Common",
-    "Ast",
-    "Compiler",
-    "CodeGen",
-    "Analysis",
-    "Config",
-    "VM",
-    "EqSat",
-]
-
-luau_include_paths = [os.path.join("luau", x, "include") for x in luau_paths]
-luau_source_paths = [os.path.join("luau", x, "src") for x in luau_paths]
-lua_cpp_paths.extend(luau_include_paths)
-lua_cpp_paths.extend(luau_source_paths)
-
-env.Append(CPPPATH=lua_cpp_paths)
-# env.AppendUnique(CPPPATH=lua_cpp_paths, delete_existing=True)
 
 
 lua_includes = []
 lua_sources = []
-for path in luau_include_paths:
-    lua_includes.extend(Glob(path + "/*.hpp"))
-    lua_includes.extend(Glob(path + "/*.h"))
-    # lua_includes.extend(Glob(path + "/*.cpp"))
-    # lua_includes.extend(Glob(path + "/*.c"))
 
-for path in luau_source_paths:
-    # lua_sources.extend(Glob(path + "/*.hpp"))
-    # lua_sources.extend(Glob(path + "/*.h"))
-    lua_sources.extend(Glob(path + "/*.cpp"))
-    lua_sources.extend(Glob(path + "/*.c"))
+lua_includes.extend(Glob("/lua-5.4.8*.hpp"))
+lua_includes.extend(Glob("lua-5.4.8/*.h"))
+
+lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
+lua_sources.extend(Glob("lua-5.4.8/*.c"))
 
 luabridge_include = "LuaBridge3/Source"
 
-lua_includes.extend(Glob(luabridge_include + "/*.hpp"))
-lua_includes.extend(Glob(luabridge_include + "/*.h"))
-lua_sources.extend(Glob(luabridge_include + "/*.cpp"))
-lua_sources.extend(Glob(luabridge_include + "/*.c"))
+lua_includes.extend(Glob("sol/include/*.hpp"))
 
 
 sources.extend(lua_sources)
