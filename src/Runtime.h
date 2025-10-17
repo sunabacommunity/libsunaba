@@ -2,7 +2,7 @@
 
 #include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/variant/variant.hpp>
-//#include <sol/sol.hpp>
+#include <sol/sol.hpp>
 
 using namespace godot;
 
