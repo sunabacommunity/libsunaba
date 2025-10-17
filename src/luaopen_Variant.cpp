@@ -26,8 +26,11 @@ void Runtime::luaopen_Variant() {
             Variant(AABB),
             Variant(Color),
             Variant(Projection),
-            Variant(Array),
+            //Variant(Array),
             Variant(Dictionary)>(),
+        "fromArrayList", [](const Array& arr) {
+			return Variant(arr);
+	    },
         "fromByteArray", [](const io::ByteArray& data) { return Variant(data.toPackedByteArray()); },
         "fromIntArray", [](const std::vector<int>& data) {
             PackedInt32Array packed_data;
