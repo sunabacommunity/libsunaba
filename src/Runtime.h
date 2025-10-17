@@ -19,7 +19,7 @@ public:
 	sol::state lua_state;
 
 	std::vector<std::string> args;
-	PackedStringArray getArgs() const { 
+	PackedStringArray getArgs() const {
 		PackedStringArray arr;
 		for (const auto& arg : args) {
 			arr.append(String(arg.c_str()));
@@ -34,7 +34,7 @@ public:
 	}
 
 	std::vector<std::string> allowed_classes;
-	PackedStringArray getAllowedClasses() const { 
+	PackedStringArray getAllowedClasses() const {
 		PackedStringArray arr;
 		for (const auto& cls : allowed_classes) {
 			arr.append(String(cls.c_str()));
@@ -51,6 +51,10 @@ public:
 	void _process(double delta) override;
 
 	void initState(bool p_sandboxed = false);
+
+	void do_string(const String& code);
+
+	virtual String& _require(const String& path) {}
 
 	void luaopen_Variant();
     void luaopen_ArrayList();
