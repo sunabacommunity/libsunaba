@@ -27,3 +27,7 @@ void Runtime::_errord(const String &msg, const String &title) {
 void Runtime::_warnd(const String &msg, const String &title) {
 	UtilityFunctions::push_warning(title + String(": ") + msg);
 }
+
+void Runtime::_infod(const String &msg, const String &title) {
+	UtilityFunctions::print(title + String(": ") + msg);
+}
