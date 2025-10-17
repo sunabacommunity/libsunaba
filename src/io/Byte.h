@@ -3,7 +3,7 @@
 #include <sol/sol.hpp>
 
 namespace io {
-void bindByte(sol::state& lua);
+void luaopen_Byte(sol::state& lua);
 
 class Byte{
 public:
