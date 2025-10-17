@@ -56,7 +56,11 @@ public:
 
 	virtual void _print(const Array& msgarr);
 
-	virtual String& _require(const String& path) { return ""; }
+	virtual void _errord(const String& msg, const String& title);
+	virtual void _warnd(const String& msg, const String& title);
+	virtual void _infod(const String& msg, const String& title);
+
+	virtual String& _require(const String& path) { return String(""); }
 
 	void luaopen_Variant();
     void luaopen_ArrayList();
