@@ -23,3 +23,7 @@ void Runtime::_print(const Array &msgarr) {
 void Runtime::_errord(const String &msg, const String &title) {
 	UtilityFunctions::push_error(title + String(": ") + msg);
 }
+
+void Runtime::_warnd(const String &msg, const String &title) {
+	UtilityFunctions::push_warning(title + String(": ") + msg);
+}
