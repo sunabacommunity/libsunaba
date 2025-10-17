@@ -58,20 +58,17 @@ sources = Glob("src/*.cpp")
 
 
 
-lua_includes = []
 lua_sources = []
 
-lua_includes.extend(Glob("/lua-5.4.8*.hpp"))
-lua_includes.extend(Glob("lua-5.4.8/*.h"))
-
+# Add only .c and .cpp source files, not headers
 lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
 lua_sources.extend(Glob("lua-5.4.8/*.c"))
 
-luabridge_include = "LuaBridge3/Source"
+# Add include paths for headers instead of adding them to sources
+env.Append(CPPPATH=["lua-5.4.8/"])
+env.Append(CPPPATH=["sol2/include/"])
 
-lua_includes.extend(Glob("sol/include/*.hpp"))
-
-
+# Only add source files to the sources list
 sources.extend(lua_sources)
 
 # lua_file = "{}{}{}".format("luau", env["suffix"], env["SHLIBSUFFIX"])
