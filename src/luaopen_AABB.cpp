@@ -4,14 +4,14 @@ void Runtime::luaopen_AABB() {
     lua_state.new_usertype<godot::AABB>(
         "AABB",
         sol::constructors<
-            AABB(), 
+            AABB(),
             AABB(Vector3, Vector3)>(),
         "end", sol::property(
-            [](AABB& self) { 
-                return self.get_end(); 
-            }, 
-            [](AABB& self, Vector3 value) { 
-                self.set_end(value); 
+            [](AABB& self) {
+                return self.get_end();
+            },
+            [](AABB& self, Vector3 value) {
+                self.set_end(value);
             }
         ),
         "position", &AABB::position,
@@ -22,7 +22,7 @@ void Runtime::luaopen_AABB() {
         "getEndpoint", &AABB::get_endpoint,
         "getLongestAxis", &AABB::get_longest_axis,
         "getLongestAxisIndex", &AABB::get_longest_axis_index,
-        "getLongestAxisSize", &AABB::get_longest_axis_size, 
+        "getLongestAxisSize", &AABB::get_longest_axis_size,
         "getShortestAxis", &AABB::get_shortest_axis,
         "getShortestAxisIndex", &AABB::get_shortest_axis_index,
         "getShortestAxisSize", &AABB::get_shortest_axis_size,
