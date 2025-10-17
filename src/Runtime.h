@@ -54,7 +54,7 @@ public:
 
 	void do_string(const String& code);
 
-	virtual void print(const Array& msgarr);
+	virtual void _print(const Array& msgarr);
 
 	virtual String& _require(const String& path) { return ""; }
 
