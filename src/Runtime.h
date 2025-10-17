@@ -51,4 +51,21 @@ public:
 	void _process(double delta) override;
 
 	void initState(bool p_sandboxed = false);
+
+	void luaopen_variant();
+    void luaopen_array_list();
+    void luaopen_dictionary();
+    void luaopen_vector2();
+    void luaopen_rect2();
+    void luaopen_vector2i();
+    void luaopen_rect2i();
+    void luaopen_vector3();
+    void luaopen_vector3i();
+    void luaopen_vector4();
+    void luaopen_vector4i();
+    void luaopen_quaternion();
+    void luaopen_basis();
+    void luaopen_transform3d();
+    void luaopen_aabb();
+    void luaopen_color();
 };
