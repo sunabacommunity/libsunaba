@@ -54,7 +54,9 @@ public:
 
 	void do_string(const String& code);
 
-	virtual String& _require(const String& path) {}
+	virtual void print(const Array& msgarr);
+
+	virtual String& _require(const String& path) { return ""; }
 
 	void luaopen_Variant();
     void luaopen_ArrayList();
