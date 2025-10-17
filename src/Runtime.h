@@ -52,20 +52,21 @@ public:
 
 	void initState(bool p_sandboxed = false);
 
-	void luaopen_variant();
-    void luaopen_array_list();
-    void luaopen_dictionary();
-    void luaopen_vector2();
-    void luaopen_rect2();
-    void luaopen_vector2i();
-    void luaopen_rect2i();
-    void luaopen_vector3();
-    void luaopen_vector3i();
-    void luaopen_vector4();
-    void luaopen_vector4i();
-    void luaopen_quaternion();
-    void luaopen_basis();
-    void luaopen_transform3d();
-    void luaopen_aabb();
-    void luaopen_color();
+	void luaopen_Variant();
+    void luaopen_ArrayList();
+    void luaopen_Dictionary();
+    void luaopen_Vector2();
+    void luaopen_Rect2();
+    void luaopen_Vector2i();
+    void luaopen_Rect2i();
+    void luaopen_Vector3();
+    void luaopen_Vector3i();
+    void luaopen_Vector4();
+    void luaopen_Vector4i();
+    void luaopen_Quaternion();
+    void luaopen_Basis();
+    void luaopen_Transform3D();
+	void luaopen_Transform2D();
+    void luaopen_AABB();
+    void luaopen_Color();
 };
