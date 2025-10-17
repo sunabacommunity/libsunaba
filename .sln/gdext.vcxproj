@@ -3,23 +3,23 @@
   <PropertyGroup>
     <RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</RepoRoot>
   </PropertyGroup>
-  
+
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9A2FB295-38D9-4994-9497-26FF91C85465}</ProjectGuid>
     <RootNamespace>godot</RootNamespace>
     <Keyword>MakeFileProj</Keyword>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
-  
+
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <GodotTemplate>template_debug</GodotTemplate>
-    <BuildType>dev_build=yes</BuildType>
+    <!--BuildType>dev_build=yes</BuildType-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <GodotTemplate>template_release</GodotTemplate>
   </PropertyGroup>
-  
+
   <!-- Windows -->
   <PropertyGroup Condition="'$(Platform)'=='windows-x86_32'">
     <GodotPlatform>windows</GodotPlatform>
@@ -104,7 +104,7 @@
     <NMakeOutput Condition="'$(NMakeOutput)' == ''">dylib</NMakeOutput> <!--any non empty value required for automatic run configuration generation in Rider -->
     <LocalDebuggerWorkingDirectory Condition="'$(LocalDebuggerWorkingDirectory)' == ''">$(NMakeWorkingDirectory)/demo</LocalDebuggerWorkingDirectory>
     <LocalDebuggerCommandArguments>--editor</LocalDebuggerCommandArguments>
-    <NMakeIncludeSearchPath>$(RepoRoot)/godot-cpp/gen/include;$(RepoRoot)/godot-cpp/include;$(RepoRoot)/godot-cpp/gdextension;$(NMakeIncludeSearchPath);</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(RepoRoot)/godot-cpp/gen/include;$(RepoRoot)/godot-cpp/include;$(RepoRoot)/godot-cpp/gdextension;$(RepoRoot)/sol2/include;$(NMakeIncludeSearchPath);</NMakeIncludeSearchPath>
     <!-- Commands executed by Build/Rebuild/Clean in the IDE (Rider, VS) -->
     <NMakeBuildCommandLine>scons platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate) $(BuildType)</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>scons --clean platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate) &amp;&amp; scons platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate)</NMakeReBuildCommandLine>
@@ -120,7 +120,7 @@
     <None Include="$(RepoRoot)/**/*.h" Exclude="$(RepoRoot)/godot-cpp/**"/>
     <None Include="$(RepoRoot)/**/*.cpp" Exclude="$(RepoRoot)/godot-cpp/**"/>
   </ItemGroup>
-  
+
     <!-- Build/Rebuild/Clean targets for NMake are defined in MSVC, so we need to provide them, when using MSBuild without MSVC targets -->
   <Import Project="$(MSBuildProjectDirectory)/targets/nmake.substitution.props" Condition="!Exists('$(VCTargetsPath)/Microsoft.Cpp.targets')" />
   <Import Project="$(VCTargetsPath)/Microsoft.Cpp.targets" Condition="$(IsWindows)"/>
