@@ -31,3 +31,7 @@ void Runtime::_warnd(const String &msg, const String &title) {
 void Runtime::_infod(const String &msg, const String &title) {
 	UtilityFunctions::print(title + String(": ") + msg);
 }
+
+void Runtime::do_string(const String &code) {
+	lua_state.do_string(code.utf8().get_data());
+}
