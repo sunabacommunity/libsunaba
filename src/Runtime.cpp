@@ -1,4 +1,5 @@
 #include "Runtime.h"
+#include <godot_cpp/variant/utility_functions.hpp>
 
 void Runtime::_bind_methods() {
 
@@ -6,4 +7,15 @@ void Runtime::_bind_methods() {
 
 void Runtime::_process(double delta) {
 	lua_state.collect_garbage();
+}
+
+void Runtime::_print(const Array &msgarr) {
+	String msg;
+	for (int i = 0; i < msgarr.size(); i++) {
+		if (!msg.is_empty()) {
+			msg += ", ";
+		}
+		msg += msgarr[i];
+	}
+	UtilityFunctions::print(msg);
 }
