@@ -10,7 +10,7 @@ void Runtime::_process(double delta) {
 }
 
 void Runtime::_print(const Array &msgarr) {
-	String msg;
+	String msg = String("");
 	for (int i = 0; i < msgarr.size(); i++) {
 		if (!msg.is_empty()) {
 			msg += ", ";
