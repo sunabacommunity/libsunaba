@@ -1,9 +1,14 @@
 name: Build GDExtension
 on:
   workflow_call:
-  push:
-  pull_request:
-  merge_group:
+  #push:
+  #pull_request:
+  #merge_group:
+
+  schedule:
+    - cron: '0 7 * * *' # run at 8 AM UTC/ 12 AM AKDT
+    #- cron: '0 20 * * *' # run at 8 PM UTC/ 12 PM AKDT
+  workflow_dispatch:
 
 jobs:
   build:
