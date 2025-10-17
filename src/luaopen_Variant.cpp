@@ -1,4 +1,5 @@
 #include "Runtime.h"
+#include "io/ByteArray.h"
 
 void Runtime::luaopen_Variant() {
 	lua_state.new_usertype<Variant>("Variant",
@@ -27,7 +28,7 @@ void Runtime::luaopen_Variant() {
             Variant(Projection),
             Variant(Array),
             Variant(Dictionary)>(),
-        //"fromByteArray", [](const io::BinaryData& data) { return Variant(data.toPackedByteArray()); },
+        "fromByteArray", [](const io::ByteArray& data) { return Variant(data.toPackedByteArray()); },
         "fromIntArray", [](const std::vector<int>& data) {
             PackedInt32Array packed_data;
             for (const auto& item : data) {
@@ -132,7 +133,7 @@ void Runtime::luaopen_Variant() {
         "asProjection", &Variant::operator Projection,
         "asArrayList", &Variant::operator Array,
         "asDictionary", &Variant::operator Dictionary,
-        //"asByteArray", [](const Variant& v) { return io::BinaryData(v); },
+        "asByteArray", [](const Variant& v) { return io::ByteArray(v); },
         "asIntArray", [](const Variant& v) {
             PackedInt32Array packed_data = v;
             std::vector<int> data;
