@@ -15,7 +15,8 @@ void Runtime::_print(const Array &msgarr) {
 		if (!msg.is_empty()) {
 			msg += ", ";
 		}
-		msg += msgarr[i];
+		String msgstr = msgarr[i];
+		msg += msgstr;
 	}
 	UtilityFunctions::print(msg);
 }
