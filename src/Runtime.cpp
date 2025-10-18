@@ -1,5 +1,6 @@
 #include "Runtime.h"
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/json.hpp>
 
 void Runtime::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("init_state", "sandboxed", "classes"), &Runtime::initState);
@@ -121,4 +122,73 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 		luaopen_NativeObject();
 		luaopen_NativeReference();
 	}
+
+	lua_state["print"] = [this]( sol::variadic_args args ) {
+        PackedStringArray msgarr;
+        for ( const auto &arg : args )
+        {
+            if ( arg.is<std::string>() )
+            {
+                std::string str = arg.as<std::string>();
+                msgarr.append(str.c_str());
+            }
+            else if (arg.is<sol::table>())
+            {
+                msgarr.append("table");
+            }
+            else if (arg.is<Vector3>())
+            {
+                Vector3 vec = arg.as<Vector3>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<Vector2>())
+            {
+                Vector2 vec = arg.as<Vector2>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<float>())
+            {
+                float f = arg.as<float>();
+                Variant v = f;
+                msgarr.append(String(v));
+            }
+            else if (arg.is<bool>())
+            {
+                bool b = arg.as<bool>();
+                Variant v = b;
+                msgarr.append(String(v));
+            }
+            else if (arg.is<int>())
+            {
+                int i = arg.as<int>();
+                Variant v = i;
+                msgarr.append(String(v));
+            }
+            else if (arg.is<Vector4>())
+            {
+                Vector4 vec = arg.as<Vector4>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<Vector4i>())
+            {
+                Vector4i vec = arg.as<Vector4i>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<Vector2i>())
+            {
+                Vector2i vec = arg.as<Vector2i>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<Vector3i>())
+            {
+                Vector3i vec = arg.as<Vector3i>();
+                msgarr.append(String(vec));
+            }
+            else if (arg.is<Dictionary>()) {
+                Dictionary dict = arg.as<Dictionary>();
+                msgarr.append(JSON::stringify(dict, "  "));
+            }
+        }
+        _print(msgarr);
+    };
 }
