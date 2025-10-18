@@ -197,6 +197,10 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
         		Color color = arg.as<Color>();
         		msgarr.append(color.to_html());
         	}
+        	else if (arg.is<Variant>()) {
+        		Variant v = arg.as<Variant>();
+        		msgarr.append(v);
+        	}
         }
         _print(msgarr);
     };
