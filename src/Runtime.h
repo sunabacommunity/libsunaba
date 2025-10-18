@@ -50,7 +50,7 @@ public:
 
 	void _process(double delta) override;
 
-	void initState(bool p_sandboxed = false, const Array& classnames);
+	void initState(bool p_sandboxed = false, const Array& classnames = Array());
 
 	void do_string(const String& code);
 
@@ -62,7 +62,7 @@ public:
 
 	void set_var(const String& name, const Variant& variant);
 
-	virtual String& _require(const String& path) { return String(""); }
+	virtual String& _require(const String& path);
 
 	void luaopen_Variant();
 	void luaopen_Variant_sandboxed(const Array& classnames);
