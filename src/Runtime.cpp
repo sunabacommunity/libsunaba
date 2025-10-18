@@ -188,6 +188,10 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
                 Dictionary dict = arg.as<Dictionary>();
                 msgarr.append(JSON::stringify(dict, "  "));
             }
+        	else if (arg.is<Color>()) {
+        		Color color = arg.as<Color>();
+        		msgarr.append(color.to_html());
+        	}
         }
         _print(msgarr);
     };
