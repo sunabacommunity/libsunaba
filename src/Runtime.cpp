@@ -123,6 +123,32 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 		luaopen_NativeReference();
 	}
 
+	if (!p_sandboxed) {
+		lua_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+			sol::lib::count, sol::lib::math, sol::lib::string,
+			sol::lib::table, sol::lib::utf8, sol::lib::package,
+			sol::lib::os, sol::lib::io, sol::lib::debug );
+		/*luaopen_base(L);
+		luaopen_bit(L);
+		luaopen_debug(L);
+		luaopen_ffi(L);
+		luaopen_io(L);
+		luaopen_os(L);
+		luaopen_table(L);
+		luaopen_string(L);
+		luaopen_math(L);
+		luaopen_package(L);
+		global_state.open_libraries( sol::lib::coroutine,
+			sol::lib::count, g );*/
+		lua_state["sandboxed"] = false;
+	}
+	else {
+		lua_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
+			sol::lib::count, sol::lib::math, sol::lib::string,
+			sol::lib::table, sol::lib::utf8, sol::lib::package);
+		lua_state["sandboxed"] = true;
+	}
+
 	lua_state["print"] = [this]( sol::variadic_args args ) {
         PackedStringArray msgarr;
         for ( const auto &arg : args )
