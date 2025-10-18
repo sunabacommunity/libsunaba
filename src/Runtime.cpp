@@ -2,14 +2,43 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 
 void Runtime::_bind_methods() {
-
+	ClassDB::bind_method(D_METHOD("init_state", "sandboxed", "classes"), &Runtime::initState);
+	ClassDB::bind_method(D_METHOD("do_string", "code"), &Runtime::do_string);
+	MethodInfo requireMi;
+	requireMi.name = "_require";
+	requireMi.arguments.push_back(PropertyInfo(Variant::STRING, "path"));
+	requireMi.return_val = PropertyInfo(Variant::STRING, "code");
+	ClassDB::add_virtual_method("Runtime", requireMi);
+	MethodInfo errordMi;
+	errordMi.name = "_errord";
+	errordMi.arguments.push_back(PropertyInfo(Variant::STRING, "msg"));
+	errordMi.arguments.push_back(PropertyInfo(Variant::STRING, "title"));
+	errordMi.return_val = PropertyInfo(Variant::NIL, "void");
+	ClassDB::add_virtual_method("Runtime", errordMi);
+	MethodInfo warndMi;
+	warndMi.name = "_warnd";
+	warndMi.arguments.push_back(PropertyInfo(Variant::STRING, "msg"));
+	warndMi.arguments.push_back(PropertyInfo(Variant::STRING, "title"));
+	warndMi.return_val = PropertyInfo(Variant::NIL, "void");
+	ClassDB::add_virtual_method("Runtime", warndMi);
+	MethodInfo infodMi;
+	infodMi.name = "_infod";
+	infodMi.arguments.push_back(PropertyInfo(Variant::STRING, "msg"));
+	infodMi.arguments.push_back(PropertyInfo(Variant::STRING, "title"));
+	infodMi.return_val = PropertyInfo(Variant::NIL, "void");
+	ClassDB::add_virtual_method("Runtime", infodMi);
+	MethodInfo printMi;
+	printMi.name = "_print";
+	printMi.arguments.push_back(PropertyInfo(Variant::PACKED_STRING_ARRAY, "msgarr"));
+	printMi.return_val = PropertyInfo(Variant::NIL, "void");
+	ClassDB::add_virtual_method("Runtime", printMi);
 }
 
 void Runtime::_process(double delta) {
 	lua_state.collect_garbage();
 }
 
-void Runtime::_print(const Array &msgarr) {
+void Runtime::_print(const PackedStringArray &msgarr) {
 	String msg = String("");
 	for (int i = 0; i < msgarr.size(); i++) {
 		if (!msg.is_empty()) {
@@ -22,14 +51,23 @@ void Runtime::_print(const Array &msgarr) {
 }
 
 void Runtime::_errord(const String &msg, const String &title) {
+	if (has_method("_errord")) {
+		call("_errord", msg, title);
+	}
 	UtilityFunctions::push_error(title + String(": ") + msg);
 }
 
 void Runtime::_warnd(const String &msg, const String &title) {
+	if (has_method("_warnd")) {
+		call("_warnd", msg, title);
+	}
 	UtilityFunctions::push_warning(title + String(": ") + msg);
 }
 
 void Runtime::_infod(const String &msg, const String &title) {
+	if (has_method("_infod")) {
+		call("_infod", msg, title);
+	}
 	UtilityFunctions::print(title + String(": ") + msg);
 }
 
@@ -42,6 +80,9 @@ void Runtime::set_var(const String &name, const Variant &variant) {
 }
 
 String Runtime::_require(const String &path) {
+	if (has_method("_require")) {
+		return call("_require", path);
+	}
 	String str = String("");
 	return str;
 }

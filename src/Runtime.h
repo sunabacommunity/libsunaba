@@ -54,7 +54,7 @@ public:
 
 	void do_string(const String& code);
 
-	virtual void _print(const Array& msgarr);
+	virtual void _print(const PackedStringArray& msgarr);
 
 	virtual void _errord(const String& msg, const String& title);
 	virtual void _warnd(const String& msg, const String& title);
