@@ -65,7 +65,9 @@ public:
 	virtual String& _require(const String& path) { return String(""); }
 
 	void luaopen_Variant();
-	void luaopen_Variant_sandboxed();
+	void luaopen_Variant_sandboxed(const Array& classnames);
+	void luaopen_NativeObject_sandboxed(const Array& classnames);
+	void luaopen_NativeObject();
     void luaopen_ArrayList();
     void luaopen_Dictionary();
     void luaopen_Vector2();
