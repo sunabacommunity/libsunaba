@@ -184,6 +184,13 @@ void Runtime::luaopen_Variant() {
 			}
 			return static_cast<NativeObject*>(nullptr);
 		 },
+		 "asReference",  [](const Variant& v) {
+			Ref<RefCounted> ref = v;
+			if (ref.is_valid() && !ref.is_null()) {
+				return std::make_unique<NativeReference>(ref);
+			}
+			return std::unique_ptr<NativeReference>(nullptr);
+		 },
         /*"asElement", [](const Variant& v) {
             godot::Object* obj = v.operator Object*();
             Node* n = Object::cast_to<Node>(obj);
