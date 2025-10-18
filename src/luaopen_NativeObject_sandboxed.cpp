@@ -11,14 +11,14 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
                     }
                     return new NativeObject(name);
                 },
-                [classnames](std::string name, Array args) {
+                [classnames](std::string name, const Array& args) {
                     if (!classnames.has( String(name.c_str()) ))
                     {
                         return static_cast<NativeObject*>(nullptr);
                     }
                     return new NativeObject(name, args);
                 },
-                [classnames](std::string name, Array args, int scriptType) {
+                [classnames](std::string name, const Array& args, int scriptType) {
                     if (!classnames.has( String(name.c_str()) ))
                     {
                         return static_cast<NativeObject*>(nullptr);
@@ -26,7 +26,7 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
                     return new NativeObject(name, args, scriptType );
                 }
             ),
-            "callStatic", [classnames](std::string classname, std::string methodname, Array args) {
+            "callStatic", [classnames](std::string classname, std::string methodname, const Array& args) {
                 if (!classnames.has( String(classname.c_str()) ))
                 {
                     return Variant();
