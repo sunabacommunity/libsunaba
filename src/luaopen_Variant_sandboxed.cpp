@@ -197,4 +197,6 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 		 },
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
+
+	lua_state["__rootNode"] = new NativeObject(this);
 }
