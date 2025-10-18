@@ -68,6 +68,8 @@ public:
 	void luaopen_Variant_sandboxed(const Array& classnames);
 	void luaopen_NativeObject_sandboxed(const Array& classnames);
 	void luaopen_NativeObject();
+	void luaopen_NativeReference();
+	void luaopen_NativeReference_sandboxed(const Array& classnames);
     void luaopen_ArrayList();
     void luaopen_Dictionary();
     void luaopen_Vector2();
