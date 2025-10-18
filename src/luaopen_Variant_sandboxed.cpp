@@ -199,4 +199,16 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
     );
 
 	lua_state["__rootNode"] = new NativeObject(this);
+
+	lua_state["__errord"] = [this](const std::string &msg, const std::string& title) {
+		_errord(msg.c_str(), title.c_str());
+	};
+
+	lua_state["__warnd"] = [this](const std::string &msg, const std::string& title) {
+		_warnd(msg.c_str(), title.c_str());
+	};
+
+	lua_state["__infod"] = [this](const std::string &msg, const std::string& title) {
+		_infod(msg.c_str(), title.c_str());
+	};
 }
