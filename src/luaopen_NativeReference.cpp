@@ -2,15 +2,15 @@
 #include "NativeReference.h"
 
 void Runtime::luaopen_NativeReference() {
-	lua_state.new_usertype<NativeReference>("NativeReference",
+	/*lua_state.new_usertype<NativeReference>("NativeReference",
 			"new", sol::overload(
 				[](std::string name) {
 					return std::make_unique<NativeReference>(name);
 				},
-				[](std::string name, Array args) {
+				[](std::string name, const Array& args) {
 					return std::make_unique<NativeReference>(name, args);
 				},
-				[](std::string name, Array args, int scriptType) {
+				[](std::string name, const Array& args, int scriptType) {
 					return std::make_unique<NativeReference>(name, args, scriptType);
 				}
 			),
@@ -35,5 +35,5 @@ void Runtime::luaopen_NativeReference() {
 			"setMeta", &NativeReference::setMeta,
 			"isValid", &NativeReference::isValid,
 			"isNull", &NativeReference::isNull
-		);
+		);*/
 }
