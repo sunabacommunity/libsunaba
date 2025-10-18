@@ -41,6 +41,11 @@ void Runtime::set_var(const String &name, const Variant &variant) {
 	lua_state[name.utf8().get_data()] = sol::make_object(lua_state, variant);
 }
 
+String Runtime::_require(const String &path) {
+	String str = String("");
+	return str;
+}
+
 void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_AABB();
 	luaopen_ArrayList();

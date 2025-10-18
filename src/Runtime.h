@@ -62,7 +62,7 @@ public:
 
 	void set_var(const String& name, const Variant& variant);
 
-	virtual String& _require(const String& path);
+	virtual String _require(const String& path);
 
 	void luaopen_Variant();
 	void luaopen_Variant_sandboxed(const Array& classnames);
