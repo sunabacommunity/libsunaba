@@ -60,6 +60,8 @@ public:
 	virtual void _warnd(const String& msg, const String& title);
 	virtual void _infod(const String& msg, const String& title);
 
+	void set_var(const String& name, const Variant& variant);
+
 	virtual String& _require(const String& path) { return String(""); }
 
 	void luaopen_Variant();

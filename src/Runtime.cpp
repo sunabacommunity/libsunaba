@@ -35,3 +35,7 @@ void Runtime::_infod(const String &msg, const String &title) {
 void Runtime::do_string(const String &code) {
 	lua_state.do_string(code.utf8().get_data());
 }
+
+void Runtime::set_var(const String &name, const Variant &variant) {
+	lua_state[name.utf8().get_data()] = sol::make_object(lua_state, variant);
+}
