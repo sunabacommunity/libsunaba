@@ -15,7 +15,7 @@ void Runtime::luaopen_NativeReference_sandboxed(const Array &classnames) {
                     }
 
                 },
-                [classnames](std::string name, Array args) {
+                [classnames](std::string name, const Array& args) {
                     if (classnames.has( String(name.c_str()) ))
                     {
                         return std::make_unique<NativeReference>(name, args);
@@ -25,7 +25,7 @@ void Runtime::luaopen_NativeReference_sandboxed(const Array &classnames) {
                         return std::unique_ptr<NativeReference>(nullptr);
                     }
                 },
-                [classnames](std::string name, Array args, int scriptType) {
+                [classnames](std::string name, const Array& args, int scriptType) {
                     if (classnames.has( String(name.c_str()) ))
                     {
                         return std::make_unique<NativeReference>(name, args, scriptType);
