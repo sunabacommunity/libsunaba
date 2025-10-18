@@ -13,8 +13,8 @@ protected:
 	static void _bind_methods();
 
 public:
-	Runtime();
-	~Runtime();
+	Runtime() {}
+	~Runtime() {}
 
 	sol::state lua_state;
 
