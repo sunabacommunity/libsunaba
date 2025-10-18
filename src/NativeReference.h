@@ -13,7 +13,7 @@ class NativeReference {
 private:
         Ref<RefCounted> native;
     public:
-        LinkRef(std::string name, Array args = Array(), int scriptType = 0)
+        NativeReference(std::string name, Array args = Array(), int scriptType = 0)
         {
             if (scriptType == 0)
             {
@@ -33,7 +33,7 @@ private:
             }
         }
 
-        LinkRef(Ref<RefCounted> ref)
+        NativeReference(Ref<RefCounted> ref)
         {
             native = ref;
         }
