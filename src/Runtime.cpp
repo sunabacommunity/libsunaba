@@ -146,6 +146,11 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
                 Vector2 vec = arg.as<Vector2>();
                 msgarr.append(String(vec));
             }
+            else if (arg.is<Vector4>())
+            {
+            	Vector4 vec = arg.as<Vector4>();
+            	msgarr.append(String(vec));
+            }
             else if (arg.is<float>())
             {
                 float f = arg.as<float>();
