@@ -177,6 +177,13 @@ void Runtime::luaopen_Variant() {
             }
             return data;
         },
+        "asObject",  [](const Variant& v) {
+			Object* gdobj = v.operator Object*();
+			if (gdobj) {
+				return new NativeObject(gdobj);
+			}
+			return static_cast<NativeObject*>(nullptr);
+		 },
         /*"asElement", [](const Variant& v) {
             godot::Object* obj = v.operator Object*();
             Node* n = Object::cast_to<Node>(obj);
