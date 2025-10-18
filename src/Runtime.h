@@ -31,6 +31,7 @@ public:
 		for (int i = 0; i < p_args.size(); i++) {
 			args.push_back(p_args[i].utf8().get_data());
 		}
+		lua_state["__args"] = args;
 	}
 
 	std::vector<std::string> allowed_classes;
