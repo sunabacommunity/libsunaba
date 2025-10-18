@@ -107,4 +107,14 @@ private:
         {
             native->set_meta( name.c_str(), value );
         }
+
+		bool isValid()
+        {
+        	return native.is_valid();
+        }
+
+		bool isNull()
+        {
+        	return native.is_null();
+        }
 };
