@@ -7,10 +7,10 @@ void Runtime::luaopen_NativeObject() {
 				[](std::string name) {
 					return new NativeObject(name);
 				},
-				[](std::string name, Array args) {
+				[](std::string name, const Array& args) {
 					return new NativeObject(name, args);
 				},
-				[](std::string name, Array args, int scriptType) {
+				[](std::string name, const Array& args, int scriptType) {
 					return new NativeObject(name, args, scriptType );
 				}
 			),
