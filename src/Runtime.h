@@ -83,7 +83,7 @@ public:
     void luaopen_Quaternion();
     void luaopen_Basis();
     void luaopen_Transform3D();
-	void luaopen_Transform2D();
+	//void luaopen_Transform2D();
     void luaopen_AABB();
     void luaopen_Color();
 };
