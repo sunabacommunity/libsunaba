@@ -1,6 +1,9 @@
 #include "Runtime.h"
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
+#include <godot_cpp/classes/os.hpp>
+#include <godot_cpp/classes/dir_access.hpp>
+#include <godot_cpp/classes/project_settings.hpp>
 
 void Runtime::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("init_state", "sandboxed", "classes"), &Runtime::initState);
@@ -148,6 +151,34 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 			sol::lib::table, sol::lib::utf8, sol::lib::package);
 		lua_state["sandboxed"] = true;
 	}
+
+	auto execPath = OS::get_singleton()->get_executable_path();
+	lua_state["execPath"] = execPath.utf8().get_data();
+
+	auto resDir = ProjectSettings::get_singleton()->globalize_path("res://");
+	lua_state["resDir"] = resDir.utf8().get_data();
+
+	auto execDir = execPath.get_base_dir();
+	if (OS::get_singleton()->get_name() == "macOS") {
+		// On macOS, the executable path is usually in Contents/MacOS/ directory
+		execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+	}
+	auto execFile = execPath.get_file();
+	auto shareDir = execPath.replace("bin/" + execFile, "share/sunaba");
+	if (OS::get_singleton()->get_name() == "macOS") {
+		shareDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+	}
+	if (DirAccess::dir_exists_absolute(shareDir)) {
+		execDir = shareDir;
+		lua_state["shareDir"] = shareDir.utf8().get_data();
+		lua_state.script("package.path = package.path .. ';' .. shareDir .. '/?.lua'");
+	}
+	else {
+		lua_state["shareDir"] = sol::lua_nil;
+	}
+
+	lua_state["execDir"] = execDir.utf8().get_data();
+	lua_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
 
 	lua_state["print"] = [this]( sol::variadic_args args ) {
         PackedStringArray msgarr;
