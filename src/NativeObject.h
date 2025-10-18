@@ -14,7 +14,7 @@ class NativeObject {
     private:
         Object* native;
     public:
-        NativeObject(std::string name, Array args = Array(), int scriptType = 0)
+        NativeObject(std::string name, const Array& args = Array(), int scriptType = 0)
         {
             if (scriptType == 0)
             {
@@ -44,7 +44,7 @@ class NativeObject {
             return native;
         }
 
-        static  Variant callStatic(std::string classname, std::string methodname, Array args)
+        static  Variant callStatic(std::string classname, std::string methodname, const Array& args)
         {
             Callable callable = Callable(ClassDBSingleton::get_singleton(), "class_call_static");
             Array callableArgs;
@@ -59,7 +59,7 @@ class NativeObject {
             return new NativeObject(Engine::get_singleton()->get_singleton(classname.c_str()));
         }
 
-        Variant call(std::string funcname, Array args)
+        Variant call(std::string funcname, const Array& args)
         {
             return native->callv( funcname.c_str(), args );
         }
