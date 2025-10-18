@@ -34,7 +34,7 @@ void Runtime::_bind_methods() {
 	ClassDB::add_virtual_method("Runtime", printMi);
 	ClassDB::bind_method(D_METHOD("get_args"), &Runtime::getArgs);
 	ClassDB::bind_method(D_METHOD("set_args", "args"), &Runtime::setArgs);
-	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "get_args", "set_args");
+	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
 
 }
 
