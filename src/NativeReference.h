@@ -13,7 +13,7 @@ class NativeReference {
 private:
         Ref<RefCounted> native;
     public:
-        NativeReference(std::string name, Array args = Array(), int scriptType = 0)
+        NativeReference(std::string name, const Array& args = Array(), int scriptType = 0)
         {
             if (scriptType == 0)
             {
@@ -43,7 +43,7 @@ private:
             return native;
         }
 
-        Variant call(std::string funcname, Array args)
+        Variant call(std::string funcname, const Array& args)
         {
             return native->callv( funcname.c_str(), args );
         }
