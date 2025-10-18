@@ -62,7 +62,10 @@ lua_sources = []
 
 # Add only .c and .cpp source files, not headers
 lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
-lua_sources.extend(Glob("lua-5.4.8/*.c"))
+# Exclude onelua.c to avoid duplicate symbols with individual .c files
+all_lua_c = Glob("lua-5.4.8/*.c")
+lua_c_files = [f for f in all_lua_c if "onelua.c" not in str(f)]
+lua_sources.extend(lua_c_files)
 
 # Add include paths for headers instead of adding them to sources
 env.Append(CPPPATH=["lua-5.4.8/"])
