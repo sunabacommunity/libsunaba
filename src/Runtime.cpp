@@ -32,6 +32,10 @@ void Runtime::_bind_methods() {
 	printMi.arguments.push_back(PropertyInfo(Variant::PACKED_STRING_ARRAY, "msgarr"));
 	printMi.return_val = PropertyInfo(Variant::NIL, "void");
 	ClassDB::add_virtual_method("Runtime", printMi);
+	ClassDB::bind_method(D_METHOD("get_args"), &Runtime::getArgs);
+	ClassDB::bind_method(D_METHOD("set_args", "args"), &Runtime::setArgs);
+	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "get_args", "set_args");
+
 }
 
 void Runtime::_process(double delta) {
