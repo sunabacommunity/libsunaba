@@ -124,6 +124,11 @@ class NativeObject {
             return;native->set_meta( name.c_str(), value );
         }
 
+		bool isNull()
+        {
+        	return native == nullptr;
+        }
+
         void free()
         {
             memfree( native );
