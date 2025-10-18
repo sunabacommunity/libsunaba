@@ -13,7 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <GodotTemplate>template_debug</GodotTemplate>
-    <!--BuildType>dev_build=yes</BuildType-->
+    <BuildType>dev_build=yes</BuildType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
