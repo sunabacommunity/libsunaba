@@ -92,30 +92,6 @@ void Runtime::luaopen_Variant() {
 		 "fromReference", [](NativeReference* obj) {
 			  return Variant(obj->getNative());
 		 },
-        /*"fromElement", [](const Element* e) {
-            godot::Node* n = e->getNode();
-            if (n) {
-                return Variant(n);
-            } else {
-                return Variant();
-            }
-         },
-        "fromResource", [](const Resource* resource) {
-            godot::Resource* res = resource->getResource();
-            godot::Ref<godot::Resource> ref = godot::Ref<godot::Resource>(res);
-            return Variant(ref);
-         },
-         "fromObject", [](BaseObject* obj) {
-            BaseObjectProxy* proxy = memnew(BaseObjectProxy);
-            proxy->base_object = obj;
-            return Variant(proxy);
-         },
-         "fromLinkObject", [](sunaba::core::nativelink::LinkObject* obj) {
-              return Variant(obj->getNative());
-         },
-         "fromLinkRef", [](sunaba::core::nativelink::LinkRef* obj) {
-              return Variant(obj->getNative());
-         },*/
          "fromInt64", [](int64_t value) {
             return Variant(value);
          },
