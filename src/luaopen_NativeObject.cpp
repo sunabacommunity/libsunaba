@@ -1,0 +1,40 @@
+#include "Runtime.h"
+#include "NativeObject.h"
+
+void Runtime::luaopen_NativeObject() {
+	lua_state.new_usertype<NativeObject>("NativeObject",
+			"new", sol::overload(
+				[](std::string name) {
+					return new NativeObject(name);
+				},
+				[](std::string name, Array args) {
+					return new NativeObject(name, args);
+				},
+				[](std::string name, Array args, int scriptType) {
+					return new NativeObject(name, args, scriptType );
+				}
+			),
+			"callStatic", &NativeObject::callStatic,
+			"getService", &NativeObject::getService,
+			"call", &NativeObject::call,
+			"get", &NativeObject::get,
+			"set", &NativeObject::set,
+			"getClass", &NativeObject::getClass,
+			"isClass", &NativeObject::isClass,
+			"getMeta", sol::overload(
+				[](NativeObject* obj, std::string name) {
+					return obj->getMeta( name );
+				},
+				[](NativeObject* obj, std::string name, Variant _default) {
+					return obj->getMeta( name, _default );
+				}
+			),
+			"getMetaList", &NativeObject::getMetaList,
+			"getMethodArgumentCount", &NativeObject::getMethodArgumentCount,
+			"getMethodList", &NativeObject::getMethodList,
+			"getPropertyList", &NativeObject::getPropertyList,
+			"hasMeta", &NativeObject::hasMeta,
+			"setMeta", &NativeObject::setMeta,
+			"isNull", &NativeObject::isNull
+		);
+}
