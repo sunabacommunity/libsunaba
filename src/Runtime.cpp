@@ -40,7 +40,7 @@ void Runtime::set_var(const String &name, const Variant &variant) {
 	lua_state[name.utf8().get_data()] = sol::make_object(lua_state, variant);
 }
 
-void Runtime::initState(bool p_sandboxed) {
+void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_AABB();
 	luaopen_ArrayList();
 	luaopen_Basis();
@@ -49,7 +49,7 @@ void Runtime::initState(bool p_sandboxed) {
 	luaopen_Quaternion();
 	luaopen_Rect2();
 	luaopen_Rect2i();
-	luaopen_Transform2D();
+	//luaopen_Transform2D();
 	luaopen_Transform3D();
 	luaopen_Vector2();
 	luaopen_Vector2i();
@@ -57,7 +57,14 @@ void Runtime::initState(bool p_sandboxed) {
 	luaopen_Vector3i();
 	luaopen_Vector4();
 	luaopen_Vector4i();
-	if (!p_sandboxed) {
+	if (p_sandboxed) {
+		luaopen_Variant_sandboxed(classnames);
+		luaopen_NativeObject_sandboxed(classnames);
+		luaopen_NativeReference_sandboxed(classnames);
+	}
+	else {
 		luaopen_Variant();
+		luaopen_NativeObject();
+		luaopen_NativeReference();
 	}
 }

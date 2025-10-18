@@ -50,7 +50,7 @@ public:
 
 	void _process(double delta) override;
 
-	void initState(bool p_sandboxed = false);
+	void initState(bool p_sandboxed = false, const Array& classnames);
 
 	void do_string(const String& code);
 
