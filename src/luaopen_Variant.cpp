@@ -1,5 +1,7 @@
 #include "Runtime.h"
 #include "io/ByteArray.h"
+#include "NativeObject.h"
+#include "NativeReference.h"
 
 void Runtime::luaopen_Variant() {
 	lua_state.new_usertype<Variant>("Variant",
@@ -84,6 +86,12 @@ void Runtime::luaopen_Variant() {
             }
             return Variant(packed_data);
         },
+        "fromObject", [](NativeObject* obj) {
+			  return Variant(obj->getNative());
+		 },
+		 "fromReference", [](NativeReference* obj) {
+			  return Variant(obj->getNative());
+		 },
         /*"fromElement", [](const Element* e) {
             godot::Node* n = e->getNode();
             if (n) {
