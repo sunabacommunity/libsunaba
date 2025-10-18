@@ -39,6 +39,9 @@ void Runtime::_process(double delta) {
 }
 
 void Runtime::_print(const PackedStringArray &msgarr) {
+	if (has_method("_print")) {
+		call("_print", msgarr);
+	}
 	String msg = String("");
 	for (int i = 0; i < msgarr.size(); i++) {
 		if (!msg.is_empty()) {
