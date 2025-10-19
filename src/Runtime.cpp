@@ -87,7 +87,11 @@ void Runtime::_infod(const String &msg, const String &title) {
 }
 
 void Runtime::do_string(const String &code) {
-	lua_state.do_string(code.utf8().get_data());
+	auto result = lua_state.safe_script(code.utf8().get_data());
+	if (!result.valid()) {
+		sol::error err = result;
+		_errord(err.what(), "Error");
+	}
 }
 
 void Runtime::set_var(const String &name, const Variant &variant) {
