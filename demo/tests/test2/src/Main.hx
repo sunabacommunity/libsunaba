@@ -16,7 +16,7 @@ class Main extends App {
 
 		var vec3 = new Vector3(1, 2, 3);
 		Sys.println("Vector3: " + vec3.toString());
-		
+
 		var camera = new NativeObject("Camera3D");
 		rootNodeNative.call("add_child", args([camera]));
 
