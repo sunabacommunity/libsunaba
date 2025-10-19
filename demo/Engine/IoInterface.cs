@@ -12,6 +12,16 @@ namespace Newhaven.Engine
     {
         public String PathUrl = "files://";
 
+        public void SetPathUrl(String pathUrl)
+        {
+	        PathUrl = pathUrl;
+        }
+
+        public String GetPathUrl()
+        {
+	        return PathUrl;
+        }
+
         public virtual string GetFilePath(string path)
         {
             return path;
