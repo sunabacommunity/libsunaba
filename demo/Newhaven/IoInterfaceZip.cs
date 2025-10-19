@@ -12,10 +12,10 @@ public partial class IoInterfaceZip : IoInterface
 {
     ZipArchive zipArchive;
 
-    public IoInterfaceZip(string path, string pathUrl)
+    public void LoadFromPath(string path, string pathUrl)
     {
         PathUrl = pathUrl;
-        if (path.EndsWith(".spkg") || path.EndsWith(".zip"))
+        if (path.EndsWith(".nhv") || path.EndsWith(".nlib") || path.EndsWith(".zip"))
         {
             zipArchive = ZipFile.OpenRead(path);
         }
@@ -25,7 +25,7 @@ public partial class IoInterfaceZip : IoInterface
         }
     }
 
-    public IoInterfaceZip(byte[] buffer, string pathUrl)
+    public void LoadFromBytes(byte[] buffer, string pathUrl)
     {
         PathUrl = pathUrl;
         MemoryStream ms = new MemoryStream(buffer);
