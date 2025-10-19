@@ -2,6 +2,7 @@
 #include "io/ByteArray.h"
 #include "NativeObject.h"
 #include "NativeReference.h"
+#include "ScriptObject.h"
 
 void Runtime::luaopen_Variant() {
 	lua_state.new_usertype<Variant>("Variant",
@@ -98,6 +99,11 @@ void Runtime::luaopen_Variant() {
          "fromFloat64", [](double value) {
             return Variant(value);
          },
+         "fromTable", [](sol::table table) {
+			auto* scriptObject = memnew( ScriptObject );
+			scriptObject->object = table;
+			return Variant(scriptObject);
+		 },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
         "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
@@ -191,48 +197,20 @@ void Runtime::luaopen_Variant() {
 			}
 			return std::unique_ptr<NativeReference>(nullptr);
 		 },
-        /*"asElement", [](const Variant& v) {
-            godot::Object* obj = v.operator Object*();
-            Node* n = Object::cast_to<Node>(obj);
-            if (n) {
-                return Element(n);
-            } else {
-                return Element();
-            }
-         },
-        "asResource", [](const Variant& v) {
-            Object* obj = v.operator Object*();
-            godot::Resource* res = Object::cast_to<godot::Resource>(obj);
-            if (res != nullptr) {
-                return Resource(res);
-            } else {
-                return Resource();
-            }
-         },
-        "asObject", [](const Variant& v) {
-            Object* gdobj = v.operator Object*();
-            if (gdobj) {
-                BaseObjectProxy* proxy  = Object::cast_to<BaseObjectProxy>(gdobj);
-                if (proxy) {
-                    return proxy->base_object;
-                }
-            }
-            return static_cast<sunaba::core::BaseObject*>(nullptr);
-         },
-         "asLinkObject",  [](const Variant& v) {
-            Object* gdobj = v.operator Object*();
-            if (gdobj) {
-                return new nativelink::LinkObject(gdobj);
-            }
-            return static_cast<sunaba::core::nativelink::LinkObject*>(nullptr);
-         },
-         "asLinkRef",  [](const Variant& v) {
-            Ref<RefCounted> ref = v;
-            if (ref.is_valid() && !ref.is_null()) {
-                return std::make_unique<nativelink::LinkRef>(ref);
-            }
-            return std::unique_ptr<nativelink::LinkRef>(nullptr);
-         },*/
+		 "asTable", [this](const Variant& v) {
+			Object* o = v;
+			Ref<ScriptObject> obj = Ref<ScriptObject>(
+				Object::cast_to<ScriptObject>(
+					o
+				)
+			);
+			if (obj.is_valid() && obj.is_null()) {
+				return sol::make_object(lua_state, obj->object);
+			}
+			else {
+				return sol::make_object(lua_state, sol::lua_nil);
+			}
+		},
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 }

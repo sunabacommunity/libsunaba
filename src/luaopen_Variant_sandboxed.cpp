@@ -2,6 +2,7 @@
 #include "io/ByteArray.h"
 #include "NativeObject.h"
 #include "NativeReference.h"
+#include "ScriptObject.h"
 
 void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 	lua_state.new_usertype<Variant>("Variant",
@@ -98,6 +99,11 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
          "fromFloat64", [](double value) {
             return Variant(value);
          },
+         "fromTable", [](sol::table table) {
+			auto* scriptObject = memnew( ScriptObject );
+			scriptObject->object = table;
+			return Variant(scriptObject);
+		 },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
         "asString", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); },
@@ -195,6 +201,20 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 			}
 			return std::unique_ptr<NativeReference>(nullptr);
 		 },
+		 "asTable", [this](const Variant& v) {
+			Object* o = v;
+			Ref<ScriptObject> obj = Ref<ScriptObject>(
+				Object::cast_to<ScriptObject>(
+					o
+				)
+			);
+			if (obj.is_valid() && obj.is_null()) {
+				return sol::make_object(lua_state, obj->object);
+			}
+			else {
+				return sol::make_object(lua_state, sol::lua_nil);
+			}
+		},
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 
