@@ -104,7 +104,7 @@
     <NMakeOutput Condition="'$(NMakeOutput)' == ''">dylib</NMakeOutput> <!--any non empty value required for automatic run configuration generation in Rider -->
     <LocalDebuggerWorkingDirectory Condition="'$(LocalDebuggerWorkingDirectory)' == ''">$(NMakeWorkingDirectory)/demo</LocalDebuggerWorkingDirectory>
     <LocalDebuggerCommandArguments>--editor</LocalDebuggerCommandArguments>
-    <NMakeIncludeSearchPath>$(RepoRoot)/godot-cpp/gen/include;$(RepoRoot)/godot-cpp/include;$(RepoRoot)/godot-cpp/gdextension;$(RepoRoot)/sol2/include;$(NMakeIncludeSearchPath);</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(RepoRoot)/godot-cpp/gen/include;$(RepoRoot)/godot-cpp/include;$(RepoRoot)/godot-cpp/gdextension;$(RepoRoot)/sol2/include;$(RepoRoot)/lua-5.4.8;$(NMakeIncludeSearchPath);</NMakeIncludeSearchPath>
     <!-- Commands executed by Build/Rebuild/Clean in the IDE (Rider, VS) -->
     <NMakeBuildCommandLine>scons platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate) $(BuildType)</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>scons --clean platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate) &amp;&amp; scons platform=$(GodotPlatform) arch=$(Arch) target=$(GodotTemplate)</NMakeReBuildCommandLine>
