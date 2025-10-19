@@ -63,6 +63,8 @@ public:
 
 	void set_var(const String& name, const Variant& variant);
 
+	void bind_object(const String& name, Object* obj);
+
 	virtual String _require(const String& path);
 
 	void luaopen_Variant();

@@ -1,4 +1,8 @@
 #include "Runtime.h"
+
+#include "NativeObject.h"
+#include "NativeReference.h"
+
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
 #include <godot_cpp/classes/os.hpp>
@@ -39,7 +43,7 @@ void Runtime::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_args"), &Runtime::getArgs);
 	ClassDB::bind_method(D_METHOD("set_args", "args"), &Runtime::setArgs);
 	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
-
+	ClassDB::bind_method(D_METHOD("bind_object", "name", "obj"), &Runtime::bind_object);
 }
 
 void Runtime::_process(double delta) {
@@ -261,4 +265,13 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
         }
         _print(msgarr);
     };
+}
+
+void Runtime::bind_object(const String &name, Object *obj) {
+	if (obj->is_class("RefCounted")) {
+		Ref<RefCounted> ref = Ref<RefCounted>(Object::cast_to<RefCounted>(obj));
+		lua_state[name.utf8().get_data()] = new NativeReference(ref);
+		return;
+	}
+	lua_state[name.utf8().get_data()] = new NativeObject(obj);
 }
