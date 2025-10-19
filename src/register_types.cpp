@@ -7,6 +7,7 @@
 
 #include "example_class.h"
 #include "Runtime.h"
+#include "ScriptObject.h"
 
 using namespace godot;
 
@@ -17,6 +18,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	}
 	GDREGISTER_CLASS(ExampleClass);
 	GDREGISTER_CLASS(Runtime);
+	GDREGISTER_CLASS(ScriptObject);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
