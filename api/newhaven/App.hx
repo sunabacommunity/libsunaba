@@ -1,7 +1,6 @@
 package newhaven;
 
 import newhaven.BaseClass;
-import haxe.macro.Expr.Catch;
 import newhaven.core.Variant;
 import newhaven.core.native.NativeObject;
 
