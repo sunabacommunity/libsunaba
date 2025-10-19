@@ -272,31 +272,31 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
 
     @:from
-    public static function fromLinkObject(value:NativeObject):Variant {
-        return VariantNative.fromLinkObject(value);
+    public static function fromNativeObject(value:NativeObject):Variant {
+        return VariantNative.fromObject(value);
     }
     @:to
-    public inline function asLinkObject(): NativeObject {
-        return this.asLinkObject();
+    public inline function asNativeObject(): NativeObject {
+        return this.asObject();
     }
 
     @:from
-    public static function fromLinkRef(value: NativeReference): Variant {
-        return VariantNative.fromLinkRef(value);
+    public static function fromNativeReference(value: NativeReference): Variant {
+        return VariantNative.fromReference(value);
     }
     @:to
-    public inline function toLinkRef(): NativeReference {
-        return this.asLinkRef();
+    public inline function toNativeReference(): NativeReference {
+        return this.asReference();
     }
 
     @:from
     public static function fromObject(value: Object): Variant {
-        return VariantNative.fromLinkObject(value.native);
+        return VariantNative.fromObject(value.native);
     }
 
     @:from
     public static function fromReference(value: Reference): Variant {
-        return VariantNative.fromLinkRef(value.native);
+        return VariantNative.fromReference(value.native);
     }
 
     @:from

@@ -64,8 +64,8 @@ extern class VariantNative {
     public static function fromVector3Array(value:TypedArray<Vector3>): VariantNative;
     public static function fromVector4Array(value:TypedArray<Vector4>): VariantNative;
     public static function fromColorArray(value:TypedArray<Color>): VariantNative;
-    public static function fromLinkObject(value:NativeObject):VariantNative;
-    public static function fromLinkRef(value:NativeReference):VariantNative;
+    public static function fromObject(value:NativeObject):VariantNative;
+    public static function fromReference(value:NativeReference):VariantNative;
     @:native("fromTable")
     public static function fromAny(value:Any):VariantNative;
     @:native("fromTable")
@@ -103,8 +103,8 @@ extern class VariantNative {
     public function asVector3Array():TypedArray<Vector3>;
     public function asVector4Array():TypedArray<Vector4>;
     public function asColorArray():TypedArray<Color>;
-    public function asLinkObject(): NativeObject;
-    public function asLinkRef(): NativeReference;
+    public function asObject(): NativeObject;
+    public function asReference(): NativeReference;
     @:native("asTable")
     public function asAny(): Any;
     @:native("asTable")
