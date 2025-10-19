@@ -163,13 +163,16 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	auto execPath = OS::get_singleton()->get_executable_path();
 	lua_state["execPath"] = execPath.utf8().get_data();
 
-	auto resDir = ProjectSettings::get_singleton()->globalize_path("res://");
-	lua_state["resDir"] = resDir.utf8().get_data();
+	if (OS::get_singleton()->get_name() == "macOS") {
+		auto resDir = ProjectSettings::get_singleton()->globalize_path("res://");
+		lua_state["resDir"] = resDir.utf8().get_data();
+		lua_state.script("package.path = package.path .. ';' .. resDir ..  '/?.lua'");
+	}
 
 	auto execDir = execPath.get_base_dir();
 	if (OS::get_singleton()->get_name() == "macOS") {
 		// On macOS, the executable path is usually in Contents/MacOS/ directory
-		execDir = execDir.replace("/MacOS", "/Resources/").replace("\\MacOS", "\\Resources");
+		execDir = execDir.replace("/MacOS", "/Frameworks/").replace("\\MacOS", "\\Resources");
 	}
 	auto execFile = execPath.get_file();
 	auto shareDir = execPath.replace("bin/" + execFile, "share/sunaba");
@@ -186,7 +189,7 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	}
 
 	lua_state["execDir"] = execDir.utf8().get_data();
-	lua_state.script("package.path = package.path .. ';' .. execDir .. '/?.lua'");
+	lua_state.script("package.path = package.path .. ';' .. execDir ..  '/?.lua' .. shareDir ..  '/?.lua'");
 
 	lua_state["print"] = [this]( sol::variadic_args args ) {
         PackedStringArray msgarr;
