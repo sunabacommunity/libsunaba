@@ -265,6 +265,37 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
         }
         _print(msgarr);
     };
+
+	lua_state.add_package_loader([this](lua_State* L) {
+		// This function is used to load a file and require it in Lua
+	// It should return 1 if successful, 0 otherwise
+	const char* filename = luaL_checkstring(L, 1);
+	if (!filename || strlen(filename) == 0) {
+		sol::stack::push(
+		 L, "Error: filename is empty");
+		return 0;
+	}
+
+	// Get the sol::state from the lua_State
+	sol::state_view lua(L);
+
+	String file = _require(filename);
+
+	if (file.is_empty()) {
+		sol::stack::push(
+		 L, "Error: failed to load file: " + String(filename));
+		return 0;
+	}
+
+	int error = luaL_loadbuffer(L, file.utf8().get_data(), file.utf8().size(), filename);
+
+	if (error) {
+		fprintf(stderr, "%s", lua_tostring(L, -1));
+		lua_pop(L, 1);  /* pop error message from the stack */
+		return error;
+	}
+	return 1; // return the result of the require call
+	});
 }
 
 void Runtime::bind_object(const String &name, Object *obj) {
