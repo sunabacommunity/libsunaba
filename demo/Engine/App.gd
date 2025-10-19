@@ -22,9 +22,9 @@ func load_app(path: String) -> void:
 	if (!FileAccess.file_exists(path)): return
 	
 	var zipIo = IoInterfaceZip.new()
-	var zipFile = FileAccess.open(path, FileAccess.READ)
-	var zip_bytes = zipFile.get_buffer(zipFile.get_length())
-	zipIo.LoadFromBytes(zip_bytes, "temp://")
+	#var zipFile = FileAccess.open(path, FileAccess.READ)
+	#var zip_bytes = zipFile.get_buffer(zipFile.get_length())
+	zipIo.LoadFromPath(ProjectSettings.globalize_path(path), "temp://")
 	io_manager.Register(zipIo)
 	
 	var header_json : String = io_manager.LoadText("temp://header.json")
