@@ -30,10 +30,6 @@ GDCLASS( ScriptObject, RefCounted )
                 std::string str = var.as<std::string>();
                 return String(str.c_str());
             }
-            else if (var.get_type() == sol::type::nil)
-            {
-                return Variant();
-            }
             else if (var.get_type() == sol::type::table)
             {
                 sol::table subobj = var.as<sol::table>();
