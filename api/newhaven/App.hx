@@ -7,7 +7,7 @@ import newhaven.core.native.NativeObject;
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
 	private function get_rootNodeNative(): NativeObject {
-		return untyped __lua__("_G.rootNode");
+		return untyped __lua__("_G.__rootNode");
 	}
 
     public static var execDir(get, default): String;
@@ -30,7 +30,7 @@ class App extends BaseClass {
 			init();
         }
         catch(e) {
-            ErrorD(e.toString());
+            Debug.error(e.toString());
         }
     }
 
