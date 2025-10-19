@@ -12,17 +12,34 @@ namespace Newhaven.Engine
         public String AltPath;
         public String AltPath2;
 
+        public FileSystemIo()
+        {
+        }
+
         public FileSystemIo(String path, String pathUrl)
         {
-            if (!path.EndsWith("/") && !path.EndsWith("\\"))
-            {
-                path += "/";
-            }
+	        if (!path.EndsWith("/") && !path.EndsWith("\\"))
+	        {
+		        path += "/";
+	        }
 
-            Path = path;
-            PathUrl = pathUrl;
-            AltPath = path.Replace("/", "\\");
-            AltPath2 = path.Replace("\\", "/");
+	        Path = path;
+	        PathUrl = pathUrl;
+	        AltPath = path.Replace("/", "\\");
+	        AltPath2 = path.Replace("\\", "/");
+        }
+
+        public void Open(String path, String pathUrl)
+        {
+	        if (!path.EndsWith("/") && !path.EndsWith("\\"))
+	        {
+		        path += "/";
+	        }
+
+	        Path = path;
+	        PathUrl = pathUrl;
+	        AltPath = path.Replace("/", "\\");
+	        AltPath2 = path.Replace("\\", "/");
         }
 
         public override string GetFilePath(string path)
