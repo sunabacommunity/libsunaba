@@ -12,6 +12,10 @@ public partial class IoInterfaceZip : IoInterface
 {
     ZipArchive zipArchive;
 
+    IoInterfaceZip()
+    {
+    }
+
     public void LoadFromPath(string path, string pathUrl)
     {
         PathUrl = pathUrl;
