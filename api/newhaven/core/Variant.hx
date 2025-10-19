@@ -187,7 +187,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     */
 
     @:from
-    public static function fromArray(value:newhaven.ArrayList):Variant {
+    public static function fromArray(value:ArrayList):Variant {
         return VariantNative.fromArrayList(value);
     }
     @:to
@@ -205,7 +205,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
 
     @:from
-    public static function fromIntArray64(value:newhaven.TypedArray<Int>):Variant {
+    public static function fromIntArray64(value:TypedArray<Int>):Variant {
         return VariantNative.fromIntArray64(value);
     }
     @:to
