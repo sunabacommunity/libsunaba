@@ -4,6 +4,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gdext", "gdext.vcxproj", "{9A2FB295-38D9-4994-9497-26FF91C85465}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newhaven.Demo", "..\demo\Newhaven.Demo.csproj", "{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|windows-x86_32 = Debug|windows-x86_32
@@ -73,6 +75,46 @@ Global
 		{9A2FB295-38D9-4994-9497-26FF91C85465}.Debug|web-wasm32.Build.0 = Debug|web-wasm32
 		{9A2FB295-38D9-4994-9497-26FF91C85465}.Release|web-wasm32.ActiveCfg = Release|web-wasm32
 		{9A2FB295-38D9-4994-9497-26FF91C85465}.Release|web-wasm32.Build.0 = Release|web-wasm32
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|windows-x86_32.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|windows-x86_32.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|windows-x86_32.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|windows-x86_32.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|windows-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|windows-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|windows-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|windows-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-rv64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|linux-rv64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-rv64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|linux-rv64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|macos.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|macos.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|macos.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|macos.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|ios-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|ios-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|ios-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|ios-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|android-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|android-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|android-x86_64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|android-x86_64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|android-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|android-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|android-arm64.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|android-arm64.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|web-wasm32.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Debug|web-wasm32.Build.0 = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|web-wasm32.ActiveCfg = Debug|Any CPU
+		{925D0BEA-C0C0-409A-99B3-90A59B9C8B0D}.Release|web-wasm32.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
