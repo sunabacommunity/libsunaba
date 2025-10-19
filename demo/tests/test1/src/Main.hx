@@ -1,5 +1,11 @@
-class Main {
+import newhaven.App;
+
+class Main extends App {
     public static function main() {
-        Sys.println("Hello, World!");
+        new Main();
     }
+
+	public override function init() {
+		Sys.println("Hello, World!");
+	}
 }
