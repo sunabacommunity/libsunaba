@@ -16,7 +16,7 @@ func init(sandboxed: bool = false, classnames: PackedStringArray = []) -> void:
 	
 	bind_object("__ioManager", io_manager)
 
-func load(path: String) -> void:
+func load_app(path: String) -> void:
 	if (path.is_empty()): return
 	
 	if (!FileAccess.file_exists(path)): return
@@ -60,3 +60,12 @@ func load(path: String) -> void:
 
 func _require(path: String) -> String:
 	return io_manager.LoadText(path)
+
+func _errord(msg: String, title: String) -> void:
+	OS.alert(msg, title)
+
+func _warnd(msg: String, title: String) -> void:
+	OS.alert(msg, title)
+
+func _infod(msg: String, title: String) -> void:
+	OS.alert(msg, title)
