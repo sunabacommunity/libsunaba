@@ -22,9 +22,9 @@ func load_app(path: String) -> void:
 	if (!FileAccess.file_exists(path)): return
 	
 	var zipIo = IoInterfaceZip.new()
-	#var zipFile = FileAccess.open(path, FileAccess.READ)
-	#var zip_bytes = zipFile.get_buffer(zipFile.get_length())
-	zipIo.LoadFromPath(ProjectSettings.globalize_path(path), "temp://")
+	var zipFile = FileAccess.open(path, FileAccess.READ)
+	var zip_bytes = zipFile.get_buffer(zipFile.get_length())
+	zipIo.LoadFromBytes(zip_bytes, "temp://")
 	io_manager.Register(zipIo)
 	
 	var header_json : String = io_manager.LoadText("temp://header.json")
@@ -50,7 +50,7 @@ func load_app(path: String) -> void:
 	var type: String = header.get("type", "executable")
 	
 	if type != "executable":
-		assert(false, "Error: type must be executable")
+		_errord("type must be executable", "Error")
 		return
 	
 	var luabin_name = header.get("luabin", "main.lua")
@@ -58,13 +58,14 @@ func load_app(path: String) -> void:
 	
 	var luabin_path = zipIo.GetPathUrl() + luabin_name
 	
-	do_string("require('" + luabin_path + "')")
+	do_string(io_manager.LoadText(luabin_path))
 
 func _require(path: String) -> String:
 	return io_manager.LoadText(path)
 
 func _errord(msg: String, title: String) -> void:
 	OS.alert(msg, title)
+	printerr(msg)
 
 func _warnd(msg: String, title: String) -> void:
 	OS.alert(msg, title)
