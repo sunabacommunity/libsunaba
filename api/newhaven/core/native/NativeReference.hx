@@ -1,8 +1,7 @@
 package newhaven.core.native;
 
-import newhaven.BaseObject;
-import newhaven.Variant;
-import newhaven.ArrayList;
+import newhaven.core.Variant;
+import newhaven.core.ArrayList;
 
 @:native("NativeReference")
 extern class NativeReference extends NativeBase {
