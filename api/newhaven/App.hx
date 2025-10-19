@@ -26,12 +26,12 @@ class App extends BaseClass {
     }
 
     public function new() {
-        //try {
-		init();
-        /*}
+        try {
+			init();
+        }
         catch(e) {
             ErrorD(e.toString());
-        }*/
+        }
     }
 
     public function init() {
