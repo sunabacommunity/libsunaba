@@ -1,0 +1,128 @@
+#pragma once
+
+#include <godot_cpp/classes/ref_counted.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <sol/sol.hpp>
+
+#include "NativeObject.h"
+#include "NativeReference.h"
+
+using namespace godot;
+
+class ScriptObject : public RefCounted{
+GDCLASS( ScriptObject, RefCounted )
+
+    protected:
+        static void _bind_methods();
+
+        Variant solToGd(sol::object var)
+        {
+            if (!var.valid())
+            {
+                return Variant();
+            }
+            if (var.get_type() == sol::type::boolean)
+            {
+                return var.as<bool>();
+            }
+            else if (var.get_type() == sol::type::string)
+            {
+                std::string str = var.as<std::string>();
+                return String(str.c_str());
+            }
+            else if (var.get_type() == sol::type::nil)
+            {
+                return Variant();
+            }
+            else if (var.get_type() == sol::type::table)
+            {
+                sol::table subobj = var.as<sol::table>();
+                Ref<ScriptObject> obj = Ref<ScriptObject>(memnew(ScriptObject));
+                obj->object = subobj;
+                return obj;
+            }
+            else if (var.get_type() == sol::type::number)
+            {
+                float number = var.as<float>();
+                return number;
+            }
+            else if (var.get_type() == sol::type::userdata || var.get_type() == sol::type::lightuserdata)
+            {
+                if (var.is<Variant>())
+                {
+                    return var.as<Variant>();
+                }
+                else if (var.is<NativeObject>())
+                {
+                    NativeObject obj = var.as<NativeObject>();
+                    return obj.getNative();
+                }
+                else if (var.is<NativeReference>())
+                {
+                    NativeReference ref = var.as<NativeReference>();
+                    return ref.getNative();
+                }
+            }
+
+            return Variant();
+        }
+    public:
+
+        sol::table object;
+
+        ScriptObject()
+        {
+        }
+
+        ~ScriptObject() {}
+
+        Variant get_var(const String& name)
+        {
+            auto var = object[name.utf8().get_data()];
+            return solToGd( var.get<sol::object>() );
+        }
+
+        void set_var( const String &name, const Variant &var )
+        {
+            object[name.utf8().get_data()] = sol::make_object( object.lua_state(), var );
+        }
+
+        bool has_var(const String& name)
+        {
+            if (!object[name.utf8().get_data()].valid()) return false;
+            return object[name.utf8().get_data()].get_type() != sol::type::lua_nil && object[name.utf8().get_data()].get_type() != sol::type::none;
+        }
+
+        bool has_function(const String& name)
+        {
+            if (!object[name.utf8().get_data()].valid()) return false;
+            return object[name.utf8().get_data()].get_type() == sol::type::function;
+        }
+
+        Variant call_function(const String& name, const Array& args)
+        {
+            auto func = object[name.utf8().get_data()].get<sol::function>();
+            std::vector<sol::object> _args;
+            for (int i = 0; i < args.size(); i++)
+            {
+                _args.push_back( sol::make_object( object.lua_state(), args[i] ) );
+            }
+
+            sol::protected_function_result result = func( sol::as_args(_args));
+
+            if (!result.valid()) {
+                sol::error err = result;
+                UtilityFunctions::printerr("Error: ", err.what());
+                sol::state_view lua_state = object.lua_state();
+                sol::function errord = lua_state["__errord"];
+                if (errord.valid())
+                {
+                    errord(err.what(), "Script Error");
+                }
+                return Variant();
+            }
+
+            sol::object ret = result.get<sol::object>();
+            return ret.as<Variant>();
+        }
+};
