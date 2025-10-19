@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Godot;
 
-namespace Newhaven
+namespace Newhaven.Engine
 {
 	[GlobalClass]
     public partial class WindowsSystemIo : SystemIoBase

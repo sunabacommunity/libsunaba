@@ -4,7 +4,7 @@ using System.IO;
 using Godot.Collections;
 using Godot;
 
-namespace Newhaven
+namespace Newhaven.Engine
 {
 	[GlobalClass]
     public partial class SystemIoBase : IoInterface

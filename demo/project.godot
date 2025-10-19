@@ -16,8 +16,8 @@ config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Newhaven.Demo"
+project/assembly_name="Newhaven"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csharp_gdextension_bindgen/plugin.cfg")
+enabled=PackedStringArray()
