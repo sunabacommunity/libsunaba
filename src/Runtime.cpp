@@ -303,6 +303,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 		}
 		return 1; // return the result of the require call
 	});
+
+	bind_object("__rootNode", this);
 }
 
 void Runtime::bind_object(const String &name, Object *obj) {
