@@ -27,9 +27,9 @@ func load_app(path: String) -> void:
 	zipIo.LoadFromBytes(zip_bytes, "temp://")
 	io_manager.Register(zipIo)
 	
-	var header_json = io_manager.LoadText("temp://header.json")
+	var header_json : String = io_manager.LoadText("temp://header.json")
 	if (header_json.is_empty()):
-		assert(false, "Error: header.json not found in the nhv file")
+		_errord("header.json not found in the nhv file", "Inavlid header file")
 		return
 	
 	var header: Dictionary = JSON.parse_string(header_json)
