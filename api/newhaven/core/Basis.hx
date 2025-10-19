@@ -2,7 +2,7 @@ package newhaven.core;
 
 @:native("Basis")
 extern class Basis {
-    public var rows: newhaven.Vector<Vector3>;
+    public var rows: TypedArray<Vector3>;
     public var x : Vector3;
     public var y: Vector3;
     public var z: Vector3;
