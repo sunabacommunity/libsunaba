@@ -1,7 +1,7 @@
 extends Runtime
 class_name App
 
-var io_interface: IoManager = IoManager.new()
+var io_manager: IoManager = IoManager.new()
 
 func init(sandboxed: bool = false, classnames: PackedStringArray = []) -> void:
 	init_state(sandboxed, classnames)
@@ -9,9 +9,54 @@ func init(sandboxed: bool = false, classnames: PackedStringArray = []) -> void:
 	if not sandboxed:
 		if OS.get_name() == "Windows":
 			var windowsSysIO = WindowsSystemIo.new()
-			io_interface.Register(windowsSysIO)
+			io_manager.Register(windowsSysIO)
 		elif OS.get_name() != "Web":
 			var unixSysIo = UnixSystemIo.new()
-			io_interface.Register(unixSysIo)
+			io_manager.Register(unixSysIo)
 	
-	bind_object("__ioManager", io_interface)
+	bind_object("__ioManager", io_manager)
+
+func load(path: String) -> void:
+	if (path.is_empty()): return
+	
+	if (!FileAccess.file_exists(path)): return
+	
+	var zipIo = IoInterfaceZip.new()
+	zipIo.LoadFromPath(path, "temp://")
+	io_manager.Register(zipIo)
+	
+	var header_json = io_manager.LoadText("temp://header.json")
+	if (header_json.is_empty()):
+		assert(false, "Error: header.json not found in the nhv file")
+		return
+	
+	var header: Dictionary = JSON.parse_string(header_json)
+	
+	var appName: String = header.get("name", "Newhaven")
+	
+	var app_base_user_dir_path = ProjectSettings.globalize_path("user://appdata/")
+	if not DirAccess.dir_exists_absolute(app_base_user_dir_path):
+		DirAccess.make_dir_absolute(app_base_user_dir_path)
+	var app_user_dir_path = app_base_user_dir_path + appName + "/"
+	if not DirAccess.dir_exists_absolute(app_user_dir_path):
+		DirAccess.make_dir_absolute(app_user_dir_path)
+	
+	var user_io = FileSystemIo.new()
+	user_io.Open(app_user_dir_path, "user://")
+	io_manager.Register(user_io)
+	
+	var type: String = header.get("type", "executable")
+	
+	if type != "executable":
+		assert(false, "Error: type must be executable")
+		return
+	
+	var luabin_name = header.get("luabin", "main.lua")
+	zipIo.SetPathUrl(header["rootUrl"])
+	
+	var luabin_path = zipIo.GetPathUrl() + luabin_name
+	
+	do_string("require('" + luabin_path + "')")
+
+func _require(path: String) -> String:
+	return io_manager.LoadText(path)
