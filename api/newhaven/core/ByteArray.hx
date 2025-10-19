@@ -8,7 +8,7 @@ extern class ByteArray {
     public function new();
 
     @:native("new")
-    public static function fromTable(table : newhaven.TypedArray<Float>) : ByteArray;
+    public static function fromTable(table : TypedArray<Float>) : ByteArray;
 
     public function size() : Int;
 
@@ -22,7 +22,7 @@ extern class ByteArray {
 
     public function insert(index : Int, value : ByteObject) : Void;
 
-    public function toTable() : newhaven.TypedArray<Float>;
+    public function toTable() : TypedArray<Float>;
 }
 
 function BinaryDataToBytes(binaryData: ByteArray) : Bytes {
