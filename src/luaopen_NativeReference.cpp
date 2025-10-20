@@ -32,6 +32,7 @@ void Runtime::luaopen_NativeReference() {
 			"getMethodList", &NativeReference::getMethodList,
 			"getPropertyList", &NativeReference::getPropertyList,
 			"hasMeta", &NativeReference::hasMeta,
+			"hasMethod", &NativeReference::hasMethod,
 			"setMeta", &NativeReference::setMeta,
 			"isValid", &NativeReference::isValid,
 			"isNull", &NativeReference::isNull

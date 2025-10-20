@@ -34,6 +34,7 @@ void Runtime::luaopen_NativeObject() {
 			"getMethodList", &NativeObject::getMethodList,
 			"getPropertyList", &NativeObject::getPropertyList,
 			"hasMeta", &NativeObject::hasMeta,
+			"hasMethod", &NativeObject::hasMethod,
 			"setMeta", &NativeObject::setMeta,
 			"isNull", &NativeObject::isNull
 		);
