@@ -5,6 +5,7 @@ import haxe.Int32;
 import haxe.Int64;
 import newhaven.core.native.NativeObject;
 import newhaven.core.native.NativeReference;
+import haxe.Constraints.Function;
 
 @:forward(getType, getTypeName)
 abstract Variant(VariantNative) from VariantNative to VariantNative {
@@ -288,6 +289,15 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toNativeReference(): NativeReference {
         return this.asReference();
     }
+
+	@:from
+	public static function fromFunction(value: Function): Variant {
+		return VariantNative.fromFunction(value);
+	}
+	@:to
+	public inline function toFunction(): Function {
+		return this.asFunction();
+	}
 
     @:from
     public static function fromObject(value: Object): Variant {
