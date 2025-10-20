@@ -89,4 +89,6 @@ public:
 	//void luaopen_Transform2D();
     void luaopen_AABB();
     void luaopen_Color();
+	void luaopen_Callable();
+	void luaopen_Signal();
 };
