@@ -385,8 +385,8 @@ public class ClassBuilder
 
 		    var signalSb = new StringBuilder();
 		    signalSb.AppendLine($"	private var _{signalName.ToCamelCase()}: Signal;");
-		    signalSb.AppendLine($"	public var {signalName.ToCamelCase()}(get, default): Signal;");
-		    signalSb.AppendLine($"	function get_{signalName.ToCamelCase()}(): Signal {'{'}");
+		    signalSb.AppendLine($"	public var on{signalName.ToPascalCase()}(get, default): Signal;");
+		    signalSb.AppendLine($"	function get_on{signalName.ToPascalCase()}(): Signal {'{'}");
 		    signalSb.AppendLine($"	    if (_{signalName.ToCamelCase()} == null) {'{'}");
 		    signalSb.AppendLine($"	        _{signalName.ToCamelCase()} = Signal.{signalMethod}(native, '{signalName}');");
 		    signalSb.AppendLine($"	    {'}'}");
