@@ -44,5 +44,5 @@ public:
 
 
 Callable make_callable_from_sol(sol::function func) {
-	return Callable(memnew(LuaCallableCustom(func)));
+	return Callable(memnew(ScriptCallableCustom(func)));
 }
