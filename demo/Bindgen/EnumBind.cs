@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+namespace Newhaven.Bindgen;
+
 public class EnumBind
 {
 
@@ -110,7 +112,7 @@ public class EnumBind
 					if (reservedWords.Contains(valName))
 						valName = "_" + valName;
 					if (valNames.ContainsKey(valName)) continue;
-					
+
 					var valValue = Convert.ToInt64(value);
 					valNames[valName] = valValue;
 					stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
@@ -145,7 +147,7 @@ public class EnumBind
 		{
 			GenerateEnums(subdir, parentDirPath);
 		}
-		
+
 		var files = Directory.GetFiles(xmlDir, "*.xml");
 		foreach (var file in files)
 		{
@@ -247,12 +249,12 @@ public class EnumBind
 						var codeFile = enumPath + "/" + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");
-						
+
 						var stringBuilder = new System.Text.StringBuilder();
 						stringBuilder.AppendLine("package " + packageName + ";");
 						stringBuilder.AppendLine();
 						stringBuilder.AppendLine("enum abstract " + enumName + "(Int) from Int to Int {");
-						
+
 						Dictionary<string, long> valNames = new();
 						foreach (var value in Enum.GetValues(propertyInfo.PropertyType))
 						{
@@ -283,9 +285,9 @@ public class EnumBind
 						stringBuilder.AppendLine("			case _: null;");
 						stringBuilder.AppendLine("		}");
 						stringBuilder.AppendLine("	}");
-						
+
 						stringBuilder.AppendLine("}");
-						
+
 						var finalCode = stringBuilder.ToString();
 						if (!Directory.Exists(enumPath))
 						{
@@ -296,9 +298,9 @@ public class EnumBind
 				}
 			}
 		}
-		
+
 	}
-	
+
 	public bool IsPropertyUniqueToType(Type type, string propertyName, bool recursive = false)
 	{
 		Type inheritedType = type.BaseType;
@@ -314,7 +316,7 @@ public class EnumBind
 				}
 				return false;
 			}
-			else 
+			else
 			{
 				var properties = type.GetProperties();
 				foreach (var propertyInfo in properties)
@@ -326,7 +328,7 @@ public class EnumBind
 				}
 			}
 		}
-        
+
 		return false;
 	}
 }

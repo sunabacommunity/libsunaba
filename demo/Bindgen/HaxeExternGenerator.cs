@@ -9,22 +9,24 @@ using System.Globalization;
 using Godot;
 using FileAccess = Godot.FileAccess;
 
+namespace Newhaven.Bindgen;
+
 public class HaxeExternGenerator
 {
     public List<String> ClassNames;
     public Dictionary<string, string> BaseClasses;
     public List<string> ClassMethods;
     public List<string> ClassMembers;
-    
+
     public void GenerateExterns(string subfolder)
     {
         string outputDir = Path.GetFullPath("../api/sunaba/godot/");
         string godotApiPath = Path.GetFullPath("../xmlgdapi/");
-        
+
         // Ensure the output directory exists
         Directory.CreateDirectory(outputDir);
         Directory.CreateDirectory(godotApiPath);
-        
+
 
         string xmlDirectory = godotApiPath + subfolder + "/";
 
@@ -56,7 +58,7 @@ public class HaxeExternGenerator
             // Load and parse the XML file
             var doc = XDocument.Load(xmlFile); // XDocument.Load()
             var className = doc.Root?.Attribute("name")?.Value;
-                                    
+
             if (!string.IsNullOrEmpty(className) && className != "float" && className != "String" && className != "int" && className != "@GlobalScope" && className != "bool" && className != "Array" && className != "Dictionary")
             {
                 Console.WriteLine($"Processing class: {className}");
@@ -93,7 +95,7 @@ public class HaxeExternGenerator
 
         return files.ToArray();
     }
-    
+
     string GenerateHaxeExtern(XDocument doc, string className)
     {
         var sb = new StringBuilder();
@@ -111,9 +113,9 @@ public class HaxeExternGenerator
             inheritedClassName = "NativeObject";
             sb.AppendLine("import sunaba.core.NativeObject;");
         }
-        
+
         sb.AppendLine();
-        
+
         AppendEnums(sb, doc);
 
         var ogClassName = className;
@@ -131,14 +133,14 @@ public class HaxeExternGenerator
 
         // Process methods
         AppendMethods(sb, doc);
-        
+
         // Process signals
         AppendSignals(sb, doc);
 
         sb.AppendLine("}");
         var str = sb.ToString();
 
-        
+
 
         return str;
     }
@@ -171,7 +173,7 @@ public class HaxeExternGenerator
                 {
                     if (propertyInfo.PropertyType.IsEnum)
                     {
-                        
+
                         var enumName = className + propertyInfo.Name;
                         sb.AppendLine($"class {enumName} {{");
 
@@ -191,7 +193,7 @@ public class HaxeExternGenerator
                         sb.AppendLine();
                     }
                 }
-                
+
             }
         }
     }
@@ -211,7 +213,7 @@ public class HaxeExternGenerator
                 }
                 return false;
             }
-            else 
+            else
             {
                 var properties = type.GetProperties();
                 foreach (var propertyInfo in properties)
@@ -223,7 +225,7 @@ public class HaxeExternGenerator
                 }
             }
         }
-        
+
         return false;
     }
 
@@ -233,7 +235,7 @@ public class HaxeExternGenerator
         foreach (var signal in signals)
         {
             var signalName = signal.Attribute("name")?.Value;
-            
+
             if (!string.IsNullOrEmpty(signalName))
             {
                 sb.AppendLine($"    public var {ToCamelCase(signalName)}: NativeEvent;");
@@ -254,7 +256,7 @@ public class HaxeExternGenerator
 
             var className = doc.Root?.Attribute("name")?.Value;
 
-            if (!MemberExists(fieldName, className)) 
+            if (!MemberExists(fieldName, className))
             {
                 ClassMembers.Add(className + ":"  + fieldName);
 
@@ -266,7 +268,7 @@ public class HaxeExternGenerator
                     }
                     else if (className == "OS" || className == "Input" || className == "InputMap")
                         sb.AppendLine($"    public static var {ToCamelCase(fieldName)}: {MapReturnType(fieldType)};");
-                    else 
+                    else
                         sb.AppendLine($"    public var {ToCamelCase(fieldName)}: {MapReturnType(fieldType)};");
                 }
             }
@@ -382,7 +384,7 @@ public class HaxeExternGenerator
                                 }
                                 else
                                 {
-                                    
+
 
                                     sb.AppendLine(
                                         $"    public static function {ToCamelCase(methodName)}({string.Join(", ", parameters)}): {MapReturnType(returnType)};");
@@ -500,7 +502,7 @@ public class HaxeExternGenerator
     string MapReturnType(string godotType){
         if (godotType == "Vector3" || godotType == "Vector2" || godotType == "Quaternion" || godotType == "Basis" ||
             godotType == "Color" || godotType == "Vector2i" || godotType == "Vector3i" || godotType == "Vector2I" ||
-            godotType == "Vector3I" || godotType == "Rect2" || godotType == "Vector4" || godotType == "Vector4I" || 
+            godotType == "Vector3I" || godotType == "Rect2" || godotType == "Vector4" || godotType == "Vector4I" ||
             godotType == "Vector4i")
         {
             if (godotType.EndsWith('I'))
@@ -522,7 +524,7 @@ public class HaxeExternGenerator
     {
         if (ClassNames.Contains(godotType))
             return godotType;
-        
+
         switch (godotType)
         {
             case "int":
@@ -605,7 +607,7 @@ public class HaxeExternGenerator
 
         return string.Join(string.Empty, parts);
     }
-    
+
     string ToPascalCase(string snakeCase)
     {
         if (string.IsNullOrEmpty(snakeCase))

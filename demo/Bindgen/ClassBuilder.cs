@@ -6,6 +6,8 @@ using System.Text;
 using System.Xml.Linq;
 using Godot;
 
+namespace Newhaven.Bindgen;
+
 public class ClassBuilder
 {
     public List<String> ClassNames = new();
