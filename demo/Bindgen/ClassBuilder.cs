@@ -216,6 +216,8 @@ public class ClassBuilder
         classSb.AppendLine();
         BuildMembers(classSb, doc, className, importList);
         classSb.AppendLine();
+        BuildSignals(classSb, doc, className, importList);
+        classSb.AppendLine();
         BuildMethods(classSb, doc, className, importList);
 
         foreach (var _import in importList)
@@ -365,6 +367,33 @@ public class ClassBuilder
                 }
             }
         }
+    }
+
+    public void BuildSignals(StringBuilder sb, XDocument doc, string className, List<string> importList)
+    {
+	    if (!importList.Contains("newhaven.core.Signal"))
+		    importList.Add("newhaven.core.Signal");
+
+	    var signals = doc.Descendants("signal");
+	    foreach (var signal in signals)
+	    {
+		    var signalName = signal.Attribute("name")?.Value;
+		    if (signalName == null) continue;
+		    var signalMethod = "createFromObject";
+		    if (IsReferenceCounted(className))
+			    signalMethod = "createFromReference";
+
+		    var signalSb = new StringBuilder();
+		    signalSb.Append($"    private var _{signalName.ToCamelCase()}: Signal;");
+		    signalSb.Append($"    public var {signalName.ToCamelCase()}(get, default): Signal;");
+		    signalSb.Append($"    function get_{signalName.ToCamelCase()}(): Signal {'{'}");
+		    signalSb.Append($"        if (_{signalName.ToCamelCase()} == null) {'{'}");
+		    signalSb.Append($"            _{signalName.ToCamelCase()} = Signal.{signalMethod}(native, '{signalName}');");
+		    signalSb.Append($"        {'}'}");
+		    signalSb.Append($"        return _{signalName.ToCamelCase()};");
+		    signalSb.Append($"    {'}'}");
+		    sb.Append(signalSb);
+	    }
     }
 
     public void BuildMethods(StringBuilder sb, XDocument doc, string className, List<string> importList)
