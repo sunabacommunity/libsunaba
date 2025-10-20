@@ -114,7 +114,7 @@ public class EnumBuilder
 
 					var valValue = Convert.ToInt64(value);
 					valNames[valName] = valValue;
-					stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+					stringBuilder.AppendLine("	var " + valName + " = cast " + valValue + ";");
 				}
 
 				var valNamesStr = valNames.Keys.ToArray().Join(", ");
@@ -270,7 +270,7 @@ public class EnumBuilder
 							if (!valNames.Keys.Contains(valName))
 							{
 								valNames[valName] = valValue;
-								stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+								stringBuilder.AppendLine("	var " + valName + " = cast " + valValue + ";");
 							}
 						}
 
