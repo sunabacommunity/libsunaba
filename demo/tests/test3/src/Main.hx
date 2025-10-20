@@ -9,6 +9,7 @@ import newhaven.ui.VBoxContainer;
 import newhaven.LayoutPreset;
 import newhaven.ui.Button;
 import newhaven.core.Callable;
+import newhaven.core.ArrayList;
 
 class Main extends App {
     public static function main() {
@@ -64,9 +65,11 @@ class Main extends App {
 
 		label.text = "You clicked me! " + count + " times";
 
-		button.pressed.connect(new CallableNative(() -> {
+		var callable = new CallableNative(() -> {
 			incrementCounter();
-		}));
+		});
+		callable.call(new ArrayList());
+		button.pressed.connect(callable);
 
 		var size = vboxContainer.size;
 		var parentSize = control.size;
