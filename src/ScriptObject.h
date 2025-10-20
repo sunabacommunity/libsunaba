@@ -64,6 +64,67 @@ GDCLASS( ScriptObject, RefCounted )
 			return Variant();
 		}
 
+		static sol::object gdToSol(const Variant &v, lua_State* L) {
+			switch (v.get_type()) {
+				case Variant::NIL:
+					return sol::make_object(L, sol::lua_nil);
+
+				case Variant::BOOL:
+					return sol::make_object(L, (bool)v);
+
+				case Variant::INT:
+					return sol::make_object(L, (int64_t)v); // Lua numbers are double but int64_t maps safely
+
+				case Variant::FLOAT:
+					return sol::make_object(L, (double)v);
+
+				case Variant::STRING:
+					return sol::make_object(L, std::string(String(v).utf8().get_data()));
+
+				case Variant::ARRAY: {
+					Array arr = v;
+					sol::table lua_tbl = sol::state_view(L).create_table((int)arr.size(), 0);
+					for (int i = 0; i < arr.size(); i++) {
+						lua_tbl[i + 1] = gdToSol(arr[i], L); // 1-indexed for Lua
+					}
+					return lua_tbl;
+				}
+
+				case Variant::DICTIONARY: {
+					Dictionary dict = v;
+					sol::table lua_tbl = sol::state_view(L).create_table(0, (int)dict.size());
+					Array keys = dict.keys();
+					for (int i = 0; i < keys.size(); i++) {
+						lua_tbl[gdToSol(keys[i], L)] = gdToSol(dict[keys[i]], L);
+					}
+					return lua_tbl;
+				}
+
+				case Variant::OBJECT: {
+					Object *obj = v;
+					if (obj) {
+						// If it's a ScriptObject, reuse underlying Lua table
+						if (ScriptObject* script_obj = Object::cast_to<ScriptObject>(obj)) {
+							return sol::make_object(L, script_obj->object);
+						}
+						if (obj->is_class("RefCounted")) {
+							Ref<RefCounted> ref = Ref<RefCounted>(Object::cast_to<RefCounted>(obj));
+							if (ref.is_valid()) {
+								return sol::make_object(L, new NativeReference(ref));
+							}
+						}
+						// Wrap generic object (your NativeObject/NativeReference handles this already)
+						return sol::make_object(L, new NativeObject(obj));
+					}
+					return sol::make_object(L, sol::lua_nil);
+				}
+
+				default:
+					// Fallback: store raw Variant as userdata if unknown
+					return sol::make_object(L, v);
+			}
+		}
+
         sol::table object;
 
         ScriptObject()
