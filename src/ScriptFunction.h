@@ -24,7 +24,7 @@ public:
 		std::vector<sol::object> _args;
 		for (int i = 0; i < args.size(); i++)
 		{
-			_args.push_back( ScriptObject::gdToSol(args[i], object.lua_state()) );
+			_args.push_back( ScriptObject::gdToSol(args[i], func.lua_state()) );
 		}
 
 		sol::protected_function_result result = func( sol::as_args(_args));
@@ -32,7 +32,7 @@ public:
 		if (!result.valid()) {
 			sol::error err = result;
 			UtilityFunctions::printerr("Error: ", err.what());
-			sol::state_view lua_state = object.lua_state();
+			sol::state_view lua_state = func.lua_state();
 			sol::function errord = lua_state["__errord"];
 			if (errord.valid())
 			{
