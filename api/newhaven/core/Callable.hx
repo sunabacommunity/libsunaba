@@ -2,6 +2,7 @@ package newhaven.core;
 import newhaven.core.native.NativeObject;
 import newhaven.core.native.NativeReference;
 import haxe.Constraints.Function;
+import newhaven.core.native.ScriptType;
 
 @:native("Callable")
 extern class CallableNative {
@@ -43,9 +44,8 @@ extern class CallableNative {
 )
 abstract Callable(CallableNative) from CallableNative to CallableNative {
 	public function new(func: Function) {
-		//this = new CallableNative(func);
-		var scriptFunctionWrapper = new NativeObject("ScriptFunctionWrapper");
-		scriptFunctionWrapper.set("function", func);
+		var scriptFunctionWrapper = new NativeObject("res://Engine/ScriptFunctionWrapper.gd", new ArrayList(), ScriptType.gdscript);
+		scriptFunctionWrapper.set("function", VariantNative.fromFunction(func));
 		var callable: Callable = scriptFunctionWrapper.call("to_callable", new ArrayList());
 		this = callable;
 	}
