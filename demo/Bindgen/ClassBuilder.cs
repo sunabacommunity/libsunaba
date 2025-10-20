@@ -159,7 +159,7 @@ public class ClassBuilder
                 {
 	                Directory.CreateDirectory(packagePath.Replace("newhaven.", "").Replace(".", "/"));
                 }
-                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
+                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/").Replace("newhaven/newhaven/", "newhaven/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
             }
         }
     }
