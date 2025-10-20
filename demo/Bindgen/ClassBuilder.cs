@@ -289,16 +289,16 @@ public class ClassBuilder
         sb.AppendLine("        ");
         sb.AppendLine("    }");
         sb.AppendLine("    public function _onInput(event: NativeReference) {");
-        sb.AppendLine("        input(new InputEvent(event));");
+        sb.AppendLine("        onInput(new InputEvent(event));");
         sb.AppendLine("    }");
         sb.AppendLine("    public function _onUnhandledInput(event: NativeReference) {");
-        sb.AppendLine("        unhandledInput(new InputEvent(event));");
+        sb.AppendLine("        onUnhandledInput(new InputEvent(event));");
         sb.AppendLine("    }");
         sb.AppendLine("    public function _onUnhandledKeyInput(event: NativeReference) {");
-        sb.AppendLine("        unhandledKeyInput(new InputEvent(event));");
+        sb.AppendLine("        onUnhandledKeyInput(new InputEvent(event));");
         sb.AppendLine("    }");
         sb.AppendLine("    public function _onShortcutInput(event: NativeReference) {");
-        sb.AppendLine("        shortcutInput(new InputEvent(event));");
+        sb.AppendLine("        onShortcutInput(new InputEvent(event));");
         sb.AppendLine("    }");
     }
 
