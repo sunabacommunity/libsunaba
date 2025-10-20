@@ -14,55 +14,55 @@ GDCLASS( ScriptObject, RefCounted )
 
     protected:
         static void _bind_methods();
-
-        Variant solToGd(sol::object var)
-        {
-            if (!var.valid())
-            {
-                return Variant();
-            }
-            if (var.get_type() == sol::type::boolean)
-            {
-                return var.as<bool>();
-            }
-            else if (var.get_type() == sol::type::string)
-            {
-                std::string str = var.as<std::string>();
-                return String(str.c_str());
-            }
-            else if (var.get_type() == sol::type::table)
-            {
-                sol::table subobj = var.as<sol::table>();
-                Ref<ScriptObject> obj = Ref<ScriptObject>(memnew(ScriptObject));
-                obj->object = subobj;
-                return obj;
-            }
-            else if (var.get_type() == sol::type::number)
-            {
-                float number = var.as<float>();
-                return number;
-            }
-            else if (var.get_type() == sol::type::userdata || var.get_type() == sol::type::lightuserdata)
-            {
-                if (var.is<Variant>())
-                {
-                    return var.as<Variant>();
-                }
-                else if (var.is<NativeObject>())
-                {
-                    NativeObject obj = var.as<NativeObject>();
-                    return obj.getNative();
-                }
-                else if (var.is<NativeReference>())
-                {
-                    NativeReference ref = var.as<NativeReference>();
-                    return ref.getNative();
-                }
-            }
-
-            return Variant();
-        }
     public:
+
+		static Variant solToGd(sol::object var)
+		{
+			if (!var.valid())
+			{
+				return Variant();
+			}
+			if (var.get_type() == sol::type::boolean)
+			{
+				return var.as<bool>();
+			}
+			else if (var.get_type() == sol::type::string)
+			{
+				std::string str = var.as<std::string>();
+				return String(str.c_str());
+			}
+			else if (var.get_type() == sol::type::table)
+			{
+				sol::table subobj = var.as<sol::table>();
+				Ref<ScriptObject> obj = Ref<ScriptObject>(memnew(ScriptObject));
+				obj->object = subobj;
+				return obj;
+			}
+			else if (var.get_type() == sol::type::number)
+			{
+				float number = var.as<float>();
+				return number;
+			}
+			else if (var.get_type() == sol::type::userdata || var.get_type() == sol::type::lightuserdata)
+			{
+				if (var.is<Variant>())
+				{
+					return var.as<Variant>();
+				}
+				else if (var.is<NativeObject>())
+				{
+					NativeObject obj = var.as<NativeObject>();
+					return obj.getNative();
+				}
+				else if (var.is<NativeReference>())
+				{
+					NativeReference ref = var.as<NativeReference>();
+					return ref.getNative();
+				}
+			}
+
+			return Variant();
+		}
 
         sol::table object;
 
