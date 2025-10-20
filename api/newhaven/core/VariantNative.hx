@@ -6,6 +6,7 @@ import lua.Table;
 import haxe.Int32;
 import haxe.Int64;
 import haxe.Constraints.Function;
+import newhaven.core.Callable.CallableNative;
 
 @:native("Variant")
 extern class VariantNative {
@@ -55,6 +56,8 @@ extern class VariantNative {
     public static function fromDictionary(value:Dictionary):Variant;
     @:native("new")
     public static function fromArrayList(value:ArrayList):Variant;
+	@:native("new")
+	public static function fromCallable(value: CallableNative): VariantNative;
     public static function fromByteArray(value:ByteArray):VariantNative;
     public static function fromIntArray(value:TypedArray<Int>): VariantNative;
     public static function fromIntArray64(value:TypedArray<Int>): VariantNative;
@@ -112,6 +115,7 @@ extern class VariantNative {
     public function asAny(): Any;
     @:native("asTable")
     public function asBaseClass(): BaseClass;
+	public function asCallable(): Callable;
     @:native("tostring")
     public function toString():String;
 }
