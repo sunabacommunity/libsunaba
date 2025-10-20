@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class GradientTexture2D extends Texture2D {
     public function new(?_native: NativeReference) {
@@ -81,5 +82,6 @@ class GradientTexture2D extends Texture2D {
       native.set('width', value);
         return value;
     }
+
 
 }

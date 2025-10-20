@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.Rect2;
 import newhaven.core.ArrayList;
 
@@ -17,6 +18,23 @@ class Container extends Control {
         native = _native;
     }
 
+
+	private var _preSortChildren: Signal;
+	public var preSortChildren(get, default): Signal;
+	function get_preSortChildren(): Signal {
+	    if (_preSortChildren == null) {
+	        _preSortChildren = Signal.createFromObject(native, 'pre_sort_children');
+	    }
+	    return _preSortChildren;
+	}
+	private var _sortChildren: Signal;
+	public var sortChildren(get, default): Signal;
+	function get_sortChildren(): Signal {
+	    if (_sortChildren == null) {
+	        _sortChildren = Signal.createFromObject(native, 'sort_children');
+	    }
+	    return _sortChildren;
+	}
 
   public function fitChildInRect(child: Control, rect: Rect2): Void {
       var args = new ArrayList();

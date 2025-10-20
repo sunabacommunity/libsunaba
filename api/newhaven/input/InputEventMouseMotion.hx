@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class InputEventMouseMotion extends InputEventMouse {
     public function new(?_native: NativeReference) {
@@ -72,5 +73,6 @@ class InputEventMouseMotion extends InputEventMouse {
       native.set('velocity', value);
         return value;
     }
+
 
 }

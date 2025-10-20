@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.input.InputEvent;
 import newhaven.core.ArrayList;
 import newhaven.input.Shortcut;
@@ -84,6 +85,39 @@ class PopupMenu extends Popup {
       native.set('system_menu_id', value);
         return value;
     }
+
+	private var _idFocused: Signal;
+	public var idFocused(get, default): Signal;
+	function get_idFocused(): Signal {
+	    if (_idFocused == null) {
+	        _idFocused = Signal.createFromObject(native, 'id_focused');
+	    }
+	    return _idFocused;
+	}
+	private var _idPressed: Signal;
+	public var idPressed(get, default): Signal;
+	function get_idPressed(): Signal {
+	    if (_idPressed == null) {
+	        _idPressed = Signal.createFromObject(native, 'id_pressed');
+	    }
+	    return _idPressed;
+	}
+	private var _indexPressed: Signal;
+	public var indexPressed(get, default): Signal;
+	function get_indexPressed(): Signal {
+	    if (_indexPressed == null) {
+	        _indexPressed = Signal.createFromObject(native, 'index_pressed');
+	    }
+	    return _indexPressed;
+	}
+	private var _menuChanged: Signal;
+	public var menuChanged(get, default): Signal;
+	function get_menuChanged(): Signal {
+	    if (_menuChanged == null) {
+	        _menuChanged = Signal.createFromObject(native, 'menu_changed');
+	    }
+	    return _menuChanged;
+	}
 
   public function activateItemByEvent(event: InputEvent, ?forGlobalOnly: Bool): Bool {
       var args = new ArrayList();

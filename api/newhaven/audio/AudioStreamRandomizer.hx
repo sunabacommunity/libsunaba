@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamRandomizer extends AudioStream {
@@ -48,6 +49,7 @@ class AudioStreamRandomizer extends AudioStream {
       native.set('streams_count', value);
         return value;
     }
+
 
   public function addStream(index: Int, stream: AudioStream, ?weight: Float): Void {
       var args = new ArrayList();

@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.Material;
 import newhaven.core.Color;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 
 class PhysicalSkyMaterial extends Material {
     public function new(?_native: NativeReference) {
@@ -107,5 +108,6 @@ class PhysicalSkyMaterial extends Material {
       native.set('use_debanding', value);
         return value;
     }
+
 
 }

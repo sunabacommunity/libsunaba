@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class GradientTexture1D extends Texture2D {
     public function new(?_native: NativeReference) {
@@ -40,5 +41,6 @@ class GradientTexture1D extends Texture2D {
       native.set('width', value);
         return value;
     }
+
 
 }

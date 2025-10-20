@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 
 class OpenXRActionMap extends Resource {
     public function new(?_native: NativeReference) {
@@ -33,6 +34,7 @@ class OpenXRActionMap extends Resource {
       native.set('interaction_profiles', value);
         return value;
     }
+
 
   public function addActionSet(actionSet: OpenXRActionSet): Void {
       var args = new ArrayList();

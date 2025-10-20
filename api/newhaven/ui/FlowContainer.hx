@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class FlowContainer extends Container {
@@ -48,6 +49,7 @@ class FlowContainer extends Container {
       native.set('vertical', value);
         return value;
     }
+
 
   public function getLineCount(): Int {
       var args = new ArrayList();

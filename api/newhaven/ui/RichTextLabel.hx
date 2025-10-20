@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.Color;
 import newhaven.Texture2D;
 import newhaven.core.Rect2;
@@ -266,6 +267,39 @@ class RichTextLabel extends Control {
       native.set('visible_ratio', value);
         return value;
     }
+
+	private var _finished: Signal;
+	public var finished(get, default): Signal;
+	function get_finished(): Signal {
+	    if (_finished == null) {
+	        _finished = Signal.createFromObject(native, 'finished');
+	    }
+	    return _finished;
+	}
+	private var _metaClicked: Signal;
+	public var metaClicked(get, default): Signal;
+	function get_metaClicked(): Signal {
+	    if (_metaClicked == null) {
+	        _metaClicked = Signal.createFromObject(native, 'meta_clicked');
+	    }
+	    return _metaClicked;
+	}
+	private var _metaHoverEnded: Signal;
+	public var metaHoverEnded(get, default): Signal;
+	function get_metaHoverEnded(): Signal {
+	    if (_metaHoverEnded == null) {
+	        _metaHoverEnded = Signal.createFromObject(native, 'meta_hover_ended');
+	    }
+	    return _metaHoverEnded;
+	}
+	private var _metaHoverStarted: Signal;
+	public var metaHoverStarted(get, default): Signal;
+	function get_metaHoverStarted(): Signal {
+	    if (_metaHoverStarted == null) {
+	        _metaHoverStarted = Signal.createFromObject(native, 'meta_hover_started');
+	    }
+	    return _metaHoverStarted;
+	}
 
   public function addHr(?width: Int, ?height: Int, ?color: Color, ?alignment: Int, ?widthInPercent: Bool, ?heightInPercent: Bool): Void {
       var args = new ArrayList();

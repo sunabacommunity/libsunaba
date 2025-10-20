@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class Slider extends Range {
     public function new(?_native: NativeObject) {
@@ -55,5 +56,22 @@ class Slider extends Range {
       native.set('ticks_position', value);
         return value;
     }
+
+	private var _dragEnded: Signal;
+	public var dragEnded(get, default): Signal;
+	function get_dragEnded(): Signal {
+	    if (_dragEnded == null) {
+	        _dragEnded = Signal.createFromObject(native, 'drag_ended');
+	    }
+	    return _dragEnded;
+	}
+	private var _dragStarted: Signal;
+	public var dragStarted(get, default): Signal;
+	function get_dragStarted(): Signal {
+	    if (_dragStarted == null) {
+	        _dragStarted = Signal.createFromObject(native, 'drag_started');
+	    }
+	    return _dragStarted;
+	}
 
 }

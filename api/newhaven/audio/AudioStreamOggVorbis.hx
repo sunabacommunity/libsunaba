@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.OggPacketSequence;
+import newhaven.core.Signal;
 import newhaven.core.ByteArray;
 import newhaven.core.ArrayList;
 
@@ -67,6 +68,7 @@ class AudioStreamOggVorbis extends AudioStream {
       native.set('packet_sequence', value.native);
         return value;
     }
+
 
   public static function loadFromBuffer(streamData: ByteArray): AudioStreamOggVorbis {
       var args = new ArrayList();

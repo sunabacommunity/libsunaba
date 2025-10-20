@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.Material;
+import newhaven.core.Signal;
 
 class Sky extends Resource {
     public function new(?_native: NativeReference) {
@@ -42,5 +43,6 @@ class Sky extends Resource {
       native.set('sky_material', value.native);
         return value;
     }
+
 
 }

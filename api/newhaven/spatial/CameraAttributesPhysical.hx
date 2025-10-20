@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class CameraAttributesPhysical extends CameraAttributes {
@@ -80,6 +81,7 @@ class CameraAttributesPhysical extends CameraAttributes {
       native.set('frustum_near', value);
         return value;
     }
+
 
   public function getFov(): Float {
       var args = new ArrayList();

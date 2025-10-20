@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.ByteArray;
 
@@ -16,6 +17,7 @@ class ENetPacketPeer extends PacketPeer {
         }
         native = _native;
     }
+
 
 
   public function getChannels(): Int {

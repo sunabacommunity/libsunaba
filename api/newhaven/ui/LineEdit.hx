@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Texture2D;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 import newhaven.desktop.PopupMenu;
 
 class LineEdit extends Control {
@@ -291,6 +292,39 @@ class LineEdit extends Control {
       native.set('virtual_keyboard_type', value);
         return value;
     }
+
+	private var _editingToggled: Signal;
+	public var editingToggled(get, default): Signal;
+	function get_editingToggled(): Signal {
+	    if (_editingToggled == null) {
+	        _editingToggled = Signal.createFromObject(native, 'editing_toggled');
+	    }
+	    return _editingToggled;
+	}
+	private var _textChangeRejected: Signal;
+	public var textChangeRejected(get, default): Signal;
+	function get_textChangeRejected(): Signal {
+	    if (_textChangeRejected == null) {
+	        _textChangeRejected = Signal.createFromObject(native, 'text_change_rejected');
+	    }
+	    return _textChangeRejected;
+	}
+	private var _textChanged: Signal;
+	public var textChanged(get, default): Signal;
+	function get_textChanged(): Signal {
+	    if (_textChanged == null) {
+	        _textChanged = Signal.createFromObject(native, 'text_changed');
+	    }
+	    return _textChanged;
+	}
+	private var _textSubmitted: Signal;
+	public var textSubmitted(get, default): Signal;
+	function get_textSubmitted(): Signal {
+	    if (_textSubmitted == null) {
+	        _textSubmitted = Signal.createFromObject(native, 'text_submitted');
+	    }
+	    return _textSubmitted;
+	}
 
   public function applyIme(): Void {
       var args = new ArrayList();

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class SkeletonProfileHumanoid extends SkeletonProfile {
     public function new(?_native: NativeReference) {
@@ -14,6 +15,7 @@ class SkeletonProfileHumanoid extends SkeletonProfile {
         }
         native = _native;
     }
+
 
 
 }

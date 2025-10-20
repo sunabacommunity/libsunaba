@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AnimationLibrary extends Resource {
@@ -17,6 +18,39 @@ class AnimationLibrary extends Resource {
         native = _native;
     }
 
+
+	private var _animationAdded: Signal;
+	public var animationAdded(get, default): Signal;
+	function get_animationAdded(): Signal {
+	    if (_animationAdded == null) {
+	        _animationAdded = Signal.createFromReference(native, 'animation_added');
+	    }
+	    return _animationAdded;
+	}
+	private var _animationChanged: Signal;
+	public var animationChanged(get, default): Signal;
+	function get_animationChanged(): Signal {
+	    if (_animationChanged == null) {
+	        _animationChanged = Signal.createFromReference(native, 'animation_changed');
+	    }
+	    return _animationChanged;
+	}
+	private var _animationRemoved: Signal;
+	public var animationRemoved(get, default): Signal;
+	function get_animationRemoved(): Signal {
+	    if (_animationRemoved == null) {
+	        _animationRemoved = Signal.createFromReference(native, 'animation_removed');
+	    }
+	    return _animationRemoved;
+	}
+	private var _animationRenamed: Signal;
+	public var animationRenamed(get, default): Signal;
+	function get_animationRenamed(): Signal {
+	    if (_animationRenamed == null) {
+	        _animationRenamed = Signal.createFromReference(native, 'animation_renamed');
+	    }
+	    return _animationRenamed;
+	}
 
   public function addAnimation(name: String, animation: Animation): Int {
       var args = new ArrayList();

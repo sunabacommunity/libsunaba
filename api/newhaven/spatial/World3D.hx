@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.Environment;
+import newhaven.core.Signal;
 
 class World3D extends Resource {
     public function new(?_native: NativeReference) {
@@ -68,5 +69,6 @@ class World3D extends Resource {
       native.set('space', value);
         return value;
     }
+
 
 }

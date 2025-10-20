@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamPlaybackInteractive extends AudioStreamPlayback {
@@ -15,6 +16,7 @@ class AudioStreamPlaybackInteractive extends AudioStreamPlayback {
         }
         native = _native;
     }
+
 
 
   public function getCurrentClipIndex(): Int {

@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 
@@ -26,6 +27,7 @@ class VisualShader extends Shader {
       native.set('graph_offset', value);
         return value;
     }
+
 
   public function addNode(type: Int, node: Variant, position: Vector2, id: Int): Void {
       var args = new ArrayList();

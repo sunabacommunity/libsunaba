@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2i;
+import newhaven.core.Signal;
 
 class PlaceholderTextureLayered extends TextureLayered {
     public function new(?_native: NativeReference) {
@@ -32,5 +33,6 @@ class PlaceholderTextureLayered extends TextureLayered {
       native.set('size', value);
         return value;
     }
+
 
 }

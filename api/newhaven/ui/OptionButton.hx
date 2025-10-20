@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.Texture2D;
 import newhaven.core.ArrayList;
 import newhaven.desktop.PopupMenu;
@@ -50,6 +51,23 @@ class OptionButton extends Button {
       native.set('selected', value);
         return value;
     }
+
+	private var _itemFocused: Signal;
+	public var itemFocused(get, default): Signal;
+	function get_itemFocused(): Signal {
+	    if (_itemFocused == null) {
+	        _itemFocused = Signal.createFromObject(native, 'item_focused');
+	    }
+	    return _itemFocused;
+	}
+	private var _itemSelected: Signal;
+	public var itemSelected(get, default): Signal;
+	function get_itemSelected(): Signal {
+	    if (_itemSelected == null) {
+	        _itemSelected = Signal.createFromObject(native, 'item_selected');
+	    }
+	    return _itemSelected;
+	}
 
   public function addIconItem(texture: Texture2D, label: String, ?id: Int): Void {
       var args = new ArrayList();

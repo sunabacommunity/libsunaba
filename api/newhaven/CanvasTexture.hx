@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 
 class CanvasTexture extends Texture2D {
     public function new(?_native: NativeReference) {
@@ -75,5 +76,6 @@ class CanvasTexture extends Texture2D {
       native.set('texture_repeat', value);
         return value;
     }
+
 
 }

@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class Skin extends Resource {
@@ -16,6 +17,7 @@ class Skin extends Resource {
         }
         native = _native;
     }
+
 
 
   public function addBind(bone: Int, pose: Variant): Void {

@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Rect2;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.TypedArray;
 import newhaven.core.ArrayList;
@@ -100,6 +101,7 @@ class NavigationPolygon extends Resource {
       native.set('source_geometry_mode', value);
         return value;
     }
+
 
   public function addOutline(outline: TypedArray<Vector2>): Void {
       var args = new ArrayList();

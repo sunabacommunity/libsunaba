@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class LabelSettings extends Resource {
@@ -115,6 +116,7 @@ class LabelSettings extends Resource {
       native.set('stacked_shadow_count', value);
         return value;
     }
+
 
   public function addStackedOutline(?index: Int): Void {
       var args = new ArrayList();

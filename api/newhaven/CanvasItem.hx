@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.core.Vector2;
@@ -145,6 +146,39 @@ class CanvasItem extends Node {
       native.set('z_index', value);
         return value;
     }
+
+	private var _draw: Signal;
+	public var draw(get, default): Signal;
+	function get_draw(): Signal {
+	    if (_draw == null) {
+	        _draw = Signal.createFromObject(native, 'draw');
+	    }
+	    return _draw;
+	}
+	private var _hidden: Signal;
+	public var hidden(get, default): Signal;
+	function get_hidden(): Signal {
+	    if (_hidden == null) {
+	        _hidden = Signal.createFromObject(native, 'hidden');
+	    }
+	    return _hidden;
+	}
+	private var _itemRectChanged: Signal;
+	public var itemRectChanged(get, default): Signal;
+	function get_itemRectChanged(): Signal {
+	    if (_itemRectChanged == null) {
+	        _itemRectChanged = Signal.createFromObject(native, 'item_rect_changed');
+	    }
+	    return _itemRectChanged;
+	}
+	private var _visibilityChanged: Signal;
+	public var visibilityChanged(get, default): Signal;
+	function get_visibilityChanged(): Signal {
+	    if (_visibilityChanged == null) {
+	        _visibilityChanged = Signal.createFromObject(native, 'visibility_changed');
+	    }
+	    return _visibilityChanged;
+	}
 
   public function drawAnimationSlice(animationLength: Float, sliceBegin: Float, sliceEnd: Float, ?offset: Float): Void {
       var args = new ArrayList();

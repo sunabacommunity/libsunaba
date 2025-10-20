@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class PacketPeerDTLS extends PacketPeer {
@@ -15,6 +16,7 @@ class PacketPeerDTLS extends PacketPeer {
         }
         native = _native;
     }
+
 
 
   public function connectToPeer(packetPeer: PacketPeerUDP, hostname: String, ?clientOptions: Variant): Int {

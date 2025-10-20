@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AnimatedTexture extends Texture2D {
@@ -56,6 +57,7 @@ class AnimatedTexture extends Texture2D {
       native.set('speed_scale', value);
         return value;
     }
+
 
   public function getFrameDuration(frame: Int): Float {
       var args = new ArrayList();

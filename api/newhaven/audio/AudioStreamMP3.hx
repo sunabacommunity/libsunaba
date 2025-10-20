@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ByteArray;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamMP3 extends AudioStream {
@@ -65,6 +66,7 @@ class AudioStreamMP3 extends AudioStream {
       native.set('loop_offset', value);
         return value;
     }
+
 
   public static function loadFromBuffer(streamData: ByteArray): AudioStreamMP3 {
       var args = new ArrayList();

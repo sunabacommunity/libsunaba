@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class CanvasItemMaterial extends Material {
     public function new(?_native: NativeReference) {
@@ -63,5 +64,6 @@ class CanvasItemMaterial extends Material {
       native.set('particles_animation', value);
         return value;
     }
+
 
 }

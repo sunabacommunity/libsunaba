@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class ENetMultiplayerPeer extends MultiplayerPeer {
@@ -25,6 +26,7 @@ class ENetMultiplayerPeer extends MultiplayerPeer {
       native.set('host', value.native);
         return value;
     }
+
 
   public function addMeshPeer(peerId: Int, host: ENetConnection): Int {
       var args = new ArrayList();

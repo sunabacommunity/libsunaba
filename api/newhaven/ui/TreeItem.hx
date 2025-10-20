@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.Texture2D;
 import newhaven.core.ArrayList;
 import newhaven.core.Color;
@@ -53,6 +54,7 @@ class TreeItem extends Object {
       native.set('visible', value);
         return value;
     }
+
 
   public function addButton(column: Int, button: Texture2D, ?id: Int, ?disabled: Bool, ?tooltipText: String, ?description: String): Void {
       var args = new ArrayList();

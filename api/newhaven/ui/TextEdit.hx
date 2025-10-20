@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.TypedArray;
 import newhaven.core.Color;
@@ -400,6 +401,63 @@ class TextEdit extends Control {
       native.set('wrap_mode', value);
         return value;
     }
+
+	private var _caretChanged: Signal;
+	public var caretChanged(get, default): Signal;
+	function get_caretChanged(): Signal {
+	    if (_caretChanged == null) {
+	        _caretChanged = Signal.createFromObject(native, 'caret_changed');
+	    }
+	    return _caretChanged;
+	}
+	private var _gutterAdded: Signal;
+	public var gutterAdded(get, default): Signal;
+	function get_gutterAdded(): Signal {
+	    if (_gutterAdded == null) {
+	        _gutterAdded = Signal.createFromObject(native, 'gutter_added');
+	    }
+	    return _gutterAdded;
+	}
+	private var _gutterClicked: Signal;
+	public var gutterClicked(get, default): Signal;
+	function get_gutterClicked(): Signal {
+	    if (_gutterClicked == null) {
+	        _gutterClicked = Signal.createFromObject(native, 'gutter_clicked');
+	    }
+	    return _gutterClicked;
+	}
+	private var _gutterRemoved: Signal;
+	public var gutterRemoved(get, default): Signal;
+	function get_gutterRemoved(): Signal {
+	    if (_gutterRemoved == null) {
+	        _gutterRemoved = Signal.createFromObject(native, 'gutter_removed');
+	    }
+	    return _gutterRemoved;
+	}
+	private var _linesEditedFrom: Signal;
+	public var linesEditedFrom(get, default): Signal;
+	function get_linesEditedFrom(): Signal {
+	    if (_linesEditedFrom == null) {
+	        _linesEditedFrom = Signal.createFromObject(native, 'lines_edited_from');
+	    }
+	    return _linesEditedFrom;
+	}
+	private var _textChanged: Signal;
+	public var textChanged(get, default): Signal;
+	function get_textChanged(): Signal {
+	    if (_textChanged == null) {
+	        _textChanged = Signal.createFromObject(native, 'text_changed');
+	    }
+	    return _textChanged;
+	}
+	private var _textSet: Signal;
+	public var textSet(get, default): Signal;
+	function get_textSet(): Signal {
+	    if (_textSet == null) {
+	        _textSet = Signal.createFromObject(native, 'text_set');
+	    }
+	    return _textSet;
+	}
 
   public function addCaret(line: Int, column: Int): Int {
       var args = new ArrayList();

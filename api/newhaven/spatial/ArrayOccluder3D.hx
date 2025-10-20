@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.TypedArray;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class ArrayOccluder3D extends Occluder3D {
@@ -34,6 +35,7 @@ class ArrayOccluder3D extends Occluder3D {
       native.set('vertices', value);
         return value;
     }
+
 
   public function setArrays(vertices: TypedArray<Vector3>, indices: TypedArray<Int>): Void {
       var args = new ArrayList();

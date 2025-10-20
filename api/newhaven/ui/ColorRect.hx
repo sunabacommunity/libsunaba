@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 
 class ColorRect extends Control {
     public function new(?_native: NativeObject) {
@@ -24,5 +25,6 @@ class ColorRect extends Control {
       native.set('color', value);
         return value;
     }
+
 
 }

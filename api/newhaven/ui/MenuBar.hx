@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.PopupMenu;
 
@@ -65,6 +66,7 @@ class MenuBar extends Control {
       native.set('text_direction', value);
         return value;
     }
+
 
   public function getMenuCount(): Int {
       var args = new ArrayList();

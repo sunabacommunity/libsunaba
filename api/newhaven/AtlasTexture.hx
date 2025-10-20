@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Rect2;
+import newhaven.core.Signal;
 
 class AtlasTexture extends Texture2D {
     public function new(?_native: NativeReference) {
@@ -49,5 +50,6 @@ class AtlasTexture extends Texture2D {
       native.set('region', value);
         return value;
     }
+
 
 }

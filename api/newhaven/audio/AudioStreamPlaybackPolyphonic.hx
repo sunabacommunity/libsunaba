@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamPlaybackPolyphonic extends AudioStreamPlayback {
@@ -15,6 +16,7 @@ class AudioStreamPlaybackPolyphonic extends AudioStreamPlayback {
         }
         native = _native;
     }
+
 
 
   public function isStreamPlaying(stream: Int): Bool {

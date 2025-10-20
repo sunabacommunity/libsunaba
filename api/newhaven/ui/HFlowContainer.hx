@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class HFlowContainer extends FlowContainer {
     public function new(?_native: NativeObject) {
@@ -14,6 +15,7 @@ class HFlowContainer extends FlowContainer {
         }
         native = _native;
     }
+
 
 
 }

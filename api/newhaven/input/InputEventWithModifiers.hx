@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class InputEventWithModifiers extends InputEventFromWindow {
@@ -56,6 +57,7 @@ class InputEventWithModifiers extends InputEventFromWindow {
       native.set('shift_pressed', value);
         return value;
     }
+
 
   public function getModifiersMask(): Int {
       var args = new ArrayList();

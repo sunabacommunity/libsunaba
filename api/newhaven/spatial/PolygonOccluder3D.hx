@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 
 class PolygonOccluder3D extends Occluder3D {
     public function new(?_native: NativeReference) {
@@ -25,5 +26,6 @@ class PolygonOccluder3D extends Occluder3D {
       native.set('polygon', value);
         return value;
     }
+
 
 }

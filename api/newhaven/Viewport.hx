@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.spatial.World3D;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.core.Rect2;
@@ -391,6 +392,23 @@ class Viewport extends Node {
       native.set('world_3d', value.native);
         return value;
     }
+
+	private var _guiFocusChanged: Signal;
+	public var guiFocusChanged(get, default): Signal;
+	function get_guiFocusChanged(): Signal {
+	    if (_guiFocusChanged == null) {
+	        _guiFocusChanged = Signal.createFromObject(native, 'gui_focus_changed');
+	    }
+	    return _guiFocusChanged;
+	}
+	private var _sizeChanged: Signal;
+	public var sizeChanged(get, default): Signal;
+	function get_sizeChanged(): Signal {
+	    if (_sizeChanged == null) {
+	        _sizeChanged = Signal.createFromObject(native, 'size_changed');
+	    }
+	    return _sizeChanged;
+	}
 
   public function findWorld3d(): World3D {
       var args = new ArrayList();

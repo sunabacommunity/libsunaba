@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class Material extends Resource {
@@ -33,6 +34,7 @@ class Material extends Resource {
       native.set('render_priority', value);
         return value;
     }
+
 
   public function createPlaceholder(): Resource {
       var args = new ArrayList();

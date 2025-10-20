@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioStreamPlaybackPlaylist extends AudioStreamPlayback {
     public function new(?_native: NativeReference) {
@@ -14,6 +15,7 @@ class AudioStreamPlaybackPlaylist extends AudioStreamPlayback {
         }
         native = _native;
     }
+
 
 
 }

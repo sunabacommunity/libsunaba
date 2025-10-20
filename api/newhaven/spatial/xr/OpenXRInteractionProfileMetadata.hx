@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class OpenXRInteractionProfileMetadata extends Object {
@@ -15,6 +16,7 @@ class OpenXRInteractionProfileMetadata extends Object {
         }
         native = _native;
     }
+
 
 
   public function registerInteractionProfile(displayName: String, openxrPath: String, openxrExtensionName: String): Void {

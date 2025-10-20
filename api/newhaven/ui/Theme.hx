@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.Font;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Color;
 import newhaven.core.TypedArray;
@@ -46,6 +47,7 @@ class Theme extends Resource {
       native.set('default_font_size', value);
         return value;
     }
+
 
   public function addType(themeType: String): Void {
       var args = new ArrayList();

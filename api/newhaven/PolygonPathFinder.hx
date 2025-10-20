@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
@@ -19,6 +20,7 @@ class PolygonPathFinder extends Resource {
         }
         native = _native;
     }
+
 
 
   public function findPath(from: Vector2, to: Vector2): TypedArray<Vector2> {

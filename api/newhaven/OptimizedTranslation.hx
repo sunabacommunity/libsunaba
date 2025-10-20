@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class OptimizedTranslation extends Translation {
@@ -15,6 +16,7 @@ class OptimizedTranslation extends Translation {
         }
         native = _native;
     }
+
 
 
   public function generate(from: Translation): Void {

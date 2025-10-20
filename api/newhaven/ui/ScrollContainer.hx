@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class ScrollContainer extends Container {
@@ -88,6 +89,23 @@ class ScrollContainer extends Container {
       native.set('vertical_scroll_mode', value);
         return value;
     }
+
+	private var _scrollEnded: Signal;
+	public var scrollEnded(get, default): Signal;
+	function get_scrollEnded(): Signal {
+	    if (_scrollEnded == null) {
+	        _scrollEnded = Signal.createFromObject(native, 'scroll_ended');
+	    }
+	    return _scrollEnded;
+	}
+	private var _scrollStarted: Signal;
+	public var scrollStarted(get, default): Signal;
+	function get_scrollStarted(): Signal {
+	    if (_scrollStarted == null) {
+	        _scrollStarted = Signal.createFromObject(native, 'scroll_started');
+	    }
+	    return _scrollStarted;
+	}
 
   public function ensureControlVisible(control: Control): Void {
       var args = new ArrayList();

@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.BitMap;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 
 class TextureButton extends BaseButton {
     public function new(?_native: NativeObject) {
@@ -103,5 +104,6 @@ class TextureButton extends BaseButton {
       native.set('texture_pressed', value.native);
         return value;
     }
+
 
 }

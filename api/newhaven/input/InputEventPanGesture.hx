@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class InputEventPanGesture extends InputEventGesture {
     public function new(?_native: NativeReference) {
@@ -24,5 +25,6 @@ class InputEventPanGesture extends InputEventGesture {
       native.set('delta', value);
         return value;
     }
+
 
 }

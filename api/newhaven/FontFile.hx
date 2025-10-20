@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ByteArray;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2i;
 import newhaven.core.Vector2;
@@ -198,6 +199,7 @@ class FontFile extends Font {
       native.set('subpixel_positioning', value);
         return value;
     }
+
 
   public function clearCache(): Void {
       var args = new ArrayList();

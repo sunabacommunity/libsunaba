@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class FoldableContainer extends Container {
@@ -72,6 +73,15 @@ class FoldableContainer extends Container {
       native.set('title_text_overrun_behavior', value);
         return value;
     }
+
+	private var _foldingChanged: Signal;
+	public var foldingChanged(get, default): Signal;
+	function get_foldingChanged(): Signal {
+	    if (_foldingChanged == null) {
+	        _foldingChanged = Signal.createFromObject(native, 'folding_changed');
+	    }
+	    return _foldingChanged;
+	}
 
   public function addTitleBarControl(control: Control): Void {
       var args = new ArrayList();

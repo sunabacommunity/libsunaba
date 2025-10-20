@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.ByteArray;
 
@@ -25,6 +26,7 @@ class PacketPeer extends Reference {
       native.set('encode_buffer_max_size', value);
         return value;
     }
+
 
   public function getAvailablePacketCount(): Int {
       var args = new ArrayList();

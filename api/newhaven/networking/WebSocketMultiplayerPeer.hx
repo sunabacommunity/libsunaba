@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class WebSocketMultiplayerPeer extends MultiplayerPeer {
@@ -65,6 +66,7 @@ class WebSocketMultiplayerPeer extends MultiplayerPeer {
       native.set('supported_protocols', value);
         return value;
     }
+
 
   public function createClient(url: String, ?tlsClientOptions: Variant): Int {
       var args = new ArrayList();

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 
@@ -33,6 +34,7 @@ class AudioStreamInteractive extends AudioStream {
       native.set('initial_clip', value);
         return value;
     }
+
 
   public function addTransition(fromClip: Int, toClip: Int, fromTime: Int, toTime: Int, fadeMode: Int, fadeBeats: Float, ?useFillerClip: Bool, ?fillerClip: Int, ?holdPrevious: Bool): Void {
       var args = new ArrayList();

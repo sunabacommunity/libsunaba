@@ -10,6 +10,7 @@ import newhaven.core.Vector2i;
 import newhaven.core.Vector2;
 import newhaven.core.TypedArray;
 import newhaven.ui.Theme;
+import newhaven.core.Signal;
 import newhaven.core.Color;
 import newhaven.core.ArrayList;
 import newhaven.Font;
@@ -341,6 +342,119 @@ class Window extends Viewport {
       native.set('wrap_controls', value);
         return value;
     }
+
+	private var _aboutToPopup: Signal;
+	public var aboutToPopup(get, default): Signal;
+	function get_aboutToPopup(): Signal {
+	    if (_aboutToPopup == null) {
+	        _aboutToPopup = Signal.createFromObject(native, 'about_to_popup');
+	    }
+	    return _aboutToPopup;
+	}
+	private var _closeRequested: Signal;
+	public var closeRequested(get, default): Signal;
+	function get_closeRequested(): Signal {
+	    if (_closeRequested == null) {
+	        _closeRequested = Signal.createFromObject(native, 'close_requested');
+	    }
+	    return _closeRequested;
+	}
+	private var _dpiChanged: Signal;
+	public var dpiChanged(get, default): Signal;
+	function get_dpiChanged(): Signal {
+	    if (_dpiChanged == null) {
+	        _dpiChanged = Signal.createFromObject(native, 'dpi_changed');
+	    }
+	    return _dpiChanged;
+	}
+	private var _filesDropped: Signal;
+	public var filesDropped(get, default): Signal;
+	function get_filesDropped(): Signal {
+	    if (_filesDropped == null) {
+	        _filesDropped = Signal.createFromObject(native, 'files_dropped');
+	    }
+	    return _filesDropped;
+	}
+	private var _focusEntered: Signal;
+	public var focusEntered(get, default): Signal;
+	function get_focusEntered(): Signal {
+	    if (_focusEntered == null) {
+	        _focusEntered = Signal.createFromObject(native, 'focus_entered');
+	    }
+	    return _focusEntered;
+	}
+	private var _focusExited: Signal;
+	public var focusExited(get, default): Signal;
+	function get_focusExited(): Signal {
+	    if (_focusExited == null) {
+	        _focusExited = Signal.createFromObject(native, 'focus_exited');
+	    }
+	    return _focusExited;
+	}
+	private var _goBackRequested: Signal;
+	public var goBackRequested(get, default): Signal;
+	function get_goBackRequested(): Signal {
+	    if (_goBackRequested == null) {
+	        _goBackRequested = Signal.createFromObject(native, 'go_back_requested');
+	    }
+	    return _goBackRequested;
+	}
+	private var _mouseEntered: Signal;
+	public var mouseEntered(get, default): Signal;
+	function get_mouseEntered(): Signal {
+	    if (_mouseEntered == null) {
+	        _mouseEntered = Signal.createFromObject(native, 'mouse_entered');
+	    }
+	    return _mouseEntered;
+	}
+	private var _mouseExited: Signal;
+	public var mouseExited(get, default): Signal;
+	function get_mouseExited(): Signal {
+	    if (_mouseExited == null) {
+	        _mouseExited = Signal.createFromObject(native, 'mouse_exited');
+	    }
+	    return _mouseExited;
+	}
+	private var _themeChanged: Signal;
+	public var themeChanged(get, default): Signal;
+	function get_themeChanged(): Signal {
+	    if (_themeChanged == null) {
+	        _themeChanged = Signal.createFromObject(native, 'theme_changed');
+	    }
+	    return _themeChanged;
+	}
+	private var _titleChanged: Signal;
+	public var titleChanged(get, default): Signal;
+	function get_titleChanged(): Signal {
+	    if (_titleChanged == null) {
+	        _titleChanged = Signal.createFromObject(native, 'title_changed');
+	    }
+	    return _titleChanged;
+	}
+	private var _titlebarChanged: Signal;
+	public var titlebarChanged(get, default): Signal;
+	function get_titlebarChanged(): Signal {
+	    if (_titlebarChanged == null) {
+	        _titlebarChanged = Signal.createFromObject(native, 'titlebar_changed');
+	    }
+	    return _titlebarChanged;
+	}
+	private var _visibilityChanged: Signal;
+	public var visibilityChanged(get, default): Signal;
+	function get_visibilityChanged(): Signal {
+	    if (_visibilityChanged == null) {
+	        _visibilityChanged = Signal.createFromObject(native, 'visibility_changed');
+	    }
+	    return _visibilityChanged;
+	}
+	private var _windowInput: Signal;
+	public var windowInput(get, default): Signal;
+	function get_windowInput(): Signal {
+	    if (_windowInput == null) {
+	        _windowInput = Signal.createFromObject(native, 'window_input');
+	    }
+	    return _windowInput;
+	}
 
   public function addThemeColorOverride(name: String, color: Color): Void {
       var args = new ArrayList();

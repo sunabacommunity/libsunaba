@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 
@@ -26,6 +27,47 @@ class MultiplayerAPI extends Reference {
       native.set('multiplayer_peer', value.native);
         return value;
     }
+
+	private var _connectedToServer: Signal;
+	public var connectedToServer(get, default): Signal;
+	function get_connectedToServer(): Signal {
+	    if (_connectedToServer == null) {
+	        _connectedToServer = Signal.createFromReference(native, 'connected_to_server');
+	    }
+	    return _connectedToServer;
+	}
+	private var _connectionFailed: Signal;
+	public var connectionFailed(get, default): Signal;
+	function get_connectionFailed(): Signal {
+	    if (_connectionFailed == null) {
+	        _connectionFailed = Signal.createFromReference(native, 'connection_failed');
+	    }
+	    return _connectionFailed;
+	}
+	private var _peerConnected: Signal;
+	public var peerConnected(get, default): Signal;
+	function get_peerConnected(): Signal {
+	    if (_peerConnected == null) {
+	        _peerConnected = Signal.createFromReference(native, 'peer_connected');
+	    }
+	    return _peerConnected;
+	}
+	private var _peerDisconnected: Signal;
+	public var peerDisconnected(get, default): Signal;
+	function get_peerDisconnected(): Signal {
+	    if (_peerDisconnected == null) {
+	        _peerDisconnected = Signal.createFromReference(native, 'peer_disconnected');
+	    }
+	    return _peerDisconnected;
+	}
+	private var _serverDisconnected: Signal;
+	public var serverDisconnected(get, default): Signal;
+	function get_serverDisconnected(): Signal {
+	    if (_serverDisconnected == null) {
+	        _serverDisconnected = Signal.createFromReference(native, 'server_disconnected');
+	    }
+	    return _serverDisconnected;
+	}
 
   public static function createDefaultInterface(): MultiplayerAPI {
       var args = new ArrayList();

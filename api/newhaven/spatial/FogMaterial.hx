@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Material;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 
 class FogMaterial extends Material {
     public function new(?_native: NativeReference) {
@@ -66,5 +67,6 @@ class FogMaterial extends Material {
       native.set('height_falloff', value);
         return value;
     }
+
 
 }

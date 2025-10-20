@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2i;
+import newhaven.core.Signal;
 import newhaven.Texture2D;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
@@ -150,6 +151,47 @@ class ItemList extends Control {
       native.set('wraparound_items', value);
         return value;
     }
+
+	private var _emptyClicked: Signal;
+	public var emptyClicked(get, default): Signal;
+	function get_emptyClicked(): Signal {
+	    if (_emptyClicked == null) {
+	        _emptyClicked = Signal.createFromObject(native, 'empty_clicked');
+	    }
+	    return _emptyClicked;
+	}
+	private var _itemActivated: Signal;
+	public var itemActivated(get, default): Signal;
+	function get_itemActivated(): Signal {
+	    if (_itemActivated == null) {
+	        _itemActivated = Signal.createFromObject(native, 'item_activated');
+	    }
+	    return _itemActivated;
+	}
+	private var _itemClicked: Signal;
+	public var itemClicked(get, default): Signal;
+	function get_itemClicked(): Signal {
+	    if (_itemClicked == null) {
+	        _itemClicked = Signal.createFromObject(native, 'item_clicked');
+	    }
+	    return _itemClicked;
+	}
+	private var _itemSelected: Signal;
+	public var itemSelected(get, default): Signal;
+	function get_itemSelected(): Signal {
+	    if (_itemSelected == null) {
+	        _itemSelected = Signal.createFromObject(native, 'item_selected');
+	    }
+	    return _itemSelected;
+	}
+	private var _multiSelected: Signal;
+	public var multiSelected(get, default): Signal;
+	function get_multiSelected(): Signal {
+	    if (_multiSelected == null) {
+	        _multiSelected = Signal.createFromObject(native, 'multi_selected');
+	    }
+	    return _multiSelected;
+	}
 
   public function addIconItem(icon: Texture2D, ?selectable: Bool): Int {
       var args = new ArrayList();

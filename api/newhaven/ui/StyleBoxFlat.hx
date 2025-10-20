@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class StyleBoxFlat extends StyleBox {
@@ -202,6 +203,7 @@ class StyleBoxFlat extends StyleBox {
       native.set('skew', value);
         return value;
     }
+
 
   public function getBorderWidth(margin: Int): Int {
       var args = new ArrayList();

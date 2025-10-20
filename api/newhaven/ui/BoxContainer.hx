@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class BoxContainer extends Container {
@@ -32,6 +33,7 @@ class BoxContainer extends Container {
       native.set('vertical', value);
         return value;
     }
+
 
   public function addSpacer(begin: Bool): Control {
       var args = new ArrayList();

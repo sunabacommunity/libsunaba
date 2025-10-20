@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2i;
+import newhaven.core.Signal;
 
 class SubViewport extends Viewport {
     public function new(?_native: NativeObject) {
@@ -56,5 +57,6 @@ class SubViewport extends Viewport {
       native.set('size_2d_override_stretch', value);
         return value;
     }
+
 
 }

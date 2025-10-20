@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioEffectChorus extends AudioEffect {
@@ -232,6 +233,7 @@ class AudioEffectChorus extends AudioEffect {
       native.set('wet', value);
         return value;
     }
+
 
   public function getVoiceCutoffHz(voiceIdx: Int): Float {
       var args = new ArrayList();

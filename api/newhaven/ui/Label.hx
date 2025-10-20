@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.LabelSettings;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.Rect2;
 
 class Label extends Control {
@@ -188,6 +189,7 @@ class Label extends Control {
       native.set('visible_ratio', value);
         return value;
     }
+
 
   public function getCharacterBounds(pos: Int): Rect2 {
       var args = new ArrayList();

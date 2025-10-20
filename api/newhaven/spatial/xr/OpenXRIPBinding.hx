@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 
 class OpenXRIPBinding extends Resource {
     public function new(?_native: NativeReference) {
@@ -51,6 +52,7 @@ class OpenXRIPBinding extends Resource {
       native.set('paths', value);
         return value;
     }
+
 
   public function addPath(path: String): Void {
       var args = new ArrayList();

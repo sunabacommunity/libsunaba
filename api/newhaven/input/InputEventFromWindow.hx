@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class InputEventFromWindow extends InputEvent {
     public function new(?_native: NativeReference) {
@@ -23,5 +24,6 @@ class InputEventFromWindow extends InputEvent {
       native.set('window_id', value);
         return value;
     }
+
 
 }

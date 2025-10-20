@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 
 class CameraAttributes extends Resource {
     public function new(?_native: NativeReference) {
@@ -56,5 +57,6 @@ class CameraAttributes extends Resource {
       native.set('exposure_sensitivity', value);
         return value;
     }
+
 
 }

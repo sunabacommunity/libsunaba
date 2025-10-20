@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class InputEventJoypadButton extends InputEvent {
     public function new(?_native: NativeReference) {
@@ -39,5 +40,6 @@ class InputEventJoypadButton extends InputEvent {
       native.set('pressure', value);
         return value;
     }
+
 
 }

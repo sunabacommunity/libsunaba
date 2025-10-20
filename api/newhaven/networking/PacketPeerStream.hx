@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class PacketPeerStream extends PacketPeer {
     public function new(?_native: NativeReference) {
@@ -31,5 +32,6 @@ class PacketPeerStream extends PacketPeer {
       native.set('output_buffer_max_size', value);
         return value;
     }
+
 
 }

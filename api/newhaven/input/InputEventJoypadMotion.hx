@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class InputEventJoypadMotion extends InputEvent {
     public function new(?_native: NativeReference) {
@@ -31,5 +32,6 @@ class InputEventJoypadMotion extends InputEvent {
       native.set('axis_value', value);
         return value;
     }
+
 
 }

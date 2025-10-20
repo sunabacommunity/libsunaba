@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.PopupMenu;
 
@@ -33,6 +34,15 @@ class MenuButton extends Button {
       native.set('switch_on_hover', value);
         return value;
     }
+
+	private var _aboutToPopup: Signal;
+	public var aboutToPopup(get, default): Signal;
+	function get_aboutToPopup(): Signal {
+	    if (_aboutToPopup == null) {
+	        _aboutToPopup = Signal.createFromObject(native, 'about_to_popup');
+	    }
+	    return _aboutToPopup;
+	}
 
   public function getPopup(): PopupMenu {
       var args = new ArrayList();

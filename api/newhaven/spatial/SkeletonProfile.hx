@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.Texture2D;
@@ -51,6 +52,15 @@ class SkeletonProfile extends Resource {
       native.set('scale_base_bone', value);
         return value;
     }
+
+	private var _profileUpdated: Signal;
+	public var profileUpdated(get, default): Signal;
+	function get_profileUpdated(): Signal {
+	    if (_profileUpdated == null) {
+	        _profileUpdated = Signal.createFromReference(native, 'profile_updated');
+	    }
+	    return _profileUpdated;
+	}
 
   public function findBone(boneName: String): Int {
       var args = new ArrayList();

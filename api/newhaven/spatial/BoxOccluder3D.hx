@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 
 class BoxOccluder3D extends Occluder3D {
     public function new(?_native: NativeReference) {
@@ -24,5 +25,6 @@ class BoxOccluder3D extends Occluder3D {
       native.set('size', value);
         return value;
     }
+
 
 }

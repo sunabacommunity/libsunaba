@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectPitchShift extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -39,5 +40,6 @@ class AudioEffectPitchShift extends AudioEffect {
       native.set('pitch_scale', value);
         return value;
     }
+
 
 }

@@ -9,6 +9,7 @@ import newhaven.Material;
 import newhaven.core.Color;
 import newhaven.Texture2D;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class BaseMaterial3D extends Material {
@@ -1087,6 +1088,7 @@ class BaseMaterial3D extends Material {
       native.set('z_clip_scale', value);
         return value;
     }
+
 
   public function getFeature(feature: Int): Bool {
       var args = new ArrayList();

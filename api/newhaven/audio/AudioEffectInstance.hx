@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectInstance extends Reference {
     public function new(?_native: NativeReference) {
@@ -14,6 +15,7 @@ class AudioEffectInstance extends Reference {
         }
         native = _native;
     }
+
 
 
 }

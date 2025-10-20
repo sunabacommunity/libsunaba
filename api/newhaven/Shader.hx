@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class Shader extends Resource {
@@ -24,6 +25,7 @@ class Shader extends Resource {
       native.set('code', value);
         return value;
     }
+
 
   public function getDefaultTextureParameter(name: String, ?index: Int): Texture {
       var args = new ArrayList();

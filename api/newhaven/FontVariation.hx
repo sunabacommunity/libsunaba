@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class FontVariation extends Font {
@@ -98,6 +99,7 @@ class FontVariation extends Font {
       native.set('variation_opentype', value);
         return value;
     }
+
 
   public function setSpacing(spacing: Int, value: Int): Void {
       var args = new ArrayList();

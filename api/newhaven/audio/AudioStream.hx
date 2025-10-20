@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStream extends Resource {
@@ -17,6 +18,15 @@ class AudioStream extends Resource {
         native = _native;
     }
 
+
+	private var _parameterListChanged: Signal;
+	public var parameterListChanged(get, default): Signal;
+	function get_parameterListChanged(): Signal {
+	    if (_parameterListChanged == null) {
+	        _parameterListChanged = Signal.createFromReference(native, 'parameter_list_changed');
+	    }
+	    return _parameterListChanged;
+	}
 
   public function canBeSampled(): Bool {
       var args = new ArrayList();

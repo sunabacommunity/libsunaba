@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.Vector3;
 import newhaven.core.ByteArray;
 import newhaven.core.TypedArray;
@@ -76,6 +77,7 @@ class VoxelGIData extends Resource {
       native.set('use_two_bounces', value);
         return value;
     }
+
 
   public function allocate(toCellXform: Variant, aabb: Variant, octreeSize: Vector3, octreeCells: ByteArray, dataCells: ByteArray, distanceField: ByteArray, levelCounts: TypedArray<Int>): Void {
       var args = new ArrayList();

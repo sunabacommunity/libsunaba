@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector3i;
+import newhaven.core.Signal;
 
 class PlaceholderTexture3D extends Texture3D {
     public function new(?_native: NativeReference) {
@@ -24,5 +25,6 @@ class PlaceholderTexture3D extends Texture3D {
       native.set('size', value);
         return value;
     }
+
 
 }

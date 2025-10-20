@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class Resource extends Reference {
@@ -48,6 +49,23 @@ class Resource extends Reference {
       native.set('resource_scene_unique_id', value);
         return value;
     }
+
+	private var _changed: Signal;
+	public var changed(get, default): Signal;
+	function get_changed(): Signal {
+	    if (_changed == null) {
+	        _changed = Signal.createFromReference(native, 'changed');
+	    }
+	    return _changed;
+	}
+	private var _setupLocalToSceneRequested: Signal;
+	public var setupLocalToSceneRequested(get, default): Signal;
+	function get_setupLocalToSceneRequested(): Signal {
+	    if (_setupLocalToSceneRequested == null) {
+	        _setupLocalToSceneRequested = Signal.createFromReference(native, 'setup_local_to_scene_requested');
+	    }
+	    return _setupLocalToSceneRequested;
+	}
 
   public function duplicate(?deep: Bool): Resource {
       var args = new ArrayList();

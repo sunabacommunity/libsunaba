@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class TextureLayeredRD extends TextureLayered {
     public function new(?_native: NativeReference) {
@@ -23,5 +24,6 @@ class TextureLayeredRD extends TextureLayered {
       native.set('texture_rd_rid', value);
         return value;
     }
+
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.core.Rect2;
@@ -122,6 +123,127 @@ class Tree extends Control {
       native.set('select_mode', value);
         return value;
     }
+
+	private var _buttonClicked: Signal;
+	public var buttonClicked(get, default): Signal;
+	function get_buttonClicked(): Signal {
+	    if (_buttonClicked == null) {
+	        _buttonClicked = Signal.createFromObject(native, 'button_clicked');
+	    }
+	    return _buttonClicked;
+	}
+	private var _cellSelected: Signal;
+	public var cellSelected(get, default): Signal;
+	function get_cellSelected(): Signal {
+	    if (_cellSelected == null) {
+	        _cellSelected = Signal.createFromObject(native, 'cell_selected');
+	    }
+	    return _cellSelected;
+	}
+	private var _checkPropagatedToItem: Signal;
+	public var checkPropagatedToItem(get, default): Signal;
+	function get_checkPropagatedToItem(): Signal {
+	    if (_checkPropagatedToItem == null) {
+	        _checkPropagatedToItem = Signal.createFromObject(native, 'check_propagated_to_item');
+	    }
+	    return _checkPropagatedToItem;
+	}
+	private var _columnTitleClicked: Signal;
+	public var columnTitleClicked(get, default): Signal;
+	function get_columnTitleClicked(): Signal {
+	    if (_columnTitleClicked == null) {
+	        _columnTitleClicked = Signal.createFromObject(native, 'column_title_clicked');
+	    }
+	    return _columnTitleClicked;
+	}
+	private var _customItemClicked: Signal;
+	public var customItemClicked(get, default): Signal;
+	function get_customItemClicked(): Signal {
+	    if (_customItemClicked == null) {
+	        _customItemClicked = Signal.createFromObject(native, 'custom_item_clicked');
+	    }
+	    return _customItemClicked;
+	}
+	private var _customPopupEdited: Signal;
+	public var customPopupEdited(get, default): Signal;
+	function get_customPopupEdited(): Signal {
+	    if (_customPopupEdited == null) {
+	        _customPopupEdited = Signal.createFromObject(native, 'custom_popup_edited');
+	    }
+	    return _customPopupEdited;
+	}
+	private var _emptyClicked: Signal;
+	public var emptyClicked(get, default): Signal;
+	function get_emptyClicked(): Signal {
+	    if (_emptyClicked == null) {
+	        _emptyClicked = Signal.createFromObject(native, 'empty_clicked');
+	    }
+	    return _emptyClicked;
+	}
+	private var _itemActivated: Signal;
+	public var itemActivated(get, default): Signal;
+	function get_itemActivated(): Signal {
+	    if (_itemActivated == null) {
+	        _itemActivated = Signal.createFromObject(native, 'item_activated');
+	    }
+	    return _itemActivated;
+	}
+	private var _itemCollapsed: Signal;
+	public var itemCollapsed(get, default): Signal;
+	function get_itemCollapsed(): Signal {
+	    if (_itemCollapsed == null) {
+	        _itemCollapsed = Signal.createFromObject(native, 'item_collapsed');
+	    }
+	    return _itemCollapsed;
+	}
+	private var _itemEdited: Signal;
+	public var itemEdited(get, default): Signal;
+	function get_itemEdited(): Signal {
+	    if (_itemEdited == null) {
+	        _itemEdited = Signal.createFromObject(native, 'item_edited');
+	    }
+	    return _itemEdited;
+	}
+	private var _itemIconDoubleClicked: Signal;
+	public var itemIconDoubleClicked(get, default): Signal;
+	function get_itemIconDoubleClicked(): Signal {
+	    if (_itemIconDoubleClicked == null) {
+	        _itemIconDoubleClicked = Signal.createFromObject(native, 'item_icon_double_clicked');
+	    }
+	    return _itemIconDoubleClicked;
+	}
+	private var _itemMouseSelected: Signal;
+	public var itemMouseSelected(get, default): Signal;
+	function get_itemMouseSelected(): Signal {
+	    if (_itemMouseSelected == null) {
+	        _itemMouseSelected = Signal.createFromObject(native, 'item_mouse_selected');
+	    }
+	    return _itemMouseSelected;
+	}
+	private var _itemSelected: Signal;
+	public var itemSelected(get, default): Signal;
+	function get_itemSelected(): Signal {
+	    if (_itemSelected == null) {
+	        _itemSelected = Signal.createFromObject(native, 'item_selected');
+	    }
+	    return _itemSelected;
+	}
+	private var _multiSelected: Signal;
+	public var multiSelected(get, default): Signal;
+	function get_multiSelected(): Signal {
+	    if (_multiSelected == null) {
+	        _multiSelected = Signal.createFromObject(native, 'multi_selected');
+	    }
+	    return _multiSelected;
+	}
+	private var _nothingSelected: Signal;
+	public var nothingSelected(get, default): Signal;
+	function get_nothingSelected(): Signal {
+	    if (_nothingSelected == null) {
+	        _nothingSelected = Signal.createFromObject(native, 'nothing_selected');
+	    }
+	    return _nothingSelected;
+	}
 
   public function clear(): Void {
       var args = new ArrayList();

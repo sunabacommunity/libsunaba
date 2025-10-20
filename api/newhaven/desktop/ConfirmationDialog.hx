@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.ui.Button;
 
@@ -25,6 +26,7 @@ class ConfirmationDialog extends AcceptDialog {
       native.set('cancel_button_text', value);
         return value;
     }
+
 
   public function getCancelButton(): Button {
       var args = new ArrayList();

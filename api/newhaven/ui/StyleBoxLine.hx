@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 
 class StyleBoxLine extends StyleBox {
     public function new(?_native: NativeReference) {
@@ -56,5 +57,6 @@ class StyleBoxLine extends StyleBox {
       native.set('vertical', value);
         return value;
     }
+
 
 }

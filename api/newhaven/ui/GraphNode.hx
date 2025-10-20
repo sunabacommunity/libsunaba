@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Color;
 import newhaven.core.Vector2;
@@ -43,6 +44,23 @@ class GraphNode extends GraphElement {
       native.set('title', value);
         return value;
     }
+
+	private var _slotSizesChanged: Signal;
+	public var slotSizesChanged(get, default): Signal;
+	function get_slotSizesChanged(): Signal {
+	    if (_slotSizesChanged == null) {
+	        _slotSizesChanged = Signal.createFromObject(native, 'slot_sizes_changed');
+	    }
+	    return _slotSizesChanged;
+	}
+	private var _slotUpdated: Signal;
+	public var slotUpdated(get, default): Signal;
+	function get_slotUpdated(): Signal {
+	    if (_slotUpdated == null) {
+	        _slotUpdated = Signal.createFromObject(native, 'slot_updated');
+	    }
+	    return _slotUpdated;
+	}
 
   public function clearAllSlots(): Void {
       var args = new ArrayList();

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class WebRTCDataChannel extends PacketPeer {
@@ -24,6 +25,7 @@ class WebRTCDataChannel extends PacketPeer {
       native.set('write_mode', value);
         return value;
     }
+
 
   public function close(): Void {
       var args = new ArrayList();

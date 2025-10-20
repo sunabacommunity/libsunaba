@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.CanvasItem;
 import newhaven.core.Vector2;
 import newhaven.Node;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Color;
 import newhaven.Font;
@@ -385,6 +386,79 @@ class Control extends CanvasItem {
       native.set('tooltip_text', value);
         return value;
     }
+
+	private var _focusEntered: Signal;
+	public var focusEntered(get, default): Signal;
+	function get_focusEntered(): Signal {
+	    if (_focusEntered == null) {
+	        _focusEntered = Signal.createFromObject(native, 'focus_entered');
+	    }
+	    return _focusEntered;
+	}
+	private var _focusExited: Signal;
+	public var focusExited(get, default): Signal;
+	function get_focusExited(): Signal {
+	    if (_focusExited == null) {
+	        _focusExited = Signal.createFromObject(native, 'focus_exited');
+	    }
+	    return _focusExited;
+	}
+	private var _guiInput: Signal;
+	public var guiInput(get, default): Signal;
+	function get_guiInput(): Signal {
+	    if (_guiInput == null) {
+	        _guiInput = Signal.createFromObject(native, 'gui_input');
+	    }
+	    return _guiInput;
+	}
+	private var _minimumSizeChanged: Signal;
+	public var minimumSizeChanged(get, default): Signal;
+	function get_minimumSizeChanged(): Signal {
+	    if (_minimumSizeChanged == null) {
+	        _minimumSizeChanged = Signal.createFromObject(native, 'minimum_size_changed');
+	    }
+	    return _minimumSizeChanged;
+	}
+	private var _mouseEntered: Signal;
+	public var mouseEntered(get, default): Signal;
+	function get_mouseEntered(): Signal {
+	    if (_mouseEntered == null) {
+	        _mouseEntered = Signal.createFromObject(native, 'mouse_entered');
+	    }
+	    return _mouseEntered;
+	}
+	private var _mouseExited: Signal;
+	public var mouseExited(get, default): Signal;
+	function get_mouseExited(): Signal {
+	    if (_mouseExited == null) {
+	        _mouseExited = Signal.createFromObject(native, 'mouse_exited');
+	    }
+	    return _mouseExited;
+	}
+	private var _resized: Signal;
+	public var resized(get, default): Signal;
+	function get_resized(): Signal {
+	    if (_resized == null) {
+	        _resized = Signal.createFromObject(native, 'resized');
+	    }
+	    return _resized;
+	}
+	private var _sizeFlagsChanged: Signal;
+	public var sizeFlagsChanged(get, default): Signal;
+	function get_sizeFlagsChanged(): Signal {
+	    if (_sizeFlagsChanged == null) {
+	        _sizeFlagsChanged = Signal.createFromObject(native, 'size_flags_changed');
+	    }
+	    return _sizeFlagsChanged;
+	}
+	private var _themeChanged: Signal;
+	public var themeChanged(get, default): Signal;
+	function get_themeChanged(): Signal {
+	    if (_themeChanged == null) {
+	        _themeChanged = Signal.createFromObject(native, 'theme_changed');
+	    }
+	    return _themeChanged;
+	}
 
   public function acceptEvent(): Void {
       var args = new ArrayList();

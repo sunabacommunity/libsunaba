@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class PopupPanel extends Popup {
     public function new(?_native: NativeObject) {
@@ -14,6 +15,7 @@ class PopupPanel extends Popup {
         }
         native = _native;
     }
+
 
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamSynchronized extends AudioStream {
@@ -24,6 +25,7 @@ class AudioStreamSynchronized extends AudioStream {
       native.set('stream_count', value);
         return value;
     }
+
 
   public function getSyncStream(streamIndex: Int): AudioStream {
       var args = new ArrayList();

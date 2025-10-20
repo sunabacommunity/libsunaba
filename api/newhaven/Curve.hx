@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.ArrayList;
 
@@ -65,6 +66,23 @@ class Curve extends Resource {
       native.set('point_count', value);
         return value;
     }
+
+	private var _domainChanged: Signal;
+	public var domainChanged(get, default): Signal;
+	function get_domainChanged(): Signal {
+	    if (_domainChanged == null) {
+	        _domainChanged = Signal.createFromReference(native, 'domain_changed');
+	    }
+	    return _domainChanged;
+	}
+	private var _rangeChanged: Signal;
+	public var rangeChanged(get, default): Signal;
+	function get_rangeChanged(): Signal {
+	    if (_rangeChanged == null) {
+	        _rangeChanged = Signal.createFromReference(native, 'range_changed');
+	    }
+	    return _rangeChanged;
+	}
 
   public function addPoint(position: Vector2, ?leftTangent: Float, ?rightTangent: Float, ?leftMode: Int, ?rightMode: Int): Int {
       var args = new ArrayList();

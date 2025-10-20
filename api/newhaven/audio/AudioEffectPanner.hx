@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectPanner extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -23,5 +24,6 @@ class AudioEffectPanner extends AudioEffect {
       native.set('pan', value);
         return value;
     }
+
 
 }

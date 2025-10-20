@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 
@@ -26,6 +27,7 @@ class InputEvent extends Resource {
       native.set('device', value);
         return value;
     }
+
 
   public function accumulate(withEvent: InputEvent): Bool {
       var args = new ArrayList();

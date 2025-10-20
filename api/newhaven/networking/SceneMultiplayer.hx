@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 import newhaven.core.ByteArray;
@@ -74,6 +75,31 @@ class SceneMultiplayer extends MultiplayerAPI {
       native.set('server_relay', value);
         return value;
     }
+
+	private var _peerAuthenticating: Signal;
+	public var peerAuthenticating(get, default): Signal;
+	function get_peerAuthenticating(): Signal {
+	    if (_peerAuthenticating == null) {
+	        _peerAuthenticating = Signal.createFromReference(native, 'peer_authenticating');
+	    }
+	    return _peerAuthenticating;
+	}
+	private var _peerAuthenticationFailed: Signal;
+	public var peerAuthenticationFailed(get, default): Signal;
+	function get_peerAuthenticationFailed(): Signal {
+	    if (_peerAuthenticationFailed == null) {
+	        _peerAuthenticationFailed = Signal.createFromReference(native, 'peer_authentication_failed');
+	    }
+	    return _peerAuthenticationFailed;
+	}
+	private var _peerPacket: Signal;
+	public var peerPacket(get, default): Signal;
+	function get_peerPacket(): Signal {
+	    if (_peerPacket == null) {
+	        _peerPacket = Signal.createFromReference(native, 'peer_packet');
+	    }
+	    return _peerPacket;
+	}
 
   public function clear(): Void {
       var args = new ArrayList();

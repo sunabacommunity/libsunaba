@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class GridContainer extends Container {
     public function new(?_native: NativeObject) {
@@ -23,5 +24,6 @@ class GridContainer extends Container {
       native.set('columns', value);
         return value;
     }
+
 
 }

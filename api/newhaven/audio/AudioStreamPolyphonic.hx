@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioStreamPolyphonic extends AudioStream {
     public function new(?_native: NativeReference) {
@@ -23,5 +24,6 @@ class AudioStreamPolyphonic extends AudioStream {
       native.set('polyphony', value);
         return value;
     }
+
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class Popup extends Window {
     public function new(?_native: NativeObject) {
@@ -15,5 +16,14 @@ class Popup extends Window {
         native = _native;
     }
 
+
+	private var _popupHide: Signal;
+	public var popupHide(get, default): Signal;
+	function get_popupHide(): Signal {
+	    if (_popupHide == null) {
+	        _popupHide = Signal.createFromObject(native, 'popup_hide');
+	    }
+	    return _popupHide;
+	}
 
 }

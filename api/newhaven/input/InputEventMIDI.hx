@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class InputEventMIDI extends InputEvent {
     public function new(?_native: NativeReference) {
@@ -79,5 +80,6 @@ class InputEventMIDI extends InputEvent {
       native.set('velocity', value);
         return value;
     }
+
 
 }

@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.ui.LineEdit;
 import newhaven.core.Dictionary;
@@ -180,6 +181,39 @@ class FileDialog extends ConfirmationDialog {
       native.set('use_native_dialog', value);
         return value;
     }
+
+	private var _dirSelected: Signal;
+	public var dirSelected(get, default): Signal;
+	function get_dirSelected(): Signal {
+	    if (_dirSelected == null) {
+	        _dirSelected = Signal.createFromObject(native, 'dir_selected');
+	    }
+	    return _dirSelected;
+	}
+	private var _fileSelected: Signal;
+	public var fileSelected(get, default): Signal;
+	function get_fileSelected(): Signal {
+	    if (_fileSelected == null) {
+	        _fileSelected = Signal.createFromObject(native, 'file_selected');
+	    }
+	    return _fileSelected;
+	}
+	private var _filenameFilterChanged: Signal;
+	public var filenameFilterChanged(get, default): Signal;
+	function get_filenameFilterChanged(): Signal {
+	    if (_filenameFilterChanged == null) {
+	        _filenameFilterChanged = Signal.createFromObject(native, 'filename_filter_changed');
+	    }
+	    return _filenameFilterChanged;
+	}
+	private var _filesSelected: Signal;
+	public var filesSelected(get, default): Signal;
+	function get_filesSelected(): Signal {
+	    if (_filesSelected == null) {
+	        _filesSelected = Signal.createFromObject(native, 'files_selected');
+	    }
+	    return _filesSelected;
+	}
 
   public function addFilter(filter: String, ?description: String): Void {
       var args = new ArrayList();

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.Color;
 import newhaven.core.ArrayList;
@@ -18,6 +19,7 @@ class Font extends Resource {
         }
         native = _native;
     }
+
 
 
   public function drawChar(canvasItem: Int, pos: Vector2, char: Int, fontSize: Int, ?modulate: Color, ?oversampling: Float): Float {

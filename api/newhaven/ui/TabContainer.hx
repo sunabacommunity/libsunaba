@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.Popup;
 import newhaven.Texture2D;
@@ -108,6 +109,63 @@ class TabContainer extends Container {
       native.set('use_hidden_tabs_for_min_size', value);
         return value;
     }
+
+	private var _activeTabRearranged: Signal;
+	public var activeTabRearranged(get, default): Signal;
+	function get_activeTabRearranged(): Signal {
+	    if (_activeTabRearranged == null) {
+	        _activeTabRearranged = Signal.createFromObject(native, 'active_tab_rearranged');
+	    }
+	    return _activeTabRearranged;
+	}
+	private var _prePopupPressed: Signal;
+	public var prePopupPressed(get, default): Signal;
+	function get_prePopupPressed(): Signal {
+	    if (_prePopupPressed == null) {
+	        _prePopupPressed = Signal.createFromObject(native, 'pre_popup_pressed');
+	    }
+	    return _prePopupPressed;
+	}
+	private var _tabButtonPressed: Signal;
+	public var tabButtonPressed(get, default): Signal;
+	function get_tabButtonPressed(): Signal {
+	    if (_tabButtonPressed == null) {
+	        _tabButtonPressed = Signal.createFromObject(native, 'tab_button_pressed');
+	    }
+	    return _tabButtonPressed;
+	}
+	private var _tabChanged: Signal;
+	public var tabChanged(get, default): Signal;
+	function get_tabChanged(): Signal {
+	    if (_tabChanged == null) {
+	        _tabChanged = Signal.createFromObject(native, 'tab_changed');
+	    }
+	    return _tabChanged;
+	}
+	private var _tabClicked: Signal;
+	public var tabClicked(get, default): Signal;
+	function get_tabClicked(): Signal {
+	    if (_tabClicked == null) {
+	        _tabClicked = Signal.createFromObject(native, 'tab_clicked');
+	    }
+	    return _tabClicked;
+	}
+	private var _tabHovered: Signal;
+	public var tabHovered(get, default): Signal;
+	function get_tabHovered(): Signal {
+	    if (_tabHovered == null) {
+	        _tabHovered = Signal.createFromObject(native, 'tab_hovered');
+	    }
+	    return _tabHovered;
+	}
+	private var _tabSelected: Signal;
+	public var tabSelected(get, default): Signal;
+	function get_tabSelected(): Signal {
+	    if (_tabSelected == null) {
+	        _tabSelected = Signal.createFromObject(native, 'tab_selected');
+	    }
+	    return _tabSelected;
+	}
 
   public function getCurrentTabControl(): Control {
       var args = new ArrayList();

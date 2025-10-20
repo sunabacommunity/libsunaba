@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 
@@ -810,6 +811,15 @@ class ParticleProcessMaterial extends Material {
       native.set('velocity_pivot', value);
         return value;
     }
+
+	private var _emissionShapeChanged: Signal;
+	public var emissionShapeChanged(get, default): Signal;
+	function get_emissionShapeChanged(): Signal {
+	    if (_emissionShapeChanged == null) {
+	        _emissionShapeChanged = Signal.createFromReference(native, 'emission_shape_changed');
+	    }
+	    return _emissionShapeChanged;
+	}
 
   public function getParam(param: Int): Vector2 {
       var args = new ArrayList();

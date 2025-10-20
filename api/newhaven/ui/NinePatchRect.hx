@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Rect2;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class NinePatchRect extends Control {
@@ -91,6 +92,15 @@ class NinePatchRect extends Control {
       native.set('texture', value.native);
         return value;
     }
+
+	private var _textureChanged: Signal;
+	public var textureChanged(get, default): Signal;
+	function get_textureChanged(): Signal {
+	    if (_textureChanged == null) {
+	        _textureChanged = Signal.createFromObject(native, 'texture_changed');
+	    }
+	    return _textureChanged;
+	}
 
   public function getPatchMargin(margin: Int): Int {
       var args = new ArrayList();

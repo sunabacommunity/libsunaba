@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Dictionary;
 
@@ -17,6 +18,7 @@ class SyntaxHighlighter extends Resource {
         }
         native = _native;
     }
+
 
 
   public function clearHighlightingCache(): Void {

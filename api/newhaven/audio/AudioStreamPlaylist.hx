@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamPlaylist extends AudioStream {
@@ -48,6 +49,7 @@ class AudioStreamPlaylist extends AudioStream {
       native.set('stream_count', value);
         return value;
     }
+
 
   public function getBpm(): Float {
       var args = new ArrayList();

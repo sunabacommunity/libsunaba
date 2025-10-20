@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class StyleBoxEmpty extends StyleBox {
     public function new(?_native: NativeReference) {
@@ -14,6 +15,7 @@ class StyleBoxEmpty extends StyleBox {
         }
         native = _native;
     }
+
 
 
 }

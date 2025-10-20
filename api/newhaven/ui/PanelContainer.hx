@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class PanelContainer extends Container {
     public function new(?_native: NativeObject) {
@@ -14,6 +15,7 @@ class PanelContainer extends Container {
         }
         native = _native;
     }
+
 
 
 }

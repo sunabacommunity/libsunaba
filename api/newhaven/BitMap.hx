@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2i;
 import newhaven.core.Rect2i;
@@ -17,6 +18,7 @@ class BitMap extends Resource {
         }
         native = _native;
     }
+
 
 
   public function convertToImage(): Image {

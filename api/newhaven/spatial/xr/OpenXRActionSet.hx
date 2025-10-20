@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 
 class OpenXRActionSet extends Resource {
     public function new(?_native: NativeReference) {
@@ -41,6 +42,7 @@ class OpenXRActionSet extends Resource {
       native.set('priority', value);
         return value;
     }
+
 
   public function addAction(action: OpenXRAction): Void {
       var args = new ArrayList();

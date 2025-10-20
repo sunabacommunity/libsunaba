@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 
 class OpenXRAction extends Resource {
     public function new(?_native: NativeReference) {
@@ -41,5 +42,6 @@ class OpenXRAction extends Resource {
       native.set('toplevel_paths', value);
         return value;
     }
+
 
 }

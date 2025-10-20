@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.spatial.Sky;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class Environment extends Resource {
@@ -806,6 +807,7 @@ class Environment extends Resource {
       native.set('volumetric_fog_temporal_reprojection_enabled', value);
         return value;
     }
+
 
   public function getGlowLevel(idx: Int): Float {
       var args = new ArrayList();

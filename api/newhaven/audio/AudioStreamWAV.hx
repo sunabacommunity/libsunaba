@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ByteArray;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioStreamWAV extends AudioStream {
@@ -82,6 +83,7 @@ class AudioStreamWAV extends AudioStream {
       native.set('tags', value);
         return value;
     }
+
 
   public static function loadFromBuffer(streamData: ByteArray, ?options: Dictionary): AudioStreamWAV {
       var args = new ArrayList();

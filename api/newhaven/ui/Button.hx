@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 
 class Button extends BaseButton {
     public function new(?_native: NativeObject) {
@@ -121,5 +122,6 @@ class Button extends BaseButton {
       native.set('vertical_icon_alignment', value);
         return value;
     }
+
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.core.Vector3;
@@ -17,6 +18,7 @@ class Noise extends Resource {
         }
         native = _native;
     }
+
 
 
   public function getImage(width: Int, height: Int, ?invert: Bool, ?in3dSpace: Bool, ?normalize: Bool): Image {

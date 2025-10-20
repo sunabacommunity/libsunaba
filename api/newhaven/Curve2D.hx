@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.Vector2;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
@@ -35,6 +36,7 @@ class Curve2D extends Resource {
       native.set('point_count', value);
         return value;
     }
+
 
   public function addPoint(position: Vector2, ?pIn: Vector2, ?out: Vector2, ?index: Int): Void {
       var args = new ArrayList();

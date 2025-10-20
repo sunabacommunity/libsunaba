@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 
 class AudioBusLayout extends Resource {
     public function new(?_native: NativeReference) {
@@ -15,6 +16,7 @@ class AudioBusLayout extends Resource {
         }
         native = _native;
     }
+
 
 
 }

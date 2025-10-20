@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 
 class SystemFont extends Font {
     public function new(?_native: NativeReference) {
@@ -152,5 +153,6 @@ class SystemFont extends Font {
       native.set('subpixel_positioning', value);
         return value;
     }
+
 
 }

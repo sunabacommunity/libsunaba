@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Gradient;
 import newhaven.Noise;
+import newhaven.core.Signal;
 
 class NoiseTexture3D extends Texture3D {
     public function new(?_native: NativeReference) {
@@ -91,5 +92,6 @@ class NoiseTexture3D extends Texture3D {
       native.set('width', value);
         return value;
     }
+
 
 }

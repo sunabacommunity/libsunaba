@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectReverb extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -79,5 +80,6 @@ class AudioEffectReverb extends AudioEffect {
       native.set('wet', value);
         return value;
     }
+
 
 }

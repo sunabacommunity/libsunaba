@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class InputEventScreenTouch extends InputEventFromWindow {
     public function new(?_native: NativeReference) {
@@ -56,5 +57,6 @@ class InputEventScreenTouch extends InputEventFromWindow {
       native.set('pressed', value);
         return value;
     }
+
 
 }

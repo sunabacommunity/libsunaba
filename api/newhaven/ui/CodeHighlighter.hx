@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Dictionary;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class CodeHighlighter extends SyntaxHighlighter {
@@ -74,6 +75,7 @@ class CodeHighlighter extends SyntaxHighlighter {
       native.set('symbol_color', value);
         return value;
     }
+
 
   public function addColorRegion(startKey: String, endKey: String, color: Color, ?lineOnly: Bool): Void {
       var args = new ArrayList();

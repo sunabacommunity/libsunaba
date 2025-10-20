@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.core.Vector2;
 import newhaven.Texture2D;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class TextureProgressBar extends Range {
@@ -150,6 +151,7 @@ class TextureProgressBar extends Range {
       native.set('tint_under', value);
         return value;
     }
+
 
   public function getStretchMargin(margin: Int): Int {
       var args = new ArrayList();

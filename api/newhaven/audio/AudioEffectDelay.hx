@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectDelay extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -119,5 +120,6 @@ class AudioEffectDelay extends AudioEffect {
       native.set('tap2_pan', value);
         return value;
     }
+
 
 }

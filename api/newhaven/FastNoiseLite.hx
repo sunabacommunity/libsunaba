@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector3;
+import newhaven.core.Signal;
 
 class FastNoiseLite extends Noise {
     public function new(?_native: NativeReference) {
@@ -184,5 +185,6 @@ class FastNoiseLite extends Noise {
       native.set('seed', value);
         return value;
     }
+
 
 }

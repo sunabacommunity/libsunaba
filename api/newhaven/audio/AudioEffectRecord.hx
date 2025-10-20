@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class AudioEffectRecord extends AudioEffect {
@@ -24,6 +25,7 @@ class AudioEffectRecord extends AudioEffect {
       native.set('format', value);
         return value;
     }
+
 
   public function getRecording(): AudioStreamWAV {
       var args = new ArrayList();

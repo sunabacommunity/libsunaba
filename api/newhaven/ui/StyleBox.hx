@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.Rect2;
 import newhaven.core.ArrayList;
 import newhaven.CanvasItem;
@@ -52,6 +53,7 @@ class StyleBox extends Resource {
       native.set('content_margin_top', value);
         return value;
     }
+
 
   public function draw(canvasItem: Int, rect: Rect2): Void {
       var args = new ArrayList();

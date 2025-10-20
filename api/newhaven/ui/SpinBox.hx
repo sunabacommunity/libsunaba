@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class SpinBox extends Range {
@@ -72,6 +73,7 @@ class SpinBox extends Range {
       native.set('update_on_text_changed', value);
         return value;
     }
+
 
   public function apply(): Void {
       var args = new ArrayList();

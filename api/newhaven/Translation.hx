@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 
@@ -25,6 +26,7 @@ class Translation extends Resource {
       native.set('locale', value);
         return value;
     }
+
 
   public function addMessage(srcMessage: String, xlatedMessage: String, ?context: String): Void {
       var args = new ArrayList();

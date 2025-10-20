@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 
@@ -16,6 +17,7 @@ class AudioEffectSpectrumAnalyzerInstance extends AudioEffectInstance {
         }
         native = _native;
     }
+
 
 
   public function getMagnitudeForFrequencyRange(fromHz: Float, toHz: Float, ?mode: Int): Vector2 {

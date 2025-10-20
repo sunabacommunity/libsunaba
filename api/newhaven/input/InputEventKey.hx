@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class InputEventKey extends InputEventWithModifiers {
@@ -72,6 +73,7 @@ class InputEventKey extends InputEventWithModifiers {
       native.set('unicode', value);
         return value;
     }
+
 
   public function asTextKeyLabel(): String {
       var args = new ArrayList();

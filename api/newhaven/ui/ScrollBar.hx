@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class ScrollBar extends Range {
     public function new(?_native: NativeObject) {
@@ -23,5 +24,14 @@ class ScrollBar extends Range {
       native.set('custom_step', value);
         return value;
     }
+
+	private var _scrolling: Signal;
+	public var scrolling(get, default): Signal;
+	function get_scrolling(): Signal {
+	    if (_scrolling == null) {
+	        _scrolling = Signal.createFromObject(native, 'scrolling');
+	    }
+	    return _scrolling;
+	}
 
 }

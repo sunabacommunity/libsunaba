@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class JSON extends Resource {
@@ -24,6 +25,7 @@ class JSON extends Resource {
       native.set('data', value);
         return value;
     }
+
 
   public static function fromNative(variant: Variant, ?fullObjects: Bool): Variant {
       var args = new ArrayList();

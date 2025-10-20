@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.PopupPanel;
 
@@ -42,6 +43,31 @@ class ColorPickerButton extends Button {
       native.set('edit_intensity', value);
         return value;
     }
+
+	private var _colorChanged: Signal;
+	public var colorChanged(get, default): Signal;
+	function get_colorChanged(): Signal {
+	    if (_colorChanged == null) {
+	        _colorChanged = Signal.createFromObject(native, 'color_changed');
+	    }
+	    return _colorChanged;
+	}
+	private var _pickerCreated: Signal;
+	public var pickerCreated(get, default): Signal;
+	function get_pickerCreated(): Signal {
+	    if (_pickerCreated == null) {
+	        _pickerCreated = Signal.createFromObject(native, 'picker_created');
+	    }
+	    return _pickerCreated;
+	}
+	private var _popupClosed: Signal;
+	public var popupClosed(get, default): Signal;
+	function get_popupClosed(): Signal {
+	    if (_popupClosed == null) {
+	        _popupClosed = Signal.createFromObject(native, 'popup_closed');
+	    }
+	    return _popupClosed;
+	}
 
   public function getPopup(): PopupPanel {
       var args = new ArrayList();

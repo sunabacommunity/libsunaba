@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.ByteArray;
 
@@ -66,6 +67,7 @@ class WebSocketPeer extends PacketPeer {
       native.set('supported_protocols', value);
         return value;
     }
+
 
   public function acceptStream(stream: Variant): Int {
       var args = new ArrayList();

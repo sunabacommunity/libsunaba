@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.input.InputEvent;
 import newhaven.networking.MultiplayerAPI;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.Window;
 
@@ -19,47 +20,47 @@ class Node extends Object {
         native = _native;
     }
 
-    public function ready() {
+    public function onReady() {
         
     }
-    public function enterTree() {
+    public function onEnterTree() {
         
     }
-    public function exitTree() {
+    public function onExitTree() {
         
     }
-    public function process(delta: Float) {
+    public function onProcess(delta: Float) {
         
     }
-    public function physicsProcess(delta: Float) {
+    public function onPhysicsProcess(delta: Float) {
         
     }
-    public function notification(what: Int) {
+    public function onNotification(what: Int) {
         
     }
-    public function input(event: InputEvent) {
+    public function onInput(event: InputEvent) {
         
     }
-    public function unhandledInput(event: InputEvent) {
+    public function onUnhandledInput(event: InputEvent) {
         
     }
-    public function unhandledKeyInput(event: InputEvent) {
+    public function onUnhandledKeyInput(event: InputEvent) {
         
     }
-    public function shortcutInput(event: InputEvent) {
+    public function onShortcutInput(event: InputEvent) {
         
     }
-    public function _input(event: NativeReference) {
-        input(new InputEvent(event));
+    public function _onInput(event: NativeReference) {
+        onInput(new InputEvent(event));
     }
-    public function _unhandledInput(event: NativeReference) {
-        unhandledInput(new InputEvent(event));
+    public function _onUnhandledInput(event: NativeReference) {
+        onUnhandledInput(new InputEvent(event));
     }
-    public function _unhandledKeyInput(event: NativeReference) {
-        unhandledKeyInput(new InputEvent(event));
+    public function _onUnhandledKeyInput(event: NativeReference) {
+        onUnhandledKeyInput(new InputEvent(event));
     }
-    public function _shortcutInput(event: NativeReference) {
-        shortcutInput(new InputEvent(event));
+    public function _onShortcutInput(event: NativeReference) {
+        onShortcutInput(new InputEvent(event));
     }
 
     public var autoTranslateMode(get, set): Int;
@@ -176,6 +177,95 @@ class Node extends Object {
       native.set('unique_name_in_owner', value);
         return value;
     }
+
+	private var _childEnteredTree: Signal;
+	public var childEnteredTree(get, default): Signal;
+	function get_childEnteredTree(): Signal {
+	    if (_childEnteredTree == null) {
+	        _childEnteredTree = Signal.createFromObject(native, 'child_entered_tree');
+	    }
+	    return _childEnteredTree;
+	}
+	private var _childExitingTree: Signal;
+	public var childExitingTree(get, default): Signal;
+	function get_childExitingTree(): Signal {
+	    if (_childExitingTree == null) {
+	        _childExitingTree = Signal.createFromObject(native, 'child_exiting_tree');
+	    }
+	    return _childExitingTree;
+	}
+	private var _childOrderChanged: Signal;
+	public var childOrderChanged(get, default): Signal;
+	function get_childOrderChanged(): Signal {
+	    if (_childOrderChanged == null) {
+	        _childOrderChanged = Signal.createFromObject(native, 'child_order_changed');
+	    }
+	    return _childOrderChanged;
+	}
+	private var _editorDescriptionChanged: Signal;
+	public var editorDescriptionChanged(get, default): Signal;
+	function get_editorDescriptionChanged(): Signal {
+	    if (_editorDescriptionChanged == null) {
+	        _editorDescriptionChanged = Signal.createFromObject(native, 'editor_description_changed');
+	    }
+	    return _editorDescriptionChanged;
+	}
+	private var _editorStateChanged: Signal;
+	public var editorStateChanged(get, default): Signal;
+	function get_editorStateChanged(): Signal {
+	    if (_editorStateChanged == null) {
+	        _editorStateChanged = Signal.createFromObject(native, 'editor_state_changed');
+	    }
+	    return _editorStateChanged;
+	}
+	private var _ready: Signal;
+	public var ready(get, default): Signal;
+	function get_ready(): Signal {
+	    if (_ready == null) {
+	        _ready = Signal.createFromObject(native, 'ready');
+	    }
+	    return _ready;
+	}
+	private var _renamed: Signal;
+	public var renamed(get, default): Signal;
+	function get_renamed(): Signal {
+	    if (_renamed == null) {
+	        _renamed = Signal.createFromObject(native, 'renamed');
+	    }
+	    return _renamed;
+	}
+	private var _replacingBy: Signal;
+	public var replacingBy(get, default): Signal;
+	function get_replacingBy(): Signal {
+	    if (_replacingBy == null) {
+	        _replacingBy = Signal.createFromObject(native, 'replacing_by');
+	    }
+	    return _replacingBy;
+	}
+	private var _treeEntered: Signal;
+	public var treeEntered(get, default): Signal;
+	function get_treeEntered(): Signal {
+	    if (_treeEntered == null) {
+	        _treeEntered = Signal.createFromObject(native, 'tree_entered');
+	    }
+	    return _treeEntered;
+	}
+	private var _treeExited: Signal;
+	public var treeExited(get, default): Signal;
+	function get_treeExited(): Signal {
+	    if (_treeExited == null) {
+	        _treeExited = Signal.createFromObject(native, 'tree_exited');
+	    }
+	    return _treeExited;
+	}
+	private var _treeExiting: Signal;
+	public var treeExiting(get, default): Signal;
+	function get_treeExiting(): Signal {
+	    if (_treeExiting == null) {
+	        _treeExiting = Signal.createFromObject(native, 'tree_exiting');
+	    }
+	    return _treeExiting;
+	}
 
   public function addChild(node: Node, ?forceReadableName: Bool, ?internal: Int): Void {
       var args = new ArrayList();

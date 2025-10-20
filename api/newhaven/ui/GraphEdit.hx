@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector2;
 import newhaven.core.TypedArray;
@@ -214,6 +215,159 @@ class GraphEdit extends Control {
       native.set('zoom_step', value);
         return value;
     }
+
+	private var _beginNodeMove: Signal;
+	public var beginNodeMove(get, default): Signal;
+	function get_beginNodeMove(): Signal {
+	    if (_beginNodeMove == null) {
+	        _beginNodeMove = Signal.createFromObject(native, 'begin_node_move');
+	    }
+	    return _beginNodeMove;
+	}
+	private var _connectionDragEnded: Signal;
+	public var connectionDragEnded(get, default): Signal;
+	function get_connectionDragEnded(): Signal {
+	    if (_connectionDragEnded == null) {
+	        _connectionDragEnded = Signal.createFromObject(native, 'connection_drag_ended');
+	    }
+	    return _connectionDragEnded;
+	}
+	private var _connectionDragStarted: Signal;
+	public var connectionDragStarted(get, default): Signal;
+	function get_connectionDragStarted(): Signal {
+	    if (_connectionDragStarted == null) {
+	        _connectionDragStarted = Signal.createFromObject(native, 'connection_drag_started');
+	    }
+	    return _connectionDragStarted;
+	}
+	private var _connectionFromEmpty: Signal;
+	public var connectionFromEmpty(get, default): Signal;
+	function get_connectionFromEmpty(): Signal {
+	    if (_connectionFromEmpty == null) {
+	        _connectionFromEmpty = Signal.createFromObject(native, 'connection_from_empty');
+	    }
+	    return _connectionFromEmpty;
+	}
+	private var _connectionRequest: Signal;
+	public var connectionRequest(get, default): Signal;
+	function get_connectionRequest(): Signal {
+	    if (_connectionRequest == null) {
+	        _connectionRequest = Signal.createFromObject(native, 'connection_request');
+	    }
+	    return _connectionRequest;
+	}
+	private var _connectionToEmpty: Signal;
+	public var connectionToEmpty(get, default): Signal;
+	function get_connectionToEmpty(): Signal {
+	    if (_connectionToEmpty == null) {
+	        _connectionToEmpty = Signal.createFromObject(native, 'connection_to_empty');
+	    }
+	    return _connectionToEmpty;
+	}
+	private var _copyNodesRequest: Signal;
+	public var copyNodesRequest(get, default): Signal;
+	function get_copyNodesRequest(): Signal {
+	    if (_copyNodesRequest == null) {
+	        _copyNodesRequest = Signal.createFromObject(native, 'copy_nodes_request');
+	    }
+	    return _copyNodesRequest;
+	}
+	private var _cutNodesRequest: Signal;
+	public var cutNodesRequest(get, default): Signal;
+	function get_cutNodesRequest(): Signal {
+	    if (_cutNodesRequest == null) {
+	        _cutNodesRequest = Signal.createFromObject(native, 'cut_nodes_request');
+	    }
+	    return _cutNodesRequest;
+	}
+	private var _deleteNodesRequest: Signal;
+	public var deleteNodesRequest(get, default): Signal;
+	function get_deleteNodesRequest(): Signal {
+	    if (_deleteNodesRequest == null) {
+	        _deleteNodesRequest = Signal.createFromObject(native, 'delete_nodes_request');
+	    }
+	    return _deleteNodesRequest;
+	}
+	private var _disconnectionRequest: Signal;
+	public var disconnectionRequest(get, default): Signal;
+	function get_disconnectionRequest(): Signal {
+	    if (_disconnectionRequest == null) {
+	        _disconnectionRequest = Signal.createFromObject(native, 'disconnection_request');
+	    }
+	    return _disconnectionRequest;
+	}
+	private var _duplicateNodesRequest: Signal;
+	public var duplicateNodesRequest(get, default): Signal;
+	function get_duplicateNodesRequest(): Signal {
+	    if (_duplicateNodesRequest == null) {
+	        _duplicateNodesRequest = Signal.createFromObject(native, 'duplicate_nodes_request');
+	    }
+	    return _duplicateNodesRequest;
+	}
+	private var _endNodeMove: Signal;
+	public var endNodeMove(get, default): Signal;
+	function get_endNodeMove(): Signal {
+	    if (_endNodeMove == null) {
+	        _endNodeMove = Signal.createFromObject(native, 'end_node_move');
+	    }
+	    return _endNodeMove;
+	}
+	private var _frameRectChanged: Signal;
+	public var frameRectChanged(get, default): Signal;
+	function get_frameRectChanged(): Signal {
+	    if (_frameRectChanged == null) {
+	        _frameRectChanged = Signal.createFromObject(native, 'frame_rect_changed');
+	    }
+	    return _frameRectChanged;
+	}
+	private var _graphElementsLinkedToFrameRequest: Signal;
+	public var graphElementsLinkedToFrameRequest(get, default): Signal;
+	function get_graphElementsLinkedToFrameRequest(): Signal {
+	    if (_graphElementsLinkedToFrameRequest == null) {
+	        _graphElementsLinkedToFrameRequest = Signal.createFromObject(native, 'graph_elements_linked_to_frame_request');
+	    }
+	    return _graphElementsLinkedToFrameRequest;
+	}
+	private var _nodeDeselected: Signal;
+	public var nodeDeselected(get, default): Signal;
+	function get_nodeDeselected(): Signal {
+	    if (_nodeDeselected == null) {
+	        _nodeDeselected = Signal.createFromObject(native, 'node_deselected');
+	    }
+	    return _nodeDeselected;
+	}
+	private var _nodeSelected: Signal;
+	public var nodeSelected(get, default): Signal;
+	function get_nodeSelected(): Signal {
+	    if (_nodeSelected == null) {
+	        _nodeSelected = Signal.createFromObject(native, 'node_selected');
+	    }
+	    return _nodeSelected;
+	}
+	private var _pasteNodesRequest: Signal;
+	public var pasteNodesRequest(get, default): Signal;
+	function get_pasteNodesRequest(): Signal {
+	    if (_pasteNodesRequest == null) {
+	        _pasteNodesRequest = Signal.createFromObject(native, 'paste_nodes_request');
+	    }
+	    return _pasteNodesRequest;
+	}
+	private var _popupRequest: Signal;
+	public var popupRequest(get, default): Signal;
+	function get_popupRequest(): Signal {
+	    if (_popupRequest == null) {
+	        _popupRequest = Signal.createFromObject(native, 'popup_request');
+	    }
+	    return _popupRequest;
+	}
+	private var _scrollOffsetChanged: Signal;
+	public var scrollOffsetChanged(get, default): Signal;
+	function get_scrollOffsetChanged(): Signal {
+	    if (_scrollOffsetChanged == null) {
+	        _scrollOffsetChanged = Signal.createFromObject(native, 'scroll_offset_changed');
+	    }
+	    return _scrollOffsetChanged;
+	}
 
   public function addValidConnectionType(fromType: Int, toType: Int): Void {
       var args = new ArrayList();

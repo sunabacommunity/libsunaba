@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Texture;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.Resource;
 
@@ -17,6 +18,7 @@ class Texture3D extends Texture {
         }
         native = _native;
     }
+
 
 
   public function createPlaceholder(): Resource {

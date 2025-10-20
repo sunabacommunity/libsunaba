@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class PhysicsMaterial extends Resource {
     public function new(?_native: NativeReference) {
@@ -47,5 +48,6 @@ class PhysicsMaterial extends Resource {
       native.set('rough', value);
         return value;
     }
+
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectCompressor extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -71,5 +72,6 @@ class AudioEffectCompressor extends AudioEffect {
       native.set('threshold', value);
         return value;
     }
+
 
 }

@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 
 class TextureRect extends Control {
     public function new(?_native: NativeObject) {
@@ -57,5 +58,6 @@ class TextureRect extends Control {
       native.set('texture', value.native);
         return value;
     }
+
 
 }

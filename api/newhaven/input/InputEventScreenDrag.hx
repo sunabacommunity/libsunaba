@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class InputEventScreenDrag extends InputEventFromWindow {
     public function new(?_native: NativeReference) {
@@ -88,5 +89,6 @@ class InputEventScreenDrag extends InputEventFromWindow {
       native.set('velocity', value);
         return value;
     }
+
 
 }

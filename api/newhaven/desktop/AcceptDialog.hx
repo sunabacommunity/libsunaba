@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.ui.Button;
 import newhaven.ui.Label;
@@ -59,6 +60,31 @@ class AcceptDialog extends Window {
       native.set('ok_button_text', value);
         return value;
     }
+
+	private var _canceled: Signal;
+	public var canceled(get, default): Signal;
+	function get_canceled(): Signal {
+	    if (_canceled == null) {
+	        _canceled = Signal.createFromObject(native, 'canceled');
+	    }
+	    return _canceled;
+	}
+	private var _confirmed: Signal;
+	public var confirmed(get, default): Signal;
+	function get_confirmed(): Signal {
+	    if (_confirmed == null) {
+	        _confirmed = Signal.createFromObject(native, 'confirmed');
+	    }
+	    return _confirmed;
+	}
+	private var _customAction: Signal;
+	public var customAction(get, default): Signal;
+	function get_customAction(): Signal {
+	    if (_customAction == null) {
+	        _customAction = Signal.createFromObject(native, 'custom_action');
+	    }
+	    return _customAction;
+	}
 
   public function addButton(text: String, ?right: Bool, ?action: String): Button {
       var args = new ArrayList();

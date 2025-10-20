@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class SphereOccluder3D extends Occluder3D {
     public function new(?_native: NativeReference) {
@@ -23,5 +24,6 @@ class SphereOccluder3D extends Occluder3D {
       native.set('radius', value);
         return value;
     }
+
 
 }

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class ShaderMaterial extends Material {
@@ -25,6 +26,7 @@ class ShaderMaterial extends Material {
       native.set('shader', value.native);
         return value;
     }
+
 
   public function getShaderParameter(param: String): Variant {
       var args = new ArrayList();

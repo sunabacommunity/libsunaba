@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 
 class LinkButton extends BaseButton {
     public function new(?_native: NativeObject) {
@@ -72,5 +73,6 @@ class LinkButton extends BaseButton {
       native.set('uri', value);
         return value;
     }
+
 
 }

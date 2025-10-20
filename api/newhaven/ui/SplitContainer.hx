@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class SplitContainer extends Container {
@@ -96,6 +97,31 @@ class SplitContainer extends Container {
       native.set('vertical', value);
         return value;
     }
+
+	private var _dragEnded: Signal;
+	public var dragEnded(get, default): Signal;
+	function get_dragEnded(): Signal {
+	    if (_dragEnded == null) {
+	        _dragEnded = Signal.createFromObject(native, 'drag_ended');
+	    }
+	    return _dragEnded;
+	}
+	private var _dragStarted: Signal;
+	public var dragStarted(get, default): Signal;
+	function get_dragStarted(): Signal {
+	    if (_dragStarted == null) {
+	        _dragStarted = Signal.createFromObject(native, 'drag_started');
+	    }
+	    return _dragStarted;
+	}
+	private var _dragged: Signal;
+	public var dragged(get, default): Signal;
+	function get_dragged(): Signal {
+	    if (_dragged == null) {
+	        _dragged = Signal.createFromObject(native, 'dragged');
+	    }
+	    return _dragged;
+	}
 
   public function clampSplitOffset(): Void {
       var args = new ArrayList();

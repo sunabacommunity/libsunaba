@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.input.Shortcut;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class BaseButton extends Control {
@@ -99,6 +100,39 @@ class BaseButton extends Control {
       native.set('toggle_mode', value);
         return value;
     }
+
+	private var _buttonDown: Signal;
+	public var buttonDown(get, default): Signal;
+	function get_buttonDown(): Signal {
+	    if (_buttonDown == null) {
+	        _buttonDown = Signal.createFromObject(native, 'button_down');
+	    }
+	    return _buttonDown;
+	}
+	private var _buttonUp: Signal;
+	public var buttonUp(get, default): Signal;
+	function get_buttonUp(): Signal {
+	    if (_buttonUp == null) {
+	        _buttonUp = Signal.createFromObject(native, 'button_up');
+	    }
+	    return _buttonUp;
+	}
+	private var _pressed: Signal;
+	public var pressed(get, default): Signal;
+	function get_pressed(): Signal {
+	    if (_pressed == null) {
+	        _pressed = Signal.createFromObject(native, 'pressed');
+	    }
+	    return _pressed;
+	}
+	private var _toggled: Signal;
+	public var toggled(get, default): Signal;
+	function get_toggled(): Signal {
+	    if (_toggled == null) {
+	        _toggled = Signal.createFromObject(native, 'toggled');
+	    }
+	    return _toggled;
+	}
 
   public function getDrawMode(): Int {
       var args = new ArrayList();

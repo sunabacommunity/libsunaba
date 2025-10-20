@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
 import newhaven.core.ArrayList;
+import newhaven.core.Signal;
 
 class Shortcut extends Resource {
     public function new(?_native: NativeReference) {
@@ -25,6 +26,7 @@ class Shortcut extends Resource {
       native.set('events', value);
         return value;
     }
+
 
   public function getAsText(): String {
       var args = new ArrayList();

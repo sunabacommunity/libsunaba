@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.VideoStream;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.Texture2D;
 
@@ -115,6 +116,15 @@ class VideoStreamPlayer extends Control {
       native.set('volume_db', value);
         return value;
     }
+
+	private var _finished: Signal;
+	public var finished(get, default): Signal;
+	function get_finished(): Signal {
+	    if (_finished == null) {
+	        _finished = Signal.createFromObject(native, 'finished');
+	    }
+	    return _finished;
+	}
 
   public function getStreamLength(): Float {
       var args = new ArrayList();

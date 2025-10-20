@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class PacketPeerUDP extends PacketPeer {
@@ -15,6 +16,7 @@ class PacketPeerUDP extends PacketPeer {
         }
         native = _native;
     }
+
 
 
   public function bind(port: Int, ?bindAddress: String, ?recvBufSize: Int): Int {

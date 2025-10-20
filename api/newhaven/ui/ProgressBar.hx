@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class ProgressBar extends Range {
     public function new(?_native: NativeObject) {
@@ -47,5 +48,6 @@ class ProgressBar extends Range {
       native.set('show_percentage', value);
         return value;
     }
+
 
 }

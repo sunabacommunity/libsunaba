@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Vector2;
+import newhaven.core.Signal;
 
 class MeshTexture extends Texture2D {
     public function new(?_native: NativeReference) {
@@ -33,5 +34,6 @@ class MeshTexture extends Texture2D {
       native.set('image_size', value);
         return value;
     }
+
 
 }

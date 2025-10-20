@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class BoneMap extends Resource {
@@ -26,6 +27,23 @@ class BoneMap extends Resource {
       native.set('profile', value.native);
         return value;
     }
+
+	private var _boneMapUpdated: Signal;
+	public var boneMapUpdated(get, default): Signal;
+	function get_boneMapUpdated(): Signal {
+	    if (_boneMapUpdated == null) {
+	        _boneMapUpdated = Signal.createFromReference(native, 'bone_map_updated');
+	    }
+	    return _boneMapUpdated;
+	}
+	private var _profileUpdated: Signal;
+	public var profileUpdated(get, default): Signal;
+	function get_profileUpdated(): Signal {
+	    if (_profileUpdated == null) {
+	        _profileUpdated = Signal.createFromReference(native, 'profile_updated');
+	    }
+	    return _profileUpdated;
+	}
 
   public function findProfileBoneName(skeletonBoneName: String): String {
       var args = new ArrayList();

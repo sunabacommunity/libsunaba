@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Color;
 import newhaven.Resource;
@@ -149,6 +150,47 @@ class CodeEdit extends TextEdit {
       native.set('symbol_tooltip_on_hover', value);
         return value;
     }
+
+	private var _breakpointToggled: Signal;
+	public var breakpointToggled(get, default): Signal;
+	function get_breakpointToggled(): Signal {
+	    if (_breakpointToggled == null) {
+	        _breakpointToggled = Signal.createFromObject(native, 'breakpoint_toggled');
+	    }
+	    return _breakpointToggled;
+	}
+	private var _codeCompletionRequested: Signal;
+	public var codeCompletionRequested(get, default): Signal;
+	function get_codeCompletionRequested(): Signal {
+	    if (_codeCompletionRequested == null) {
+	        _codeCompletionRequested = Signal.createFromObject(native, 'code_completion_requested');
+	    }
+	    return _codeCompletionRequested;
+	}
+	private var _symbolHovered: Signal;
+	public var symbolHovered(get, default): Signal;
+	function get_symbolHovered(): Signal {
+	    if (_symbolHovered == null) {
+	        _symbolHovered = Signal.createFromObject(native, 'symbol_hovered');
+	    }
+	    return _symbolHovered;
+	}
+	private var _symbolLookup: Signal;
+	public var symbolLookup(get, default): Signal;
+	function get_symbolLookup(): Signal {
+	    if (_symbolLookup == null) {
+	        _symbolLookup = Signal.createFromObject(native, 'symbol_lookup');
+	    }
+	    return _symbolLookup;
+	}
+	private var _symbolValidate: Signal;
+	public var symbolValidate(get, default): Signal;
+	function get_symbolValidate(): Signal {
+	    if (_symbolValidate == null) {
+	        _symbolValidate = Signal.createFromObject(native, 'symbol_validate');
+	    }
+	    return _symbolValidate;
+	}
 
   public function addAutoBraceCompletionPair(startKey: String, endKey: String): Void {
       var args = new ArrayList();

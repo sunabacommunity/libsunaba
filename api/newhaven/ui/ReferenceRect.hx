@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 
 class ReferenceRect extends Control {
     public function new(?_native: NativeObject) {
@@ -40,5 +41,6 @@ class ReferenceRect extends Control {
       native.set('editor_only', value);
         return value;
     }
+
 
 }

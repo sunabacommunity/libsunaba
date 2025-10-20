@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class GraphFrame extends GraphElement {
@@ -65,6 +66,15 @@ class GraphFrame extends GraphElement {
       native.set('title', value);
         return value;
     }
+
+	private var _autoshrinkChanged: Signal;
+	public var autoshrinkChanged(get, default): Signal;
+	function get_autoshrinkChanged(): Signal {
+	    if (_autoshrinkChanged == null) {
+	        _autoshrinkChanged = Signal.createFromObject(native, 'autoshrink_changed');
+	    }
+	    return _autoshrinkChanged;
+	}
 
   public function getTitlebarHbox(): HBoxContainer {
       var args = new ArrayList();

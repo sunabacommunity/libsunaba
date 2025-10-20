@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.core.TypedArray;
+import newhaven.core.Signal;
 import newhaven.core.Color;
 import newhaven.core.ArrayList;
 
@@ -51,6 +52,7 @@ class Gradient extends Resource {
       native.set('offsets', value);
         return value;
     }
+
 
   public function addPoint(offset: Float, color: Color): Void {
       var args = new ArrayList();

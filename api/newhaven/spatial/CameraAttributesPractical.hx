@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class CameraAttributesPractical extends CameraAttributes {
     public function new(?_native: NativeReference) {
@@ -87,5 +88,6 @@ class CameraAttributesPractical extends CameraAttributes {
       native.set('dof_blur_near_transition', value);
         return value;
     }
+
 
 }

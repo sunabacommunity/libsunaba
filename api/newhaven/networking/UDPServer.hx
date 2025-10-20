@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class UDPServer extends Reference {
@@ -24,6 +25,7 @@ class UDPServer extends Reference {
       native.set('max_pending_connections', value);
         return value;
     }
+
 
   public function getLocalPort(): Int {
       var args = new ArrayList();

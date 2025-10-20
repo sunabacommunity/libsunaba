@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 
 class AudioEffectSpectrumAnalyzer extends AudioEffect {
     public function new(?_native: NativeReference) {
@@ -39,5 +40,6 @@ class AudioEffectSpectrumAnalyzer extends AudioEffect {
       native.set('tap_back_pos', value);
         return value;
     }
+
 
 }

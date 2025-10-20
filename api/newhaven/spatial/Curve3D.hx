@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.Vector3;
 import newhaven.core.ArrayList;
 import newhaven.core.Vector3;
@@ -52,6 +53,7 @@ class Curve3D extends Resource {
       native.set('up_vector_enabled', value);
         return value;
     }
+
 
   public function addPoint(position: Vector3, ?pIn: Vector3, ?out: Vector3, ?index: Int): Void {
       var args = new ArrayList();

@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.Node;
 
@@ -97,6 +98,23 @@ class Range extends Control {
       native.set('value', value);
         return value;
     }
+
+	private var _changed: Signal;
+	public var changed(get, default): Signal;
+	function get_changed(): Signal {
+	    if (_changed == null) {
+	        _changed = Signal.createFromObject(native, 'changed');
+	    }
+	    return _changed;
+	}
+	private var _valueChanged: Signal;
+	public var valueChanged(get, default): Signal;
+	function get_valueChanged(): Signal {
+	    if (_valueChanged == null) {
+	        _valueChanged = Signal.createFromObject(native, 'value_changed');
+	    }
+	    return _valueChanged;
+	}
 
   public function setValueNoSignal(value: Float): Void {
       var args = new ArrayList();

@@ -8,6 +8,7 @@ import newhaven.core.Object;
 import newhaven.core.Color;
 import newhaven.core.Rect2;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class StyleBoxTexture extends StyleBox {
@@ -132,6 +133,7 @@ class StyleBoxTexture extends StyleBox {
       native.set('texture_margin_top', value);
         return value;
     }
+
 
   public function getExpandMargin(margin: Int): Float {
       var args = new ArrayList();

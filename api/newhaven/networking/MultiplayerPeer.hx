@@ -5,6 +5,7 @@ import newhaven.core.native.NativeObject;
 import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class MultiplayerPeer extends PacketPeer {
@@ -40,6 +41,23 @@ class MultiplayerPeer extends PacketPeer {
       native.set('transfer_mode', value);
         return value;
     }
+
+	private var _peerConnected: Signal;
+	public var peerConnected(get, default): Signal;
+	function get_peerConnected(): Signal {
+	    if (_peerConnected == null) {
+	        _peerConnected = Signal.createFromReference(native, 'peer_connected');
+	    }
+	    return _peerConnected;
+	}
+	private var _peerDisconnected: Signal;
+	public var peerDisconnected(get, default): Signal;
+	function get_peerDisconnected(): Signal {
+	    if (_peerDisconnected == null) {
+	        _peerDisconnected = Signal.createFromReference(native, 'peer_disconnected');
+	    }
+	    return _peerDisconnected;
+	}
 
   public function close(): Void {
       var args = new ArrayList();

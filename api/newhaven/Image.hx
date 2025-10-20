@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.core.Dictionary;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Rect2i;
 import newhaven.core.Vector2i;
@@ -29,6 +30,7 @@ class Image extends Resource {
       native.set('data', value);
         return value;
     }
+
 
   public function adjustBcs(brightness: Float, contrast: Float, saturation: Float): Void {
       var args = new ArrayList();

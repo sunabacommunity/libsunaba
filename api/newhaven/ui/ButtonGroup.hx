@@ -6,6 +6,7 @@ import newhaven.core.Variant;
 import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Resource;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 
 class ButtonGroup extends Resource {
@@ -25,6 +26,15 @@ class ButtonGroup extends Resource {
       native.set('allow_unpress', value);
         return value;
     }
+
+	private var _pressed: Signal;
+	public var pressed(get, default): Signal;
+	function get_pressed(): Signal {
+	    if (_pressed == null) {
+	        _pressed = Signal.createFromReference(native, 'pressed');
+	    }
+	    return _pressed;
+	}
 
   public function getPressedButton(): BaseButton {
       var args = new ArrayList();

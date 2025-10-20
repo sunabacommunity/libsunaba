@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Node;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.core.Rect2;
 
@@ -52,6 +53,15 @@ class StatusIndicator extends Node {
       native.set('visible', value);
         return value;
     }
+
+	private var _pressed: Signal;
+	public var pressed(get, default): Signal;
+	function get_pressed(): Signal {
+	    if (_pressed == null) {
+	        _pressed = Signal.createFromObject(native, 'pressed');
+	    }
+	    return _pressed;
+	}
 
   public function getRect(): Rect2 {
       var args = new ArrayList();

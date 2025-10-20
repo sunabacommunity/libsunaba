@@ -7,6 +7,7 @@ import newhaven.core.Reference;
 import newhaven.core.Object;
 import newhaven.Material;
 import newhaven.Texture2D;
+import newhaven.core.Signal;
 
 class PanoramaSkyMaterial extends Material {
     public function new(?_native: NativeReference) {
@@ -42,5 +43,6 @@ class PanoramaSkyMaterial extends Material {
       native.set('panorama', value.native);
         return value;
     }
+
 
 }
