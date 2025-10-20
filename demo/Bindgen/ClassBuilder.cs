@@ -154,6 +154,11 @@ public class ClassBuilder
                 {
 	                packagePath = packagePath.Replace("newhaven.base", "newhaven");
                 }
+
+                if (Directory.Exists(packagePath.Replace("newhaven.", "").Replace(".", "/")))
+                {
+	                Directory.CreateDirectory(packagePath.Replace("newhaven.", "").Replace(".", "/"));
+                }
                 File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
             }
         }
