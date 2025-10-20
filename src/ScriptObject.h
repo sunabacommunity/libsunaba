@@ -162,7 +162,7 @@ GDCLASS( ScriptObject, RefCounted )
             std::vector<sol::object> _args;
             for (int i = 0; i < args.size(); i++)
             {
-                _args.push_back( sol::make_object( object.lua_state(), args[i] ) );
+                _args.push_back( gdToSol(args[i], object.lua_state()) );
             }
 
             sol::protected_function_result result = func( sol::as_args(_args));
