@@ -1,6 +1,9 @@
 #pragma once
-
 #include <godot_cpp/variant/callable_custom.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/variant/string_name.hpp>
+#include <godot_cpp/variant/string.hpp>
+#include <godot_cpp/core/object_id.hpp>
 #include <sol/sol.hpp>
 
 #include "ScriptObject.h"
@@ -9,40 +12,60 @@ using namespace godot;
 
 class ScriptCallableCustom : public CallableCustom {
 	sol::function lua_func;
-public:
-	ScriptCallableCustom(sol::function func) : lua_func((func)) {}
 
-	virtual Object *get_object() const override { return nullptr; }
-	virtual StringName get_method() const override { return StringName(); }
-	virtual uint32_t hash() const override { return (uint32_t)(size_t)this; }
-	virtual bool equals(const CallableCustom *p_other) const override {
-		return this == p_other;
+public:
+	ScriptCallableCustom(sol::function func) : lua_func(func) {}
+
+	virtual ObjectID get_object() const override {
+		// We are not tied to any Godot object, so return null ID.
+		return ObjectID();
 	}
 
-	virtual Variant call(const Variant **p_args, int p_argcount, Callable::CallError &r_error) const override {
+	virtual String get_as_text() const override {
+		return "[Lua callable]";
+	}
+
+	virtual CompareEqualFunc get_compare_equal_func() const override {
+		return nullptr; // Can be implemented if needed
+	}
+
+	virtual CompareLessFunc get_compare_less_func() const override {
+		return nullptr; // Can be implemented if needed
+	}
+
+	virtual uint32_t hash() const override {
+		return (uint32_t)(uintptr_t)lua_func.pointer();
+	}
+
+	virtual void call(
+		const Variant **p_arguments,
+		int p_argcount,
+		Variant &r_return_value,
+		GDExtensionCallError &r_call_error
+	) const override {
 		if (!lua_func.valid()) {
-			r_error.error = Callable::CallError::CALL_ERROR_INVALID_METHOD;
-			return Variant();
+			r_call_error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;
+			return;
 		}
 
-		std::vector<Variant> var_args;
-		var_args.reserve(p_argcount);
+		std::vector<Variant> args;
+		args.reserve(p_argcount);
 		for (int i = 0; i < p_argcount; i++) {
-			var_args.emplace_back(*p_args[i]);
+			args.emplace_back(*p_arguments[i]);
 		}
 
-		try {
-			sol::object result = lua_func(sol::as_args(var_args));
-			r_error.error = Callable::CallError::CALL_OK;
-			return ScriptObject::solToGd(result);
-		} catch (...) {
-			r_error.error = Callable::CallError::CALL_ERROR_INVALID_METHOD;
+		// No try/catch -> assume exception-free Lua
+		sol::protected_function_result result = lua_func(sol::as_args(args));
+
+		if (result.valid()) {
+			r_return_value = ScriptObject::solToGd(result);
+			r_call_error.error = GDEXTENSION_CALL_OK;
+		} else {
+			r_call_error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;
 		}
-		return Variant();
 	}
 };
 
-
-Callable make_callable_from_sol(sol::function func) {
+static Callable make_callable_from_sol(sol::function func) {
 	return Callable(memnew(ScriptCallableCustom(func)));
 }
