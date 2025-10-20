@@ -1,9 +1,9 @@
---library sunaba
---class-path tests/compiletest
+--library newhaven
+--class-path demo/tests/compiletest
 --main Main
 --lua ct.lua
 -D lua-vanilla
 --dce std
 --library codegen
---macro CodeGen.include('sunaba')
---macro CodeGen.haxeExtern('apitemp')
+--macro CodeGen.include('newhaven')
+--macro CodeGen.haxeExtern('apitest')
