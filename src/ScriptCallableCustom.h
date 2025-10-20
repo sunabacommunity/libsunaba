@@ -8,20 +8,36 @@
 
 #include "ScriptObject.h"
 
-using namespace godot;
 
-class ScriptCallableCustom : public CallableCustom {
+class ScriptCallableCustom : public godot::CallableCustom {
 	sol::function lua_func;
+
+	sol::table table;
+
+	std::string memberName;
 
 public:
 	ScriptCallableCustom(sol::function func) : lua_func(func) {}
+	ScriptCallableCustom(sol::table obj, std::string p_memberName) : table(obj), memberName(p_memberName) {
+		sol::object funcobj = table[memberName];
+		if (funcobj.is<sol::function>()) {
+			lua_func = funcobj;
+		}
+	}
+	ScriptCallableCustom(sol::table obj, sol::function func) : table(obj), lua_func(func) {
+		for (auto pair : obj) {
+			if (pair.second == func) {
+				memberName = pair.first.as<std::string>();
+			}
+		}
+	}
 
-	virtual ObjectID get_object() const override {
+	virtual godot::ObjectID get_object() const override {
 		// We are not tied to any Godot object, so return null ID.
 		return ObjectID();
 	}
 
-	virtual String get_as_text() const override {
+	virtual godot::String get_as_text() const override {
 		return "[Lua callable]";
 	}
 
@@ -38,9 +54,9 @@ public:
 	}
 
 	virtual void call(
-		const Variant **p_arguments,
+		const godot::Variant **p_arguments,
 		int p_argcount,
-		Variant &r_return_value,
+		godot::Variant &r_return_value,
 		GDExtensionCallError &r_call_error
 	) const override {
 		if (!lua_func.valid()) {
@@ -67,5 +83,13 @@ public:
 };
 
 static Callable make_callable_from_sol(sol::function func) {
-	return Callable(memnew(ScriptCallableCustom(func)));
+	return godot::Callable(memnew(ScriptCallableCustom(func)));
+}
+
+static Callable make_callable_from_sol(sol::table obj, sol::function func) {
+	return godot::Callable(memnew(ScriptCallableCustom( obj, func)));
+}
+
+static Callable make_callable_from_sol(sol::table obj, std::string name) {
+	return godot::Callable(memnew(ScriptCallableCustom( obj, name)));
 }
