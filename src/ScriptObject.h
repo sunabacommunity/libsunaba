@@ -141,7 +141,7 @@ GDCLASS( ScriptObject, RefCounted )
 
         void set_var( const String &name, const Variant &var )
         {
-            object[name.utf8().get_data()] = sol::make_object( object.lua_state(), var );
+            object[name.utf8().get_data()] = sol::make_object( object.lua_state(), gdToSol(var, object.lua_state()) );
         }
 
         bool has_var(const String& name)
@@ -180,6 +180,6 @@ GDCLASS( ScriptObject, RefCounted )
             }
 
             sol::object ret = result.get<sol::object>();
-            return ret.as<Variant>();
+            return solToGd(ret);
         }
 };
