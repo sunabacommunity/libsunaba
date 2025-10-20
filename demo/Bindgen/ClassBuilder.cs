@@ -200,23 +200,12 @@ public class ClassBuilder
         var classSb = new StringBuilder();
         classSb.AppendLine("class " + className + " extends " + inheritedClassName + " {");
 
-        if (className == "Node")
-        {
-            classSb.AppendLine("    private var element: Element;");
-        }
-
         classSb.AppendLine($"    public function new(?_native: {GetNativeObject(className)}) {'{'}");
         classSb.AppendLine("        super();");
         classSb.AppendLine("        if (_native == null) {");
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
         classSb.AppendLine("        native = _native;");
-        if (className == "Node")
-        {
-            classSb.AppendLine("        var variant : Variant = _native;");
-            classSb.AppendLine("        element = variant;");
-            classSb.AppendLine("        element.scriptInstance = this;");
-        }
         classSb.AppendLine("    }");
 
         if (className == "Node")
