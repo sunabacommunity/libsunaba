@@ -152,14 +152,15 @@ public class ClassBuilder
                 var packagePath = packageLocations[className];
                 if (packagePath.Contains("newhaven.base"))
                 {
-	                packagePath = packagePath.Replace("newhaven.base", "newhaven");
+	                File.WriteAllText(Path.Combine(outputDir, $"{className}.hx"), haxeClass.Replace("newhaven.base", "newhaven"));
+	                continue;
                 }
 
                 if (Directory.Exists(packagePath.Replace("newhaven.", "").Replace(".", "/")))
                 {
 	                Directory.CreateDirectory(packagePath.Replace("newhaven.", "").Replace(".", "/"));
                 }
-                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/").Replace("newhaven/newhaven/", "newhaven/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
+                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/").Replace("base/", "newhaven/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
             }
         }
     }
