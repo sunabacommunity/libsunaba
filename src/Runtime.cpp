@@ -123,6 +123,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_Vector3i();
 	luaopen_Vector4();
 	luaopen_Vector4i();
+	luaopen_Callable();
+	luaopen_Signal();
 	if (p_sandboxed) {
 		luaopen_Variant_sandboxed(classnames);
 		luaopen_NativeObject_sandboxed(classnames);
