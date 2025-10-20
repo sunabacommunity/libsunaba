@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xxlcv25yymyg"]
+
+[ext_resource type="Script" uid="uid://bjygqfuc4w5b" path="res://Bindgen/BindgenScene.cs" id="1_eyxpb"]
+
+[node name="BindgenScene" type="Node"]
+script = ExtResource("1_eyxpb")
