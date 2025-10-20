@@ -47,7 +47,7 @@ abstract Callable(CallableNative) from CallableNative to CallableNative {
 	}
 
 	@:from
-	public static function fromFunction(func: Function) {
+	public static function fromFunction(func: Function): Callable {
 		return new CallableNative(func);
 	}
 }
