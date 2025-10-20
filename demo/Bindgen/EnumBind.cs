@@ -78,7 +78,6 @@ public class EnumBind
 				GenerateEnums(subdir, dir);
 			}
 		}
-
 	}
 
 	public void GenerateRootEnums()
@@ -115,10 +114,10 @@ public class EnumBind
 
 					var valValue = Convert.ToInt64(value);
 					valNames[valName] = valValue;
-					stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+					stringBuilder.AppendLine("	var " + valName + " = cast " + valValue + ";");
 				}
 
-				/*var valNamesStr = valNames.Keys.ToArray().Join(", ");
+				var valNamesStr = valNames.Keys.ToArray().Join(", ");
 				stringBuilder.AppendLine("	public static var values = [" + valNamesStr + "];");
 				stringBuilder.AppendLine();
 
@@ -127,12 +126,12 @@ public class EnumBind
 
 				foreach (var valName in valNames.Keys)
 				{
-					stringBuilder.AppendLine("			case \"" + valName + "\": " + valNames[valName] + ";");
+					stringBuilder.AppendLine("			case \"" + valName + "\": cast " + valNames[valName] + ";");
 				}
 
 				stringBuilder.AppendLine("			case _: null;");
 				stringBuilder.AppendLine("		}");
-				stringBuilder.AppendLine("	}");*/
+				stringBuilder.AppendLine("	}");
 
 				stringBuilder.AppendLine("}");
 
@@ -152,7 +151,12 @@ public class EnumBind
 		foreach (var file in files)
 		{
 			var fileName = file.GetFile().GetBaseName();
-			GenerateEnumFiles(xmlDir.Replace(parentDirPath, apiCodePath), fileName);
+			var filePath = xmlDir.Replace(parentDirPath, apiCodePath);
+			if (filePath.Contains("/base"))
+			{
+				filePath = filePath.Replace("/base", "");
+			}
+			GenerateEnumFiles(filePath, fileName);
 		}
 	}
 
@@ -266,7 +270,7 @@ public class EnumBind
 							if (!valNames.Keys.Contains(valName))
 							{
 								valNames[valName] = valValue;
-								stringBuilder.AppendLine("	var " + valName + " = " + valValue + ";");
+								stringBuilder.AppendLine("	var " + valName + " = cast " + valValue + ";");
 							}
 						}
 
@@ -279,7 +283,7 @@ public class EnumBind
 
 						foreach (var valName in valNames.Keys)
 						{
-							stringBuilder.AppendLine("			case \"" + valName + "\": " + valNames[valName] + ";");
+							stringBuilder.AppendLine("			case \"" + valName + "\": cast " + valNames[valName] + ";");
 						}
 
 						stringBuilder.AppendLine("			case _: null;");
