@@ -41,37 +41,58 @@ public:
 		return "[Lua callable]";
 	}
 
+	static bool compare_equal(const CallableCustom *a, const CallableCustom *b) {
+		return a == b;
+	}
+
+	static bool equal_func(const CallableCustom *a, const CallableCustom *b) {
+		auto *ca = static_cast<const ScriptCallableCustom *>(a);
+		auto *cb = static_cast<const ScriptCallableCustom *>(b);
+		return ca->lua_func.pointer() == cb->lua_func.pointer();
+	}
+
 	virtual CompareEqualFunc get_compare_equal_func() const override {
-		return nullptr; // Can be implemented if needed
+		return &equal_func;
+	}
+
+	static bool less_func(const CallableCustom *a, const CallableCustom *b) {
+		auto *ca = static_cast<const ScriptCallableCustom *>(a);
+		auto *cb = static_cast<const ScriptCallableCustom *>(b);
+		return ca->lua_func.pointer() < cb->lua_func.pointer();
 	}
 
 	virtual CompareLessFunc get_compare_less_func() const override {
-		return nullptr; // Can be implemented if needed
+		return &less_func;
 	}
+
 
 	virtual uint32_t hash() const override {
 		return (uint32_t)(uintptr_t)lua_func.pointer();
 	}
 
 	virtual void call(
-		const godot::Variant **p_arguments,
-		int p_argcount,
-		godot::Variant &r_return_value,
-		GDExtensionCallError &r_call_error
-	) const override {
+	const godot::Variant **p_arguments,
+	int p_argcount,
+	godot::Variant &r_return_value,
+	GDExtensionCallError &r_call_error
+) const override {
 		if (!lua_func.valid()) {
 			r_call_error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;
 			return;
 		}
 
-		std::vector<Variant> args;
-		args.reserve(p_argcount);
+		sol::variadic_args lua_args;
+		std::vector<sol::object> sol_args;
+		sol_args.reserve(p_argcount);
+
+		// Convert Godot Variants to Lua-side objects
 		for (int i = 0; i < p_argcount; i++) {
-			args.emplace_back(*p_arguments[i]);
+			sol::object obj = ScriptObject::gdToSol(*p_arguments[i], lua_func.lua_state());
+			sol_args.emplace_back(obj);
 		}
 
-		// No try/catch -> assume exception-free Lua
-		sol::protected_function_result result = lua_func(sol::as_args(args));
+		// Call Lua function safely
+		sol::protected_function_result result = lua_func(sol::as_args(sol_args));
 
 		if (result.valid()) {
 			r_return_value = ScriptObject::solToGd(result);
@@ -80,10 +101,16 @@ public:
 			r_call_error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;
 		}
 	}
+
 };
 
-static Callable make_callable_from_sol(sol::function func) {
-	return godot::Callable(memnew(ScriptCallableCustom(func)));
+static std::vector<ScriptCallableCustom*> g_created_callables;
+
+static godot::Callable make_callable_from_sol(sol::function func) {
+	auto* callableCustom = memnew(ScriptCallableCustom(func));
+	g_created_callables.push_back(callableCustom); // keep alive for debugging
+	UtilityFunctions::print("make_callable_from_sol: created ScriptCallableCustom ", (uint64_t)callableCustom);
+	return godot::Callable(callableCustom);
 }
 
 static Callable make_callable_from_sol(sol::table obj, sol::function func) {
