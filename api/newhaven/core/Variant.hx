@@ -309,6 +309,15 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return VariantNative.fromReference(value.native);
     }
 
+	@:from
+	public static function fromCallable(value: Callable): Variant {
+		return VariantNative.fromCallable(value);
+	}
+	@:to
+	public inline function toCallable(): Callable {
+		return this.asCallable();
+	}
+
     @:from
     public static function fromBaseClass(value: BaseClass): Variant {
         return VariantNative.fromBaseClass(value);
