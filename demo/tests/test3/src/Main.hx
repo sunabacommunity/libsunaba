@@ -7,6 +7,8 @@ import newhaven.ui.Panel;
 import newhaven.ui.Label;
 import newhaven.ui.VBoxContainer;
 import newhaven.LayoutPreset;
+import newhaven.ui.Button;
+import newhaven.core.Callable;
 
 class Main extends App {
     public static function main() {
@@ -55,5 +57,25 @@ class Main extends App {
 		label.text = "Hello, World!";
 		label.verticalAlignment = 1;
 		label.horizontalAlignment = 1;
+
+		var button = new Button();
+		vboxContainer.addChild(button);
+		button.text = "Click Me!";
+
+		label.text = "You clicked me! " + count + " times";
+
+		button.pressed.connect(new CallableNative(() -> {
+			incrementCounter();
+		}));
+
+		var size = vboxContainer.size;
+		var parentSize = control.size;
+		vboxContainer.position.x = (parentSize.x - size.x) / 2;
+		vboxContainer.position.y = (parentSize.y - size.y) / 2;
+	}
+
+	public function incrementCounter() {
+		count++;
+		label.text = "You clicked me! " + count + " times";
 	}
 }
