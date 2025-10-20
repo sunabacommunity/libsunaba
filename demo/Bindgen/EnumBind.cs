@@ -65,7 +65,7 @@ public class EnumBind
 	{
 		var bindgenPath = ProjectSettings.GlobalizePath("res://");
 		rootPath = bindgenPath + "/../";
-		apiCodePath = rootPath + "/enum_api/sunaba/";
+		apiCodePath = rootPath + "/enum_api/newhaven/";
 
 		xmlPath = rootPath + "xmlgdapi/";
 
@@ -97,7 +97,7 @@ public class EnumBind
 			{
 				var enumName = type.Name;
 				var codeFile = apiCodePath + enumName + ".hx";
-				var packageName = "sunaba";
+				var packageName = "newhaven";
 
 				var stringBuilder = new System.Text.StringBuilder();
 				stringBuilder.AppendLine("package " + packageName + ";");
@@ -245,7 +245,7 @@ public class EnumBind
 							enumName = enumName.Replace("editor", String.Empty);
 						}
 
-						var codeDir = enumPath.Replace(apiCodePath, "sunaba");
+						var codeDir = enumPath.Replace(apiCodePath, "newhaven");
 						var codeFile = enumPath + "/" + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");
