@@ -384,14 +384,14 @@ public class ClassBuilder
 			    signalMethod = "createFromReference";
 
 		    var signalSb = new StringBuilder();
-		    signalSb.Append($"    private var _{signalName.ToCamelCase()}: Signal;");
-		    signalSb.Append($"    public var {signalName.ToCamelCase()}(get, default): Signal;");
-		    signalSb.Append($"    function get_{signalName.ToCamelCase()}(): Signal {'{'}");
-		    signalSb.Append($"        if (_{signalName.ToCamelCase()} == null) {'{'}");
-		    signalSb.Append($"            _{signalName.ToCamelCase()} = Signal.{signalMethod}(native, '{signalName}');");
-		    signalSb.Append($"        {'}'}");
-		    signalSb.Append($"        return _{signalName.ToCamelCase()};");
-		    signalSb.Append($"    {'}'}");
+		    signalSb.AppendLine($"	private var _{signalName.ToCamelCase()}: Signal;");
+		    signalSb.AppendLine($"	public var {signalName.ToCamelCase()}(get, default): Signal;");
+		    signalSb.AppendLine($"  function get_{signalName.ToCamelCase()}(): Signal {'{'}");
+		    signalSb.AppendLine($"	    if (_{signalName.ToCamelCase()} == null) {'{'}");
+		    signalSb.AppendLine($"	        _{signalName.ToCamelCase()} = Signal.{signalMethod}(native, '{signalName}');");
+		    signalSb.AppendLine($"	    {'}'}");
+		    signalSb.AppendLine($"	    return _{signalName.ToCamelCase()};");
+		    signalSb.AppendLine($"	{'}'}");
 		    sb.Append(signalSb);
 	    }
     }
