@@ -5,6 +5,7 @@ import newhaven.core.native.NativeReference;
 import lua.Table;
 import haxe.Int32;
 import haxe.Int64;
+import haxe.Constraints.Function;
 
 @:native("Variant")
 extern class VariantNative {
@@ -66,6 +67,7 @@ extern class VariantNative {
     public static function fromColorArray(value:TypedArray<Color>): VariantNative;
     public static function fromObject(value:NativeObject):VariantNative;
     public static function fromReference(value:NativeReference):VariantNative;
+	public static function fromFunction(value: Function):VariantNative;
     @:native("fromTable")
     public static function fromAny(value:Any):VariantNative;
     @:native("fromTable")
@@ -105,6 +107,7 @@ extern class VariantNative {
     public function asColorArray():TypedArray<Color>;
     public function asObject(): NativeObject;
     public function asReference(): NativeReference;
+	public function asFunction(): Function;
     @:native("asTable")
     public function asAny(): Any;
     @:native("asTable")
