@@ -1,6 +1,8 @@
 #include "Runtime.h"
 #include "ScriptCallableCustom.h"
 #include "ScriptObject.h"
+#include "NativeObject.h"
+#include "NativeReference.h"
 
 void Runtime::luaopen_Callable() {
 	lua_state.new_usertype<Callable>("Callable",
@@ -18,7 +20,18 @@ void Runtime::luaopen_Callable() {
 		"getBoundArguments", &Callable::get_bound_arguments,
 		"getBoundArgumentsCount", &Callable::get_bound_arguments_count,
 		"getMethod", &Callable::get_method,
-		"getObject", &Callable::get_object,
+		"getObject", [](Callable callable) {
+			return new NativeObject(callable.get_object());
+		},
+		"getReference", [](Callable callable) {
+			return new NativeReference(
+				Ref<RefCounted>(
+					Object::cast_to<RefCounted>(
+						callable.get_object()
+					)
+				)
+			);
+		},
 		"getUnboundArgumentsCount", &Callable::get_unbound_arguments_count,
 		"hash", &Callable::hash,
 		"isCustom", &Callable::is_custom,
