@@ -2,6 +2,7 @@
 #include "io/ByteArray.h"
 #include "NativeObject.h"
 #include "NativeReference.h"
+#include "ScriptFunction.h"
 #include "ScriptObject.h"
 
 void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
@@ -105,6 +106,11 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 			auto* scriptObject = memnew( ScriptObject );
 			scriptObject->object = table;
 			return Variant(scriptObject);
+		 },
+		 "fromFunction", [](sol::function func) {
+			 auto funcObj = Ref<ScriptFunction>(memnew(ScriptFunction));
+			 funcObj->func = func;
+			 return Variant(funcObj);
 		 },
         "getType", &Variant::get_type,
         "getTypeName", &Variant::get_type_name,
@@ -216,6 +222,15 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 			else {
 				return sol::make_object(lua_state, sol::lua_nil);
 			}
+		},
+		"asFunction", [](const Variant& v) {
+			Ref<RefCounted> ref = v;
+			Ref<ScriptFunction> funcObj = Ref<ScriptFunction>(
+					Object::cast_to<ScriptFunction>(
+						ref.ptr()
+				)
+			);
+			return funcObj->func;
 		},
 		"asCallable", &Variant::operator Callable,
 		"asSignal", &Variant::operator Signal,
