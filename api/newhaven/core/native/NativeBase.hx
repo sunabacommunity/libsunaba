@@ -15,7 +15,7 @@ extern class NativeBase {
     public function getMethodList(): ArrayList;
     public function getPropertyList(): ArrayList;
     public function hasMeta(name: String): Bool;
-    public function hasMethod(): Bool;
+    public function hasMethod(name: String): Bool;
     public function setMeta(name: String, value: Variant): Void;
     public function isNull(): Bool;
     public static function callStatic(classname: String, methodname: String, args: ArrayList): Variant;
