@@ -30,7 +30,9 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
             Variant(Color),
             Variant(Projection),
             //Variant(Array),
-            Variant(Dictionary)>(),
+            Variant(Dictionary),
+			Variant(Callable),
+			Variant(Signal)>(),
         "fromArrayList", [](const Array& arr) {
 			return Variant(arr);
 	    },
@@ -215,6 +217,8 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 				return sol::make_object(lua_state, sol::lua_nil);
 			}
 		},
+		"asCallable", &Variant::operator Callable,
+		"asSignal", &Variant::operator Signal,
         "tostring", [](const Variant& v) { return std::string((v.operator String()).utf8().get_data()); }
     );
 
