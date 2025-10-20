@@ -9,3 +9,4 @@
 
 sol2/** linguist-vendored
 lua-5.4.8/** linguist-vendored
+enum_api/** linguist-vendored
