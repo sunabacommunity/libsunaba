@@ -5,7 +5,7 @@ import haxe.Constraints.Function;
 
 @:native("Callable")
 extern class CallableNative {
-	public function new(func : Function);
+	//public function new(func : Function);
 	@:native("new")
 	public static function createFromObject(object: BaseClass, method: String): CallableNative;
 	public function bind(arg: ArrayList): Callable;
@@ -43,12 +43,16 @@ extern class CallableNative {
 )
 abstract Callable(CallableNative) from CallableNative to CallableNative {
 	public function new(func: Function) {
-		this = new CallableNative(func);
+		//this = new CallableNative(func);
+		var scriptFunctionWrapper = new NativeObject("ScriptFunctionWrapper");
+		scriptFunctionWrapper.set("function", func);
+		var callable: Callable = scriptFunctionWrapper.call("to_callable", new ArrayList());
+		return callable;
 	}
 
 	@:from
 	public static function fromFunction(func: Function): Callable {
-		return new CallableNative(func);
+		return new Callable(func);
 	}
 }
 
