@@ -3,11 +3,17 @@ package newhaven;
 import newhaven.BaseClass;
 import newhaven.core.Variant;
 import newhaven.core.native.NativeObject;
+import newhaven.Node;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
 	private function get_rootNodeNative(): NativeObject {
 		return untyped __lua__("_G.__rootNode");
+	}
+
+	public var rootNode(get, default): Node;
+	function get_rootNode(): Node {
+		return new Node(rootNodeNative);
 	}
 
     public static var execDir(get, default): String;
