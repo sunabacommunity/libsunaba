@@ -47,7 +47,7 @@ abstract Callable(CallableNative) from CallableNative to CallableNative {
 		var scriptFunctionWrapper = new NativeObject("ScriptFunctionWrapper");
 		scriptFunctionWrapper.set("function", func);
 		var callable: Callable = scriptFunctionWrapper.call("to_callable", new ArrayList());
-		return callable;
+		this = callable;
 	}
 
 	@:from
