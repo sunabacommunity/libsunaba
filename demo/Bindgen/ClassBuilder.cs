@@ -148,7 +148,11 @@ public class ClassBuilder
                 Console.WriteLine($"Processing class: {className}");
                 var haxeClass = GenerateClass(doc, className);
                 var packagePath = packageLocations[className];
-                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/"), $"{className}.hx")), haxeClass);
+                if (packagePath.Contains("newhaven.base"))
+                {
+	                packagePath = packagePath.Replace("newhaven.base", "newhaven");
+                }
+                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
             }
         }
     }
@@ -162,8 +166,8 @@ public class ClassBuilder
 
         var importSb = new StringBuilder();
         List<string> importList = new();
-        importList.Add("newhaven.core.nativelink.LinkRef");
-        importList.Add("newhaven.core.nativelink.LinkObject");
+        importList.Add("newhaven.core.native.NativeReference");
+        importList.Add("newhaven.core.native.NativeObject");
         importList.Add("newhaven.core.Variant");
         if (packageLocations[className] != "newhaven.core")
         {
@@ -193,10 +197,10 @@ public class ClassBuilder
             classSb.AppendLine("    private var element: Element;");
         }
 
-        classSb.AppendLine($"    public function new(?_native: {GetLinkObject(className)}) {'{'}");
+        classSb.AppendLine($"    public function new(?_native: {GetNativeObject(className)}) {'{'}");
         classSb.AppendLine("        super();");
         classSb.AppendLine("        if (_native == null) {");
-        classSb.AppendLine($"            _native = new {GetLinkObject(className)}('" + className + "');");
+        classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
         classSb.AppendLine("        native = _native;");
         if (className == "Node")
@@ -241,11 +245,8 @@ public class ClassBuilder
                 if (importSb.ToString().Contains(import))
                     continue;
             }
-            if (import.Contains("BinaryData")) import = "newhaven.core.io.BinaryData";
             if (import.Contains(packageLocations[className]))
-                if (!import.Contains("nativelink"))
-                    if (!import.Contains("BinaryData"))
-                        continue;
+                continue;
             importSb.AppendLine($"import {import};");
         }
         importSb.AppendLine();
@@ -288,16 +289,16 @@ public class ClassBuilder
         sb.AppendLine("    public function shortcutInput(event: InputEvent) {");
         sb.AppendLine("        ");
         sb.AppendLine("    }");
-        sb.AppendLine("    public function _input(event: LinkRef) {");
+        sb.AppendLine("    public function _input(event: NativeReference) {");
         sb.AppendLine("        input(new InputEvent(event));");
         sb.AppendLine("    }");
-        sb.AppendLine("    public function _unhandledInput(event: LinkRef) {");
+        sb.AppendLine("    public function _unhandledInput(event: NativeReference) {");
         sb.AppendLine("        unhandledInput(new InputEvent(event));");
         sb.AppendLine("    }");
-        sb.AppendLine("    public function _unhandledKeyInput(event: LinkRef) {");
+        sb.AppendLine("    public function _unhandledKeyInput(event: NativeReference) {");
         sb.AppendLine("        unhandledKeyInput(new InputEvent(event));");
         sb.AppendLine("    }");
-        sb.AppendLine("    public function _shortcutInput(event: LinkRef) {");
+        sb.AppendLine("    public function _shortcutInput(event: NativeReference) {");
         sb.AppendLine("        shortcutInput(new InputEvent(event));");
         sb.AppendLine("    }");
     }
@@ -332,14 +333,12 @@ public class ClassBuilder
                     {
                         memberSb.AppendLine($"        return native.get('{memberName}');");
                         var importName = $"newhaven.core.{MapReturnType(memberType)}";
-                        if (importName.Contains("BinaryData"))
-                            importName = $"newhaven.core.io.{MapReturnType(memberType)}";
-                        if (!importList.Contains(importName) && (packageLocations[className] != "newhaven.core" || importName.Contains("BinaryData")))
+                        if (!importList.Contains(importName) && (packageLocations[className] != "newhaven.core"))
                             importList.Add(importName);
                     }
                     else if (ClassNames.Contains(memberType))
                     {
-                        memberSb.AppendLine($"        var ref: {GetLinkObject(memberType)} = native.get('{memberName}');");
+                        memberSb.AppendLine($"        var ref: {GetNativeObject(memberType)} = native.get('{memberName}');");
                         memberSb.AppendLine($"        return new {memberType}(ref);");
                         if (packageLocations[className] != packageLocations[memberType])
                         {
@@ -490,16 +489,16 @@ public class ClassBuilder
                         if (isVariantType(returnType))
                         {
                             if (returnType != "void" && returnType != "Void")
-                                methodSb.AppendLine($"      return LinkObject.callStatic('{className}', '{methodName}', args);");
+                                methodSb.AppendLine($"      return NativeObject.callStatic('{className}', '{methodName}', args);");
                             else
-                                methodSb.AppendLine($"      LinkObject.callStatic('{className}', '{methodName}', args);");
+                                methodSb.AppendLine($"      NativeObject.callStatic('{className}', '{methodName}', args);");
                             var importName = $"newhaven.core.{MapReturnType(returnType)}";
                             if (!importList.Contains(importName) && packageLocations[className] != "newhaven.core")
                                 importList.Add(importName);
                         }
                         else if (ClassNames.Contains(returnType))
                         {
-                            methodSb.AppendLine($"      var ref: {GetLinkObject(returnType)} = LinkObject.callStatic('{className}', '{methodName}', args);");
+                            methodSb.AppendLine($"      var ref: {GetNativeObject(returnType)} = NativeObject.callStatic('{className}', '{methodName}', args);");
                             methodSb.AppendLine($"      return new {returnType}(ref);");
                             if (packageLocations[className] != packageLocations[returnType])
                             {
@@ -562,7 +561,7 @@ public class ClassBuilder
                         }
                         else if (ClassNames.Contains(returnType))
                         {
-                            methodSb.AppendLine($"      var ref: {GetLinkObject(returnType)} = native.call('{methodName}', args);");
+                            methodSb.AppendLine($"      var ref: {GetNativeObject(returnType)} = native.call('{methodName}', args);");
                             methodSb.AppendLine($"      return new {returnType}(ref);");
                             if (packageLocations[className] != packageLocations[returnType])
                             {
@@ -638,12 +637,12 @@ public class ClassBuilder
         return false;
     }
 
-    string GetLinkObject(string classname)
+    string GetNativeObject(string classname)
     {
         if (IsReferenceCounted(classname))
-            return "LinkRef";
+            return "NativeReference";
 
-        return "LinkObject";
+        return "NativeObject";
     }
 
     bool InheritsClass(string className, string baseClassName)
@@ -749,7 +748,7 @@ public class ClassBuilder
             case "StringName":
                 return "String";
             case "PackedByteArray":
-                return "BinaryData";
+                return "ByteArray";
             case "PackedInt32Array":
                 return "TypedArray<Int>";
             case "PackedInt64Array":
