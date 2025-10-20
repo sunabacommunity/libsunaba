@@ -11,16 +11,12 @@ import newhaven.core.ArrayList;
 import newhaven.desktop.Window;
 
 class Node extends Object {
-    private var element: Element;
     public function new(?_native: NativeObject) {
         super();
         if (_native == null) {
             _native = new NativeObject('Node');
         }
         native = _native;
-        var variant : Variant = _native;
-        element = variant;
-        element.scriptInstance = this;
     }
 
     public function ready() {
