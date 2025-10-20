@@ -126,7 +126,7 @@ public class EnumBuilder
 
 				foreach (var valName in valNames.Keys)
 				{
-					stringBuilder.AppendLine("			case \"" + valName + "\": " + valNames[valName] + ";");
+					stringBuilder.AppendLine("			case \"" + valName + "\": cast " + valNames[valName] + ";");
 				}
 
 				stringBuilder.AppendLine("			case _: null;");
@@ -283,7 +283,7 @@ public class EnumBuilder
 
 						foreach (var valName in valNames.Keys)
 						{
-							stringBuilder.AppendLine("			case \"" + valName + "\": " + valNames[valName] + ";");
+							stringBuilder.AppendLine("			case \"" + valName + "\": cast " + valNames[valName] + ";");
 						}
 
 						stringBuilder.AppendLine("			case _: null;");
