@@ -151,7 +151,12 @@ public class EnumBuilder
 		foreach (var file in files)
 		{
 			var fileName = file.GetFile().GetBaseName();
-			GenerateEnumFiles(xmlDir.Replace(parentDirPath, apiCodePath), fileName);
+			var filePath = xmlDir.Replace(parentDirPath, apiCodePath);
+			if (filePath.Contains("/base"))
+			{
+				filePath = filePath.Replace("/base", "");
+			}
+			GenerateEnumFiles(filePath, fileName);
 		}
 	}
 
