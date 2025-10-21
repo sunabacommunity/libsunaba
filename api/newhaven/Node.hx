@@ -10,6 +10,7 @@ import newhaven.networking.MultiplayerAPI;
 import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.Window;
+import newhaven.core.native.ScriptType;
 
 class Node extends Object {
     public function new(?_native: NativeObject) {
@@ -20,35 +21,42 @@ class Node extends Object {
         native = _native;
     }
 
+	public function initializeProxy() {
+		var proxy = new NativeObject("res://Engine/NodeProxy.gd", new ArrayList(), ScriptType.gdscript);
+		proxy.set("instance", this);
+		var args = new ArrayList();
+		args.append(proxy);
+		native.call("add_child", args);
+	}
     public function onReady() {
-        
+
     }
     public function onEnterTree() {
-        
+
     }
     public function onExitTree() {
-        
+
     }
     public function onProcess(delta: Float) {
-        
+
     }
     public function onPhysicsProcess(delta: Float) {
-        
+
     }
     public function onNotification(what: Int) {
-        
+
     }
     public function onInput(event: InputEvent) {
-        
+
     }
     public function onUnhandledInput(event: InputEvent) {
-        
+
     }
     public function onUnhandledKeyInput(event: InputEvent) {
-        
+
     }
     public function onShortcutInput(event: InputEvent) {
-        
+
     }
     public function _onInput(event: NativeReference) {
         onInput(new InputEvent(event));
