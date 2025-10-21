@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Newhaven Demo"
-run/main_scene="uid://cxhgoyx7afvu7"
+run/main_scene="uid://cdql0ybqc42ka"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Newhaven"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
