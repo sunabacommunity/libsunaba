@@ -10,6 +10,10 @@ import newhaven.LayoutPreset;
 import newhaven.ui.Button;
 import newhaven.core.Callable;
 import newhaven.core.ArrayList;
+import newhaven.core.native.NativeObject;
+import newhaven.core.Variant;
+import newhaven.core.native.NativeReference;
+import newhaven.ui.Theme;
 
 class Main extends App {
     public static function main() {
@@ -23,6 +27,23 @@ class Main extends App {
 		Sys.println("Hello, World!");
 
 		var control = new Control();
+
+		var resourceLoader = NativeObject.getService("ResourceLoader");
+		if (!resourceLoader.isNull()) {
+			var themeRes: NativeReference = resourceLoader.call("load", args(["res://addons/lite/light.tres"]));
+			var displayServer = NativeObject.getService("DisplayServer");
+			if (!displayServer.isNull()) {
+				var isDarkMode: Bool = displayServer.call("is_dark_mode", args([]));
+				if (isDarkMode) {
+					themeRes = resourceLoader.call("load", args(["res://addons/lite/dark.tres"]));
+				}
+			}
+
+			if (themeRes.isClass("Theme")) {
+				var theme = new Theme(themeRes);
+				control.theme = theme;
+			}
+		}
 
 		rootNode.addChild(control);
 		control.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
@@ -82,5 +103,13 @@ class Main extends App {
 	public function incrementCounter() {
 		count++;
 		label.text = "You clicked me! " + count + " times";
+	}
+
+	function args(args: Array<Variant>): ArrayList {
+		var newArgs = new ArrayList();
+		for (arg in args) {
+			newArgs.append(arg);
+		}
+		return newArgs;
 	}
 }
