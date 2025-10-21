@@ -60,15 +60,19 @@ class Node extends Object {
 
     }
     public function _onInput(event: NativeReference) {
+		if (event == null) return;
         onInput(new InputEvent(event));
     }
     public function _onUnhandledInput(event: NativeReference) {
+		if (event == null) return;
         onUnhandledInput(new InputEvent(event));
     }
     public function _onUnhandledKeyInput(event: NativeReference) {
+		if (event == null) return;
         onUnhandledKeyInput(new InputEvent(event));
     }
     public function _onShortcutInput(event: NativeReference) {
+		if (event == null) return;
         onShortcutInput(new InputEvent(event));
     }
 
