@@ -11,6 +11,7 @@ import newhaven.core.Signal;
 import newhaven.core.ArrayList;
 import newhaven.desktop.Window;
 import newhaven.core.native.ScriptType;
+import newhaven.core.VariantNative;
 
 class Node extends Object {
     public function new(?_native: NativeObject) {
@@ -23,7 +24,7 @@ class Node extends Object {
 
 	public function initializeProxy() {
 		var proxy = new NativeObject("res://Engine/NodeProxy.gd", new ArrayList(), ScriptType.gdscript);
-		proxy.set("instance", this);
+		proxy.set("instance", VariantNative.fromBaseClass(this));
 		var args = new ArrayList();
 		args.append(proxy);
 		native.call("add_child", args);
