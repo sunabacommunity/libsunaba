@@ -14,7 +14,6 @@ class InputEvent extends Resource {
     public function new(?_native: NativeReference) {
         super();
         if (_native == null) {
-            _native = new NativeReference('InputEvent');
         }
         native = _native;
     }
