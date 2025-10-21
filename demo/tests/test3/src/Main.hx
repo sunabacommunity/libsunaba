@@ -34,8 +34,8 @@ class Main extends App {
 		panel.setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);
 		panel.sizeFlagsHorizontal = SizeFlags.fill;
 		panel.sizeFlagsVertical = SizeFlags.fill;
-		panel.offsetBottom = -10;
-		panel.offsetTop = 10;
+		panel.offsetBottom = 10;
+		panel.offsetTop = -10;
 		panel.offsetLeft = -10;
 		panel.offsetRight = 10;
 
@@ -65,11 +65,13 @@ class Main extends App {
 
 		label.text = "You clicked me! " + count + " times";
 
-		var callable = new CallableNative(() -> {
+		/*var callable = () -> {
+			incrementCounter();
+		};*/
+		//callable.call(new ArrayList());
+		button.pressed.connect(() -> {
 			incrementCounter();
 		});
-		callable.call(new ArrayList());
-		button.pressed.connect(callable);
 
 		var size = vboxContainer.size;
 		var parentSize = control.size;
