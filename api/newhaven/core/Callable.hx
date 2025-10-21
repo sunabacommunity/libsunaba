@@ -54,5 +54,13 @@ abstract Callable(CallableNative) from CallableNative to CallableNative {
 	public static function fromFunction(func: Function): Callable {
 		return new Callable(func);
 	}
+
+	public static function bind(object: BaseClass, func: Function): Callable {
+		var scriptFunctionWrapper = new NativeObject("res://Engine/ScriptFunctionWrapper.gd", new ArrayList(), ScriptType.gdscript);
+		scriptFunctionWrapper.set("function", VariantNative.fromFunction(func));
+		scriptFunctionWrapper.set("object", object);
+		var callable: Callable = scriptFunctionWrapper.call("to_callable", new ArrayList());
+		return callable;
+	}
 }
 
