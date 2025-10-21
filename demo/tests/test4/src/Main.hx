@@ -12,8 +12,7 @@ class Main extends App {
     }
 
 	public override function init() {
-		var func: Function = this.sayHello;
-		var callable: Callable = func;
+		var callable: Callable = this.sayHello;
 		callable.call(args(["World"]));
 	}
 
