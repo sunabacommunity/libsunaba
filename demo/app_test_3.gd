@@ -15,3 +15,4 @@ func _ready() -> void:
 		window.content_scale_factor = displayScale
 	window.size = Vector2i(1152, 648) * displayScale
 	window.min_size = Vector2i(1152, 648) * displayScale
+	window.move_to_center()
