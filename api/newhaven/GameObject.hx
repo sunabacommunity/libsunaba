@@ -16,6 +16,15 @@ class GameObject extends Object {
 		native = _native;
 	}
 
+	public var name(get, set): String;
+	function get_name():String {
+		return native.get("Name");
+	}
+	function set_name(value:String):String {
+		native.set("Name", value);
+		return value;
+	}
+
 	public var scene(get, default): Scene;
 	function get_scene():Scene {
 		return new Scene(native.get("Scene"));
