@@ -10,7 +10,7 @@ public partial class Component : RefCounted
 {
 	public string Name = "";
 
-	public ScriptObject Script = null;
+	public RefCounted Script = null;
 
 	public GameObject GameObject;
 
@@ -32,9 +32,9 @@ public partial class Component : RefCounted
 		{
 			if (Script != null)
 			{
-				if (Script.HasVar("editorIconPath"))
+				if (Script.Call("has_var", "editorIconPath").AsBool())
 				{
-					var icon = Script.GetVar("editorIconPath");
+					var icon = Script.Call("get_var", "editorIconPath");
 					if (icon.VariantType == Variant.Type.String)
 					{
 						return icon.AsString();
@@ -55,97 +55,102 @@ public partial class Component : RefCounted
 			args.Add(variantArgs[i]);
 		}
 
-		return Script.CallFunction(name, args);
+		return Script.Call("call_function", name, args);
+	}
+
+	public bool ScriptHasFunction(string funcName)
+	{
+		return Script.Call("has_function", funcName).AsBool();
 	}
 
 	public void OnInit()
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onInit")) return;
+		if (!ScriptHasFunction("onInit")) return;
 		CallScript("onInit");
 	}
 
 	public void OnEnterTree()
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onEnterTree")) return;
+		if (!ScriptHasFunction("onEnterTree")) return;
 		CallScript("onEnterTree");
 	}
 
 	public void OnExitTree()
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onExitTree")) return;
+		if (!ScriptHasFunction("onExitTree")) return;
 		CallScript("onExitTree");
 	}
 
 	public void OnReady()
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onReady")) return;
+		if (!ScriptHasFunction("onReady")) return;
 		CallScript("onReady");
 	}
 
 	public void OnUpdate(double deltaTime)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onUpdate")) return;
+		if (!ScriptHasFunction("onUpdate")) return;
 		CallScript("onUpdate", deltaTime);
 	}
 
 	public void OnPhysicsUpdate(double deltaTime)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onPhysicsUpdate")) return;
+		if (!ScriptHasFunction("onPhysicsUpdate")) return;
 		CallScript("onPhysicsUpdate", deltaTime);
 	}
 
 	public void OnInput(InputEvent @event)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("_onInput")) return;
+		if (!ScriptHasFunction("_onInput")) return;
 		CallScript("_onInput", @event);
 	}
 
 	public void OnUnhandledInput(InputEvent @event)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("_onUnhandledInput")) return;
+		if (!ScriptHasFunction("_onUnhandledInput")) return;
 		CallScript("_onUnhandledInput", @event);
 	}
 
 	public void OnUnhandledKeyInput(InputEvent @event)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("_onUnhandledKeyInput")) return;
+		if (!ScriptHasFunction("_onUnhandledKeyInput")) return;
 		CallScript("_onUnhandledKeyInput", @event);
 	}
 
 	public void OnShortcutInput(InputEvent @event)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("_onShortcutInput")) return;
+		if (!ScriptHasFunction("_onShortcutInput")) return;
 		CallScript("_onShortcutInput", @event);
 	}
 
 	public Dictionary GetData()
 	{
 		if (Script == null) return new Dictionary();
-		if (!Script.HasFunction("getData")) return new Dictionary();
+		if (!ScriptHasFunction("getData")) return new Dictionary();
 		return CallScript("getData").AsGodotDictionary();
 	}
 
 	public void OnRemove()
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("onRemove")) return;
+		if (!ScriptHasFunction("onRemove")) return;
 		CallScript("onRemove");
 	}
 
 	public void SetData(Dictionary data)
 	{
 		if (Script == null) return;
-		if (!Script.HasFunction("setData")) return;
+		if (!ScriptHasFunction("setData")) return;
 		CallScript("setData", data);
 	}
 }
