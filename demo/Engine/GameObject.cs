@@ -33,7 +33,7 @@ public partial class GameObject : GodotObject
 			}
 			else
 			{
-				return Scene;
+				return _scene;
 			}
 		}
 	}
