@@ -79,7 +79,7 @@ class GameObject extends Object {
 		for (component in components) {
 			var behavior = component.script;
 			var behaviorType = Type.getClass(behavior);
-			if (behaviorType == type) {
+			if (Type.getClassName(behaviorType) == Type.getClassName(type)) {
 				removeNativeComponent(component);
 				break;
 			}
@@ -90,8 +90,9 @@ class GameObject extends Object {
 	public function getComponent<T>(type: Class<T>):Null<T> {
 		var components = getComponents();
 		for (component in components) {
-			if (Type.getClass(component) == type) {
-				return cast component;
+			var ctype = Type.getClass(component);
+			if (Type.getClassName(ctype) == Type.getClassName(type)) {
+				 cast component;
 			}
 		}
 		return null;
