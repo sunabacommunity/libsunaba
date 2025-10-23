@@ -2,12 +2,15 @@ package newhaven;
 
 import newhaven.core.native.NativeObject;
 import newhaven.core.ArrayList;
+import newhaven.core.native.NativeReference;
+import newhaven.core.native.ScriptType;
 
 class Scene extends Node {
 	public function new(?_native: NativeObject) {
 		super();
 		if (_native == null) {
-			_native = new NativeObject('Scene');
+			var create = new NativeReference("res://Engine/SceneSystem.gd", new ArrayList(), ScriptType.gdscript);
+			_native = create.call("create_scene", new ArrayList());
 		}
 		native = _native;
 	}

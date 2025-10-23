@@ -4,12 +4,15 @@ import newhaven.core.Reference;
 import newhaven.core.native.NativeReference;
 import newhaven.core.VariantNative;
 import newhaven.core.native.NativeObject;
+import newhaven.core.native.ScriptType;
+import newhaven.core.ArrayList;
 
 class Component extends Reference {
 	public function new(?_native: NativeReference) {
 		super();
 		if (_native == null) {
-			_native = new NativeReference('Component');
+			var create = new NativeReference("res://Engine/SceneSystem.gd", new ArrayList(), ScriptType.gdscript);
+			_native = create.call("create_component", new ArrayList());
 		}
 		native = _native;
 	}

@@ -6,12 +6,14 @@ import newhaven.core.ArrayList;
 import newhaven.core.TypedArray;
 import newhaven.core.native.NativeReference;
 import Type;
+import newhaven.core.native.ScriptType;
 
 class GameObject extends Object {
 	public function new(?_native: NativeObject) {
 		super();
 		if (_native == null) {
-			_native = new NativeObject('GameObject');
+			var create = new NativeReference("res://Engine/SceneSystem.gd", new ArrayList(), ScriptType.gdscript);
+			_native = create.call("create_game_object", new ArrayList());
 		}
 		native = _native;
 	}
