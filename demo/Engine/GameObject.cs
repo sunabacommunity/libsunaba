@@ -40,7 +40,7 @@ public partial class GameObject : GodotObject
 
 	public GameObject Parent => _parent;
 
-	public void CleanupNode()
+	internal void CleanupNode()
 	{
 		if (_node != null)
 		{
