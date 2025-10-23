@@ -184,7 +184,7 @@ public partial class GameObject : GodotObject
 	{
 		foreach (var component in _components)
 			if (component.Name == name)
-				return component.Script;
+				return component;
 
 		return null;
 	}
