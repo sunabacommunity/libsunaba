@@ -180,7 +180,7 @@ public partial class GameObject : GodotObject
 		_hasEnteredTree = false;
 	}
 
-	public RefCounted GetComponentByName(String name)
+	public Component GetComponentByName(String name)
 	{
 		foreach (var component in _components)
 			if (component.Name == name)
