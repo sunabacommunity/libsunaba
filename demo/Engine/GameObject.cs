@@ -132,7 +132,7 @@ public partial class GameObject : GodotObject
 		_scene = scene;
 	}
 
-	protected void AddGodotComponent(Component component)
+	public void AddComponent(Component component)
 	{
 		component.GameObject = this;
 		component.OnInit();
@@ -141,7 +141,7 @@ public partial class GameObject : GodotObject
 		if (_started) component.OnReady();
 	}
 
-	private void RemoveGodotComponent(Component component)
+	public void RemoveComponent(Component component)
 	{
 		if (Parent != null) component.OnExitTree();
 		component.OnRemove();
@@ -180,7 +180,7 @@ public partial class GameObject : GodotObject
 		_hasEnteredTree = false;
 	}
 
-	public ScriptObject GetComponentByName(String name)
+	public RefCounted GetComponentByName(String name)
 	{
 		foreach (var component in _components)
 			if (component.Name == name)
@@ -193,7 +193,7 @@ public partial class GameObject : GodotObject
 	{
 		foreach (var component in _components)
 			if (component.Name == name)
-				RemoveGodotComponent(component);
+				RemoveComponent(component);
 	}
 
 	public bool HasComponentByName(String name)
@@ -432,7 +432,7 @@ public partial class GameObject : GodotObject
 
 		foreach (var component in _components)
 		{
-			RemoveGodotComponent(component);
+			RemoveComponent(component);
 		}
 
 		if (Node != null)
