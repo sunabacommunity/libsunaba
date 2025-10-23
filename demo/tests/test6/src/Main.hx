@@ -17,16 +17,16 @@ class Main extends App {
 
 		var object1 = new GameObject();
 		scene.addObject(object1);
-		object1.addComponent(HelloComponent1);
-		object1.addComponent(HelloComponent2);
+		var helloComp1 = object1.addComponent(HelloComponent1);
+		var helloComp2 = object1.addComponent(HelloComponent2);
 
 		var child = new GameObject();
 		object1.addChild(child);
-		child.addComponent(HelloComponent1);
+		var childHell0 = child.addComponent(HelloComponent1);
 
 		var object2 = new GameObject();
 		scene.addObject(object2);
-		object2.addComponent(DeltaTimePrinter);
+		var deltaTimePrinter = object2.addComponent(DeltaTimePrinter);
 
 		rootNode.addChild(scene);
 	}
