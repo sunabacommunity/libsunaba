@@ -21,6 +21,7 @@ class Main extends App {
 		var helloComp2 = object1.addComponent(HelloComponent2);
 
 		var child = new GameObject();
+		child.name = "Child";
 		object1.addChild(child);
 		var childHell0 = child.addComponent(HelloComponent1);
 
