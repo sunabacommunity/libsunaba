@@ -27,6 +27,7 @@ class Node extends Object {
 		proxy.set("instance", VariantNative.fromBaseClass(this));
 		var args = new ArrayList();
 		args.append(proxy);
+		proxy.set("name", "Proxy");
 		native.call("add_child", args);
 	}
     public function onReady() {
