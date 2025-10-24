@@ -17,7 +17,7 @@ class Reference extends BaseClass {
         return native.isNull();
     }
 
-    public function isValid() {
+    public function isObjectValid() {
         return native.isValid();
     }
 }
