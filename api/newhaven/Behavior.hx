@@ -31,7 +31,9 @@ class Behavior extends BaseClass {
 		gameObject.removeComponent(type);
 	}
 
-	public function onInit() {}
+	public function onInit() {
+		native.script = this;
+	}
 	public function onEnterTree() {}
 	public function onExitTree() {}
 	public function onReady() {}
