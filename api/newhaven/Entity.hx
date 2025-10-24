@@ -114,7 +114,7 @@ class Entity extends BaseClass {
 	}
 
 	@:generic
-	public function removeComponent(type: Class<T>): Void {
+	public function removeComponent<T>(type: Class<T>): Void {
 		var compName = Type.getClassName(type);
 		for (component in components) {
 			if (component.name = compName) {
