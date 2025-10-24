@@ -117,7 +117,7 @@ class Entity extends BaseClass {
 	public function removeComponent<T>(type: Class<T>): Void {
 		var compName = Type.getClassName(type);
 		for (component in components) {
-			if (component.name = compName) {
+			if (component.name == compName) {
 				component.onExitTree();
 				component.onEnd();
 				components.remove(component);
@@ -129,7 +129,7 @@ class Entity extends BaseClass {
 	public function getComponent<T>(type: Class<T>):Null<T> {
 		var compName = Type.getClassName(type);
 		for (component in components) {
-			if (component.name = compName) {
+			if (component.name == compName) {
 				var compT: T = cast component;
 				return compT;
 			}
