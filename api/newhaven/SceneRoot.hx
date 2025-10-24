@@ -11,8 +11,6 @@ class SceneRoot extends Node {
 	private var entities: Array<Entity>;
 
 	function findEnt(path: Array<String>, index: Int) {
-		if (index == path.length - 1) return this;
-
 		for (entity in entities) {
 			if (entity.name == path[index]) {
 				return entity.findEnt(path, index + 1);
