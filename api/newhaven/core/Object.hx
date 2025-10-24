@@ -29,4 +29,9 @@ class Object extends BaseClass {
             throw "Object already freed";
         }
     }
+
+	@:generic
+	public static function castTo<T>(obj: Object, type: Class<T>): T {
+		return Type.createInstance(type, [obj.native]);
+	}
 }
