@@ -16,7 +16,7 @@ class Main extends App {
 		var scene = new SceneRoot();
 
 		var entity1 = new Entity();
-		scene.addObject(entity1);
+		scene.addEntity(entity1);
 		var helloComp1 = entity1.addComponent(HelloComponent1);
 		var helloComp2 = entity1.addComponent(HelloComponent2);
 
@@ -26,7 +26,7 @@ class Main extends App {
 		var childHell0 = child.addComponent(HelloComponent1);
 
 		var entity2 = new Entity();
-		scene.addObject(entity2);
+		scene.addEntity(entity2);
 		var deltaTimePrinter = entity2.addComponent(DeltaTimePrinter);
 
 		rootNode.addChild(scene);
