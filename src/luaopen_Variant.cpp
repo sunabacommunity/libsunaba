@@ -212,7 +212,7 @@ void Runtime::luaopen_Variant() {
 					o
 				)
 			);
-			if (obj.is_valid() && obj.is_null()) {
+			if (obj.is_valid()) {
 				return sol::make_object(lua_state, obj->object);
 			}
 			else {
