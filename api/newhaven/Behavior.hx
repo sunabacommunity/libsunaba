@@ -15,22 +15,20 @@ class Behavior extends BaseClass {
 
 	@:generic
 	public function addComponent<T>(type: Class<T>): T {
-		return null;// gameObject.addComponent(type);
+		return entity.addComponent(type);
 	}
 
 	@:generic
 	public function getComponent<T>(type: Class<T>):Null<T> {
-		return null;//gameObject.getComponent(type);
+		return entity.getComponent(type);
 	}
 
 	@:generic
 	public function removeComponent<T>(type: Class<T>): Void {
-		//gameObject.removeComponent(type);
+		entity.removeComponent(type);
 	}
 
-	public function onInit() {
-		//native.script = this;
-	}
+	public function onInit() {}
 	public function onEnterTree() {}
 	public function onExitTree() {}
 	public function onStart() {}
