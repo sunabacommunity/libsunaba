@@ -4,6 +4,7 @@ import newhaven.BaseClass;
 import newhaven.core.Variant;
 import newhaven.core.native.NativeObject;
 import newhaven.Node;
+import newhaven.io.IoManager;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
@@ -16,7 +17,13 @@ class App extends BaseClass {
 		return new Node(rootNodeNative);
 	}
 
-    public static var execDir(get, default): String;
+	public var io(get, default): IoManager;
+	function get_io():IoManager {
+		var native = untyped __lua__("_G.__ioManager");
+		return new IoManager(native);
+	}
+
+	public static var execDir(get, default): String;
     private static function get_execDir(): String {
         return untyped __lua__("_G.execDir");
     }
