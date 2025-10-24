@@ -29,6 +29,19 @@ namespace Newhaven.Engine
 	        AltPath2 = path.Replace("\\", "/");
         }
 
+        public void OpenIo(string path, string pathUrl)
+        {
+	        if (!path.EndsWith("/") && !path.EndsWith("\\"))
+	        {
+		        path += "/";
+	        }
+
+	        Path = path;
+	        PathUrl = pathUrl;
+	        AltPath = path.Replace("/", "\\");
+	        AltPath2 = path.Replace("\\", "/");
+        }
+
         public void Open(String path, String pathUrl)
         {
 	        if (!path.EndsWith("/") && !path.EndsWith("\\"))
