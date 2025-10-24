@@ -72,6 +72,13 @@ class GameObject extends Object {
 		native.call("RemoveComponent", args);
 	}
 
+	private function getNativeComponentByName(name: String) {
+		var args = new ArrayList();
+		args.append(name);
+		var ref = native.call("GetComponentByName", args);
+		return new Component(ref);
+	}
+
 	@:generic
 	public function addComponent<T>(type: Class<T>): T {
 		var behaviorT = Type.createEmptyInstance(type);
@@ -99,12 +106,9 @@ class GameObject extends Object {
 
 	@:generic
 	public function getComponent<T>(type: Class<T>):Null<T> {
-		var components = getComponents();
-		for (component in components) {
-			var ctype = Type.getClass(component);
-			if (Type.getClassName(ctype) == Type.getClassName(type)) {
-				 cast component;
-			}
+		var component = getNativeComponentByName(Type.getClassName(type));
+		if (component != null) {
+			return cast component.script;
 		}
 		return null;
 	}
@@ -154,10 +158,12 @@ class GameObject extends Object {
 		native.call("HasChild", args);
 	}
 
-	public function find(path: String): GameObject {
+	public function find(path: String): Null<GameObject> {
 		var args = new ArrayList();
 		args.append(path);
-		var obj = native.call("Find", args);
+		var obj: NativeObject = native.call("Find", args);
+		if (obj == null) return null;
+		if (obj.isNull()) return null;
 		return new GameObject(obj);
 	}
 
@@ -165,10 +171,12 @@ class GameObject extends Object {
 		return native.call("GetChildCount", new ArrayList());
 	}
 
-	public function getChild(index: Int): GameObject {
+	public function getChild(index: Int): Null<GameObject> {
 		var args = new ArrayList();
 		args.append(index);
-		var obj = native.call("GetChild", args);
+		var obj: NativeObject = native.call("GetChild", args);
+		if (obj == null) return null;
+		if (obj.isNull()) return null;
 		return new GameObject(obj);
 	}
 

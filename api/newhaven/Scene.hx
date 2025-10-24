@@ -49,10 +49,12 @@ class Scene extends Node {
 		native.call("HasObject", args);
 	}
 
-	public function find(path: String): GameObject {
+	public function find(path: String): Null<GameObject> {
 		var args = new ArrayList();
 		args.append(path);
-		var obj = native.call("Find", args);
+		var obj: NativeObject = native.call("Find", args);
+		if (obj == null) return null;
+		if (obj.isNull()) return null;
 		return new GameObject(obj);
 	}
 
@@ -60,10 +62,12 @@ class Scene extends Node {
 		return native.call("GetObjectCount", new ArrayList());
 	}
 
-	public function getObject(index: Int): GameObject {
+	public function getObject(index: Int): Null<GameObject> {
 		var args = new ArrayList();
 		args.append(index);
-		var obj = native.call("GetObject", args);
+		var obj: NativeObject = native.call("GetObject", args);
+		if (obj == null) return null;
+		if (obj.isNull()) return null;
 		return new GameObject(obj);
 	}
 
