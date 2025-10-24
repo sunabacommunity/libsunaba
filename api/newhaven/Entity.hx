@@ -285,7 +285,7 @@ class Entity extends BaseClass {
 			child.destroy();
 			removeChild(child);
 		}
-		child = null;
+		children = null;
 
 		if (node != null) {
 			node.queueFree();
