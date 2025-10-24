@@ -1,11 +1,11 @@
 package;
 
 import newhaven.App;
-import newhaven.Scene;
-import newhaven.GameObject;
 import test6.HelloComponent1;
 import test6.HelloComponent2;
 import test6.DeltaTimePrinter;
+import newhaven.SceneRoot;
+import newhaven.Entity;
 
 class Main extends App {
     public static function main() {
@@ -13,21 +13,21 @@ class Main extends App {
     }
 
 	public override function init() {
-		var scene = new Scene();
+		var scene = new SceneRoot();
 
-		var object1 = new GameObject();
-		scene.addObject(object1);
-		var helloComp1 = object1.addComponent(HelloComponent1);
-		var helloComp2 = object1.addComponent(HelloComponent2);
+		var entity1 = new Entity();
+		scene.addObject(entity1);
+		var helloComp1 = entity1.addComponent(HelloComponent1);
+		var helloComp2 = entity1.addComponent(HelloComponent2);
 
-		var child = new GameObject();
+		var child = new Entity();
 		child.name = "Child";
-		object1.addChild(child);
+		entity1.addChild(child);
 		var childHell0 = child.addComponent(HelloComponent1);
 
-		var object2 = new GameObject();
-		scene.addObject(object2);
-		var deltaTimePrinter = object2.addComponent(DeltaTimePrinter);
+		var entity2 = new Entity();
+		scene.addObject(entity2);
+		var deltaTimePrinter = entity2.addComponent(DeltaTimePrinter);
 
 		rootNode.addChild(scene);
 	}
