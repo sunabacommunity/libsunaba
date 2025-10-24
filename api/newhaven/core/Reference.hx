@@ -2,6 +2,7 @@ package newhaven.core;
 
 import newhaven.BaseClass;
 import newhaven.core.native.NativeReference;
+import Type;
 
 class Reference extends BaseClass {
     public var native: NativeReference;

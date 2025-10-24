@@ -2,6 +2,7 @@ package newhaven.core;
 
 import newhaven.BaseClass;
 import newhaven.core.native.NativeObject;
+import Type;
 
 class Object extends BaseClass {
     public var native: NativeObject;
