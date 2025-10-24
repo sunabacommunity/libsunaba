@@ -4,39 +4,37 @@ import newhaven.core.Dictionary;
 import newhaven.core.native.NativeReference;
 
 class Behavior extends BaseClass {
-	public var native: Component;
 
-	public var gameObject(get, default): GameObject;
-	function get_gameObject():GameObject {
-		return native.gameObject;
+	public var entity: Entity;
+	public var scene(get, default): SceneRoot;
+	function get_scene():SceneRoot {
+		return entity.scene;
 	}
 
-	public var scene(get, default): Scene;
-	function get_scene():Scene {
-		return native.scene;
-	}
+	public var name: String;
 
 	@:generic
 	public function addComponent<T>(type: Class<T>): T {
-		return gameObject.addComponent(type);
+		return null;// gameObject.addComponent(type);
 	}
 
 	@:generic
 	public function getComponent<T>(type: Class<T>):Null<T> {
-		return gameObject.getComponent(type);
+		return null;//gameObject.getComponent(type);
 	}
 
 	@:generic
 	public function removeComponent<T>(type: Class<T>): Void {
-		gameObject.removeComponent(type);
+		//gameObject.removeComponent(type);
 	}
 
 	public function onInit() {
-		native.script = this;
+		//native.script = this;
 	}
 	public function onEnterTree() {}
 	public function onExitTree() {}
-	public function onReady() {}
+	public function onStart() {}
+	public function onEnd() {}
 	public function onUpdate(deltaTime: Float) {}
 	public function onPhysicsUpdate(deltaTime: Float) {}
 	public function onInput(event: InputEvent) {}
