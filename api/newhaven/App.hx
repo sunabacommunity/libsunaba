@@ -5,6 +5,7 @@ import newhaven.core.Variant;
 import newhaven.core.native.NativeObject;
 import newhaven.Node;
 import newhaven.io.IoManager;
+import newhaven.core.native.NativeReference;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
@@ -19,7 +20,7 @@ class App extends BaseClass {
 
 	public var io(get, default): IoManager;
 	function get_io():IoManager {
-		var native = untyped __lua__("_G.__ioManager");
+		var native: NativeReference = untyped __lua__("_G.__ioManager");
 		return new IoManager(native);
 	}
 
