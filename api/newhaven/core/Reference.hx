@@ -20,4 +20,9 @@ class Reference extends BaseClass {
     public function isObjectValid() {
         return native.isValid();
     }
+
+	@:generic
+	public static function castTo<T>(ref: Reference, type: Class<T>): T {
+		return Type.createInstance(type, [ref.native]);
+	}
 }
