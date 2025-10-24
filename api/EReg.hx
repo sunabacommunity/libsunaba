@@ -182,9 +182,9 @@ class EReg {
 	public function split(s:String):Array<String> {
 		var result:Array<String> = [];
 		var lastIndex = 0;
-		var searchAllTable = regex.searchAll(s, 0, -1);
-		var matches:Array<RegExMatch> = searchAllTable.toArray();
-		for (match in matches) {
+		var matches = regex.searchAll(s, 0, -1);
+		for (i in 0...matches.size()) {
+			var match = new RegExMatch(matches.get(i));
 			if (match.isNull()) continue; // Skip invalid matches
 			var start = match.getStart(0);
 			result.push(s.substr(lastIndex, start - lastIndex));
@@ -229,10 +229,10 @@ class EReg {
 	public function map(s:String, f:EReg->String):String {
 		var result:String = "";
 		var lastIndex = 0;
-		var searchAllVector = regex.searchAll(s, 0, -1);
-		var matches:Array<RegExMatch> = searchAllVector.toArray();
+		var matches = regex.searchAll(s, 0, -1);
 
-		for (match in matches) {
+		for (i in 0...matches.size()) {
+			var match = new RegExMatch(matches.get(i));
 			var start = match.getStart(0);
 			var end = match.getEnd(0);
 			result += s.substr(lastIndex, start - lastIndex); // Add the part before the
