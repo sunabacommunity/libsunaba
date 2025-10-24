@@ -104,6 +104,7 @@ class Entity extends BaseClass {
 		behavior.entity = this;
 		behavior.name = Type.getClassName(type);
 		components.push(behavior);
+		behavior.onInit();
 		if (_hasEnteredTree) {
 			behavior.onEnterTree();
 		}
