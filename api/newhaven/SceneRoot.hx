@@ -1,0 +1,129 @@
+package newhaven;
+import newhaven.input.InputEvent;
+
+class SceneRoot extends Node {
+	public function new() {
+		super();
+		entities = new Array();
+		initializeProxy();
+	}
+
+	private var entities: Array<Entity>;
+
+	function findEnt(path: Array<String>, index: Int) {
+		for (entity in entities) {
+			if (entity.name == path[index]) {
+				return entity.findEnt(path, index + 1);
+			}
+		}
+		return null;
+	}
+
+	private var started: Bool = false;
+	private var enteredTree: Bool = false;
+
+	public function addEntity(entity: Entity) {
+		if (entity == null) return;
+
+		entity.scene = this;
+		entities.push(entity);
+		if (enteredTree)
+			entity.enterTree();
+		if (started)
+			entity.start();
+	}
+
+	public function removeEntity(entity: Entity) {
+		if (entity == null) return;
+
+		entity.exitTree();
+		entity.scene = null;
+		entities.remove(entity);
+	}
+
+	public function hasEntity(entity: Entity){
+		return entities.contains(entity);
+	}
+
+	public function find(path: String) {
+		var split = path.split("/");
+		return findEnt(split, 0);
+	}
+
+	public function getEntityCount() {
+		return entities.length;
+	}
+
+	public function getEntity(index: Int) {
+		if (index < 0 || index >= entities.length)
+			return null;
+		return entities[index];
+	}
+
+	public override function onEnterTree() {
+		for (entity in entities) {
+			entity.exitTree();
+		}
+
+		enteredTree = true;
+	}
+
+	public override function onExitTree() {
+		for (entity in entities) {
+			entity.exitTree();
+		}
+	}
+
+	public override function onReady() {
+		for (entity in entities) {
+			entity.start();
+		}
+
+		started = true;
+	}
+
+	public override function onProcess(deltaTime: Float) {
+		for (entity in entities) {
+			entity.update(deltaTime);
+		}
+	}
+
+	public override function onPhysicsProcess(deltaTime: Float) {
+		for (entity in entities) {
+			entity.physicsUpdate(deltaTime);
+		}
+	}
+
+	public override function onInput(event: InputEvent) {
+		for (entity in entities) {
+			entity.input(event);
+		}
+	}
+
+	public override function onUnhandledInput(event: InputEvent){
+		for (entity in entities) {
+			entity.unhandledInput(event);
+		}
+	}
+
+	public override function onUnhandledKeyInput(event: InputEvent){
+		for (entity in entities) {
+			entity.unhandledKeyInput(event);
+		}
+	}
+
+	public override function onShortcutInput(event: InputEvent){
+		for (entity in entities) {
+			entity.shortcutInput(event);
+		}
+	}
+
+	public function destroy() {
+		for (entity in entities) {
+			entity.destroy();
+		}
+		entities = null;
+
+		queueFree();
+	}
+}
