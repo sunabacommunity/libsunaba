@@ -4,8 +4,17 @@ import newhaven.core.native.NativeReference;
 import newhaven.core.native.NativeObject;
 import newhaven.core.ArrayList;
 import newhaven.core.ByteArray;
+import newhaven.core.native.ScriptType;
 
 class IoInterface extends Reference {
+	public function new(?native: NativeReference) {
+		super();
+		if (native == null) {
+			return;
+		}
+		this.native = native;
+	}
+
 	public var pathUrl(get, set): String;
 	function get_pathUrl():String {
 		return native.get("PathUrl");
