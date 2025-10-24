@@ -6,14 +6,6 @@ import newhaven.core.ArrayList;
 import newhaven.core.ByteArray;
 
 class IoInterface extends Reference {
-	public function new(_native: NativeReference) {
-		super();
-		if (_native == null) {
-			_native = new NativeReference('IoInterface');
-		}
-		native = _native;
-	}
-
 	public var pathUrl(get, set): String;
 	function get_pathUrl():String {
 		return native.get("PathUrl");
