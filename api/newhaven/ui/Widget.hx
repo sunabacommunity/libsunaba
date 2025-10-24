@@ -72,7 +72,7 @@ class Widget extends Control {
 		}
 
 		var firstElement = xml.firstElement();
-		if (!firstElement != null) {
+		if (firstElement != null) {
 			if (firstElement.nodeName == "nxml") {
 				var fullScreenAtt = firstElement.get("fullscreen");
 				if (fullScreenAtt == "true") {
