@@ -6,7 +6,7 @@ using System.Text;
 using System.Xml.Linq;
 using Godot;
 
-namespace Newhaven.Bindgen;
+namespace Sunaba.Bindgen;
 
 public class ClassBuilder
 {
@@ -95,7 +95,7 @@ public class ClassBuilder
 
     public void Build()
     {
-        outputDir = Path.GetFullPath("../api/newhaven/");
+        outputDir = Path.GetFullPath("../api/sunaba/");
         string resourceApiPath = Path.GetFullPath("../xmlgdapi/resource/");
         string nodeApiPath = Path.GetFullPath("../xmlgdapi/elements/");
         string otherApiPath = Path.GetFullPath("../xmlgdapi/other/");
@@ -120,7 +120,7 @@ public class ClassBuilder
                 if (ClassNames.Contains(className)) continue;
                 ClassNames.Add(className);
                 var xmlDir = xmlFile.GetBaseDir();
-                var apiPath = xmlDir.Replace(currentXmlPath, "newhaven/");
+                var apiPath = xmlDir.Replace(currentXmlPath, "sunaba/");
                 var packageName = apiPath.Replace("\\", "/").Replace("/", ".");
                 if (packageName.EndsWith("."))
                 {
@@ -150,17 +150,17 @@ public class ClassBuilder
                 Console.WriteLine($"Processing class: {className}");
                 var haxeClass = GenerateClass(doc, className);
                 var packagePath = packageLocations[className];
-                if (packagePath.Contains("newhaven.base"))
+                if (packagePath.Contains("sunaba.base"))
                 {
-	                File.WriteAllText(Path.Combine(outputDir, $"{className}.hx"), haxeClass.Replace("newhaven.base", "newhaven"));
+	                File.WriteAllText(Path.Combine(outputDir, $"{className}.hx"), haxeClass.Replace("sunaba.base", "sunaba"));
 	                continue;
                 }
 
-                if (Directory.Exists(packagePath.Replace("newhaven.", "").Replace(".", "/")))
+                if (Directory.Exists(packagePath.Replace("sunaba.", "").Replace(".", "/")))
                 {
-	                Directory.CreateDirectory(packagePath.Replace("newhaven.", "").Replace(".", "/"));
+	                Directory.CreateDirectory(packagePath.Replace("sunaba.", "").Replace(".", "/"));
                 }
-                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("newhaven.", "").Replace(".", "/").Replace("base/", "newhaven/"), $"{className}.hx")), haxeClass.Replace("newhaven.base", "newhaven"));
+                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("sunaba.", "").Replace(".", "/").Replace("base/", "sunaba/"), $"{className}.hx")), haxeClass.Replace("sunaba.base", "sunaba"));
             }
         }
     }
@@ -174,13 +174,13 @@ public class ClassBuilder
 
         var importSb = new StringBuilder();
         List<string> importList = new();
-        importList.Add("newhaven.core.native.NativeReference");
-        importList.Add("newhaven.core.native.NativeObject");
-        importList.Add("newhaven.core.Variant");
-        if (packageLocations[className] != "newhaven.core")
+        importList.Add("sunaba.core.native.NativeReference");
+        importList.Add("sunaba.core.native.NativeObject");
+        importList.Add("sunaba.core.Variant");
+        if (packageLocations[className] != "sunaba.core")
         {
-            importList.Add("newhaven.core.Reference");
-            importList.Add("newhaven.core.Object");
+            importList.Add("sunaba.core.Reference");
+            importList.Add("sunaba.core.Object");
         }
 
 
@@ -210,7 +210,7 @@ public class ClassBuilder
 
         if (className == "Node")
         {
-            importList.Add("newhaven.input.InputEvent");
+            importList.Add("sunaba.input.InputEvent");
             AppendNodeBoilerplate(classSb);
         }
         classSb.AppendLine();
@@ -223,11 +223,11 @@ public class ClassBuilder
         foreach (var _import in importList)
         {
             var import = _import;
-            if (import == "newhaven.core.String") continue;
-            if (import == "newhaven.core.Int") continue;
-            if (import == "newhaven.core.Float") continue;
-            if (import == "newhaven.core.Bool") continue;
-            if (import == "newhaven.core.Void") continue;
+            if (import == "sunaba.core.String") continue;
+            if (import == "sunaba.core.Int") continue;
+            if (import == "sunaba.core.Float") continue;
+            if (import == "sunaba.core.Bool") continue;
+            if (import == "sunaba.core.Void") continue;
             if (import.Contains("TypedArray"))
             {
                 var importstrar = import.Split("<");
@@ -239,8 +239,8 @@ public class ClassBuilder
                     && subtype != "Bool"
                     && subtype != "Void")
                     if (!importList.Contains(subtype))
-                        importSb.AppendLine($"import newhaven.core.{subtype};");
-                import = "newhaven.core.TypedArray";
+                        importSb.AppendLine($"import sunaba.core.{subtype};");
+                import = "sunaba.core.TypedArray";
                 if (importSb.ToString().Contains(import))
                     continue;
             }
@@ -331,8 +331,8 @@ public class ClassBuilder
                     if (isVariantType(memberType))
                     {
                         memberSb.AppendLine($"        return native.get('{memberName}');");
-                        var importName = $"newhaven.core.{MapReturnType(memberType)}";
-                        if (!importList.Contains(importName) && (packageLocations[className] != "newhaven.core"))
+                        var importName = $"sunaba.core.{MapReturnType(memberType)}";
+                        if (!importList.Contains(importName) && (packageLocations[className] != "sunaba.core"))
                             importList.Add(importName);
                     }
                     else if (ClassNames.Contains(memberType))
@@ -371,8 +371,8 @@ public class ClassBuilder
 
     public void BuildSignals(StringBuilder sb, XDocument doc, string className, List<string> importList)
     {
-	    if (!importList.Contains("newhaven.core.Signal"))
-		    importList.Add("newhaven.core.Signal");
+	    if (!importList.Contains("sunaba.core.Signal"))
+		    importList.Add("sunaba.core.Signal");
 
 	    var signals = doc.Descendants("signal");
 	    foreach (var signal in signals)
@@ -427,8 +427,8 @@ public class ClassBuilder
                     paramTypes.Add(paramType);
                     if (isVariantType(paramType))
                     {
-                        var importName = $"newhaven.core.{MapReturnType(paramType)}";
-                        if (packageLocations[className] != "newhaven.core")
+                        var importName = $"sunaba.core.{MapReturnType(paramType)}";
+                        if (packageLocations[className] != "sunaba.core")
                             if (!importList.Contains(importName))
                                 importList.Add(importName);
                     }
@@ -479,8 +479,8 @@ public class ClassBuilder
                     {
                         methodSb.AppendLine(
                             $"  public static function {methodName.ToCamelCase()}({string.Join(", ", parameters)}): {MapReturnType(returnType)} {'{'}");
-                        if (!importList.Contains("newhaven.core.ArrayList"))
-                            importList.Add("newhaven.core.ArrayList");
+                        if (!importList.Contains("sunaba.core.ArrayList"))
+                            importList.Add("sunaba.core.ArrayList");
                         methodSb.AppendLine($"      var args = new ArrayList();");
                         for (int i = 0; i < paramNames.Count; i++)
                         {
@@ -493,7 +493,7 @@ public class ClassBuilder
                             }
                             if (isVariantType(paramTypes[i]))
                             {
-                                var importName = $"newhaven.core.{MapReturnType(paramTypes[i])}";
+                                var importName = $"sunaba.core.{MapReturnType(paramTypes[i])}";
                                 if (!importList.Contains(importName))
                                     importList.Add(importName);
                                 argAppendSb.AppendLine(extraWhiteSpace + $"      args.append({paramNames[i].ToCamelCase()});");
@@ -518,8 +518,8 @@ public class ClassBuilder
                                 methodSb.AppendLine($"      return NativeObject.callStatic('{className}', '{methodName}', args);");
                             else
                                 methodSb.AppendLine($"      NativeObject.callStatic('{className}', '{methodName}', args);");
-                            var importName = $"newhaven.core.{MapReturnType(returnType)}";
-                            if (!importList.Contains(importName) && packageLocations[className] != "newhaven.core")
+                            var importName = $"sunaba.core.{MapReturnType(returnType)}";
+                            if (!importList.Contains(importName) && packageLocations[className] != "sunaba.core")
                                 importList.Add(importName);
                         }
                         else if (ClassNames.Contains(returnType))
@@ -542,8 +542,8 @@ public class ClassBuilder
                     {
                         methodSb.AppendLine(
                             $"  public function {methodName.ToCamelCase()}({string.Join(", ", parameters)}): {MapReturnType(returnType)} {'{'}");
-                        if (!importList.Contains("newhaven.core.ArrayList"))
-                            importList.Add("newhaven.core.ArrayList");
+                        if (!importList.Contains("sunaba.core.ArrayList"))
+                            importList.Add("sunaba.core.ArrayList");
                         methodSb.AppendLine($"      var args = new ArrayList();");
                         for (int i = 0; i < paramNames.Count; i++)
                         {
@@ -556,7 +556,7 @@ public class ClassBuilder
                             }
                             if (isVariantType(paramTypes[i]))
                             {
-                                var importName = $"newhaven.core.{MapReturnType(paramTypes[i])}";
+                                var importName = $"sunaba.core.{MapReturnType(paramTypes[i])}";
                                 if (!importList.Contains(importName))
                                     importList.Add(importName);
                                 argAppendSb.AppendLine(extraWhiteSpace + $"      args.append({paramNames[i].ToCamelCase()});");
@@ -581,8 +581,8 @@ public class ClassBuilder
                                 methodSb.AppendLine($"      return native.call('{methodName}', args);");
                             else
                                 methodSb.AppendLine($"      native.call('{methodName}', args);");
-                            var importName = $"newhaven.core.{MapReturnType(returnType)}";
-                            if (!importList.Contains(importName) && packageLocations[className] != "newhaven.core")
+                            var importName = $"sunaba.core.{MapReturnType(returnType)}";
+                            if (!importList.Contains(importName) && packageLocations[className] != "sunaba.core")
                                 importList.Add(importName);
                         }
                         else if (ClassNames.Contains(returnType))

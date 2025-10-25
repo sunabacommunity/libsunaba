@@ -9,7 +9,7 @@ using System.Globalization;
 using Godot;
 using FileAccess = Godot.FileAccess;
 
-namespace Newhaven.Bindgen;
+namespace Sunaba.Bindgen;
 
 public class HaxeExternGenerator
 {

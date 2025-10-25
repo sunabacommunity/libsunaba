@@ -1,6 +1,6 @@
 package test6;
 
-import newhaven.Behavior;
+import sunaba.Behavior;
 
 class HelloComponent2 extends Behavior {
 	public override function onStart() {

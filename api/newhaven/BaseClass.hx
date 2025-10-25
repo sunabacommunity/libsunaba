@@ -1,3 +1,0 @@
-package newhaven;
-
-class BaseClass {}

@@ -5,7 +5,7 @@ using System.IO.Compression;
 using Godot.Collections;
 using Godot;
 
-namespace Newhaven.Engine;
+namespace Sunaba.Engine;
 
 [GlobalClass]
 public partial class IoInterfaceZip : IoInterface

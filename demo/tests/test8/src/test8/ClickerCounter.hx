@@ -1,12 +1,12 @@
 package test8;
 
-import newhaven.ui.Widget;
-import newhaven.ui.Label;
-import newhaven.ui.CenterContainer;
-import newhaven.ui.VBoxContainer;
-import newhaven.ui.Button;
-import newhaven.ui.Panel;
-import newhaven.core.Object;
+import sunaba.ui.Widget;
+import sunaba.ui.Label;
+import sunaba.ui.CenterContainer;
+import sunaba.ui.VBoxContainer;
+import sunaba.ui.Button;
+import sunaba.ui.Panel;
+import sunaba.core.Object;
 
 class ClickerCounter extends Widget {
 	var label: Label;

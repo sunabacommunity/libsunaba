@@ -1,11 +1,11 @@
 package;
 
-import newhaven.App;
+import sunaba.App;
 import test6.HelloComponent1;
 import test6.HelloComponent2;
 import test6.DeltaTimePrinter;
-import newhaven.SceneRoot;
-import newhaven.Entity;
+import sunaba.SceneRoot;
+import sunaba.Entity;
 
 class Main extends App {
     public static function main() {

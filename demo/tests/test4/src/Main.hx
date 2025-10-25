@@ -1,10 +1,10 @@
 package;
 
-import newhaven.App;
+import sunaba.App;
 import haxe.Constraints.Function;
-import newhaven.core.Callable;
-import newhaven.core.ArrayList;
-import newhaven.core.Variant;
+import sunaba.core.Callable;
+import sunaba.core.ArrayList;
+import sunaba.core.Variant;
 
 class Main extends App {
     public static function main() {

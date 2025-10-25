@@ -1,4 +1,4 @@
-import newhaven.Node;
+import sunaba.Node;
 
 class TestNode extends Node {
 	public function new() {

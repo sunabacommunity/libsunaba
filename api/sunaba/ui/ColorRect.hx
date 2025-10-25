@@ -1,0 +1,30 @@
+package sunaba.ui;
+
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.core.Color;
+import sunaba.core.Signal;
+
+class ColorRect extends Control {
+    public function new(?_native: NativeObject) {
+        super();
+        if (_native == null) {
+            _native = new NativeObject('ColorRect');
+        }
+        native = _native;
+    }
+
+    public var color(get, set): Color;
+    function get_color(): Color {
+        return native.get('color');
+    }
+    function set_color(value: Color): Color {
+      native.set('color', value);
+        return value;
+    }
+
+
+}

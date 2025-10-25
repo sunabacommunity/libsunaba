@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Godot;
 
-namespace Newhaven.Engine
+namespace Sunaba.Engine
 {
 	[GlobalClass]
     public partial class FileSystemIo : SystemIoBase

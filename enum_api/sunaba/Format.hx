@@ -1,0 +1,91 @@
+package sunaba;
+
+enum abstract Format(Int) from Int to Int {
+	var l8 = cast 0;
+	var la8 = cast 1;
+	var r8 = cast 2;
+	var rg8 = cast 3;
+	var rgb8 = cast 4;
+	var rgba8 = cast 5;
+	var rgba4444 = cast 6;
+	var rgb565 = cast 7;
+	var rf = cast 8;
+	var rgf = cast 9;
+	var rgbf = cast 10;
+	var rgbaf = cast 11;
+	var rh = cast 12;
+	var rgh = cast 13;
+	var rgbh = cast 14;
+	var rgbah = cast 15;
+	var rgbe9995 = cast 16;
+	var dxt1 = cast 17;
+	var dxt3 = cast 18;
+	var dxt5 = cast 19;
+	var rgtcR = cast 20;
+	var rgtcRg = cast 21;
+	var bptcRgba = cast 22;
+	var bptcRgbf = cast 23;
+	var bptcRgbfu = cast 24;
+	var etc = cast 25;
+	var etc2r11 = cast 26;
+	var etc2r11s = cast 27;
+	var etc2Rg11 = cast 28;
+	var etc2Rg11s = cast 29;
+	var etc2Rgb8 = cast 30;
+	var etc2Rgba8 = cast 31;
+	var etc2Rgb8a1 = cast 32;
+	var etc2RaAsRg = cast 33;
+	var dxt5RaAsRg = cast 34;
+	var astc4x4 = cast 35;
+	var astc4x4Hdr = cast 36;
+	var astc8x8 = cast 37;
+	var astc8x8Hdr = cast 38;
+	var max = cast 39;
+	public static var values = [l8, la8, r8, rg8, rgb8, rgba8, rgba4444, rgb565, rf, rgf, rgbf, rgbaf, rh, rgh, rgbh, rgbah, rgbe9995, dxt1, dxt3, dxt5, rgtcR, rgtcRg, bptcRgba, bptcRgbf, bptcRgbfu, etc, etc2r11, etc2r11s, etc2Rg11, etc2Rg11s, etc2Rgb8, etc2Rgba8, etc2Rgb8a1, etc2RaAsRg, dxt5RaAsRg, astc4x4, astc4x4Hdr, astc8x8, astc8x8Hdr, max];
+
+	public static function fromString(s:String):Null<Int> {
+		return switch (s) {
+			case "l8": cast 0;
+			case "la8": cast 1;
+			case "r8": cast 2;
+			case "rg8": cast 3;
+			case "rgb8": cast 4;
+			case "rgba8": cast 5;
+			case "rgba4444": cast 6;
+			case "rgb565": cast 7;
+			case "rf": cast 8;
+			case "rgf": cast 9;
+			case "rgbf": cast 10;
+			case "rgbaf": cast 11;
+			case "rh": cast 12;
+			case "rgh": cast 13;
+			case "rgbh": cast 14;
+			case "rgbah": cast 15;
+			case "rgbe9995": cast 16;
+			case "dxt1": cast 17;
+			case "dxt3": cast 18;
+			case "dxt5": cast 19;
+			case "rgtcR": cast 20;
+			case "rgtcRg": cast 21;
+			case "bptcRgba": cast 22;
+			case "bptcRgbf": cast 23;
+			case "bptcRgbfu": cast 24;
+			case "etc": cast 25;
+			case "etc2r11": cast 26;
+			case "etc2r11s": cast 27;
+			case "etc2Rg11": cast 28;
+			case "etc2Rg11s": cast 29;
+			case "etc2Rgb8": cast 30;
+			case "etc2Rgba8": cast 31;
+			case "etc2Rgb8a1": cast 32;
+			case "etc2RaAsRg": cast 33;
+			case "dxt5RaAsRg": cast 34;
+			case "astc4x4": cast 35;
+			case "astc4x4Hdr": cast 36;
+			case "astc8x8": cast 37;
+			case "astc8x8Hdr": cast 38;
+			case "max": cast 39;
+			case _: null;
+		}
+	}
+}
