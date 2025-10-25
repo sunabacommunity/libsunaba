@@ -1,4 +1,5 @@
 import newhaven.App;
+import test8.ClickerCounter;
 
 class Main extends App {
     public static function main() {
@@ -6,6 +7,11 @@ class Main extends App {
     }
 
 	public override function init() {
-		Sys.println("Hello, World!");
+		try {
+			var clickerCounter = new ClickerCounter(io);
+			rootNode.addChild(clickerCounter);
+		} catch (e:Dynamic) {
+			trace("Error initializing ClickerCounter: " + e);
+		}
 	}
 }
