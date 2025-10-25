@@ -81,12 +81,13 @@ sources = Glob("src/*.cpp")
 # lua_env.Append(CFLAGS = ["-std=c99"])
 
 # Add include paths for headers instead of adding them to sources
-env.Append(CPPPATH=["lua-5.4.8/"])
+
 env.Append(CPPPATH=["sol2/include/"])
 
 if (env["lua_runtime"] == "lua"):
     lua_sources = []
 
+    env.Append(CPPPATH=["lua-5.4.8/"])
     # Add only .c and .cpp source files, not headers
     lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
     # Exclude onelua.c to avoid duplicate symbols with individual .c files
