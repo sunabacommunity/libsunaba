@@ -14,6 +14,8 @@ import newhaven.core.Vector4i;
 import newhaven.core.Color;
 import newhaven.core.Variant;
 import newhaven.desktop.PopupMenu;
+import newhaven.core.Object;
+import newhaven.core.VariantType;
 
 class Widget extends Control {
 	public var io: IoInterface;
@@ -158,7 +160,7 @@ class Widget extends Control {
 		var className = xml.nodeName;
 		var classType = Type.resolveClass(className);
 		if (classType != null) {
-			var instance = Type.createEmptyInstance(classType);
+			var instance = Type.createInstance(classType, []);
 			if (instance != null) {
 				var node: Node = cast instance;
 				setObjectValues(node, xml);
@@ -189,6 +191,21 @@ class Widget extends Control {
 		for (attribute in attributes) {
 			var attributeName = attribute;
 			var attributeValue = xml.get(attributeName);
+			if (node.native.isClass("Control")) {
+				var control: Control = new Control(node.native);
+				if (attributeName == "offsetBottom") {
+					control.offsetBottom = Std.parseFloat(attributeValue);
+				}
+				else if (attributeName == "offsetTop") {
+					control.offsetTop = Std.parseFloat(attributeValue);
+				}
+				else if (attributeName == "offsetLeft") {
+					control.offsetLeft = Std.parseFloat(attributeValue);
+				}
+				else if (attributeName == "offsetRight") {
+					control.offsetRight = Std.parseFloat(attributeValue);
+				}
+			}
 			if (attributeName == name) {
 				node.name = attributeValue;
 			}
@@ -201,9 +218,9 @@ class Widget extends Control {
 				}
 			}
 			else {
-				if (Reflect.hasField(node, attributeName)) {
-					var currentValue = Reflect.field(node, attributeName);
-					if (Std.isOfType(currentValue, Bool)) {
+				if (this.hasField(node, attributeName)) {
+					var currentValue = objField(node, attributeName);
+					if (currentValue.getType() == VariantType.bool) {
 						var b : Bool = false;
 						if (attributeValue == "true") {
 							b = true;
@@ -214,9 +231,9 @@ class Widget extends Control {
 						else {
 							throw "Invalid boolean value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 						}
-						Reflect.setProperty(node, attributeName, b);
+						setProperty(node, attributeName, b);
 					}
-					else if (Std.isOfType(currentValue, Int)) {
+					else if (currentValue.getType() == VariantType.int) {
 						var attrArr = attributeValue.split(".");
 						var value = attrArr[attrArr.length - 1];
 						attrArr.resize(attrArr.length - 1);
@@ -227,7 +244,7 @@ class Widget extends Control {
 							if (enum_ != null) {
 								var enumValue: Int = Reflect.field(enum_, value);
 								if (enumValue != null) {
-									Reflect.setProperty(node, attributeName, enumValue);
+									setProperty(node, attributeName, enumValue);
 								}
 								else {
 									throw "Invalid enum value '" + value + "' for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
@@ -243,7 +260,7 @@ class Widget extends Control {
 									if (enumTable != null) {
 										var enumValue: Int = cast field(enumTable, value);
 										if (enumValue != null) {
-											Reflect.setProperty(node, attributeName, enumValue);
+											setProperty(node, attributeName, enumValue);
 										}
 										else {
 											throw "Invalid enum value '" + value + "' for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
@@ -256,7 +273,7 @@ class Widget extends Control {
 								else {
 									var enumValue : Int = cast field(class_, value);
 									if (enumValue != null) {
-										Reflect.setProperty(node, attributeName, enumValue);
+										setProperty(node, attributeName, enumValue);
 									}
 									else {
 										throw "Invalid enum value '" + value + "' for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
@@ -265,41 +282,41 @@ class Widget extends Control {
 							}
 						}
 						else {
-							Reflect.setProperty(node, attributeName, Std.parseInt(attributeValue));
+							setProperty(node, attributeName, Std.parseInt(attributeValue));
 						}
 					}
-					else if (Std.isOfType(currentValue, Float)) {
-						Reflect.setProperty(node, attributeValue, Std.parseFloat(attributeValue));
+					else if (currentValue.getType() == VariantType.float) {
+						setProperty(node, attributeValue, Std.parseFloat(attributeValue));
 					}
-					else if (Std.isOfType(currentValue, String)) {
-						Reflect.setProperty(node, attributeName, attributeValue);
+					else if (currentValue.getType() == VariantType.string || currentValue.getType() == VariantType.stringName || currentValue.getType() == VariantType.nodePath) {
+						setProperty(node, attributeName, attributeValue);
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector2") {
+					else if (currentValue.getType() == VariantType.vector2) {
 						var xy = attributeValue.split(", ");
 						if (xy.length == 2) {
 							var x = Std.parseFloat(xy[0]);
 							var y = Std.parseFloat(xy[1]);
-							Reflect.setProperty(node, attributeName, new Vector2(x, y));
+							setProperty(node, attributeName, new Vector2(x, y));
 						}
 						else {
 							xy = attributeValue.split(",");
 							if (xy.length == 2) {
 								var x = Std.parseFloat(xy[0]);
 								var y = Std.parseFloat(xy[1]);
-								Reflect.setProperty(node, attributeName, new Vector2(x, y));
+								setProperty(node, attributeName, new Vector2(x, y));
 							}
 							else {
 								throw "Invalid Vector2 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector3") {
+					else if (currentValue.getType() == VariantType.vector3) {
 						var xyz = attributeValue.split(", ");
 						if (xyz.length == 3) {
 							var x = Std.parseFloat(xyz[0]);
 							var y = Std.parseFloat(xyz[1]);
 							var z = Std.parseFloat(xyz[2]);
-							Reflect.setProperty(node, attributeName, new Vector3(x, y, z));
+							setProperty(node, attributeName, new Vector3(x, y, z));
 						}
 						else {
 							xyz = attributeValue.split(",");
@@ -307,21 +324,21 @@ class Widget extends Control {
 								var x = Std.parseFloat(xyz[0]);
 								var y = Std.parseFloat(xyz[1]);
 								var z = Std.parseFloat(xyz[2]);
-								Reflect.setProperty(node, attributeName, new Vector3(x, y, z));
+								setProperty(node, attributeName, new Vector3(x, y, z));
 							}
 							else {
 								throw "Invalid Vector2 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector4") {
+					else if (currentValue.getType() == VariantType.vector4) {
 						var xyzw = attributeValue.split(", ");
 						if (xyzw.length == 4) {
 							var x = Std.parseFloat(xyzw[0]);
 							var y = Std.parseFloat(xyzw[1]);
 							var z = Std.parseFloat(xyzw[2]);
 							var w = Std.parseFloat(xyzw[4]);
-							Reflect.setProperty(node, attributeName, new Vector4(x, y, z, w));
+							setProperty(node, attributeName, new Vector4(x, y, z, w));
 						}
 						else {
 							var xyzw = attributeValue.split(",");
@@ -330,39 +347,39 @@ class Widget extends Control {
 								var y = Std.parseFloat(xyzw[1]);
 								var z = Std.parseFloat(xyzw[2]);
 								var w = Std.parseFloat(xyzw[4]);
-								Reflect.setProperty(node, attributeName, new Vector4(x, y, z, w));
+								setProperty(node, attributeName, new Vector4(x, y, z, w));
 							}
 							else {
 								throw "Invalid Vector4 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector2i") {
+					else if (currentValue.getType() == VariantType.vector2i) {
 						var xy = attributeValue.split(", ");
 						if (xy.length == 2) {
 							var x = Std.parseInt(xy[0]);
 							var y = Std.parseInt(xy[1]);
-							Reflect.setProperty(node, attributeName, new Vector2i(x, y));
+							setProperty(node, attributeName, new Vector2i(x, y));
 						}
 						else {
 							xy = attributeValue.split(",");
 							if (xy.length == 2) {
 								var x = Std.parseInt(xy[0]);
 								var y = Std.parseInt(xy[1]);
-								Reflect.setProperty(node, attributeName, new Vector2i(x, y));
+								setProperty(node, attributeName, new Vector2i(x, y));
 							}
 							else {
 								throw "Invalid Vector2 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector3i") {
+					else if (currentValue.getType() == VariantType.vector3i) {
 						var xyz = attributeValue.split(", ");
 						if (xyz.length == 3) {
 							var x = Std.parseInt(xyz[0]);
 							var y = Std.parseInt(xyz[1]);
 							var z = Std.parseInt(xyz[2]);
-							Reflect.setProperty(node, attributeName, new Vector3i(x, y, z));
+							setProperty(node, attributeName, new Vector3i(x, y, z));
 						}
 						else {
 							xyz = attributeValue.split(",");
@@ -370,21 +387,21 @@ class Widget extends Control {
 								var x = Std.parseInt(xyz[0]);
 								var y = Std.parseInt(xyz[1]);
 								var z = Std.parseInt(xyz[2]);
-								Reflect.setProperty(node, attributeName, new Vector3i(x, y, z));
+								setProperty(node, attributeName, new Vector3i(x, y, z));
 							}
 							else {
 								throw "Invalid Vector2 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Vector4i") {
+					else if (currentValue.getType() == VariantType.vector4i) {
 						var xyzw = attributeValue.split(", ");
 						if (xyzw.length == 4) {
 							var x = Std.parseInt(xyzw[0]);
 							var y = Std.parseInt(xyzw[1]);
 							var z = Std.parseInt(xyzw[2]);
 							var w = Std.parseInt(xyzw[4]);
-							Reflect.setProperty(node, attributeName, new Vector4i(x, y, z, w));
+							setProperty(node, attributeName, new Vector4i(x, y, z, w));
 						}
 						else {
 							var xyzw = attributeValue.split(",");
@@ -393,23 +410,23 @@ class Widget extends Control {
 								var y = Std.parseInt(xyzw[1]);
 								var z = Std.parseInt(xyzw[2]);
 								var w = Std.parseInt(xyzw[4]);
-								Reflect.setProperty(node, attributeName, new Vector4i(x, y, z, w));
+								setProperty(node, attributeName, new Vector4i(x, y, z, w));
 							}
 							else {
 								throw "Invalid Vector4 value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 							}
 						}
 					}
-					else if (getUsertypeName(currentValue) == "sol.godot::Color") {
+					else if (currentValue.getType() == VariantType.color) {
 						var color = Color.html(attributeValue);
 						if (color != null) {
-							Reflect.setProperty(node, attributeName, color);
+							setProperty(node, attributeName, color);
 						}
 						else {
 							throw "Invalid Color value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 						}
 					}
-					else if (Std.isOfType(currentValue, Texture2D) || Std.isOfType(currentValue, Texture)) {
+					else if (isTextureType(currentValue)) {
 						if (io.fileExists(attributeValue)) {
 							var image = new Image();
 							var imageBytes = io.loadBytes(attributeValue);
@@ -445,15 +462,15 @@ class Widget extends Control {
 							if (texture != null) {
 								if (texture.native != null) {
 									if (!texture.native.isNull()) {
-										Reflect.setProperty(node, attributeName, texture);
+										setProperty(node, attributeName, texture);
 									}
 								}
 							}
 						}
 					}
 				}
-				else if (Std.isOfType(node, Control)) {
-					var control: Control = cast node;
+				else if (node.native.isClass("Control")) {
+					var control: Control = new Control(node.native);
 					var snakeCaseName = camelToSnake(attributeName);
 					if (control.hasThemeConstant(snakeCaseName)) {
 						control.addThemeConstantOverride(snakeCaseName, Variant.fromInt(Std.parseInt(attributeValue)));
@@ -510,6 +527,20 @@ class Widget extends Control {
 									}
 								}
 							}
+						}
+					}
+					else {
+						if (attributeName == "offsetBottom") {
+							control.offsetBottom = Std.parseFloat(attributeValue);
+						}
+						else if (attributeName == "offsetTop") {
+							control.offsetTop = Std.parseFloat(attributeValue);
+						}
+						else if (attributeName == "offsetLeft") {
+							control.offsetLeft = Std.parseFloat(attributeValue);
+						}
+						else if (attributeName == "offsetRight") {
+							control.offsetRight = Std.parseFloat(attributeValue);
 						}
 					}
 				}
@@ -648,7 +679,7 @@ class Widget extends Control {
 		for (child in children) {
 			var childNode = construct(child);
 			if (childNode != null) {
-				node.addChild(node);
+				node.addChild(childNode);
 			}
 			else {
 				throw "Unknown child node: " + child.nodeName;
@@ -679,10 +710,34 @@ class Widget extends Control {
 		return result;
 	}
 
+
+
+	private inline function setProperty(obj: Object, field: String, value: Variant): Void {
+		obj.native.set(camelToSnake(field), value);
+	}
+
+	private inline function hasField(obj: Object, field: String): Bool {
+		return obj.native.get(field).getType() != VariantType.nil;
+	}
+
+	private inline function objField(obj: Object, field: String) {
+		return obj.native.get(field);
+	}
+
 	private function field(obj: Any, field: String): Dynamic {
 		if (untyped __lua__("obj[field] ~= nil")) {
 			return untyped __lua__("obj[field]");
 		}
-		return Reflect.field(obj, field);
+		return null;
+	}
+
+	private function isTextureType(value: Variant) {
+		var nativeRef : NativeReference = value;
+		if (nativeRef != null)
+			if (nativeRef.isValid())
+				if (nativeRef.isClass("Texture"))
+					return true;
+
+		return false;
 	}
 }
