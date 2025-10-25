@@ -32,6 +32,15 @@ class NativeObject {
                     native = script->callv( "new",  args);
                 }
             }
+        	else if (scriptType == 2) {
+        		Ref<godot::Resource> res = ResourceLoader::get_singleton()->load(
+					"res://Engine/CSharpScriptLoader.gd"
+				);
+
+        		Ref<GDScript> script = res;
+        		Object* loader = script->callv( "new",  Array() );
+        		native = loader->call( "load_script", name, args );
+        	}
         }
 
         NativeObject(Object* obj)
