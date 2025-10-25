@@ -3,12 +3,25 @@ import os
 import sys
 
 from methods import print_error
+from SCons.Script import AddOption, GetOption
 
 
 libname = "sunaba"
 projectdir = "demo"
 
-lua_runtime = ARGUMENTS.pop("lua_runtime", "lua")
+# Support both styles:
+#   scons lua_runtime=lua       (ARGUMENTS style)
+#   scons --lua_runtime=lua    (long-option style)
+AddOption('--lua_runtime',
+          dest='lua_runtime',
+          type='string',
+          help="Lua runtime to use (lua or luajit)",
+          default='lua')
+lua_runtime = GetOption('lua_runtime') or ARGUMENTS.pop("lua_runtime", "lua")
+if isinstance(lua_runtime, list):
+    # Defensive: GetOption might return a single-element list in some environments
+    lua_runtime = lua_runtime[0]
+
 if lua_runtime.lower() not in ["lua", "luajit"]:
     raise ValueError(f"Invalid lua_runtime: expected either 'lua' or 'luajit', got {lua_runtime}")
 
