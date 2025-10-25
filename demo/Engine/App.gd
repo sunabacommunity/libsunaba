@@ -29,7 +29,7 @@ func load_app(path: String) -> void:
 	
 	var header_json : String = io_manager.LoadText("temp://header.json")
 	if (header_json.is_empty()):
-		_errord("header.json not found in the nhv file", "Inavlid header file")
+		_errord("header.json not found in the snb file", "Inavlid header file")
 		return
 	
 	var header: Dictionary = JSON.parse_string(header_json)

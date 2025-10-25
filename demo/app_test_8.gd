@@ -2,7 +2,7 @@ extends App
 
 func _init() -> void:
 	init(false, [])
-	load_app("res://tests/test8/bin/Test8.nhv")
+	load_app("res://tests/test8/bin/Test8.snb")
 
 func _ready() -> void:
 	var window := get_window()

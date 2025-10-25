@@ -3,7 +3,7 @@ extends App
 # Called when the node enters the scene tree for the first time.
 func _init() -> void:
 	init(false, [])
-	load_app("res://tests/test3/bin/Test3.nhv")
+	load_app("res://tests/test3/bin/Test3.snb")
 
 func _ready() -> void:
 	var window := get_window()
