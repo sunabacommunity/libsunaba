@@ -5,11 +5,16 @@ import sys
 
 def CopyLuaJIT(env, target, source):
     if not os.path.exists(target):
-        env.Execute(f"git -C {source} worktree add --detach --force {os.path.relpath(target, source)}")
+        env.Execute(
+            f"git -C {source} worktree add --detach --force {os.path.relpath(target, source)}"
+        )
 
 
 def MakeLuaJIT(env, build_dir):
     CopyLuaJIT(env, build_dir, "luajit")
+    luajit_src_dir = os.path.join(build_dir, "src")
+    target_lib = os.path.join(luajit_src_dir, "libluajit.a")
+
     make_flags = {
         "TARGET_SYS": {
             "windows": "Windows",
@@ -28,19 +33,21 @@ def MakeLuaJIT(env, build_dir):
         "MACOSX_DEPLOYMENT_TARGET": "11.0",
         "XCFLAGS": "-DLUAJIT_ENABLE_LUA52COMPAT",
     }
-    make_flags_line = " ".join(
-        f"{key}='{value}'"
-        for key, value in make_flags.items()
-        if value
+
+    make_flags_line = " ".join(f"{k}='{v}'" for k, v in make_flags.items() if v)
+
+    source_dep = os.path.join(luajit_src_dir, "lj_arch.h")  # any stable file will work
+
+    cmd = env.Command(
+        target_lib,
+        source_dep,
+        action=f"make -C {luajit_src_dir} {make_flags_line}",
+        ENV={"PATH": env.get("PATH", os.getenv("PATH"))},
     )
-    return env.Command(
-        f"{build_dir}/src/libluajit.a",
-        "lib",
-        action=f"make -C {build_dir} amalg {make_flags_line}",
-        ENV={
-            "PATH": env.get("PATH", os.getenv("PATH")),
-        },
-    )
+
+    return cmd
+
+
 
 
 def exists(env):
@@ -51,18 +58,21 @@ def generate(env):
     build_dir = env["build_dir"]
 
     # Make sure luajit.h and jit/vmdef.lua has been generated
-    env.Execute("make -C luajit/src luajit.h jit/vmdef.lua MACOSX_DEPLOYMENT_TARGET=11.0")
+    env.Execute(
+        "make -C luajit/src luajit.h jit/vmdef.lua MACOSX_DEPLOYMENT_TARGET=11.0"
+    )
 
     # Windows + MSVC special case: build using luajit/src/msvcbuild.bat
     if env["platform"] == "windows" and env.get("is_msvc"):
         CopyLuaJIT(env, f"{build_dir}/luajit", "luajit")
-        
+
         # Use `/MT` matching godot-cpp flags and add `/DLUAJIT_ENABLE_LUA52COMPAT`
         # Also, avoid building luajit.exe by filtering out lines containing "luajit."
         with open(f"{build_dir}/luajit/src/msvcbuild.bat", "r") as msvcbuild:
             msvcbuild_lines = [
-                line.replace("/MD", "/MT" if env.get("use_static_cpp") else "/MD")
-                    .replace("cl ", "cl /DLUAJIT_ENABLE_LUA52COMPAT ")
+                line.replace(
+                    "/MD", "/MT" if env.get("use_static_cpp") else "/MD"
+                ).replace("cl ", "cl /DLUAJIT_ENABLE_LUA52COMPAT ")
                 for line in msvcbuild
                 if "luajit." not in line
             ]
@@ -72,11 +82,13 @@ def generate(env):
         cmds = [
             (
                 f'"{env["vcvarsall_path"]}" x64_arm64'
-                if env["vcvarsall_path"] and env["arch"] == "arm64" and platform.machine().lower() == "amd64"
+                if env["vcvarsall_path"]
+                and env["arch"] == "arm64"
+                and platform.machine().lower() == "amd64"
                 else ""
             ),
             f"cd {build_dir}/luajit/src",
-            f"msvcbuild.bat {"debug" if env.get("debug_crt") else ""} amalg mixed",
+            f"msvcbuild.bat {'debug' if env.get('debug_crt') else ''} amalg mixed",
         ]
         libluajit = env.Command(
             f"{build_dir}/luajit/src/lua51.lib",
@@ -89,18 +101,26 @@ def generate(env):
         # SCons Environment doesn't provide `remove_options` — manually filter out any
         # existing -arch tokens so we can set the desired arch cleanly.
         arch_tokens = {"-arch", "x86_64", "arm64"}
-        env_x86_64["CCFLAGS"] = [f for f in env_x86_64.get("CCFLAGS", []) if f not in arch_tokens]
-        env_x86_64["LINKFLAGS"] = [f for f in env_x86_64.get("LINKFLAGS", []) if f not in arch_tokens]
+        env_x86_64["CCFLAGS"] = [
+            f for f in env_x86_64.get("CCFLAGS", []) if f not in arch_tokens
+        ]
+        env_x86_64["LINKFLAGS"] = [
+            f for f in env_x86_64.get("LINKFLAGS", []) if f not in arch_tokens
+        ]
         env_x86_64.Append(
             CCFLAGS=["-arch", "x86_64"],
             LINKFLAGS=["-arch", "x86_64"],
         )
         luajit_x86_64 = MakeLuaJIT(env_x86_64, f"{build_dir}/luajit/x86_64")
-        
+
         env_arm64 = env.Clone()
         arch_tokens = {"-arch", "x86_64", "arm64"}
-        env_arm64["CCFLAGS"] = [f for f in env_arm64.get("CCFLAGS", []) if f not in arch_tokens]
-        env_arm64["LINKFLAGS"] = [f for f in env_arm64.get("LINKFLAGS", []) if f not in arch_tokens]
+        env_arm64["CCFLAGS"] = [
+            f for f in env_arm64.get("CCFLAGS", []) if f not in arch_tokens
+        ]
+        env_arm64["LINKFLAGS"] = [
+            f for f in env_arm64.get("LINKFLAGS", []) if f not in arch_tokens
+        ]
         env_arm64.Append(
             CCFLAGS=["-arch", "arm64"],
             LINKFLAGS=["-arch", "arm64"],
