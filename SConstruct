@@ -8,7 +8,12 @@ from methods import print_error
 libname = "sunaba"
 projectdir = "demo"
 
+lua_runtime = ARGUMENTS.pop("lua_runtime", "lua")
+if lua_runtime.lower() not in ["lua", "luajit"]:
+    raise ValueError(f"Invalid lua_runtime: expected either 'lua' or 'luajit', got {lua_runtime}")
+
 localEnv = Environment(tools=["default"], PLATFORM="")
+
 
 # Build profiles can be used to decrease compile times.
 # You can either specify "disabled_classes", OR
@@ -37,6 +42,12 @@ Run the following command to download godot-cpp:
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
+env["lua_runtime"] = lua_runtime
+
+if env["platform"] == "web" and lua_runtime == "luajit":
+    print("LuaJIT doesn't support WebAssembly, building with Lua instead")
+    lua_runtime = "lua"
+
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
 
@@ -56,27 +67,28 @@ sources = Glob("src/*.cpp")
 # # lua_env.Append(CXXFLAGS = ["-std=c++17"])
 # lua_env.Append(CFLAGS = ["-std=c99"])
 
-
-
-lua_sources = []
-
-# Add only .c and .cpp source files, not headers
-lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
-# Exclude onelua.c to avoid duplicate symbols with individual .c files
-all_lua_c = Glob("lua-5.4.8/*.c")
-lua_c_files = [f for f in all_lua_c if "onelua.c" not in str(f)]
-lua_sources.extend(lua_c_files)
-
 # Add include paths for headers instead of adding them to sources
 env.Append(CPPPATH=["lua-5.4.8/"])
 env.Append(CPPPATH=["sol2/include/"])
 
-# Only add source files to the sources list
-sources.extend(lua_sources)
+if (env["lua_runtime"] == "lua"):
+    lua_sources = []
 
-# lua_file = "{}{}{}".format("luau", env["suffix"], env["SHLIBSUFFIX"])
-# lua_libraryfile = "bin/{}/{}".format(env["platform"], lua_file)
-# lua_library = lua_env.StaticLibrary(lua_libraryfile, source=lua_sources)
+    # Add only .c and .cpp source files, not headers
+    lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
+    # Exclude onelua.c to avoid duplicate symbols with individual .c files
+    all_lua_c = Glob("lua-5.4.8/*.c")
+    lua_c_files = [f for f in all_lua_c if "onelua.c" not in str(f)]
+    lua_sources.extend(lua_c_files)
+
+    # Only add source files to the sources list
+    sources.extend(lua_sources)
+
+    # lua_file = "{}{}{}".format("luau", env["suffix"], env["SHLIBSUFFIX"])
+    # lua_libraryfile = "bin/{}/{}".format(env["platform"], lua_file)
+    # lua_library = lua_env.StaticLibrary(lua_libraryfile, source=lua_sources)
+elif(env["lua_runtime"] == "luajit"):
+    env.Tool("luajit", toolpath=["tools"])
 
 ### < LUAU STUFF
 
