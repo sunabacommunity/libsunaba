@@ -86,8 +86,11 @@ def generate(env):
     # macOS universal special case: build x86_64 and arm64 separately, then `lipo` them together
     elif env["platform"] == "macos" and env["arch"] == "universal":
         env_x86_64 = env.Clone()
-        env_x86_64.remove_options(env_x86_64["CCFLAGS"], "-arch", "x86_64", "-arch", "arm64")
-        env_x86_64.remove_options(env_x86_64["LINKFLAGS"], "-arch", "x86_64", "-arch", "arm64")
+        # SCons Environment doesn't provide `remove_options` — manually filter out any
+        # existing -arch tokens so we can set the desired arch cleanly.
+        arch_tokens = {"-arch", "x86_64", "arm64"}
+        env_x86_64["CCFLAGS"] = [f for f in env_x86_64.get("CCFLAGS", []) if f not in arch_tokens]
+        env_x86_64["LINKFLAGS"] = [f for f in env_x86_64.get("LINKFLAGS", []) if f not in arch_tokens]
         env_x86_64.Append(
             CCFLAGS=["-arch", "x86_64"],
             LINKFLAGS=["-arch", "x86_64"],
@@ -95,17 +98,22 @@ def generate(env):
         luajit_x86_64 = MakeLuaJIT(env_x86_64, f"{build_dir}/luajit/x86_64")
         
         env_arm64 = env.Clone()
-        env_arm64.remove_options(env_arm64["CCFLAGS"], "-arch", "x86_64", "-arch", "arm64")
-        env_arm64.remove_options(env_arm64["LINKFLAGS"], "-arch", "x86_64", "-arch", "arm64")
+        arch_tokens = {"-arch", "x86_64", "arm64"}
+        env_arm64["CCFLAGS"] = [f for f in env_arm64.get("CCFLAGS", []) if f not in arch_tokens]
+        env_arm64["LINKFLAGS"] = [f for f in env_arm64.get("LINKFLAGS", []) if f not in arch_tokens]
         env_arm64.Append(
             CCFLAGS=["-arch", "arm64"],
             LINKFLAGS=["-arch", "arm64"],
         )
         luajit_arm64 = MakeLuaJIT(env_arm64, f"{build_dir}/luajit/arm64")
 
-        libluajit = env.Lipo(
-            target=f"{build_dir}/luajit/libluajit.a",
-            source=[luajit_x86_64, luajit_arm64],
+        # Combine the two architecture-specific static libs into a universal one using `lipo`.
+        # Make a Command that depends on the two produced archives.
+        libluajit = env.Command(
+            f"{build_dir}/luajit/libluajit.a",
+            [luajit_x86_64, luajit_arm64],
+            action="lipo -create -output $TARGET $SOURCES",
+            ENV={"PATH": env.get("PATH", os.getenv("PATH"))},
         )
     else:
         libluajit = MakeLuaJIT(env, f"{build_dir}/luajit")
