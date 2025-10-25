@@ -41,7 +41,7 @@ class Widget extends Control {
 		var file = io.loadText(path);
 		if (file != null && file.length > 0) {
 			try {
-				//
+				parseMarkup(file);
 			}
 			catch (e: Dynamic) {
 				Sys.println("Error parsing markup: " + e);
