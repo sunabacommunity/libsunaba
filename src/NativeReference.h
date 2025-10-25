@@ -38,7 +38,7 @@ private:
 
         		Ref<GDScript> script = res;
         		Object* loader = script->callv( "new",  Array() );
-        		native = loader->call( "load_script", name, args );
+        		native = loader->call( "load_script", name.c_str(), args );
         	}
         }
 
