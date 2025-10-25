@@ -101,6 +101,7 @@ if (env["lua_runtime"] == "lua"):
     # lua_libraryfile = "bin/{}/{}".format(env["platform"], lua_file)
     # lua_library = lua_env.StaticLibrary(lua_libraryfile, source=lua_sources)
 elif(env["lua_runtime"] == "luajit"):
+    env["build_dir"] = os.path.join("build", env["platform"])
     env.Tool("luajit", toolpath=["tools"])
 
 ### < LUAU STUFF

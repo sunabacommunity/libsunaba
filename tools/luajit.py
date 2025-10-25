@@ -9,7 +9,7 @@ def CopyLuaJIT(env, target, source):
 
 
 def MakeLuaJIT(env, build_dir):
-    CopyLuaJIT(env, build_dir, "lib/luajit")
+    CopyLuaJIT(env, build_dir, "luajit")
     make_flags = {
         "TARGET_SYS": {
             "windows": "Windows",
@@ -51,11 +51,11 @@ def generate(env):
     build_dir = env["build_dir"]
 
     # Make sure luajit.h and jit/vmdef.lua has been generated
-    env.Execute("make -C lib/luajit/src luajit.h jit/vmdef.lua MACOSX_DEPLOYMENT_TARGET=11.0")
+    env.Execute("make -C luajit/src luajit.h jit/vmdef.lua MACOSX_DEPLOYMENT_TARGET=11.0")
 
     # Windows + MSVC special case: build using luajit/src/msvcbuild.bat
     if env["platform"] == "windows" and env.get("is_msvc"):
-        CopyLuaJIT(env, f"{build_dir}/luajit", "lib/luajit")
+        CopyLuaJIT(env, f"{build_dir}/luajit", "luajit")
         
         # Use `/MT` matching godot-cpp flags and add `/DLUAJIT_ENABLE_LUA52COMPAT`
         # Also, avoid building luajit.exe by filtering out lines containing "luajit."
@@ -111,5 +111,5 @@ def generate(env):
         libluajit = MakeLuaJIT(env, f"{build_dir}/luajit")
 
     env.Append(CPPDEFINES=["LUAJIT", "SOL_LUAJIT=1", "SOL_USING_CXX_LUA=0"])
-    env.Append(CPPPATH="lib/luajit/src")
+    env.Append(CPPPATH="luajit/src")
     env.Append(LIBS=libluajit)
