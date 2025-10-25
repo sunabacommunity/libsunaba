@@ -20,7 +20,7 @@ class CanvasItem extends Node {
     public function new(?_native: NativeObject) {
         super();
         if (_native == null) {
-            _native = new NativeObject('CanvasItem');
+            return;
         }
         native = _native;
     }
