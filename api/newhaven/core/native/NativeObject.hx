@@ -1,7 +1,7 @@
-package newhaven.core.native;
+package sunaba.core.native;
 
-import newhaven.core.Variant;
-import newhaven.core.ArrayList;
+import sunaba.core.Variant;
+import sunaba.core.ArrayList;
 
 @:native("NativeObject")
 extern class NativeObject extends NativeBase {

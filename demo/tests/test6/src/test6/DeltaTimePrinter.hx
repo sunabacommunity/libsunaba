@@ -1,6 +1,6 @@
 package test6;
 
-import newhaven.Behavior;
+import sunaba.Behavior;
 
 class DeltaTimePrinter extends Behavior {
 	public override function onInit() {

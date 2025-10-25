@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DepthDrawModeEnum(Int) from Int to Int {
 	var opaqueOnly = cast 0;

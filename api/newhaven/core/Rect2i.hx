@@ -1,4 +1,4 @@
-package newhaven.core;
+package sunaba.core;
 
 @:native("Rect2i")
 extern class Rect2i {

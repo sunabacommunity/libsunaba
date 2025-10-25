@@ -1,4 +1,4 @@
-package newhaven.core;
+package sunaba.core;
 
 @:native("Vector4")
 extern class Vector4 {

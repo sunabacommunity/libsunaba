@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PolyJoinType(Int) from Int to Int {
 	var square = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ClockDirection(Int) from Int to Int {
 	var clockwise = cast 0;

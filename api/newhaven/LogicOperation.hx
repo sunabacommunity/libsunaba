@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LogicOperation(Int) from Int to Int {
 	var clear = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DEmissionOperator(Int) from Int to Int {
 	var add = cast 0;

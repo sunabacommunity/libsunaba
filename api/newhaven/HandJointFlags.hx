@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HandJointFlags(Int) from Int to Int {
 	var orientationValid = cast 1;

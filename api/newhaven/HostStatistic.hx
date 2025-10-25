@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HostStatistic(Int) from Int to Int {
 	var sentData = cast 0;

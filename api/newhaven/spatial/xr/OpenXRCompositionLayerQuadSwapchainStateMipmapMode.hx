@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRCompositionLayerQuadSwapchainStateMipmapMode(Int) from Int to Int {
 	var disabled = cast 0;

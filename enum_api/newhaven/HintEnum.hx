@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HintEnum(Int) from Int to Int {
 	var none = cast 0;

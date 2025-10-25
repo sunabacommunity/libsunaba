@@ -1,4 +1,4 @@
-package newhaven.spatial.navigation;
+package sunaba.spatial.navigation;
 
 enum abstract NavigationAgent3DProcessThreadMessages(Int) from Int to Int {
 	var messages = cast 1;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CloseButtonDisplayPolicy(Int) from Int to Int {
 	var showNever = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EnvironmentSdfgiFramesToUpdateLight(Int) from Int to Int {
 	var in1Frame = cast 0;

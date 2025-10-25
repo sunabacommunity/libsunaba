@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SdfScaleEnum(Int) from Int to Int {
 	var scale100Percent = cast 0;

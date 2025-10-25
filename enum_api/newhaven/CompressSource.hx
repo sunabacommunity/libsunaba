@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CompressSource(Int) from Int to Int {
 	var generic = cast 0;

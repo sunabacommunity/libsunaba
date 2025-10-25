@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ShadingModeEnum(Int) from Int to Int {
 	var unshaded = cast 0;

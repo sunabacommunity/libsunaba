@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract PopupContentScaleStretch(Int) from Int to Int {
 	var fractional = cast 0;

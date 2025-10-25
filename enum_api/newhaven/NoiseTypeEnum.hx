@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract NoiseTypeEnum(Int) from Int to Int {
 	var simplex = cast 0;

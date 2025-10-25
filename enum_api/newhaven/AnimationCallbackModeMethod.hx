@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AnimationCallbackModeMethod(Int) from Int to Int {
 	var deferred = cast 0;

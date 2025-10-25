@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EnableModeEnum(Int) from Int to Int {
 	var inherit = cast 0;

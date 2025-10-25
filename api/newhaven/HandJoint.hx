@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HandJoint(Int) from Int to Int {
 	var palm = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AttenuationModelEnum(Int) from Int to Int {
 	var inverseDistance = cast 0;

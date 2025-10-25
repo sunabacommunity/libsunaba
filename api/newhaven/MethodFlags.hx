@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MethodFlags(Int) from Int to Int {
 	var normal = cast 1;

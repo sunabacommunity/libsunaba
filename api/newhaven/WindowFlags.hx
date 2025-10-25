@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract WindowFlags(Int) from Int to Int {
 	var resizeDisabled = cast 0;

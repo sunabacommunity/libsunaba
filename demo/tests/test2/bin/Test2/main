@@ -183,8 +183,8 @@ local Class = _hx_e();
 local Enum = _hx_e();
 
 local Array = _hx_e()
-__newhaven_BaseClass = _hx_e()
-__newhaven_App = _hx_e()
+__sunaba_BaseClass = _hx_e()
+__sunaba_App = _hx_e()
 local Main = _hx_e()
 local Math = _hx_e()
 local String = _hx_e()
@@ -203,17 +203,17 @@ __haxe_iterators_ArrayKeyValueIterator = _hx_e()
 __lua_Boot = _hx_e()
 __lua_UserData = _hx_e()
 __lua_Thread = _hx_e()
-__newhaven_Debug = _hx_e()
-__newhaven_core_ArrayListIterator = _hx_e()
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_ = _hx_e()
-__newhaven_core__ByteArray_ByteArray_Fields_ = _hx_e()
-__newhaven_core_DictionaryIterator = _hx_e()
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_ = _hx_e()
-__newhaven_core_Object = _hx_e()
-__newhaven_core_Reference = _hx_e()
-__newhaven_core__TypedArray_TypedArray_Impl_ = _hx_e()
-__newhaven_core__Variant_Variant_Impl_ = _hx_e()
-__newhaven_core__VariantType_VariantType_Impl_ = _hx_e()
+__sunaba_Debug = _hx_e()
+__sunaba_core_ArrayListIterator = _hx_e()
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_ = _hx_e()
+__sunaba_core__ByteArray_ByteArray_Fields_ = _hx_e()
+__sunaba_core_DictionaryIterator = _hx_e()
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_ = _hx_e()
+__sunaba_core_Object = _hx_e()
+__sunaba_core_Reference = _hx_e()
+__sunaba_core__TypedArray_TypedArray_Impl_ = _hx_e()
+__sunaba_core__Variant_Variant_Impl_ = _hx_e()
+__sunaba_core__VariantType_VariantType_Impl_ = _hx_e()
 
 local _hx_bind, _hx_bit, _hx_staticToInstance, _hx_funcToField, _hx_maxn, _hx_print, _hx_apply_self, _hx_box_mr, _hx_bit_clamp, _hx_table, _hx_bit_raw
 local _hx_pcall_default = {};
@@ -565,15 +565,15 @@ end
 
 Array.prototype.__class__ =  Array
 
-__newhaven_BaseClass.new = {}
-__newhaven_BaseClass.__name__ = true
+__sunaba_BaseClass.new = {}
+__sunaba_BaseClass.__name__ = true
 
-__newhaven_App.new = function() 
-  local self = _hx_new(__newhaven_App.prototype)
-  __newhaven_App.super(self)
+__sunaba_App.new = function() 
+  local self = _hx_new(__sunaba_App.prototype)
+  __sunaba_App.super(self)
   return self
 end
-__newhaven_App.super = function(self) 
+__sunaba_App.super = function(self) 
   local _hx_status, _hx_result = pcall(function() 
   
       self:init();
@@ -583,34 +583,34 @@ __newhaven_App.super = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g);
-    __newhaven_Debug.error(e:toString());
+    __sunaba_Debug.error(e:toString());
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
 end
-__newhaven_App.__name__ = true
-__newhaven_App.get_execDir = function() 
+__sunaba_App.__name__ = true
+__sunaba_App.get_execDir = function() 
   do return _G.execDir end;
 end
-__newhaven_App.get_resDir = function() 
+__sunaba_App.get_resDir = function() 
   do return _G.resDir end;
 end
-__newhaven_App.get_shareDir = function() 
+__sunaba_App.get_shareDir = function() 
   do return _G.shareDir end;
 end
-__newhaven_App.exit = function() 
+__sunaba_App.exit = function() 
   _G.exit();
 end
-__newhaven_App.prototype = _hx_e();
-__newhaven_App.prototype.get_rootNodeNative = function(self) 
+__sunaba_App.prototype = _hx_e();
+__sunaba_App.prototype.get_rootNodeNative = function(self) 
   do return _G.__rootNode end
 end
-__newhaven_App.prototype.init = function(self) 
+__sunaba_App.prototype.init = function(self) 
 end
 
-__newhaven_App.prototype.__class__ =  __newhaven_App
-__newhaven_App.__super__ = __newhaven_BaseClass
-setmetatable(__newhaven_App.prototype,{__index=__newhaven_BaseClass.prototype})
+__sunaba_App.prototype.__class__ =  __sunaba_App
+__sunaba_App.__super__ = __sunaba_BaseClass
+setmetatable(__sunaba_App.prototype,{__index=__sunaba_BaseClass.prototype})
 
 Main.new = function() 
   local self = _hx_new(Main.prototype)
@@ -618,7 +618,7 @@ Main.new = function()
   return self
 end
 Main.super = function(self) 
-  __newhaven_App.super(self);
+  __sunaba_App.super(self);
 end
 Main.__name__ = true
 Main.main = function() 
@@ -629,29 +629,29 @@ Main.prototype.init = function(self)
   _G.print("Hello, World!");
   local vec3 = Vector3.new(1, 2, 3);
   _G.print(Std.string(Std.string("Vector3: ") .. Std.string(vec3:tostring())));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=20,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=20,className="Main",methodName="init"}));
   local camera = NativeObject.new("Camera3D");
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=22,className="Main",methodName="init"}));
-  __haxe_Log.trace(Std.string("Camera is null: ") .. Std.string(Std.string(camera:isNull())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=23,className="Main",methodName="init"}));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=24,className="Main",methodName="init"}));
-  __haxe_Log.trace(Std.string("Root Node Native is null: ") .. Std.string(Std.string(self:get_rootNodeNative():isNull())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=25,className="Main",methodName="init"}));
-  __haxe_Log.trace(self:get_rootNodeNative():isClass("Node"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=26,className="Main",methodName="init"}));
-  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__newhaven_core__Variant_Variant_Impl_.fromLinkObject(camera)}, 1)));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=29,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=22,className="Main",methodName="init"}));
+  __haxe_Log.trace(Std.string("Camera is null: ") .. Std.string(Std.string(camera:isNull())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=23,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=24,className="Main",methodName="init"}));
+  __haxe_Log.trace(Std.string("Root Node Native is null: ") .. Std.string(Std.string(self:get_rootNodeNative():isNull())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=25,className="Main",methodName="init"}));
+  __haxe_Log.trace(self:get_rootNodeNative():isClass("Node"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=26,className="Main",methodName="init"}));
+  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromLinkObject(camera)}, 1)));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=29,className="Main",methodName="init"}));
   local meshInstance = NativeObject.new("MeshInstance3D");
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=31,className="Main",methodName="init"}));
-  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__newhaven_core__Variant_Variant_Impl_.fromLinkObject(meshInstance)}, 1)));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=33,className="Main",methodName="init"}));
-  meshInstance:set("position", __newhaven_core__Variant_Variant_Impl_.fromArray(self:args(_hx_tab_array({[0]=__newhaven_core__Variant_Variant_Impl_.fromVector3(Vector3.new(0, 0, -5))}, 1))));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=36,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=31,className="Main",methodName="init"}));
+  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromLinkObject(meshInstance)}, 1)));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=33,className="Main",methodName="init"}));
+  meshInstance:set("position", __sunaba_core__Variant_Variant_Impl_.fromArray(self:args(_hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromVector3(Vector3.new(0, 0, -5))}, 1))));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=36,className="Main",methodName="init"}));
   local boxMesh = NativeObject.new("BoxMesh");
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=38,className="Main",methodName="init"}));
-  meshInstance:set("mesh", __newhaven_core__Variant_Variant_Impl_.fromArray(self:args(_hx_tab_array({[0]=__newhaven_core__Variant_Variant_Impl_.fromLinkObject(boxMesh)}, 1))));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=41,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=38,className="Main",methodName="init"}));
+  meshInstance:set("mesh", __sunaba_core__Variant_Variant_Impl_.fromArray(self:args(_hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromLinkObject(boxMesh)}, 1))));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=41,className="Main",methodName="init"}));
   local directionalLight = NativeObject.new("DirectionalLight3D");
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=43,className="Main",methodName="init"}));
-  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__newhaven_core__Variant_Variant_Impl_.fromLinkObject(directionalLight)}, 1)));
-  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/newhaven/demo/tests/test2/src/Main.hx",lineNumber=46,className="Main",methodName="init"}));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=43,className="Main",methodName="init"}));
+  self:get_rootNodeNative():call("add_child", self:args(_hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromLinkObject(directionalLight)}, 1)));
+  __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Volumes/Lucas' SSD/mintkat/sunaba/demo/tests/test2/src/Main.hx",lineNumber=46,className="Main",methodName="init"}));
 end
 Main.prototype.args = function(self,args) 
   local newArgs = ArrayList.new();
@@ -666,8 +666,8 @@ Main.prototype.args = function(self,args)
 end
 
 Main.prototype.__class__ =  Main
-Main.__super__ = __newhaven_App
-setmetatable(Main.prototype,{__index=__newhaven_App.prototype})
+Main.__super__ = __sunaba_App
+setmetatable(Main.prototype,{__index=__sunaba_App.prototype})
 
 Math.new = {}
 Math.__name__ = true
@@ -1236,42 +1236,42 @@ __lua_UserData.__name__ = true
 __lua_Thread.new = {}
 __lua_Thread.__name__ = true
 
-__newhaven_Debug.new = {}
-__newhaven_Debug.__name__ = true
-__newhaven_Debug.error = function(err,title) 
+__sunaba_Debug.new = {}
+__sunaba_Debug.__name__ = true
+__sunaba_Debug.error = function(err,title) 
   if (title == nil) then 
     title = "Error";
   end;
   _G.__errord(err, title);
 end
-__newhaven_Debug.info = function(msg,title) 
+__sunaba_Debug.info = function(msg,title) 
   if (title == nil) then 
     title = "Information";
   end;
   _G.__infod(msg, title);
 end
-__newhaven_Debug.warn = function(msg,title) 
+__sunaba_Debug.warn = function(msg,title) 
   if (title == nil) then 
     title = "Warning";
   end;
   _G.__warnd(msg, title);
 end
 
-__newhaven_core_ArrayListIterator.new = function(array) 
-  local self = _hx_new(__newhaven_core_ArrayListIterator.prototype)
-  __newhaven_core_ArrayListIterator.super(self,array)
+__sunaba_core_ArrayListIterator.new = function(array) 
+  local self = _hx_new(__sunaba_core_ArrayListIterator.prototype)
+  __sunaba_core_ArrayListIterator.super(self,array)
   return self
 end
-__newhaven_core_ArrayListIterator.super = function(self,array) 
+__sunaba_core_ArrayListIterator.super = function(self,array) 
   self.index = 0;
   self.array = array;
 end
-__newhaven_core_ArrayListIterator.__name__ = true
-__newhaven_core_ArrayListIterator.prototype = _hx_e();
-__newhaven_core_ArrayListIterator.prototype.hasNext = function(self) 
+__sunaba_core_ArrayListIterator.__name__ = true
+__sunaba_core_ArrayListIterator.prototype = _hx_e();
+__sunaba_core_ArrayListIterator.prototype.hasNext = function(self) 
   do return self.index < self.array:size() end
 end
-__newhaven_core_ArrayListIterator.prototype.next = function(self) 
+__sunaba_core_ArrayListIterator.prototype.next = function(self) 
   if (self:hasNext()) then 
     local value = self.array:get(self.index);
     self.index = self.index + 1;
@@ -1281,23 +1281,23 @@ __newhaven_core_ArrayListIterator.prototype.next = function(self)
   end;
 end
 
-__newhaven_core_ArrayListIterator.prototype.__class__ =  __newhaven_core_ArrayListIterator
+__sunaba_core_ArrayListIterator.prototype.__class__ =  __sunaba_core_ArrayListIterator
 
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.new = {}
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.__name__ = true
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.get = function(this1,index) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.new = {}
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.__name__ = true
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.get = function(this1,index) 
   do return this1:get(index) end;
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.set = function(this1,index,value) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.set = function(this1,index,value) 
   this1:set(index, value);
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.getArray = function(this1,index) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.getArray = function(this1,index) 
   do return this1:get(index) end;
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.setArray = function(this1,index,value) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.setArray = function(this1,index,value) 
   this1:set(index, value);
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,callback) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,callback) 
   local _g = 0;
   local _g1 = this1:size();
   while (_g < _g1) do _hx_do_first_1 = false;
@@ -1307,7 +1307,7 @@ __newhaven_core__ArrayList_ArrayListAbstract_Impl_.forEach = function(this1,call
     callback(this1:get(i));
   end;
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1) 
   local result = Array.new();
   local _g = 0;
   local _g1 = this1:size();
@@ -1319,7 +1319,7 @@ __newhaven_core__ArrayList_ArrayListAbstract_Impl_.toArray = function(this1)
   end;
   do return result end;
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array) 
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array) 
   local result = ArrayList.new();
   local _g = 0;
   while (_g < array.length) do _hx_do_first_1 = false;
@@ -1330,13 +1330,13 @@ __newhaven_core__ArrayList_ArrayListAbstract_Impl_.fromArray = function(array)
   end;
   do return result end;
 end
-__newhaven_core__ArrayList_ArrayListAbstract_Impl_.iterator = function(this1) 
-  do return __newhaven_core_ArrayListIterator.new(this1) end;
+__sunaba_core__ArrayList_ArrayListAbstract_Impl_.iterator = function(this1) 
+  do return __sunaba_core_ArrayListIterator.new(this1) end;
 end
 
-__newhaven_core__ByteArray_ByteArray_Fields_.new = {}
-__newhaven_core__ByteArray_ByteArray_Fields_.__name__ = true
-__newhaven_core__ByteArray_ByteArray_Fields_.BinaryDataToBytes = function(binaryData) 
+__sunaba_core__ByteArray_ByteArray_Fields_.new = {}
+__sunaba_core__ByteArray_ByteArray_Fields_.__name__ = true
+__sunaba_core__ByteArray_ByteArray_Fields_.BinaryDataToBytes = function(binaryData) 
   local size = binaryData:size();
   local bytes = __haxe_io_Bytes.alloc(size);
   local _g = 0;
@@ -1350,7 +1350,7 @@ __newhaven_core__ByteArray_ByteArray_Fields_.BinaryDataToBytes = function(binary
   end;
   do return bytes end;
 end
-__newhaven_core__ByteArray_ByteArray_Fields_.BytesToBinaryData = function(bytes) 
+__sunaba_core__ByteArray_ByteArray_Fields_.BytesToBinaryData = function(bytes) 
   local binaryData = ByteArray.new();
   local _g = 0;
   local _g1 = bytes.length;
@@ -1363,21 +1363,21 @@ __newhaven_core__ByteArray_ByteArray_Fields_.BytesToBinaryData = function(bytes)
   do return binaryData end;
 end
 
-__newhaven_core_DictionaryIterator.new = function(dict) 
-  local self = _hx_new(__newhaven_core_DictionaryIterator.prototype)
-  __newhaven_core_DictionaryIterator.super(self,dict)
+__sunaba_core_DictionaryIterator.new = function(dict) 
+  local self = _hx_new(__sunaba_core_DictionaryIterator.prototype)
+  __sunaba_core_DictionaryIterator.super(self,dict)
   return self
 end
-__newhaven_core_DictionaryIterator.super = function(self,dict) 
+__sunaba_core_DictionaryIterator.super = function(self,dict) 
   self.index = 0;
   self.dict = dict;
 end
-__newhaven_core_DictionaryIterator.__name__ = true
-__newhaven_core_DictionaryIterator.prototype = _hx_e();
-__newhaven_core_DictionaryIterator.prototype.hasNext = function(self) 
+__sunaba_core_DictionaryIterator.__name__ = true
+__sunaba_core_DictionaryIterator.prototype = _hx_e();
+__sunaba_core_DictionaryIterator.prototype.hasNext = function(self) 
   do return self.index < self.dict:size() end
 end
-__newhaven_core_DictionaryIterator.prototype.next = function(self) 
+__sunaba_core_DictionaryIterator.prototype.next = function(self) 
   if (self:hasNext()) then 
     local key = self.dict:keys():get(self.index);
     self.index = self.index + 1;
@@ -1387,23 +1387,23 @@ __newhaven_core_DictionaryIterator.prototype.next = function(self)
   end;
 end
 
-__newhaven_core_DictionaryIterator.prototype.__class__ =  __newhaven_core_DictionaryIterator
+__sunaba_core_DictionaryIterator.prototype.__class__ =  __sunaba_core_DictionaryIterator
 
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.new = {}
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.__name__ = true
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.get = function(this1,key) 
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.new = {}
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.__name__ = true
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.get = function(this1,key) 
   do return this1:get(key) end;
 end
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.set = function(this1,key,value) 
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.set = function(this1,key,value) 
   this1:set(key, value);
 end
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.getArray = function(this1,key) 
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.getArray = function(this1,key) 
   do return this1:get(key) end;
 end
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.setArray = function(this1,key,value) 
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.setArray = function(this1,key,value) 
   this1:set(key, value);
 end
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,func) 
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,func) 
   local keys = this1:keys();
   local _g = 0;
   local _g1 = keys:size();
@@ -1415,30 +1415,30 @@ __newhaven_core__Dictionary_DictionaryAbstract_Impl_.forEach = function(this1,fu
     func(key, this1:get(key));
   end;
 end
-__newhaven_core__Dictionary_DictionaryAbstract_Impl_.iterator = function(this1) 
-  do return __newhaven_core_DictionaryIterator.new(this1) end;
+__sunaba_core__Dictionary_DictionaryAbstract_Impl_.iterator = function(this1) 
+  do return __sunaba_core_DictionaryIterator.new(this1) end;
 end
 
-__newhaven_core_Object.new = function(native) 
-  local self = _hx_new(__newhaven_core_Object.prototype)
-  __newhaven_core_Object.super(self,native)
+__sunaba_core_Object.new = function(native) 
+  local self = _hx_new(__sunaba_core_Object.prototype)
+  __sunaba_core_Object.super(self,native)
   return self
 end
-__newhaven_core_Object.super = function(self,native) 
+__sunaba_core_Object.super = function(self,native) 
   self.freed = false;
   if (native == nil) then 
     native = NativeObject.new("Object");
   end;
   self.native = native;
 end
-__newhaven_core_Object.__name__ = true
-__newhaven_core_Object.prototype = _hx_e();
-__newhaven_core_Object.prototype.isNull = function(self) 
+__sunaba_core_Object.__name__ = true
+__sunaba_core_Object.prototype = _hx_e();
+__sunaba_core_Object.prototype.isNull = function(self) 
   do return self.native:isNull() end
 end
-__newhaven_core_Object.prototype.onFree = function(self) 
+__sunaba_core_Object.prototype.onFree = function(self) 
 end
-__newhaven_core_Object.prototype.free = function(self) 
+__sunaba_core_Object.prototype.free = function(self) 
   if (not self.freed) then 
     self.native:free();
     self.native = nil;
@@ -1447,62 +1447,62 @@ __newhaven_core_Object.prototype.free = function(self)
   end;
 end
 
-__newhaven_core_Object.prototype.__class__ =  __newhaven_core_Object
-__newhaven_core_Object.__super__ = __newhaven_BaseClass
-setmetatable(__newhaven_core_Object.prototype,{__index=__newhaven_BaseClass.prototype})
+__sunaba_core_Object.prototype.__class__ =  __sunaba_core_Object
+__sunaba_core_Object.__super__ = __sunaba_BaseClass
+setmetatable(__sunaba_core_Object.prototype,{__index=__sunaba_BaseClass.prototype})
 
-__newhaven_core_Reference.new = function(native) 
-  local self = _hx_new(__newhaven_core_Reference.prototype)
-  __newhaven_core_Reference.super(self,native)
+__sunaba_core_Reference.new = function(native) 
+  local self = _hx_new(__sunaba_core_Reference.prototype)
+  __sunaba_core_Reference.super(self,native)
   return self
 end
-__newhaven_core_Reference.super = function(self,native) 
+__sunaba_core_Reference.super = function(self,native) 
   if (native == nil) then 
     native = NativeReference.new("RefCounted");
   end;
   self.native = native;
 end
-__newhaven_core_Reference.__name__ = true
-__newhaven_core_Reference.prototype = _hx_e();
-__newhaven_core_Reference.prototype.isNull = function(self) 
+__sunaba_core_Reference.__name__ = true
+__sunaba_core_Reference.prototype = _hx_e();
+__sunaba_core_Reference.prototype.isNull = function(self) 
   do return self.native:isNull() end
 end
-__newhaven_core_Reference.prototype.isValid = function(self) 
+__sunaba_core_Reference.prototype.isValid = function(self) 
   do return self.native:isValid() end
 end
 
-__newhaven_core_Reference.prototype.__class__ =  __newhaven_core_Reference
-__newhaven_core_Reference.__super__ = __newhaven_BaseClass
-setmetatable(__newhaven_core_Reference.prototype,{__index=__newhaven_BaseClass.prototype})
+__sunaba_core_Reference.prototype.__class__ =  __sunaba_core_Reference
+__sunaba_core_Reference.__super__ = __sunaba_BaseClass
+setmetatable(__sunaba_core_Reference.prototype,{__index=__sunaba_BaseClass.prototype})
 
-__newhaven_core__TypedArray_TypedArray_Impl_.new = {}
-__newhaven_core__TypedArray_TypedArray_Impl_.__name__ = true
-__newhaven_core__TypedArray_TypedArray_Impl_._new = function() 
-  do return newhaven.core.TypedArrayNative() end;
+__sunaba_core__TypedArray_TypedArray_Impl_.new = {}
+__sunaba_core__TypedArray_TypedArray_Impl_.__name__ = true
+__sunaba_core__TypedArray_TypedArray_Impl_._new = function() 
+  do return sunaba.core.TypedArrayNative() end;
 end
-__newhaven_core__TypedArray_TypedArray_Impl_.size = function(this1) 
+__sunaba_core__TypedArray_TypedArray_Impl_.size = function(this1) 
   local s = this1;
   do return #s end;
 end
-__newhaven_core__TypedArray_TypedArray_Impl_.get = function(this1,index) 
+__sunaba_core__TypedArray_TypedArray_Impl_.get = function(this1,index) 
   local s = this1;
   do return s[index] end;
 end
-__newhaven_core__TypedArray_TypedArray_Impl_.set = function(this1,index,value) 
+__sunaba_core__TypedArray_TypedArray_Impl_.set = function(this1,index,value) 
   local s = this1;
   s[index] = value;
   do return value end;
 end
-__newhaven_core__TypedArray_TypedArray_Impl_.toArray = function(this1) 
+__sunaba_core__TypedArray_TypedArray_Impl_.toArray = function(this1) 
   local s = this1;
   local array = _hx_tab_array({}, 0);
   local _g = 1;
-  local _g1 = __newhaven_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
     local i = _g - 1;
-    local value = __newhaven_core__TypedArray_TypedArray_Impl_.get(s, i);
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
     if (value == nil) then 
       _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
     end;
@@ -1510,229 +1510,229 @@ __newhaven_core__TypedArray_TypedArray_Impl_.toArray = function(this1)
   end;
   do return array end;
 end
-__newhaven_core__TypedArray_TypedArray_Impl_.toTable = function(this1) 
+__sunaba_core__TypedArray_TypedArray_Impl_.toTable = function(this1) 
   local s = this1;
   local table = table;
   local _g = 0;
-  local _g1 = __newhaven_core__TypedArray_TypedArray_Impl_.size(s);
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
     local i = _g - 1;
-    local value = __newhaven_core__TypedArray_TypedArray_Impl_.get(s, i);
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
     if (value == nil) then 
       _G.error(__haxe_Exception.thrown(Std.string("Vector.toTable: null value at index ") .. Std.string(i)),0);
     end;
-    __newhaven_core__TypedArray_TypedArray_Impl_.set(table, i, value);
+    __sunaba_core__TypedArray_TypedArray_Impl_.set(table, i, value);
   end;
   do return table end;
 end
 
-__newhaven_core__Variant_Variant_Impl_.new = {}
-__newhaven_core__Variant_Variant_Impl_.__name__ = true
-__newhaven_core__Variant_Variant_Impl_.fromString = function(value) 
+__sunaba_core__Variant_Variant_Impl_.new = {}
+__sunaba_core__Variant_Variant_Impl_.__name__ = true
+__sunaba_core__Variant_Variant_Impl_.fromString = function(value) 
   do return Variant.fromString(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toString = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toString = function(this1) 
   do return this1:asString() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromInt = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromInt = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toInt = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toInt = function(this1) 
   do return this1:asInt() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromInt64 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromInt64 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toInt64 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toInt64 = function(this1) 
   local x = this1:asInt();
   do return __haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(x, 31), x) end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromInt32 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromInt32 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toInt32 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toInt32 = function(this1) 
   do return this1:asInt32() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromFloat = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromFloat = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toFloat = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toFloat = function(this1) 
   do return this1:asFloat() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromBool = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromBool = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toBool = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toBool = function(this1) 
   do return this1:asBool() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector2 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector2 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector2 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector2 = function(this1) 
   do return this1:asVector2() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector3 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector3 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector3 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector3 = function(this1) 
   do return this1:asVector3() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector4 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector4 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector4 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector4 = function(this1) 
   do return this1:asVector4() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector2i = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector2i = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector2i = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector2i = function(this1) 
   do return this1:asVector2i() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector3i = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector3i = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector3i = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector3i = function(this1) 
   do return this1:asVector3i() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector4i = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector4i = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector4i = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector4i = function(this1) 
   do return this1:asVector4i() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromColor = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromColor = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toColor = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toColor = function(this1) 
   do return this1:asColor() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromRect2 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromRect2 = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toRect2 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toRect2 = function(this1) 
   do return this1:asRect2() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromRect2i = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromRect2i = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toRect2i = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toRect2i = function(this1) 
   do return this1:asRect2i() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromBasis = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromBasis = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toBasis = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toBasis = function(this1) 
   do return this1:asBasis() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromTransform2D = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromTransform2D = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toTransform2D = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toTransform2D = function(this1) 
   do return this1:asTransform2D() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromTransform3D = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromTransform3D = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toTransform3D = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toTransform3D = function(this1) 
   do return this1:asTransform3D() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromQuaternion = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromQuaternion = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toQuaternion = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toQuaternion = function(this1) 
   do return this1:asQuaternion() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromByteArray = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromByteArray = function(value) 
   do return Variant.fromByteArray(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toByteArray = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toByteArray = function(this1) 
   do return this1:asByteArray() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromArray = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromArray = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toArray = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toArray = function(this1) 
   do return this1:asArrayList() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromDictionary = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromDictionary = function(value) 
   do return Variant.new(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toDictionary = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toDictionary = function(this1) 
   do return this1:asDictionary() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromIntArray64 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromIntArray64 = function(value) 
   do return Variant.fromIntArray64(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toIntArray64 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toIntArray64 = function(this1) 
   do return this1:asIntArray64() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromFloatArray64 = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromFloatArray64 = function(value) 
   do return Variant.fromFloatArray64(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toFloatArray64 = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toFloatArray64 = function(this1) 
   do return this1:asFloatArray64() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromStringArray = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromStringArray = function(value) 
   do return Variant.fromStringArray(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toStringArray = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toStringArray = function(this1) 
   do return this1:asStringArray() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector2Array = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector2Array = function(value) 
   do return Variant.fromVector2Array(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector2Array = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector2Array = function(this1) 
   do return this1:asVector2Array() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector3Array = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector3Array = function(value) 
   do return Variant.fromVector3Array(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector3Array = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector3Array = function(this1) 
   do return this1:asVector3Array() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromVector4Array = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromVector4Array = function(value) 
   do return Variant.fromVector4Array(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toVector4Array = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toVector4Array = function(this1) 
   do return this1:asVector4Array() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromColorArray = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromColorArray = function(value) 
   do return Variant.fromColorArray(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toColorArray = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toColorArray = function(this1) 
   do return this1:asColorArray() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromLinkObject = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromLinkObject = function(value) 
   do return Variant.fromLinkObject(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.asLinkObject = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.asLinkObject = function(this1) 
   do return this1:asLinkObject() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromLinkRef = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromLinkRef = function(value) 
   do return Variant.fromLinkRef(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toLinkRef = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toLinkRef = function(this1) 
   do return this1:asLinkRef() end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromObject = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromObject = function(value) 
   do return Variant.fromLinkObject(value.native) end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromReference = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromReference = function(value) 
   do return Variant.fromLinkRef(value.native) end;
 end
-__newhaven_core__Variant_Variant_Impl_.fromBaseClass = function(value) 
+__sunaba_core__Variant_Variant_Impl_.fromBaseClass = function(value) 
   do return Variant.fromTable(value) end;
 end
-__newhaven_core__Variant_Variant_Impl_.toBaseClass = function(this1) 
+__sunaba_core__Variant_Variant_Impl_.toBaseClass = function(this1) 
   do return this1:asTable() end;
 end
 
-__newhaven_core__VariantType_VariantType_Impl_.new = {}
-__newhaven_core__VariantType_VariantType_Impl_.__name__ = true
-__newhaven_core__VariantType_VariantType_Impl_.fromString = function(value) 
+__sunaba_core__VariantType_VariantType_Impl_.new = {}
+__sunaba_core__VariantType_VariantType_Impl_.__name__ = true
+__sunaba_core__VariantType_VariantType_Impl_.fromString = function(value) 
   local value = value;
   if (value) == "arrayList" then 
     do return 28 end;
@@ -1854,81 +1854,81 @@ end
 local _hx_static_init = function()
   
   String.__name__ = true;
-  Array.__name__ = true;__newhaven_core__VariantType_VariantType_Impl_["nil"] = 0;
+  Array.__name__ = true;__sunaba_core__VariantType_VariantType_Impl_["nil"] = 0;
   
-  __newhaven_core__VariantType_VariantType_Impl_.bool = 1;
+  __sunaba_core__VariantType_VariantType_Impl_.bool = 1;
   
-  __newhaven_core__VariantType_VariantType_Impl_.int = 2;
+  __sunaba_core__VariantType_VariantType_Impl_.int = 2;
   
-  __newhaven_core__VariantType_VariantType_Impl_.float = 3;
+  __sunaba_core__VariantType_VariantType_Impl_.float = 3;
   
-  __newhaven_core__VariantType_VariantType_Impl_.string = 4;
+  __sunaba_core__VariantType_VariantType_Impl_.string = 4;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector2 = 5;
+  __sunaba_core__VariantType_VariantType_Impl_.vector2 = 5;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector2i = 6;
+  __sunaba_core__VariantType_VariantType_Impl_.vector2i = 6;
   
-  __newhaven_core__VariantType_VariantType_Impl_.rect2 = 7;
+  __sunaba_core__VariantType_VariantType_Impl_.rect2 = 7;
   
-  __newhaven_core__VariantType_VariantType_Impl_.rect2i = 8;
+  __sunaba_core__VariantType_VariantType_Impl_.rect2i = 8;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector3 = 9;
+  __sunaba_core__VariantType_VariantType_Impl_.vector3 = 9;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector3i = 10;
+  __sunaba_core__VariantType_VariantType_Impl_.vector3i = 10;
   
-  __newhaven_core__VariantType_VariantType_Impl_.transform2d = 11;
+  __sunaba_core__VariantType_VariantType_Impl_.transform2d = 11;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector4 = 12;
+  __sunaba_core__VariantType_VariantType_Impl_.vector4 = 12;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector4i = 13;
+  __sunaba_core__VariantType_VariantType_Impl_.vector4i = 13;
   
-  __newhaven_core__VariantType_VariantType_Impl_.plane = 14;
+  __sunaba_core__VariantType_VariantType_Impl_.plane = 14;
   
-  __newhaven_core__VariantType_VariantType_Impl_.quaternion = 15;
+  __sunaba_core__VariantType_VariantType_Impl_.quaternion = 15;
   
-  __newhaven_core__VariantType_VariantType_Impl_.aabb = 16;
+  __sunaba_core__VariantType_VariantType_Impl_.aabb = 16;
   
-  __newhaven_core__VariantType_VariantType_Impl_.basis = 17;
+  __sunaba_core__VariantType_VariantType_Impl_.basis = 17;
   
-  __newhaven_core__VariantType_VariantType_Impl_.transform3d = 18;
+  __sunaba_core__VariantType_VariantType_Impl_.transform3d = 18;
   
-  __newhaven_core__VariantType_VariantType_Impl_.projection = 19;
+  __sunaba_core__VariantType_VariantType_Impl_.projection = 19;
   
-  __newhaven_core__VariantType_VariantType_Impl_.color = 20;
+  __sunaba_core__VariantType_VariantType_Impl_.color = 20;
   
-  __newhaven_core__VariantType_VariantType_Impl_.stringName = 21;
+  __sunaba_core__VariantType_VariantType_Impl_.stringName = 21;
   
-  __newhaven_core__VariantType_VariantType_Impl_.nodePath = 22;
+  __sunaba_core__VariantType_VariantType_Impl_.nodePath = 22;
   
-  __newhaven_core__VariantType_VariantType_Impl_.object = 24;
+  __sunaba_core__VariantType_VariantType_Impl_.object = 24;
   
-  __newhaven_core__VariantType_VariantType_Impl_.dictionary = 27;
+  __sunaba_core__VariantType_VariantType_Impl_.dictionary = 27;
   
-  __newhaven_core__VariantType_VariantType_Impl_.arrayList = 28;
+  __sunaba_core__VariantType_VariantType_Impl_.arrayList = 28;
   
-  __newhaven_core__VariantType_VariantType_Impl_.binaryData = 29;
+  __sunaba_core__VariantType_VariantType_Impl_.binaryData = 29;
   
-  __newhaven_core__VariantType_VariantType_Impl_.int32Vector = 30;
+  __sunaba_core__VariantType_VariantType_Impl_.int32Vector = 30;
   
-  __newhaven_core__VariantType_VariantType_Impl_.int64Vector = 31;
+  __sunaba_core__VariantType_VariantType_Impl_.int64Vector = 31;
   
-  __newhaven_core__VariantType_VariantType_Impl_.float32Vector = 32;
+  __sunaba_core__VariantType_VariantType_Impl_.float32Vector = 32;
   
-  __newhaven_core__VariantType_VariantType_Impl_.float64Vector = 33;
+  __sunaba_core__VariantType_VariantType_Impl_.float64Vector = 33;
   
-  __newhaven_core__VariantType_VariantType_Impl_.stringVector = 34;
+  __sunaba_core__VariantType_VariantType_Impl_.stringVector = 34;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector2Vector = 35;
+  __sunaba_core__VariantType_VariantType_Impl_.vector2Vector = 35;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector3Vector = 36;
+  __sunaba_core__VariantType_VariantType_Impl_.vector3Vector = 36;
   
-  __newhaven_core__VariantType_VariantType_Impl_.colorVector = 37;
+  __sunaba_core__VariantType_VariantType_Impl_.colorVector = 37;
   
-  __newhaven_core__VariantType_VariantType_Impl_.vector4Vector = 38;
+  __sunaba_core__VariantType_VariantType_Impl_.vector4Vector = 38;
   
-  __newhaven_core__VariantType_VariantType_Impl_.max = 39;
+  __sunaba_core__VariantType_VariantType_Impl_.max = 39;
   
-  __newhaven_core__VariantType_VariantType_Impl_.values = _hx_tab_array({[0]=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 19, 20, 21, 22, 24, 27, 28, 29, 30, 32, 34, 35, 36, 37, 38, 39}, 28);
+  __sunaba_core__VariantType_VariantType_Impl_.values = _hx_tab_array({[0]=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 19, 20, 21, 22, 24, 27, 28, 29, 30, 32, 34, 35, 36, 37, 38, 39}, 28);
   
   
 end

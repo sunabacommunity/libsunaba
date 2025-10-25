@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VisibleCharactersBehavior(Int) from Int to Int {
 	var charsBeforeShaping = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract PathFollow3DRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract WriteMode(Int) from Int to Int {
 	var text = cast 0;

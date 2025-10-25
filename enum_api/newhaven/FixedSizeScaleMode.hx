@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FixedSizeScaleMode(Int) from Int to Int {
 	var disable = cast 0;

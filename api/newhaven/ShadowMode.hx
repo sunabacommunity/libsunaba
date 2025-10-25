@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ShadowMode(Int) from Int to Int {
 	var dualParaboloid = cast 0;

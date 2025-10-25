@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CanvasItemAutoTranslateMode(Int) from Int to Int {
 	var inherit = cast 0;

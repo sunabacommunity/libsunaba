@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LookupResultType(Int) from Int to Int {
 	var scriptLocation = cast 0;

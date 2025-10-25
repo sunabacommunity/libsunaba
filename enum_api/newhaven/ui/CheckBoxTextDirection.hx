@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CheckBoxTextDirection(Int) from Int to Int {
 	var auto = cast 0;

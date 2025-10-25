@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ConditionEnum(Int) from Int to Int {
 	var all = cast 0;

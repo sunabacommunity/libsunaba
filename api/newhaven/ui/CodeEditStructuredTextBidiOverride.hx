@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CodeEditStructuredTextBidiOverride(Int) from Int to Int {
 	var _default = cast 0;

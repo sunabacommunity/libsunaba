@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract NinePatchAxisMode(Int) from Int to Int {
 	var stretch = cast 0;

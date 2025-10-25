@@ -1,8 +1,8 @@
-package newhaven.io;
-import newhaven.core.native.ScriptType;
-import newhaven.core.ArrayList;
-import newhaven.core.native.NativeReference;
-import newhaven.core.ByteArray;
+package sunaba.io;
+import sunaba.core.native.ScriptType;
+import sunaba.core.ArrayList;
+import sunaba.core.native.NativeReference;
+import sunaba.core.ByteArray;
 
 class IoInterfaceZip extends IoInterface {
 	public function new(?native: NativeReference) {

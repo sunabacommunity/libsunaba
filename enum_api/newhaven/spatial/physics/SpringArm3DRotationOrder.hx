@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract SpringArm3DRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

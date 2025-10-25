@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ShapeType(Int) from Int to Int {
 	var worldBoundary = cast 0;

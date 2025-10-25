@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EulerOrder(Int) from Int to Int {
 	var xyz = cast 0;

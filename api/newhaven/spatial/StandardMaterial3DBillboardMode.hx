@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DBillboardMode(Int) from Int to Int {
 	var disabled = cast 0;

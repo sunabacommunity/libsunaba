@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FormatEnum(Int) from Int to Int {
 	var format8Bits = cast 0;

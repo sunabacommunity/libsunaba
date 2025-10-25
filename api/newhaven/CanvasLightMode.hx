@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CanvasLightMode(Int) from Int to Int {
 	var point = cast 0;

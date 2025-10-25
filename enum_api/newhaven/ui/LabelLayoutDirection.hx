@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract LabelLayoutDirection(Int) from Int to Int {
 	var inherited = cast 0;

@@ -1,15 +1,15 @@
-package newhaven;
+package sunaba;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.core.Color;
-import newhaven.core.TypedArray;
-import newhaven.core.Signal;
-import newhaven.core.Color;
-import newhaven.core.ArrayList;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.core.Color;
+import sunaba.core.TypedArray;
+import sunaba.core.Signal;
+import sunaba.core.Color;
+import sunaba.core.ArrayList;
 
 class Gradient extends Resource {
     public function new(?_native: NativeReference) {

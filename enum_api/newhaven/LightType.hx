@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LightType(Int) from Int to Int {
 	var directional = cast 0;

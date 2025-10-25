@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VisibilityMode(Int) from Int to Int {
 	var _default = cast 0;

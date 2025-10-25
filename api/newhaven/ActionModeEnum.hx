@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ActionModeEnum(Int) from Int to Int {
 	var press = cast 0;

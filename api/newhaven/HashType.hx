@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HashType(Int) from Int to Int {
 	var md5 = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CustomFormat(Int) from Int to Int {
 	var rgba8Unorm = cast 0;

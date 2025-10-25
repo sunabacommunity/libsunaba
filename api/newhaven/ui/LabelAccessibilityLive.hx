@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract LabelAccessibilityLive(Int) from Int to Int {
 	var off = cast 0;

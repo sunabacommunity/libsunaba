@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextOverrunFlag(Int) from Int to Int {
 	var noTrim = cast 0;

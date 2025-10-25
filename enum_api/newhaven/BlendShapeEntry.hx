@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BlendShapeEntry(Int) from Int to Int {
 	var eyeLookOutRight = cast 0;

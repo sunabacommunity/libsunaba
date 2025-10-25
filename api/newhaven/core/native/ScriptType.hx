@@ -1,4 +1,4 @@
-package newhaven.core.native;
+package sunaba.core.native;
 
 enum abstract ScriptType(Int) from Int to Int {
     var none = 0;

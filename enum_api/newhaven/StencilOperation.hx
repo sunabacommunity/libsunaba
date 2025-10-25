@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract StencilOperation(Int) from Int to Int {
 	var keep = cast 0;

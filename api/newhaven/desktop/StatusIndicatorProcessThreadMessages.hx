@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract StatusIndicatorProcessThreadMessages(Int) from Int to Int {
 	var messages = cast 1;

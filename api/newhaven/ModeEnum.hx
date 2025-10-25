@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ModeEnum(Int) from Int to Int {
 	var windowed = cast 0;

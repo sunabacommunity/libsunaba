@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ColorDefaultEnum(Int) from Int to Int {
 	var white = cast 0;

@@ -1,10 +1,10 @@
-package newhaven.io;
-import newhaven.core.Reference;
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.ArrayList;
-import newhaven.core.ByteArray;
-import newhaven.core.native.ScriptType;
+package sunaba.io;
+import sunaba.core.Reference;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.ArrayList;
+import sunaba.core.ByteArray;
+import sunaba.core.native.ScriptType;
 
 class IoInterface extends Reference {
 	public function new(?native: NativeReference) {

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract RadianceSizeEnum(Int) from Int to Int {
 	var size32 = cast 0;

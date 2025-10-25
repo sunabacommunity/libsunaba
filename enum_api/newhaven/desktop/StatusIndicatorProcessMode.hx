@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract StatusIndicatorProcessMode(Int) from Int to Int {
 	var inherit = cast 0;

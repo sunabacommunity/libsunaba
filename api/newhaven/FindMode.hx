@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FindMode(Int) from Int to Int {
 	var nearest = cast 0;

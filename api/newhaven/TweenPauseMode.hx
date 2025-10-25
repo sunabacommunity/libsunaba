@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TweenPauseMode(Int) from Int to Int {
 	var bound = cast 0;

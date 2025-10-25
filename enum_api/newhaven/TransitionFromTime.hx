@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TransitionFromTime(Int) from Int to Int {
 	var immediate = cast 0;

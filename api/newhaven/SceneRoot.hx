@@ -1,5 +1,5 @@
-package newhaven;
-import newhaven.input.InputEvent;
+package sunaba;
+import sunaba.input.InputEvent;
 
 class SceneRoot extends Node {
 	public function new() {

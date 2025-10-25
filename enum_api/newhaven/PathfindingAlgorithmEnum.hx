@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PathfindingAlgorithmEnum(Int) from Int to Int {
 	var astar = cast 0;

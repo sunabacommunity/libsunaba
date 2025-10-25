@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract PanelGrowHorizontal(Int) from Int to Int {
 	var begin = cast 0;

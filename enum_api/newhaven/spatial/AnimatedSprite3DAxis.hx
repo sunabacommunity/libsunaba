@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract AnimatedSprite3DAxis(Int) from Int to Int {
 	var x = cast 0;

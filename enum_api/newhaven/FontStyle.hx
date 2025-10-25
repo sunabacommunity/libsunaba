@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FontStyle(Int) from Int to Int {
 	var bold = cast 1;

@@ -1,11 +1,11 @@
-package newhaven.ui;
+package sunaba.ui;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.core.Signal;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.core.Signal;
 
 class CenterContainer extends Container {
     public function new(?_native: NativeObject) {

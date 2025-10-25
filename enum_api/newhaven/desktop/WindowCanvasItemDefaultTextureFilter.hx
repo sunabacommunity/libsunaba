@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowCanvasItemDefaultTextureFilter(Int) from Int to Int {
 	var nearest = cast 0;

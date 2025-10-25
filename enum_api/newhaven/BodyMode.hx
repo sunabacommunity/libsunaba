@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BodyMode(Int) from Int to Int {
 	var _static = cast 0;

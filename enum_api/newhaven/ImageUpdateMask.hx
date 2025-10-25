@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ImageUpdateMask(Int) from Int to Int {
 	var texture = cast 1;

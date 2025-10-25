@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SkeletonRigEnum(Int) from Int to Int {
 	var openxr = cast 0;

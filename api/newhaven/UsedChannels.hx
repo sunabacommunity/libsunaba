@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract UsedChannels(Int) from Int to Int {
 	var l = cast 0;

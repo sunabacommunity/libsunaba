@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ModeFlags(Int) from Int to Int {
 	var read = cast 1;

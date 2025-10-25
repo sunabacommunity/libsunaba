@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract PopupMode(Int) from Int to Int {
 	var windowed = cast 0;

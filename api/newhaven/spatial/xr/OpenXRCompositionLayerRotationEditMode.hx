@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRCompositionLayerRotationEditMode(Int) from Int to Int {
 	var euler = cast 0;

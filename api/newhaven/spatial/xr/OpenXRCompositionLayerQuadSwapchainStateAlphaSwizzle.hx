@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRCompositionLayerQuadSwapchainStateAlphaSwizzle(Int) from Int to Int {
 	var red = cast 0;

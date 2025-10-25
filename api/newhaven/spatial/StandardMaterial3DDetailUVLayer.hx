@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DDetailUVLayer(Int) from Int to Int {
 	var uv1 = cast 0;

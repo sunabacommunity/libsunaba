@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MultimeshPhysicsInterpolationQuality(Int) from Int to Int {
 	var fast = cast 0;

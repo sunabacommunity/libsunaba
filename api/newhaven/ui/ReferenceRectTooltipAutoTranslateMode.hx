@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract ReferenceRectTooltipAutoTranslateMode(Int) from Int to Int {
 	var inherit = cast 0;

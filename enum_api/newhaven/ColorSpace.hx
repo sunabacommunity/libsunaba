@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ColorSpace(Int) from Int to Int {
 	var srgb = cast 0;

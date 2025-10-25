@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Feature(Int) from Int to Int {
 	var simpleLayout = cast 1;

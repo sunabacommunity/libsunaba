@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract KeepAspectEnum(Int) from Int to Int {
 	var width = cast 0;

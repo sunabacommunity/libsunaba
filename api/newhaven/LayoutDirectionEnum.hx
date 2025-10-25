@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LayoutDirectionEnum(Int) from Int to Int {
 	var inherited = cast 0;

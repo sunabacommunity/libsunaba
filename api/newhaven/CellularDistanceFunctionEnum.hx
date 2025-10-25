@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CellularDistanceFunctionEnum(Int) from Int to Int {
 	var euclidean = cast 0;

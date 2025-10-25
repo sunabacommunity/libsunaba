@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Result(Int) from Int to Int {
 	var success = cast 0;

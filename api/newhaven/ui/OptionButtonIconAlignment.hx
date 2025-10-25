@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract OptionButtonIconAlignment(Int) from Int to Int {
 	var left = cast 0;

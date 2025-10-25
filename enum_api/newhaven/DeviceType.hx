@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DeviceType(Int) from Int to Int {
 	var other = cast 0;

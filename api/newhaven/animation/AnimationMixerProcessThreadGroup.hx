@@ -1,4 +1,4 @@
-package newhaven.animation;
+package sunaba.animation;
 
 enum abstract AnimationMixerProcessThreadGroup(Int) from Int to Int {
 	var inherit = cast 0;

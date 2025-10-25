@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DTextureFilter(Int) from Int to Int {
 	var nearest = cast 0;

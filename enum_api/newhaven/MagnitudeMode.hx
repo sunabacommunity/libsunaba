@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MagnitudeMode(Int) from Int to Int {
 	var average = cast 0;

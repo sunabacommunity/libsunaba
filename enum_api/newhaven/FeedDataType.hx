@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FeedDataType(Int) from Int to Int {
 	var noimage = cast 0;

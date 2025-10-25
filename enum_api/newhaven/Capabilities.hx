@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Capabilities(Int) from Int to Int {
 	var none = cast 0;

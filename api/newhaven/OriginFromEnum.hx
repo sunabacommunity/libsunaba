@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract OriginFromEnum(Int) from Int to Int {
 	var self = cast 0;

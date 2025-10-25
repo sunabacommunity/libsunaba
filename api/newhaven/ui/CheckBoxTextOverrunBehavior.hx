@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CheckBoxTextOverrunBehavior(Int) from Int to Int {
 	var noTrimming = cast 0;

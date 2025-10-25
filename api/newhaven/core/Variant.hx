@@ -1,10 +1,10 @@
-package newhaven.core;
+package sunaba.core;
 
 import lua.Table;
 import haxe.Int32;
 import haxe.Int64;
-import newhaven.core.native.NativeObject;
-import newhaven.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
 import haxe.Constraints.Function;
 
 @:forward(getType, getTypeName)

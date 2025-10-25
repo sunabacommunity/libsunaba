@@ -1,4 +1,4 @@
-package newhaven.core;
+package sunaba.core;
 
 abstract ColorAbstract(Color) from Color to Color {
     @:op(a.b) public function fieldRead(name:String) {

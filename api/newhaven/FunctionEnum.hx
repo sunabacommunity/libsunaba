@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FunctionEnum(Int) from Int to Int {
 	var normalize = cast 0;

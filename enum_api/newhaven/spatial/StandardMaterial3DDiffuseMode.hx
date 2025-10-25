@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DDiffuseMode(Int) from Int to Int {
 	var burley = cast 0;

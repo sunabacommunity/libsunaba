@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EnvironmentSsaoQuality(Int) from Int to Int {
 	var veryLow = cast 0;

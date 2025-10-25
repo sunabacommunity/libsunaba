@@ -1,7 +1,7 @@
-package newhaven.io;
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.ScriptType;
-import newhaven.core.ArrayList;
+package sunaba.io;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
+import sunaba.core.ArrayList;
 
 class WindowsSystemIo extends SystemIoBase {
 	public function new(?native: NativeReference) {

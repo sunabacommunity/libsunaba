@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 class Debug {
 	public static function error(err: String, title: String = "Error"): Void {

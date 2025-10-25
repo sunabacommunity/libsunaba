@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract SpringArm3DRotationEditMode(Int) from Int to Int {
 	var euler = cast 0;

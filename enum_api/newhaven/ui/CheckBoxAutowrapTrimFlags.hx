@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CheckBoxAutowrapTrimFlags(Int) from Int to Int {
 	var none = cast 0;

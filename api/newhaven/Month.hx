@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Month(Int) from Int to Int {
 	var january = cast 1;

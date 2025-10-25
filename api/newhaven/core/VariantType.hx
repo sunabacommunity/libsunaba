@@ -1,4 +1,4 @@
-package newhaven.core;
+package sunaba.core;
 
 enum abstract VariantType(Int) from Int to Int {
     var nil = 0;

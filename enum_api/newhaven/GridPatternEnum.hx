@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract GridPatternEnum(Int) from Int to Int {
 	var lines = cast 0;

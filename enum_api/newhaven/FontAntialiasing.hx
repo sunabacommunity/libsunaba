@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FontAntialiasing(Int) from Int to Int {
 	var none = cast 0;

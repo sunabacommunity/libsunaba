@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ComparisonType(Int) from Int to Int {
 	var scalar = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CellShapeEnum(Int) from Int to Int {
 	var square = cast 0;

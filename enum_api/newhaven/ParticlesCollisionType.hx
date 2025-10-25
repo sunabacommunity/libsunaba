@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ParticlesCollisionType(Int) from Int to Int {
 	var sphereAttract = cast 0;

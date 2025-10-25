@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BoneUpdateEnum(Int) from Int to Int {
 	var full = cast 0;

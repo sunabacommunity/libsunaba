@@ -1,4 +1,4 @@
-package newhaven.spatial.lighting;
+package sunaba.spatial.lighting;
 
 enum abstract DirectionalLight3DLightBakeMode(Int) from Int to Int {
 	var disabled = cast 0;

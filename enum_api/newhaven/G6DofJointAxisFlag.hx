@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract G6DofJointAxisFlag(Int) from Int to Int {
 	var enableLinearLimit = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract SeparatorMouseFilter(Int) from Int to Int {
 	var stop = cast 0;

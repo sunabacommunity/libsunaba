@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRCompositionLayerEquirectSwapchainStateHorizontalWrap(Int) from Int to Int {
 	var clampToBorder = cast 0;

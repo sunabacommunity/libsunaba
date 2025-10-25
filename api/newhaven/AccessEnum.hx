@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AccessEnum(Int) from Int to Int {
 	var resources = cast 0;

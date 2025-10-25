@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BlendShapeMode(Int) from Int to Int {
 	var normalized = cast 0;

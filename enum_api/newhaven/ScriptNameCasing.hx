@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ScriptNameCasing(Int) from Int to Int {
 	var auto = cast 0;

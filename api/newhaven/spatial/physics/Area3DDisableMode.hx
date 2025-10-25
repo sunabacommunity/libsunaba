@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract Area3DDisableMode(Int) from Int to Int {
 	var remove = cast 0;

@@ -1,7 +1,7 @@
-package newhaven;
+package sunaba;
 
 import Type;
-import newhaven.input.InputEvent;
+import sunaba.input.InputEvent;
 
 class Entity extends BaseClass {
 	public function new() {

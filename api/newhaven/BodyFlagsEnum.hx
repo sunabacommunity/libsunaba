@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BodyFlagsEnum(Int) from Int to Int {
 	var upperBodySupported = cast 1;

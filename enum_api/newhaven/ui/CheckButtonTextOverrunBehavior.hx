@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CheckButtonTextOverrunBehavior(Int) from Int to Int {
 	var noTrimming = cast 0;

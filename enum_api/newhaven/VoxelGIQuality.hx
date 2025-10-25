@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VoxelGIQuality(Int) from Int to Int {
 	var low = cast 0;

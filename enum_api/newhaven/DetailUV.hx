@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DetailUV(Int) from Int to Int {
 	var uv1 = cast 0;

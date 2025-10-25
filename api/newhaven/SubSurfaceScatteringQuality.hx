@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SubSurfaceScatteringQuality(Int) from Int to Int {
 	var disabled = cast 0;

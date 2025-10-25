@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CodeCompletionLocation(Int) from Int to Int {
 	var local = cast 0;

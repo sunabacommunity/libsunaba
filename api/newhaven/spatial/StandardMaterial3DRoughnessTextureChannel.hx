@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DRoughnessTextureChannel(Int) from Int to Int {
 	var red = cast 0;

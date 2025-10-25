@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DampedSpringParam(Int) from Int to Int {
 	var restLength = cast 0;

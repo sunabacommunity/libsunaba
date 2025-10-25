@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ParticlesMode(Int) from Int to Int {
 	var mode2d = cast 0;

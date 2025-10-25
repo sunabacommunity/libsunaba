@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TerrainMode(Int) from Int to Int {
 	var cornersAndSides = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract AcceptDialogInitialPosition(Int) from Int to Int {
 	var absolute = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextureUsageBits(Int) from Int to Int {
 	var samplingBit = cast 1;

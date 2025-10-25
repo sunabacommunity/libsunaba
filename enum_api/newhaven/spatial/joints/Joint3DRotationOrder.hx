@@ -1,4 +1,4 @@
-package newhaven.spatial.joints;
+package sunaba.spatial.joints;
 
 enum abstract Joint3DRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

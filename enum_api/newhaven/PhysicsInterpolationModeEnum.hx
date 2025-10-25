@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PhysicsInterpolationModeEnum(Int) from Int to Int {
 	var inherit = cast 0;

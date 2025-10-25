@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract RenderInfo(Int) from Int to Int {
 	var objectsInFrame = cast 0;

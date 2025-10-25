@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract StretchModeEnum(Int) from Int to Int {
 	var scale = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract VisualInstance3DRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

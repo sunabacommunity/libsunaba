@@ -1,6 +1,6 @@
 package test6;
 
-import newhaven.Behavior;
+import sunaba.Behavior;
 
 class HelloComponent1 extends Behavior {
 	public function sayHello(name: String) {

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextureSwizzle(Int) from Int to Int {
 	var identity = cast 0;

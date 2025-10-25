@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SignalingState(Int) from Int to Int {
 	var stable = cast 0;

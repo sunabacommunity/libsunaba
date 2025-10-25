@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ViewportClearMode(Int) from Int to Int {
 	var always = cast 0;

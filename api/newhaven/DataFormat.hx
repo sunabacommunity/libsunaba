@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DataFormat(Int) from Int to Int {
 	var r4g4UnormPack8 = cast 0;

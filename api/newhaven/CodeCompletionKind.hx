@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CodeCompletionKind(Int) from Int to Int {
 	var _class = cast 0;

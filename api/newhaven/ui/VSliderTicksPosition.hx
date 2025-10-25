@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract VSliderTicksPosition(Int) from Int to Int {
 	var bottomRight = cast 0;

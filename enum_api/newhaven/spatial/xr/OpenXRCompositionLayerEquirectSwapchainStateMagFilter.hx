@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRCompositionLayerEquirectSwapchainStateMagFilter(Int) from Int to Int {
 	var nearest = cast 0;

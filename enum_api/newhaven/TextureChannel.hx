@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextureChannel(Int) from Int to Int {
 	var red = cast 0;

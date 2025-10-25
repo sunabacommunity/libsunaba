@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract LinkButtonActionMode(Int) from Int to Int {
 	var press = cast 0;

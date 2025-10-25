@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LightParam(Int) from Int to Int {
 	var energy = cast 0;

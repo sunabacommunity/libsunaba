@@ -34,7 +34,7 @@ func load_app(path: String) -> void:
 	
 	var header: Dictionary = JSON.parse_string(header_json)
 	
-	var appName: String = header.get("name", "Newhaven")
+	var appName: String = header.get("name", "Sunaba")
 	
 	var app_base_user_dir_path = ProjectSettings.globalize_path("user://appdata/")
 	if not DirAccess.dir_exists_absolute(app_base_user_dir_path):

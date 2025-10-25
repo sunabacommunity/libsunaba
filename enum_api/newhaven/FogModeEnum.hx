@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FogModeEnum(Int) from Int to Int {
 	var exponential = cast 0;

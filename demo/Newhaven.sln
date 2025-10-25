@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newhaven", "Newhaven.csproj", "{2E95608B-6AF2-4911-8594-98CE5AAB4006}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunaba", "Sunaba.csproj", "{2E95608B-6AF2-4911-8594-98CE5AAB4006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

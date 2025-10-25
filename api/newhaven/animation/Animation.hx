@@ -1,18 +1,18 @@
-package newhaven.animation;
+package sunaba.animation;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.Resource;
-import newhaven.core.Signal;
-import newhaven.core.ArrayList;
-import newhaven.core.Vector2;
-import newhaven.core.Color;
-import newhaven.core.TypedArray;
-import newhaven.core.Vector3;
-import newhaven.core.Quaternion;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.Resource;
+import sunaba.core.Signal;
+import sunaba.core.ArrayList;
+import sunaba.core.Vector2;
+import sunaba.core.Color;
+import sunaba.core.TypedArray;
+import sunaba.core.Vector3;
+import sunaba.core.Quaternion;
 
 class Animation extends Resource {
     public function new(?_native: NativeReference) {

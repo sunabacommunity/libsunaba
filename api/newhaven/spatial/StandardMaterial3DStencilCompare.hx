@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DStencilCompare(Int) from Int to Int {
 	var always = cast 0;

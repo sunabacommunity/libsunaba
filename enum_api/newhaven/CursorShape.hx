@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CursorShape(Int) from Int to Int {
 	var arrow = cast 0;

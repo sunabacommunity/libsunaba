@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract UniformType(Int) from Int to Int {
 	var sampler = cast 0;

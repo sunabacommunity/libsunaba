@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SystemMenus(Int) from Int to Int {
 	var invalidMenuId = cast 0;

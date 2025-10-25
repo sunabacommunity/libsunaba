@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SystemDir(Int) from Int to Int {
 	var desktop = cast 0;

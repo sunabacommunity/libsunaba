@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CompressionMode(Int) from Int to Int {
 	var lossless = cast 0;

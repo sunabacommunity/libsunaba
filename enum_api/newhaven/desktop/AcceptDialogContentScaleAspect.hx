@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract AcceptDialogContentScaleAspect(Int) from Int to Int {
 	var ignore = cast 0;

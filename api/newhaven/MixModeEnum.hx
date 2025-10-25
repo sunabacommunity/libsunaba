@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MixModeEnum(Int) from Int to Int {
 	var blend = cast 0;

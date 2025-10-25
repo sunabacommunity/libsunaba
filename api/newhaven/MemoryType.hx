@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MemoryType(Int) from Int to Int {
 	var textures = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract GlowBlendModeEnum(Int) from Int to Int {
 	var additive = cast 0;

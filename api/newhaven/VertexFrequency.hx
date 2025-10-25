@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VertexFrequency(Int) from Int to Int {
 	var vertex = cast 0;

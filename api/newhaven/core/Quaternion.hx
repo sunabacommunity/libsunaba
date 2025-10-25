@@ -1,4 +1,4 @@
-package newhaven.core;
+package sunaba.core;
 
 @:native("Quaternion")
 extern class Quaternion {

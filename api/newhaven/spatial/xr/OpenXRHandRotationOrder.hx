@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract OpenXRHandRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

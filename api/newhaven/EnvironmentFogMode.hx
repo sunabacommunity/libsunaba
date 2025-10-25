@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EnvironmentFogMode(Int) from Int to Int {
 	var exponential = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ParticleFlags(Int) from Int to Int {
 	var alignYToVelocity = cast 0;

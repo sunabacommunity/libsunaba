@@ -1,12 +1,12 @@
-package newhaven.core;
+package sunaba.core;
 
-import newhaven.core.native.NativeObject;
-import newhaven.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
 import lua.Table;
 import haxe.Int32;
 import haxe.Int64;
 import haxe.Constraints.Function;
-import newhaven.core.Callable.CallableNative;
+import sunaba.core.Callable.CallableNative;
 
 @:native("Variant")
 extern class VariantNative {

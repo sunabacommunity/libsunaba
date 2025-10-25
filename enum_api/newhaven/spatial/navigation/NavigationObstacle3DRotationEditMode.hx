@@ -1,4 +1,4 @@
-package newhaven.spatial.navigation;
+package sunaba.spatial.navigation;
 
 enum abstract NavigationObstacle3DRotationEditMode(Int) from Int to Int {
 	var euler = cast 0;

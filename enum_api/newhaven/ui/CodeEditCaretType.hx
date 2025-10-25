@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract CodeEditCaretType(Int) from Int to Int {
 	var line = cast 0;

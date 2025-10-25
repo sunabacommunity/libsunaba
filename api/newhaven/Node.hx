@@ -1,17 +1,17 @@
-package newhaven;
+package sunaba;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.input.InputEvent;
-import newhaven.networking.MultiplayerAPI;
-import newhaven.core.Signal;
-import newhaven.core.ArrayList;
-import newhaven.desktop.Window;
-import newhaven.core.native.ScriptType;
-import newhaven.core.VariantNative;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.input.InputEvent;
+import sunaba.networking.MultiplayerAPI;
+import sunaba.core.Signal;
+import sunaba.core.ArrayList;
+import sunaba.desktop.Window;
+import sunaba.core.native.ScriptType;
+import sunaba.core.VariantNative;
 
 class Node extends Object {
     public function new(?_native: NativeObject) {

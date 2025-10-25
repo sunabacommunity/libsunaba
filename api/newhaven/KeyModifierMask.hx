@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract KeyModifierMask(Int) from Int to Int {
 	var codeMask = cast 8388607;

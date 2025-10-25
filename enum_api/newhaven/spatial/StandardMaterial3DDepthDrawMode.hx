@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DDepthDrawMode(Int) from Int to Int {
 	var opaqueOnly = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TransferModeEnum(Int) from Int to Int {
 	var unreliable = cast 0;

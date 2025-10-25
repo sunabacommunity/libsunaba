@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract StateMachineTypeEnum(Int) from Int to Int {
 	var root = cast 0;

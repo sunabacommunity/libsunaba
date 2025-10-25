@@ -1,3 +1,3 @@
-package newhaven;
+package sunaba;
 
 class BaseClass {}

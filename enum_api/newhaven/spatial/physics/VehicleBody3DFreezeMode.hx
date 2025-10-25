@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract VehicleBody3DFreezeMode(Int) from Int to Int {
 	var _static = cast 0;

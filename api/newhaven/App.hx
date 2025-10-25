@@ -1,11 +1,11 @@
-package newhaven;
+package sunaba;
 
-import newhaven.BaseClass;
-import newhaven.core.Variant;
-import newhaven.core.native.NativeObject;
-import newhaven.Node;
-import newhaven.io.IoManager;
-import newhaven.core.native.NativeReference;
+import sunaba.BaseClass;
+import sunaba.core.Variant;
+import sunaba.core.native.NativeObject;
+import sunaba.Node;
+import sunaba.io.IoManager;
+import sunaba.core.native.NativeReference;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;

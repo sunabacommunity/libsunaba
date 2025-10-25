@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FftSizeEnum(Int) from Int to Int {
 	var size256 = cast 0;

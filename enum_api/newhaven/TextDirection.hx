@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextDirection(Int) from Int to Int {
 	var auto = cast 0;

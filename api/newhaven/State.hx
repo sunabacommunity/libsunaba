@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract State(Int) from Int to Int {
 	var connecting = cast 0;

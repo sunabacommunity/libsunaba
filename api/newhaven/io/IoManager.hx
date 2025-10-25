@@ -1,7 +1,7 @@
-package newhaven.io;
-import newhaven.core.native.ScriptType;
-import newhaven.core.ArrayList;
-import newhaven.core.native.NativeReference;
+package sunaba.io;
+import sunaba.core.native.ScriptType;
+import sunaba.core.ArrayList;
+import sunaba.core.native.NativeReference;
 
 class IoManager extends IoInterface {
 	public function new(?native: NativeReference) {

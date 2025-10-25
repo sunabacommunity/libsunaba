@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract IgdStatusEnum(Int) from Int to Int {
 	var ok = cast 0;

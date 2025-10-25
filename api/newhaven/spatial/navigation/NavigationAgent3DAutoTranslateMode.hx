@@ -1,4 +1,4 @@
-package newhaven.spatial.navigation;
+package sunaba.spatial.navigation;
 
 enum abstract NavigationAgent3DAutoTranslateMode(Int) from Int to Int {
 	var inherit = cast 0;

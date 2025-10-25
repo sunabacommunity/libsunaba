@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ResponseCode(Int) from Int to Int {
 	var _continue = cast 100;

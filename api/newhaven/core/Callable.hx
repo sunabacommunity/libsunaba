@@ -1,8 +1,8 @@
-package newhaven.core;
-import newhaven.core.native.NativeObject;
-import newhaven.core.native.NativeReference;
+package sunaba.core;
+import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
 import haxe.Constraints.Function;
-import newhaven.core.native.ScriptType;
+import sunaba.core.native.ScriptType;
 
 @:native("Callable")
 extern class CallableNative {

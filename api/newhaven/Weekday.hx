@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Weekday(Int) from Int to Int {
 	var sunday = cast 0;

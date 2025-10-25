@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SpaceParameter(Int) from Int to Int {
 	var contactRecycleRadius = cast 0;

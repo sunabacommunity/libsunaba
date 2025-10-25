@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CellNeighbor(Int) from Int to Int {
 	var rightSide = cast 0;

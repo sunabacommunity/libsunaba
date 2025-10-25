@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SubViewportScaling3DMode(Int) from Int to Int {
 	var bilinear = cast 0;

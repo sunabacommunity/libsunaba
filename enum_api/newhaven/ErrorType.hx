@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ErrorType(Int) from Int to Int {
 	var error = cast 0;

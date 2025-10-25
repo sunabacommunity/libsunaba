@@ -10,16 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Newhaven Demo"
+config/name="Sunaba Demo"
 run/main_scene="uid://b0l18u8wrylbu"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="Newhaven"
+config/custom_user_dir_name="Sunaba"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Newhaven"
+project/assembly_name="Sunaba"
 
 [editor_plugins]
 

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PeerStatistic(Int) from Int to Int {
 	var packetLoss = cast 0;

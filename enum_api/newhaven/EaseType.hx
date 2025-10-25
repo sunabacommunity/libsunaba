@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EaseType(Int) from Int to Int {
 	var _in = cast 0;

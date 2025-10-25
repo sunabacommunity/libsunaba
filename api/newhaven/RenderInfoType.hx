@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract RenderInfoType(Int) from Int to Int {
 	var visible = cast 0;

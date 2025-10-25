@@ -1,14 +1,14 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.Material;
-import newhaven.core.Color;
-import newhaven.Texture2D;
-import newhaven.core.Signal;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.Material;
+import sunaba.core.Color;
+import sunaba.Texture2D;
+import sunaba.core.Signal;
 
 class PhysicalSkyMaterial extends Material {
     public function new(?_native: NativeReference) {

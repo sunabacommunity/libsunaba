@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DataType(Int) from Int to Int {
 	var color = cast 0;

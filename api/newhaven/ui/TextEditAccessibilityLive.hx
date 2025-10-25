@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract TextEditAccessibilityLive(Int) from Int to Int {
 	var off = cast 0;

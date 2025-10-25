@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SamplePartitionTypeEnum(Int) from Int to Int {
 	var convexPartition = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract HingeJointParam(Int) from Int to Int {
 	var bias = cast 0;

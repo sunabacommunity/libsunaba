@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Orientation(Int) from Int to Int {
 	var horizontal = cast 0;

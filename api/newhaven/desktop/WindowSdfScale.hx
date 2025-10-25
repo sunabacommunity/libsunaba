@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowSdfScale(Int) from Int to Int {
 	var scale100Percent = cast 0;

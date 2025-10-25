@@ -1,4 +1,4 @@
-package newhaven.animation;
+package sunaba.animation;
 
 enum abstract AnimationPlayerCallbackModeProcess(Int) from Int to Int {
 	var physics = cast 0;

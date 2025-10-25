@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract StandardMaterial3DShadingMode(Int) from Int to Int {
 	var unshaded = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CompareOperator(Int) from Int to Int {
 	var never = cast 0;

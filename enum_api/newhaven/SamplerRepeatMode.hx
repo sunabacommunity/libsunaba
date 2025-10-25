@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SamplerRepeatMode(Int) from Int to Int {
 	var repeat = cast 0;

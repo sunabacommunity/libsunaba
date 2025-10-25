@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract AnimatedSprite3DBillboard(Int) from Int to Int {
 	var disabled = cast 0;

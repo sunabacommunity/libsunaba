@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract VehicleBody3DCenterOfMassMode(Int) from Int to Int {
 	var auto = cast 0;

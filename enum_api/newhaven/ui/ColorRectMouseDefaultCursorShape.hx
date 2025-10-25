@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract ColorRectMouseDefaultCursorShape(Int) from Int to Int {
 	var arrow = cast 0;

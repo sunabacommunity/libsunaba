@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FileDialogMode(Int) from Int to Int {
 	var openFile = cast 0;

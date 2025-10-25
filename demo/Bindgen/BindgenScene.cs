@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.IO;
 
-namespace Newhaven.Bindgen;
+namespace Sunaba.Bindgen;
 
 public partial class BindgenScene : Node
 {
@@ -10,12 +10,12 @@ public partial class BindgenScene : Node
 	{
 		var enumBind = new EnumBind();
 		enumBind.Build();
-		foreach (var file in Directory.GetFiles("../enum_api/newhaven/"))
+		foreach (var file in Directory.GetFiles("../enum_api/sunaba/"))
 			if (file.GetFile().Contains("_") && file.GetFile() != ".DS_Store")
 				File.Delete(file);
 		var enumBuilder = new EnumBuilder();
 		enumBuilder.Build();
-		foreach (var file in Directory.GetFiles("../api/newhaven/"))
+		foreach (var file in Directory.GetFiles("../api/sunaba/"))
 			if (file.GetFile().Contains("_") && file.GetFile() != ".DS_Store")
 				File.Delete(file);
 

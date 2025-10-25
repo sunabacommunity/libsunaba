@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DisableModeEnum(Int) from Int to Int {
 	var remove = cast 0;

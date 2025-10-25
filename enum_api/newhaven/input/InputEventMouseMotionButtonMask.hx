@@ -1,4 +1,4 @@
-package newhaven.input;
+package sunaba.input;
 
 enum abstract InputEventMouseMotionButtonMask(Int) from Int to Int {
 	var left = cast 1;

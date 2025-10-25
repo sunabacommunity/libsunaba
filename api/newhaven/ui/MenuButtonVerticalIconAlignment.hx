@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract MenuButtonVerticalIconAlignment(Int) from Int to Int {
 	var top = cast 0;

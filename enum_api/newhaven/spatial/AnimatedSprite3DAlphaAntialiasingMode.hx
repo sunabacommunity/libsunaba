@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract AnimatedSprite3DAlphaAntialiasingMode(Int) from Int to Int {
 	var off = cast 0;

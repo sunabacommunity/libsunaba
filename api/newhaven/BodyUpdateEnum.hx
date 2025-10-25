@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BodyUpdateEnum(Int) from Int to Int {
 	var upperBody = cast 1;

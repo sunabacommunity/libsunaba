@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract IndexBufferFormat(Int) from Int to Int {
 	var uint16 = cast 0;

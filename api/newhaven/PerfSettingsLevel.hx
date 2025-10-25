@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PerfSettingsLevel(Int) from Int to Int {
 	var powerSavings = cast 0;

@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowScaling3DMode(Int) from Int to Int {
 	var bilinear = cast 0;

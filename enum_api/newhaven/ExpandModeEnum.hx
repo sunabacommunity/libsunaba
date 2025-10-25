@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ExpandModeEnum(Int) from Int to Int {
 	var keepSize = cast 0;

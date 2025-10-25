@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EnvironmentSdfgiyScale(Int) from Int to Int {
 	var scale50Percent = cast 0;

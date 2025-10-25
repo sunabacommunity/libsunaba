@@ -1,7 +1,7 @@
-package newhaven.core;
+package sunaba.core;
 
-import newhaven.BaseClass;
-import newhaven.core.native.NativeObject;
+import sunaba.BaseClass;
+import sunaba.core.native.NativeObject;
 import Type;
 
 class Object extends BaseClass {

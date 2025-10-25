@@ -1,4 +1,4 @@
-package newhaven.spatial.navigation;
+package sunaba.spatial.navigation;
 
 enum abstract NavigationLink3DRotationOrder(Int) from Int to Int {
 	var xyz = cast 0;

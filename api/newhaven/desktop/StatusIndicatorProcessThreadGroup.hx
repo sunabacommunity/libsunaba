@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract StatusIndicatorProcessThreadGroup(Int) from Int to Int {
 	var inherit = cast 0;

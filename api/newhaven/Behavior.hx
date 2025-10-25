@@ -1,7 +1,7 @@
-package newhaven;
-import newhaven.input.InputEvent;
-import newhaven.core.Dictionary;
-import newhaven.core.native.NativeReference;
+package sunaba;
+import sunaba.input.InputEvent;
+import sunaba.core.Dictionary;
+import sunaba.core.native.NativeReference;
 
 class Behavior extends BaseClass {
 

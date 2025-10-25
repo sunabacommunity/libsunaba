@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DecalTexture(Int) from Int to Int {
 	var albedo = cast 0;

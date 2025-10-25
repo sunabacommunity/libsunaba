@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LightmapScale(Int) from Int to Int {
 	var scale1x = cast 0;

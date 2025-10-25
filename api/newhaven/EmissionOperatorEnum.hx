@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EmissionOperatorEnum(Int) from Int to Int {
 	var add = cast 0;

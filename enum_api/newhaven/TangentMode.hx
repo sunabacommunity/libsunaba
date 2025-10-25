@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TangentMode(Int) from Int to Int {
 	var free = cast 0;

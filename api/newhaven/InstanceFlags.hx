@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract InstanceFlags(Int) from Int to Int {
 	var useBakedLight = cast 0;

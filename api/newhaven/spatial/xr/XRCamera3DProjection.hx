@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract XRCamera3DProjection(Int) from Int to Int {
 	var perspective = cast 0;

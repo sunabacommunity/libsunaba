@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AstcFormat(Int) from Int to Int {
 	var format4x4 = cast 0;

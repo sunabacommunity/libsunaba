@@ -1,4 +1,4 @@
-package newhaven.networking;
+package sunaba.networking;
 
 enum abstract WebSocketMultiplayerPeerTransferMode(Int) from Int to Int {
 	var unreliable = cast 0;

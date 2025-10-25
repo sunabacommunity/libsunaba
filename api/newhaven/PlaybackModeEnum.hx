@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PlaybackModeEnum(Int) from Int to Int {
 	var randomNoRepeats = cast 0;

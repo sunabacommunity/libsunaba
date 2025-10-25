@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DuplicateFlags(Int) from Int to Int {
 	var signals = cast 1;

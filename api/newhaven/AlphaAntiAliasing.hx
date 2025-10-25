@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AlphaAntiAliasing(Int) from Int to Int {
 	var off = cast 0;

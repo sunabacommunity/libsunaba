@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextureSliceType(Int) from Int to Int {
 	var slice2d = cast 0;

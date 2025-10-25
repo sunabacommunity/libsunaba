@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract XRHandTrackerHand(Int) from Int to Int {
 	var unknown = cast 0;

@@ -1,7 +1,7 @@
-package newhaven.core;
+package sunaba.core;
 
-import newhaven.core.native.NativeObject;
-import newhaven.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
 
 @:native("Signal")
 extern class Signal {

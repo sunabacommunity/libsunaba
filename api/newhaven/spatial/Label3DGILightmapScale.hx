@@ -1,4 +1,4 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
 enum abstract Label3DGILightmapScale(Int) from Int to Int {
 	var scale1x = cast 0;

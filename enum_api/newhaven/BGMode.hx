@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BGMode(Int) from Int to Int {
 	var clearColor = cast 0;

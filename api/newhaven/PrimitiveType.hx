@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PrimitiveType(Int) from Int to Int {
 	var points = cast 0;

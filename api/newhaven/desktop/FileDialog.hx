@@ -1,16 +1,16 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.core.TypedArray;
-import newhaven.core.Signal;
-import newhaven.core.ArrayList;
-import newhaven.ui.LineEdit;
-import newhaven.core.Dictionary;
-import newhaven.ui.VBoxContainer;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.core.TypedArray;
+import sunaba.core.Signal;
+import sunaba.core.ArrayList;
+import sunaba.ui.LineEdit;
+import sunaba.core.Dictionary;
+import sunaba.ui.VBoxContainer;
 
 class FileDialog extends ConfirmationDialog {
     public function new(?_native: NativeObject) {

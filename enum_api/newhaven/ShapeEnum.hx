@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ShapeEnum(Int) from Int to Int {
 	var flat = cast 0;

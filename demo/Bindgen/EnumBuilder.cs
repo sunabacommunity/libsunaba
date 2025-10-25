@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Newhaven.Bindgen;
+namespace Sunaba.Bindgen;
 
 public class EnumBuilder
 {
@@ -65,7 +65,7 @@ public class EnumBuilder
 	{
 		var bindgenPath = ProjectSettings.GlobalizePath("res://");
 		rootPath = bindgenPath + "/../";
-		apiCodePath = rootPath + "/api/newhaven/";
+		apiCodePath = rootPath + "/api/sunaba/";
 
 		xmlPath = rootPath + "xmlgdapi/";
 
@@ -96,7 +96,7 @@ public class EnumBuilder
 			{
 				var enumName = type.Name;
 				var codeFile = apiCodePath + enumName + ".hx";
-				var packageName = "newhaven";
+				var packageName = "sunaba";
 
 				var stringBuilder = new System.Text.StringBuilder();
 				stringBuilder.AppendLine("package " + packageName + ";");
@@ -249,7 +249,7 @@ public class EnumBuilder
 							enumName = enumName.Replace("editor", String.Empty);
 						}
 
-						var codeDir = enumPath.Replace(apiCodePath, "newhaven");
+						var codeDir = enumPath.Replace(apiCodePath, "sunaba");
 						var codeFile = enumPath + "/" + enumName + ".hx";
 
 						var packageName = codeDir.Replace("/", ".");

@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract RichTextLabelGrowHorizontal(Int) from Int to Int {
 	var begin = cast 0;

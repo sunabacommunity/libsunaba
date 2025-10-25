@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VaryingMode(Int) from Int to Int {
 	var vertexToFragLight = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ErrorCode(Int) from Int to Int {
 	var parseError = cast -32700;

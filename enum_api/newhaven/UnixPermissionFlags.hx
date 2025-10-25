@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract UnixPermissionFlags(Int) from Int to Int {
 	var executeOther = cast 1;

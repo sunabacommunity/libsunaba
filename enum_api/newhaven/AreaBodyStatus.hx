@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract AreaBodyStatus(Int) from Int to Int {
 	var added = cast 0;

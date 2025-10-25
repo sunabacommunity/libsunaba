@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CaretTypeEnum(Int) from Int to Int {
 	var line = cast 0;

@@ -1,12 +1,12 @@
-package newhaven.spatial;
+package sunaba.spatial;
 
-import newhaven.core.native.NativeReference;
-import newhaven.core.native.NativeObject;
-import newhaven.core.Variant;
-import newhaven.core.Reference;
-import newhaven.core.Object;
-import newhaven.Resource;
-import newhaven.core.Signal;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.NativeObject;
+import sunaba.core.Variant;
+import sunaba.core.Reference;
+import sunaba.core.Object;
+import sunaba.Resource;
+import sunaba.core.Signal;
 
 class CameraAttributes extends Resource {
     public function new(?_native: NativeReference) {

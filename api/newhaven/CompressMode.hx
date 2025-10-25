@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CompressMode(Int) from Int to Int {
 	var s3Tc = cast 0;

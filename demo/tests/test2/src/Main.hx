@@ -1,10 +1,10 @@
-import newhaven.App;
+import sunaba.App;
 
-import newhaven.core.Vector3;
-import newhaven.core.native.NativeObject;
-import newhaven.core.native.NativeReference;
-import newhaven.core.Variant;
-import newhaven.core.ArrayList;
+import sunaba.core.Vector3;
+import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
+import sunaba.core.Variant;
+import sunaba.core.ArrayList;
 
 class Main extends App {
     public static function main() {

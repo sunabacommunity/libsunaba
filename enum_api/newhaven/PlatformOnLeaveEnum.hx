@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PlatformOnLeaveEnum(Int) from Int to Int {
 	var addVelocity = cast 0;

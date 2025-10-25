@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ColorModeType(Int) from Int to Int {
 	var rgb = cast 0;

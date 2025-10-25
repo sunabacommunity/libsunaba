@@ -1,4 +1,4 @@
-package newhaven.spatial.joints;
+package sunaba.spatial.joints;
 
 enum abstract Joint3DRotationEditMode(Int) from Int to Int {
 	var euler = cast 0;

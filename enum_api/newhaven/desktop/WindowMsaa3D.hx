@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowMsaa3D(Int) from Int to Int {
 	var disabled = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Operator(Int) from Int to Int {
 	var equal = cast 0;

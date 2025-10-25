@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VisibilityUpdateModeEnum(Int) from Int to Int {
 	var idle = cast 0;

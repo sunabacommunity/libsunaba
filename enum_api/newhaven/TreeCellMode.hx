@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TreeCellMode(Int) from Int to Int {
 	var string = cast 0;

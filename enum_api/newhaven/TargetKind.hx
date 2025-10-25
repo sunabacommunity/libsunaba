@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TargetKind(Int) from Int to Int {
 	var _static = cast 0;

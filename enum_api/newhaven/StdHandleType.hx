@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract StdHandleType(Int) from Int to Int {
 	var invalid = cast 0;

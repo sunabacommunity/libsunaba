@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PlayModeEnum(Int) from Int to Int {
 	var forward = cast 0;

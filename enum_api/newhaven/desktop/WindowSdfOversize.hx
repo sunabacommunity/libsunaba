@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowSdfOversize(Int) from Int to Int {
 	var oversize100Percent = cast 0;

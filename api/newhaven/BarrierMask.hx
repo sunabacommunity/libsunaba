@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BarrierMask(Int) from Int to Int {
 	var vertex = cast 1;

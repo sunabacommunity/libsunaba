@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract ColorRectGrowHorizontal(Int) from Int to Int {
 	var begin = cast 0;

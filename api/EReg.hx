@@ -1,7 +1,7 @@
-import newhaven.core.Variant;
-import newhaven.Error;
-import newhaven.RegExMatch;
-import newhaven.RegEx;
+import sunaba.core.Variant;
+import sunaba.Error;
+import sunaba.RegExMatch;
+import sunaba.RegEx;
 import lua.Table;
 
 @:coreApi

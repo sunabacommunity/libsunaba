@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MenuItems(Int) from Int to Int {
 	var cut = cast 0;

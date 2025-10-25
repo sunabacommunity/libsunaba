@@ -1,4 +1,4 @@
-package newhaven.desktop;
+package sunaba.desktop;
 
 enum abstract WindowAnisotropicFilteringLevel(Int) from Int to Int {
 	var disabled = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MouseMode(Int) from Int to Int {
 	var visible = cast 0;

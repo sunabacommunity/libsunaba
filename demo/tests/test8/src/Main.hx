@@ -1,4 +1,4 @@
-import newhaven.App;
+import sunaba.App;
 import test8.ClickerCounter;
 
 class Main extends App {

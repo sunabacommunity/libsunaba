@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SubdivEnum(Int) from Int to Int {
 	var subdiv64 = cast 0;

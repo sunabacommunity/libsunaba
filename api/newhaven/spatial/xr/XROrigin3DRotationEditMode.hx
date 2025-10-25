@@ -1,4 +1,4 @@
-package newhaven.spatial.xr;
+package sunaba.spatial.xr;
 
 enum abstract XROrigin3DRotationEditMode(Int) from Int to Int {
 	var euler = cast 0;

@@ -1,7 +1,7 @@
-package newhaven.core;
+package sunaba.core;
 
-import newhaven.BaseClass;
-import newhaven.core.native.NativeReference;
+import sunaba.BaseClass;
+import sunaba.core.native.NativeReference;
 import Type;
 
 class Reference extends BaseClass {

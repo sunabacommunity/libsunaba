@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PanningSchemeEnum(Int) from Int to Int {
 	var zooms = cast 0;

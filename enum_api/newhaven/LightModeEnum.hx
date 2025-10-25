@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract LightModeEnum(Int) from Int to Int {
 	var normal = cast 0;

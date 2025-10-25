@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TextureSamples(Int) from Int to Int {
 	var samples1 = cast 0;

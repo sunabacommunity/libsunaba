@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract UpnpResult(Int) from Int to Int {
 	var success = cast 0;

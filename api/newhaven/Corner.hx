@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Corner(Int) from Int to Int {
 	var topLeft = cast 0;

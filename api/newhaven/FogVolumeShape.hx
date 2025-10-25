@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract FogVolumeShape(Int) from Int to Int {
 	var ellipsoid = cast 0;

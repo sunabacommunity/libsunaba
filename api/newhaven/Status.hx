@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Status(Int) from Int to Int {
 	var disconnected = cast 0;

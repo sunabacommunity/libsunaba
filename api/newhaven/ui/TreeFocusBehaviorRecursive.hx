@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract TreeFocusBehaviorRecursive(Int) from Int to Int {
 	var inherited = cast 0;

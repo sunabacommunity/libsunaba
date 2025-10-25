@@ -1,4 +1,4 @@
-package newhaven.spatial.physics;
+package sunaba.spatial.physics;
 
 enum abstract VehicleBody3DAngularDampMode(Int) from Int to Int {
 	var combine = cast 0;

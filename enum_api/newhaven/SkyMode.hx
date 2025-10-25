@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SkyMode(Int) from Int to Int {
 	var automatic = cast 0;

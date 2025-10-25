@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract MergeMode(Int) from Int to Int {
 	var disable = cast 0;

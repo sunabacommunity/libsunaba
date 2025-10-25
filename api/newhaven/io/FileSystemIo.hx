@@ -1,7 +1,7 @@
-package newhaven.io;
-import newhaven.core.native.NativeReference;
-import newhaven.core.ArrayList;
-import newhaven.core.native.ScriptType;
+package sunaba.io;
+import sunaba.core.native.NativeReference;
+import sunaba.core.ArrayList;
+import sunaba.core.native.ScriptType;
 
 class FileSystemIo extends SystemIoBase {
 	public function new(?native: NativeReference) {

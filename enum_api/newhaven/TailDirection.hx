@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract TailDirection(Int) from Int to Int {
 	var averageChildren = cast 0;

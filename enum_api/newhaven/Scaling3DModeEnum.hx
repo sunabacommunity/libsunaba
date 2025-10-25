@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Scaling3DModeEnum(Int) from Int to Int {
 	var bilinear = cast 0;

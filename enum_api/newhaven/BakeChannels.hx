@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract BakeChannels(Int) from Int to Int {
 	var albedoAlpha = cast 0;

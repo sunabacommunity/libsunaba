@@ -1,4 +1,4 @@
-package newhaven.animation;
+package sunaba.animation;
 
 enum abstract AnimationTreeCallbackModeDiscrete(Int) from Int to Int {
 	var dominant = cast 0;

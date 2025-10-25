@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract CanvasTextureChannel(Int) from Int to Int {
 	var diffuse = cast 0;

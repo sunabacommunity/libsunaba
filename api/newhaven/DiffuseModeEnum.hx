@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract DiffuseModeEnum(Int) from Int to Int {
 	var burley = cast 0;

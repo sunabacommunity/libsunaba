@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract JoyAxis(Int) from Int to Int {
 	var leftX = cast 0;

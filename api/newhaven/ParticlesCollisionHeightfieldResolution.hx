@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ParticlesCollisionHeightfieldResolution(Int) from Int to Int {
 	var resolution256 = cast 0;

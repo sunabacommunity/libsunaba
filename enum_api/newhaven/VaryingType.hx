@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract VaryingType(Int) from Int to Int {
 	var float = cast 0;

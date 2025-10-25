@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract ProjectionType(Int) from Int to Int {
 	var perspective = cast 0;

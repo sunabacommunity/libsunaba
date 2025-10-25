@@ -1,4 +1,4 @@
-package newhaven.ui;
+package sunaba.ui;
 
 enum abstract GraphEditSizeFlagsVertical(Int) from Int to Int {
 	var shrinkBegin = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract EffectCallbackTypeEnum(Int) from Int to Int {
 	var preOpaque = cast 0;

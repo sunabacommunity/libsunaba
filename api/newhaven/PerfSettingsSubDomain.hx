@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract PerfSettingsSubDomain(Int) from Int to Int {
 	var compositing = cast 0;

@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract Hands(Int) from Int to Int {
 	var left = cast 0;

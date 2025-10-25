@@ -1,4 +1,4 @@
-package newhaven;
+package sunaba;
 
 enum abstract SkyModeEnum(Int) from Int to Int {
 	var lightAndSky = cast 0;
