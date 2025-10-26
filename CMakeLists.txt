@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.17)
 if(CMAKE_C_COMPILER)
 endif()
 
+set(LUAJIT_DIR "${CMAKE_SOURCE_DIR}/luajit" CACHE PATH "Path to LuaJIT source directory" FORCE)
+
 set(LIBNAME "EXTENSION-NAME" CACHE STRING "The name of the library")
 set(GODOT_PROJECT_DIR "demo" CACHE STRING "The directory of a Godot project folder")
 
@@ -26,8 +28,26 @@ if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/godot-cpp/src")
 endif()
 add_subdirectory(godot-cpp SYSTEM)
 
+if(WIN32)
+    # Windows forces dynamic build mode in LuaJIT CMakeLists.txt
+    set(LUAJIT_BUILD_MODE "dynamic")
+else()
+    set(LUAJIT_BUILD_MODE "static")
+endif()
+if (APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15")
+endif()
+add_subdirectory( luajit-cmake )
+
 add_subdirectory(sol2)
-add_subdirectory(lua-5.1.5)
+add_compile_definitions( USE_LUAJIT )
+add_compile_definitions( SOL_EXCEPTIONS_SAFE_PROPAGATION )
+add_compile_definitions( SOL_ALL_SAFETIES_ON )
+# Include directories for LuaJIT
+include_directories( ${CMAKE_SOURCE_DIR}/luajit/src )
+# Also include the binary directory where luajit.h is generated
+include_directories( ${CMAKE_BINARY_DIR}/luajit )
+message(STATUS "Using LuaJIT on ${CMAKE_SYSTEM_NAME} ${LIB_ARCH}")
 
 # Add godot-cpp's module path and include the exported functions.
 # This is made available for documentation generation
