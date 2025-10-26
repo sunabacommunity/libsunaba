@@ -1,4 +1,4 @@
-package .Users.Shared.libsunaba.xmlgdapi.service.base;
+package sunaba;
 
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.NativeObject;
@@ -16,7 +16,6 @@ import sunaba.core.Vector2;
 import sunaba.core.TypedArray;
 import sunaba.core.Color;
 import sunaba.core.Vector3;
-import sunaba.Image;
 import sunaba.core.Basis;
 import sunaba.core.Vector3;
 import sunaba.core.Dictionary;
@@ -24,7 +23,7 @@ import sunaba.core.ByteArray;
 import sunaba.core.Vector3i;
 
 class RenderingService extends BaseClass {
-     private static var _native: NativeObject
+     private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
             _native = NativeObject.getService('RenderingService');

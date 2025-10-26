@@ -1,4 +1,4 @@
-package .Users.Shared.libsunaba.xmlgdapi.service.base;
+package sunaba;
 
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.NativeObject;
@@ -15,7 +15,7 @@ import sunaba.core.TypedArray;
 import sunaba.audio.AudioStream;
 
 class AudioService extends BaseClass {
-     private static var _native: NativeObject
+     private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
             _native = NativeObject.getService('AudioService');

@@ -1,4 +1,4 @@
-package .Users.Shared.libsunaba.xmlgdapi.service.base;
+package sunaba;
 
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.NativeObject;
@@ -9,14 +9,12 @@ import sunaba.BaseClass;
 import sunaba.core.Signal;
 import sunaba.core.ArrayList;
 import sunaba.core.Vector2;
-import sunaba.NavigationPolygon;
 import sunaba.core.Vector2;
 import sunaba.core.TypedArray;
-import sunaba.Node;
 import sunaba.core.Rect2;
 
 class NavigationService2D extends BaseClass {
-     private static var _native: NativeObject
+     private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
             _native = NativeObject.getService('NavigationService2D');

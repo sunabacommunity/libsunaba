@@ -1,4 +1,4 @@
-package .Users.Shared.libsunaba.xmlgdapi.service.input;
+package sunaba.input;
 
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.NativeObject;
@@ -11,11 +11,10 @@ import sunaba.core.ArrayList;
 import sunaba.core.Vector3;
 import sunaba.core.Dictionary;
 import sunaba.core.Vector2;
-import sunaba.input.InputEvent;
 import sunaba.Resource;
 
 class InputService extends BaseClass {
-     private static var _native: NativeObject
+     private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
             _native = NativeObject.getService('InputService');
