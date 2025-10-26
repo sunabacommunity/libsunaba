@@ -141,6 +141,9 @@ if(MSVC)
     target_compile_definitions(${LIBNAME} PRIVATE _CRT_SECURE_NO_WARNINGS)
     # Ensure we use the same runtime library as LuaJIT
     set_property(TARGET ${LIBNAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Release>:MultiThreaded>")
+else()
+    target_compile_options(${LIBNAME} PRIVATE -fPIC)
+    target_compile_options(libluajit PRIVATE -fPIC)
 endif()
 
 set_target_properties(${LIBNAME}
