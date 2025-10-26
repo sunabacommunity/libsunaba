@@ -99,7 +99,7 @@ public class ServiceBuilder
         string resourceApiPath = Path.GetFullPath("../xmlgdapi/resource/");
         string nodeApiPath = Path.GetFullPath("../xmlgdapi/elements/");
         string otherApiPath = Path.GetFullPath("../xmlgdapi/other/");
-        string serviceApiPath = Path.GetFullPath("../xmlgdapi/other/");
+        string serviceApiPath = Path.GetFullPath("../xmlgdapi/service/");
 
         xmlFiles = GetFiles(resourceApiPath);
         xmlFiles.AddRange(GetFiles(nodeApiPath));
