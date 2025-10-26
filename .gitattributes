@@ -9,4 +9,7 @@
 
 sol2/** linguist-vendored
 lua-5.4.8/** linguist-vendored
+lua-5.1.5/** linguist-vendored
+luajit/** linguist-vendored
+luajit-cmake/** linguist-vendored
 enum_api/** linguist-vendored
