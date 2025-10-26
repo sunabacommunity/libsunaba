@@ -95,7 +95,7 @@ public:
 		sol::protected_function_result result = lua_func(sol::as_args(sol_args));
 
 		if (result.valid()) {
-			r_return_value = ScriptObject::solToGd(result);
+			r_return_value = ScriptObject::solToGd(result.get<sol::object>());
 			r_call_error.error = GDEXTENSION_CALL_OK;
 		} else {
 			r_call_error.error = GDEXTENSION_CALL_ERROR_INVALID_METHOD;

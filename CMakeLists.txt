@@ -9,7 +9,7 @@ set(LUAJIT_DIR "${CMAKE_SOURCE_DIR}/luajit" CACHE PATH "Path to LuaJIT source di
 
 set(LIBNAME "libsunaba" CACHE STRING "The name of the library")
 if (WIN32)
-    set(LIBNAME "libsunaba" CACHE STRING "The name of the library")
+    set(LIBNAME "sunaba" CACHE STRING "The name of the library")
 endif()
 set(GODOT_PROJECT_DIR "demo" CACHE STRING "The directory of a Godot project folder")
 
@@ -31,26 +31,30 @@ if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/godot-cpp/src")
 endif()
 add_subdirectory(godot-cpp SYSTEM)
 
-if(WIN32)
+#if(WIN32)
     # Windows forces dynamic build mode in LuaJIT CMakeLists.txt
-    set(LUAJIT_BUILD_MODE "dynamic")
-else()
+    #set(LUAJIT_BUILD_MODE "dynamic")
+#else()
     set(LUAJIT_BUILD_MODE "static")
-endif()
+#endif()
 if (APPLE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15")
 endif()
 add_subdirectory( luajit-cmake )
 
-add_subdirectory(sol2)
+
 add_compile_definitions( USE_LUAJIT )
 add_compile_definitions( SOL_EXCEPTIONS_SAFE_PROPAGATION )
+set( SOL2_LUA_VERSION "LuaJIT" )
 add_compile_definitions( SOL_ALL_SAFETIES_ON )
 # Include directories for LuaJIT
 include_directories( ${CMAKE_SOURCE_DIR}/luajit/src )
 # Also include the binary directory where luajit.h is generated
-include_directories( ${CMAKE_BINARY_DIR}/luajit )
+include_directories( ${CMAKE_BINARY_DIR}/luajit-cmake )
 message(STATUS "Using LuaJIT on ${CMAKE_SYSTEM_NAME} ${LIB_ARCH}")
+
+
+add_subdirectory(sol2)
 
 # Add godot-cpp's module path and include the exported functions.
 # This is made available for documentation generation
@@ -70,6 +74,9 @@ project(godot-cpp-template
 )
 
 add_library(${LIBNAME} SHARED)
+
+# Ensure LuaJIT headers are generated before building our library
+add_dependencies(${LIBNAME} libluajit)
 
 target_sources(${LIBNAME}
     PRIVATE
@@ -126,6 +133,15 @@ endif()
 
 # Require at least C++17 for this target
 set_property(TARGET ${LIBNAME} PROPERTY CXX_STANDARD 17)
+set_property(TARGET ${LIBNAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+
+# MSVC-specific settings
+if(MSVC)
+    target_compile_options(${LIBNAME} PRIVATE /Zc:__cplusplus /bigobj)
+    target_compile_definitions(${LIBNAME} PRIVATE _CRT_SECURE_NO_WARNINGS)
+    # Ensure we use the same runtime library as LuaJIT
+    set_property(TARGET ${LIBNAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Release>:MultiThreaded>")
+endif()
 
 set_target_properties(${LIBNAME}
     PROPERTIES
