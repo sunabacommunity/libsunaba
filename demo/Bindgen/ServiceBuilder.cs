@@ -159,8 +159,9 @@ public class ServiceBuilder
             if (!string.IsNullOrEmpty(className))
             {
                 GD.Print($"Processing class: {className}");
+                var packagePath = packageLocations[oldClassName];
+                packageLocations[className] = packagePath;
                 var haxeClass = GenerateClass(doc, className);
-                var packagePath = packageLocations[className];
                 if (packagePath.Contains("sunaba.base"))
                 {
 	                File.WriteAllText(Path.Combine(outputDir, $"{className}.hx"), haxeClass.Replace("sunaba.base", "sunaba"));
