@@ -179,6 +179,10 @@ public class ServiceBuilder
 
                 if (classPath.Contains("libxmlgdapi"))
 	                classPath = classPath.Replace("libxmlgdapi", "libsunaba/xmlgdapi");
+                if (classPath.Contains("libsunaba/xmlgdapi/service"))
+	                classPath = classPath.Replace("libsunaba/xmlgdapi/service", "libsunaba/api/sunaba");
+                if (classPath.Contains("libsunaba/api/sunaba/base"))
+	                classPath = classPath.Replace("libsunaba/api/sunaba/base", "libsunaba/api/sunaba");
 
                 File.WriteAllText(classPath, haxeClass.Replace("sunaba.base", "sunaba"));
             }
