@@ -225,7 +225,7 @@ public class ServiceBuilder
         var classSb = new StringBuilder();
         classSb.AppendLine("class " + className + " extends " + inheritedClassName + " {");
 
-        classSb.AppendLine("     private static var _native: NativeObject");
+        classSb.AppendLine("     private static var _native: NativeObject;");
         classSb.AppendLine($"    public static function getNative() {'{'}");
         classSb.AppendLine("        if (_native == null) {");
         classSb.AppendLine($"            _native = NativeObject.getService('" + className + "');");
