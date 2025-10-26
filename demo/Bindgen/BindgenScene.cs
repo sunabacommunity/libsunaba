@@ -21,6 +21,9 @@ public partial class BindgenScene : Node
 
 		var resourceClassBuilder = new ClassBuilder();
 		resourceClassBuilder.Build();
+
+		var serviceBuilder = new ServiceBuilder();
+		serviceBuilder.Build();
 		GetTree().Quit();
 	}
 }
