@@ -126,10 +126,12 @@ public class ServiceBuilder
                 var xmlDir = xmlFile.GetBaseDir();
                 var apiPath = xmlDir.Replace(currentXmlPath, "sunaba/");
                 var packageName = apiPath.Replace("\\", "/").Replace("/", ".");
+                packageName = packageName.Replace("\\", "/").Replace("/", ".");
                 if (packageName.EndsWith("."))
                 {
                     packageName = packageName.Substring(0, packageName.Length - 1);
                 }
+
                 if (!packageLocations.ContainsKey(className))
                     packageLocations.Add(className, packageName);
                 var inheritedClassName = "BaseClass";
@@ -147,7 +149,7 @@ public class ServiceBuilder
 
             if (!string.IsNullOrEmpty(className))
             {
-                Console.WriteLine($"Processing class: {className}");
+                GD.Print($"Processing class: {className}");
                 var haxeClass = GenerateClass(doc, className);
                 var packagePath = packageLocations[className];
                 if (packagePath.Contains("sunaba.base"))
@@ -158,7 +160,11 @@ public class ServiceBuilder
 
                 if (Directory.Exists(packagePath.Replace("sunaba.", "").Replace(".", "/")))
                 {
-	                Directory.CreateDirectory(packagePath.Replace("sunaba.", "").Replace(".", "/"));
+                    Directory.CreateDirectory(packagePath.Replace("sunaba.", "").Replace(".", "/"));
+                }
+                if (haxeClass.Contains("sunaba/"))
+                {
+                    haxeClass = haxeClass.Replace("sunaba/", "sunaba.");
                 }
                 File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("sunaba.", "").Replace(".", "/").Replace("base/", "sunaba/"), $"{className}.hx")), haxeClass.Replace("sunaba.base", "sunaba"));
             }
@@ -242,6 +248,7 @@ public class ServiceBuilder
             }
             if (import.Contains(packageLocations[className]))
                 continue;
+            import = import.Replace("\\", ".").Replace("/", ".");
             importSb.AppendLine($"import {import};");
         }
         importSb.AppendLine();

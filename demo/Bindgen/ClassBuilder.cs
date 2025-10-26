@@ -147,7 +147,7 @@ public class ClassBuilder
 
             if (!string.IsNullOrEmpty(className))
             {
-                Console.WriteLine($"Processing class: {className}");
+                GD.Print($"Processing class: {className}");
                 var haxeClass = GenerateClass(doc, className);
                 var packagePath = packageLocations[className];
                 if (packagePath.Contains("sunaba.base"))
@@ -246,6 +246,7 @@ public class ClassBuilder
             }
             if (import.Contains(packageLocations[className]))
                 continue;
+            import = import.Replace("\\", ".").Replace("/", ".");
             importSb.AppendLine($"import {import};");
         }
         importSb.AppendLine();

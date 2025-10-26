@@ -61,7 +61,7 @@ public class HaxeExternGenerator
 
             if (!string.IsNullOrEmpty(className) && className != "float" && className != "String" && className != "int" && className != "@GlobalScope" && className != "bool" && className != "Array" && className != "Dictionary")
             {
-                Console.WriteLine($"Processing class: {className}");
+                GD.Print($"Processing class: {className}");
                 var haxeExtern = GenerateHaxeExtern(doc, className);
                 var ogClassName = className;
                 if (className == "Vector3" || className == "Vector2" || className == "Quaternion" || className == "Basis" || className == "Vector2i" || className == "Vector3i" || className == "Vector4" || className == "Vector4i")
@@ -71,7 +71,7 @@ public class HaxeExternGenerator
         }
 
         Directory.Delete(godotApiPath, recursive: true);
-        Console.WriteLine("Haxe externs generated!");
+        GD.Print("Haxe externs generated!");
     }
 
     public string[] GetFiles(string path)
