@@ -162,7 +162,15 @@ public class ServiceBuilder
                 {
                     Directory.CreateDirectory(packagePath.Replace("sunaba.", "").Replace(".", "/"));
                 }
-                File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("sunaba.", "").Replace(".", "/").Replace("base/", "sunaba/"), $"{className}.hx")), haxeClass.Replace("sunaba.base", "sunaba"));
+
+                var classPath = Path.Combine(outputDir,
+	                Path.Combine(packagePath.Replace("sunaba.", "").Replace(".", "/").Replace("base/", "sunaba/"),
+		                $"{className}.hx"));
+
+                if (classPath.Contains("libxmlgdapi"))
+	                classPath = classPath.Replace("libxmlgdapi", "libsunaba/xmlgdapi");
+
+                File.WriteAllText(classPath, haxeClass.Replace("sunaba.base", "sunaba"));
             }
         }
     }
