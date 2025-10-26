@@ -145,7 +145,16 @@ public class ServiceBuilder
         }
         foreach (var xmlFile in serviceXmlFIles){
             var doc = XDocument.Load(xmlFile);
-            var className = doc.Root?.Attribute("name")?.Value;
+            var oldClassName = doc.Root?.Attribute("name")?.Value;
+            var className = oldClassName;
+            if (className.Contains("Server"))
+            {
+	            className = className.Replace("Server", "Service");
+            }
+            else
+            {
+	            className = className + "Service";
+            }
 
             if (!string.IsNullOrEmpty(className))
             {
