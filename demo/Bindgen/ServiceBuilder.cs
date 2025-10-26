@@ -764,7 +764,7 @@ public class ServiceBuilder
             case "Quaternion":
                 return "Quaternion";
             case "RID":
-                return "Int";
+                return "Variant";
             case "Variant":
                 return "Variant";
             case "Color":
