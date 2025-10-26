@@ -162,10 +162,6 @@ public class ServiceBuilder
                 {
                     Directory.CreateDirectory(packagePath.Replace("sunaba.", "").Replace(".", "/"));
                 }
-                if (haxeClass.Contains("sunaba/"))
-                {
-                    haxeClass = haxeClass.Replace("sunaba/", "sunaba.");
-                }
                 File.WriteAllText(Path.Combine(outputDir, Path.Combine(packagePath.Replace("sunaba.", "").Replace(".", "/").Replace("base/", "sunaba/"), $"{className}.hx")), haxeClass.Replace("sunaba.base", "sunaba"));
             }
         }
