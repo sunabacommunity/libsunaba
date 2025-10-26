@@ -7,7 +7,7 @@ endif()
 
 set(LUAJIT_DIR "${CMAKE_SOURCE_DIR}/luajit" CACHE PATH "Path to LuaJIT source directory" FORCE)
 
-set(LIBNAME "EXTENSION-NAME" CACHE STRING "The name of the library")
+set(LIBNAME "sunaba" CACHE STRING "The name of the library")
 set(GODOT_PROJECT_DIR "demo" CACHE STRING "The directory of a Godot project folder")
 
 # Make sure all the dependencies are satisfied
@@ -74,6 +74,35 @@ target_sources(${LIBNAME}
     src/register_types.h
     src/example_class.cpp
     src/example_class.h
+    src/Runtime.cpp
+    src/Runtime.h
+    src/ScriptObject.cpp
+    src/ScriptObject.h
+    src/ScriptFunction.cpp
+    src/ScriptFunction.h
+    src/luaopen_AABB.cpp
+    src/luaopen_ArrayList.cpp
+    src/luaopen_Basis.cpp
+    src/luaopen_Callable.cpp
+    src/luaopen_Color.cpp
+    src/luaopen_Dictionary.cpp
+    src/luaopen_NativeObject.cpp
+    src/luaopen_NativeObject_sandboxed.cpp
+    src/luaopen_NativeReference.cpp
+    src/luaopen_NativeReference_sandboxed.cpp
+    src/luaopen_Quaternion.cpp
+    src/luaopen_Rect2.cpp
+    src/luaopen_Rect2i.cpp
+    src/luaopen_Signal.cpp
+    src/luaopen_Transform3D.cpp
+    src/luaopen_Variant.cpp
+    src/luaopen_Variant_sandboxed.cpp
+    src/luaopen_Vector2.cpp
+    src/luaopen_Vector2i.cpp
+    src/luaopen_Vector3.cpp
+    src/luaopen_Vector3i.cpp
+    src/luaopen_Vector4.cpp
+    src/luaopen_Vector4i.cpp
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
@@ -86,7 +115,11 @@ if(DOC_XML)
     endif()
 endif()
 
-target_link_libraries(${LIBNAME} PRIVATE godot-cpp liblua_static sol2)
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_link_libraries(${LIBNAME} PRIVATE godot-cpp -Wl,--whole-archive luajit::lib -Wl,--no-whole-archive -Wl,--whole-archive luajit::header -Wl,--no-whole-archive sol2)
+else()
+    target_link_libraries(${LIBNAME} PRIVATE godot-cpp luajit::lib luajit::header sol2)
+endif()
 
 # Require at least C++17 for this target
 set_property(TARGET ${LIBNAME} PROPERTY CXX_STANDARD 17)
