@@ -111,38 +111,42 @@ public class ServiceBuilder
         BaseClasses.Add("Reference", "Object");
         packageLocations.Add("BaseClass", "sunaba");
         foreach (var xmlFile in xmlFiles){
-            var doc = XDocument.Load(xmlFile);
-            var className = doc.Root?.Attribute("name")?.Value;
+	        var doc = XDocument.Load(xmlFile);
+	        var className = doc.Root?.Attribute("name")?.Value;
 
-            if (!string.IsNullOrEmpty(className) && className != "float" && className != "String" && className != "int" && className != "@GlobalScope" && className != "bool" && className != "Array" && className != "Dictionary" && className != "Vector3" && className != "Vector2" && className != "Quaternion" && className != "Basis" && className != "Vector2i" && className != "Vector3i" && className != "Vector4" && className != "Vector4i")
-            {
-                var currentXmlPath = resourceApiPath;
-                if (xmlFile.Contains(nodeApiPath))
-                    currentXmlPath = nodeApiPath;
-                else if (xmlFile.Contains(otherApiPath))
-                    currentXmlPath = otherApiPath;
+	        if (!string.IsNullOrEmpty(className) && className != "float" && className != "String" && className != "int" && className != "@GlobalScope" && className != "bool" && className != "Array" && className != "Dictionary" && className != "Vector3" && className != "Vector2" && className != "Quaternion" && className != "Basis" && className != "Vector2i" && className != "Vector3i" && className != "Vector4" && className != "Vector4i")
+	        {
+		        var currentXmlPath = resourceApiPath;
+		        if (xmlFile.Contains(nodeApiPath))
+			        currentXmlPath = nodeApiPath;
+		        else if (xmlFile.Contains(otherApiPath))
+			        currentXmlPath = otherApiPath;
+		        else if (xmlFile.Contains(serviceApiPath))
+			        currentXmlPath = serviceApiPath;
 
-                if (ClassNames.Contains(className)) continue;
-                ClassNames.Add(className);
-                var xmlDir = xmlFile.GetBaseDir();
-                var apiPath = xmlDir.Replace(currentXmlPath, "sunaba/");
-                var packageName = apiPath.Replace("\\", "/").Replace("/", ".");
-                packageName = packageName.Replace("\\", "/").Replace("/", ".");
-                if (packageName.EndsWith("."))
-                {
-                    packageName = packageName.Substring(0, packageName.Length - 1);
-                }
+		        if (ClassNames.Contains(className)) continue;
+		        ClassNames.Add(className);
+		        var xmlDir = xmlFile.GetBaseDir();
+		        var apiPath = xmlDir.Replace(currentXmlPath, "sunaba/");
+		        var packageName = apiPath.Replace("\\", "/").Replace("/", ".");
+		        if (packageName.EndsWith("."))
+		        {
+			        packageName = packageName.Substring(0, packageName.Length - 1);
+		        }
+		        if (!packageLocations.ContainsKey(className))
+			        packageLocations.Add(className, packageName);
+		        var inheritedClassName = doc.Root?.Attribute("inherits")?.Value;
+		        if (inheritedClassName == "RefCounted")
+		        {
+			        inheritedClassName = "Reference";
+		        }
 
-                if (!packageLocations.ContainsKey(className))
-                    packageLocations.Add(className, packageName);
-                var inheritedClassName = "BaseClass";
+		        // dumb hack
+		        if (currentXmlPath == resourceApiPath)
+			        ResourceClasses.Add(className);
 
-                // dumb hack
-                if (currentXmlPath == resourceApiPath)
-                    ResourceClasses.Add(className);
-
-                BaseClasses.Add(className, inheritedClassName);
-            }
+		        BaseClasses.Add(className, inheritedClassName);
+	        }
         }
         foreach (var xmlFile in serviceXmlFIles){
             var doc = XDocument.Load(xmlFile);
