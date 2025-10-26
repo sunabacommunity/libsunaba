@@ -104,8 +104,9 @@ public class ServiceBuilder
         xmlFiles = GetFiles(resourceApiPath);
         xmlFiles.AddRange(GetFiles(nodeApiPath));
         xmlFiles.AddRange(GetFiles(otherApiPath));
+        xmlFiles.AddRange(GetFiles(serviceApiPath));
         var serviceXmlFIles = GetFiles(serviceApiPath);
-        xmlFiles.AddRange(serviceXmlFIles);
+
         ClassNames.Add("Reference");
         BaseClasses.Add("Reference", "Object");
         packageLocations.Add("BaseClass", "sunaba");
