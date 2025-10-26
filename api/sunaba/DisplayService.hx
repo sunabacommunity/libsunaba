@@ -29,13 +29,13 @@ class DisplayService extends BaseClass {
 
 
 
-  public function accessibilityCreateElement(windowId: Int, role: Int): Int {
+  public function accessibilityCreateElement(windowId: Int, role: Int): Variant {
       var args = new ArrayList();
       args.append(windowId);
       args.append(role);
       return getNative().call('accessibility_create_element', args);
   }
-  public function accessibilityCreateSubElement(parentRid: Int, role: Int, ?insertPos: Int): Int {
+  public function accessibilityCreateSubElement(parentRid: Variant, role: Int, ?insertPos: Int): Variant {
       var args = new ArrayList();
       args.append(parentRid);
       args.append(role);
@@ -44,7 +44,7 @@ class DisplayService extends BaseClass {
       }
       return getNative().call('accessibility_create_sub_element', args);
   }
-  public function accessibilityCreateSubTextEditElements(parentRid: Int, shapedText: Int, minHeight: Float, ?insertPos: Int): Int {
+  public function accessibilityCreateSubTextEditElements(parentRid: Variant, shapedText: Variant, minHeight: Float, ?insertPos: Int): Variant {
       var args = new ArrayList();
       args.append(parentRid);
       args.append(shapedText);
@@ -54,28 +54,28 @@ class DisplayService extends BaseClass {
       }
       return getNative().call('accessibility_create_sub_text_edit_elements', args);
   }
-  public function accessibilityElementGetMeta(id: Int): Variant {
+  public function accessibilityElementGetMeta(id: Variant): Variant {
       var args = new ArrayList();
       args.append(id);
       return getNative().call('accessibility_element_get_meta', args);
   }
-  public function accessibilityElementSetMeta(id: Int, meta: Variant): Void {
+  public function accessibilityElementSetMeta(id: Variant, meta: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(meta);
       getNative().call('accessibility_element_set_meta', args);
   }
-  public function accessibilityFreeElement(id: Int): Void {
+  public function accessibilityFreeElement(id: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       getNative().call('accessibility_free_element', args);
   }
-  public function accessibilityGetWindowRoot(windowId: Int): Int {
+  public function accessibilityGetWindowRoot(windowId: Int): Variant {
       var args = new ArrayList();
       args.append(windowId);
       return getNative().call('accessibility_get_window_root', args);
   }
-  public function accessibilityHasElement(id: Int): Bool {
+  public function accessibilityHasElement(id: Variant): Bool {
       var args = new ArrayList();
       args.append(id);
       return getNative().call('accessibility_has_element', args);
@@ -109,344 +109,344 @@ class DisplayService extends BaseClass {
       var args = new ArrayList();
       return getNative().call('accessibility_should_reduce_transparency', args);
   }
-  public function accessibilityUpdateAddAction(id: Int, action: Int, callable: Variant): Void {
+  public function accessibilityUpdateAddAction(id: Variant, action: Int, callable: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(action);
       args.append(callable);
       getNative().call('accessibility_update_add_action', args);
   }
-  public function accessibilityUpdateAddChild(id: Int, childId: Int): Void {
+  public function accessibilityUpdateAddChild(id: Variant, childId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(childId);
       getNative().call('accessibility_update_add_child', args);
   }
-  public function accessibilityUpdateAddCustomAction(id: Int, actionId: Int, actionDescription: String): Void {
+  public function accessibilityUpdateAddCustomAction(id: Variant, actionId: Int, actionDescription: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(actionId);
       args.append(actionDescription);
       getNative().call('accessibility_update_add_custom_action', args);
   }
-  public function accessibilityUpdateAddRelatedControls(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedControls(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_controls', args);
   }
-  public function accessibilityUpdateAddRelatedDescribedBy(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedDescribedBy(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_described_by', args);
   }
-  public function accessibilityUpdateAddRelatedDetails(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedDetails(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_details', args);
   }
-  public function accessibilityUpdateAddRelatedFlowTo(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedFlowTo(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_flow_to', args);
   }
-  public function accessibilityUpdateAddRelatedLabeledBy(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedLabeledBy(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_labeled_by', args);
   }
-  public function accessibilityUpdateAddRelatedRadioGroup(id: Int, relatedId: Int): Void {
+  public function accessibilityUpdateAddRelatedRadioGroup(id: Variant, relatedId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(relatedId);
       getNative().call('accessibility_update_add_related_radio_group', args);
   }
-  public function accessibilityUpdateSetActiveDescendant(id: Int, otherId: Int): Void {
+  public function accessibilityUpdateSetActiveDescendant(id: Variant, otherId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(otherId);
       getNative().call('accessibility_update_set_active_descendant', args);
   }
-  public function accessibilityUpdateSetBackgroundColor(id: Int, color: Color): Void {
+  public function accessibilityUpdateSetBackgroundColor(id: Variant, color: Color): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(color);
       getNative().call('accessibility_update_set_background_color', args);
   }
-  public function accessibilityUpdateSetBounds(id: Int, pRect: Rect2): Void {
+  public function accessibilityUpdateSetBounds(id: Variant, pRect: Rect2): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(pRect);
       getNative().call('accessibility_update_set_bounds', args);
   }
-  public function accessibilityUpdateSetChecked(id: Int, checekd: Bool): Void {
+  public function accessibilityUpdateSetChecked(id: Variant, checekd: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(checekd);
       getNative().call('accessibility_update_set_checked', args);
   }
-  public function accessibilityUpdateSetClassname(id: Int, classname: String): Void {
+  public function accessibilityUpdateSetClassname(id: Variant, classname: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(classname);
       getNative().call('accessibility_update_set_classname', args);
   }
-  public function accessibilityUpdateSetColorValue(id: Int, color: Color): Void {
+  public function accessibilityUpdateSetColorValue(id: Variant, color: Color): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(color);
       getNative().call('accessibility_update_set_color_value', args);
   }
-  public function accessibilityUpdateSetDescription(id: Int, description: String): Void {
+  public function accessibilityUpdateSetDescription(id: Variant, description: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(description);
       getNative().call('accessibility_update_set_description', args);
   }
-  public function accessibilityUpdateSetErrorMessage(id: Int, otherId: Int): Void {
+  public function accessibilityUpdateSetErrorMessage(id: Variant, otherId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(otherId);
       getNative().call('accessibility_update_set_error_message', args);
   }
-  public function accessibilityUpdateSetExtraInfo(id: Int, name: String): Void {
+  public function accessibilityUpdateSetExtraInfo(id: Variant, name: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(name);
       getNative().call('accessibility_update_set_extra_info', args);
   }
-  public function accessibilityUpdateSetFlag(id: Int, flag: Int, value: Bool): Void {
+  public function accessibilityUpdateSetFlag(id: Variant, flag: Int, value: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(flag);
       args.append(value);
       getNative().call('accessibility_update_set_flag', args);
   }
-  public function accessibilityUpdateSetFocus(id: Int): Void {
+  public function accessibilityUpdateSetFocus(id: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       getNative().call('accessibility_update_set_focus', args);
   }
-  public function accessibilityUpdateSetForegroundColor(id: Int, color: Color): Void {
+  public function accessibilityUpdateSetForegroundColor(id: Variant, color: Color): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(color);
       getNative().call('accessibility_update_set_foreground_color', args);
   }
-  public function accessibilityUpdateSetInPageLinkTarget(id: Int, otherId: Int): Void {
+  public function accessibilityUpdateSetInPageLinkTarget(id: Variant, otherId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(otherId);
       getNative().call('accessibility_update_set_in_page_link_target', args);
   }
-  public function accessibilityUpdateSetLanguage(id: Int, language: String): Void {
+  public function accessibilityUpdateSetLanguage(id: Variant, language: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(language);
       getNative().call('accessibility_update_set_language', args);
   }
-  public function accessibilityUpdateSetListItemCount(id: Int, size: Int): Void {
+  public function accessibilityUpdateSetListItemCount(id: Variant, size: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(size);
       getNative().call('accessibility_update_set_list_item_count', args);
   }
-  public function accessibilityUpdateSetListItemExpanded(id: Int, expanded: Bool): Void {
+  public function accessibilityUpdateSetListItemExpanded(id: Variant, expanded: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(expanded);
       getNative().call('accessibility_update_set_list_item_expanded', args);
   }
-  public function accessibilityUpdateSetListItemIndex(id: Int, index: Int): Void {
+  public function accessibilityUpdateSetListItemIndex(id: Variant, index: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(index);
       getNative().call('accessibility_update_set_list_item_index', args);
   }
-  public function accessibilityUpdateSetListItemLevel(id: Int, level: Int): Void {
+  public function accessibilityUpdateSetListItemLevel(id: Variant, level: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(level);
       getNative().call('accessibility_update_set_list_item_level', args);
   }
-  public function accessibilityUpdateSetListItemSelected(id: Int, selected: Bool): Void {
+  public function accessibilityUpdateSetListItemSelected(id: Variant, selected: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(selected);
       getNative().call('accessibility_update_set_list_item_selected', args);
   }
-  public function accessibilityUpdateSetListOrientation(id: Int, vertical: Bool): Void {
+  public function accessibilityUpdateSetListOrientation(id: Variant, vertical: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(vertical);
       getNative().call('accessibility_update_set_list_orientation', args);
   }
-  public function accessibilityUpdateSetLive(id: Int, live: Int): Void {
+  public function accessibilityUpdateSetLive(id: Variant, live: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(live);
       getNative().call('accessibility_update_set_live', args);
   }
-  public function accessibilityUpdateSetMemberOf(id: Int, groupId: Int): Void {
+  public function accessibilityUpdateSetMemberOf(id: Variant, groupId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(groupId);
       getNative().call('accessibility_update_set_member_of', args);
   }
-  public function accessibilityUpdateSetName(id: Int, name: String): Void {
+  public function accessibilityUpdateSetName(id: Variant, name: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(name);
       getNative().call('accessibility_update_set_name', args);
   }
-  public function accessibilityUpdateSetNextOnLine(id: Int, otherId: Int): Void {
+  public function accessibilityUpdateSetNextOnLine(id: Variant, otherId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(otherId);
       getNative().call('accessibility_update_set_next_on_line', args);
   }
-  public function accessibilityUpdateSetNumJump(id: Int, jump: Float): Void {
+  public function accessibilityUpdateSetNumJump(id: Variant, jump: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(jump);
       getNative().call('accessibility_update_set_num_jump', args);
   }
-  public function accessibilityUpdateSetNumRange(id: Int, min: Float, max: Float): Void {
+  public function accessibilityUpdateSetNumRange(id: Variant, min: Float, max: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(min);
       args.append(max);
       getNative().call('accessibility_update_set_num_range', args);
   }
-  public function accessibilityUpdateSetNumStep(id: Int, step: Float): Void {
+  public function accessibilityUpdateSetNumStep(id: Variant, step: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(step);
       getNative().call('accessibility_update_set_num_step', args);
   }
-  public function accessibilityUpdateSetNumValue(id: Int, position: Float): Void {
+  public function accessibilityUpdateSetNumValue(id: Variant, position: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(position);
       getNative().call('accessibility_update_set_num_value', args);
   }
-  public function accessibilityUpdateSetPlaceholder(id: Int, placeholder: String): Void {
+  public function accessibilityUpdateSetPlaceholder(id: Variant, placeholder: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(placeholder);
       getNative().call('accessibility_update_set_placeholder', args);
   }
-  public function accessibilityUpdateSetPopupType(id: Int, popup: Int): Void {
+  public function accessibilityUpdateSetPopupType(id: Variant, popup: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(popup);
       getNative().call('accessibility_update_set_popup_type', args);
   }
-  public function accessibilityUpdateSetPreviousOnLine(id: Int, otherId: Int): Void {
+  public function accessibilityUpdateSetPreviousOnLine(id: Variant, otherId: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(otherId);
       getNative().call('accessibility_update_set_previous_on_line', args);
   }
-  public function accessibilityUpdateSetRole(id: Int, role: Int): Void {
+  public function accessibilityUpdateSetRole(id: Variant, role: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(role);
       getNative().call('accessibility_update_set_role', args);
   }
-  public function accessibilityUpdateSetRoleDescription(id: Int, description: String): Void {
+  public function accessibilityUpdateSetRoleDescription(id: Variant, description: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(description);
       getNative().call('accessibility_update_set_role_description', args);
   }
-  public function accessibilityUpdateSetScrollX(id: Int, position: Float): Void {
+  public function accessibilityUpdateSetScrollX(id: Variant, position: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(position);
       getNative().call('accessibility_update_set_scroll_x', args);
   }
-  public function accessibilityUpdateSetScrollXRange(id: Int, min: Float, max: Float): Void {
+  public function accessibilityUpdateSetScrollXRange(id: Variant, min: Float, max: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(min);
       args.append(max);
       getNative().call('accessibility_update_set_scroll_x_range', args);
   }
-  public function accessibilityUpdateSetScrollY(id: Int, position: Float): Void {
+  public function accessibilityUpdateSetScrollY(id: Variant, position: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(position);
       getNative().call('accessibility_update_set_scroll_y', args);
   }
-  public function accessibilityUpdateSetScrollYRange(id: Int, min: Float, max: Float): Void {
+  public function accessibilityUpdateSetScrollYRange(id: Variant, min: Float, max: Float): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(min);
       args.append(max);
       getNative().call('accessibility_update_set_scroll_y_range', args);
   }
-  public function accessibilityUpdateSetShortcut(id: Int, shortcut: String): Void {
+  public function accessibilityUpdateSetShortcut(id: Variant, shortcut: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(shortcut);
       getNative().call('accessibility_update_set_shortcut', args);
   }
-  public function accessibilityUpdateSetStateDescription(id: Int, description: String): Void {
+  public function accessibilityUpdateSetStateDescription(id: Variant, description: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(description);
       getNative().call('accessibility_update_set_state_description', args);
   }
-  public function accessibilityUpdateSetTableCellPosition(id: Int, rowIndex: Int, columnIndex: Int): Void {
+  public function accessibilityUpdateSetTableCellPosition(id: Variant, rowIndex: Int, columnIndex: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(rowIndex);
       args.append(columnIndex);
       getNative().call('accessibility_update_set_table_cell_position', args);
   }
-  public function accessibilityUpdateSetTableCellSpan(id: Int, rowSpan: Int, columnSpan: Int): Void {
+  public function accessibilityUpdateSetTableCellSpan(id: Variant, rowSpan: Int, columnSpan: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(rowSpan);
       args.append(columnSpan);
       getNative().call('accessibility_update_set_table_cell_span', args);
   }
-  public function accessibilityUpdateSetTableColumnCount(id: Int, count: Int): Void {
+  public function accessibilityUpdateSetTableColumnCount(id: Variant, count: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(count);
       getNative().call('accessibility_update_set_table_column_count', args);
   }
-  public function accessibilityUpdateSetTableColumnIndex(id: Int, index: Int): Void {
+  public function accessibilityUpdateSetTableColumnIndex(id: Variant, index: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(index);
       getNative().call('accessibility_update_set_table_column_index', args);
   }
-  public function accessibilityUpdateSetTableRowCount(id: Int, count: Int): Void {
+  public function accessibilityUpdateSetTableRowCount(id: Variant, count: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(count);
       getNative().call('accessibility_update_set_table_row_count', args);
   }
-  public function accessibilityUpdateSetTableRowIndex(id: Int, index: Int): Void {
+  public function accessibilityUpdateSetTableRowIndex(id: Variant, index: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(index);
       getNative().call('accessibility_update_set_table_row_index', args);
   }
-  public function accessibilityUpdateSetTextAlign(id: Int, align: Int): Void {
+  public function accessibilityUpdateSetTextAlign(id: Variant, align: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(align);
       getNative().call('accessibility_update_set_text_align', args);
   }
-  public function accessibilityUpdateSetTextDecorations(id: Int, underline: Bool, strikethrough: Bool, overline: Bool): Void {
+  public function accessibilityUpdateSetTextDecorations(id: Variant, underline: Bool, strikethrough: Bool, overline: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(underline);
@@ -454,13 +454,13 @@ class DisplayService extends BaseClass {
       args.append(overline);
       getNative().call('accessibility_update_set_text_decorations', args);
   }
-  public function accessibilityUpdateSetTextOrientation(id: Int, vertical: Bool): Void {
+  public function accessibilityUpdateSetTextOrientation(id: Variant, vertical: Bool): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(vertical);
       getNative().call('accessibility_update_set_text_orientation', args);
   }
-  public function accessibilityUpdateSetTextSelection(id: Int, textStartId: Int, startChar: Int, textEndId: Int, endChar: Int): Void {
+  public function accessibilityUpdateSetTextSelection(id: Variant, textStartId: Variant, startChar: Int, textEndId: Variant, endChar: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(textStartId);
@@ -469,25 +469,25 @@ class DisplayService extends BaseClass {
       args.append(endChar);
       getNative().call('accessibility_update_set_text_selection', args);
   }
-  public function accessibilityUpdateSetTooltip(id: Int, tooltip: String): Void {
+  public function accessibilityUpdateSetTooltip(id: Variant, tooltip: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(tooltip);
       getNative().call('accessibility_update_set_tooltip', args);
   }
-  public function accessibilityUpdateSetTransform(id: Int, transform: Variant): Void {
+  public function accessibilityUpdateSetTransform(id: Variant, transform: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(transform);
       getNative().call('accessibility_update_set_transform', args);
   }
-  public function accessibilityUpdateSetUrl(id: Int, url: String): Void {
+  public function accessibilityUpdateSetUrl(id: Variant, url: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(url);
       getNative().call('accessibility_update_set_url', args);
   }
-  public function accessibilityUpdateSetValue(id: Int, value: String): Void {
+  public function accessibilityUpdateSetValue(id: Variant, value: String): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(value);
@@ -1311,7 +1311,7 @@ class DisplayService extends BaseClass {
       args.append(icon.native);
       getNative().call('status_indicator_set_icon', args);
   }
-  public function statusIndicatorSetMenu(id: Int, menuRid: Int): Void {
+  public function statusIndicatorSetMenu(id: Int, menuRid: Variant): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(menuRid);
