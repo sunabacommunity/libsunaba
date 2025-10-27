@@ -8,6 +8,9 @@ import sunaba.spatial.mesh.MeshDisplay;
 import sunaba.spatial.mesh.BoxMesh;
 import myComponents.RotateComponent;
 import sunaba.Debug;
+import sunaba.spatial.World3D;
+import sunaba.ResourceLoaderService;
+import sunaba.Environment;
 
 class Main extends App {
     public static function main() {
@@ -48,6 +51,15 @@ class Main extends App {
 		var rotateComponent = boxEntity.addComponent(RotateComponent);
 		scene.addEntity(boxEntity);
 		boxTransform.position = new Vector3(0, 0, -1);
+
+		var viewport = rootNode.getViewport();
+		if (!viewport.isNull()) {
+			var world3D = new World3D();
+			var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
+			var environment = new Environment(envRes.native);
+			world3D.environment = environment;
+			viewport.world3d = world3D;
+		}
 
 		try {
 			printScene(scene);
