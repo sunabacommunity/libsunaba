@@ -48,187 +48,187 @@ class NavigationService2D extends BaseClass {
 	    return _navigationDebugChanged;
 	}
 
-  public function agentCreate(): Variant {
+  public static function agentCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('agent_create', args);
   }
-  public function agentGetAvoidanceEnabled(agent: Variant): Bool {
+  public static function agentGetAvoidanceEnabled(agent: Variant): Bool {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_avoidance_enabled', args);
   }
-  public function agentGetAvoidanceLayers(agent: Variant): Int {
+  public static function agentGetAvoidanceLayers(agent: Variant): Int {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_avoidance_layers', args);
   }
-  public function agentGetAvoidanceMask(agent: Variant): Int {
+  public static function agentGetAvoidanceMask(agent: Variant): Int {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_avoidance_mask', args);
   }
-  public function agentGetAvoidancePriority(agent: Variant): Float {
+  public static function agentGetAvoidancePriority(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_avoidance_priority', args);
   }
-  public function agentGetMap(agent: Variant): Variant {
+  public static function agentGetMap(agent: Variant): Variant {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_map', args);
   }
-  public function agentGetMaxNeighbors(agent: Variant): Int {
+  public static function agentGetMaxNeighbors(agent: Variant): Int {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_max_neighbors', args);
   }
-  public function agentGetMaxSpeed(agent: Variant): Float {
+  public static function agentGetMaxSpeed(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_max_speed', args);
   }
-  public function agentGetNeighborDistance(agent: Variant): Float {
+  public static function agentGetNeighborDistance(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_neighbor_distance', args);
   }
-  public function agentGetPaused(agent: Variant): Bool {
+  public static function agentGetPaused(agent: Variant): Bool {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_paused', args);
   }
-  public function agentGetPosition(agent: Variant): Vector2 {
+  public static function agentGetPosition(agent: Variant): Vector2 {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_position', args);
   }
-  public function agentGetRadius(agent: Variant): Float {
+  public static function agentGetRadius(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_radius', args);
   }
-  public function agentGetTimeHorizonAgents(agent: Variant): Float {
+  public static function agentGetTimeHorizonAgents(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_time_horizon_agents', args);
   }
-  public function agentGetTimeHorizonObstacles(agent: Variant): Float {
+  public static function agentGetTimeHorizonObstacles(agent: Variant): Float {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_time_horizon_obstacles', args);
   }
-  public function agentGetVelocity(agent: Variant): Vector2 {
+  public static function agentGetVelocity(agent: Variant): Vector2 {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_get_velocity', args);
   }
-  public function agentHasAvoidanceCallback(agent: Variant): Bool {
+  public static function agentHasAvoidanceCallback(agent: Variant): Bool {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_has_avoidance_callback', args);
   }
-  public function agentIsMapChanged(agent: Variant): Bool {
+  public static function agentIsMapChanged(agent: Variant): Bool {
       var args = new ArrayList();
       args.append(agent);
       return getNative().call('agent_is_map_changed', args);
   }
-  public function agentSetAvoidanceCallback(agent: Variant, callback: Variant): Void {
+  public static function agentSetAvoidanceCallback(agent: Variant, callback: Variant): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(callback);
       getNative().call('agent_set_avoidance_callback', args);
   }
-  public function agentSetAvoidanceEnabled(agent: Variant, enabled: Bool): Void {
+  public static function agentSetAvoidanceEnabled(agent: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(enabled);
       getNative().call('agent_set_avoidance_enabled', args);
   }
-  public function agentSetAvoidanceLayers(agent: Variant, layers: Int): Void {
+  public static function agentSetAvoidanceLayers(agent: Variant, layers: Int): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(layers);
       getNative().call('agent_set_avoidance_layers', args);
   }
-  public function agentSetAvoidanceMask(agent: Variant, mask: Int): Void {
+  public static function agentSetAvoidanceMask(agent: Variant, mask: Int): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(mask);
       getNative().call('agent_set_avoidance_mask', args);
   }
-  public function agentSetAvoidancePriority(agent: Variant, priority: Float): Void {
+  public static function agentSetAvoidancePriority(agent: Variant, priority: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(priority);
       getNative().call('agent_set_avoidance_priority', args);
   }
-  public function agentSetMap(agent: Variant, map: Variant): Void {
+  public static function agentSetMap(agent: Variant, map: Variant): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(map);
       getNative().call('agent_set_map', args);
   }
-  public function agentSetMaxNeighbors(agent: Variant, count: Int): Void {
+  public static function agentSetMaxNeighbors(agent: Variant, count: Int): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(count);
       getNative().call('agent_set_max_neighbors', args);
   }
-  public function agentSetMaxSpeed(agent: Variant, maxSpeed: Float): Void {
+  public static function agentSetMaxSpeed(agent: Variant, maxSpeed: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(maxSpeed);
       getNative().call('agent_set_max_speed', args);
   }
-  public function agentSetNeighborDistance(agent: Variant, distance: Float): Void {
+  public static function agentSetNeighborDistance(agent: Variant, distance: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(distance);
       getNative().call('agent_set_neighbor_distance', args);
   }
-  public function agentSetPaused(agent: Variant, paused: Bool): Void {
+  public static function agentSetPaused(agent: Variant, paused: Bool): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(paused);
       getNative().call('agent_set_paused', args);
   }
-  public function agentSetPosition(agent: Variant, position: Vector2): Void {
+  public static function agentSetPosition(agent: Variant, position: Vector2): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(position);
       getNative().call('agent_set_position', args);
   }
-  public function agentSetRadius(agent: Variant, radius: Float): Void {
+  public static function agentSetRadius(agent: Variant, radius: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(radius);
       getNative().call('agent_set_radius', args);
   }
-  public function agentSetTimeHorizonAgents(agent: Variant, timeHorizon: Float): Void {
+  public static function agentSetTimeHorizonAgents(agent: Variant, timeHorizon: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(timeHorizon);
       getNative().call('agent_set_time_horizon_agents', args);
   }
-  public function agentSetTimeHorizonObstacles(agent: Variant, timeHorizon: Float): Void {
+  public static function agentSetTimeHorizonObstacles(agent: Variant, timeHorizon: Float): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(timeHorizon);
       getNative().call('agent_set_time_horizon_obstacles', args);
   }
-  public function agentSetVelocity(agent: Variant, velocity: Vector2): Void {
+  public static function agentSetVelocity(agent: Variant, velocity: Vector2): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(velocity);
       getNative().call('agent_set_velocity', args);
   }
-  public function agentSetVelocityForced(agent: Variant, velocity: Vector2): Void {
+  public static function agentSetVelocityForced(agent: Variant, velocity: Vector2): Void {
       var args = new ArrayList();
       args.append(agent);
       args.append(velocity);
       getNative().call('agent_set_velocity_forced', args);
   }
-  public function bakeFromSourceGeometryData(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, ?callback: Variant): Void {
+  public static function bakeFromSourceGeometryData(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(navigationPolygon.native);
       args.append(sourceGeometryData);
@@ -237,7 +237,7 @@ class NavigationService2D extends BaseClass {
       }
       getNative().call('bake_from_source_geometry_data', args);
   }
-  public function bakeFromSourceGeometryDataAsync(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, ?callback: Variant): Void {
+  public static function bakeFromSourceGeometryDataAsync(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(navigationPolygon.native);
       args.append(sourceGeometryData);
@@ -246,180 +246,180 @@ class NavigationService2D extends BaseClass {
       }
       getNative().call('bake_from_source_geometry_data_async', args);
   }
-  public function freeRid(rid: Variant): Void {
+  public static function freeRid(rid: Variant): Void {
       var args = new ArrayList();
       args.append(rid);
       getNative().call('free_rid', args);
   }
-  public function getDebugEnabled(): Bool {
+  public static function getDebugEnabled(): Bool {
       var args = new ArrayList();
       return getNative().call('get_debug_enabled', args);
   }
-  public function getProcessInfo(processInfo: Int): Int {
+  public static function getProcessInfo(processInfo: Int): Int {
       var args = new ArrayList();
       args.append(processInfo);
       return getNative().call('get_process_info', args);
   }
-  public function isBakingNavigationPolygon(navigationPolygon: NavigationPolygon): Bool {
+  public static function isBakingNavigationPolygon(navigationPolygon: NavigationPolygon): Bool {
       var args = new ArrayList();
       args.append(navigationPolygon.native);
       return getNative().call('is_baking_navigation_polygon', args);
   }
-  public function linkCreate(): Variant {
+  public static function linkCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('link_create', args);
   }
-  public function linkGetEnabled(link: Variant): Bool {
+  public static function linkGetEnabled(link: Variant): Bool {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_enabled', args);
   }
-  public function linkGetEndPosition(link: Variant): Vector2 {
+  public static function linkGetEndPosition(link: Variant): Vector2 {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_end_position', args);
   }
-  public function linkGetEnterCost(link: Variant): Float {
+  public static function linkGetEnterCost(link: Variant): Float {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_enter_cost', args);
   }
-  public function linkGetIterationId(link: Variant): Int {
+  public static function linkGetIterationId(link: Variant): Int {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_iteration_id', args);
   }
-  public function linkGetMap(link: Variant): Variant {
+  public static function linkGetMap(link: Variant): Variant {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_map', args);
   }
-  public function linkGetNavigationLayers(link: Variant): Int {
+  public static function linkGetNavigationLayers(link: Variant): Int {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_navigation_layers', args);
   }
-  public function linkGetOwnerId(link: Variant): Int {
+  public static function linkGetOwnerId(link: Variant): Int {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_owner_id', args);
   }
-  public function linkGetStartPosition(link: Variant): Vector2 {
+  public static function linkGetStartPosition(link: Variant): Vector2 {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_start_position', args);
   }
-  public function linkGetTravelCost(link: Variant): Float {
+  public static function linkGetTravelCost(link: Variant): Float {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_get_travel_cost', args);
   }
-  public function linkIsBidirectional(link: Variant): Bool {
+  public static function linkIsBidirectional(link: Variant): Bool {
       var args = new ArrayList();
       args.append(link);
       return getNative().call('link_is_bidirectional', args);
   }
-  public function linkSetBidirectional(link: Variant, bidirectional: Bool): Void {
+  public static function linkSetBidirectional(link: Variant, bidirectional: Bool): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(bidirectional);
       getNative().call('link_set_bidirectional', args);
   }
-  public function linkSetEnabled(link: Variant, enabled: Bool): Void {
+  public static function linkSetEnabled(link: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(enabled);
       getNative().call('link_set_enabled', args);
   }
-  public function linkSetEndPosition(link: Variant, position: Vector2): Void {
+  public static function linkSetEndPosition(link: Variant, position: Vector2): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(position);
       getNative().call('link_set_end_position', args);
   }
-  public function linkSetEnterCost(link: Variant, enterCost: Float): Void {
+  public static function linkSetEnterCost(link: Variant, enterCost: Float): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(enterCost);
       getNative().call('link_set_enter_cost', args);
   }
-  public function linkSetMap(link: Variant, map: Variant): Void {
+  public static function linkSetMap(link: Variant, map: Variant): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(map);
       getNative().call('link_set_map', args);
   }
-  public function linkSetNavigationLayers(link: Variant, navigationLayers: Int): Void {
+  public static function linkSetNavigationLayers(link: Variant, navigationLayers: Int): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(navigationLayers);
       getNative().call('link_set_navigation_layers', args);
   }
-  public function linkSetOwnerId(link: Variant, ownerId: Int): Void {
+  public static function linkSetOwnerId(link: Variant, ownerId: Int): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(ownerId);
       getNative().call('link_set_owner_id', args);
   }
-  public function linkSetStartPosition(link: Variant, position: Vector2): Void {
+  public static function linkSetStartPosition(link: Variant, position: Vector2): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(position);
       getNative().call('link_set_start_position', args);
   }
-  public function linkSetTravelCost(link: Variant, travelCost: Float): Void {
+  public static function linkSetTravelCost(link: Variant, travelCost: Float): Void {
       var args = new ArrayList();
       args.append(link);
       args.append(travelCost);
       getNative().call('link_set_travel_cost', args);
   }
-  public function mapCreate(): Variant {
+  public static function mapCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('map_create', args);
   }
-  public function mapForceUpdate(map: Variant): Void {
+  public static function mapForceUpdate(map: Variant): Void {
       var args = new ArrayList();
       args.append(map);
       getNative().call('map_force_update', args);
   }
-  public function mapGetCellSize(map: Variant): Float {
+  public static function mapGetCellSize(map: Variant): Float {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_cell_size', args);
   }
-  public function mapGetClosestPoint(map: Variant, toPoint: Vector2): Vector2 {
+  public static function mapGetClosestPoint(map: Variant, toPoint: Vector2): Vector2 {
       var args = new ArrayList();
       args.append(map);
       args.append(toPoint);
       return getNative().call('map_get_closest_point', args);
   }
-  public function mapGetClosestPointOwner(map: Variant, toPoint: Vector2): Variant {
+  public static function mapGetClosestPointOwner(map: Variant, toPoint: Vector2): Variant {
       var args = new ArrayList();
       args.append(map);
       args.append(toPoint);
       return getNative().call('map_get_closest_point_owner', args);
   }
-  public function mapGetEdgeConnectionMargin(map: Variant): Float {
+  public static function mapGetEdgeConnectionMargin(map: Variant): Float {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_edge_connection_margin', args);
   }
-  public function mapGetIterationId(map: Variant): Int {
+  public static function mapGetIterationId(map: Variant): Int {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_iteration_id', args);
   }
-  public function mapGetLinkConnectionRadius(map: Variant): Float {
+  public static function mapGetLinkConnectionRadius(map: Variant): Float {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_link_connection_radius', args);
   }
-  public function mapGetMergeRasterizerCellScale(map: Variant): Float {
+  public static function mapGetMergeRasterizerCellScale(map: Variant): Float {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_merge_rasterizer_cell_scale', args);
   }
-  public function mapGetPath(map: Variant, origin: Vector2, destination: Vector2, optimize: Bool, ?navigationLayers: Int): TypedArray<Vector2> {
+  public static function mapGetPath(map: Variant, origin: Vector2, destination: Vector2, optimize: Bool, ?navigationLayers: Int): TypedArray<Vector2> {
       var args = new ArrayList();
       args.append(map);
       args.append(origin);
@@ -430,163 +430,163 @@ class NavigationService2D extends BaseClass {
       }
       return getNative().call('map_get_path', args);
   }
-  public function mapGetRandomPoint(map: Variant, navigationLayers: Int, uniformly: Bool): Vector2 {
+  public static function mapGetRandomPoint(map: Variant, navigationLayers: Int, uniformly: Bool): Vector2 {
       var args = new ArrayList();
       args.append(map);
       args.append(navigationLayers);
       args.append(uniformly);
       return getNative().call('map_get_random_point', args);
   }
-  public function mapGetUseAsyncIterations(map: Variant): Bool {
+  public static function mapGetUseAsyncIterations(map: Variant): Bool {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_use_async_iterations', args);
   }
-  public function mapGetUseEdgeConnections(map: Variant): Bool {
+  public static function mapGetUseEdgeConnections(map: Variant): Bool {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_get_use_edge_connections', args);
   }
-  public function mapIsActive(map: Variant): Bool {
+  public static function mapIsActive(map: Variant): Bool {
       var args = new ArrayList();
       args.append(map);
       return getNative().call('map_is_active', args);
   }
-  public function mapSetActive(map: Variant, active: Bool): Void {
+  public static function mapSetActive(map: Variant, active: Bool): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(active);
       getNative().call('map_set_active', args);
   }
-  public function mapSetCellSize(map: Variant, cellSize: Float): Void {
+  public static function mapSetCellSize(map: Variant, cellSize: Float): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(cellSize);
       getNative().call('map_set_cell_size', args);
   }
-  public function mapSetEdgeConnectionMargin(map: Variant, margin: Float): Void {
+  public static function mapSetEdgeConnectionMargin(map: Variant, margin: Float): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(margin);
       getNative().call('map_set_edge_connection_margin', args);
   }
-  public function mapSetLinkConnectionRadius(map: Variant, radius: Float): Void {
+  public static function mapSetLinkConnectionRadius(map: Variant, radius: Float): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(radius);
       getNative().call('map_set_link_connection_radius', args);
   }
-  public function mapSetMergeRasterizerCellScale(map: Variant, scale: Float): Void {
+  public static function mapSetMergeRasterizerCellScale(map: Variant, scale: Float): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(scale);
       getNative().call('map_set_merge_rasterizer_cell_scale', args);
   }
-  public function mapSetUseAsyncIterations(map: Variant, enabled: Bool): Void {
+  public static function mapSetUseAsyncIterations(map: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(enabled);
       getNative().call('map_set_use_async_iterations', args);
   }
-  public function mapSetUseEdgeConnections(map: Variant, enabled: Bool): Void {
+  public static function mapSetUseEdgeConnections(map: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(map);
       args.append(enabled);
       getNative().call('map_set_use_edge_connections', args);
   }
-  public function obstacleCreate(): Variant {
+  public static function obstacleCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('obstacle_create', args);
   }
-  public function obstacleGetAvoidanceEnabled(obstacle: Variant): Bool {
+  public static function obstacleGetAvoidanceEnabled(obstacle: Variant): Bool {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_avoidance_enabled', args);
   }
-  public function obstacleGetAvoidanceLayers(obstacle: Variant): Int {
+  public static function obstacleGetAvoidanceLayers(obstacle: Variant): Int {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_avoidance_layers', args);
   }
-  public function obstacleGetMap(obstacle: Variant): Variant {
+  public static function obstacleGetMap(obstacle: Variant): Variant {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_map', args);
   }
-  public function obstacleGetPaused(obstacle: Variant): Bool {
+  public static function obstacleGetPaused(obstacle: Variant): Bool {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_paused', args);
   }
-  public function obstacleGetPosition(obstacle: Variant): Vector2 {
+  public static function obstacleGetPosition(obstacle: Variant): Vector2 {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_position', args);
   }
-  public function obstacleGetRadius(obstacle: Variant): Float {
+  public static function obstacleGetRadius(obstacle: Variant): Float {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_radius', args);
   }
-  public function obstacleGetVelocity(obstacle: Variant): Vector2 {
+  public static function obstacleGetVelocity(obstacle: Variant): Vector2 {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_velocity', args);
   }
-  public function obstacleGetVertices(obstacle: Variant): TypedArray<Vector2> {
+  public static function obstacleGetVertices(obstacle: Variant): TypedArray<Vector2> {
       var args = new ArrayList();
       args.append(obstacle);
       return getNative().call('obstacle_get_vertices', args);
   }
-  public function obstacleSetAvoidanceEnabled(obstacle: Variant, enabled: Bool): Void {
+  public static function obstacleSetAvoidanceEnabled(obstacle: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(enabled);
       getNative().call('obstacle_set_avoidance_enabled', args);
   }
-  public function obstacleSetAvoidanceLayers(obstacle: Variant, layers: Int): Void {
+  public static function obstacleSetAvoidanceLayers(obstacle: Variant, layers: Int): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(layers);
       getNative().call('obstacle_set_avoidance_layers', args);
   }
-  public function obstacleSetMap(obstacle: Variant, map: Variant): Void {
+  public static function obstacleSetMap(obstacle: Variant, map: Variant): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(map);
       getNative().call('obstacle_set_map', args);
   }
-  public function obstacleSetPaused(obstacle: Variant, paused: Bool): Void {
+  public static function obstacleSetPaused(obstacle: Variant, paused: Bool): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(paused);
       getNative().call('obstacle_set_paused', args);
   }
-  public function obstacleSetPosition(obstacle: Variant, position: Vector2): Void {
+  public static function obstacleSetPosition(obstacle: Variant, position: Vector2): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(position);
       getNative().call('obstacle_set_position', args);
   }
-  public function obstacleSetRadius(obstacle: Variant, radius: Float): Void {
+  public static function obstacleSetRadius(obstacle: Variant, radius: Float): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(radius);
       getNative().call('obstacle_set_radius', args);
   }
-  public function obstacleSetVelocity(obstacle: Variant, velocity: Vector2): Void {
+  public static function obstacleSetVelocity(obstacle: Variant, velocity: Vector2): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(velocity);
       getNative().call('obstacle_set_velocity', args);
   }
-  public function obstacleSetVertices(obstacle: Variant, vertices: TypedArray<Vector2>): Void {
+  public static function obstacleSetVertices(obstacle: Variant, vertices: TypedArray<Vector2>): Void {
       var args = new ArrayList();
       args.append(obstacle);
       args.append(vertices);
       getNative().call('obstacle_set_vertices', args);
   }
-  public function parseSourceGeometryData(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, rootNode: Node, ?callback: Variant): Void {
+  public static function parseSourceGeometryData(navigationPolygon: NavigationPolygon, sourceGeometryData: Variant, rootNode: Node, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(navigationPolygon.native);
       args.append(sourceGeometryData);
@@ -596,7 +596,7 @@ class NavigationService2D extends BaseClass {
       }
       getNative().call('parse_source_geometry_data', args);
   }
-  public function queryPath(parameters: Variant, result: Variant, ?callback: Variant): Void {
+  public static function queryPath(parameters: Variant, result: Variant, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(parameters);
       args.append(result);
@@ -605,177 +605,177 @@ class NavigationService2D extends BaseClass {
       }
       getNative().call('query_path', args);
   }
-  public function regionCreate(): Variant {
+  public static function regionCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('region_create', args);
   }
-  public function regionGetBounds(region: Variant): Rect2 {
+  public static function regionGetBounds(region: Variant): Rect2 {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_bounds', args);
   }
-  public function regionGetClosestPoint(region: Variant, toPoint: Vector2): Vector2 {
+  public static function regionGetClosestPoint(region: Variant, toPoint: Vector2): Vector2 {
       var args = new ArrayList();
       args.append(region);
       args.append(toPoint);
       return getNative().call('region_get_closest_point', args);
   }
-  public function regionGetConnectionPathwayEnd(region: Variant, connection: Int): Vector2 {
+  public static function regionGetConnectionPathwayEnd(region: Variant, connection: Int): Vector2 {
       var args = new ArrayList();
       args.append(region);
       args.append(connection);
       return getNative().call('region_get_connection_pathway_end', args);
   }
-  public function regionGetConnectionPathwayStart(region: Variant, connection: Int): Vector2 {
+  public static function regionGetConnectionPathwayStart(region: Variant, connection: Int): Vector2 {
       var args = new ArrayList();
       args.append(region);
       args.append(connection);
       return getNative().call('region_get_connection_pathway_start', args);
   }
-  public function regionGetConnectionsCount(region: Variant): Int {
+  public static function regionGetConnectionsCount(region: Variant): Int {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_connections_count', args);
   }
-  public function regionGetEnabled(region: Variant): Bool {
+  public static function regionGetEnabled(region: Variant): Bool {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_enabled', args);
   }
-  public function regionGetEnterCost(region: Variant): Float {
+  public static function regionGetEnterCost(region: Variant): Float {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_enter_cost', args);
   }
-  public function regionGetIterationId(region: Variant): Int {
+  public static function regionGetIterationId(region: Variant): Int {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_iteration_id', args);
   }
-  public function regionGetMap(region: Variant): Variant {
+  public static function regionGetMap(region: Variant): Variant {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_map', args);
   }
-  public function regionGetNavigationLayers(region: Variant): Int {
+  public static function regionGetNavigationLayers(region: Variant): Int {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_navigation_layers', args);
   }
-  public function regionGetOwnerId(region: Variant): Int {
+  public static function regionGetOwnerId(region: Variant): Int {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_owner_id', args);
   }
-  public function regionGetRandomPoint(region: Variant, navigationLayers: Int, uniformly: Bool): Vector2 {
+  public static function regionGetRandomPoint(region: Variant, navigationLayers: Int, uniformly: Bool): Vector2 {
       var args = new ArrayList();
       args.append(region);
       args.append(navigationLayers);
       args.append(uniformly);
       return getNative().call('region_get_random_point', args);
   }
-  public function regionGetTravelCost(region: Variant): Float {
+  public static function regionGetTravelCost(region: Variant): Float {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_travel_cost', args);
   }
-  public function regionGetUseAsyncIterations(region: Variant): Bool {
+  public static function regionGetUseAsyncIterations(region: Variant): Bool {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_use_async_iterations', args);
   }
-  public function regionGetUseEdgeConnections(region: Variant): Bool {
+  public static function regionGetUseEdgeConnections(region: Variant): Bool {
       var args = new ArrayList();
       args.append(region);
       return getNative().call('region_get_use_edge_connections', args);
   }
-  public function regionOwnsPoint(region: Variant, point: Vector2): Bool {
+  public static function regionOwnsPoint(region: Variant, point: Vector2): Bool {
       var args = new ArrayList();
       args.append(region);
       args.append(point);
       return getNative().call('region_owns_point', args);
   }
-  public function regionSetEnabled(region: Variant, enabled: Bool): Void {
+  public static function regionSetEnabled(region: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(enabled);
       getNative().call('region_set_enabled', args);
   }
-  public function regionSetEnterCost(region: Variant, enterCost: Float): Void {
+  public static function regionSetEnterCost(region: Variant, enterCost: Float): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(enterCost);
       getNative().call('region_set_enter_cost', args);
   }
-  public function regionSetMap(region: Variant, map: Variant): Void {
+  public static function regionSetMap(region: Variant, map: Variant): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(map);
       getNative().call('region_set_map', args);
   }
-  public function regionSetNavigationLayers(region: Variant, navigationLayers: Int): Void {
+  public static function regionSetNavigationLayers(region: Variant, navigationLayers: Int): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(navigationLayers);
       getNative().call('region_set_navigation_layers', args);
   }
-  public function regionSetNavigationPolygon(region: Variant, navigationPolygon: NavigationPolygon): Void {
+  public static function regionSetNavigationPolygon(region: Variant, navigationPolygon: NavigationPolygon): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(navigationPolygon.native);
       getNative().call('region_set_navigation_polygon', args);
   }
-  public function regionSetOwnerId(region: Variant, ownerId: Int): Void {
+  public static function regionSetOwnerId(region: Variant, ownerId: Int): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(ownerId);
       getNative().call('region_set_owner_id', args);
   }
-  public function regionSetTransform(region: Variant, transform: Variant): Void {
+  public static function regionSetTransform(region: Variant, transform: Variant): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(transform);
       getNative().call('region_set_transform', args);
   }
-  public function regionSetTravelCost(region: Variant, travelCost: Float): Void {
+  public static function regionSetTravelCost(region: Variant, travelCost: Float): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(travelCost);
       getNative().call('region_set_travel_cost', args);
   }
-  public function regionSetUseAsyncIterations(region: Variant, enabled: Bool): Void {
+  public static function regionSetUseAsyncIterations(region: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(enabled);
       getNative().call('region_set_use_async_iterations', args);
   }
-  public function regionSetUseEdgeConnections(region: Variant, enabled: Bool): Void {
+  public static function regionSetUseEdgeConnections(region: Variant, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(region);
       args.append(enabled);
       getNative().call('region_set_use_edge_connections', args);
   }
-  public function setActive(active: Bool): Void {
+  public static function setActive(active: Bool): Void {
       var args = new ArrayList();
       args.append(active);
       getNative().call('set_active', args);
   }
-  public function setDebugEnabled(enabled: Bool): Void {
+  public static function setDebugEnabled(enabled: Bool): Void {
       var args = new ArrayList();
       args.append(enabled);
       getNative().call('set_debug_enabled', args);
   }
-  public function simplifyPath(path: TypedArray<Vector2>, epsilon: Float): TypedArray<Vector2> {
+  public static function simplifyPath(path: TypedArray<Vector2>, epsilon: Float): TypedArray<Vector2> {
       var args = new ArrayList();
       args.append(path);
       args.append(epsilon);
       return getNative().call('simplify_path', args);
   }
-  public function sourceGeometryParserCreate(): Variant {
+  public static function sourceGeometryParserCreate(): Variant {
       var args = new ArrayList();
       return getNative().call('source_geometry_parser_create', args);
   }
-  public function sourceGeometryParserSetCallback(parser: Variant, callback: Variant): Void {
+  public static function sourceGeometryParserSetCallback(parser: Variant, callback: Variant): Void {
       var args = new ArrayList();
       args.append(parser);
       args.append(callback);

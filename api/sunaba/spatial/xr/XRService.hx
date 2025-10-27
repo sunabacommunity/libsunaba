@@ -85,41 +85,41 @@ class XRService extends BaseClass {
 	    return _trackerUpdated;
 	}
 
-  public function addInterface(pInterface: Variant): Void {
+  public static function addInterface(pInterface: Variant): Void {
       var args = new ArrayList();
       args.append(pInterface);
       getNative().call('add_interface', args);
   }
-  public function addTracker(tracker: Variant): Void {
+  public static function addTracker(tracker: Variant): Void {
       var args = new ArrayList();
       args.append(tracker);
       getNative().call('add_tracker', args);
   }
-  public function centerOnHmd(rotationMode: Int, keepHeight: Bool): Void {
+  public static function centerOnHmd(rotationMode: Int, keepHeight: Bool): Void {
       var args = new ArrayList();
       args.append(rotationMode);
       args.append(keepHeight);
       getNative().call('center_on_hmd', args);
   }
-  public function clearReferenceFrame(): Void {
+  public static function clearReferenceFrame(): Void {
       var args = new ArrayList();
       getNative().call('clear_reference_frame', args);
   }
-  public function getInterfaceCount(): Int {
+  public static function getInterfaceCount(): Int {
       var args = new ArrayList();
       return getNative().call('get_interface_count', args);
   }
-  public function getTrackers(trackerTypes: Int): Dictionary {
+  public static function getTrackers(trackerTypes: Int): Dictionary {
       var args = new ArrayList();
       args.append(trackerTypes);
       return getNative().call('get_trackers', args);
   }
-  public function removeInterface(pInterface: Variant): Void {
+  public static function removeInterface(pInterface: Variant): Void {
       var args = new ArrayList();
       args.append(pInterface);
       getNative().call('remove_interface', args);
   }
-  public function removeTracker(tracker: Variant): Void {
+  public static function removeTracker(tracker: Variant): Void {
       var args = new ArrayList();
       args.append(tracker);
       getNative().call('remove_tracker', args);

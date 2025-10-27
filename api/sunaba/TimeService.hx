@@ -21,55 +21,55 @@ class TimeService extends BaseClass {
 
 
 
-  public function getDateDictFromSystem(?utc: Bool): Dictionary {
+  public static function getDateDictFromSystem(?utc: Bool): Dictionary {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
       }
       return getNative().call('get_date_dict_from_system', args);
   }
-  public function getDateDictFromUnixTime(unixTimeVal: Int): Dictionary {
+  public static function getDateDictFromUnixTime(unixTimeVal: Int): Dictionary {
       var args = new ArrayList();
       args.append(unixTimeVal);
       return getNative().call('get_date_dict_from_unix_time', args);
   }
-  public function getDateStringFromSystem(?utc: Bool): String {
+  public static function getDateStringFromSystem(?utc: Bool): String {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
       }
       return getNative().call('get_date_string_from_system', args);
   }
-  public function getDateStringFromUnixTime(unixTimeVal: Int): String {
+  public static function getDateStringFromUnixTime(unixTimeVal: Int): String {
       var args = new ArrayList();
       args.append(unixTimeVal);
       return getNative().call('get_date_string_from_unix_time', args);
   }
-  public function getDatetimeDictFromDatetimeString(datetime: String, weekday: Bool): Dictionary {
+  public static function getDatetimeDictFromDatetimeString(datetime: String, weekday: Bool): Dictionary {
       var args = new ArrayList();
       args.append(datetime);
       args.append(weekday);
       return getNative().call('get_datetime_dict_from_datetime_string', args);
   }
-  public function getDatetimeDictFromSystem(?utc: Bool): Dictionary {
+  public static function getDatetimeDictFromSystem(?utc: Bool): Dictionary {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
       }
       return getNative().call('get_datetime_dict_from_system', args);
   }
-  public function getDatetimeDictFromUnixTime(unixTimeVal: Int): Dictionary {
+  public static function getDatetimeDictFromUnixTime(unixTimeVal: Int): Dictionary {
       var args = new ArrayList();
       args.append(unixTimeVal);
       return getNative().call('get_datetime_dict_from_unix_time', args);
   }
-  public function getDatetimeStringFromDatetimeDict(datetime: Dictionary, useSpace: Bool): String {
+  public static function getDatetimeStringFromDatetimeDict(datetime: Dictionary, useSpace: Bool): String {
       var args = new ArrayList();
       args.append(datetime);
       args.append(useSpace);
       return getNative().call('get_datetime_string_from_datetime_dict', args);
   }
-  public function getDatetimeStringFromSystem(?utc: Bool, ?useSpace: Bool): String {
+  public static function getDatetimeStringFromSystem(?utc: Bool, ?useSpace: Bool): String {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
@@ -79,7 +79,7 @@ class TimeService extends BaseClass {
       }
       return getNative().call('get_datetime_string_from_system', args);
   }
-  public function getDatetimeStringFromUnixTime(unixTimeVal: Int, ?useSpace: Bool): String {
+  public static function getDatetimeStringFromUnixTime(unixTimeVal: Int, ?useSpace: Bool): String {
       var args = new ArrayList();
       args.append(unixTimeVal);
       if (useSpace != null) {
@@ -87,58 +87,58 @@ class TimeService extends BaseClass {
       }
       return getNative().call('get_datetime_string_from_unix_time', args);
   }
-  public function getOffsetStringFromOffsetMinutes(offsetMinutes: Int): String {
+  public static function getOffsetStringFromOffsetMinutes(offsetMinutes: Int): String {
       var args = new ArrayList();
       args.append(offsetMinutes);
       return getNative().call('get_offset_string_from_offset_minutes', args);
   }
-  public function getTicksMsec(): Int {
+  public static function getTicksMsec(): Int {
       var args = new ArrayList();
       return getNative().call('get_ticks_msec', args);
   }
-  public function getTicksUsec(): Int {
+  public static function getTicksUsec(): Int {
       var args = new ArrayList();
       return getNative().call('get_ticks_usec', args);
   }
-  public function getTimeDictFromSystem(?utc: Bool): Dictionary {
+  public static function getTimeDictFromSystem(?utc: Bool): Dictionary {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
       }
       return getNative().call('get_time_dict_from_system', args);
   }
-  public function getTimeDictFromUnixTime(unixTimeVal: Int): Dictionary {
+  public static function getTimeDictFromUnixTime(unixTimeVal: Int): Dictionary {
       var args = new ArrayList();
       args.append(unixTimeVal);
       return getNative().call('get_time_dict_from_unix_time', args);
   }
-  public function getTimeStringFromSystem(?utc: Bool): String {
+  public static function getTimeStringFromSystem(?utc: Bool): String {
       var args = new ArrayList();
       if (utc != null) {
           args.append(utc);
       }
       return getNative().call('get_time_string_from_system', args);
   }
-  public function getTimeStringFromUnixTime(unixTimeVal: Int): String {
+  public static function getTimeStringFromUnixTime(unixTimeVal: Int): String {
       var args = new ArrayList();
       args.append(unixTimeVal);
       return getNative().call('get_time_string_from_unix_time', args);
   }
-  public function getTimeZoneFromSystem(): Dictionary {
+  public static function getTimeZoneFromSystem(): Dictionary {
       var args = new ArrayList();
       return getNative().call('get_time_zone_from_system', args);
   }
-  public function getUnixTimeFromDatetimeDict(datetime: Dictionary): Int {
+  public static function getUnixTimeFromDatetimeDict(datetime: Dictionary): Int {
       var args = new ArrayList();
       args.append(datetime);
       return getNative().call('get_unix_time_from_datetime_dict', args);
   }
-  public function getUnixTimeFromDatetimeString(datetime: String): Int {
+  public static function getUnixTimeFromDatetimeString(datetime: String): Int {
       var args = new ArrayList();
       args.append(datetime);
       return getNative().call('get_unix_time_from_datetime_string', args);
   }
-  public function getUnixTimeFromSystem(): Float {
+  public static function getUnixTimeFromSystem(): Float {
       var args = new ArrayList();
       return getNative().call('get_unix_time_from_system', args);
   }

@@ -29,101 +29,101 @@ class TranslationService extends BaseClass {
     }
 
 
-  public function addTranslation(translation: Translation): Void {
+  public static function addTranslation(translation: Translation): Void {
       var args = new ArrayList();
       args.append(translation.native);
       getNative().call('add_translation', args);
   }
-  public function clear(): Void {
+  public static function clear(): Void {
       var args = new ArrayList();
       getNative().call('clear', args);
   }
-  public function compareLocales(localeA: String, localeB: String): Int {
+  public static function compareLocales(localeA: String, localeB: String): Int {
       var args = new ArrayList();
       args.append(localeA);
       args.append(localeB);
       return getNative().call('compare_locales', args);
   }
-  public function getAllCountries(): TypedArray<String> {
+  public static function getAllCountries(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_all_countries', args);
   }
-  public function getAllLanguages(): TypedArray<String> {
+  public static function getAllLanguages(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_all_languages', args);
   }
-  public function getAllScripts(): TypedArray<String> {
+  public static function getAllScripts(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_all_scripts', args);
   }
-  public function getCountryName(country: String): String {
+  public static function getCountryName(country: String): String {
       var args = new ArrayList();
       args.append(country);
       return getNative().call('get_country_name', args);
   }
-  public function getLanguageName(language: String): String {
+  public static function getLanguageName(language: String): String {
       var args = new ArrayList();
       args.append(language);
       return getNative().call('get_language_name', args);
   }
-  public function getLoadedLocales(): TypedArray<String> {
+  public static function getLoadedLocales(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_loaded_locales', args);
   }
-  public function getLocale(): String {
+  public static function getLocale(): String {
       var args = new ArrayList();
       return getNative().call('get_locale', args);
   }
-  public function getLocaleName(locale: String): String {
+  public static function getLocaleName(locale: String): String {
       var args = new ArrayList();
       args.append(locale);
       return getNative().call('get_locale_name', args);
   }
-  public function getScriptName(script: String): String {
+  public static function getScriptName(script: String): String {
       var args = new ArrayList();
       args.append(script);
       return getNative().call('get_script_name', args);
   }
-  public function getToolLocale(): String {
+  public static function getToolLocale(): String {
       var args = new ArrayList();
       return getNative().call('get_tool_locale', args);
   }
-  public function getTranslationObject(locale: String): Translation {
+  public static function getTranslationObject(locale: String): Translation {
       var args = new ArrayList();
       args.append(locale);
       var ref: NativeReference = getNative().call('get_translation_object', args);
       return new Translation(ref);
   }
-  public function hasDomain(domain: String): Bool {
+  public static function hasDomain(domain: String): Bool {
       var args = new ArrayList();
       args.append(domain);
       return getNative().call('has_domain', args);
   }
-  public function pseudolocalize(message: String): String {
+  public static function pseudolocalize(message: String): String {
       var args = new ArrayList();
       args.append(message);
       return getNative().call('pseudolocalize', args);
   }
-  public function reloadPseudolocalization(): Void {
+  public static function reloadPseudolocalization(): Void {
       var args = new ArrayList();
       getNative().call('reload_pseudolocalization', args);
   }
-  public function removeDomain(domain: String): Void {
+  public static function removeDomain(domain: String): Void {
       var args = new ArrayList();
       args.append(domain);
       getNative().call('remove_domain', args);
   }
-  public function removeTranslation(translation: Translation): Void {
+  public static function removeTranslation(translation: Translation): Void {
       var args = new ArrayList();
       args.append(translation.native);
       getNative().call('remove_translation', args);
   }
-  public function setLocale(locale: String): Void {
+  public static function setLocale(locale: String): Void {
       var args = new ArrayList();
       args.append(locale);
       getNative().call('set_locale', args);
   }
-  public function standardizeLocale(locale: String, ?addDefaults: Bool): String {
+  public static function standardizeLocale(locale: String, ?addDefaults: Bool): String {
       var args = new ArrayList();
       args.append(locale);
       if (addDefaults != null) {
@@ -131,7 +131,7 @@ class TranslationService extends BaseClass {
       }
       return getNative().call('standardize_locale', args);
   }
-  public function translate(message: String, ?context: String): String {
+  public static function translate(message: String, ?context: String): String {
       var args = new ArrayList();
       args.append(message);
       if (context != null) {
@@ -139,7 +139,7 @@ class TranslationService extends BaseClass {
       }
       return getNative().call('translate', args);
   }
-  public function translatePlural(message: String, pluralMessage: String, n: Int, ?context: String): String {
+  public static function translatePlural(message: String, pluralMessage: String, n: Int, ?context: String): String {
       var args = new ArrayList();
       args.append(message);
       args.append(pluralMessage);

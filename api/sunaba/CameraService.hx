@@ -52,16 +52,16 @@ class CameraService extends BaseClass {
 	    return _cameraFeedsUpdated;
 	}
 
-  public function addFeed(feed: Variant): Void {
+  public static function addFeed(feed: Variant): Void {
       var args = new ArrayList();
       args.append(feed);
       getNative().call('add_feed', args);
   }
-  public function getFeedCount(): Int {
+  public static function getFeedCount(): Int {
       var args = new ArrayList();
       return getNative().call('get_feed_count', args);
   }
-  public function removeFeed(feed: Variant): Void {
+  public static function removeFeed(feed: Variant): Void {
       var args = new ArrayList();
       args.append(feed);
       getNative().call('remove_feed', args);

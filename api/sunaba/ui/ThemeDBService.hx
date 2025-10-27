@@ -73,12 +73,12 @@ class ThemeDBService extends BaseClass {
 	    return _fallbackChanged;
 	}
 
-  public function getDefaultTheme(): Theme {
+  public static function getDefaultTheme(): Theme {
       var args = new ArrayList();
       var ref: NativeReference = getNative().call('get_default_theme', args);
       return new Theme(ref);
   }
-  public function getProjectTheme(): Theme {
+  public static function getProjectTheme(): Theme {
       var args = new ArrayList();
       var ref: NativeReference = getNative().call('get_project_theme', args);
       return new Theme(ref);

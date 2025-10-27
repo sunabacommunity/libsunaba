@@ -20,41 +20,41 @@ class InputMapService extends BaseClass {
 
 
 
-  public function actionAddEvent(action: String, event: InputEvent): Void {
+  public static function actionAddEvent(action: String, event: InputEvent): Void {
       var args = new ArrayList();
       args.append(action);
       args.append(event.native);
       getNative().call('action_add_event', args);
   }
-  public function actionEraseEvent(action: String, event: InputEvent): Void {
+  public static function actionEraseEvent(action: String, event: InputEvent): Void {
       var args = new ArrayList();
       args.append(action);
       args.append(event.native);
       getNative().call('action_erase_event', args);
   }
-  public function actionEraseEvents(action: String): Void {
+  public static function actionEraseEvents(action: String): Void {
       var args = new ArrayList();
       args.append(action);
       getNative().call('action_erase_events', args);
   }
-  public function actionGetDeadzone(action: String): Float {
+  public static function actionGetDeadzone(action: String): Float {
       var args = new ArrayList();
       args.append(action);
       return getNative().call('action_get_deadzone', args);
   }
-  public function actionHasEvent(action: String, event: InputEvent): Bool {
+  public static function actionHasEvent(action: String, event: InputEvent): Bool {
       var args = new ArrayList();
       args.append(action);
       args.append(event.native);
       return getNative().call('action_has_event', args);
   }
-  public function actionSetDeadzone(action: String, deadzone: Float): Void {
+  public static function actionSetDeadzone(action: String, deadzone: Float): Void {
       var args = new ArrayList();
       args.append(action);
       args.append(deadzone);
       getNative().call('action_set_deadzone', args);
   }
-  public function addAction(action: String, ?deadzone: Float): Void {
+  public static function addAction(action: String, ?deadzone: Float): Void {
       var args = new ArrayList();
       args.append(action);
       if (deadzone != null) {
@@ -62,12 +62,12 @@ class InputMapService extends BaseClass {
       }
       getNative().call('add_action', args);
   }
-  public function eraseAction(action: String): Void {
+  public static function eraseAction(action: String): Void {
       var args = new ArrayList();
       args.append(action);
       getNative().call('erase_action', args);
   }
-  public function eventIsAction(event: InputEvent, action: String, ?exactMatch: Bool): Bool {
+  public static function eventIsAction(event: InputEvent, action: String, ?exactMatch: Bool): Bool {
       var args = new ArrayList();
       args.append(event.native);
       args.append(action);
@@ -76,17 +76,17 @@ class InputMapService extends BaseClass {
       }
       return getNative().call('event_is_action', args);
   }
-  public function getActionDescription(action: String): String {
+  public static function getActionDescription(action: String): String {
       var args = new ArrayList();
       args.append(action);
       return getNative().call('get_action_description', args);
   }
-  public function hasAction(action: String): Bool {
+  public static function hasAction(action: String): Bool {
       var args = new ArrayList();
       args.append(action);
       return getNative().call('has_action', args);
   }
-  public function loadFromProjectSettings(): Void {
+  public static function loadFromProjectSettings(): Void {
       var args = new ArrayList();
       getNative().call('load_from_project_settings', args);
   }

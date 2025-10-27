@@ -20,7 +20,7 @@ class PerformanceService extends BaseClass {
 
 
 
-  public function addCustomMonitor(id: String, callable: Variant, ?arguments: ArrayList): Void {
+  public static function addCustomMonitor(id: String, callable: Variant, ?arguments: ArrayList): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(callable);
@@ -29,26 +29,26 @@ class PerformanceService extends BaseClass {
       }
       getNative().call('add_custom_monitor', args);
   }
-  public function getCustomMonitor(id: String): Variant {
+  public static function getCustomMonitor(id: String): Variant {
       var args = new ArrayList();
       args.append(id);
       return getNative().call('get_custom_monitor', args);
   }
-  public function getMonitor(monitor: Int): Float {
+  public static function getMonitor(monitor: Int): Float {
       var args = new ArrayList();
       args.append(monitor);
       return getNative().call('get_monitor', args);
   }
-  public function getMonitorModificationTime(): Int {
+  public static function getMonitorModificationTime(): Int {
       var args = new ArrayList();
       return getNative().call('get_monitor_modification_time', args);
   }
-  public function hasCustomMonitor(id: String): Bool {
+  public static function hasCustomMonitor(id: String): Bool {
       var args = new ArrayList();
       args.append(id);
       return getNative().call('has_custom_monitor', args);
   }
-  public function removeCustomMonitor(id: String): Void {
+  public static function removeCustomMonitor(id: String): Void {
       var args = new ArrayList();
       args.append(id);
       getNative().call('remove_custom_monitor', args);

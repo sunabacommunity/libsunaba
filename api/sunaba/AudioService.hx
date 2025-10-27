@@ -73,14 +73,14 @@ class AudioService extends BaseClass {
 	    return _busRenamed;
 	}
 
-  public function addBus(?atPosition: Int): Void {
+  public static function addBus(?atPosition: Int): Void {
       var args = new ArrayList();
       if (atPosition != null) {
           args.append(atPosition);
       }
       getNative().call('add_bus', args);
   }
-  public function addBusEffect(busIdx: Int, effect: AudioEffect, ?atPosition: Int): Void {
+  public static function addBusEffect(busIdx: Int, effect: AudioEffect, ?atPosition: Int): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effect.native);
@@ -89,29 +89,29 @@ class AudioService extends BaseClass {
       }
       getNative().call('add_bus_effect', args);
   }
-  public function generateBusLayout(): AudioBusLayout {
+  public static function generateBusLayout(): AudioBusLayout {
       var args = new ArrayList();
       var ref: NativeReference = getNative().call('generate_bus_layout', args);
       return new AudioBusLayout(ref);
   }
-  public function getBusChannels(busIdx: Int): Int {
+  public static function getBusChannels(busIdx: Int): Int {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_channels', args);
   }
-  public function getBusEffect(busIdx: Int, effectIdx: Int): AudioEffect {
+  public static function getBusEffect(busIdx: Int, effectIdx: Int): AudioEffect {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
       var ref: NativeReference = getNative().call('get_bus_effect', args);
       return new AudioEffect(ref);
   }
-  public function getBusEffectCount(busIdx: Int): Int {
+  public static function getBusEffectCount(busIdx: Int): Int {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_effect_count', args);
   }
-  public function getBusEffectInstance(busIdx: Int, effectIdx: Int, ?channel: Int): AudioEffectInstance {
+  public static function getBusEffectInstance(busIdx: Int, effectIdx: Int, ?channel: Int): AudioEffectInstance {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
@@ -121,198 +121,198 @@ class AudioService extends BaseClass {
       var ref: NativeReference = getNative().call('get_bus_effect_instance', args);
       return new AudioEffectInstance(ref);
   }
-  public function getBusIndex(busName: String): Int {
+  public static function getBusIndex(busName: String): Int {
       var args = new ArrayList();
       args.append(busName);
       return getNative().call('get_bus_index', args);
   }
-  public function getBusName(busIdx: Int): String {
+  public static function getBusName(busIdx: Int): String {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_name', args);
   }
-  public function getBusPeakVolumeLeftDb(busIdx: Int, channel: Int): Float {
+  public static function getBusPeakVolumeLeftDb(busIdx: Int, channel: Int): Float {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(channel);
       return getNative().call('get_bus_peak_volume_left_db', args);
   }
-  public function getBusPeakVolumeRightDb(busIdx: Int, channel: Int): Float {
+  public static function getBusPeakVolumeRightDb(busIdx: Int, channel: Int): Float {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(channel);
       return getNative().call('get_bus_peak_volume_right_db', args);
   }
-  public function getBusSend(busIdx: Int): String {
+  public static function getBusSend(busIdx: Int): String {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_send', args);
   }
-  public function getBusVolumeDb(busIdx: Int): Float {
+  public static function getBusVolumeDb(busIdx: Int): Float {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_volume_db', args);
   }
-  public function getBusVolumeLinear(busIdx: Int): Float {
+  public static function getBusVolumeLinear(busIdx: Int): Float {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('get_bus_volume_linear', args);
   }
-  public function getDriverName(): String {
+  public static function getDriverName(): String {
       var args = new ArrayList();
       return getNative().call('get_driver_name', args);
   }
-  public function getInputDeviceList(): TypedArray<String> {
+  public static function getInputDeviceList(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_input_device_list', args);
   }
-  public function getInputMixRate(): Float {
+  public static function getInputMixRate(): Float {
       var args = new ArrayList();
       return getNative().call('get_input_mix_rate', args);
   }
-  public function getMixRate(): Float {
+  public static function getMixRate(): Float {
       var args = new ArrayList();
       return getNative().call('get_mix_rate', args);
   }
-  public function getOutputDeviceList(): TypedArray<String> {
+  public static function getOutputDeviceList(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_output_device_list', args);
   }
-  public function getOutputLatency(): Float {
+  public static function getOutputLatency(): Float {
       var args = new ArrayList();
       return getNative().call('get_output_latency', args);
   }
-  public function getSpeakerMode(): Int {
+  public static function getSpeakerMode(): Int {
       var args = new ArrayList();
       return getNative().call('get_speaker_mode', args);
   }
-  public function getTimeSinceLastMix(): Float {
+  public static function getTimeSinceLastMix(): Float {
       var args = new ArrayList();
       return getNative().call('get_time_since_last_mix', args);
   }
-  public function getTimeToNextMix(): Float {
+  public static function getTimeToNextMix(): Float {
       var args = new ArrayList();
       return getNative().call('get_time_to_next_mix', args);
   }
-  public function isBusBypassingEffects(busIdx: Int): Bool {
+  public static function isBusBypassingEffects(busIdx: Int): Bool {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('is_bus_bypassing_effects', args);
   }
-  public function isBusEffectEnabled(busIdx: Int, effectIdx: Int): Bool {
+  public static function isBusEffectEnabled(busIdx: Int, effectIdx: Int): Bool {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
       return getNative().call('is_bus_effect_enabled', args);
   }
-  public function isBusMute(busIdx: Int): Bool {
+  public static function isBusMute(busIdx: Int): Bool {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('is_bus_mute', args);
   }
-  public function isBusSolo(busIdx: Int): Bool {
+  public static function isBusSolo(busIdx: Int): Bool {
       var args = new ArrayList();
       args.append(busIdx);
       return getNative().call('is_bus_solo', args);
   }
-  public function isStreamRegisteredAsSample(stream: AudioStream): Bool {
+  public static function isStreamRegisteredAsSample(stream: AudioStream): Bool {
       var args = new ArrayList();
       args.append(stream.native);
       return getNative().call('is_stream_registered_as_sample', args);
   }
-  public function lock(): Void {
+  public static function lock(): Void {
       var args = new ArrayList();
       getNative().call('lock', args);
   }
-  public function moveBus(index: Int, toIndex: Int): Void {
+  public static function moveBus(index: Int, toIndex: Int): Void {
       var args = new ArrayList();
       args.append(index);
       args.append(toIndex);
       getNative().call('move_bus', args);
   }
-  public function registerStreamAsSample(stream: AudioStream): Void {
+  public static function registerStreamAsSample(stream: AudioStream): Void {
       var args = new ArrayList();
       args.append(stream.native);
       getNative().call('register_stream_as_sample', args);
   }
-  public function removeBus(index: Int): Void {
+  public static function removeBus(index: Int): Void {
       var args = new ArrayList();
       args.append(index);
       getNative().call('remove_bus', args);
   }
-  public function removeBusEffect(busIdx: Int, effectIdx: Int): Void {
+  public static function removeBusEffect(busIdx: Int, effectIdx: Int): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
       getNative().call('remove_bus_effect', args);
   }
-  public function setBusBypassEffects(busIdx: Int, enable: Bool): Void {
+  public static function setBusBypassEffects(busIdx: Int, enable: Bool): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(enable);
       getNative().call('set_bus_bypass_effects', args);
   }
-  public function setBusEffectEnabled(busIdx: Int, effectIdx: Int, enabled: Bool): Void {
+  public static function setBusEffectEnabled(busIdx: Int, effectIdx: Int, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
       args.append(enabled);
       getNative().call('set_bus_effect_enabled', args);
   }
-  public function setBusLayout(busLayout: AudioBusLayout): Void {
+  public static function setBusLayout(busLayout: AudioBusLayout): Void {
       var args = new ArrayList();
       args.append(busLayout.native);
       getNative().call('set_bus_layout', args);
   }
-  public function setBusMute(busIdx: Int, enable: Bool): Void {
+  public static function setBusMute(busIdx: Int, enable: Bool): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(enable);
       getNative().call('set_bus_mute', args);
   }
-  public function setBusName(busIdx: Int, name: String): Void {
+  public static function setBusName(busIdx: Int, name: String): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(name);
       getNative().call('set_bus_name', args);
   }
-  public function setBusSend(busIdx: Int, send: String): Void {
+  public static function setBusSend(busIdx: Int, send: String): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(send);
       getNative().call('set_bus_send', args);
   }
-  public function setBusSolo(busIdx: Int, enable: Bool): Void {
+  public static function setBusSolo(busIdx: Int, enable: Bool): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(enable);
       getNative().call('set_bus_solo', args);
   }
-  public function setBusVolumeDb(busIdx: Int, volumeDb: Float): Void {
+  public static function setBusVolumeDb(busIdx: Int, volumeDb: Float): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(volumeDb);
       getNative().call('set_bus_volume_db', args);
   }
-  public function setBusVolumeLinear(busIdx: Int, volumeLinear: Float): Void {
+  public static function setBusVolumeLinear(busIdx: Int, volumeLinear: Float): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(volumeLinear);
       getNative().call('set_bus_volume_linear', args);
   }
-  public function setEnableTaggingUsedAudioStreams(enable: Bool): Void {
+  public static function setEnableTaggingUsedAudioStreams(enable: Bool): Void {
       var args = new ArrayList();
       args.append(enable);
       getNative().call('set_enable_tagging_used_audio_streams', args);
   }
-  public function swapBusEffects(busIdx: Int, effectIdx: Int, byEffectIdx: Int): Void {
+  public static function swapBusEffects(busIdx: Int, effectIdx: Int, byEffectIdx: Int): Void {
       var args = new ArrayList();
       args.append(busIdx);
       args.append(effectIdx);
       args.append(byEffectIdx);
       getNative().call('swap_bus_effects', args);
   }
-  public function unlock(): Void {
+  public static function unlock(): Void {
       var args = new ArrayList();
       getNative().call('unlock', args);
   }

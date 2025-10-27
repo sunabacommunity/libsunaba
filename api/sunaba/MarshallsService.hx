@@ -21,17 +21,17 @@ class MarshallsService extends BaseClass {
 
 
 
-  public function base64ToRaw(base64Str: String): ByteArray {
+  public static function base64ToRaw(base64Str: String): ByteArray {
       var args = new ArrayList();
       args.append(base64Str);
       return getNative().call('base64_to_raw', args);
   }
-  public function base64ToUtf8(base64Str: String): String {
+  public static function base64ToUtf8(base64Str: String): String {
       var args = new ArrayList();
       args.append(base64Str);
       return getNative().call('base64_to_utf8', args);
   }
-  public function base64ToVariant(base64Str: String, ?allowObjects: Bool): Variant {
+  public static function base64ToVariant(base64Str: String, ?allowObjects: Bool): Variant {
       var args = new ArrayList();
       args.append(base64Str);
       if (allowObjects != null) {
@@ -39,17 +39,17 @@ class MarshallsService extends BaseClass {
       }
       return getNative().call('base64_to_variant', args);
   }
-  public function rawToBase64(array: ByteArray): String {
+  public static function rawToBase64(array: ByteArray): String {
       var args = new ArrayList();
       args.append(array);
       return getNative().call('raw_to_base64', args);
   }
-  public function utf8ToBase64(utf8Str: String): String {
+  public static function utf8ToBase64(utf8Str: String): String {
       var args = new ArrayList();
       args.append(utf8Str);
       return getNative().call('utf8_to_base64', args);
   }
-  public function variantToBase64(variant: Variant, ?fullObjects: Bool): String {
+  public static function variantToBase64(variant: Variant, ?fullObjects: Bool): String {
       var args = new ArrayList();
       args.append(variant);
       if (fullObjects != null) {

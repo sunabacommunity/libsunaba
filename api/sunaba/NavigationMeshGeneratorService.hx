@@ -20,13 +20,13 @@ class NavigationMeshGeneratorService extends BaseClass {
 
 
 
-  public function bake(navigationMesh: Variant, rootNode: Node): Void {
+  public static function bake(navigationMesh: Variant, rootNode: Node): Void {
       var args = new ArrayList();
       args.append(navigationMesh);
       args.append(rootNode.native);
       getNative().call('bake', args);
   }
-  public function bakeFromSourceGeometryData(navigationMesh: Variant, sourceGeometryData: Variant, ?callback: Variant): Void {
+  public static function bakeFromSourceGeometryData(navigationMesh: Variant, sourceGeometryData: Variant, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(navigationMesh);
       args.append(sourceGeometryData);
@@ -35,12 +35,12 @@ class NavigationMeshGeneratorService extends BaseClass {
       }
       getNative().call('bake_from_source_geometry_data', args);
   }
-  public function clear(navigationMesh: Variant): Void {
+  public static function clear(navigationMesh: Variant): Void {
       var args = new ArrayList();
       args.append(navigationMesh);
       getNative().call('clear', args);
   }
-  public function parseSourceGeometryData(navigationMesh: Variant, sourceGeometryData: Variant, rootNode: Node, ?callback: Variant): Void {
+  public static function parseSourceGeometryData(navigationMesh: Variant, sourceGeometryData: Variant, rootNode: Node, ?callback: Variant): Void {
       var args = new ArrayList();
       args.append(navigationMesh);
       args.append(sourceGeometryData);
