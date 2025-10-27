@@ -91,4 +91,5 @@ public:
     void luaopen_Color();
 	void luaopen_Callable();
 	void luaopen_Signal();
+	void luaopen_Plane();
 };
