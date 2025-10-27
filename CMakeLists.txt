@@ -78,6 +78,8 @@ add_library(${LIBNAME} SHARED)
 # Ensure LuaJIT headers are generated before building our library
 add_dependencies(${LIBNAME} libluajit)
 
+target_link_directories(${LIBNAME} PRIVATE src)
+
 target_sources(${LIBNAME}
     PRIVATE
     src/register_types.cpp
@@ -113,6 +115,7 @@ target_sources(${LIBNAME}
     src/luaopen_Vector3i.cpp
     src/luaopen_Vector4.cpp
     src/luaopen_Vector4i.cpp
+    src/luaopen_Transform2D.cpp
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
