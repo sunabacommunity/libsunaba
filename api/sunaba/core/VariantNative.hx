@@ -56,6 +56,12 @@ extern class VariantNative {
     public static function fromDictionary(value:Dictionary):Variant;
     @:native("new")
     public static function fromArrayList(value:ArrayList):Variant;
+    @:native("new")
+    public static function fromAABB(): AABB;
+    @:native("new")
+    public static function fromPlane(): Plane;
+    @:native("new")
+    public static function fromProjection(): Projection;
 	@:native("new")
 	public static function fromCallable(value: CallableNative): VariantNative;
     public static function fromByteArray(value:ByteArray):VariantNative;
@@ -94,7 +100,9 @@ extern class VariantNative {
     public function asBasis():Basis;
     public function asTransform2D():Transform2D;
     public function asTransform3D():Transform3D;
-    //public function asPlane():Plane;
+    public function asPlane():Plane;
+    public function asAABB(): AABB;
+    public function asProjection(): Projection;
     public function asQuaternion():Quaternion;
     public function asDictionary():Dictionary;
     public function asArrayList():ArrayList;

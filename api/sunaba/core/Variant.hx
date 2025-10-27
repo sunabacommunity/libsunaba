@@ -153,14 +153,14 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toTransform3D():Transform3D {
         return this.asTransform3D();
     }
-    /*@:from
+    @:from
     public static function fromPlane(value:Plane):VariantAbstract {
         return Variant.fromPlane(value);
     }
     @:to
     public static function toPlane(value:VariantAbstract):Plane {
         return value.asPlane();
-    }*/
+    }
     @:from
     public static function fromQuaternion(value:Quaternion):Variant {
         return VariantNative.fromQuatrernion(value);
@@ -326,4 +326,22 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toBaseClass(): BaseClass {
         return this.asBaseClass();
     }
+
+    @:from
+    public static function fromAABB(aabb: AABB) {
+        return VariantNative.fromAABB(aabb);
+    }
+    @:to
+    public inline function toAABB(): AABB {
+        return this.asAABB();
+    }
+
+    @:from
+    public static function fromProjection(proj: Projection) {
+        return VariantNative.fromProjection(proj);
+    }
+    @:to
+    public inline function toProjection() {
+        return this.asProjection();
+    } 
 }
