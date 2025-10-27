@@ -23,6 +23,7 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
             Variant(Vector3),
             Variant(Vector3i),
             Variant(Transform2D),
+            Variant(Transform3D),
             Variant(Vector4),
             Variant(Vector4i),
             Variant(Plane),
