@@ -27,7 +27,7 @@ enum abstract VariantType(Int) from Int to Int {
     var object = 24;
     var dictionary = 27;
     var arrayList = 28;
-    var binaryData = 29;
+    var byteArray = 29;
     var int32Vector = 30;
     var int64Vector = 31;
     var float32Vector = 32;
@@ -59,7 +59,7 @@ enum abstract VariantType(Int) from Int to Int {
         object,
         dictionary,
         arrayList,
-        binaryData,
+		byteArray,
         int32Vector,
         float32Vector,
         stringVector,
@@ -91,7 +91,7 @@ enum abstract VariantType(Int) from Int to Int {
             case "object": return VariantType.object;
             case "dictionary": return VariantType.dictionary;
             case "arrayList": return VariantType.arrayList;
-            case "binaryData": return VariantType.binaryData;
+            case "byteArray": return VariantType.byteArray;
             case "int32Vector": return VariantType.int32Vector;
             case "float32Vector": return VariantType.float32Vector;
             case "stringVector": return VariantType.stringVector;
