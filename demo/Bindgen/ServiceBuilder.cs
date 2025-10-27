@@ -567,7 +567,7 @@ public class ServiceBuilder
                     else if (isStatic == false)
                     {
                         methodSb.AppendLine(
-                            $"  public function {methodName.ToCamelCase()}({string.Join(", ", parameters)}): {MapReturnType(returnType)} {'{'}");
+                            $"  public static function {methodName.ToCamelCase()}({string.Join(", ", parameters)}): {MapReturnType(returnType)} {'{'}");
                         if (!importList.Contains("sunaba.core.ArrayList"))
                             importList.Add("sunaba.core.ArrayList");
                         methodSb.AppendLine($"      var args = new ArrayList();");
