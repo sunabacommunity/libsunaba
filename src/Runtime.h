@@ -92,4 +92,5 @@ public:
 	void luaopen_Callable();
 	void luaopen_Signal();
 	void luaopen_Plane();
+	void luaopen_Projection();
 };
