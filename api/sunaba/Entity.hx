@@ -30,9 +30,8 @@ class Entity extends BaseClass {
 		return _node;
 	}
 	function set_node(value:Node):Node {
-		if (_node.native == value.native) return _node;
-
 		if (_node != null) {
+			if (_node.native == value.native) return _node;
 			if (!_freed && value != null) {
 				var c = new Array<Node>();
 				for (i in 0..._node.getChildCount()) {
@@ -52,8 +51,6 @@ class Entity extends BaseClass {
 
 			_node.queueFree();
 		}
-
-
 
 		_node = value;
 		if (_node != null) {
