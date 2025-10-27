@@ -137,10 +137,11 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	}
 
 	if (!p_sandboxed) {
-		lua_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
-			sol::lib::count, sol::lib::math, sol::lib::string,
-			sol::lib::table, sol::lib::utf8, sol::lib::package,
-			sol::lib::os, sol::lib::io, sol::lib::debug );
+		lua_state.open_libraries( sol::lib::base, sol::lib::bit32,
+			sol::lib::coroutine, sol::lib::count, sol::lib::math,
+			sol::lib::string,sol::lib::table, sol::lib::utf8,
+			sol::lib::package, sol::lib::os, sol::lib::io,
+			sol::lib::debug, sol::lib::jit, sol::lib::ffi );
 		/*luaopen_base(L);
 		luaopen_bit(L);
 		luaopen_debug(L);
