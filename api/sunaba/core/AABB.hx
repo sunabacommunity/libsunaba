@@ -2,6 +2,7 @@ package sunaba.core;
 
 @:native("AABB")
 extern class AABB {
+	public function new(?position: Vector3, ?size: Vector3);
 	public var end: Vector3;
 	public var position: Vector3;
 	public var size: Vector3;
