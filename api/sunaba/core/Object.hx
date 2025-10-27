@@ -15,6 +15,7 @@ class Object extends BaseClass {
     }
 
     public function isNull() {
+		if (native == null) return true;
         return native.isNull();
     }
 
