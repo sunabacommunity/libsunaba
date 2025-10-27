@@ -1,6 +1,6 @@
 #include "Runtime.h"
 
-void Runtime::luaopen_Plane() {
+void Runtime::luaopen_Projection() {
 	lua_state.new_usertype<Projection>("Projection",
 		sol::constructors<
 			Projection(),
