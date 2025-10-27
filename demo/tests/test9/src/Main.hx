@@ -11,6 +11,8 @@ import sunaba.Debug;
 import sunaba.spatial.World3D;
 import sunaba.ResourceLoaderService;
 import sunaba.Environment;
+import sunaba.Node;
+import sunaba.core.native.NativeObject;
 
 class Main extends App {
     public static function main() {
@@ -53,14 +55,12 @@ class Main extends App {
 			scene.addEntity(boxEntity);
 			boxTransform.position = new Vector3(0, 0, -1);
 
-			var viewport = rootNode.getViewport();
-			if (!viewport.isNull()) {
-				var world3D = new World3D();
-				var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
-				var environment = new Environment(envRes.native);
-				world3D.environment = environment;
-				viewport.world3d = world3D;
-			}
+			var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
+			var environment = new Environment(envRes.native);
+			var worldEnv = new Node(new NativeObject("WorldEnvironment"));
+			worldEnv.native.set("environment", environment.native);
+			rootNode.addChild(worldEnv);
+
 
 			printScene(scene);
 		}
