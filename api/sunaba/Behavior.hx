@@ -13,6 +13,8 @@ class Behavior extends BaseClass {
 
 	public var name: String;
 
+	public var editorIconPath: String = "studio://icons/16/lightning.png";
+
 	@:generic
 	public function addComponent<T>(type: Class<T>): T {
 		return entity.addComponent(type);
