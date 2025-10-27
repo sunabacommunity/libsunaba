@@ -154,11 +154,11 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return this.asTransform3D();
     }
     @:from
-    public static function fromPlane(value:Plane):VariantAbstract {
+    public static function fromPlane(value:Plane):Variant {
         return Variant.fromPlane(value);
     }
     @:to
-    public static function toPlane(value:VariantAbstract):Plane {
+    public static function toPlane(value:Variant):Plane {
         return value.asPlane();
     }
     @:from
