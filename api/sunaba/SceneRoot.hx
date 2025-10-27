@@ -27,6 +27,11 @@ class SceneRoot extends Node {
 
 		entity.scene = this;
 		entities.push(entity);
+		if (entity.node != null) {
+			if (!entity.node.isNull()) {
+				addChild(entity.node);
+			}
+		}
 		if (enteredTree)
 			entity.enterTree();
 		if (started)
@@ -39,6 +44,11 @@ class SceneRoot extends Node {
 		entity.exitTree();
 		entity.scene = null;
 		entities.remove(entity);
+		if (entity.node != null) {
+			if (!entity.node.isNull()) {
+				removeChild(entity.node);
+			}
+		}
 	}
 
 	public function hasEntity(entity: Entity){
