@@ -1,5 +1,6 @@
 package sunaba.core;
 
+@:native("AABB")
 extern class AABB {
 	public var end: Vector3;
 	public var position: Vector3;
