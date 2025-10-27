@@ -25,7 +25,12 @@ void Runtime::luaopen_Plane() {
 		),
 		"distanceTo", &Plane::distance_to,
 		"getCenter", &Plane::get_center,
-		"hasPoint", &Plane::has_point,
+		"hasPoint", sol::overload(
+			&Plane::has_point,
+			[](const Plane& plane, const Vector3 point) {
+				return plane.has_point(point);
+			}
+		),
 		"intersect3", &Plane::intersect_3,
 		"intersectRay", &Plane::intersects_ray,
 		"intersectsSegment", &Plane::intersects_segment,
