@@ -65,7 +65,7 @@ class Entity extends BaseClass {
 		return _node;
 	}
 
-	private var _prefabPath: String;
+	private var _prefabPath: String = "";
 	public var prefabPath(get, set): String;
 	function get_prefabPath():String {
 		return _prefabPath;
