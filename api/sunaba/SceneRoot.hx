@@ -1,5 +1,6 @@
 package sunaba;
 import sunaba.input.InputEvent;
+import sunaba.io.IoInterface;
 
 class SceneRoot extends Node {
 	public function new() {
@@ -9,6 +10,8 @@ class SceneRoot extends Node {
 	}
 
 	private var entities: Array<Entity>;
+
+	public var io: IoInterface;
 
 	function findEnt(path: Array<String>, index: Int) {
 		for (entity in entities) {
