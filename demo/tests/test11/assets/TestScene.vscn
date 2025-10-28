@@ -7,32 +7,29 @@
           "components": [
             {
               "data": {
-                "type": 27,
-                "value": {
-                  "position": {
-                    "type": 9,
-                    "value": [
-                      4,
-                      5,
-                      6
-                    ]
-                  },
-                  "rotation": {
-                    "type": 9,
-                    "value": [
-                      0,
-                      0,
-                      0
-                    ]
-                  },
-                  "scale": {
-                    "type": 9,
-                    "value": [
-                      1,
-                      1,
-                      1
-                    ]
-                  }
+                "position": {
+                  "type": 9,
+                  "value": [
+                    4,
+                    5,
+                    6
+                  ]
+                },
+                "rotation": {
+                  "type": 9,
+                  "value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "scale": {
+                  "type": 9,
+                  "value": [
+                    1,
+                    1,
+                    1
+                  ]
                 }
               },
               "type": "sunaba.spatial.SpatialTransform"
@@ -45,32 +42,29 @@
       "components": [
         {
           "data": {
-            "type": 27,
-            "value": {
-              "position": {
-                "type": 9,
-                "value": [
-                  1,
-                  2,
-                  3
-                ]
-              },
-              "rotation": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              "scale": {
-                "type": 9,
-                "value": [
-                  1,
-                  1,
-                  1
-                ]
-              }
+            "position": {
+              "type": 9,
+              "value": [
+                1,
+                2,
+                3
+              ]
+            },
+            "rotation": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                0
+              ]
+            },
+            "scale": {
+              "type": 9,
+              "value": [
+                1,
+                1,
+                1
+              ]
             }
           },
           "type": "sunaba.spatial.SpatialTransform"
@@ -84,32 +78,29 @@
       "components": [
         {
           "data": {
-            "type": 27,
-            "value": {
-              "position": {
-                "type": 9,
-                "value": [
-                  7,
-                  8,
-                  9
-                ]
-              },
-              "rotation": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              "scale": {
-                "type": 9,
-                "value": [
-                  1,
-                  1,
-                  1
-                ]
-              }
+            "position": {
+              "type": 9,
+              "value": [
+                7,
+                8,
+                9
+              ]
+            },
+            "rotation": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                0
+              ]
+            },
+            "scale": {
+              "type": 9,
+              "value": [
+                1,
+                1,
+                1
+              ]
             }
           },
           "type": "sunaba.spatial.SpatialTransform"
@@ -123,92 +114,53 @@
       "components": [
         {
           "data": {
-            "type": 27,
-            "value": {
-              "position": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  1
-                ]
-              },
-              "rotation": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              "scale": {
-                "type": 9,
-                "value": [
-                  1,
-                  1,
-                  1
-                ]
-              }
+            "position": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                1
+              ]
+            },
+            "rotation": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                0
+              ]
+            },
+            "scale": {
+              "type": 9,
+              "value": [
+                1,
+                1,
+                1
+              ]
             }
           },
           "type": "sunaba.spatial.SpatialTransform"
         },
         {
           "data": {
-            "type": 27,
-            "value": {
-              "cullMask": {
-                "type": 2,
-                "value": 1048575
-              },
-              "current": {
-                "type": 1,
-                "value": false
-              },
-              "dopplerTracking": {
-                "type": 2,
-                "value": 0
-              },
-              "far": {
-                "type": 2,
-                "value": 4000
-              },
-              "fov": {
-                "type": 2,
-                "value": 75
-              },
-              "frustumOffset": {
-                "type": 5,
-                "value": [
-                  0,
-                  0
-                ]
-              },
-              "hOffset": {
-                "type": 2,
-                "value": 0
-              },
-              "keepAspect": {
-                "type": 2,
-                "value": 1
-              },
-              "near": {
-                "type": 3,
-                "value": 0.0500000007450581
-              },
-              "projection": {
-                "type": 2,
-                "value": 0
-              },
-              "size": {
-                "type": 2,
-                "value": 1
-              },
-              "vOffset": {
-                "type": 2,
-                "value": 0
-              }
-            }
+            "cullMask": 1048575,
+            "current": false,
+            "dopplerTracking": 0,
+            "far": 4000,
+            "fov": 75,
+            "frustumOffset": {
+              "type": 5,
+              "value": [
+                0,
+                0
+              ]
+            },
+            "hOffset": 0,
+            "keepAspect": 1,
+            "near": 0.0500000007450581,
+            "projection": 0,
+            "size": 1,
+            "vOffset": 0
           },
           "type": "sunaba.spatial.Camera"
         }
@@ -221,171 +173,102 @@
       "components": [
         {
           "data": {
-            "type": 27,
-            "value": {
-              "position": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  -1
-                ]
-              },
-              "rotation": {
-                "type": 9,
-                "value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              "scale": {
-                "type": 9,
-                "value": [
-                  1,
-                  1,
-                  1
-                ]
-              }
+            "position": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "rotation": {
+              "type": 9,
+              "value": [
+                0,
+                0,
+                0
+              ]
+            },
+            "scale": {
+              "type": 9,
+              "value": [
+                1,
+                1,
+                1
+              ]
             }
           },
           "type": "sunaba.spatial.SpatialTransform"
         },
         {
           "data": {
-            "type": 27,
-            "value": {
-              "castShadow": {
-                "type": 2,
-                "value": 1
-              },
-              "customAabb": {
-                "type": 16,
-                "value": [
-                  {
-                    "type": 9,
-                    "value": [
-                      0,
-                      0,
-                      0
-                    ]
-                  },
-                  {
-                    "type": 9,
-                    "value": [
-                      0,
-                      0,
-                      0
-                    ]
-                  },
-                  {
-                    "type": 9,
-                    "value": [
-                      0,
-                      0,
-                      0
-                    ]
-                  }
-                ]
-              },
-              "extraCullMargin": {
-                "type": 2,
-                "value": 0
-              },
-              "giMode": {
-                "type": 2,
-                "value": 1
-              },
-              "ignoreOcclusionCulling": {
-                "type": 1,
-                "value": false
-              },
-              "layerMask": {
-                "type": 2,
-                "value": 0
-              },
-              "lightmapScale": {
-                "type": 2,
-                "value": 0
-              },
-              "lightmapTexelScale": {
-                "type": 2,
-                "value": 0
-              },
-              "lodBias": {
-                "type": 2,
-                "value": 1
-              },
-              "sortingOffset": {
-                "type": 2,
-                "value": 0
-              },
-              "sortingUseAabbCenter": {
-                "type": 1,
-                "value": true
-              },
-              "transparancy": {
-                "type": 2,
-                "value": 0
-              },
-              "visibilityRangeBegin": {
-                "type": 2,
-                "value": 0
-              },
-              "visibilityRangeBeginMargin": {
-                "type": 2,
-                "value": 0
-              },
-              "visibilityRangeEnd": {
-                "type": 2,
-                "value": 0
-              },
-              "visibilityRangeEndMargin": {
-                "type": 2,
-                "value": 0
-              },
-              "visibilityRangeFadeMode": {
-                "type": 2,
-                "value": 0
-              }
-            }
+            "castShadow": 1,
+            "customAabb": {
+              "type": 16,
+              "value": [
+                {
+                  "type": 9,
+                  "value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": 9,
+                  "value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": 9,
+                  "value": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "extraCullMargin": 0,
+            "giMode": 1,
+            "ignoreOcclusionCulling": false,
+            "layerMask": 0,
+            "lightmapScale": 0,
+            "lightmapTexelScale": 0,
+            "lodBias": 1,
+            "sortingOffset": 0,
+            "sortingUseAabbCenter": true,
+            "transparancy": 0,
+            "visibilityRangeBegin": 0,
+            "visibilityRangeBeginMargin": 0,
+            "visibilityRangeEnd": 0,
+            "visibilityRangeEndMargin": 0,
+            "visibilityRangeFadeMode": 0
           },
           "type": "sunaba.spatial.mesh.MeshDisplay"
         },
         {
           "data": {
-            "type": 27,
-            "value": {
-              "size": {
-                "type": 9,
-                "value": [
-                  1,
-                  1,
-                  1
-                ]
-              },
-              "subdivideDepth": {
-                "type": 2,
-                "value": 0
-              },
-              "subdivideHeight": {
-                "type": 2,
-                "value": 0
-              },
-              "subdivideWidth": {
-                "type": 2,
-                "value": 0
-              }
-            }
+            "size": {
+              "type": 9,
+              "value": [
+                1,
+                1,
+                1
+              ]
+            },
+            "subdivideDepth": 0,
+            "subdivideHeight": 0,
+            "subdivideWidth": 0
           },
           "type": "sunaba.spatial.mesh.BoxMesh"
         },
         {
           "data": {
-            "type": 27,
-            "value": {
 
-            }
           },
           "type": "myComponents.RotateComponent"
         }
