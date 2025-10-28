@@ -1,5 +1,6 @@
 package sunaba.spatial;
 import sunaba.core.ArrayList;
+import sunaba.core.Dictionary;
 
 class IVisualInstance extends Behavior {
 	public var node: Node;
@@ -42,5 +43,19 @@ class IVisualInstance extends Behavior {
 		args.append(layer);
 		args.append(value);
 		node.native.call("set_layer_mask_value", args);
+	}
+
+	public override function getData(): Dictionary {
+		var data = new Dictionary();
+		data.set("layerMask", layerMask);
+		data.set("sortingOffset", sortingOffset);
+		data.set("sortingUseAabbCenter", sortingUseAabbCenter);
+		return data;
+	}
+
+	public override function setData(data: Dictionary) {
+		layerMask = data.get("layerMask");
+		sortingOffset = data.get("sortingOffset");
+		sortingUseAabbCenter = data.get("sortingUseAabbCenter");
 	}
 }
