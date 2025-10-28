@@ -13,6 +13,7 @@ import sunaba.ResourceLoaderService;
 import sunaba.Environment;
 import sunaba.Node;
 import sunaba.core.native.NativeObject;
+import sunaba.SceneFile;
 
 class Main extends App {
     public static function main() {
@@ -63,6 +64,9 @@ class Main extends App {
 
 
 			printScene(scene);
+
+			var sceneFile = SceneFile.create(scene);
+			sceneFile.save("user://TestScene.vscn");
 		}
 		catch (e) {
 			Debug.error("Error: " + e + " : " + e.stack);
