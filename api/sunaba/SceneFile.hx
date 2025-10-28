@@ -1,6 +1,7 @@
 package sunaba;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
+import sunaba.core.Variant;
 
 class SceneFile extends ScriptableObject {
 	public var entities: Array<EntityBaseData> = new Array();
