@@ -21,7 +21,7 @@ class EntityData extends EntityBaseData {
 		for (component in components) {
 			var compData = component.getData();
 			var compDict = new Dictionary();
-			compDict.set("data", DataUtils.varToDict(compData));
+			compDict.set("data", compData);
 			var compClass = Type.getClass(component);
 			var compName = Type.getClassName(compClass);
 			compDict.set("type", compName);
@@ -55,7 +55,7 @@ class EntityData extends EntityBaseData {
 			var instance = entity.addComponentNG(cast typeClass);
 			if (instance == null) continue;
 			var behavior: Behavior = cast instance;
-			behavior.setData(DataUtils.dictToVar(compData));
+			behavior.setData(compData);
 		}
 
 		for (childData in children) {
