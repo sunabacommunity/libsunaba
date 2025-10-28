@@ -7,7 +7,7 @@ class SceneFile extends ScriptableObject {
 
 	public var type: SceneType = SceneType.spatial;
 
-	public static function create(scene: SceneRoot, path: String) {
+	public static function create(scene: SceneRoot) {
 		var data = new SceneFile();
 
 		for (i in 0...scene.getEntityCount()) {
@@ -22,7 +22,6 @@ class SceneFile extends ScriptableObject {
 			}
 			data.entities.push(entityData);
 		}
-		data.path = path;
 
 		return data;
 	}
