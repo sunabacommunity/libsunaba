@@ -57,9 +57,9 @@ extern class VariantNative {
     @:native("new")
     public static function fromArrayList(value:ArrayList):Variant;
     @:native("new")
-    public static function fromAABB(): AABB;
+    public static function fromAABB(aabb: AABB): AABB;
     @:native("new")
-    public static function fromPlane(): Plane;
+    public static function fromPlane(plane: Plane): Plane;
     @:native("new")
     public static function fromProjection(): Projection;
 	@:native("new")
