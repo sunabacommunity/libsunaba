@@ -12,7 +12,7 @@ using namespace godot;
 
 class NativeObject {
     private:
-        Object* native;
+        Object* native = nullptr;
     public:
         NativeObject(std::string name, const Array& args = Array(), int scriptType = 0)
         {
@@ -135,7 +135,11 @@ class NativeObject {
 
 		bool isNull()
         {
-        	return native == nullptr;
+        	if (native == nullptr) {
+        		return true;
+        	}
+
+        	return !UtilityFunctions::is_instance_id_valid(native->get_instance_id());
         }
 
         void free()
