@@ -32,7 +32,7 @@ class DataUtils {
 	public static function varToDict(variant: Variant): Dictionary {
 		var dict = new Dictionary();
 
-		var type = variant.getType();
+		var type: Int = variant.getType();
 		dict.set("type", type);
 
 		if (type == VariantType.string
@@ -279,9 +279,9 @@ class DataUtils {
 	}
 
 	public static function dictToVar(dict: Dictionary, ?ioInterface: IoInterface): Variant {
-		var variant: Variant;
+		var variant: Variant = new VariantNative();
 
-		var type: VariantType = dict.get("type");
+		var type: Int = dict.get("type");
 		var value: Variant = dict.get("value");
 
 		if (type == VariantType.string
