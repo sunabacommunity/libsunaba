@@ -55,7 +55,6 @@ extern class VariantNative {
     public static function fromQuatrernion(value:Quaternion):VariantNative;
     @:native("new")
     public static function fromDictionary(value:Dictionary):Variant;
-    @:native("new")
     public static function fromArrayList(value:ArrayList):Variant;
     @:native("new")
     public static function fromAABB(aabb: AABB): Variant;
