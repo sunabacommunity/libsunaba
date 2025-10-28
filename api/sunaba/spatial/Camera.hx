@@ -234,7 +234,7 @@ class Camera extends Behavior {
 		dopplerTracking = data.get("dopplerTracking");
 		far = data.get("far");
 		fov = data.get("fov");
-		frustumOffset = DataUtils.dictToVar(data.get("frustumOffset"), scene.io);
+		frustumOffset = DataUtils.dictToVar(data.get("frustumOffset"));
 		hOffset = data.get("hOffset");
 		keepAspect = data.get("keepAspect");
 		near = data.get("near");

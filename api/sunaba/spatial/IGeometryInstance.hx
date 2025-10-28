@@ -152,7 +152,7 @@ class IGeometryInstance extends IVisualInstance {
 
 	public override function setData(data: Dictionary) {
 		castShadow = data.get("castShadow");
-		customAabb = DataUtils.dictToVar(data.get("customAabb"), scene.io);
+		customAabb = DataUtils.dictToVar(data.get("customAabb"));
 		extraCullMargin = data.get("extraCullMargin");
 		giMode = data.get("giMode");
 		ignoreOcclusionCulling = data.get("ignoreOcclusionCulling");

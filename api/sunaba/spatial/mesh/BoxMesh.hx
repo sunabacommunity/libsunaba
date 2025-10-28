@@ -59,7 +59,7 @@ class BoxMesh extends Behavior {
 	}
 
 	public override function setData(data: Dictionary){
-		size = DataUtils.dictToVar(data.get("size"), scene.io);
+		size = DataUtils.dictToVar(data.get("size"));
 		subdivideDepth = data.get("subdivideDepth");
 		subdivideHeight = data.get("subdivideHeight");
 		subdivideWidth = data.get("subdivideWidth");
