@@ -182,6 +182,12 @@ class DataUtils {
 			var newDict = new Dictionary();
 			var keys = oldDict.keys();
 			var values = oldDict.values();
+			for (i in 0...keys.size()) {
+				var key = keys.get(i);
+				var value = values.get(i);
+				newDict.set(varToDict(key), varToDict(value));
+			}
+			dict.set("value", newDict);
 		}
 		else if (type == VariantType.byteArray) {
 			var byteArray: ByteArray = variant;
