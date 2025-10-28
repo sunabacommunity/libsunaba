@@ -317,16 +317,17 @@ class SpatialTransform extends Behavior {
 
 	public override function getData(): Dictionary {
 		var data = new Dictionary();
-		data.set("position", position);
-		data.set("rotation", rotation);
-		data.set("scale", scale);
+		data.set("position", DataUtils.varToDict(position));
+		data.set("rotation", DataUtils.varToDict(rotation));
+		data.set("scale", DataUtils.varToDict(scale));
 		return data;
 	}
 
 	public override function setData(data: Dictionary) {
-		position = data.get("position");
-		rotation = data.get("rotation");
-		scale = data.get("scale");
+		Sys.println(JSON.stringify(data, "  "));
+		position = DataUtils.dictToVar(data.get("position"), scene.io);
+		rotation = DataUtils.dictToVar(data.get("rotation"));
+		scale = DataUtils.dictToVar(data.get("scale"));
 	}
 
 	public override function onInit() {

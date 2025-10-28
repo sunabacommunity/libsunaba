@@ -133,7 +133,7 @@ class IGeometryInstance extends IVisualInstance {
 		var data = super.getData();
 
 		data.set("castShadow", castShadow);
-		data.set("customAabb", customAabb);
+		data.set("customAabb", DataUtils.varToDict(customAabb));
 		data.set("extraCullMargin", extraCullMargin);
 		data.set("giMode", giMode);
 		data.set("ignoreOcclusionCulling", ignoreOcclusionCulling);
@@ -152,7 +152,7 @@ class IGeometryInstance extends IVisualInstance {
 
 	public override function setData(data: Dictionary) {
 		castShadow = data.get("castShadow");
-		customAabb = data.get("customAabb");
+		customAabb = DataUtils.dictToVar(data.get("customAabb"), scene.io);
 		extraCullMargin = data.get("extraCullMargin");
 		giMode = data.get("giMode");
 		ignoreOcclusionCulling = data.get("ignoreOcclusionCulling");
