@@ -276,6 +276,15 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
         	}
         }
         _print(msgarr);
+		lua_state["__errord"] = [this](std::string message, std::string title) {
+			_errord(message.c_str(), title.c_str());
+		};
+		lua_state["__warnd"] = [this](std::string message, std::string title) {
+			_warnd(message.c_str(), title.c_str());
+		};
+		lua_state["__infod"] = [this](std::string message, std::string title) {
+			_infod(	message.c_str(), title.c_str());
+		};
     };
 
 	lua_state.add_package_loader([this](lua_State* L) {
