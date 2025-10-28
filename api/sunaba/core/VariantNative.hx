@@ -7,6 +7,7 @@ import haxe.Int32;
 import haxe.Int64;
 import haxe.Constraints.Function;
 import sunaba.core.Callable.CallableNative;
+import haxe.macro.Expr.Var;
 
 @:native("Variant")
 extern class VariantNative {
@@ -57,11 +58,11 @@ extern class VariantNative {
     @:native("new")
     public static function fromArrayList(value:ArrayList):Variant;
     @:native("new")
-    public static function fromAABB(aabb: AABB): AABB;
+    public static function fromAABB(aabb: AABB): Variant;
     @:native("new")
-    public static function fromPlane(plane: Plane): Plane;
+    public static function fromPlane(plane: Plane): Variant;
     @:native("new")
-    public static function fromProjection(proj: Projection): Projection;
+    public static function fromProjection(proj: Projection): Variant;
 	@:native("new")
 	public static function fromCallable(value: CallableNative): VariantNative;
     public static function fromByteArray(value:ByteArray):VariantNative;

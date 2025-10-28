@@ -328,7 +328,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
 
     @:from
-    public static function fromAABB(aabb: AABB) {
+    public static function fromAABB(aabb: AABB): Variant {
         return VariantNative.fromAABB(aabb);
     }
     @:to
@@ -337,11 +337,11 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
 
     @:from
-    public static function fromProjection(proj: Projection) {
+    public static function fromProjection(proj: Projection): Variant {
         return VariantNative.fromProjection(proj);
     }
     @:to
     public inline function toProjection() {
         return this.asProjection();
-    } 
+    }
 }
