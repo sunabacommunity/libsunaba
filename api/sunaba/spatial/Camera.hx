@@ -224,6 +224,8 @@ class Camera extends Behavior {
 		data.set("projection", projection);
 		data.set("size", size);
 		data.set("vOffset", vOffset);
+
+		return data;
 	}
 
 	public override function setData(data: Dictionary) {
