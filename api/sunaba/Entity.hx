@@ -94,6 +94,22 @@ class Entity extends BaseClass {
 		return null;
 	}
 
+	public function addComponentNG(type: Class<Behavior>): Behavior {
+		var behaviorT = Type.createEmptyInstance(type);
+		var behavior: Behavior = cast behaviorT;
+		behavior.entity = this;
+		behavior.name = Type.getClassName(type);
+		components.push(behavior);
+		behavior.onInit();
+		if (_hasEnteredTree) {
+			behavior.onEnterTree();
+		}
+		if (_started) {
+			behavior.onStart();
+		}
+		return behaviorT;
+	}
+
 	@:generic
 	public function addComponent<T>(type: Class<T>): T {
 		var behaviorT = Type.createEmptyInstance(type);
