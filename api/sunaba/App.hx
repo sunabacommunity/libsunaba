@@ -6,6 +6,7 @@ import sunaba.core.native.NativeObject;
 import sunaba.Node;
 import sunaba.io.IoManager;
 import sunaba.core.native.NativeReference;
+import haxe.Exception;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
@@ -43,9 +44,10 @@ class App extends BaseClass {
         try {
 			init();
         }
-        catch(e) {
-            Debug.error(e.toString());
-        }
+		catch (e: Exception) {
+			trace(e);
+			Debug.error(e.message);
+		}
     }
 
     public function init() {
