@@ -29,6 +29,7 @@ class SceneFile extends ScriptableObject {
 
 	public function instance(): SceneRoot {
 		var scene = new SceneRoot();
+		scene.io = io;
 
 		for (entData in entities) {
 			var entity: Entity;
