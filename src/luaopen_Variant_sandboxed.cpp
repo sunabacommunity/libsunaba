@@ -135,6 +135,7 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
         "asProjection", &Variant::operator Projection,
         "asArrayList", &Variant::operator Array,
         "asDictionary", &Variant::operator Dictionary,
+        "asColor", &Variant::operator Color,
         "asByteArray", [](const Variant& v) { return io::ByteArray(v); },
         "asIntArray", [](const Variant& v) {
             PackedInt32Array packed_data = v;
