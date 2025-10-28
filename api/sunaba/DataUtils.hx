@@ -185,7 +185,7 @@ class DataUtils {
 			for (i in 0...keys.size()) {
 				var key = keys.get(i);
 				var value = values.get(i);
-				newDict.set(varToDict(key), varToDict(value));
+				newDict.set(key, varToDict(value));
 			}
 			dict.set("value", newDict);
 		}
