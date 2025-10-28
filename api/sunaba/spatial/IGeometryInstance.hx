@@ -1,4 +1,6 @@
 package sunaba.spatial;
+import sunaba.core.Dictionary;
+import sunaba.core.AABB;
 
 class IGeometryInstance extends IVisualInstance {
 	public var castShadow(get, set): Int;
@@ -7,6 +9,33 @@ class IGeometryInstance extends IVisualInstance {
 	}
 	function set_castShadow(value:Int):Int {
 		node.native.set("cast_shadow", value);
+		return value;
+	}
+
+	public var customAabb(get, set): AABB;
+	function get_customAabb():AABB {
+		return node.native.get("custom_aabb");
+	}
+	function set_customAabb(value:AABB):AABB {
+		node.native.set("custom_aabb", value);
+		return value;
+	}
+
+	public var extraCullMargin(get, set): Float;
+	function get_extraCullMargin():Float {
+		return node.native.get("extra_cull_margin");
+	}
+	function set_extraCullMargin(value:Float):Float {
+		node.native.set("extra_cull_margin", value);
+		return value;
+	}
+
+	public var ignoreOcclusionCulling(get, set): Bool;
+	function get_ignoreOcclusionCulling():Bool {
+		return node.native.get("ignore_occlusion_culling");
+	}
+	function set_ignoreOcclusionCulling(value:Bool):Bool {
+		node.native.set("ignore_occlusion_culling", value);
 		return value;
 	}
 
@@ -25,6 +54,15 @@ class IGeometryInstance extends IVisualInstance {
 	}
 	function set_lightmapScale(value:Int):Int {
 		node.native.set("lightmap_scale", value);
+		return value;
+	}
+
+	public var lightmapTexelScale(get, set): Float;
+	function get_lightmapTexelScale():Float {
+		return node.native.get("lightmap_texel_scale");
+	}
+	function set_lightmapTexelScale(value:Float):Float {
+		node.native.set("lightmap_texel_scale", value);
 		return value;
 	}
 
@@ -89,5 +127,44 @@ class IGeometryInstance extends IVisualInstance {
 	function set_visibilityRangeFadeMode(value:Float):Float {
 		node.native.set("visibility_range_fade_mode", value);
 		return value;
+	}
+
+	public override function getData(): Dictionary {
+		var data = super.getData();
+
+		data.set("castShadow", castShadow);
+		data.set("customAabb", customAabb);
+		data.set("extraCullMargin", extraCullMargin);
+		data.set("giMode", giMode);
+		data.set("ignoreOcclusionCulling", ignoreOcclusionCulling);
+		data.set("lightmapScale", lightmapScale);
+		data.set("lightmapTexelScale", lightmapTexelScale);
+		data.set("lodBias", lodBias);
+		data.set("transparancy", transparancy);
+		data.set("visibilityRangeBegin", visibilityRangeBegin);
+		data.set("visibilityRangeBeginMargin", visibilityRangeBeginMargin);
+		data.set("visibilityRangeEnd", visibilityRangeEnd);
+		data.set("visibilityRangeEndMargin", visibilityRangeEndMargin);
+		data.set("visibilityRangeFadeMode", visibilityRangeFadeMode);
+
+		return data;
+	}
+
+	public override function setData(data: Dictionary) {
+		castShadow = data.get("castShadow");
+		customAabb = data.get("customAabb");
+		extraCullMargin = data.get("extraCullMargin");
+		giMode = data.get("giMode");
+		ignoreOcclusionCulling = data.get("ignoreOcclusionCulling");
+		lightmapScale = data.get("lightmapScale");
+		lightmapTexelScale = data.get("lightmapTexelScale");
+		lodBias = data.get("lodBias");
+		transparancy = data.get("transparancy");
+		visibilityRangeBegin = data.get("visibilityRangeBegin");
+		visibilityRangeBeginMargin = data.get("visibilityRangeBeginMargin");
+		visibilityRangeEnd = data.get("visibilityRangeEnd");
+		visibilityRangeEndMargin = data.get("visibilityRangeEndMargin");
+		visibilityRangeFadeMode = data.get("visibilityRangeFadeMode");
+		super.setData(data);
 	}
 }
