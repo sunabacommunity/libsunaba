@@ -135,6 +135,14 @@ class Entity extends BaseClass {
 		return null;
 	}
 
+	public function getConponents() {
+		var components: Array<Behavior> = new Array();
+		for (comp in this.components) {
+			components.push(comp);
+		}
+		return components;
+	}
+
 	private var _started = false;
 
 	private var _hasEnteredTree: Bool = false;
