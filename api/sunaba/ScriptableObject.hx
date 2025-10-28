@@ -35,7 +35,7 @@ abstract class ScriptableObject extends BaseClass {
 			path = this.path;
 		}
 		var variant = getData();
-		var json = JSON.stringify(variant);
+		var json = JSON.stringify(variant, "  ");
 		io.saveText(path, json);
 	}
 
