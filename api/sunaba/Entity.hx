@@ -94,7 +94,7 @@ class Entity extends BaseClass {
 		return null;
 	}
 
-	public function addComponentNG(type: Class<Behavior>): Behavior {
+	public function addComponentNG(type: Class<Dynamic>): Dynamic {
 		var behaviorT = Type.createEmptyInstance(type);
 		var behavior: Behavior = cast behaviorT;
 		behavior.entity = this;
