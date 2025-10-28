@@ -4,6 +4,7 @@ import sunaba.core.ArrayList;
 import sunaba.core.Vector3;
 import sunaba.core.TypedArray;
 import sunaba.core.native.NativeObject;
+import sunaba.core.Dictionary;
 
 class Camera extends Behavior {
 	private var _node: Node;
@@ -206,6 +207,38 @@ class Camera extends Behavior {
 		var args = new ArrayList();
 		args.append(position);
 		return node.native.call("unproject_position", args);
+	}
+
+	public override function getData(): Dictionary {
+		var data = new Dictionary();
+
+		data.set("cullMask", cullMask);
+		data.set("current", current);
+		data.set("dopplerTracking", dopplerTracking);
+		data.set("far", far);
+		data.set("fov", fov);
+		data.set("frustumOffset", frustumOffset);
+		data.set("hOffset", hOffset);
+		data.set("keepAspect", keepAspect);
+		data.set("near", near);
+		data.set("projection", projection);
+		data.set("size", size);
+		data.set("vOffset", vOffset);
+	}
+
+	public override function setData(data: Dictionary) {
+		cullMask = data.get("cullMask");
+		current = data.get("current");
+		dopplerTracking = data.get("dopplerTracking");
+		far = data.get("far");
+		fov = data.get("fov");
+		frustumOffset = data.get("frustumOffset");
+		hOffset = data.get("hOffset");
+		keepAspect = data.get("keepAspect");
+		near = data.get("near");
+		projection = data.get("projection");
+		size = data.get("size");
+		vOffset = data.get("vOffset");
 	}
 
 	public override function onInit() {
