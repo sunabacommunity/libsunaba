@@ -158,7 +158,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return Variant.fromPlane(value);
     }
     @:to
-    public static function toPlane(value:Variant):Plane {
+    public static function toPlane(value:VariantNative):Plane {
         return value.asPlane();
     }
     @:from
