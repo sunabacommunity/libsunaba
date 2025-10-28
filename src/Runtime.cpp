@@ -115,7 +115,7 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_Quaternion();
 	luaopen_Rect2();
 	luaopen_Rect2i();
-	//luaopen_Transform2D();
+	luaopen_Transform2D();
 	luaopen_Transform3D();
 	luaopen_Vector2();
 	luaopen_Vector2i();
@@ -125,6 +125,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_Vector4i();
 	luaopen_Callable();
 	luaopen_Signal();
+	luaopen_Plane();
+	luaopen_Projection();
 	if (p_sandboxed) {
 		luaopen_Variant_sandboxed(classnames);
 		luaopen_NativeObject_sandboxed(classnames);
