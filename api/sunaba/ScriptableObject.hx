@@ -3,6 +3,9 @@ package sunaba;
 import sunaba.io.IoInterface;
 import sunaba.core.Variant;
 import sunaba.core.Dictionary;
+import sunaba.core.native.NativeObject;
+import sunaba.io.IoManager;
+import sunaba.core.native.NativeReference;
 
 abstract class ScriptableObject extends BaseClass {
 	public var path: String = "";
@@ -37,6 +40,7 @@ abstract class ScriptableObject extends BaseClass {
 	}
 
 	public function new() {
-		io = untyped __lua__("_G.ioManager");
+		var ioObject: NativeReference = untyped __lua__("_G.__ioManager");
+		io = new IoManager(ioObject);
 	}
 }
