@@ -61,7 +61,7 @@ extern class VariantNative {
     @:native("new")
     public static function fromPlane(plane: Plane): Plane;
     @:native("new")
-    public static function fromProjection(): Projection;
+    public static function fromProjection(proj: Projection): Projection;
 	@:native("new")
 	public static function fromCallable(value: CallableNative): VariantNative;
     public static function fromByteArray(value:ByteArray):VariantNative;
