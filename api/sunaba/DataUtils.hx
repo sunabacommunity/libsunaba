@@ -27,6 +27,7 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.native.NativeReference;
 import haxe.macro.Expr.Var;
 import haxe.Int32;
+import haxe.Log.Log.trace;
 
 class DataUtils {
 	public static function varToDict(variant: Variant): Dictionary {
@@ -203,6 +204,7 @@ class DataUtils {
 				arr.append(int64Arr.get(i));
 			}
 			dict.set("value", arr);
+
 		}
 		else if (type == VariantType.float32Vector) {
 			var vNative: VariantNative = variant;
@@ -514,10 +516,12 @@ class DataUtils {
 		}
 		else if (type == VariantType.object) {
 			var resDict: Dictionary = value;
-			var className = resDict.get("class");
-			var nativeObj = new NativeObject(className);
-			if (nativeObj.isClass("Resource")) {
-				variant = dictToRes(resDict, ioInterface);
+			var className: String = resDict.get("class");
+			var nativeObj = new NativeReference(className);
+			if (!nativeObj.isNull()) {
+				if (nativeObj.isClass("Resource")) {
+					variant = dictToRes(resDict, ioInterface);
+				}
 			}
 		}
 
@@ -528,26 +532,28 @@ class DataUtils {
 		var data = new Dictionary();
 		var path: String = res.get("resource_path");
 		data.set("path", path);
-		data.set("class", res.getClass());
-		if (path != "") {
+		var className = res.getClass();
+		data.set("class", className);
+		if (path == "") {
 			var metaList = res.getMetaList();
 			var propertyList = res.getPropertyList();
-			var properties = new Dictionary();
-			for (i in 0...propertyList.count()) {
+			var resProperties = new Dictionary();
+			for (i in 0...propertyList.size()) {
 				var prop: Dictionary = propertyList.get(i);
 				var name: String = prop.get("name");
 				if (res.get(name).getType() == VariantType.nil) {
 					continue;
 				}
 				var value: Dictionary = varToDict(res.get(name));
-				properties.set(name, value);
+				resProperties.set(name, value);
 			}
-			data.set("properties", properties);
+			data.set("properties", resProperties);
 		}
 		return data;
 	}
 
 	public static function dictToRes(dict: Dictionary, ?ioInterface: IoInterface): NativeReference {
+		trace(JSON.stringify(dict));
 		var path = dict.get("path");
 		var className = dict.get("class");
 		if (path != "" && !dict.has("properties")) {
