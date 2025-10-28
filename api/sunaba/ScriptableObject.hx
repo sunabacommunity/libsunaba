@@ -23,8 +23,8 @@ abstract class ScriptableObject extends BaseClass {
 		if (path == null) {
 			path = this.path;
 		}
-		var variant: Variant = io.loadVariant(path);
-		setData(variant);
+		var variant: Variant = io.loadText(path);
+		setData(JSON.parseString(variant));
 	}
 
 	public function save(?path: String) {
@@ -32,7 +32,8 @@ abstract class ScriptableObject extends BaseClass {
 			path = this.path;
 		}
 		var variant = getData();
-		io.saveVariant(path, variant);
+		var json = JSON.stringify(variant);
+		io.saveText(path, json);
 	}
 
 	public function new() {
