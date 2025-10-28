@@ -6,6 +6,7 @@ import sunaba.core.Quaternion;
 import sunaba.core.Transform3D;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeObject;
+import sunaba.core.Dictionary;
 
 class SpatialTransform extends Behavior {
 	private var _node: Node;
@@ -312,6 +313,20 @@ class SpatialTransform extends Behavior {
 		var args = new ArrayList();
 		args.append(offset);
 		node.native.call("translate", args);
+	}
+
+	public override function getData(): Dictionary {
+		var data = new Dictionary();
+		data.set("position", position);
+		data.set("rotation", rotation);
+		data.set("scale", scale);
+		return data;
+	}
+
+	public override function setData(data: Dictionary) {
+		position = data.get("position");
+		rotation = data.get("rotation");
+		scale = data.get("scale");
 	}
 
 	public override function onInit() {
