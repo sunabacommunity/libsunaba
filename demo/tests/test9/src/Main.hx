@@ -66,6 +66,7 @@ class Main extends App {
 			printScene(scene);
 
 			var sceneFile = SceneFile.create(scene);
+			sceneFile.io = io;
 			sceneFile.save("user://TestScene.vscn");
 		}
 		catch (e) {
