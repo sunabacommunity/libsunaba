@@ -266,7 +266,7 @@ class DataUtils {
 			var obj: NativeObject = variant;
 			if (obj.isClass("Resource")) {
 				var ref: NativeReference = variant;
-				// todo: ?
+				dict.set("value", resToDict(ref));
 			}
 		}
 		else {
@@ -513,9 +513,63 @@ class DataUtils {
 			variant = newArray;
 		}
 		else if (type == VariantType.object) {
-			//todo: ??
+			var resDict: Dictionary = value;
+			var className = resDict.get("class");
+			var nativeObj = new NativeObject(className);
+			if (nativeObj.isClass("Resource")) {
+				variant = dictToRes(resDict, ioInterface);
+			}
 		}
 
 		return variant;
+	}
+
+	public function resToDict(res: NativeReference): Dictionary {
+		var data = new Dictionary();
+		var path: String = res.get("resource_path");
+		data.set("path", path);
+		data.set("class", res.getClass());
+		if (path != "") {
+			var metaList = res.getMetaList();
+			var propertyList = res.getPropertyList();
+			var properties = new Dictionary();
+			for (i in 0...propertyList.count()) {
+				var prop: Dictionary = propertyList.get(i);
+				var name: String = prop.get("name");
+				if (res.get(name).getType() == VariantType.nil) {
+					continue;
+				}
+				var value: Dictionary = varToDict(res.get(name));
+				properties.set(name, value);
+			}
+			data.set("properties", properties);
+		}
+		return data;
+	}
+
+	public function dictToRes(dict: Dictionary, ioInterface: IoInterface): NativeReference {
+		var path = dict.get("path");
+		var className = dict.get("class");
+		if (path != "" && !dict.has("properties")) {
+			var jsonStr = ioInterface.loadText(path);
+			var json = new JSON();
+			var err = json.parse(jsonStr);
+			if (err == Error.ok) {
+				var jsonDict = json.data;
+				return dictToRes(jsonDict, ioInterface);
+			}
+		}
+		var nativeReference = new NativeReference(className);
+		if (nativeReference.isValid()) {
+			var properties: Dictionary = dict.get("properties");
+			var propKeys = properties.keys();
+			var propValues = properties.values();
+			for (i in 0...propKeys.size()) {
+				var key = propKeys.get(i);
+				var value = propValues.get(i);
+				nativeReference.set(key, value);
+			}
+		}
+		return nativeReference;
 	}
 }
