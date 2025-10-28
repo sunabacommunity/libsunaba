@@ -547,16 +547,18 @@ class DataUtils {
 		return data;
 	}
 
-	public static function dictToRes(dict: Dictionary, ioInterface: IoInterface): NativeReference {
+	public static function dictToRes(dict: Dictionary, ?ioInterface: IoInterface): NativeReference {
 		var path = dict.get("path");
 		var className = dict.get("class");
 		if (path != "" && !dict.has("properties")) {
-			var jsonStr = ioInterface.loadText(path);
-			var json = new JSON();
-			var err = json.parse(jsonStr);
-			if (err == Error.ok) {
-				var jsonDict = json.data;
-				return dictToRes(jsonDict, ioInterface);
+			if (ioInterface != null) {
+				var jsonStr = ioInterface.loadText(path);
+				var json = new JSON();
+				var err = json.parse(jsonStr);
+				if (err == Error.ok) {
+					var jsonDict = json.data;
+					return dictToRes(jsonDict, ioInterface);
+				}
 			}
 		}
 		var nativeReference = new NativeReference(className);
@@ -566,7 +568,7 @@ class DataUtils {
 			var propValues = properties.values();
 			for (i in 0...propKeys.size()) {
 				var key = propKeys.get(i);
-				var value = propValues.get(i);
+				var value = dictToVar(propValues.get(i), ioInterface);
 				nativeReference.set(key, value);
 			}
 		}
