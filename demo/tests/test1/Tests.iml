@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../test8/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../test8/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../test9/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../test10/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
