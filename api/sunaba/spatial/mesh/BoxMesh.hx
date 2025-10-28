@@ -1,6 +1,7 @@
 package sunaba.spatial.mesh;
 import sunaba.core.Vector3;
 import sunaba.core.native.NativeReference;
+import sunaba.core.Dictionary;
 
 class BoxMesh extends Behavior {
 	var res: Resource;
@@ -44,6 +45,24 @@ class BoxMesh extends Behavior {
 	public override function onInit() {
 		res = new Resource(new NativeReference("BoxMesh"));
 		editorIconPath = "studio://icons/16/cushion.png";
+	}
+
+	public override function getData(): Dictionary {
+		var data = new Dictionary();
+
+		data.set("size", size);
+		data.set("subdivideDepth", subdivideDepth);
+		data.set("subdivideHeight", subdivideHeight);
+		data.set("subdivideWidth", subdivideWidth);
+
+		return data;
+	}
+
+	public override function setData(data: Dictionary){
+		size = data.get("size");
+		subdivideDepth = data.get("subdivideDepth");
+		subdivideHeight = data.get("subdivideHeight");
+		subdivideWidth = data.get("subdivideWidth");
 	}
 
 	public override function onStart() {
