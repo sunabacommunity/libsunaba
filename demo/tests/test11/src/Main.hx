@@ -3,6 +3,15 @@ import sunaba.SceneRoot;
 import sunaba.Entity;
 import sunaba.spatial.SpatialTransform;
 import sunaba.SceneFile;
+import sunaba.spatial.Camera;
+import sunaba.spatial.mesh.BoxMesh;
+import sunaba.spatial.mesh.MeshDisplay;
+import myComponents.RotateComponent;
+import sunaba.Node;
+import sunaba.Environment;
+import sunaba.ResourceLoaderService.ResourceLoaderService.load;
+import sunaba.ResourceLoaderService;
+import sunaba.core.native.NativeObject;
 
 class Main extends App {
     public static function main() {
@@ -13,7 +22,15 @@ class Main extends App {
 		var sceneFile = new SceneFile();
 		sceneFile.load("app://TestScene.vscn");
 
+		Sys.println(io.loadText("app://TestScene.vscn"));
+
 		var scene = sceneFile.instance();
+
+		var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
+		var environment = new Environment(envRes.native);
+		var worldEnv = new Node(new NativeObject("WorldEnvironment"));
+		worldEnv.native.set("environment", environment.native);
+		rootNode.addChild(worldEnv);
 
 		rootNode.addChild(scene);
 		printScene(scene);
