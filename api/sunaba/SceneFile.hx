@@ -8,7 +8,7 @@ class SceneFile extends ScriptableObject {
 
 	public var type: SceneType = SceneType.spatial;
 
-	public static function create(scene: SceneRoot) {
+	public static function create(scene: SceneRoot, type: SceneType = SceneType.spatial) {
 		var data = new SceneFile();
 
 		for (i in 0...scene.getEntityCount()) {
