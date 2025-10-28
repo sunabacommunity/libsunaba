@@ -524,7 +524,7 @@ class DataUtils {
 		return variant;
 	}
 
-	public function resToDict(res: NativeReference): Dictionary {
+	public static function resToDict(res: NativeReference): Dictionary {
 		var data = new Dictionary();
 		var path: String = res.get("resource_path");
 		data.set("path", path);
@@ -547,7 +547,7 @@ class DataUtils {
 		return data;
 	}
 
-	public function dictToRes(dict: Dictionary, ioInterface: IoInterface): NativeReference {
+	public static function dictToRes(dict: Dictionary, ioInterface: IoInterface): NativeReference {
 		var path = dict.get("path");
 		var className = dict.get("class");
 		if (path != "" && !dict.has("properties")) {
