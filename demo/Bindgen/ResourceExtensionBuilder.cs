@@ -29,7 +29,7 @@ public class ResourceExtensionBuilder
 		var extendedClassBuilder = new StringBuilder();
 
 		extendedClassBuilder.AppendLine($"extends {name}");
-		extendedClassBuilder.AppendLine($"class_name {extendedClassBuilder}");
+		extendedClassBuilder.AppendLine($"class_name {extendedClassName}");
 		extendedClassBuilder.AppendLine($"");
 		extendedClassBuilder.AppendLine($"@export var asset_path: String = ''");
 
