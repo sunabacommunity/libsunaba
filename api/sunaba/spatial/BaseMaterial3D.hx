@@ -5,12 +5,12 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.Material;
 import sunaba.core.Color;
 import sunaba.Texture2D;
 import sunaba.core.Vector3;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 
 class BaseMaterial3D extends Material {
     public function new(?_native: NativeReference) {

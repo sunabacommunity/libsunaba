@@ -5,10 +5,10 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.core.TypedArray;
 import sunaba.core.Vector3;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 
 class ArrayOccluder3D extends Occluder3D {
     public function new(?_native: NativeReference) {

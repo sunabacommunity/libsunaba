@@ -5,6 +5,7 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.Resource;
 import sunaba.Material;
 import sunaba.core.Signal;

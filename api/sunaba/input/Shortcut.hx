@@ -5,8 +5,8 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
-import sunaba.Resource;
 import sunaba.core.ArrayList;
+import sunaba.Resource;
 import sunaba.core.Signal;
 
 class Shortcut extends Resource {

@@ -5,13 +5,11 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.input.InputEvent;
 import sunaba.networking.MultiplayerAPI;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 import sunaba.desktop.Window;
-import sunaba.core.native.ScriptType;
-import sunaba.core.VariantNative;
 
 class Node extends Object {
     public function new(?_native: NativeObject) {

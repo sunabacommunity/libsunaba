@@ -5,9 +5,9 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.core.TypedArray;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 
 class WebSocketMultiplayerPeer extends MultiplayerPeer {
     public function new(?_native: NativeReference) {

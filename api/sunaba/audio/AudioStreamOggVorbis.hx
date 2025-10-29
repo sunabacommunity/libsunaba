@@ -5,10 +5,10 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.OggPacketSequence;
 import sunaba.core.Signal;
 import sunaba.core.ByteArray;
-import sunaba.core.ArrayList;
 
 class AudioStreamOggVorbis extends AudioStream {
     public function new(?_native: NativeReference) {

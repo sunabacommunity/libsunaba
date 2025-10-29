@@ -5,9 +5,9 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.input.Shortcut;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 
 class BaseButton extends Control {
     public function new(?_native: NativeObject) {

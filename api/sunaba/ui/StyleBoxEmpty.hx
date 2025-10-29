@@ -5,6 +5,7 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.core.Signal;
 
 class StyleBoxEmpty extends StyleBox {

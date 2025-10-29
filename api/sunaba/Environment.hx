@@ -5,11 +5,11 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.core.Color;
 import sunaba.spatial.Sky;
 import sunaba.core.Vector3;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 
 class Environment extends Resource {
     public function new(?_native: NativeReference) {

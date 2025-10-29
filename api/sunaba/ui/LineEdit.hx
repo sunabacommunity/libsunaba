@@ -5,8 +5,8 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
-import sunaba.Texture2D;
 import sunaba.core.ArrayList;
+import sunaba.Texture2D;
 import sunaba.core.Signal;
 import sunaba.desktop.PopupMenu;
 

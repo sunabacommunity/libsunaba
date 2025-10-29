@@ -5,9 +5,9 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.VideoStream;
 import sunaba.core.Signal;
-import sunaba.core.ArrayList;
 import sunaba.Texture2D;
 
 class VideoStreamPlayer extends Control {

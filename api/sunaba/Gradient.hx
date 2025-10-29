@@ -5,11 +5,11 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.core.Color;
 import sunaba.core.TypedArray;
 import sunaba.core.Signal;
 import sunaba.core.Color;
-import sunaba.core.ArrayList;
 
 class Gradient extends Resource {
     public function new(?_native: NativeReference) {

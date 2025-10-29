@@ -5,12 +5,12 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
+import sunaba.core.ArrayList;
 import sunaba.Resource;
 import sunaba.core.Signal;
 import sunaba.core.Vector3;
 import sunaba.core.ByteArray;
 import sunaba.core.TypedArray;
-import sunaba.core.ArrayList;
 
 class VoxelGIData extends Resource {
     public function new(?_native: NativeReference) {
