@@ -82,6 +82,10 @@ abstract ArrayList(ArrayListNative) from ArrayListNative to ArrayListNative {
 	public function new() {
 		this = new ArrayListNative();
 	}
+
+	public static function create(array: Array<Variant>): ArrayList {
+		return array;
+	}
     @:op([])
     public inline function get(index: Int): Variant {
         return this.get(index);
