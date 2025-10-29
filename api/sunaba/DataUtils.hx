@@ -272,8 +272,10 @@ class DataUtils {
 		}
 		else if (type == VariantType.object) {
 			var ref: NativeReference = variant;
-			if (ref.isValid()) {
-				dict.set("value", resToDict(ref));
+			if (ref != null) {
+				if (ref.isValid()) {
+					dict.set("value", resToDict(ref));
+				}
 			}
 		}
 		else {
