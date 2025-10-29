@@ -66,7 +66,8 @@ class PrimitiveMesh extends Behavior {
 		addUv2 = data.get("addUv2");
 		customAabb = DataUtils.dictToVar(data.get("customAabb"));
 		flipFaces = data.get("flipFaces");
-		material = new Material(data.get("material"));
+		material = new Material(DataUtils.dictToVar(data.get("material")));
+
 	}
 
 	public override function onStart() {
