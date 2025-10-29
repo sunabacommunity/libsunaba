@@ -2,6 +2,8 @@
 
 #include "NativeObject.h"
 #include "NativeReference.h"
+#include "io/Byte.h"
+#include "io/ByteArray.h"
 
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
@@ -127,6 +129,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_Signal();
 	luaopen_Plane();
 	luaopen_Projection();
+	io::luaopen_ByteArray(lua_state);
+	io::luaopen_Byte(lua_state);
 	if (p_sandboxed) {
 		luaopen_Variant_sandboxed(classnames);
 		luaopen_NativeObject_sandboxed(classnames);

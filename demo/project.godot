@@ -17,6 +17,10 @@ config/custom_user_dir_name="Sunaba"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ResourcePathDB="*res://Engine/ResourcePathDB.gd"
+
 [display]
 
 display_server/driver.linuxbsd="wayland"

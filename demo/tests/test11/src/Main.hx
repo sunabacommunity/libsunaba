@@ -22,8 +22,6 @@ class Main extends App {
 		var sceneFile = new SceneFile();
 		sceneFile.load("app://TestScene.vscn");
 
-		Sys.println(io.loadText("app://TestScene.vscn"));
-
 		var scene = sceneFile.instance();
 
 		var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");

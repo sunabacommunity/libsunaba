@@ -22,6 +22,19 @@ class Reference extends BaseClass {
         return native.isValid();
     }
 
+	public var resPath(get, set): String;
+
+	function get_resPath():String {
+		return ResourcePathDBService.getResourcePathNative(native);
+	}
+
+
+	function set_resPath(value:String):String {
+		ResourcePathDBService.setResourcePathNative(native, value);
+		return value;
+	}
+
+
 	@:generic
 	public static function castTo<T>(ref: Reference, type: Class<T>): T {
 		return Type.createInstance(type, [ref.native]);

@@ -14,6 +14,10 @@ import sunaba.Environment;
 import sunaba.Node;
 import sunaba.core.native.NativeObject;
 import sunaba.SceneFile;
+import sunaba.spatial.StandardMaterial3D;
+import sunaba.core.Color;
+import sunaba.Image;
+import sunaba.ImageTexture;
 
 class Main extends App {
     public static function main() {
@@ -52,6 +56,18 @@ class Main extends App {
 			var boxMeshDisplay = boxEntity.addComponent(MeshDisplay);
 			var boxMesh = boxEntity.addComponent(BoxMesh);
 			boxMesh.size = new Vector3(1, 1, 1);
+			var boxMaterial = new StandardMaterial3D();
+			var image = new Image();
+			image.loadPngFromBuffer(io.loadBytes("app://hxlogo.png"));
+			image.native.set("__path", "app://hxlogo.png");
+			trace(image.native.get("__path"));
+			boxMaterial.uv1Triplanar = true;
+			var texture = ImageTexture.createFromImage(image);
+			boxMaterial.albedoTexture = texture;
+			boxMaterial.uv1Offset = new Vector3(0.5, 0.5, 0.5);
+			boxMaterial.uv1Triplanar = true;
+			boxMesh.material = boxMaterial;
+
 			var rotateComponent = boxEntity.addComponent(RotateComponent);
 			scene.addEntity(boxEntity);
 			boxTransform.position = new Vector3(0, 0, -1);

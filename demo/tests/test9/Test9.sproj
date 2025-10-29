@@ -3,6 +3,7 @@
     "version": "1.0",
     "type": "executable",
     "rootUrl": "app://",
+    "assetsdir": "assets",
     "scriptdir": "src",
     "apisymbols": true,
     "sourcemap": true,

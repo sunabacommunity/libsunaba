@@ -450,7 +450,8 @@ class DataUtils {
 			variant = newArray;
 		}
 		else if (type == VariantType.byteArray) {
-			variant = MarshallsService.base64ToRaw(value);
+			var base64 = value;
+			variant = MarshallsService.base64ToRaw(base64);
 		}
 		else if (type == VariantType.int32Vector) {
 			var oldArray: ArrayList = value;
@@ -527,8 +528,8 @@ class DataUtils {
 		else if (type == VariantType.object) {
 			var resDict: Dictionary = value;
 			var className: String = resDict.get("class");
-			var path = dict.get("path");
-			if (className == "Image") {
+			var path: String = resDict.get("path");
+			if (className == "Image" && path != "?") {
 				var image = new Image();
 				image.resourcePath = path;
 				var data = ioInterface.loadBytes(path);
@@ -566,7 +567,7 @@ class DataUtils {
 					throw "Image loading failed with error code: " + error;
 				}
 			}
-			else if (className == "Shader") {
+			else if (className == "Shader" && path !=  "?") {
 				var shader = new Shader();
 				var code = ioInterface.loadText(path);
 				shader.code = code;
@@ -588,11 +589,16 @@ class DataUtils {
 
 	public static function resToDict(res: NativeReference): Dictionary {
 		var data = new Dictionary();
-		var path: String = res.get("resource_path");
-		data.set("path", path);
+		var path= "?";
 		var className = res.getClass();
 		data.set("class", className);
-		if (path == "") {
+		trace(className);
+		trace(res.get("__path").getType() == VariantType.nil);
+		if (res.get("__path").getType() != VariantType.nil) {
+			path = res.get("__path");
+		}
+		data.set("path", path);
+		if (path == "?") {
 			var metaList = res.getMetaList();
 			var propertyList = res.getPropertyList();
 			var resProperties = new Dictionary();
@@ -611,10 +617,9 @@ class DataUtils {
 	}
 
 	public static function dictToRes(dict: Dictionary, ?ioInterface: IoInterface): NativeReference {
-		trace(JSON.stringify(dict));
 		var path = dict.get("path");
 		var className = dict.get("class");
-		if (path != "" && !dict.has("properties")) {
+		if (path != "?" && !dict.has("properties")) {
 			if (ioInterface != null) {
 				var jsonStr = ioInterface.loadText(path);
 				var json = new JSON();
@@ -635,6 +640,7 @@ class DataUtils {
 				var value = dictToVar(propValues.get(i), ioInterface);
 				nativeReference.set(key, value);
 			}
+			nativeReference.set("__path", path);
 		}
 		return nativeReference;
 	}

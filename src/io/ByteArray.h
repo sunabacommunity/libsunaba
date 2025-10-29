@@ -57,8 +57,8 @@ namespace io {
             }
         }
 
-        size_t size() const {
-            return data.size();
+        int size() const {
+            return (int)data.size();
         }
 
         Byte* get(int index) const {

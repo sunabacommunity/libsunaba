@@ -63,6 +63,7 @@ if env["platform"] == "web" and lua_runtime == "luajit":
 
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
+sources = Glob("src/io/*.cpp")
 
 ### > LUAU STUFF
 

@@ -2,9 +2,9 @@ extends App
 
 func _init() -> void:
 	init(false, [])
-	load_app("res://tests/test9/bin/Test9.snb")
 
 func _ready() -> void:
+	load_app("res://tests/test9/bin/Test9.snb")
 	var window := get_window()
 	var displayScale := DisplayServer.screen_get_scale(window.current_screen)
 	if (OS.get_name() != "Linux"):

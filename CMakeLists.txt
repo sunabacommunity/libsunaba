@@ -118,6 +118,10 @@ target_sources(${LIBNAME}
     src/luaopen_Transform2D.cpp
     src/luaopen_Plane.cpp
     src/luaopen_Projection.cpp
+    src/io/Byte.h
+    src/io/Byte.cpp
+    src/io/ByteArray.h
+    src/io/ByteArray.cpp
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
