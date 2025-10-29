@@ -206,6 +206,10 @@ public class ClassBuilder
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
         classSb.AppendLine("        native = _native;");
+        if (InheritsClass(className, "Resource"))
+        {
+	        classSb.AppendLine("        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);");
+        }
         classSb.AppendLine("    }");
 
         if (className == "Node")
