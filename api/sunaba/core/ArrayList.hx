@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("ArrayList")
-extern class ArrayList {
+extern class ArrayListNative {
     public function new();
     public function append(value : Variant) : Void;
     public function appendArray(array : ArrayList) : Void;
@@ -40,30 +40,48 @@ extern class ArrayList {
     public function sort(): Void;
 }
 
-class ArrayListIterator {
-    public var index: Int;
-    public var array: ArrayList;
-    public function new(array: ArrayList) {
-        this.index = 0;
-        this.array = array;
-    }
 
-    public function hasNext(): Bool {
-        return this.index < this.array.size();
-    }
 
-    public function next(): Variant {
-        if (this.hasNext()) {
-            var value = this.array.get(this.index);
-            this.index++;
-            return value;
-        } else {
-            throw "No more elements in the iterator";
-        }
-    }
-}
-
-abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
+@:forward(
+	append,
+	appendArray,
+	assign,
+	back,
+	bsearch,
+	clear,
+	count,
+	duplicate,
+	erase,
+	fill,
+	front,
+	get,
+	has,
+	insert,
+	isEmpty,
+	isReadOnly,
+	makeReadOnly,
+	max,
+	min,
+	pickRandom,
+	popAt,
+	popBack,
+	popFront,
+	pushBack,
+	pushFront,
+	removeAt,
+	resize,
+	reverse,
+	rfind,
+	set,
+	shuffle,
+	size,
+	slice,
+	sort
+)
+abstract ArrayList(ArrayListNative) from ArrayListNative to ArrayListNative {
+	public function new() {
+		this = new ArrayListNative();
+	}
     @:op([])
     public inline function get(index: Int): Variant {
         return this.get(index);
@@ -100,7 +118,7 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
     }
 
     @:from
-    public static function fromArray(array: Array<Variant>): ArrayListAbstract {
+    public static function fromArray(array: Array<Variant>): ArrayList {
         var result = new ArrayList();
         for (item in array) {
             result.append(item);
@@ -111,4 +129,27 @@ abstract ArrayListAbstract(ArrayList) from ArrayList to ArrayList {
     public function iterator(): ArrayListIterator {
         return new ArrayListIterator(this);
     }
+}
+
+class ArrayListIterator {
+	public var index: Int;
+	public var array: ArrayList;
+	public function new(array: ArrayList) {
+		this.index = 0;
+		this.array = array;
+	}
+
+	public function hasNext(): Bool {
+		return this.index < this.array.size();
+	}
+
+	public function next(): Variant {
+		if (this.hasNext()) {
+			var value = this.array.get(this.index);
+			this.index++;
+			return value;
+		} else {
+			throw "No more elements in the iterator";
+		}
+	}
 }
