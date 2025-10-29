@@ -13,7 +13,7 @@ class Main extends App {
 
 	public override function init() {
 		var callable: Callable = this.sayHello;
-		callable.call(args(["World"]));
+		callable.call(ArrayList.create(["World"]));
 	}
 
     public function sayHello(name: String) {
