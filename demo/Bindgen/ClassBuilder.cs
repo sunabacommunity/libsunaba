@@ -181,6 +181,7 @@ public class ClassBuilder
         {
             importList.Add("sunaba.core.Reference");
             importList.Add("sunaba.core.Object");
+            importList.Add("sunaba.core.ArrayList");
         }
 
 
