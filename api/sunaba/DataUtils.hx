@@ -633,6 +633,7 @@ class DataUtils {
 			}
 		}
 		var nativeReference = new NativeReference(className);
+		var res  = new Resource(nativeReference);
 		if (nativeReference.isValid()) {
 			var properties: Dictionary = dict.get("properties");
 			var propKeys = properties.keys();
