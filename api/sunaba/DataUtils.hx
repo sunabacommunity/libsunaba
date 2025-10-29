@@ -287,6 +287,9 @@ class DataUtils {
 	}
 
 	public static function dictToVar(dict: Dictionary, ?ioInterface: IoInterface): Variant {
+		if (ioInterface == null) {
+			ioInterface = new IoInterface(untyped __lua__("_G.__ioManager"));
+		}
 		var variant: Variant = new VariantNative();
 
 		var type: Int = dict.get("type");
@@ -523,10 +526,50 @@ class DataUtils {
 		else if (type == VariantType.object) {
 			var resDict: Dictionary = value;
 			var className: String = resDict.get("class");
-			var nativeObj = new NativeReference(className);
-			if (!nativeObj.isNull()) {
-				if (nativeObj.isClass("Resource")) {
-					variant = dictToRes(resDict, ioInterface);
+			if (className == "Image") {
+				var image = new Image();
+				var path = dict.get("path");
+				var data = ioInterface.loadBytes(path);
+				var error = Error.failed;
+				if (data.size() > 0) {
+					if (StringTools.endsWith(path, ".bmp")) {
+						error = image.loadBmpFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".dds")) {
+						error = image.loadDdsFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".jpg") || StringTools.endsWith(path, ".jpeg")) {
+						error = image.loadJpgFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".ktx")) {
+						error = image.loadKtxFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".png")) {
+						error = image.loadPngFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".tga")) {
+						error = image.loadTgaFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".svg")) {
+						error = image.loadSvgFromBuffer(data);
+					}
+					else if (StringTools.endsWith(path, ".webp")) {
+						error = image.loadWebpFromBuffer(data);
+					}
+				}
+				if (error == Error.ok) {
+					variant = image;
+				}
+				else {
+					throw "Image loading failed with error code: " + error;
+				}
+			}
+			else {
+				var nativeObj = new NativeReference(className);
+				if (!nativeObj.isNull()) {
+					if (nativeObj.isClass("Resource")) {
+						variant = dictToRes(resDict, ioInterface);
+					}
 				}
 			}
 		}
