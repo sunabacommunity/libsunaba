@@ -19,12 +19,4 @@ class Main extends App {
     public function sayHello(name: String) {
         Sys.println("Hello, " + name + "!");
     }
-
-    function args(args: Array<Variant>): ArrayList {
-		var newArgs = new ArrayList();
-		for (arg in args) {
-			newArgs.append(arg);
-		}
-		return newArgs;
-	}
 }
