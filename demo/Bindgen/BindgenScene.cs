@@ -24,6 +24,8 @@ public partial class BindgenScene : Node
 
 		var serviceBuilder = new ServiceBuilder();
 		serviceBuilder.Build();
+
+		var assetExtensionBuilder = new ResourceExtensionBuilder();
 		GetTree().Quit();
 	}
 }

@@ -37,6 +37,8 @@ public class ResourceExtensionBuilder
 
 		var extendedClassPath = ProjectSettings.GlobalizePath($"res://Engine/AssetExtensions/{extendedClassName}.gd");
 		File.WriteAllText(extendedClassPath, extendedClass);
+
+		GD.Print("Generated class: " + extendedClassName);
 	}
 
 	public static List<string> GetClasses()
