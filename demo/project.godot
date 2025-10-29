@@ -28,7 +28,3 @@ display_server/driver.linuxbsd="wayland"
 [dotnet]
 
 project/assembly_name="Sunaba"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/csharp_gdextension_bindgen/plugin.cfg")
