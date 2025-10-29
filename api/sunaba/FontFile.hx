@@ -21,6 +21,9 @@ class FontFile extends Font {
             _native = new NativeReference('FontFile');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['FontFile', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var allowSystemFallback(get, set): Bool;

@@ -15,6 +15,9 @@ class InputEventMouseMotion extends InputEventMouse {
             _native = new NativeReference('InputEventMouseMotion');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventMouseMotion', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var penInverted(get, set): Bool;

@@ -14,6 +14,9 @@ class Texture2DRD extends Texture2D {
             _native = new NativeReference('Texture2DRD');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Texture2DRD', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var textureRdRid(get, set): Int;

@@ -18,6 +18,9 @@ class Gradient extends Resource {
             _native = new NativeReference('Gradient');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Gradient', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var colors(get, set): TypedArray<Color>;

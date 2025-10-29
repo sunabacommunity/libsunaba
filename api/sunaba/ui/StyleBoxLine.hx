@@ -15,6 +15,9 @@ class StyleBoxLine extends StyleBox {
             _native = new NativeReference('StyleBoxLine');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['StyleBoxLine', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var color(get, set): Color;

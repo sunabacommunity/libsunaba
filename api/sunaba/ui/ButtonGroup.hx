@@ -16,6 +16,9 @@ class ButtonGroup extends Resource {
             _native = new NativeReference('ButtonGroup');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ButtonGroup', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var allowUnpress(get, set): Bool;

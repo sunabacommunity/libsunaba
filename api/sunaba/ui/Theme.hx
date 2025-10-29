@@ -20,6 +20,9 @@ class Theme extends Resource {
             _native = new NativeReference('Theme');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Theme', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var defaultBaseScale(get, set): Float;

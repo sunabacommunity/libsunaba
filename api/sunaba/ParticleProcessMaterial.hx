@@ -18,6 +18,9 @@ class ParticleProcessMaterial extends Material {
             _native = new NativeReference('ParticleProcessMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ParticleProcessMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var alphaCurve(get, set): Texture2D;

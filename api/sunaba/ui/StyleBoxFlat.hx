@@ -17,6 +17,9 @@ class StyleBoxFlat extends StyleBox {
             _native = new NativeReference('StyleBoxFlat');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['StyleBoxFlat', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var antiAliasing(get, set): Bool;

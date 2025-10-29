@@ -15,6 +15,9 @@ class ImageTexture3D extends Texture3D {
             _native = new NativeReference('ImageTexture3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ImageTexture3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

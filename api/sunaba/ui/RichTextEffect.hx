@@ -15,6 +15,9 @@ class RichTextEffect extends Resource {
             _native = new NativeReference('RichTextEffect');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['RichTextEffect', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

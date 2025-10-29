@@ -14,6 +14,9 @@ class ViewportTexture extends Texture2D {
             _native = new NativeReference('ViewportTexture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ViewportTexture', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var viewportPath(get, set): String;

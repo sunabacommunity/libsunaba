@@ -14,6 +14,9 @@ class AudioEffectPhaser extends AudioEffect {
             _native = new NativeReference('AudioEffectPhaser');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectPhaser', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var depth(get, set): Float;

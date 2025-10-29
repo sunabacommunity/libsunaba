@@ -14,6 +14,9 @@ class PhysicsMaterial extends Resource {
             _native = new NativeReference('PhysicsMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PhysicsMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var absorbent(get, set): Bool;

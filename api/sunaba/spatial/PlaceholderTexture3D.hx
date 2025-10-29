@@ -15,6 +15,9 @@ class PlaceholderTexture3D extends Texture3D {
             _native = new NativeReference('PlaceholderTexture3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PlaceholderTexture3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var size(get, set): Vector3i;

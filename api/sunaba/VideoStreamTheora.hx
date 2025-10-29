@@ -14,6 +14,9 @@ class VideoStreamTheora extends VideoStream {
             _native = new NativeReference('VideoStreamTheora');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['VideoStreamTheora', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

@@ -14,6 +14,9 @@ class AudioEffectEQ21 extends AudioEffectEQ {
             _native = new NativeReference('AudioEffectEQ21');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectEQ21', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

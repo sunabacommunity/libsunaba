@@ -15,6 +15,9 @@ class AudioEffectRecord extends AudioEffect {
             _native = new NativeReference('AudioEffectRecord');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectRecord', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var format(get, set): Int;

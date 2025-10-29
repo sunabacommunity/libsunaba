@@ -14,6 +14,9 @@ class AudioEffectStereoEnhance extends AudioEffect {
             _native = new NativeReference('AudioEffectStereoEnhance');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectStereoEnhance', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var panPullout(get, set): Float;

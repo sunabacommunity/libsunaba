@@ -14,6 +14,9 @@ class NoiseTexture2D extends Texture2D {
             _native = new NativeReference('NoiseTexture2D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['NoiseTexture2D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var asNormalMap(get, set): Bool;

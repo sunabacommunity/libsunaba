@@ -19,6 +19,9 @@ class StyleBox extends Resource {
             _native = new NativeReference('StyleBox');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['StyleBox', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var contentMarginBottom(get, set): Float;

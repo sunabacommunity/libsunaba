@@ -19,6 +19,9 @@ class PolygonPathFinder extends Resource {
             _native = new NativeReference('PolygonPathFinder');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PolygonPathFinder', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

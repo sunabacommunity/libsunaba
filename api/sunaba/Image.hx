@@ -20,6 +20,9 @@ class Image extends Resource {
             _native = new NativeReference('Image');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Image', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var data(get, set): Dictionary;

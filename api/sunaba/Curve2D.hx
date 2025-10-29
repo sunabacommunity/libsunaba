@@ -18,6 +18,9 @@ class Curve2D extends Resource {
             _native = new NativeReference('Curve2D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Curve2D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var bakeInterval(get, set): Float;

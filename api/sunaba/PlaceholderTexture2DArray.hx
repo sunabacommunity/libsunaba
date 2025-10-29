@@ -14,6 +14,9 @@ class PlaceholderTexture2DArray extends PlaceholderTextureLayered {
             _native = new NativeReference('PlaceholderTexture2DArray');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PlaceholderTexture2DArray', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

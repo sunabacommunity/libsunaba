@@ -18,6 +18,9 @@ class SkeletonProfile extends Resource {
             _native = new NativeReference('SkeletonProfile');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['SkeletonProfile', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var boneSize(get, set): Int;

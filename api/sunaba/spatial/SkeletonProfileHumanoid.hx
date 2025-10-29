@@ -14,6 +14,9 @@ class SkeletonProfileHumanoid extends SkeletonProfile {
             _native = new NativeReference('SkeletonProfileHumanoid');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['SkeletonProfileHumanoid', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

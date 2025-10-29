@@ -14,6 +14,9 @@ class InputEventMagnifyGesture extends InputEventGesture {
             _native = new NativeReference('InputEventMagnifyGesture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventMagnifyGesture', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var factor(get, set): Float;

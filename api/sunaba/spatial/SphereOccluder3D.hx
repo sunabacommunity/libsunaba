@@ -14,6 +14,9 @@ class SphereOccluder3D extends Occluder3D {
             _native = new NativeReference('SphereOccluder3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['SphereOccluder3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var radius(get, set): Float;

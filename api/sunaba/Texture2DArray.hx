@@ -15,6 +15,9 @@ class Texture2DArray extends ImageTextureLayered {
             _native = new NativeReference('Texture2DArray');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Texture2DArray', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

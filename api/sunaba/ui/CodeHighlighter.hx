@@ -17,6 +17,9 @@ class CodeHighlighter extends SyntaxHighlighter {
             _native = new NativeReference('CodeHighlighter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['CodeHighlighter', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var colorRegions(get, set): Dictionary;

@@ -14,6 +14,9 @@ class InputEventMIDI extends InputEvent {
             _native = new NativeReference('InputEventMIDI');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventMIDI', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var channel(get, set): Int;

@@ -15,6 +15,9 @@ class Material extends Resource {
             _native = new NativeReference('Material');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Material', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var nextPass(get, set): Material;

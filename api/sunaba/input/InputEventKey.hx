@@ -15,6 +15,9 @@ class InputEventKey extends InputEventWithModifiers {
             _native = new NativeReference('InputEventKey');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventKey', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var echo(get, set): Bool;

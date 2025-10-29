@@ -14,6 +14,9 @@ class AudioEffectHighPassFilter extends AudioEffectFilter {
             _native = new NativeReference('AudioEffectHighPassFilter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectHighPassFilter', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

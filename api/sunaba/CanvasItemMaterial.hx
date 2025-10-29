@@ -14,6 +14,9 @@ class CanvasItemMaterial extends Material {
             _native = new NativeReference('CanvasItemMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['CanvasItemMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var blendMode(get, set): Int;

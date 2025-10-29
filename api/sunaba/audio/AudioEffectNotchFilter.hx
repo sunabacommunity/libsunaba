@@ -14,6 +14,9 @@ class AudioEffectNotchFilter extends AudioEffectFilter {
             _native = new NativeReference('AudioEffectNotchFilter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectNotchFilter', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

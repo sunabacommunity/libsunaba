@@ -15,6 +15,9 @@ class TextureLayered extends Texture {
             _native = new NativeReference('TextureLayered');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['TextureLayered', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

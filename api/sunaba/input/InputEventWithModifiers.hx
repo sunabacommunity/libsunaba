@@ -15,6 +15,9 @@ class InputEventWithModifiers extends InputEventFromWindow {
             _native = new NativeReference('InputEventWithModifiers');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventWithModifiers', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var altPressed(get, set): Bool;

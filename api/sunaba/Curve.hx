@@ -16,6 +16,9 @@ class Curve extends Resource {
             _native = new NativeReference('Curve');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Curve', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var bakeResolution(get, set): Int;

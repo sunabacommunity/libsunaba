@@ -14,6 +14,9 @@ class AudioEffectHardLimiter extends AudioEffect {
             _native = new NativeReference('AudioEffectHardLimiter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectHardLimiter', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var ceilingDb(get, set): Float;

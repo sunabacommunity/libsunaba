@@ -15,6 +15,9 @@ class AtlasTexture extends Texture2D {
             _native = new NativeReference('AtlasTexture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AtlasTexture', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var atlas(get, set): Texture2D;

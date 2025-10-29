@@ -14,6 +14,9 @@ class InputEventFromWindow extends InputEvent {
             _native = new NativeReference('InputEventFromWindow');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventFromWindow', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var windowId(get, set): Int;

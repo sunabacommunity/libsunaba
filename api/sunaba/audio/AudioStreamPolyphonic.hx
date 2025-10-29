@@ -14,6 +14,9 @@ class AudioStreamPolyphonic extends AudioStream {
             _native = new NativeReference('AudioStreamPolyphonic');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamPolyphonic', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var polyphony(get, set): Int;

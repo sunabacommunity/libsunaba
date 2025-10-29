@@ -15,6 +15,9 @@ class PlaceholderTextureLayered extends TextureLayered {
             _native = new NativeReference('PlaceholderTextureLayered');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PlaceholderTextureLayered', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var layers(get, set): Int;

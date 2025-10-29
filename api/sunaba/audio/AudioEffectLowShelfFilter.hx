@@ -14,6 +14,9 @@ class AudioEffectLowShelfFilter extends AudioEffectFilter {
             _native = new NativeReference('AudioEffectLowShelfFilter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectLowShelfFilter', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

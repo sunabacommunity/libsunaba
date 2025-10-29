@@ -210,7 +210,7 @@ public class ClassBuilder
         {
 	        classSb.AppendLine($"        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);");
 	        classSb.AppendLine($"        var args: Array<Variant> = ['{className}', native];");
-	        classSb.AppendLine($"        scriptLoader.call('loadScript', args)");
+	        classSb.AppendLine($"        scriptLoader.call('loadScript', args);");
         }
         classSb.AppendLine("    }");
 

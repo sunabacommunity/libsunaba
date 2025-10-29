@@ -14,6 +14,9 @@ class AudioEffectAmplify extends AudioEffect {
             _native = new NativeReference('AudioEffectAmplify');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectAmplify', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var volumeDb(get, set): Float;

@@ -19,6 +19,9 @@ class Curve3D extends Resource {
             _native = new NativeReference('Curve3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Curve3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var bakeInterval(get, set): Float;

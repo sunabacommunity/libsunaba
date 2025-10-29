@@ -14,6 +14,9 @@ class AudioEffectDelay extends AudioEffect {
             _native = new NativeReference('AudioEffectDelay');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectDelay', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var dry(get, set): Float;

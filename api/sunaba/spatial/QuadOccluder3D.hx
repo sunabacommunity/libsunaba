@@ -15,6 +15,9 @@ class QuadOccluder3D extends Occluder3D {
             _native = new NativeReference('QuadOccluder3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['QuadOccluder3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var size(get, set): Vector2;

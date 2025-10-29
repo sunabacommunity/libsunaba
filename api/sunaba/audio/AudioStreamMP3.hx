@@ -16,6 +16,9 @@ class AudioStreamMP3 extends AudioStream {
             _native = new NativeReference('AudioStreamMP3');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamMP3', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var barBeats(get, set): Int;

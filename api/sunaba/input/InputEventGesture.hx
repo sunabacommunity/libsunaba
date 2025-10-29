@@ -15,6 +15,9 @@ class InputEventGesture extends InputEventWithModifiers {
             _native = new NativeReference('InputEventGesture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventGesture', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var position(get, set): Vector2;

@@ -15,6 +15,9 @@ class BoxOccluder3D extends Occluder3D {
             _native = new NativeReference('BoxOccluder3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['BoxOccluder3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var size(get, set): Vector3;

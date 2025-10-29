@@ -14,6 +14,9 @@ class InputEventAction extends InputEvent {
             _native = new NativeReference('InputEventAction');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventAction', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var action(get, set): String;

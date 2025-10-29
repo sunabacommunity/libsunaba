@@ -15,6 +15,9 @@ class Shader extends Resource {
             _native = new NativeReference('Shader');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Shader', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var code(get, set): String;

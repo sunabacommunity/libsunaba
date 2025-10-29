@@ -14,6 +14,9 @@ class ORMMaterial3D extends BaseMaterial3D {
             _native = new NativeReference('ORMMaterial3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ORMMaterial3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

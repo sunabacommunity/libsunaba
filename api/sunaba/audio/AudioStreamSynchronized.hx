@@ -15,6 +15,9 @@ class AudioStreamSynchronized extends AudioStream {
             _native = new NativeReference('AudioStreamSynchronized');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamSynchronized', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var streamCount(get, set): Int;

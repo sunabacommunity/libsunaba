@@ -16,6 +16,9 @@ class FogMaterial extends Material {
             _native = new NativeReference('FogMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['FogMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var albedo(get, set): Color;

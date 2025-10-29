@@ -15,6 +15,9 @@ class InputEventScreenDrag extends InputEventFromWindow {
             _native = new NativeReference('InputEventScreenDrag');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventScreenDrag', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var index(get, set): Int;

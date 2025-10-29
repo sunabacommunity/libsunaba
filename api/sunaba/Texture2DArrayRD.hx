@@ -14,6 +14,9 @@ class Texture2DArrayRD extends TextureLayeredRD {
             _native = new NativeReference('Texture2DArrayRD');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Texture2DArrayRD', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

@@ -16,6 +16,9 @@ class FontVariation extends Font {
             _native = new NativeReference('FontVariation');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['FontVariation', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var baseFont(get, set): Font;

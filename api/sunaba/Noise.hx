@@ -17,6 +17,9 @@ class Noise extends Resource {
             _native = new NativeReference('Noise');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Noise', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

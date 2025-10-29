@@ -19,6 +19,9 @@ class VoxelGIData extends Resource {
             _native = new NativeReference('VoxelGIData');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['VoxelGIData', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var bias(get, set): Float;

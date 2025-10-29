@@ -17,6 +17,9 @@ class CubemapArray extends ImageTextureLayered {
             _native = new NativeReference('CubemapArray');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['CubemapArray', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

@@ -14,6 +14,9 @@ class TextureCubemapArrayRD extends TextureLayeredRD {
             _native = new NativeReference('TextureCubemapArrayRD');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['TextureCubemapArrayRD', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

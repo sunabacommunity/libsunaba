@@ -15,6 +15,9 @@ class AudioEffectChorus extends AudioEffect {
             _native = new NativeReference('AudioEffectChorus');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectChorus', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var dry(get, set): Float;

@@ -14,6 +14,9 @@ class Texture3DRD extends Texture3D {
             _native = new NativeReference('Texture3DRD');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Texture3DRD', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var textureRdRid(get, set): Int;

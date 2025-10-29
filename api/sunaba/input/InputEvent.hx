@@ -16,6 +16,9 @@ class InputEvent extends Resource {
         if (_native == null) {
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEvent', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var device(get, set): Int;

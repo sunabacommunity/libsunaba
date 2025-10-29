@@ -16,6 +16,9 @@ class Translation extends Resource {
             _native = new NativeReference('Translation');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Translation', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var locale(get, set): String;

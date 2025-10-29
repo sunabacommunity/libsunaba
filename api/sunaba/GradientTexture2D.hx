@@ -15,6 +15,9 @@ class GradientTexture2D extends Texture2D {
             _native = new NativeReference('GradientTexture2D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['GradientTexture2D', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var fill(get, set): Int;

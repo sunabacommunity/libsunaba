@@ -14,6 +14,9 @@ class AudioEffectBandPassFilter extends AudioEffectFilter {
             _native = new NativeReference('AudioEffectBandPassFilter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectBandPassFilter', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

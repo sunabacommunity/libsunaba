@@ -17,6 +17,9 @@ class Texture3D extends Texture {
             _native = new NativeReference('Texture3D');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Texture3D', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

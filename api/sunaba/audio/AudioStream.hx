@@ -16,6 +16,9 @@ class AudioStream extends Resource {
             _native = new NativeReference('AudioStream');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStream', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

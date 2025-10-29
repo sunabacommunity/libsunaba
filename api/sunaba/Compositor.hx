@@ -14,6 +14,9 @@ class Compositor extends Resource {
             _native = new NativeReference('Compositor');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['Compositor', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

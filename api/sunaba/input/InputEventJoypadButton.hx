@@ -14,6 +14,9 @@ class InputEventJoypadButton extends InputEvent {
             _native = new NativeReference('InputEventJoypadButton');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventJoypadButton', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var buttonIndex(get, set): Int;

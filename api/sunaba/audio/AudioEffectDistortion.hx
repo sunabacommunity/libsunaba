@@ -14,6 +14,9 @@ class AudioEffectDistortion extends AudioEffect {
             _native = new NativeReference('AudioEffectDistortion');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectDistortion', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var drive(get, set): Float;

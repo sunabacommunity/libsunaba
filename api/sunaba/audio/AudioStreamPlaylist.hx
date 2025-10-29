@@ -15,6 +15,9 @@ class AudioStreamPlaylist extends AudioStream {
             _native = new NativeReference('AudioStreamPlaylist');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamPlaylist', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var fadeTime(get, set): Float;

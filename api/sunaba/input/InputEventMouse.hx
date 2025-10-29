@@ -15,6 +15,9 @@ class InputEventMouse extends InputEventWithModifiers {
             _native = new NativeReference('InputEventMouse');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventMouse', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var buttonMask(get, set): Int;

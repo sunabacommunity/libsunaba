@@ -15,6 +15,9 @@ class AnimatedTexture extends Texture2D {
             _native = new NativeReference('AnimatedTexture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AnimatedTexture', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var currentFrame(get, set): Int;

@@ -16,6 +16,9 @@ class OggPacketSequence extends Resource {
             _native = new NativeReference('OggPacketSequence');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['OggPacketSequence', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var granulePositions(get, set): TypedArray<Int>;

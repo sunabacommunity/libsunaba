@@ -17,6 +17,9 @@ class ProceduralSkyMaterial extends Material {
             _native = new NativeReference('ProceduralSkyMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ProceduralSkyMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var energyMultiplier(get, set): Float;

@@ -19,6 +19,9 @@ class NavigationPolygon extends Resource {
             _native = new NativeReference('NavigationPolygon');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['NavigationPolygon', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var agentRadius(get, set): Float;

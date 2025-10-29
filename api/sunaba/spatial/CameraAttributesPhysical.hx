@@ -15,6 +15,9 @@ class CameraAttributesPhysical extends CameraAttributes {
             _native = new NativeReference('CameraAttributesPhysical');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['CameraAttributesPhysical', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var autoExposureMaxExposureValue(get, set): Float;

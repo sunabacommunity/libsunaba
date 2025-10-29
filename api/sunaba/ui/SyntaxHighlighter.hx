@@ -17,6 +17,9 @@ class SyntaxHighlighter extends Resource {
             _native = new NativeReference('SyntaxHighlighter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['SyntaxHighlighter', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

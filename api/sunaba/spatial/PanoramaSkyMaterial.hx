@@ -16,6 +16,9 @@ class PanoramaSkyMaterial extends Material {
             _native = new NativeReference('PanoramaSkyMaterial');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['PanoramaSkyMaterial', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var energyMultiplier(get, set): Float;

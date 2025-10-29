@@ -16,6 +16,9 @@ class AudioStreamInteractive extends AudioStream {
             _native = new NativeReference('AudioStreamInteractive');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamInteractive', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var clipCount(get, set): Int;

@@ -14,6 +14,9 @@ class CompositorEffect extends Resource {
             _native = new NativeReference('CompositorEffect');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['CompositorEffect', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var accessResolvedColor(get, set): Bool;

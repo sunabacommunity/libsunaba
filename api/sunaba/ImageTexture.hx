@@ -16,6 +16,9 @@ class ImageTexture extends Texture2D {
             _native = new NativeReference('ImageTexture');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['ImageTexture', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

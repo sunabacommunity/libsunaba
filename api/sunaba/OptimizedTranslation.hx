@@ -15,6 +15,9 @@ class OptimizedTranslation extends Translation {
             _native = new NativeReference('OptimizedTranslation');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['OptimizedTranslation', native];
+        scriptLoader.call('loadScript', args);
     }
 
 

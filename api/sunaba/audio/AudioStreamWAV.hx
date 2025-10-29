@@ -17,6 +17,9 @@ class AudioStreamWAV extends AudioStream {
             _native = new NativeReference('AudioStreamWAV');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioStreamWAV', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var data(get, set): ByteArray;

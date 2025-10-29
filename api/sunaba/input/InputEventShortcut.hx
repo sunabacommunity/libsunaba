@@ -14,6 +14,9 @@ class InputEventShortcut extends InputEvent {
             _native = new NativeReference('InputEventShortcut');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['InputEventShortcut', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var shortcut(get, set): Shortcut;

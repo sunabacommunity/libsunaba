@@ -14,6 +14,9 @@ class AudioEffectFilter extends AudioEffect {
             _native = new NativeReference('AudioEffectFilter');
         }
         native = _native;
+        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+        var args: Array<Variant> = ['AudioEffectFilter', native];
+        scriptLoader.call('loadScript', args);
     }
 
     public var cutoffHz(get, set): Float;
