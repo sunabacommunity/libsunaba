@@ -10,6 +10,8 @@ import sunaba.input.InputEvent;
 import sunaba.networking.MultiplayerAPI;
 import sunaba.core.Signal;
 import sunaba.desktop.Window;
+import sunaba.core.VariantNative;
+import sunaba.core.native.ScriptType;
 
 class Node extends Object {
     public function new(?_native: NativeObject) {
