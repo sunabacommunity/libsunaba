@@ -526,9 +526,10 @@ class DataUtils {
 		else if (type == VariantType.object) {
 			var resDict: Dictionary = value;
 			var className: String = resDict.get("class");
+			var path = dict.get("path");
 			if (className == "Image") {
 				var image = new Image();
-				var path = dict.get("path");
+				image.resourcePath = path;
 				var data = ioInterface.loadBytes(path);
 				var error = Error.failed;
 				if (data.size() > 0) {
@@ -558,11 +559,18 @@ class DataUtils {
 					}
 				}
 				if (error == Error.ok) {
-					variant = image;
+					variant = image.native;
 				}
 				else {
 					throw "Image loading failed with error code: " + error;
 				}
+			}
+			else if (className == "Shader") {
+				var shader = new Shader();
+				var code = ioInterface.loadText(path);
+				shader.code = code;
+				shader.resourcePath = path;
+				variant = shader.native
 			}
 			else {
 				var nativeObj = new NativeReference(className);
