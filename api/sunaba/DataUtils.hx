@@ -271,9 +271,8 @@ class DataUtils {
 			dict.set("value", arr);
 		}
 		else if (type == VariantType.object) {
-			var obj: NativeObject = variant;
-			if (obj.isClass("Resource")) {
-				var ref: NativeReference = variant;
+			var ref: NativeReference = variant;
+			if (ref.isValid()) {
 				dict.set("value", resToDict(ref));
 			}
 		}
