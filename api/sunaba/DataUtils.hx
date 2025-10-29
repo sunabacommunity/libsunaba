@@ -570,7 +570,7 @@ class DataUtils {
 				var code = ioInterface.loadText(path);
 				shader.code = code;
 				shader.resourcePath = path;
-				variant = shader.native
+				variant = shader.native;
 			}
 			else {
 				var nativeObj = new NativeReference(className);
