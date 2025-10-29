@@ -7,6 +7,10 @@ import sunaba.Node;
 import sunaba.io.IoManager;
 import sunaba.core.native.NativeReference;
 import haxe.Exception;
+import sunaba.core.ArrayList;
+import sunaba.core.VariantNative;
+import sunaba.core.VariantNative.VariantNative.fromBaseClass;
+import sunaba.core.native.ScriptType;
 
 class App extends BaseClass {
     public var rootNodeNative(get, default): NativeObject;
@@ -16,7 +20,7 @@ class App extends BaseClass {
 
 	public var rootNode(get, default): Node;
 	function get_rootNode(): Node {
-		return new Node(rootNodeNative);
+		return new Node(untyped __lua__("_G.__rootNode"));
 	}
 
 	public var io(get, default): IoManager;
@@ -41,6 +45,12 @@ class App extends BaseClass {
     }
 
     public function new() {
+		var proxy = new NativeObject("res://Engine/NodeProxy.gd", new ArrayList(), ScriptType.gdscript);
+		proxy.set("instance", VariantNative.fromBaseClass(this));
+		var args = new ArrayList();
+		args.append(proxy);
+		proxy.set("name", "Proxy");
+		rootNode.native.call("add_child", args);
         try {
 			init();
         }
