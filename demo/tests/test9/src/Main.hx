@@ -59,10 +59,12 @@ class Main extends App {
 			var boxMaterial = new StandardMaterial3D();
 			var image = new Image();
 			image.loadPngFromBuffer(io.loadBytes("app://hxlogo.png"));
-			image.native.set("__path", "app://hxlogo.png");
-			trace(image.native.get("__path"));
+			//image.native.set("asset_path", "app://hxlogo.png");
+			//trace(image.native.get("asset_path"));
 			boxMaterial.uv1Triplanar = true;
 			var texture = ImageTexture.createFromImage(image);
+			texture.native.set("asset_path", "app://hxlogo.png");
+			trace(texture.native.get("asset_path"));
 			boxMaterial.albedoTexture = texture;
 			boxMaterial.uv1Offset = new Vector3(0.5, 0.5, 0.5);
 			boxMaterial.uv1Triplanar = true;

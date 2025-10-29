@@ -529,9 +529,8 @@ class DataUtils {
 			var resDict: Dictionary = value;
 			var className: String = resDict.get("class");
 			var path: String = resDict.get("path");
-			if (className == "Image" && path != "?") {
+			if (className == "ImageTexture" && path != "?") {
 				var image = new Image();
-				image.resourcePath = path;
 				var data = ioInterface.loadBytes(path);
 				var error = Error.failed;
 				if (data.size() > 0) {
@@ -561,7 +560,9 @@ class DataUtils {
 					}
 				}
 				if (error == Error.ok) {
-					variant = image.native;
+					var texture = ImageTexture.createFromImage(image);
+					texture.native.set("asset_path", path);
+					variant = texture;
 				}
 				else {
 					throw "Image loading failed with error code: " + error;
@@ -571,7 +572,7 @@ class DataUtils {
 				var shader = new Shader();
 				var code = ioInterface.loadText(path);
 				shader.code = code;
-				shader.resourcePath = path;
+				shader.native.set("asset_path",  path);
 				variant = shader.native;
 			}
 			else {
@@ -593,9 +594,10 @@ class DataUtils {
 		var className = res.getClass();
 		data.set("class", className);
 		trace(className);
-		trace(res.get("__path").getType() == VariantType.nil);
-		if (res.get("__path").getType() != VariantType.nil) {
-			path = res.get("__path");
+		trace(res.get("asset_path").toString() != "");
+		if (res.get("asset_path").toString() != "") {
+			path = res.get("asset_path").toString();
+			trace(path);
 		}
 		data.set("path", path);
 		if (path == "?") {
@@ -640,7 +642,7 @@ class DataUtils {
 				var value = dictToVar(propValues.get(i), ioInterface);
 				nativeReference.set(key, value);
 			}
-			nativeReference.set("__path", path);
+			nativeReference.set("asset_path", path);
 		}
 		return nativeReference;
 	}
