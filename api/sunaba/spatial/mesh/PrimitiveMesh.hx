@@ -53,20 +53,20 @@ class PrimitiveMesh extends Behavior {
 	public override function getData(): Dictionary {
 		var data = new Dictionary();
 
-		data["addUv2"] = addUv2;
-		data["customAabb"] = DataUtils.varToDict(customAabb);
-		data["flipFaces"] = flipFaces;
-		data["material"] = DataUtils.varToDict(material);
-		data["uv2Padding"] = uv2Padding;
+		data.set("addUv2", addUv2);
+		data.set("customAabb", DataUtils.varToDict(customAabb));
+		data.set("flipFaces", flipFaces);
+		data.set("material", DataUtils.varToDict(material));
+		data.set("uv2Padding", uv2Padding);
 
 		return data;
 	}
 
 	public override function setData(data: Dictionary) {
-		addUv2 = data["addUv2"];
-		customAabb = DataUtils.dictToVar(data["customAabb"]);
-		flipFaces = data["flipFaces"];
-		material = new Material(data["material"]);
+		addUv2 = data.get("addUv2");
+		customAabb = DataUtils.dictToVar(data.get("customAabb"));
+		flipFaces = data.get("flipFaces");
+		material = new Material(data.get("material"));
 	}
 
 	public override function onStart() {
