@@ -3,9 +3,7 @@ import sunaba.core.Vector3;
 import sunaba.core.native.NativeReference;
 import sunaba.core.Dictionary;
 
-class BoxMesh extends Behavior {
-	var res: Resource;
-
+class BoxMesh extends PrimitiveMesh {
 	public var size(get, set): Vector3;
 	function get_size():Vector3 {
 		return res.native.get("size");
@@ -48,7 +46,7 @@ class BoxMesh extends Behavior {
 	}
 
 	public override function getData(): Dictionary {
-		var data = new Dictionary();
+		var data = super.getData();
 
 		data.set("size", DataUtils.varToDict(size));
 		data.set("subdivideDepth", subdivideDepth);
@@ -63,15 +61,6 @@ class BoxMesh extends Behavior {
 		subdivideDepth = data.get("subdivideDepth");
 		subdivideHeight = data.get("subdivideHeight");
 		subdivideWidth = data.get("subdivideWidth");
-	}
-
-	public override function onStart() {
-		var meshDisplay: MeshDisplay = getComponent(MeshDisplay);
-		meshDisplay.setMesh(res);
-	}
-
-	public override function onEnd() {
-		var meshDisplay: MeshDisplay = getComponent(MeshDisplay);
-		meshDisplay.setMesh(null);
+		super.setData(data);
 	}
 }
