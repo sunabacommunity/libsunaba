@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cav8d204p28od"]
+
+[ext_resource type="Script" uid="uid://vrhtmru0n5wa" path="res://TestRunners/app_test_5.gd" id="1_h76lq"]
+
+[node name="AppTest5" type="Runtime"]
+script = ExtResource("1_h76lq")
+metadata/_custom_type_script = "uid://83l0ea83y7oj"

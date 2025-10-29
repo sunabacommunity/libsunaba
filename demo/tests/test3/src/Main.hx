@@ -30,12 +30,12 @@ class Main extends App {
 
 		var resourceLoader = NativeObject.getService("ResourceLoader");
 		if (!resourceLoader.isNull()) {
-			var themeRes: NativeReference = resourceLoader.call("load", args(["res://addons/lite/light.tres"]));
+			var themeRes: NativeReference = resourceLoader.call("load", args(["res://Engine/Theme/light.tres"]));
 			var displayServer = NativeObject.getService("DisplayServer");
 			if (!displayServer.isNull()) {
 				var isDarkMode: Bool = displayServer.call("is_dark_mode", args([]));
 				if (isDarkMode) {
-					themeRes = resourceLoader.call("load", args(["res://addons/lite/dark.tres"]));
+					themeRes = resourceLoader.call("load", args(["res://Engine/Theme/dark.tres"]));
 				}
 			}
 

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b08g5p6ueokc8"]
-
-[ext_resource type="Script" uid="uid://bcx1wvw1pcc8p" path="res://app_test_11.gd" id="1_dship"]
-
-[node name="App" type="Runtime"]
-script = ExtResource("1_dship")
-metadata/_custom_type_script = "uid://83l0ea83y7oj"

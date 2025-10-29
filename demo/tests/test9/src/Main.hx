@@ -74,7 +74,7 @@ class Main extends App {
 			scene.addEntity(boxEntity);
 			boxTransform.position = new Vector3(0, 0, -1);
 
-			var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
+			var envRes = ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
 			var environment = new Environment(envRes.native);
 			var worldEnv = new Node(new NativeObject("WorldEnvironment"));
 			worldEnv.native.set("environment", environment.native);

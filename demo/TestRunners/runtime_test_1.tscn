@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cntxgl86qm45k"]
+
+[ext_resource type="Script" uid="uid://bxx4gbtua82f7" path="res://TestRunners/runtime_test_1.gd" id="1_66bw6"]
+
+[node name="Runtime" type="Runtime"]
+script = ExtResource("1_66bw6")

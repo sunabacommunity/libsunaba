@@ -24,7 +24,7 @@ class Main extends App {
 
 		var scene = sceneFile.instance();
 
-		var envRes = ResourceLoaderService.load("res://environments/new_environment.tres");
+		var envRes = ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
 		var environment = new Environment(envRes.native);
 		var worldEnv = new Node(new NativeObject("WorldEnvironment"));
 		worldEnv.native.set("environment", environment.native);

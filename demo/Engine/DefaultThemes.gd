@@ -7,7 +7,7 @@ func get_system_theme() -> Theme:
 		return get_light_theme()
 
 func get_light_theme() -> Theme :
-	return load("res://addons/lite/light.tres")
+	return load("res://Engine/Theme/light.tres")
 
 func get_dark_theme() -> Theme:
-	return load("res://addons/lite/dark.tres")
+	return load("res://Engine/Theme/dark.tres")
