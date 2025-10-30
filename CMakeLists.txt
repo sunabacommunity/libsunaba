@@ -108,6 +108,12 @@ target_sources(${LIBNAME}
     src/luaopen_Signal.cpp
     src/luaopen_Transform3D.cpp
     src/luaopen_Variant.cpp
+    src/luaopen_Variant_constructors.cpp
+    src/luaopen_Variant_fromMethods.cpp
+    src/luaopen_Variant_asMethods.cpp
+    src/luaopen_Variant_arrayMethods.cpp
+    src/luaopen_Variant_objectMethods.cpp
+    src/luaopen_Variant_scriptMethods.cpp
     src/luaopen_Variant_sandboxed.cpp
     src/luaopen_Vector2.cpp
     src/luaopen_Vector2i.cpp
@@ -153,6 +159,10 @@ if(MSVC)
 else()
     target_compile_options(${LIBNAME} PRIVATE -fPIC)
     target_compile_options(libluajit PRIVATE -fPIC)
+    # MinGW-specific flags for large object files
+    if(MINGW)
+        target_compile_options(${LIBNAME} PRIVATE -Wa,-mbig-obj)
+    endif()
 endif()
 
 set_target_properties(${LIBNAME}
