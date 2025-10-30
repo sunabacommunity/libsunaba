@@ -28,3 +28,7 @@ display_server/driver.linuxbsd="wayland"
 [dotnet]
 
 project/assembly_name="Sunaba"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
