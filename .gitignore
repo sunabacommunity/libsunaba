@@ -68,3 +68,4 @@ ct.lua
 
 # Visual Studio
 *.vs/*
+demo/.vs/
