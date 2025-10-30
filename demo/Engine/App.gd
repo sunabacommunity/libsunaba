@@ -58,6 +58,22 @@ func load_app(path: String) -> void:
 	
 	var luabin_path = zipIo.GetPathUrl() + luabin_name
 	
+	var lua_package_dir = "user://lua_packages"
+	if (!DirAccess.dir_exists_absolute(lua_package_dir)):
+		DirAccess.make_dir_absolute(lua_package_dir)
+	set_var("__userPackages", ProjectSettings.globalize_path(lua_package_dir))
+	do_string("package.path = package.path .. ';' .. __userPackages  ..  '/?.lua'")
+	
+	var new_bit32_path = lua_package_dir + "/bit32.lua"
+	if (!FileAccess.file_exists(new_bit32_path)):
+		var old_bit32_path = "res://bit32.lua"
+		var old_file = FileAccess.open(old_bit32_path, FileAccess.READ)
+		var file_contents = old_file.get_as_text()
+		old_file.close()
+		var new_file = FileAccess.open(new_bit32_path, FileAccess.WRITE)
+		new_file.store_string(file_contents)
+		new_file.close()
+	
 	do_string(io_manager.LoadText(luabin_path))
 
 func _require(path: String) -> String:
