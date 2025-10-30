@@ -15,7 +15,11 @@ run/main_scene="uid://b08g5p6ueokc8"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/fullsize=false
+boot_splash/image="uid://b3josp72gt4kt"
+config/icon="uid://dbqgd8qa3isxs"
+config/macos_native_icon="res://Engine/iconmacos.icns"
+config/windows_native_icon="res://Engine/sunaba.ico"
 
 [autoload]
 
