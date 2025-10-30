@@ -9,8 +9,6 @@ class Main extends App {
     }
 
 	public override function init() {
-		Sys.println("Hello, World!");
-
 		var documentsFolder = OSService.getSystemDir(SystemDir.documents);
 		var docPath = documentsFolder + "/test.txt";
 		var file = File.getContent(docPath);
