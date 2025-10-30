@@ -4,6 +4,7 @@
 #include "NativeReference.h"
 #include "io/Byte.h"
 #include "io/ByteArray.h"
+#include  "ScriptObject.h"
 
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
@@ -46,6 +47,7 @@ void Runtime::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_args", "args"), &Runtime::setArgs);
 	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
 	ClassDB::bind_method(D_METHOD("bind_object", "name", "obj"), &Runtime::bind_object);
+	ClassDB::bind_method(D_METHOD("set_var", "name", "variant"), &Runtime::set_var);
 }
 
 void Runtime::_process(double delta) {
@@ -97,7 +99,7 @@ void Runtime::do_string(const String &code) {
 }
 
 void Runtime::set_var(const String &name, const Variant &variant) {
-	lua_state[name.utf8().get_data()] = sol::make_object(lua_state, variant);
+	lua_state[name.utf8().get_data()] = ScriptObject::gdToSol(variant, lua_state);
 }
 
 String Runtime::_require(const String &path) {
