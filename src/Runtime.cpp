@@ -200,7 +200,7 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	}
 
 	lua_state["execDir"] = execDir.utf8().get_data();
-	lua_state.script("package.path = package.path .. ';' .. execDir ..  '/?.lua' .. shareDir ..  '/?.lua'");
+	lua_state.script("package.path = package.path .. ';' .. execDir  ..  '/?.lua'");
 
 	lua_state["print"] = [this]( sol::variadic_args args ) {
         PackedStringArray msgarr;
