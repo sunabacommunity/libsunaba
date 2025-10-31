@@ -228,12 +228,12 @@ abstract Vector2(Vector2Native) from Vector2Native to Vector2Native {
 	}
 
 	@:op(A * B)
-	public inline function multiplyInteger(scalar : Int) : Vector2 {
+	public inline function multiplyIntScalar(scalar : Int) : Vector2 {
 		return new Vector2(this.x * scalar, this.y * scalar);
 	}
 
 	@:op(A / B)
-	public inline function divideInteger(scalar : Int) : Vector2 {
+	public inline function divideIntScalar(scalar : Int) : Vector2 {
 		return new Vector2(this.x / scalar, this.y / scalar);
 	}
 }
