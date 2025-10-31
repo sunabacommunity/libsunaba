@@ -5,7 +5,7 @@
 #include "NativeReference.h"
 
 void Runtime::luaopen_Callable() {
-	lua_state.new_usertype<Callable>("Callable",
+	auto ut = lua_state.new_usertype<Callable>("Callable",
 		"new", sol::overload(
 			[](sol::function func) {
 				return make_callable_from_sol(func);
@@ -40,4 +40,8 @@ void Runtime::luaopen_Callable() {
 		"isValid", &Callable::is_valid,
 		"unbind", &Callable::unbind
 	);
+
+	ut["eq"] = [](const Callable& a, const Callable& b) {
+		return a == b;
+	};
 }
