@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("Vector3")
-extern class Vector3 {
+extern class Vector3Native {
     public var x : Float;
     public var y : Float;
     public var z : Float;
@@ -52,4 +52,189 @@ extern class Vector3 {
     public function snapped(val : Vector3) : Vector3;
     @:native("tostring")
     public function toString() : String;
+}
+
+@:forward(
+	x,
+	y,
+	z,
+	zero,
+	abs,
+	angleTo,
+	bezierInterpolate,
+	bounce,
+	ciel,
+	clamp,
+	cross,
+	cubicInterpolate,
+	cubicInterpolateInTime,
+	directionTo,
+	distanceTo,
+	distanceSquaredTo,
+	dot,
+	floor,
+	inverse,
+	isEqualApprox,
+	isNormalized,
+	isZeroApprox,
+	length,
+	lengthSquared,
+	limitLength,
+	lerp,
+	max,
+	maxAxisIndex,
+	min,
+	minAxisIndex,
+	moveToward,
+	normalize,
+	normalized,
+	octahedronDecode,
+	octahedronEncode,
+	posmod,
+	posmodv,
+	project,
+	reflect,
+	rotated,
+	round,
+	sign,
+	signedAngleTo,
+	slerp,
+	slide,
+	snapped,
+	toString
+)
+abstract Vector3(Vector3Native) from Vector3Native to Vector3Native {
+	public static final ZERO: Vector3 = Vector3Native.zero();
+
+	public inline function new(x : Float = 0, y : Float = 0, z : Float = 0) {
+		this = new Vector3Native(x, y, z);
+	}
+
+	public static inline function zero() : Vector3 {
+		return Vector3Native.zero();
+	}
+
+	@:op([])
+	public inline function get(index : Int) : Float {
+		switch(index) {
+			case 0: return this.x;
+			case 1: return this.y;
+			case 2: return this.z;
+			default: throw "Index out of bounds: " + index;
+		}
+	}
+
+	@:op([])
+	public inline function set(index : Int, value : Float) : Float {
+		switch(index) {
+			case 0: this.x = value;
+			case 1: this.y = value;
+			case 2: this.z = value;
+			default: throw "Index out of bounds: " + index;
+		}
+		return value;
+	}
+
+	@:op(A + B)
+	public inline function add(other : Vector3)  : Vector3 {
+		return new Vector3( this.x + other.x, this.y + other.y, this.z + other.z);
+	}
+
+	@:op(A - B)
+	public inline function subtract(other : Vector3)  : Vector3 {
+		return new Vector3( this.x - other.x, this.y - other.y, this.z - other.z);
+	}
+
+	@:op(A * B)
+	public inline function multiply(other : Vector3)  : Vector3 {
+		return new Vector3( this.x * other.x, this.y * other.y, this.z * other.z);
+	}
+
+	@:op(A / B)
+	public inline function divide(other : Vector3)  : Vector3 {
+		return new Vector3( this.x / other.x, this.y / other.y, this.z / other.z);
+	}
+
+	@:op(A == B)
+	public inline function equals(other : Vector3)  : Bool {
+		return this.x == other.x && this.y == other.y && this.z == other.z;
+	}
+
+	@:op(A != B)
+	public inline function notEquals(other : Vector3)  : Bool {
+		var og: Vector3 = this;
+		return !og.equals(other);
+	}
+
+	@:op(A < B)
+	public inline function lessThan(other : Vector3)  : Bool {
+		return this.x < other.x && this.y < other.y && this.z < other.z;
+	}
+
+	@:op(A <= B)
+	public inline function lessThanOrEqual(other : Vector3)  : Bool {
+		return this.x <= other.x && this.y <= other.y && this.z <= other.z;
+	}
+
+	@:op(A > B)
+	public inline function greaterThan(other : Vector3)  : Bool {
+		return this.x > other.x && this.y > other.y && this.z > other.z;
+	}
+
+	@:op(A >= B)
+	public inline function greaterThanOrEqual(other : Vector3)  : Bool {
+		return this.x >= other.x && this.y >= other.y && this.z >= other.z;
+	}
+
+	@:op(A += B)
+	public inline function addAssign(other : Vector3)  : Vector3 {
+		this.x += other.x;
+		this.y += other.y;
+		this.z += other.z;
+		return this;
+	}
+
+	@:op(A -= B)
+	public inline function subtractAssign(other : Vector3)  : Vector3 {
+		this.x -= other.x;
+		this.y -= other.y;
+		this.z -= other.z;
+		return this;
+	}
+
+	@:op(A *= B)
+	public inline function multiplyAssign(other : Vector3)  : Vector3 {
+		this.x *= other.x;
+		this.y *= other.y;
+		this.z *= other.z;
+		return this;
+	}
+
+	@:op(A /= B)
+	public inline function divideAssign(other : Vector3)  : Vector3 {
+		this.x /= other.x;
+		this.y /= other.y;
+		this.z /= other.z;
+		return this;
+	}
+
+	@:op(A * B)
+	public inline function multiplyScalar(scalar : Float)  : Vector3 {
+		return new Vector3( this.x * scalar, this.y * scalar, this.z * scalar);
+	}
+
+	@:op(A / B)
+	public inline function divideScalar(scalar : Float)  : Vector3 {
+		return new Vector3( this.x / scalar, this.y / scalar, this.z / scalar);
+	}
+
+	@:op(A * B)
+	public inline function multiplyIntScalar(scalar : Int)  : Vector3 {
+		return new Vector3( this.x * scalar, this.y * scalar, this.z * scalar);
+	}
+
+	@:op(A / B)
+	public inline function divideIntScalar(scalar : Int)  : Vector3 {
+		return new Vector3( this.x / scalar, this.y / scalar, this.z / scalar);
+	}
 }
