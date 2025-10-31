@@ -1,7 +1,7 @@
 #include "Runtime.h"
 
 void Runtime::luaopen_AABB() {
-    lua_state.new_usertype<godot::AABB>(
+    auto ut = lua_state.new_usertype<godot::AABB>(
         "AABB",
         sol::constructors<
             AABB(),
@@ -41,4 +41,8 @@ void Runtime::luaopen_AABB() {
         "merge", &AABB::merge,
         "tostring", [](const AABB& a) { return std::string((a.operator String()).utf8().get_data()); }
     );
+
+	ut["eq"] = [](const AABB& a, const AABB& b) {
+		return a == b;
+	};
 }
