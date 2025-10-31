@@ -23,4 +23,10 @@ void Runtime::luaopen_Variant() {
 
 	// Add script-related as* methods
 	luaopen_Variant_scriptMethods();
+
+	auto variant_type = lua_state["Variant"];
+
+	variant_type["eq"] = [](const Variant& a, const Variant& b) {
+		return a == b;
+	};
 }
