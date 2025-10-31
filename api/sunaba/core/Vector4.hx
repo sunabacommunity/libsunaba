@@ -196,6 +196,26 @@ abstract Vector4(Vector4Natve) from Vector4Natve to Vector4Natve {
 		return this;
 	}
 
+	@:op(A * B)
+	public inline function multiplyScalar(scalar : Float) : Vector4 {
+		return new Vector4(this.x * scalar, this.y * scalar, this.z * scalar, this.w * scalar);
+	}
+
+	@:op(A / B)
+	public inline function divideScalar(scalar : Float) : Vector4 {
+		return new Vector4(this.x / scalar, this.y / scalar, this.z / scalar, this.w / scalar);
+	}
+
+	@:op(A * B)
+	public inline function multiplyIntScalar(scalar : Int) : Vector4 {
+		return new Vector4(cast this.x * scalar, cast this.y * scalar, cast this.z * scalar, cast this.w * scalar);
+	}
+
+	@:op(A / B)
+	public inline function divideIntScalar(scalar : Int) : Vector4 {
+		return new Vector4(cast this.x / scalar, cast this.y / scalar, cast this.z / scalar, cast this.w / scalar);
+	}
+
 	@:op(A++)
 	public inline function increment() : Vector4 {
 		this.x++;
