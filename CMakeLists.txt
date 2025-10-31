@@ -159,20 +159,16 @@ if(MSVC)
 else()
     target_compile_options(${LIBNAME} PRIVATE -fPIC)
     target_compile_options(libluajit PRIVATE -fPIC)
-    # MinGW-specific flags for large object files
-    if(MINGW)
-        target_compile_options(${LIBNAME} PRIVATE -Wa,-mbig-obj)
-    endif()
 endif()
 
 set_target_properties(${LIBNAME}
     PROPERTIES
     # The generator expression here prevents msvc from adding a Debug or Release subdir.
     RUNTIME_OUTPUT_DIRECTORY "$<1:${PROJECT_SOURCE_DIR}/bin/${GODOTCPP_PLATFORM}>"
-
-    PREFIX ""
-    OUTPUT_NAME "${LIBNAME}${GODOTCPP_SUFFIX}"
-)
+    # MinGW-specific flags for large object files
+    if(MINGW)
+        target_compile_options(${LIBNAME} PRIVATE -Wa,-mbig-obj)
+    endif()
 
 set(GODOT_PROJECT_BINARY_DIR "${PROJECT_SOURCE_DIR}/${GODOT_PROJECT_DIR}/bin/${GODOTCPP_PLATFORM}")
 
