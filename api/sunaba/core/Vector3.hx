@@ -237,4 +237,36 @@ abstract Vector3(Vector3Native) from Vector3Native to Vector3Native {
 	public inline function divideIntScalar(scalar : Int)  : Vector3 {
 		return new Vector3( this.x / scalar, this.y / scalar, this.z / scalar);
 	}
+
+	@:op(A++)
+	public inline function increment() : Vector3 {
+		this.x++;
+		this.y++;
+		this.z++;
+		return this;
+	}
+
+	@:op(A--)
+	public inline function decrement() : Vector3 {
+		this.x--;
+		this.y--;
+		this.z--;
+		return this;
+	}
+
+	@:op(++A)
+	public inline function preIncrement() : Vector3 {
+		this.x++;
+		this.y++;
+		this.z++;
+		return this;
+	}
+
+	@:op(--A)
+	public inline function preDecrement() : Vector3 {
+		this.x--;
+		this.y--;
+		this.z--;
+		return this;
+	}
 }
