@@ -153,10 +153,10 @@ abstract Vector4i(Vector4iNative) from Vector4iNative to Vector4iNative {
 
 	@:op(A /= B)
 	public inline function divideAssign(other : Vector4i) : Vector4i {
-		this.x /= other.x;
-		this.y /= other.y;
-		this.z /= other.z;
-		this.w /= other.w;
+		this.x = cast this.x / other.x;
+		this.y = cast this.y / other.y;
+		this.z = cast this.z / other.z;
+		this.w = cast this.w / other.w;
 		return this;
 	}
 
