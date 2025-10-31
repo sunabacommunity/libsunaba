@@ -171,4 +171,36 @@ abstract Vector3i(Vector3iNative) from Vector3iNative to Vector3iNative {
 	public inline function divideIntScalar(scalar : Int)  : Vector3i {
 		return new Vector3i(cast this.x / scalar, cast this.y / scalar, cast this.z / scalar);
 	}
+
+	@:op(A++)
+	public inline function increment() : Vector3i {
+		this.x++;
+		this.y++;
+		this.z++;
+		return this;
+	}
+
+	@:op(A--)
+	public inline function decrement() : Vector3i {
+		this.x--;
+		this.y--;
+		this.z--;
+		return this;
+	}
+
+	@:op(++A)
+	public inline function preIncrement() : Vector3i {
+		this.x++;
+		this.y++;
+		this.z++;
+		return this;
+	}
+
+	@:op(--A)
+	public inline function preDecrement() : Vector3i {
+		this.x--;
+		this.y--;
+		this.z--;
+		return this;
+	}
 }
