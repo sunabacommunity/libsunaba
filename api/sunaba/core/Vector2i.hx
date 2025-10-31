@@ -150,8 +150,8 @@ abstract Vector2i(Vector2iNative) from Vector2iNative to Vector2iNative {
 
 	@:op(A /= B)
 	public inline function divideAssign(other : Vector2i)  : Vector2i {
-		this.x /= other.x;
-		this.y /= other.y;
+		this.x = cast this.x / other.x;
+		this.y = cast this.y / other.y;
 		return this;
 	}
 
