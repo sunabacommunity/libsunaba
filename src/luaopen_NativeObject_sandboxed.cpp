@@ -2,7 +2,7 @@
 #include "NativeObject.h"
 
 void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
-	lua_state.new_usertype<NativeObject>("NativeObject",
+	auto ut = lua_state.new_usertype<NativeObject>("NativeObject",
             "new", sol::overload(
                 [classnames](std::string name) {
                     if (!classnames.has( String(name.c_str()) ))
@@ -62,4 +62,8 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
             "setMeta", &NativeObject::setMeta,
             "isNull", &NativeObject::isNull
         );
+
+	ut["eq"] = [](NativeObject* a, NativeObject* b) {
+		return a->getNative() == b->getNative();
+	};
 }
