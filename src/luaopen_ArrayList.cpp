@@ -1,7 +1,7 @@
 #include "Runtime.h"
 
 void Runtime::luaopen_ArrayList() {
-	lua_state.new_usertype<Array>("ArrayList",
+	auto ut = lua_state.new_usertype<Array>("ArrayList",
         sol::constructors<Array()>(),
         "append", &Array::append,
         "appendArray", &Array::append_array,
@@ -68,4 +68,8 @@ void Runtime::luaopen_ArrayList() {
         }
 
     );
+
+	ut["eq"] = [](const Array& a, const Array& b) {
+		return a == b;
+	};
 }
