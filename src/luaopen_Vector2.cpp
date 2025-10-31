@@ -1,7 +1,7 @@
 #include "Runtime.h"
 
 void Runtime::luaopen_Vector2() {
-	lua_state.new_usertype<Vector2>(
+	sol::usertype<Vector2> ut = lua_state.new_usertype<Vector2>(
 		"Vector2",
 		sol::constructors<Vector2(), Vector2(float, float)>(),
 		"x", &Vector2::x,
@@ -47,4 +47,136 @@ void Runtime::luaopen_Vector2() {
 		"aspect", &Vector2::aspect,
 		"tostring", [](const Vector2& v) { return std::string((v.operator String()).utf8().get_data()); }
 	);
+	/*
+	ut["add"] = [](const Vector2& a, const Variant& b) {
+		if (b.get_type() == Variant::TRANSFORM2D) {
+			Transform2D t2d = b;
+			return a + t2d.get_origin();
+		}
+		else if (b.get_type() == Variant::VECTOR2) {
+			Vector2 v2 = b;
+			return a + v2;
+		}
+		else if (b.get_type() == Variant::INT) {
+			int i = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x + i;
+			c.y = a.x + i;
+			return c;
+		}
+		else if (b.get_type() == Variant::FLOAT) {
+			float f = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x + f;
+			c.y = a.y + f;
+			return c;
+		}
+		else {
+			return a;
+		}
+	};
+
+	ut["sub"] = [](const Vector2& a, const Variant& b) {
+		if (b.get_type() == Variant::TRANSFORM2D) {
+			Transform2D t2d = b;
+			return a - t2d.get_origin();
+		}
+		else if (b.get_type() == Variant::VECTOR2) {
+			Vector2 v2 = b;
+			return a - v2;
+		}
+		else if (b.get_type() == Variant::INT) {
+			int i = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x - i;
+			c.y = a.x - i;
+			return c;
+		}
+		else if (b.get_type() == Variant::FLOAT) {
+			float f = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x - f;
+			c.y = a.y - f;
+			return c;
+		}
+		else {
+			return a;
+		}
+	};
+
+	ut["mul"] = [](const Vector2& a, const Variant& b) {
+		if (b.get_type() == Variant::TRANSFORM2D) {
+			Transform2D t2d = b;
+			return a * t2d.get_origin();
+		}
+		else if (b.get_type() == Variant::VECTOR2) {
+			Vector2 v2 = b;
+			return a * v2;
+		}
+		else if (b.get_type() == Variant::INT) {
+			int i = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x * i;
+			c.y = a.x * i;
+			return c;
+		}
+		else if (b.get_type() == Variant::FLOAT) {
+			float f = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x * f;
+			c.y = a.y * f;
+			return c;
+		}
+		else {
+			return a;
+		}
+	};
+
+	ut["div"] = [](const Vector2& a, const Variant& b) {
+		if (b.get_type() == Variant::TRANSFORM2D) {
+			Transform2D t2d = b;
+			return a / t2d.get_origin();
+		}
+		else if (b.get_type() == Variant::VECTOR2) {
+			Vector2 v2 = b;
+			return a / v2;
+		}
+		else if (b.get_type() == Variant::INT) {
+			int i = b;
+			Vector2 c = Vector2();
+			c.x = a.x / i;
+			c.y = a.y / i;
+			return c;
+		}
+		else if (b.get_type() == Variant::FLOAT) {
+			float f = b;
+			Vector2 c = Vector2(a);
+			c.x = a.x / f;
+			c.y = a.y / f;
+			return c;
+		}
+		else {
+			return a;
+		}
+	};*/
+
+	ut["eq"] = [](const Vector2& a, const Vector2& b) {
+		return a== b;
+	};
+
+	ut["gt"] = [](const Vector2& a, const Vector2& b) {
+		return a < b;
+	};
+
+	ut["lt"] = [](const Vector2& a, const Vector2& b) {
+		return a > b;
+	};
+
+	ut["gte"] = [](const Vector2& a, const Vector2& b) {
+		return a <= b;
+	};
+
+	ut["lte"] = [](const Vector2& a, const Vector2& b) {
+		return a >= b;
+	};
 }
