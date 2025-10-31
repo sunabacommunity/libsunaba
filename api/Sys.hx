@@ -1,12 +1,16 @@
 import lua.Boot;
 import lua.Io;
 import lua.Lua;
-import lua.lib.luv.Os;
-import lua.lib.luv.Misc;
 import sys.io.FileInput;
 import sys.io.FileOutput;
 import sunaba.core.TypedArray;
 import sunaba.OSService;
+import sunaba.core.native.NativeObject;
+import sunaba.core.ArrayList;
+import sunaba.core.Variant;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
+import sunaba.core.Dictionary;
 
 @:coreApi
 class Sys {
@@ -58,12 +62,21 @@ class Sys {
 	}
 
 	public static function environment():Map<String, String> {
-		var env = lua.lib.luv.Os.environ();
-		return lua.Table.toMap(env);
+		var native = new NativeReference("res://Engine/HxSys.cs", new ArrayList(), ScriptType.csharp);
+		var envDict: Dictionary = native.call("Environment", new ArrayList());
+		var env: Map<String, String> = new Map();
+		var envKeys = envDict.keys();
+		var envValues = envDict.values();
+		for (i in 0...envKeys.size()) {
+			var key: String = envKeys[i];
+			var value: String = envValues[i];
+			env[key] = value;
+		}
+		return env;
 	}
 
 	@:deprecated("Use programPath instead") public static function executablePath():String {
-		return Misc.exepath();
+		return programPath(); //Misc.exepath();
 	}
 
 	public inline static function programPath():String {
@@ -71,19 +84,21 @@ class Sys {
 	}
 
 	public inline static function getCwd():String
-		return haxe.io.Path.addTrailingSlash(Misc.cwd());
+		return haxe.io.Path.addTrailingSlash(NativeObject.callStatic("DirAccess", "get_current_dir", new ArrayList()));
 
-	public inline static function setCwd(s:String):Void
-		Misc.chdir(s);
+	public inline static function setCwd(s:String):Void {
+		var args: Array<Variant> = [s];
+		NativeObject.callStatic("DirAccess", "change_dir", args);
+	}
 
 	public inline static function getEnv(s:String):String {
-		return Os.getenv(s);
+		return OSService.getEnvironment(s);
 	}
 
 	public inline static function putEnv(s:String, v:Null<String>):Void {
 		if (v == null)
-			return Os.unsetenv(s);
-		Os.setenv(s, v);
+			return OSService.unsetEnvironment(s);
+		OSService.setEnvironment(s, v);
 	}
 
 	public inline static function setTimeLocale(loc:String):Bool {
