@@ -20,6 +20,22 @@ extern class Vector2iNative {
     @:native("tostring")
     public function toString(): String;
 }
+@:forward(
+	x,
+	y,
+	zero,
+	abs,
+	aspect,
+	clamp,
+	length,
+	lengthSquared,
+	max,
+	maxAxisIndex,
+	min,
+	minAxisIndex,
+	sign,
+	toString
+)
 abstract Vector2i(Vector2iNative) from Vector2iNative to Vector2iNative {
 	public static final ZERO: Vector2i = Vector2iNative.zero();
 
@@ -32,10 +48,6 @@ abstract Vector2i(Vector2iNative) from Vector2iNative to Vector2iNative {
 	public static final UP: Vector2i = new Vector2i( 0, -1);
 
 	public static final DOWN: Vector2i = new Vector2i( 0, 1);
-
-	public static final MIN: Vector2i = new Vector2i( Int.MIN_VALUE, Int.MIN_VALUE);
-
-	public static final MAX: Vector2i = new Vector2i( Int.MAX_VALUE, Int.MAX_VALUE);
 
 	public inline function new(x : Int = 0, y : Int = 0) {
 		this = new Vector2iNative(x, y);
