@@ -168,7 +168,8 @@ abstract Color(ColorNative) from ColorNative to ColorNative {
 	}
 
 	@:op(A != B) public inline function notEquals(other : Color) : Bool {
-		return !this.equals(other);
+		var og: Color = this;
+		return !og.equals(other);
 	}
 
 	@:op(A < B) public inline function lessThan(other : Color) : Bool {
