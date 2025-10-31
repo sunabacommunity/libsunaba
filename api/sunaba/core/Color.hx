@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("Color")
-extern class Color {
+extern class ColorNative {
     public var r : Float;
     public var g : Float;
     public var b : Float;
@@ -41,4 +41,137 @@ extern class Color {
     public function toHtml() : String;
     public function toRgba32() : Int;
     public function toRgba64() : Int;
+}
+
+@:forward(
+	r,
+	g,
+	b,
+	a,
+	rgba,
+	rgb,
+	fromColorAndAlpha,
+	code,
+	blend,
+	clamp,
+	darkened,
+	hsv,
+	rgbe9995,
+	string,
+	getLuminance,
+	hex,
+	hex64,
+	html,
+	htmlIsValid,
+	inverted,
+	isEqualApprox,
+	lerp,
+	lightened,
+	linearToSrgb,
+	srgbToLinear,
+	toAbgr32,
+	toAbgr64,
+	toArgb32,
+	toArgb64,
+	toHtml,
+	toRgba32,
+	toRgba64
+)
+abstract Color(ColorNative) from ColorNative to ColorNative {
+	public inline function new(r : Float = 1.0, g : Float = 1.0, b : Float = 1.0, a : Float = 1.0) {
+		this = ColorNative.rgba(r, g, b, a);
+	}
+
+	@:op([]) public inline function get(index : Int) : Float {
+		switch (index) {
+			case 0: return this.r;
+			case 1: return this.g;
+			case 2: return this.b;
+			case 3: return this.a;
+			default: throw "Index out of bounds";
+		}
+	}
+
+	@:op([]) public inline function set(index : Int, value : Float) : Float {
+		switch (index) {
+			case 0: this.r = value;
+			case 1: this.g = value;
+			case 2: this.b = value;
+			case 3: this.a = value;
+			default: throw "Index out of bounds";
+		}
+		return value;
+	}
+
+	@:op(A + B) public inline function add(other : Color) : Color {
+		return ColorNative.rgba(this.r + other.r, this.g + other.g, this.b + other.b, this.a + other.a);
+	}
+
+	@:op(A - B) public inline function subtract(other : Color) : Color {
+		return ColorNative.rgba(this.r - other.r, this.g - other.g, this.b - other.b, this.a - other.a);
+	}
+
+	@:op(A * B) public inline function multiply(other : Color) : Color {
+		return ColorNative.rgba(this.r * other.r, this.g * other.g, this.b * other.b, this.a * other.a);
+	}
+
+	@:op(A / B) public inline function divide(other : Color) : Color {
+		return ColorNative.rgba(this.r / other.r, this.g / other.g, this.b / other.b, this.a / other.a);
+	}
+
+	@:op(A == B) public inline function equals(other : Color) : Bool {
+		return this.r == other.r && this.g == other.g && this.b == other.b && this.a == other.a;
+	}
+
+	@:op(A != B) public inline function notEquals(other : Color) : Bool {
+		return !this.equals(other);
+	}
+
+	@:op(A < B) public inline function lessThan(other : Color) : Bool {
+		return this.r < other.r && this.g < other.g && this.b < other.b && this.a < other.a;
+	}
+
+	@:op(A <= B) public inline function lessThanOrEqual(other : Color) : Bool {
+		return this.r <= other.r && this.g <= other.g && this.b <= other.b && this.a <= other.a;
+	}
+
+	@:op(A > B) public inline function greaterThan(other : Color) : Bool {
+		return this.r > other.r && this.g > other.g && this.b > other.b && this.a > other.a;
+	}
+
+	@:op(A >= B) public inline function greaterThanOrEqual(other : Color) : Bool {
+		return this.r >= other.r && this.g >= other.g && this.b >= other.b && this.a >= other.a;
+	}
+
+	@:op(A += B) public inline function addAssign(other : Color) : Color {
+		this.r += other.r;
+		this.g += other.g;
+		this.b += other.b;
+		this.a += other.a;
+		return this;
+	}
+
+	@:op(A -= B) public inline function subtractAssign(other : Color) : Color {
+		this.r -= other.r;
+		this.g -= other.g;
+		this.b -= other.b;
+		this.a -= other.a;
+		return this;
+	}
+
+	@:op(A *= B) public inline function multiplyAssign(other : Color) : Color {
+		this.r *= other.r;
+		this.g *= other.g;
+		this.b *= other.b;
+		this.a *= other.a;
+		return this;
+	}
+
+	@:op(A /= B) public inline function divideAssign(other : Color) : Color {
+		this.r /= other.r;
+		this.g /= other.g;
+		this.b /= other.b;
+		this.a /= other.a;
+		return this;
+	}
 }
