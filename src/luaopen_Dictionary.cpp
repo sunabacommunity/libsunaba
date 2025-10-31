@@ -3,7 +3,7 @@
 #include <godot_cpp/classes/json.hpp>
 
 void Runtime::luaopen_Dictionary() {
-	lua_state.new_usertype<Dictionary>("Dictionary",
+	auto ut = lua_state.new_usertype<Dictionary>("Dictionary",
         sol::constructors<Dictionary()>(),
         "assign", &Dictionary::assign,
         "clear", &Dictionary::clear,
@@ -58,4 +58,8 @@ void Runtime::luaopen_Dictionary() {
             return std::string(JSON::stringify(dict, "  ").utf8().get_data());
         }
     );
+
+	ut["eq"] = [](const Dictionary& a, const Dictionary& b) {
+		return a == b;
+	};
 }
