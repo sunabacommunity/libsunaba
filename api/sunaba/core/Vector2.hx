@@ -236,4 +236,34 @@ abstract Vector2(Vector2Native) from Vector2Native to Vector2Native {
 	public inline function divideIntScalar(scalar : Int) : Vector2 {
 		return new Vector2(this.x / scalar, this.y / scalar);
 	}
+
+	@:op(A++)
+	public inline function postIncrement() : Vector2 {
+		var original = new Vector2(this.x, this.y);
+		this.x++;
+		this.y++;
+		return original;
+	}
+
+	@:op(A--)
+	public inline function postDecrement() : Vector2 {
+		var original = new Vector2(this.x, this.y);
+		this.x--;
+		this.y--;
+		return original;
+	}
+
+	@:op(++A)
+	public inline function increment() : Vector2 {
+		this.x++;
+		this.y++;
+		return this;
+	}
+
+	@:op(--A)
+	public inline function decrement() : Vector2 {
+		this.x--;
+		this.y--;
+		return this;
+	}
 }
