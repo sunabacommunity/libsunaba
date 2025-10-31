@@ -82,6 +82,50 @@ abstract Color(ColorNative) from ColorNative to ColorNative {
 		this = ColorNative.rgba(r, g, b, a);
 	}
 
+	public inline static function rgb(r : Float, g : Float, b : Float): Color {
+		return ColorNative.rgb(r, g, b);
+	}
+
+	public inline static function rgba(r : Float, g : Float, b : Float, a : Float): Color {
+		return ColorNative.rgba(r, g, b, a);
+	}
+
+	public inline static function fromColorAndAlpha(color : Color, a : Float): Color {
+		return ColorNative.fromColorAndAlpha(color, a);
+	}
+
+	public inline static function code(code : String, a : Float = 1.0): Color {
+		return ColorNative.code(code, a);
+	}
+
+	public inline static function string(str: String, defalt : Color): Color {
+		return ColorNative.string(str, defalt);
+	}
+
+	public inline static function hsv(h : Float, s : Float, v : Float, alpha : Float = 1.0) : Color {
+		return ColorNative.hsv(h, s, v, alpha);
+	}
+
+	public inline static function rgbe9995(r : Float, g : Float, b : Float, e : Float, alpha : Float = 1.0) : Color {
+		return ColorNative.rgbe9995(r, g, b, e, alpha);
+	}
+
+	public inline static function hex(hex : Int) : Color {
+		return ColorNative.hex(hex);
+	}
+
+	public inline static function hex64(hex : Int) : Color {
+		return ColorNative.hex64(hex);
+	}
+
+	public inline static function html(html : String) : Color {
+		return ColorNative.html(html);
+	}
+
+	public inline static function htmlIsValid(html : String) : Bool {
+		return ColorNative.htmlIsValid(html);
+	}
+
 	@:op([]) public inline function get(index : Int) : Float {
 		switch (index) {
 			case 0: return this.r;
