@@ -146,9 +146,9 @@ abstract Vector3i(Vector3iNative) from Vector3iNative to Vector3iNative {
 
 	@:op(A /= B)
 	public inline function divideAssign(other : Vector3i)  : Vector3i {
-		this.x /= other.x;
-		this.y /= other.y;
-		this.z /= other.z;
+		this.x = cast this.x / other.x;
+		this.y = cast this.y / other.y;
+		this.z = cast this.z / other.z;
 		return this;
 	}
 
