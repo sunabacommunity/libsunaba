@@ -3,7 +3,7 @@
 #include "NativeReference.h"
 
 void Runtime::luaopen_Signal() {
-	lua_state.new_usertype<Signal>("Signal",
+	auto ut = lua_state.new_usertype<Signal>("Signal",
 		"new", sol::overload(
 			[]() {
 				return Signal();
@@ -52,4 +52,8 @@ void Runtime::luaopen_Signal() {
 		"isConnected", &Signal::is_connected,
 		"isNull", &Signal::is_null
 	);
+
+	ut["eq"] = [](const Signal& a, const Signal& b) {
+		return a == b;
+	};
 }
