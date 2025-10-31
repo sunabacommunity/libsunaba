@@ -163,4 +163,32 @@ abstract Vector2i(Vector2iNative) from Vector2iNative to Vector2iNative {
 	public inline function divideIntScalar(scalar : Int) : Vector2i {
 		return new Vector2i(cast this.x / scalar, cast this.y / scalar);
 	}
+
+	@:op(A++)
+	public inline function increment() : Vector2i {
+		this.x++;
+		this.y++;
+		return this;
+	}
+
+	@:op(A--)
+	public inline function decrement() : Vector2i {
+		this.x--;
+		this.y--;
+		return this;
+	}
+
+	@:op(++A)
+	public inline function preIncrement() : Vector2i {
+		this.x++;
+		this.y++;
+		return this;
+	}
+
+	@:op(--A)
+	public inline function preDecrement() : Vector2i {
+		this.x--;
+		this.y--;
+		return this;
+	}
 }
