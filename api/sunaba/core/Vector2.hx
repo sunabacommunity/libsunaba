@@ -3,7 +3,7 @@ package sunaba.core;
 import haxe.ds.Vector;
 
 @:native("Vector2")
-extern class Vector2 {
+extern class Vector2Native {
     public var x : Float;
     public var y : Float;
     public function new(x : Float = 0, y : Float = 0);
@@ -49,4 +49,191 @@ extern class Vector2 {
     public function aspect() : Float;
     @:native("tostring")
     public function toString() : String;
+}
+
+@:forward(
+	x,
+	y,
+	zero,
+	normalize,
+	normalized,
+	isNormalized,
+	length,
+	lengthSquared,
+	limitLength,
+	min,
+	max,
+	distanceTo,
+	distanceSquaredTo,
+	angleTo,
+	angleToPoint,
+	dot,
+	posmod,
+	posmodv,
+	project,
+	planeProject,
+	lerp,
+	slerp,
+	cubicInterpolate,
+	cubicInterpolateInTime,
+	moveToward,
+	slide,
+	bounce,
+	reflect,
+	isEqualApprox,
+	isZeroApprox,
+	angle,
+	abs,
+	rotated,
+	orthogonal,
+	sign,
+	floor,
+	ceil,
+	round,
+	snap,
+	clamp,
+	aspect,
+	toString
+)
+abstract Vector2(Vector2Native) from Vector2Native to Vector2Native {
+	public static final ZERO: Vector2 = Vector2Native.zero();
+
+	public static final ONE : Vector2 = new Vector2(1, 1);
+
+	public static final INF: Vector2 = new Vector2(Math.POSITIVE_INFINITY, Math.POSITIVE_INFINITY);
+
+	public static final LEFT: Vector2 = new Vector2(-1, 0);
+
+	public static final RIGHT: Vector2 = new Vector2(1, 0);
+
+	public static final UP: Vector2 = new Vector2(0, -1);
+
+	public static final DOWN: Vector2 = new Vector2(0, 1);
+
+	public inline function new(x : Float = 0, y : Float = 0) {
+		this = new Vector2Native(x, y);
+	}
+
+	public static inline function zero() : Vector2 {
+		return Vector2Native.zero();
+	}
+
+	@:op([])
+	public inline function get(index : Int) : Float {
+		switch(index) {
+			case 0: return this.x;
+			case 1: return this.y;
+			default: throw "Index out of bounds: " + index;
+		}
+	}
+
+	@:op([])
+	public inline function set(index : Int, value : Float) : Float {
+		switch(index) {
+			case 0: this.x = value;
+			case 1: this.y = value;
+			default: throw "Index out of bounds: " + index;
+		}
+		return value;
+	}
+
+	@:op(A + B)
+	public inline function add(other : Vector2) : Vector2 {
+		return new Vector2(this.x + other.x, this.y + other.y);
+	}
+
+	@:op(A - B)
+	public inline function subtract(other : Vector2) : Vector2 {
+		return new Vector2(this.x - other.x, this.y - other.y);
+	}
+
+	@:op(A * B)
+	public inline function multiply(other : Vector2) : Vector2 {
+		return new Vector2(this.x * other.x, this.y * other.y);
+	}
+
+	@:op(A / B)
+	public inline function divide(other : Vector2) : Vector2 {
+		return new Vector2(this.x / other.x, this.y / other.y);
+	}
+
+	@:op(A == B)
+	public inline function equals(other : Vector2) : Bool {
+		return this.x == other.x && this.y == other.y;
+	}
+
+	@:op(A != B)
+	public inline function notEquals(other : Vector2) : Bool {
+		var og: Vector2 = this;
+		return !og.equals(other);
+	}
+
+	@:op(A < B)
+	public inline function lessThan(other : Vector2) : Bool {
+		return this.x < other.x && this.y < other.y;
+	}
+
+	@:op(A <= B)
+	public inline function lessThanOrEqual(other : Vector2) : Bool {
+		return this.x <= other.x && this.y <= other.y;
+	}
+
+	@:op(A > B)
+	public inline function greaterThan(other : Vector2) : Bool {
+		return this.x > other.x && this.y > other.y;
+	}
+
+	@:op(A >= B)
+	public inline function greaterThanOrEqual(other : Vector2) : Bool {
+		return this.x >= other.x && this.y >= other.y;
+	}
+
+	@:op(A += B)
+	public inline function addAssign(other : Vector2) : Vector2 {
+		this.x += other.x;
+		this.y += other.y;
+		return this;
+	}
+
+	@:op(A -= B)
+	public inline function subtractAssign(other : Vector2) : Vector2 {
+		this.x -= other.x;
+		this.y -= other.y;
+		return this;
+	}
+
+	@:op(A *= B)
+	public inline function multiplyAssign(other : Vector2) : Vector2 {
+		this.x *= other.x;
+		this.y *= other.y;
+		return this;
+	}
+
+	@:op(A /= B)
+	public inline function divideAssign(other : Vector2) : Vector2 {
+		this.x /= other.x;
+		this.y /= other.y;
+		return this;
+	}
+
+	@:op(A * B)
+	public inline function multiplyScalar(scalar : Float) : Vector2 {
+		return new Vector2(this.x * scalar, this.y * scalar);
+	}
+
+
+	@:op(A / B)
+	public inline function divideScalar(scalar : Float) : Vector2 {
+		return new Vector2(this.x / scalar, this.y / scalar);
+	}
+
+	@:op(A * B)
+	public inline function multiplyInteger(scalar : Int) : Vector2 {
+		return new Vector2(this.x * scalar, this.y * scalar);
+	}
+
+	@:op(A / B)
+	public inline function divideInteger(scalar : Int) : Vector2 {
+		return new Vector2(this.x / scalar, this.y / scalar);
+	}
 }
