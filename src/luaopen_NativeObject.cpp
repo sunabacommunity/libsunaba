@@ -2,7 +2,7 @@
 #include "NativeObject.h"
 
 void Runtime::luaopen_NativeObject() {
-	lua_state.new_usertype<NativeObject>("NativeObject",
+	auto ut = lua_state.new_usertype<NativeObject>("NativeObject",
 			"new", sol::overload(
 				[](std::string name) {
 					return new NativeObject(name);
@@ -38,4 +38,8 @@ void Runtime::luaopen_NativeObject() {
 			"setMeta", &NativeObject::setMeta,
 			"isNull", &NativeObject::isNull
 		);
+
+	ut["eq"] = [](NativeObject* a, NativeObject* b) {
+		return a->getNative() == b->getNative();
+	};
 }
