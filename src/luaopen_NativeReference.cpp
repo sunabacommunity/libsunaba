@@ -2,7 +2,7 @@
 #include "NativeReference.h"
 
 void Runtime::luaopen_NativeReference() {
-	lua_state.new_usertype<NativeReference>("NativeReference",
+	auto ut = lua_state.new_usertype<NativeReference>("NativeReference",
 			"new", sol::overload(
 				[](std::string name) {
 					return std::make_unique<NativeReference>(name);
@@ -37,4 +37,8 @@ void Runtime::luaopen_NativeReference() {
 			"isValid", &NativeReference::isValid,
 			"isNull", &NativeReference::isNull
 		);
+
+	ut["eq"] = [](NativeReference* a, NativeReference* b) {
+		return a->getNative() == b->getNative();
+	};
 }
