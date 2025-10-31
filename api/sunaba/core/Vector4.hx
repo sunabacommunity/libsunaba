@@ -1,7 +1,7 @@
 package sunaba.core;
 
 @:native("Vector4")
-extern class Vector4 {
+extern class Vector4Natve {
     public var x : Float;
     public var y : Float;
     public var z : Float;
@@ -38,4 +38,197 @@ extern class Vector4 {
     public function snapped(val : Vector4) : Vector4;
     @:native("tostring")
     public function toString() : String;
+}
+
+@:forward(
+	x,
+	y,
+	z,
+	w,
+	zero,
+	abs,
+	ceil,
+	clamp,
+	cubicInterpolate,
+	cubicInterpolateInTime,
+	directionTo,
+	distanceTo,
+	distanceSquaredTo,
+	dot,
+	floor,
+	inverse,
+	isEqualApprox,
+	isNormalized,
+	isZeroApprox,
+	length,
+	lengthSquared,
+	lerp,
+	max,
+	maxAxisIndex,
+	min,
+	minAxisIndex,
+	normalized,
+	posmod,
+	posmodv,
+	round,
+	sign,
+	snapped,
+	toString
+)
+abstract Vector4(Vector4Natve) from Vector4Natve to Vector4Natve {
+	public static final ZERO: Vector4 = Vector4Natve.zero();
+
+	public inline function new(x : Float = 0, y : Float = 0, z : Float = 0, w : Float = 0) {
+		this = new Vector4Natve(x, y, z, w);
+	}
+
+	public static inline function zero() : Vector4 {
+		return Vector4Natve.zero();
+	}
+
+	@:op([])
+	public inline function get(index : Int) : Float {
+		switch(index) {
+			case 0: return this.x;
+			case 1: return this.y;
+			case 2: return this.z;
+			case 3: return this.w;
+			default: throw "Index out of bounds: " + index;
+		}
+	}
+
+	@:op([])
+	public inline function set(index : Int, value : Float) : Float {
+		switch(index) {
+			case 0: this.x = value;
+			case 1: this.y = value;
+			case 2: this.z = value;
+			case 3: this.w = value;
+			default: throw "Index out of bounds: " + index;
+		}
+		return value;
+	}
+
+	@:op(A + B)
+	public inline function add(other : Vector4) : Vector4 {
+		return new Vector4(this.x + other.x, this.y + other.y, this.z + other.z, this.w + other.w);
+	}
+
+	@:op(A - B)
+	public inline function subtract(other : Vector4) : Vector4 {
+		return new Vector4(this.x - other.x, this.y - other.y, this.z - other.z, this.w - other.w);
+	}
+
+	@:op(A * B)
+	public inline function multiply(other : Vector4) : Vector4 {
+		return new Vector4(this.x * other.x, this.y * other.y, this.z * other.z, this.w * other.w);
+	}
+
+	@:op(A / B)
+	public inline function divide(other : Vector4) : Vector4 {
+		return new Vector4(this.x / other.x, this.y / other.y, this.z / other.z, this.w / other.w);
+	}
+
+	@:op(A == B)
+	public inline function equals(other : Vector4) : Bool {
+		return this.x == other.x && this.y == other.y && this.z == other.z && this.w == other.w;
+	}
+
+	@:op(A != B)
+	public inline function notEquals(other : Vector4) : Bool {
+		var og: Vector4 = this;
+		return !og.equals(other);
+	}
+
+	@:op(A < B)
+	public inline function lessThan(other : Vector4) : Bool {
+		return this.x < other.x && this.y < other.y && this.z < other.z && this.w < other.w;
+	}
+
+	@:op(A <= B)
+	public inline function lessThanOrEqual(other : Vector4) : Bool {
+		return this.x <= other.x && this.y <= other.y && this.z <= other.z && this.w <= other.w;
+	}
+
+	@:op(A > B)
+	public inline function greaterThan(other : Vector4) : Bool {
+		return this.x > other.x && this.y > other.y && this.z > other.z && this.w > other.w;
+	}
+
+	@:op(A >= B)
+	public inline function greaterThanOrEqual(other : Vector4) : Bool {
+		return this.x >= other.x && this.y >= other.y && this.z >= other.z && this.w >= other.w;
+	}
+
+	@:op(A += B)
+	public inline function addAssign(other : Vector4) : Vector4 {
+		this.x += other.x;
+		this.y += other.y;
+		this.z += other.z;
+		this.w += other.w;
+		return this;
+	}
+
+	@:op(A -= B)
+	public inline function subtractAssign(other : Vector4) : Vector4 {
+		this.x -= other.x;
+		this.y -= other.y;
+		this.z -= other.z;
+		this.w -= other.w;
+		return this;
+	}
+
+	@:op(A *= B)
+	public inline function multiplyAssign(other : Vector4) : Vector4 {
+		this.x *= other.x;
+		this.y *= other.y;
+		this.z *= other.z;
+		this.w *= other.w;
+		return this;
+	}
+
+	@:op(A /= B)
+	public inline function divideAssign(other : Vector4) : Vector4 {
+		this.x /= other.x;
+		this.y /= other.y;
+		this.z /= other.z;
+		this.w /= other.w;
+		return this;
+	}
+
+	@:op(A++)
+	public inline function increment() : Vector4 {
+		this.x++;
+		this.y++;
+		this.z++;
+		this.w++;
+		return this;
+	}
+
+	@:op(A--)
+	public inline function decrement() : Vector4 {
+		this.x--;
+		this.y--;
+		this.z--;
+		this.w--;
+		return this;
+	}
+
+	@:op(++A)
+	public inline function preIncrement() : Vector4 {
+		this.x++;
+		this.y++;
+		this.z++;
+		this.w++;
+		return this;
+	}
+
+	@:op(--A)
+	public inline function preDecrement() : Vector4 {
+		this.x--;
+		this.y--;
+		this.z--;
+		this.w--;
+		return this;
+	}
 }
