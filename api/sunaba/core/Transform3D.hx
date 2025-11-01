@@ -67,12 +67,13 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 		return value;
 	}
 
-	@:op(A * B)
+	/*@:op(A * B)
 	public inline function multiplyTransform3D(other : Transform3D) : Transform3D {
+		var thisBasis: Basis = this.basis;
 		var new_basis : Basis = this.basis * other.basis;
-		var new_origin : Vector3 = this.basis * other.origin + this.origin;
+		var new_origin : Vector3 = thisBasis * other.origin + this.origin;
 		return new Transform3D(new_basis, new_origin);
-	}
+	}*/
 
 	@:op(A == B)
 	public inline function equals(other : Transform3D) : Bool {
@@ -85,10 +86,12 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 		return !og.equals(other);
 	}
 
+	/*
 	@:op(A * B)
 	public inline function multiplyVector3(other : Vector3) : Vector3 {
 		return this.basis * other + this.origin;
 	}
+	*/
 
 	@:op(A * B)
 	public inline function multiplyScalar(scalar : Float) : Transform3D {
@@ -106,14 +109,17 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 
 	@:op(A * B)
 	public inline function multiplyIntScalar(scalar : Int) : Transform3D {
-		return this.multiplyScalar(cast scalar);
+		var thisA: Transform3D = this;
+		return thisA.multiplyScalar(cast scalar);
 	}
 
 	@:op(A / B)
 	public inline function divideIntScalar(scalar : Int) : Transform3D {
-		return this.divideScalar(cast scalar);
+		var thisA: Transform3D = this;
+		return thisA.divideScalar(cast scalar);
 	}
 
+	/*
 	@:op(A * B)
 	public inline function multiplyPlane(other : Plane) : Plane {
 		var n: Vector3 = other.normal;
@@ -130,4 +136,5 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 		var transformedCorners = corners.map(corner -> this * corner);
 		return AABB.fromPoints(transformedCorners);
 	}
+	*/
 }
