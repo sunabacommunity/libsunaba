@@ -164,14 +164,16 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 
 	@:op(A *= B)
 	public inline function multiplyAssign(other : Basis) : Basis {
-		this = this.multiply(other);
+		var thisB: Basis = this;
+		this = thisB.multiply(other);
 		return this;
 	}
 
 	@:op(A /= B)
 	public inline function divideAssign(other : Basis) : Basis {
+		var thisB: Basis = this;
 		var inv: Basis = other.inverse();
-		this = this.multiply(inv);
+		this = thisB.multiply(inv);
 		return this;
 	}
 
