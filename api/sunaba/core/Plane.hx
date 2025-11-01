@@ -92,9 +92,10 @@ abstract Plane(PlaneNative) from PlaneNative to PlaneNative {
 	public inline function notEquals(other: Plane): Bool {
 		var og: Plane = this;
 		return !og.equals(other);
+	}
 
 
-	@:op(A * B}
+	@:op(A * B)
 	public inline function multiplyTransform3D(other: Transform3D): Plane {
 		var n: Vector3 = this.normal;
 		var p: Vector3 = n.multiplyScalar(this.d);
