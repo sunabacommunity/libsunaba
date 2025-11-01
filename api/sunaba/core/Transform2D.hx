@@ -148,11 +148,15 @@ abstract Transform2D(Transform2DNative) from Transform2DNative to Transform2DNat
 
 	@:op(A * B)
 	public inline function multiplyIntScalar(other : Int) : Transform2D {
-		return this.multiplyScalar(cast other);
+		var otherF: Float = cast other;
+		var thisT2d: Transform2D = this;
+		return thisT2d.multiplyScalar(otherF);
 	}
 
 	@:op(A / B)
 	public inline function divideIntScalar(other : Int) : Transform2D {
-		return this.divideScalar(cast other);
+		var otherF: Float = cast other;
+		var thisT2d: Transform2D = this;
+		return thisT2d.divideScalar(cast other);
 	}
 }
