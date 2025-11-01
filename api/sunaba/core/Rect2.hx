@@ -103,6 +103,7 @@ abstract Rect2(Rect2Native) from Rect2Native to Rect2Native {
 		return !og.equals(other);
 	}
 
+	/*
 	@:op(A * B)
 	public inline function multiplyTransform(other : Transform2D) : Rect2 {
 		var topLeft: Vector2 = other.xform(this.position);
@@ -117,4 +118,5 @@ abstract Rect2(Rect2Native) from Rect2Native to Rect2Native {
 
 		return Rect2.fromFloats(minX, minY, maxX - minX, maxY - minY);
 	}
+	*/
 }
