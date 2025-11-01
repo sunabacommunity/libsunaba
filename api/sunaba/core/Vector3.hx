@@ -106,6 +106,8 @@ extern class Vector3Native {
 abstract Vector3(Vector3Native) from Vector3Native to Vector3Native {
 	public static final ZERO: Vector3 = Vector3Native.zero();
 
+	public static final ONE: Vector3 = new Vector3( 1, 1, 1);
+
 	public inline function new(x : Float = 0, y : Float = 0, z : Float = 0) {
 		this = new Vector3Native(x, y, z);
 	}
