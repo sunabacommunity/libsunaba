@@ -94,7 +94,7 @@ abstract Plane(PlaneNative) from PlaneNative to PlaneNative {
 		return !og.equals(other);
 	}
 
-
+	/*
 	@:op(A * B)
 	public inline function multiplyTransform3D(other: Transform3D): Plane {
 		var n: Vector3 = this.normal;
@@ -104,4 +104,5 @@ abstract Plane(PlaneNative) from PlaneNative to PlaneNative {
 		var d: Float = n.dot(p);
 		return new Plane(n, d);
 	}
+	*/
 }
