@@ -1,7 +1,11 @@
 package sunaba.core;
+import sunaba.core.Rect2.Rect2Native;
+import sunaba.core.Rect2.Rect2Native.fromRect2is;
+import sunaba.core.Rect2.Rect2Native.fromFloats;
+import sunaba.core.Rect2.Rect2Native.fromVector2s;
 
 @:native("Rect2i")
-extern class Rect2i {
+extern class Rect2iNative {
     public var end : Vector2i;
     public var position : Vector2i;
     public var size : Vector2i;
@@ -26,4 +30,80 @@ extern class Rect2i {
     public function intersects(rect : Rect2i, includeBorders : Bool = false) : Bool;
     @:native("tostring")
     public function toString() : String;
+}
+
+@:forward(
+	end,
+	position,
+	size,
+	fromVector2is,
+	fromInts,
+	fromRect2s,
+	abs,
+	encloses,
+	expand,
+	getArea,
+	getCenter,
+	grow,
+	growIndividual,
+	growSide,
+	hasArea,
+	hasPoint,
+	intersetion,
+	intersects,
+	toString
+)
+abstract Rect2i(Rect2iNative) from Rect2iNative to Rect2iNative {
+	public inline function new(x : Int = 0, y : Int = 0, width : Int = 0, height : Int = 0) {
+		this = new Rect2iNative();
+		this.position = new Vector2i(x, y);
+		this.size = new Vector2i(width, height);
+	}
+
+	public static inline function fromFloats(x : Int, y : Int, width : Int, height : Int) : Rect2i {
+		return Rect2iNative.fromInts(x, y, width, height);
+	}
+
+	public static inline function fromVector2is(position : Vector2i, size : Vector2i) : Rect2i {
+		return Rect2iNative.fromVector2is(position, size);
+	}
+
+	@:from
+	public static inline function fromRect2s(rect : Rect2i) : Rect2i {
+		return Rect2iNative.fromRect2s(rect);
+	}
+
+	@:op([])
+	public inline function get(index : Int) : Int {
+		switch(index) {
+			case 0: return this.position.x;
+			case 1: return this.position.y;
+			case 2: return this.size.x;
+			case 3: return this.size.y;
+			default: throw "Index out of bounds: " + index;
+		}
+	}
+
+	@:op([])
+	public inline function set(index : Int, value : Int) : Int {
+		switch(index) {
+			case 0: this.position.x = value;
+			case 1: this.position.y = value;
+			case 2: this.size.x = value;
+			case 3: this.size.y = value;
+			default: throw "Index out of bounds: " + index;
+		}
+		return value;
+	}
+
+	@:op(A == B)
+	public inline function equals(other : Rect2i)  : Bool {
+		return this.position.equals(other.position) && this.size.equals(other.size);
+	}
+
+	@:op(A != B)
+	public inline function notEquals(other : Rect2i)  : Bool {
+		var og: Rect2i = this;
+		return !og.equals(other);
+	}
 }
