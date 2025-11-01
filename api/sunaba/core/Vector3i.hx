@@ -38,7 +38,7 @@ extern class Vector3iNative {
 	toString
 )
 abstract Vector3i(Vector3iNative) from Vector3iNative to Vector3iNative {
-	public static final ZERO: Vector3i = Vector3iNative.zero();
+	//public static final ZERO: Vector3i = Vector3iNative.zero();
 
 	public inline function new(x : Int = 0, y : Int = 0, z : Int = 0) {
 		this = new Vector3iNative(x, y, z);

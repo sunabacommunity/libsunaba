@@ -43,10 +43,10 @@ extern class PlaneNative {
 	project
 )
 abstract Plane(PlaneNative) from PlaneNative to PlaneNative {
-	public static final PLANE_YZ: Plane = Plane.fromAbcd(new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 1), new Vector3(0, 0, 0));
-	public static final PLANE_XZ: Plane = Plane.fromAbcd(new Vector3(0, 1, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1), new Vector3(0, 0, 0));
-	public static final PLANE_XY: Plane = Plane.fromAbcd(new Vector3(0, 0, 1), new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 0));
-	public static final ZERO: Plane = Plane.zero();
+	//public static final PLANE_YZ: Plane = Plane.fromAbcd(new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 1), new Vector3(0, 0, 0));
+	//public static final PLANE_XZ: Plane = Plane.fromAbcd(new Vector3(0, 1, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1), new Vector3(0, 0, 0));
+	//public static final PLANE_XY: Plane = Plane.fromAbcd(new Vector3(0, 0, 1), new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 0));
+	//public static final ZERO: Plane = Plane.zero();
 
 	public inline function new(normal: Vector3, d: Float) {
 		this = new PlaneNative(normal, d);

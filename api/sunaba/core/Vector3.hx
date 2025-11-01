@@ -104,7 +104,7 @@ extern class Vector3Native {
 	toString
 )
 abstract Vector3(Vector3Native) from Vector3Native to Vector3Native {
-	public static final ZERO: Vector3 = Vector3Native.zero();
+	//public static final ZERO: Vector3 = Vector3Native.zero();
 
 	public static final ONE: Vector3 = new Vector3( 1, 1, 1);
 
