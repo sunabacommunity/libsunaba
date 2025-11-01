@@ -68,7 +68,8 @@ extern class Transform2DNative {
 	toString
 )
 abstract Transform2D(Transform2DNative) from Transform2DNative to Transform2DNative {
-	public inline function new(rotation : Float = 0, position : Vector2 = Vector2.ZERO) {
+	public inline function new(rotation : Float = 0, ?position : Vector2) {
+		if (position == null) position = Vector2.ZERO;
 		this = new Transform2DNative(rotation, position);
 	}
 
