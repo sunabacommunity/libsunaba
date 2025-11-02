@@ -71,3 +71,4 @@ ct.lua
 # Visual Studio
 *.vs/*
 demo/.vs/
+demo/export_presets.cfg
