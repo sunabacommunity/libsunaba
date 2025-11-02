@@ -23,8 +23,8 @@ windows.x86_32.double.release = "./windows/libsunaba.windows.template_release.x8
 
 windows.x86_64.single.debug = "./windows/libsunaba.windows.template_debug.x86_64.dll"
 windows.x86_64.double.debug = "./windows/libsunaba.windows.template_debug.x86_64.double.dll"
-windows.x86_64.single.release = "./windows/libsunaba.windows.template_release.x86_64.dll"
-windows.x86_64.double.release = "./windows/libsunaba.windows.template_release.x86_64.double.dll"
+windows.x86_64.single.release = "./windows/libsunaba.dll"
+windows.x86_64.double.release = "./windows/sunaba.windows.template_release.x86_64.double.dll"
 
 linux.x86_64.single.debug = "./linux/libsunaba.linux.template_debug.x86_64.so"
 linux.x86_64.double.debug = "./linux/libsunaba.linux.template_debug.x86_64.double.so"
