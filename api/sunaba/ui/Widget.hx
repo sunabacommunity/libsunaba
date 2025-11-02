@@ -76,7 +76,7 @@ class Widget extends Control {
 
 		var firstElement = xml.firstElement();
 		if (firstElement != null) {
-			if (firstElement.nodeName == "nxml") {
+			if (firstElement.nodeName == "suml") {
 				var fullScreenAtt = firstElement.get("fullscreen");
 				if (fullScreenAtt == "true") {
 					setAnchorsAndOffsetsPreset(LayoutPreset.fullRect, LayoutPresetMode.keepSize, 0);

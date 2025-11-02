@@ -13,7 +13,7 @@ class ClickerCounter extends Widget {
 	var counter: Int = 0;
 
 	public override function init() {
-		load("app://ClickerCounter.nxml");
+		load("app://ClickerCounter.suml");
 		label = Object.castTo(getNode(
 			"centerContainer/vboxContainer/clickCounterLabel"
 		), Label);
