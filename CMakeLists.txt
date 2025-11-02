@@ -7,10 +7,9 @@ endif()
 
 set(LUAJIT_DIR "${CMAKE_SOURCE_DIR}/luajit" CACHE PATH "Path to LuaJIT source directory" FORCE)
 
-set(LIBNAME "libsunaba" CACHE STRING "The name of the library")
-if (WIN32)
-    set(LIBNAME "sunaba" CACHE STRING "The name of the library")
-endif()
+
+set(LIBNAME "sunaba" CACHE STRING "The name of the library")
+
 set(GODOT_PROJECT_DIR "demo" CACHE STRING "The directory of a Godot project folder")
 
 # Make sure all the dependencies are satisfied
@@ -138,6 +137,11 @@ if(DOC_XML)
     if(GODOTCPP_TARGET MATCHES "editor|template_debug")
         target_doc_sources(${LIBNAME} ${DOC_XML})
     endif()
+endif()
+
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    target_compile_definitions(${LIBNAME} PRIVATE GDEXTENSION_RELEASE)
+    set(GODOTCPP_TARGET "template_release")
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
