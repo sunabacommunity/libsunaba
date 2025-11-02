@@ -16,7 +16,7 @@ protected:
 	static void _bind_methods();
 
 public:
-	sol::function func;
+	sol::protected_function func;
 
 	ScriptFunction() {}
 

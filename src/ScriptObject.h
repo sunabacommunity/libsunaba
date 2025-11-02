@@ -158,7 +158,7 @@ GDCLASS( ScriptObject, RefCounted )
 
         Variant call_function(const String& name, const Array& args)
         {
-            auto func = object[name.utf8().get_data()].get<sol::function>();
+            auto func = object[name.utf8().get_data()].get<sol::protected_function>();
             std::vector<sol::object> _args;
             for (int i = 0; i < args.size(); i++)
             {
