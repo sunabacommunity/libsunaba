@@ -20,6 +20,8 @@ demo/bin/windows/*
 .sconsign*.dblite
 bin/*
 
+demo/build/*
+
 # Ignore custom.py
 custom.py
 
