@@ -55,6 +55,9 @@ message(STATUS "Using LuaJIT on ${CMAKE_SYSTEM_NAME} ${LIB_ARCH}")
 
 add_subdirectory(sol2)
 
+add_compile_definitions( SOL_EXCEPTIONS_SAFE_PROPAGATION )
+add_compile_definitions( SOL_ALL_SAFETIES_ON )
+
 # Add godot-cpp's module path and include the exported functions.
 # This is made available for documentation generation
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${godot-cpp_SOURCE_DIR}/cmake")
@@ -161,8 +164,20 @@ if(MSVC)
     # Ensure we use the same runtime library as LuaJIT
     set_property(TARGET ${LIBNAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Release>:MultiThreaded>")
 else()
-    target_compile_options(${LIBNAME} PRIVATE -fPIC)
-    target_compile_options(libluajit PRIVATE -fPIC)
+    target_compile_options(${LIBNAME} PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0 -fsanitize=address -fvisibility=default)
+    target_compile_options(libluajit PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=unused-function")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=missing-field-initializers")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=return-type")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=pedantic")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=sign-compare")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=comment")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=array-bounds")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 endif()
 
 set_target_properties(${LIBNAME}
