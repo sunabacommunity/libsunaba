@@ -43,7 +43,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     }
     @:from
     public static function fromFloat(value:Float):Variant {
-        return VariantNative.fromFloat32(value);
+        return VariantNative.fromFloat64(value);
     }
     @:to
     public inline function toFloat():Float {
