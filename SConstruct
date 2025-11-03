@@ -55,33 +55,19 @@ Run the following command to download godot-cpp:
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
-env["lua_runtime"] = lua_runtime
 
-if env["platform"] == "web" and lua_runtime == "luajit":
-    print("LuaJIT doesn't support WebAssembly, building with Lua instead")
-    lua_runtime = "lua"
 
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
 sources.extend(Glob("src/io/*.cpp"))
 
-### > LUAU STUFF
+### > LUA STUFF
 
-# lua_env = env.Clone()
+env["lua_runtime"] = lua_runtime
 
-# # if env["target"] == "template_debug":
-# #     lua_env.Append(CCFLAGS=["-g"])
-
-# if lua_env["platform"] == "linux":
-#     lua_env.Append(CPPDEFINES=["LUA_USE_POSIX"])
-# elif lua_env["platform"] == "ios":
-#     lua_env.Append(CPPDEFINES=["LUA_USE_IOS"])
-
-# lua_env.Append(CPPDEFINES = ["MAKE_LIB"])
-# # lua_env.Append(CXXFLAGS = ["-std=c++17"])
-# lua_env.Append(CFLAGS = ["-std=c99"])
-
-# Add include paths for headers instead of adding them to sources
+if env["platform"] == "web" and lua_runtime == "luajit":
+    print("LuaJIT doesn't support WebAssembly, building with Lua instead")
+    lua_runtime = "lua"
 
 env.Append(CPPPATH=["sol2/include/"])
 
@@ -156,10 +142,7 @@ elif(env["lua_runtime"] == "luajit"):
     if env["platform"] == "windows" and env.get("is_msvc"):
         env.Append(LINKFLAGS=[os.path.join(LUAJIT_SRC, 'lua51.lib')])
 
-
-
-
-### < LUAU STUFF
+### < LUA STUFF
 
 
 if env["target"] in ["editor", "template_debug"]:
