@@ -3,7 +3,7 @@ import os
 import sys
 
 from methods import print_error
-from SCons.Script import AddOption, GetOption
+from SCons.Script import AddOption, GetOption, Default, Glob
 
 
 libname = "sunaba"
@@ -63,7 +63,7 @@ if env["platform"] == "web" and lua_runtime == "luajit":
 
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
-sources = Glob("src/io/*.cpp")
+sources.extend(Glob("src/io/*.cpp"))
 
 ### > LUAU STUFF
 
@@ -182,7 +182,10 @@ library = env.SharedLibrary(
 if (not luajit_lib is None):
     Depends(library, luajit_lib)
 
-copy = env.Install("{}/bin/{}/".format(projectdir, env["platform"]), library)
+# Instead of installing the entire library target (which includes files that may not exist),
+# install only the main shared library file (.dll)
+main_lib = "bin/{}/{}".format(env['platform'], lib_filename)
+copy = env.Install("{}/bin/{}/".format(projectdir, env["platform"]), main_lib)
 
 default_args = [library, copy]
 Default(*default_args)
