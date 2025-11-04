@@ -718,11 +718,11 @@ class Widget extends Control {
 	}
 
 	private inline function hasField(obj: Object, field: String): Bool {
-		return obj.native.get(field).getType() != VariantType.nil;
+		return obj.native.get(camelToSnake(field)).getType() != VariantType.nil;
 	}
 
 	private inline function objField(obj: Object, field: String) {
-		return obj.native.get(field);
+		return obj.native.get(camelToSnake(field));
 	}
 
 	private function field(obj: Any, field: String): Dynamic {
