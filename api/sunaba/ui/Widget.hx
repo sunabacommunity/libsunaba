@@ -741,4 +741,18 @@ class Widget extends Control {
 
 		return false;
 	}
+
+	@:generic
+	public function getNodeT<T>(classT: Class<T>, path: String): T {
+		var node = getNode(path);
+		var instance = Type.createInstance(classT, [node.native]);
+		return instance;
+	}
+
+	@:generic
+	public function getChildT<T>(classT: Class<T>, index: Int, ?includeInternal: Bool): T {
+		var node = getChild(index, includeInternal);
+		var instance = Type.createInstance(classT, [node.native]);
+		return instance;
+	}
 }
