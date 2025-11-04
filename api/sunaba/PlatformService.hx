@@ -16,7 +16,7 @@ class PlatformService {
 
 	public static var deviceType(get, default): PlatformDeviceType;
 	static function get_deviceType():PlatformDeviceType {
-		return getNative().get("DeviceType");
+		return getNative().get("DeviceType").toInt();
 	}
 
 	public static var osName(get, default): String;
