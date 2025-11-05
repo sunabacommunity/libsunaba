@@ -17,6 +17,7 @@ import sunaba.core.Variant;
 import sunaba.desktop.PopupMenu;
 import sunaba.core.Object;
 import sunaba.core.VariantType;
+import sunaba.core.Dictionary;
 
 class Widget extends Control {
 	public var io: IoInterface;
@@ -427,7 +428,7 @@ class Widget extends Control {
 							throw "Invalid Color value for field '" + attributeName + "' in node '" + Type.getClassName(Type.getClass(node)) + "'";
 						}
 					}
-					else if (isTextureType(currentValue)) {
+					else if (isValueTexture(node, attributeName)) {
 						if (io.fileExists(attributeValue)) {
 							var image = new Image();
 							var imageBytes = io.loadBytes(attributeValue);
@@ -732,12 +733,32 @@ class Widget extends Control {
 		return null;
 	}
 
+	private function isValueTexture(node: Node, propName: String) {
+		var propertyList = node.native.getPropertyList();
+		for (i in 0...propertyList.size()) {
+			var prop : Dictionary = propertyList[i];
+			if (prop.get("name").toString() != propName)
+				continue;
+			else {
+				return prop.get("class_name").toString() == "Texture" || prop.get("class_name").toString() == "Texture2D";
+			}
+		}
+		return false;
+	}
+
 	private function isTextureType(value: Variant) {
-		var nativeRef : NativeReference = value;
-		if (nativeRef != null)
-			if (nativeRef.isValid())
-				if (nativeRef.isClass("Texture"))
+		var nativeRef : NativeReference = value.toNativeReference();
+		trace(nativeRef);
+		trace(nativeRef != null);
+		if (nativeRef != null) {
+			trace(nativeRef.isValid());
+			if (nativeRef.isValid()) {
+				trace(nativeRef.isClass("Texture"));
+				if (nativeRef.isClass("Texture")) {
 					return true;
+				}
+			}
+		}
 
 		return false;
 	}
