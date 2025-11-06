@@ -91,6 +91,7 @@ void Runtime::_infod(const String &msg, const String &title) {
 }
 
 void Runtime::do_string(const String &code) {
+	lua_state["__args"] = args;
 	auto result = lua_state.safe_script(code.utf8().get_data());
 	if (!result.valid()) {
 		sol::error err = result;
