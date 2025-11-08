@@ -1,10 +1,10 @@
 package sunaba;
 
-@:generic
-class GameEvent<T> {
-	private var functions: Array<T>;
+import haxe.Constraints.Function;
 
-	private var objects: Map<T, BaseClass>;
+@:generic
+class GameEvent<T: Function> {
+	private var functions: Array<T>;
 
 	public function new() {
 		clear();
@@ -29,16 +29,8 @@ class GameEvent<T> {
 		return functions.contains(func);
 	}
 
-	public function addWithObject(obj: BaseClass, func: T) {
-		add(func);
-		objects[func] = obj;
-	}
-
 	public inline function call(...args: Dynamic): Void {
 		for (func in functions) {
-			if (objects[func] != null) {
-				Reflect.callMethod(objects[func], func, args);
-			}
 			Reflect.callMethod(null, func, args);
 		}
 	}
