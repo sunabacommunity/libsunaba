@@ -20,9 +20,6 @@ class GameEvent<T: Function> {
 
 	public inline  function remove(func: T) {
 		functions.remove(func);
-		if (objects[func] != null) {
-			objects[func] = null;
-		}
 	}
 
 	public inline function has(func: T) {
