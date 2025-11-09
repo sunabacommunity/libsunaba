@@ -7,8 +7,7 @@ import sunaba.core.ByteArray;
 import sunaba.core.native.ScriptType;
 
 class IoInterface extends Reference {
-	public function new(?native: NativeReference) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (native == null) {
 			return;
 		}

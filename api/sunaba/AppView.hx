@@ -16,8 +16,7 @@ class AppView extends Runtime {
 		return value;
 	}
 
-	public function new(?_native: NativeObject) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (_native == null) {
 			_native = new NativeObject("res://Engine/App.gd", new ArrayList(), ScriptType.gdscript);
 		}

@@ -5,8 +5,7 @@ import sunaba.core.native.NativeReference;
 import sunaba.core.ByteArray;
 
 class IoInterfaceZip extends IoInterface {
-	public function new(?native: NativeReference) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (native == null) {
 			var createScript = new NativeReference('res://Engine/IoBase.gd', new ArrayList(), ScriptType.gdscript);
 			native = createScript.call("create_io_interface_zip", new ArrayList());

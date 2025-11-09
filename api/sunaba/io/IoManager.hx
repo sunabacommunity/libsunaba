@@ -4,8 +4,7 @@ import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
 
 class IoManager extends IoInterface {
-	public function new(?native: NativeReference) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (native == null) {
 			var createScript = new NativeReference('res://Engine/IoBase.gd', new ArrayList(), ScriptType.gdscript);
 			native = createScript.call("create_io_manager", new ArrayList());

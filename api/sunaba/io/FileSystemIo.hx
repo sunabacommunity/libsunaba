@@ -4,8 +4,7 @@ import sunaba.core.ArrayList;
 import sunaba.core.native.ScriptType;
 
 class FileSystemIo extends SystemIoBase {
-	public function new(?native: NativeReference) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (native == null) {
 			var createScript = new NativeReference('res://Engine/IoSystem.gd', new ArrayList(), ScriptType.gdscript);
 			native = createScript.call("create_file_system_io", new ArrayList());
