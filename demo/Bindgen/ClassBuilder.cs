@@ -203,7 +203,7 @@ public class ClassBuilder
 
         classSb.AppendLine($"    public override function nativeInit(?_native: {GetNativeObject(className)}) {'{'}");
 
-        classSb.AppendLine("        if (_native == nul) {");
+        classSb.AppendLine("        if (_native == null) {");
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
         classSb.AppendLine("        this.native = _native;");
