@@ -206,7 +206,7 @@ public class ClassBuilder
         classSb.AppendLine("        if (_native == null && this.native == null) {");
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
-        classSb.AppendLine("        this.native = _native");
+        classSb.AppendLine("        this.native = _native;");
         classSb.AppendLine("        super();");
         if (InheritsClass(className, "Resource"))
         {
