@@ -8,11 +8,15 @@ class Object extends BaseClass {
     public var native: NativeObject = null;
 
     public function new(?native: NativeObject) {
-        if (native == null) {
-            native = new NativeObject('Object');
-        }
-        this.native = native;
+        nativeInit(_native);
     }
+
+	public function nativeInit(?_native: NativeObject) {
+		if (native == null) {
+			native = new NativeObject('Object');
+		}
+		this.native = native;
+	}
 
     public function isNull() {
 		if (native == null) return true;

@@ -8,11 +8,15 @@ class Reference extends BaseClass {
     public var native: NativeReference = null;
 
     public function new(?native: NativeReference) {
-        if (native == null) {
-            native = new NativeReference('RefCounted');
-        }
-        this.native = native;
+		nativeInit(native);
     }
+
+	public function (?_native: NativeReference) {
+		if (native == null) {
+			native = new NativeReference('Object');
+		}
+		this.native = native;
+	}
 
     public function isNull() {
         return native.isNull();
