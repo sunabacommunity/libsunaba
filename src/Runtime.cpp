@@ -308,7 +308,7 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 
 	lua_state["_exit"] = [this](int exitCode) {
 		_exit(exitCode);
-	}
+	};
 
 	lua_state.add_package_loader([this](lua_State* L) {
 		// This function is used to load a file and require it in Lua
