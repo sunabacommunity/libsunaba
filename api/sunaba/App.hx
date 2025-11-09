@@ -64,7 +64,7 @@ class App extends BaseClass {
 
     }
 
-    public static function exit(exitCode: Int = 0) {
-        untyped __lua__("_G.exit(exitCode)");
+    public static function exit(code: Int = 0) {
+        untyped __lua__("_G.exit(code)");
     }
 }
