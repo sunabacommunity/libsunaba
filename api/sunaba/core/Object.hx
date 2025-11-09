@@ -5,7 +5,7 @@ import sunaba.core.native.NativeObject;
 import Type;
 
 class Object extends BaseClass {
-    public var native: NativeObject;
+    public var native: NativeObject = null;
 
     public function new(?native: NativeObject) {
         if (native == null) {

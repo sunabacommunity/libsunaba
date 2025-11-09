@@ -5,7 +5,7 @@ import sunaba.core.native.NativeReference;
 import Type;
 
 class Reference extends BaseClass {
-    public var native: NativeReference;
+    public var native: NativeReference = null;
 
     public function new(?native: NativeReference) {
         if (native == null) {
