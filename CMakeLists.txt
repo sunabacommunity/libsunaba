@@ -169,8 +169,8 @@ else()
     target_compile_options(libluajit PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0)
     # Enable AddressSanitizer only for Debug builds to avoid linking ASan into release/library consumers
     # and ensure the sanitizer runtime is linked when enabled.
-    target_compile_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
-    target_link_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
+    #target_compile_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
+    #target_link_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
