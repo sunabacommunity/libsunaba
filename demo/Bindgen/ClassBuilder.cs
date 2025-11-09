@@ -203,10 +203,11 @@ public class ClassBuilder
 
         classSb.AppendLine($"    public function new(?_native: {GetNativeObject(className)}) {'{'}");
 
-        classSb.AppendLine("        if (_native == null) {");
+        classSb.AppendLine("        if (_native == null && this.native == null) {");
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
-        classSb.AppendLine("        super(_native);");
+        classSb.AppendLine("        this.native = _native");
+        classSb.AppendLine("        super();");
         if (InheritsClass(className, "Resource"))
         {
 	        classSb.AppendLine($"        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);");
