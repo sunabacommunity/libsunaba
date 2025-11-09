@@ -15,7 +15,7 @@ class Object extends BaseClass {
 		if (_native == null) {
 			_native = new NativeObject('Object');
 		}
-		this.native = native;
+		this.native = _native;
 	}
 
     public function isNull() {
