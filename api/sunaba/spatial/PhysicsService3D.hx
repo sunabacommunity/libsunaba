@@ -14,7 +14,7 @@ class PhysicsService3D extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('PhysicsService3D');
+            _native = NativeObject.getService('PhysicsServer3D');
         }
         return _native;
     }

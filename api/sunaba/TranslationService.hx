@@ -14,7 +14,7 @@ class TranslationService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('TranslationService');
+            _native = NativeObject.getService('TranslationServer');
         }
         return _native;
     }

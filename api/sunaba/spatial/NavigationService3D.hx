@@ -17,7 +17,7 @@ class NavigationService3D extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('NavigationService3D');
+            _native = NativeObject.getService('NavigationServer3D');
         }
         return _native;
     }

@@ -17,7 +17,7 @@ class NavigationService2D extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('NavigationService2D');
+            _native = NativeObject.getService('NavigationServer2D');
         }
         return _native;
     }

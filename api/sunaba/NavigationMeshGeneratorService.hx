@@ -13,7 +13,7 @@ class NavigationMeshGeneratorService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('NavigationMeshGeneratorService');
+            _native = NativeObject.getService('NavigationMeshGenerator');
         }
         return _native;
     }

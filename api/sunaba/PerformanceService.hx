@@ -13,7 +13,7 @@ class PerformanceService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('PerformanceService');
+            _native = NativeObject.getService('Performance');
         }
         return _native;
     }
