@@ -5,18 +5,15 @@ void Runtime::luaopen_NativeObject() {
 	auto ut = lua_state.new_usertype<NativeObject>("NativeObject",
 			"new", sol::overload(
 				[](std::string name) {
-					return new NativeObject(name);
+					return std::make_unique<NativeObject>(name);
 				},
 				[](std::string name, const Array& args) {
-					return new NativeObject(name, args);
+					return std::make_unique<NativeObject>(name, args);
 				},
 				[](std::string name, const Array& args, int scriptType) {
-					return new NativeObject(name, args, scriptType);
+					return std::make_unique<NativeObject>(name, args, scriptType);
 				}
 			),
-			"__gc", sol::destructor([](NativeObject* obj) {
-                delete obj;
-            }),
 			"callStatic", &NativeObject::callStatic,
 			"getService", &NativeObject::getService,
 			"call", &NativeObject::call,

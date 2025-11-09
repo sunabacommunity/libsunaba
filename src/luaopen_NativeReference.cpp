@@ -5,18 +5,15 @@ void Runtime::luaopen_NativeReference() {
 	auto ut = lua_state.new_usertype<NativeReference>("NativeReference",
 			"new", sol::overload(
 				[](std::string name) {
-					return new NativeReference(name);
+					return std::make_unique<NativeReference>(name);
 				},
 				[](std::string name, const Array& args) {
-					return new NativeReference(name, args);
+					return std::make_unique<NativeReference>(name, args);
 				},
 				[](std::string name, const Array& args, int scriptType) {
-					return new NativeReference(name, args, scriptType);
+					return std::make_unique<NativeReference>(name, args, scriptType);
 				}
 			),
-			"__gc", sol::destructor([](NativeReference* ref) {
-                delete ref;
-            }),
 			"call", &NativeReference::call,
 			"get", &NativeReference::get,
 			"set", &NativeReference::set,

@@ -7,38 +7,35 @@ void Runtime::luaopen_NativeReference_sandboxed(const Array &classnames) {
                 [classnames](std::string name) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return new NativeReference(name);
+                        return std::make_unique<NativeReference>(name);
                     }
                     else
                     {
-                        return static_cast<NativeReference*>(nullptr);
+                        return std::unique_ptr<NativeReference>(nullptr);
                     }
 
                 },
                 [classnames](std::string name, const Array& args) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return new NativeReference(name, args);
+                        return std::make_unique<NativeReference>(name, args);
                     }
                     else
                     {
-                        return static_cast<NativeReference*>(nullptr);
+                        return std::unique_ptr<NativeReference>(nullptr);
                     }
                 },
                 [classnames](std::string name, const Array& args, int scriptType) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return new NativeReference(name, args, scriptType);
+                        return std::make_unique<NativeReference>(name, args, scriptType);
                     }
                     else
                     {
-                        return static_cast<NativeReference*>(nullptr);
+                        return std::unique_ptr<NativeReference>(nullptr);
                     }
                 }
             ),
-            "__gc", sol::destructor([](NativeReference* ref) {
-                delete ref;
-            }),
             "call", &NativeReference::call,
             "get", &NativeReference::get,
             "set", &NativeReference::set,

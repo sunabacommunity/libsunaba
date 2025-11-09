@@ -21,10 +21,10 @@ void Runtime::luaopen_Callable() {
 		"getBoundArgumentsCount", &Callable::get_bound_arguments_count,
 		"getMethod", &Callable::get_method,
 		"getObject", [](Callable callable) {
-			return new NativeObject(callable.get_object());
+			return std::make_unique<NativeObject>(callable.get_object());
 		},
 		"getReference", [](Callable callable) {
-			return new NativeReference(
+			return std::make_unique<NativeReference>(
 				Ref<RefCounted>(
 					Object::cast_to<RefCounted>(
 						callable.get_object()
