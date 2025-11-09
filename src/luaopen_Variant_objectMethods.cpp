@@ -11,9 +11,9 @@ void Runtime::luaopen_Variant_objectMethods() {
     variant_type["asObject"] = [](const Variant& v) {
         Object* gdobj = v.operator Object*();
         if (gdobj) {
-            return new NativeObject(gdobj);
+            return std::make_unique<NativeObject>(gdobj);
         }
-        return static_cast<NativeObject*>(nullptr);
+        return std::unique_ptr<NativeObject>(nullptr);
     };
 
     variant_type["asReference"] = [](const Variant& v) {
