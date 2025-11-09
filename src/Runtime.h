@@ -49,6 +49,8 @@ public:
 		}
 	}
 
+	void _exit(int exitCode);
+
 	void _process(double delta) override;
 
 	void initState(bool p_sandboxed = false, const Array& classnames = Array());

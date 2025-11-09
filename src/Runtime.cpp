@@ -43,6 +43,11 @@ void Runtime::_bind_methods() {
 	printMi.arguments.push_back(PropertyInfo(Variant::PACKED_STRING_ARRAY, "msgarr"));
 	printMi.return_val = PropertyInfo(Variant::NIL, "void");
 	ClassDB::add_virtual_method("Runtime", printMi);
+	MethodInfo exitMi;
+	exitMi.name = "_exit";
+	exitMi.arguments.push_back(PropertyInfo(Variant::INT, "exitcode"));
+	exitMi.return_val = PropertyInfo(Variant::NIL, "void");
+	ClassDB::add_virtual_method("Runtime", exitMi);
 	ClassDB::bind_method(D_METHOD("get_args"), &Runtime::getArgs);
 	ClassDB::bind_method(D_METHOD("set_args", "args"), &Runtime::setArgs);
 	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "args"), "set_args", "get_args");
@@ -88,6 +93,12 @@ void Runtime::_infod(const String &msg, const String &title) {
 		call("_infod", msg, title);
 	}
 	UtilityFunctions::print(title + String(": ") + msg);
+}
+
+void Runtime::_exit(int exitCode) {
+	if (has_method("_exit")) {
+		call("_exit", exitCode);
+	}
 }
 
 void Runtime::do_string(const String &code) {
@@ -294,6 +305,10 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	lua_state["__infod"] = [this](std::string message, std::string title) {
 			_infod(	message.c_str(), title.c_str());
 	};
+
+	lua_state["_exit"] = [this](int exitCode) {
+		_exit(exitCode);
+	}
 
 	lua_state.add_package_loader([this](lua_State* L) {
 		// This function is used to load a file and require it in Lua
