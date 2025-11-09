@@ -164,8 +164,13 @@ if(MSVC)
     # Ensure we use the same runtime library as LuaJIT
     set_property(TARGET ${LIBNAME} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Release>:MultiThreaded>")
 else()
-    target_compile_options(${LIBNAME} PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0 -fsanitize=address -fvisibility=default)
+    # Common non-MSVC compile options
+    target_compile_options(${LIBNAME} PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0 -fvisibility=default)
     target_compile_options(libluajit PRIVATE -fPIC -fpermissive -ftemplate-backtrace-limit=0)
+    # Enable AddressSanitizer only for Debug builds to avoid linking ASan into release/library consumers
+    # and ensure the sanitizer runtime is linked when enabled.
+    target_compile_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
+    target_link_options(${LIBNAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=duplicated-branches")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=shadow")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
