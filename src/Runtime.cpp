@@ -306,7 +306,7 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 			_infod(	message.c_str(), title.c_str());
 	};
 
-	lua_state["_exit"] = [this](int exitCode) {
+	lua_state["__exit"] = [this](int exitCode) {
 		_exit(exitCode);
 	};
 
