@@ -12,10 +12,10 @@ class Reference extends BaseClass {
     }
 
 	public function nativeInit(?_native: NativeReference) {
-		if (native == null) {
-			native = new NativeReference('Object');
+		if (_native == null) {
+			_native = new NativeReference('Object');
 		}
-		this.native = native;
+		this.native = _native;
 	}
 
     public function isNull() {
