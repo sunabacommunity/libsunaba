@@ -110,11 +110,11 @@ GDCLASS( ScriptObject, RefCounted )
 						if (obj->is_class("RefCounted")) {
 							Ref<RefCounted> ref = Ref<RefCounted>(Object::cast_to<RefCounted>(obj));
 							if (ref.is_valid()) {
-								return sol::make_object(L, std::make_unique<NativeReference>(ref));
+								return sol::make_object(L, new NativeReference(ref));
 							}
 						}
 						// Wrap generic object (your NativeObject/NativeReference handles this already)
-						return sol::make_object(L, std::make_unique<NativeObject>(obj));
+						return sol::make_object(L, new NativeObject(obj));
 					}
 					return sol::make_object(L, sol::lua_nil);
 				}

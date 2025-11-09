@@ -332,8 +332,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 void Runtime::bind_object(const String &name, Object *obj) {
 	if (obj->is_class("RefCounted")) {
 		Ref<RefCounted> ref = Ref<RefCounted>(Object::cast_to<RefCounted>(obj));
-		lua_state[name.utf8().get_data()] = std::make_unique<NativeReference>(ref);
+		lua_state[name.utf8().get_data()] = new NativeReference(ref);
 		return;
 	}
-	lua_state[name.utf8().get_data()] = std::make_unique<NativeObject>(obj);
+	lua_state[name.utf8().get_data()] = new NativeObject(obj);
 }

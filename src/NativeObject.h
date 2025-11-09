@@ -63,9 +63,9 @@ class NativeObject {
             return callable.callv( callableArgs );
         }
 
-        static std::unique_ptr<NativeObject> getService(std::string classname)
+        static NativeObject* getService(std::string classname)
         {
-            return std::make_unique<NativeObject>(Engine::get_singleton()->get_singleton(classname.c_str()));
+            return new NativeObject(Engine::get_singleton()->get_singleton(classname.c_str()));
         }
 
         Variant call(std::string funcname, const Array& args)

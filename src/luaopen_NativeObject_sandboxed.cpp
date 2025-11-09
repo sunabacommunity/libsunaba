@@ -7,35 +7,38 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
                 [classnames](std::string name) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return std::make_unique<NativeObject>(name);
+                        return new NativeObject(name);
                     }
                     else
                     {
-                        return std::unique_ptr<NativeObject>(nullptr);
+                        return static_cast<NativeObject*>(nullptr);
                     }
 
                 },
                 [classnames](std::string name, const Array& args) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return std::make_unique<NativeObject>(name, args);
+                        return new NativeObject(name, args);
                     }
                     else
                     {
-                        return std::unique_ptr<NativeObject>(nullptr);
+                        return static_cast<NativeObject*>(nullptr);
                     }
                 },
                 [classnames](std::string name, const Array& args, int scriptType) {
                     if (classnames.has( String(name.c_str()) ))
                     {
-                        return std::make_unique<NativeObject>(name, args, scriptType);
+                        return new NativeObject(name, args, scriptType);
                     }
                     else
                     {
-                        return std::unique_ptr<NativeObject>(nullptr);
+                        return static_cast<NativeObject*>(nullptr);
                     }
                 }
             ),
+            "__gc", sol::destructor([](NativeObject* obj) {
+                delete obj;
+            }),
             "callStatic", [classnames](std::string classname, std::string methodname, const Array& args) {
                 if (!classnames.has( String(classname.c_str()) ))
                 {
@@ -46,7 +49,7 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
             "getService", [classnames](std::string classname) {
                 if (!classnames.has( String(classname.c_str()) ))
                 {
-                    return std::unique_ptr<NativeObject>(nullptr);
+                    return static_cast<NativeObject*>(nullptr);
                 }
                 return NativeObject::getService( classname );
             },
