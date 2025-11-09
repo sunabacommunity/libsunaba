@@ -202,11 +202,11 @@ public class ClassBuilder
         classSb.AppendLine("class " + className + " extends " + inheritedClassName + " {");
 
         classSb.AppendLine($"    public function new(?_native: {GetNativeObject(className)}) {'{'}");
-        classSb.AppendLine("        super();");
+
         classSb.AppendLine("        if (_native == null) {");
         classSb.AppendLine($"            _native = new {GetNativeObject(className)}('" + className + "');");
         classSb.AppendLine("        }");
-        classSb.AppendLine("        native = _native;");
+        classSb.AppendLine("        super(_native);");
         if (InheritsClass(className, "Resource"))
         {
 	        classSb.AppendLine($"        var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);");
