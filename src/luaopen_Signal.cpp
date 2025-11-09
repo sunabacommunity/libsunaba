@@ -37,10 +37,10 @@ void Runtime::luaopen_Signal() {
 			return String(signal.get_name()).utf8().get_data();
 		},
 		"getObject", [](Signal signal) {
-			return new NativeObject(signal.get_object());
+			return std::make_unique<NativeObject>(signal.get_object());
 		},
 		"getReference", [](Signal signal) {
-			return new NativeReference(
+			return std::make_unique<NativeReference>(
 				Ref<RefCounted>(
 					Object::cast_to<RefCounted>(
 						signal.get_object()
