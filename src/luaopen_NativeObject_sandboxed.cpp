@@ -5,25 +5,35 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
 	auto ut = lua_state.new_usertype<NativeObject>("NativeObject",
             "new", sol::overload(
                 [classnames](std::string name) {
-                    if (!classnames.has( String(name.c_str()) ))
+                    if (classnames.has( String(name.c_str()) ))
                     {
-                        return static_cast<NativeObject*>(nullptr);
+                        return std::make_unique<NativeObject>(name);
                     }
-                    return new NativeObject(name);
+                    else
+                    {
+                        return std::unique_ptr<NativeObject>(nullptr);
+                    }
+
                 },
                 [classnames](std::string name, const Array& args) {
-                    if (!classnames.has( String(name.c_str()) ))
+                    if (classnames.has( String(name.c_str()) ))
                     {
-                        return static_cast<NativeObject*>(nullptr);
+                        return std::make_unique<NativeObject>(name, args);
                     }
-                    return new NativeObject(name, args);
+                    else
+                    {
+                        return std::unique_ptr<NativeObject>(nullptr);
+                    }
                 },
                 [classnames](std::string name, const Array& args, int scriptType) {
-                    if (!classnames.has( String(name.c_str()) ))
+                    if (classnames.has( String(name.c_str()) ))
                     {
-                        return static_cast<NativeObject*>(nullptr);
+                        return std::make_unique<NativeObject>(name, args, scriptType);
                     }
-                    return new NativeObject(name, args, scriptType );
+                    else
+                    {
+                        return std::unique_ptr<NativeObject>(nullptr);
+                    }
                 }
             ),
             "callStatic", [classnames](std::string classname, std::string methodname, const Array& args) {
