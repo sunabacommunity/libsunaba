@@ -27,6 +27,15 @@ if lua_runtime.lower() not in ["lua", "luajit"]:
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 
+# Option to enable AddressSanitizer (adds -fsanitize=address to compile and link)
+AddOption('--asan',
+          dest='asan',
+          action='store_true',
+          help='Enable AddressSanitizer (adds -fsanitize=address to compile and link)',
+          default=False)
+
+# (The chosen asan option will be propagated into the cloned env below.)
+
 
 # Build profiles can be used to decrease compile times.
 # You can either specify "disabled_classes", OR
@@ -54,6 +63,21 @@ Run the following command to download godot-cpp:
     sys.exit(1)
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
+
+# Propagate the ASan option into the active build environment and add flags when requested.
+# Use GetOption here (store_true) so invocation is simply: scons --asan
+env['asan'] = GetOption('asan')
+if env.get('asan'):
+    # AddressSanitizer is not generally supported on Windows in this project setup.
+    if env['platform'] == 'windows':
+        print('AddressSanitizer requested but may not be supported on Windows toolchains.')
+    else:
+        # Add sanitizer flags to compile and link lines. fno-omit-frame-pointer improves ASan traces.
+        asan_flags = ['-fsanitize=address', '-fno-omit-frame-pointer']
+        env.Append(CCFLAGS=asan_flags)
+        env.Append(CXXFLAGS=asan_flags)
+        env.Append(CFLAGS=asan_flags)
+        env.Append(LINKFLAGS=['-fsanitize=address'])
 
 
 
@@ -152,6 +176,7 @@ if env["target"] in ["editor", "template_debug"]:
     except AttributeError:
         print("Not including class reference as we're targeting a pre-4.3 baseline.")
 
+#-fsanitize=address>
 # .dev doesn't inhibit compatibility, so we don't need to key it.
 # .universal just means "compatible with all relevant arches" so we don't need to key it.
 suffix = env['suffix'].replace(".dev", "").replace(".universal", "")
