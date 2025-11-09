@@ -1,4 +1,4 @@
-extends JSON
-class_name JSAssetExtension
+extends Json
+class_name JsonAssetExtension
 
 @export var asset_path: String = ''

@@ -12,12 +12,11 @@ import sunaba.core.Signal;
 import sunaba.core.Rect2;
 
 class StatusIndicator extends Node {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('StatusIndicator');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var icon(get, set): Texture2D;

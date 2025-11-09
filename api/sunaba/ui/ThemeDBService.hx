@@ -15,7 +15,7 @@ class ThemeDBService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('ThemeDB');
+            _native = NativeObject.getService('ThemeDBService');
         }
         return _native;
     }

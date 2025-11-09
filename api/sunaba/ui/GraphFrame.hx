@@ -10,12 +10,11 @@ import sunaba.core.Color;
 import sunaba.core.Signal;
 
 class GraphFrame extends GraphElement {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('GraphFrame');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var autoshrinkEnabled(get, set): Bool;

@@ -21,7 +21,7 @@ class TextService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('TextServer');
+            _native = NativeObject.getService('TextService');
         }
         return _native;
     }

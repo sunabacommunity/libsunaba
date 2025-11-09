@@ -10,12 +10,11 @@ import sunaba.core.Signal;
 import sunaba.Node;
 
 class Range extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('Range');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var allowGreater(get, set): Bool;

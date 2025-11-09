@@ -15,12 +15,11 @@ import sunaba.core.Rect2;
 import sunaba.Node;
 
 class GraphEdit extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('GraphEdit');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var connectionLinesAntialiased(get, set): Bool;

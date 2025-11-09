@@ -10,12 +10,11 @@ import sunaba.input.Shortcut;
 import sunaba.core.Signal;
 
 class BaseButton extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('BaseButton');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var actionMode(get, set): Int;

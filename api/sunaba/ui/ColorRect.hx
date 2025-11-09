@@ -10,12 +10,11 @@ import sunaba.core.Color;
 import sunaba.core.Signal;
 
 class ColorRect extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('ColorRect');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var color(get, set): Color;

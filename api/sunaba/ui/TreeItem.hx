@@ -14,12 +14,11 @@ import sunaba.core.Rect2;
 import sunaba.core.Dictionary;
 
 class TreeItem extends Object {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('TreeItem');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var collapsed(get, set): Bool;

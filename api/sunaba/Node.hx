@@ -14,12 +14,11 @@ import sunaba.core.VariantNative;
 import sunaba.core.native.ScriptType;
 
 class Node extends Object {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('Node');
         }
-        native = _native;
+        this.native = _native;
     }
 
 	public function initializeProxy() {

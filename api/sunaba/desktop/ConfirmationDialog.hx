@@ -10,12 +10,11 @@ import sunaba.core.Signal;
 import sunaba.ui.Button;
 
 class ConfirmationDialog extends AcceptDialog {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('ConfirmationDialog');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var cancelButtonText(get, set): String;

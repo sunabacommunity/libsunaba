@@ -9,12 +9,11 @@ import sunaba.core.ArrayList;
 import sunaba.core.Signal;
 
 class PopupPanel extends Popup {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('PopupPanel');
         }
-        native = _native;
+        this.native = _native;
     }
 
 

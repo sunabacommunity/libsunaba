@@ -11,12 +11,11 @@ import sunaba.core.Signal;
 import sunaba.core.ByteArray;
 
 class AudioStreamOggVorbis extends AudioStream {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('AudioStreamOggVorbis');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['AudioStreamOggVorbis', native];
         scriptLoader.call('loadScript', args);

@@ -10,12 +10,11 @@ import sunaba.core.Dictionary;
 import sunaba.core.Signal;
 
 class FontVariation extends Font {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('FontVariation');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['FontVariation', native];
         scriptLoader.call('loadScript', args);

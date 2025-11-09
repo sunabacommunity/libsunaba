@@ -13,7 +13,7 @@ class CameraService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('CameraServer');
+            _native = NativeObject.getService('CameraService');
         }
         return _native;
     }

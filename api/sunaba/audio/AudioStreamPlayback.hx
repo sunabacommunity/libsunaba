@@ -11,12 +11,11 @@ import sunaba.core.Vector2;
 import sunaba.core.TypedArray;
 
 class AudioStreamPlayback extends Reference {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('AudioStreamPlayback');
         }
-        native = _native;
+        this.native = _native;
     }
 
 

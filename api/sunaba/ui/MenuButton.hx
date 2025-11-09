@@ -10,12 +10,11 @@ import sunaba.core.Signal;
 import sunaba.desktop.PopupMenu;
 
 class MenuButton extends Button {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('MenuButton');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var itemCount(get, set): Int;

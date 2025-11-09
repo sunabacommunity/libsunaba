@@ -11,12 +11,11 @@ import sunaba.core.TypedArray;
 import sunaba.core.Signal;
 
 class OpenXRIPBinding extends Resource {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('OpenXRIPBinding');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['OpenXRIPBinding', native];
         scriptLoader.call('loadScript', args);

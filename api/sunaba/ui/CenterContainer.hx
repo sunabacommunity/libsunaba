@@ -9,12 +9,11 @@ import sunaba.core.ArrayList;
 import sunaba.core.Signal;
 
 class CenterContainer extends Container {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('CenterContainer');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var useTopLeft(get, set): Bool;

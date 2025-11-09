@@ -9,12 +9,11 @@ import sunaba.core.ArrayList;
 import sunaba.core.Signal;
 
 class ENetMultiplayerPeer extends MultiplayerPeer {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('ENetMultiplayerPeer');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var host(get, set): ENetConnection;

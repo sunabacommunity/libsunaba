@@ -17,12 +17,11 @@ import sunaba.ui.StyleBox;
 import sunaba.input.InputEvent;
 
 class CanvasItem extends Node {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
-            return;
+            _native = new NativeObject('CanvasItem');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var clipChildren(get, set): Int;

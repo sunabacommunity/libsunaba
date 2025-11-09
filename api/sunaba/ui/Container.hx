@@ -10,12 +10,11 @@ import sunaba.core.Signal;
 import sunaba.core.Rect2;
 
 class Container extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('Container');
         }
-        native = _native;
+        this.native = _native;
     }
 
 

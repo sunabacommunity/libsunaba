@@ -13,12 +13,11 @@ import sunaba.core.Vector2;
 import sunaba.Node;
 
 class TabContainer extends Container {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('TabContainer');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var allTabsInFront(get, set): Bool;

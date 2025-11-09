@@ -19,12 +19,11 @@ import sunaba.Font;
 import sunaba.core.Vector2;
 
 class RichTextLabel extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('RichTextLabel');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var autowrapMode(get, set): Int;

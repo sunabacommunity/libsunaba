@@ -10,12 +10,11 @@ import sunaba.core.TypedArray;
 import sunaba.core.Signal;
 
 class WebSocketMultiplayerPeer extends MultiplayerPeer {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('WebSocketMultiplayerPeer');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var handshakeHeaders(get, set): TypedArray<String>;

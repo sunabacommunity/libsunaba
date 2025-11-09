@@ -11,12 +11,11 @@ import sunaba.Texture2D;
 import sunaba.core.Signal;
 
 class PanoramaSkyMaterial extends Material {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('PanoramaSkyMaterial');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['PanoramaSkyMaterial', native];
         scriptLoader.call('loadScript', args);

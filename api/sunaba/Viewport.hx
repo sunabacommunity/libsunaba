@@ -14,12 +14,11 @@ import sunaba.ui.Control;
 import sunaba.input.InputEvent;
 
 class Viewport extends Node {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('Viewport');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var anisotropicFilteringLevel(get, set): Int;

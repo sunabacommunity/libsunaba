@@ -10,12 +10,11 @@ import sunaba.core.Vector2i;
 import sunaba.core.Signal;
 
 class SubViewport extends Viewport {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('SubViewport');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var renderTargetClearMode(get, set): Int;

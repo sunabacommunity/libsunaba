@@ -10,12 +10,11 @@ import sunaba.core.Vector2;
 import sunaba.core.Signal;
 
 class InputEventScreenTouch extends InputEventFromWindow {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('InputEventScreenTouch');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['InputEventScreenTouch', native];
         scriptLoader.call('loadScript', args);

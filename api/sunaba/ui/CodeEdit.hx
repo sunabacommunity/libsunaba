@@ -14,12 +14,11 @@ import sunaba.core.TypedArray;
 import sunaba.core.Vector2;
 
 class CodeEdit extends TextEdit {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('CodeEdit');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var autoBraceCompletionEnabled(get, set): Bool;

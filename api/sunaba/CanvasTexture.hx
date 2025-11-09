@@ -10,12 +10,11 @@ import sunaba.core.Color;
 import sunaba.core.Signal;
 
 class CanvasTexture extends Texture2D {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('CanvasTexture');
         }
-        native = _native;
+        this.native = _native;
         var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
         var args: Array<Variant> = ['CanvasTexture', native];
         scriptLoader.call('loadScript', args);

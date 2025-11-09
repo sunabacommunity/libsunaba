@@ -13,7 +13,7 @@ class InputMapService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('InputMap');
+            _native = NativeObject.getService('InputMapService');
         }
         return _native;
     }

@@ -13,12 +13,11 @@ import sunaba.Texture2D;
 import sunaba.core.Color;
 
 class PopupMenu extends Popup {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('PopupMenu');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var allowSearch(get, set): Bool;

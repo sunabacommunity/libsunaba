@@ -11,12 +11,11 @@ import sunaba.Texture2D;
 import sunaba.core.Signal;
 
 class NinePatchRect extends Control {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('NinePatchRect');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var axisStretchHorizontal(get, set): Int;

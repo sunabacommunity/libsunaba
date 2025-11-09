@@ -21,12 +21,11 @@ import sunaba.core.Rect2i;
 import sunaba.Node;
 
 class Window extends Viewport {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('Window');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var accessibilityDescription(get, set): String;

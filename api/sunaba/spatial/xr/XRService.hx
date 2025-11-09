@@ -14,7 +14,7 @@ class XRService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('XRServer');
+            _native = NativeObject.getService('XRService');
         }
         return _native;
     }

@@ -12,12 +12,11 @@ import sunaba.core.Color;
 import sunaba.core.Signal;
 
 class TextureProgressBar extends Range {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('TextureProgressBar');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var fillMode(get, set): Int;

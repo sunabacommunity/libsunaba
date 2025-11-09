@@ -12,12 +12,11 @@ import sunaba.core.Vector2;
 import sunaba.Texture2D;
 
 class GraphNode extends GraphElement {
-    public function new(?_native: NativeObject) {
-        super();
+    public override function nativeInit(?_native: NativeObject) {
         if (_native == null) {
             _native = new NativeObject('GraphNode');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var ignoreInvalidConnectionType(get, set): Bool;

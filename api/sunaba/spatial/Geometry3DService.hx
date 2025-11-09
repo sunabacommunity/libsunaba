@@ -16,7 +16,7 @@ class Geometry3DService extends BaseClass {
      private static var _native: NativeObject;
     public static function getNative() {
         if (_native == null) {
-            _native = NativeObject.getService('Geometry3D');
+            _native = NativeObject.getService('Geometry3DService');
         }
         return _native;
     }

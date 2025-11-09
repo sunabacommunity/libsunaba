@@ -11,12 +11,11 @@ import sunaba.core.TypedArray;
 import sunaba.core.Signal;
 
 class RegExMatch extends Reference {
-    public function new(?_native: NativeReference) {
-        super();
+    public override function nativeInit(?_native: NativeReference) {
         if (_native == null) {
             _native = new NativeReference('RegExMatch');
         }
-        native = _native;
+        this.native = _native;
     }
 
     public var names(get, set): Dictionary;
