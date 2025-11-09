@@ -17,8 +17,7 @@ class Runtime extends Node {
 		return value;
 	}
 
-	public function new(?_native: NativeObject) {
-		super();
+	public override function nativeInit(?_native: NativeObject) {
 		if (_native == null) {
 			_native = new NativeObject("Runtime");
 		}
