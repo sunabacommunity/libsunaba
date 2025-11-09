@@ -1,7 +1,7 @@
 package sunaba;
 
 class Gc {
-	public static function collect() {
+	public inline static function collect() {
 		untyped __lua__("collectgarbage()");
 	}
 }
