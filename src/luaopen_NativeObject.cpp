@@ -14,7 +14,7 @@ void Runtime::luaopen_NativeObject() {
 					return new NativeObject(name, args, scriptType);
 				}
 			),
-			"__gc", sol::destructor([](NativeObject* obj) {
+			sol::meta_function::garbage_collect, sol::destructor([](NativeObject* obj) {
                 delete obj;
             }),
 			"callStatic", &NativeObject::callStatic,

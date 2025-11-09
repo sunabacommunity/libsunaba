@@ -36,7 +36,7 @@ void Runtime::luaopen_NativeObject_sandboxed(const Array &classnames) {
                     }
                 }
             ),
-            "__gc", sol::destructor([](NativeObject* obj) {
+            sol::meta_function::garbage_collect, sol::destructor([](NativeObject* obj) {
                 delete obj;
             }),
             "callStatic", [classnames](std::string classname, std::string methodname, const Array& args) {
