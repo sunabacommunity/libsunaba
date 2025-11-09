@@ -8,7 +8,7 @@ class Object extends BaseClass {
     public var native: NativeObject = null;
 
     public function new(?native: NativeObject) {
-        nativeInit(_native);
+        nativeInit(native);
     }
 
 	public function nativeInit(?_native: NativeObject) {
