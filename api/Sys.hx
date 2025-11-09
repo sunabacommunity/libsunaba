@@ -11,6 +11,7 @@ import sunaba.core.Variant;
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.ScriptType;
 import sunaba.core.Dictionary;
+import sunaba.App;
 
 @:coreApi
 class Sys {
@@ -44,7 +45,7 @@ class Sys {
 	}
 
 	public inline static function exit(code:Int):Void {
-		lua.Os.exit(code);
+		App.exit(code);
 	}
 
 	public inline static function getChar(echo:Bool):Int {
