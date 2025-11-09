@@ -11,7 +11,7 @@ class Reference extends BaseClass {
 		nativeInit(native);
     }
 
-	public function (?_native: NativeReference) {
+	public function nativeInit(?_native: NativeReference) {
 		if (native == null) {
 			native = new NativeReference('Object');
 		}
