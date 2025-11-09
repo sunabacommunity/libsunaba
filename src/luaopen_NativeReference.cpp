@@ -14,7 +14,7 @@ void Runtime::luaopen_NativeReference() {
 					return new NativeReference(name, args, scriptType);
 				}
 			),
-			sol::meta_function::garbage_collect, sol::destructor([](NativeReference* ref) {
+			"__gc", sol::destructor([](NativeReference* ref) {
                 delete ref;
             }),
 			"call", &NativeReference::call,
