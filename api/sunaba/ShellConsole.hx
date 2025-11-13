@@ -6,6 +6,7 @@ import sunaba.core.native.ScriptType;
 import sunaba.core.TypedArray;
 import sunaba.core.Variant;
 import sunaba.core.VariantType;
+import sunaba.io.IoInterface;
 
 class ShellConsole extends Reference {
 	public override function nativeInit(?_native: NativeReference) {
@@ -23,6 +24,16 @@ class ShellConsole extends Reference {
 		addCommand("cmd", commandArray);
 		eval("$ = function(command) cmd(command) end");
 	}
+
+	public var io(get, set): IoInterface;
+	function get_io():IoInterface {
+		return new IoInterface(native.get("IoInterface"));
+	}
+	function set_io(value:IoInterface):IoInterface {
+		native.set("IoInterface", value.native);
+		return value;
+	}
+
 
 	public function addCommand(name: String, func: TypedArray<String>->Void) {
 		var args = new ArrayList();
