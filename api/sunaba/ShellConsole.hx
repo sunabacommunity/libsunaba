@@ -8,6 +8,7 @@ import sunaba.core.Variant;
 import sunaba.core.VariantType;
 import sunaba.io.IoInterface;
 import sunaba.core.Signal;
+import sunaba.core.Callable;
 
 class ShellConsole extends Reference {
 	public override function nativeInit(?_native: NativeReference) {
@@ -48,7 +49,7 @@ class ShellConsole extends Reference {
 	public function addCommand(name: String, func: TypedArray<String>->Int) {
 		var args = new ArrayList();
 		args.append(name);
-		args.append(func);
+		args.append(Callable.fromFunction(func));
 		native.call("AddCommand", args);
 	}
 
