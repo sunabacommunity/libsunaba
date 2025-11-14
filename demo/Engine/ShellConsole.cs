@@ -64,7 +64,7 @@ public partial class ShellConsole : RefCounted
 		return new Variant();
 	}
 
-	public void CallCommand(string name, List<string> args)
+	public int CallCommand(string name, List<string> args)
 	{
 
 		if (!commands.ContainsKey(name))
@@ -72,6 +72,6 @@ public partial class ShellConsole : RefCounted
 			throw new Exception("Invalid command: " + name);
 		}
 		Callable callable = commands[name];
-		callable.Call(args.ToArray());
+		return callable.Call(args.ToArray()).AsInt32();
 	}
 }
