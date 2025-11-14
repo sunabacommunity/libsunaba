@@ -7,6 +7,7 @@ import sunaba.core.TypedArray;
 import sunaba.core.Variant;
 import sunaba.core.VariantType;
 import sunaba.io.IoInterface;
+import sunaba.core.Signal;
 
 class ShellConsole extends Reference {
 	public override function nativeInit(?_native: NativeReference) {
@@ -34,6 +35,14 @@ class ShellConsole extends Reference {
 		return value;
 	}
 
+	private var _print: Signal;
+	public var print(get, default): Signal;
+	function get_print():Signal {
+		if (_print == null) {
+			_print = Signal.createFromReference(native, "Print");
+		}
+		return _print;
+	}
 
 	public function addCommand(name: String, func: TypedArray<String>->Void) {
 		var args = new ArrayList();
