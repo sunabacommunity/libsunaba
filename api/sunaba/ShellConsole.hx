@@ -9,6 +9,7 @@ import sunaba.core.VariantType;
 import sunaba.io.IoInterface;
 import sunaba.core.Signal;
 import sunaba.core.Callable;
+import lua.Table;
 
 class ShellConsole extends Reference {
 	public override function nativeInit(?_native: NativeReference) {
@@ -17,9 +18,9 @@ class ShellConsole extends Reference {
 		}
 		native = _native;
 
-		var commandArray = (args: TypedArray<String>) -> {
-			for (i in 0...args.size()) {
-				var arg = args.get(i);
+		var commandArray = (args: Array<String>) -> {
+			for (arg in args) {
+				trace(arg);
 				cmd(arg);
 			}
 			return 0;
@@ -46,10 +47,14 @@ class ShellConsole extends Reference {
 		return _print;
 	}
 
-	public function addCommand(name: String, func: TypedArray<String>->Int) {
+	public function addCommand(name: String, func: Array<String>->Int) {
 		var args = new ArrayList();
 		args.append(name);
-		args.append(Callable.fromFunction(func));
+		var wrappedFunc = (tableArgs: lua.Table<Int, String>) -> {
+			var args = Table.toArray(tableArgs);
+			return func(args);
+		}
+		args.append(Callable.fromFunction(wrappedFunc));
 		native.call("AddCommand", args);
 	}
 
