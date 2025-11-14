@@ -21,6 +21,7 @@ class ShellConsole extends Reference {
 				var arg = args.get(i);
 				cmd(arg);
 			}
+			return 0;
 		}
 		addCommand("cmd", commandArray);
 		eval("$ = function(command) cmd(command) end");
@@ -44,7 +45,7 @@ class ShellConsole extends Reference {
 		return _print;
 	}
 
-	public function addCommand(name: String, func: TypedArray<String>->Void) {
+	public function addCommand(name: String, func: TypedArray<String>->Int) {
 		var args = new ArrayList();
 		args.append(name);
 		args.append(func);
