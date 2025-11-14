@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suml fullscreen="true" name="console">
+    <head>
+    </head>
+    <body>
+        <sunaba.ui.Panel
+            fullRect="true"
+            offsetBottom="10"
+            offsetTop="-10"
+            offsetLeft="-10"
+            offsetRight="10"/>
+        <sunaba.ui.VBoxContainer
+            fullRect="true"
+            name="vbox">
+            <sunaba.ui.Control
+                name="control"
+                sizeFlagsVertical="3">
+                <sunaba.ui.RichTextLabel
+                    name="output"
+                    fullRect="true"
+                    offsetBottom="-10"
+                    offsetTop="10"
+                    offsetLeft="10"
+                    offsetRight="-10"/>
+            </sunaba.ui.Control>
+            <sunaba.ui.LineEdit
+                name="input"/>
+        </sunaba.ui.VBoxContainer>
+    </body>
+</suml>
