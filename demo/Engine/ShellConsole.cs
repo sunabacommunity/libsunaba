@@ -50,7 +50,7 @@ public partial class ShellConsole : RefCounted
 	public Variant DoCode(string code)
 	{
 		if (code.Contains('$'))
-			code = code.Replace("$", "_G[\"$\"");
+			code = code.Replace("$", "_G[\"$\"]");
 
 		try
 		{
