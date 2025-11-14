@@ -24,7 +24,7 @@ class ShellConsole extends Reference {
 			return 0;
 		}
 		addCommand("cmd", commandArray);
-		eval("$ = function(command) cmd(command) end");
+		eval("$ = function(command) cmd({command}) end");
 	}
 
 	public var io(get, set): IoInterface;
@@ -78,5 +78,10 @@ class ShellConsole extends Reference {
 		}
 		luastr += ("})");
 		eval(luastr);
+	}
+
+	public function log(string: String) {
+		var code = "print('" + string + "')";
+		eval(code);
 	}
 }
