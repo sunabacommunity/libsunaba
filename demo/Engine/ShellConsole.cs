@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Platforms;
 using LuaScript = MoonSharp.Interpreter.Script;
+using Array = Godot.Collections.Array;
 
 namespace Sunaba.Engine;
 
@@ -71,7 +73,19 @@ public partial class ShellConsole : RefCounted
 		{
 			throw new Exception("Invalid command: " + name);
 		}
+
+		GD.Print(args.ToString());
+		Array argsArray = new();
+		foreach (string arg in args)
+		{
+			GD.Print(arg);
+			argsArray.Add(arg);
+			if (!argsArray.Contains(arg))
+				throw new Exception("Fuck");
+		}
+		GD.Print(argsArray);
 		Callable callable = commands[name];
-		return callable.Call(args.ToArray()).AsInt32();
+		Variant v = argsArray;
+		return callable.Call(v).AsInt32();
 	}
 }
