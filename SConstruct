@@ -168,28 +168,6 @@ elif(env["lua_runtime"] == "luajit"):
 
 ### < LUA STUFF
 
-### > QUICKJS STUFF
-
-quickjs_sources = [
-    'quickjs/quickjs-amalgam.c'
-]
-
-quickjs_env = env.Clone()
-if quickjs_env['CC'] == 'cl':
-    quickjs_env.Append(CCFLAGS=['/std:c11', '/experimental:c11atomics'])
-    quickjs_env.Append(CPPDEFINES=['WIN32_LEAN_AND_MEAN'])
-else:
-    quickjs_env.Append(CCFLAGS=['-std=c11'])
-    quickjs_env.Append(CPPDEFINES=['_GNU_SOURCE'])
-
-# Build QuickJS as a static library using the separate environment
-quickjs_lib = quickjs_env.Library('quickjs', quickjs_sources)
-
-env.Prepend(LIBS=[quickjs_lib])
-
-env.Append(LIBPATH=[ "quickjs/"])
-
-### < QUICKJS STUFF
 
 if env["target"] in ["editor", "template_debug"]:
     try:
