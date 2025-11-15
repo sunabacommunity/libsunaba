@@ -187,7 +187,7 @@ quickjs_lib = quickjs_env.Library('quickjs', quickjs_sources)
 
 env.Prepend(LIBS=[quickjs_lib])
 
-env.Append(CPPPATH=[ "quickjs/"])
+env.Append(LIBPATH=[ "quickjs/"])
 
 ### < QUICKJS STUFF
 
