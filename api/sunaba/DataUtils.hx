@@ -612,6 +612,9 @@ class DataUtils {
 			for (i in 0...propertyList.size()) {
 				var prop: Dictionary = propertyList.get(i);
 				var name: String = prop.get("name");
+				if (name == "script") {
+					continue;
+				}
 				if (res.get(name).getType() == VariantType.nil) {
 					continue;
 				}
