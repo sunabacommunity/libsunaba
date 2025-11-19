@@ -6,7 +6,7 @@ on:
   #merge_group:
 
   schedule:
-    - cron: '0 9 * * *' # run at 9 AM UTC/ 11 PM AKDT
+    - cron: '0 9 * * *' # run at 9 AM UTC/ 1 AM AKDT
     #- cron: '0 20 * * *' # run at 8 PM UTC/ 12 PM AKDT
   workflow_dispatch:
 
