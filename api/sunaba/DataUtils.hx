@@ -638,8 +638,11 @@ class DataUtils {
 			}
 		}
 		var nativeReference = new NativeReference(className);
-		var res  = new Resource(nativeReference);
+
 		if (nativeReference.isValid()) {
+			var scriptLoader = new NativeReference('res://Engine/SrciptLoader.gd', new ArrayList(), 1);
+			var scriptLoaderArgs: Array<Variant> = [nativeReference.getClass(), nativeReference];
+			scriptLoader.call('loadScript', scriptLoaderArgs);
 			var properties: Dictionary = dict.get("properties");
 			var propKeys = properties.keys();
 			var propValues = properties.values();
