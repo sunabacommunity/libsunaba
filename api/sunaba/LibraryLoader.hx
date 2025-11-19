@@ -14,22 +14,28 @@ extern class LibraryLoadResult {
 }
 
 class LibraryLoader extends BaseClass {
-	private  var env: Table<Dynamic, Dynamic>;
+	private var _env: Table<Dynamic, Dynamic>;
+
+	public var env(get, default): Table<Dynamic, Dynamic>;
+	function get_env():Table<Dynamic, Dynamic> {
+		return _env;
+	}
+
 
 	public var io: IoInterface;
 
 	public var libraryName: String = "library";
 
 	public function new() {
-		env = Table.create();
+		_env = Table.create();
 		var globalEnv: Table<Dynamic, Dynamic> = untyped __lua__("_G");
-		Lua.setmetatable(env, globalEnv);
+		Lua.setmetatable(_env, globalEnv);
 		var ioNative: NativeReference = untyped __lua__("_G.__ioManager");
 		io = new IoManager(ioNative);
 	}
 
 	public function loadLibrary(path: String): Void {
-		var env = this.env;
+		var env = this._env;
 		var code = io.loadText(path);
 		var libName = this.libraryName;
 		untyped __lua__("assert(load(code, libname, 't', env))");
