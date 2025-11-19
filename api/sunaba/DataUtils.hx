@@ -595,9 +595,14 @@ class DataUtils {
 		data.set("class", className);
 		trace(className);
 		trace(res.get("asset_path").toString() != "");
-		if (res.get("asset_path").toString() != "") {
-			path = res.get("asset_path").toString();
-			trace(path);
+		if (res.get("asset_path").getType() == VariantType.string) {
+			if (res.get("asset_path").toString() != "") {
+				path = res.get("asset_path").toString();
+				trace(path);
+			}
+		}
+		if (path == "<null>") {
+			path = "?";
 		}
 		data.set("path", path);
 		if (path == "?") {
