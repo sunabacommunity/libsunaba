@@ -6,6 +6,8 @@ import sunaba.io.IoInterface;
 import sunaba.io.IoManager;
 import sunaba.core.native.NativeReference;
 import haxe.Exception;
+import sys.FileSystem;
+import sys.io.File;
 
 @:multiReturn
 extern class LibraryLoadResult {
@@ -37,6 +39,13 @@ class LibraryLoader extends BaseClass {
 	public function loadLibrary(path: String): Void {
 		var env = this._env;
 		var code = io.loadText(path);
+		var libName = this.libraryName;
+		untyped __lua__("assert(load(code, libname, 't', env))");
+	}
+
+	public function loadLibraryFileSystem(path: String): Void {
+		var env = this._env;
+		var code = File.getContent(path);
 		var libName = this.libraryName;
 		untyped __lua__("assert(load(code, libname, 't', env))");
 	}
