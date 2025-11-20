@@ -10,25 +10,25 @@
                 "position": {
                   "type": 9,
                   "value": [
-                    4,
-                    5,
-                    6
+                    4.0,
+                    5.0,
+                    6.0
                   ]
                 },
                 "rotation": {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 },
                 "scale": {
                   "type": 9,
                   "value": [
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               },
@@ -45,25 +45,25 @@
             "position": {
               "type": 9,
               "value": [
-                1,
-                2,
-                3
+                1.0,
+                2.0,
+                3.0
               ]
             },
             "rotation": {
               "type": 9,
               "value": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ]
             },
             "scale": {
               "type": 9,
               "value": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ]
             }
           },
@@ -81,25 +81,25 @@
             "position": {
               "type": 9,
               "value": [
-                7,
-                8,
-                9
+                7.0,
+                8.0,
+                9.0
               ]
             },
             "rotation": {
               "type": 9,
               "value": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ]
             },
             "scale": {
               "type": 9,
               "value": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ]
             }
           },
@@ -117,25 +117,25 @@
             "position": {
               "type": 9,
               "value": [
-                0,
-                0,
-                1
+                0.0,
+                0.0,
+                1.0
               ]
             },
             "rotation": {
               "type": 9,
               "value": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ]
             },
             "scale": {
               "type": 9,
               "value": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ]
             }
           },
@@ -144,23 +144,23 @@
         {
           "data": {
             "cullMask": 1048575,
-            "current": true,
+            "current": false,
             "dopplerTracking": 0,
-            "far": 4000,
-            "fov": 75,
+            "far": 4000.0,
+            "fov": 75.0,
             "frustumOffset": {
               "type": 5,
               "value": [
-                0,
-                0
+                0.0,
+                0.0
               ]
             },
-            "hOffset": 0,
-            "keepAspect": 1,
+            "hOffset": 0.0,
+            "keepAspect": 1.0,
             "near": 0.0500000007450581,
             "projection": 0,
-            "size": 1,
-            "vOffset": 0
+            "size": 1.0,
+            "vOffset": 0.0
           },
           "type": "sunaba.spatial.Camera"
         }
@@ -176,25 +176,25 @@
             "position": {
               "type": 9,
               "value": [
-                0,
-                0,
-                -1
+                0.0,
+                0.0,
+                -1.0
               ]
             },
             "rotation": {
               "type": 9,
               "value": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ]
             },
             "scale": {
               "type": 9,
               "value": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ]
             }
           },
@@ -209,44 +209,44 @@
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 },
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 },
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 }
               ]
             },
-            "extraCullMargin": 0,
+            "extraCullMargin": 0.0,
             "giMode": 1,
             "ignoreOcclusionCulling": false,
             "layerMask": 0,
             "lightmapScale": 0,
-            "lightmapTexelScale": 0,
-            "lodBias": 1,
-            "sortingOffset": 0,
+            "lightmapTexelScale": 0.0,
+            "lodBias": 1.0,
+            "sortingOffset": 0.0,
             "sortingUseAabbCenter": true,
-            "transparancy": 0,
-            "visibilityRangeBegin": 0,
-            "visibilityRangeBeginMargin": 0,
-            "visibilityRangeEnd": 0,
-            "visibilityRangeEndMargin": 0,
-            "visibilityRangeFadeMode": 0
+            "transparancy": 0.0,
+            "visibilityRangeBegin": 0.0,
+            "visibilityRangeBeginMargin": 0.0,
+            "visibilityRangeEnd": 0.0,
+            "visibilityRangeEndMargin": 0.0,
+            "visibilityRangeFadeMode": 0.0
           },
           "type": "sunaba.spatial.mesh.MeshDisplay"
         },
@@ -259,25 +259,25 @@
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 },
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 },
                 {
                   "type": 9,
                   "value": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ]
                 }
               ]
@@ -353,10 +353,6 @@
                   "ao_texture_channel": {
                     "type": 2,
                     "value": 0
-                  },
-                  "asset_path": {
-                    "type": 4,
-                    "value": ""
                   },
                   "backlight": {
                     "type": 20,
@@ -675,13 +671,6 @@
                     "type": 2,
                     "value": 0
                   },
-                  "script": {
-                    "type": 24,
-                    "value": {
-                      "class": "GDScript",
-                      "path": "<null>"
-                    }
-                  },
                   "shading_mode": {
                     "type": 2,
                     "value": 1
@@ -791,9 +780,9 @@
                   "uv1_scale": {
                     "type": 9,
                     "value": [
-                      1,
-                      1,
-                      1
+                      1.0,
+                      1.0,
+                      1.0
                     ]
                   },
                   "uv1_triplanar": {
@@ -811,17 +800,17 @@
                   "uv2_offset": {
                     "type": 9,
                     "value": [
-                      0,
-                      0,
-                      0
+                      0.0,
+                      0.0,
+                      0.0
                     ]
                   },
                   "uv2_scale": {
                     "type": 9,
                     "value": [
-                      1,
-                      1,
-                      1
+                      1.0,
+                      1.0,
+                      1.0
                     ]
                   },
                   "uv2_triplanar": {
@@ -854,15 +843,15 @@
             "size": {
               "type": 9,
               "value": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ]
             },
             "subdivideDepth": 0,
             "subdivideHeight": 0,
             "subdivideWidth": 0,
-            "uv2Padding": 2
+            "uv2Padding": 2.0
           },
           "type": "sunaba.spatial.mesh.BoxMesh"
         },
