@@ -76,6 +76,7 @@ abstract TypedArray<T>(TypedArrayNative<T>) from TypedArrayNative<T> to TypedArr
         return vector;
     }
 
+    @:depricated
     @:from
     @:generic
     public static function fromArray<A>(array:Array<A>):TypedArray<A> {
