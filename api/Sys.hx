@@ -12,6 +12,8 @@ import sunaba.core.native.NativeReference;
 import sunaba.core.native.ScriptType;
 import sunaba.core.Dictionary;
 import sunaba.App;
+import sunaba.core.StringArray;
+import sunaba.core.VariantNative;
 
 @:coreApi
 class Sys {
@@ -32,11 +34,16 @@ class Sys {
 	}
 
 	public static function command(cmd:String, ?args:Array<String>):Int {
+		var native = new NativeReference("res://Engine/HxSys.cs", new ArrayList(), ScriptType.csharp);
 		if (args == null) {
 			args = new Array();
 		}
-		var argsTa: TypedArray<String> = args;
-		var code = OSService.execute(cmd, args);
+		var argsTa: TypedArray<String> = StringArray.fromArray(args);
+		var funcArgs = new ArrayList();
+		funcArgs.append(cmd);
+		var argsV = VariantNative.fromStringArray(argsTa);
+		funcArgs.append(argsV);
+		var code: Int = native.call("Command", funcArgs);
 		return code;
 	}
 
