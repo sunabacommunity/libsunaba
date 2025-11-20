@@ -651,6 +651,7 @@ class DataUtils {
 			var propValues = properties.values();
 			for (i in 0...propKeys.size()) {
 				var key = propKeys.get(i);
+				if (key == "asset_path") continue;
 				var value = dictToVar(propValues.get(i), ioInterface);
 				nativeReference.set(key, value);
 			}
