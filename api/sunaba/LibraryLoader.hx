@@ -67,6 +67,10 @@ class LibraryLoader extends BaseClass {
 	}
 
 	public function main() {
+		untyped __lua__("
+			local _ENV = env
+        ");
+
 		chunk();
 	}
 }
