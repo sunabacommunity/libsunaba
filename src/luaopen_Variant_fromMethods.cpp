@@ -48,10 +48,10 @@ void Runtime::luaopen_Variant_fromMethods() {
         return Variant(packed_data);
     };
 
-    variant_type["fromStringArray"] = [](const std::vector<String>& data) {
+    variant_type["fromStringArray"] = [](const std::vector<std::string>& data) {
         PackedStringArray packed_data;
-        for (const auto& item : data) {
-            packed_data.append(item);
+        for (const std::string& item : data) {
+            packed_data.append(item.c_str());
         }
         return Variant(packed_data);
     };
