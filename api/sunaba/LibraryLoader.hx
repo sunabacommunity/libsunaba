@@ -50,7 +50,7 @@ class LibraryLoader extends BaseClass {
 		var code: String = io.loadText(path);
 
 		untyped __lua__("
-        	local chunk = loadstring(code)
+        	local chunk = _G.loadstring(code)
 			setfenv(chunk, env)
 			chunk()
     	");
@@ -65,7 +65,7 @@ class LibraryLoader extends BaseClass {
 		var libName = this.libraryName;
 
 		untyped __lua__("
-        	local chunk = loadstring(code)
+        	local chunk = _G.loadstring(code)
 			setfenv(chunk, env)
 			chunk()
     	");
