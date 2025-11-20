@@ -354,6 +354,10 @@
                     "type": 2,
                     "value": 0
                   },
+                  "asset_path": {
+                    "type": 4,
+                    "value": "?"
+                  },
                   "backlight": {
                     "type": 20,
                     "value": "000000ff"
