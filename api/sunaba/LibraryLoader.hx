@@ -10,7 +10,7 @@ import sys.FileSystem;
 import sys.io.File;
 
 class LibraryLoadResult {
-	public var chunk: Dynamic;
+	public var chunk: ()->Void;
 	public var err: String;
 	public function new(chunk: Dynamic, err: String) {
 		this.chunk = chunk;
@@ -31,7 +31,7 @@ class LibraryLoader extends BaseClass {
 
 	public var libraryName: String = "library";
 
-	public var res: LibraryLoadResult = null;
+	private var chunk: ()-> Void;
 
 	public function new() {
 		_env = Table.create();
@@ -48,21 +48,14 @@ class LibraryLoader extends BaseClass {
 	public function loadLibrary(path: String): Void {
 		var env = this._env;
 		var code: String = io.loadText(path);
-		var libName: String = this.libraryName;
 
 		untyped __lua__("
-        local __chunk, __err = load(code, libName, 't', env)
-        rawset(_G, '__sunaba_chunk', __chunk)
-        rawset(_G, '__sunaba_err', __err)
-    ");
+        	local chunk = loadstring(code)
+			setfenv(chunk, env)
+			chunk()
+    	");
 
-		var chunk: Dynamic = untyped __lua__("_G.__sunaba_chunk");
-		var err   : Dynamic = untyped __lua__("_G.__sunaba_err");
-
-		untyped __lua__("_G.__sunaba_chunk = nil");
-		untyped __lua__("_G.__sunaba_err = nil");
-
-		res = new LibraryLoadResult(chunk, err);
+		this.chunk = untyped __lua__("chunk");
 	}
 
 
@@ -72,18 +65,15 @@ class LibraryLoader extends BaseClass {
 		var libName = this.libraryName;
 
 		untyped __lua__("
-        local __chunk, __err = load(code, libName, 't', env)
-        rawset(_G, '__sunaba_chunk', __chunk)
-        rawset(_G, '__sunaba_err', __err)
-    ");
+        	local chunk = loadstring(code)
+			setfenv(chunk, env)
+			chunk()
+    	");
 
-		var chunk: Dynamic = untyped __lua__("_G.__sunaba_chunk");
-		var err   : Dynamic = untyped __lua__("_G.__sunaba_err");
-
-		untyped __lua__("_G.__sunaba_chunk = nil");
-		untyped __lua__("_G.__sunaba_err = nil");
-
-		res = new LibraryLoadResult(chunk, err);
+		this.chunk = untyped __lua__("chunk");
 	}
 
+	public function main() {
+		chunk();
+	}
 }
