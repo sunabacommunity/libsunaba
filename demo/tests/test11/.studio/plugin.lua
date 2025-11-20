@@ -240,12 +240,13 @@ __lua_Boot = _hx_e()
 __lua_Thread = _hx_e()
 __lua_UserData = _hx_e()
 __lua_PairTools = _hx_e()
+__sunaba_Behavior = _hx_e()
+__myComponents_RotateComponent = _hx_e()
 __sunaba_App = _hx_e()
 __sunaba_core_Object = _hx_e()
 __sunaba_Node = _hx_e()
 __sunaba_Runtime = _hx_e()
 __sunaba_AppView = _hx_e()
-__sunaba_Behavior = _hx_e()
 __sunaba_CanvasItem = _hx_e()
 __sunaba__CanvasItemProcessMode_CanvasItemProcessMode_Impl_ = _hx_e()
 __sunaba__CloseButtonDisplayPolicy_CloseButtonDisplayPolicy_Impl_ = _hx_e()
@@ -2199,6 +2200,8 @@ __sunaba_studio_Plugin.prototype.get_editor = function(self)
 end
 __sunaba_studio_Plugin.prototype.init = function(self) 
 end
+__sunaba_studio_Plugin.prototype.uninit = function(self) 
+end
 
 __sunaba_studio_Plugin.prototype.__class__ =  __sunaba_studio_Plugin
 __sunaba_studio_Plugin.__super__ = __sunaba_BaseClass
@@ -2215,9 +2218,14 @@ end
 _hxClasses["TestPlugin"] = TestPlugin
 TestPlugin.__name__ = "TestPlugin"
 TestPlugin.main = function() 
-  _G.print("Hello, World!");
+  TestPlugin.new();
 end
 TestPlugin.prototype = _hx_e();
+TestPlugin.prototype.init = function(self) 
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
+  self:get_editor():pushBehaviorClass(__myComponents_RotateComponent);
+end
 
 TestPlugin.prototype.__class__ =  TestPlugin
 TestPlugin.__super__ = __sunaba_studio_Plugin
@@ -5316,6 +5324,98 @@ __lua_PairTools.copy = function(table1)
   do return ret end;
 end
 
+__sunaba_Behavior.new = function() 
+  local self = _hx_new(__sunaba_Behavior.prototype)
+  __sunaba_Behavior.super(self)
+  return self
+end
+__sunaba_Behavior.super = function(self) 
+  self.editorIconPath = "studio://icons/16/lightning.png";
+end
+_hxClasses["sunaba.Behavior"] = __sunaba_Behavior
+__sunaba_Behavior.__name__ = "sunaba.Behavior"
+__sunaba_Behavior.prototype = _hx_e();
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_mesh_MeshDisplay = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
+__sunaba_Behavior.prototype.entity= nil;
+__sunaba_Behavior.prototype.scene= nil;
+__sunaba_Behavior.prototype.get_scene = function(self) 
+  do return self.entity.scene end
+end
+__sunaba_Behavior.prototype.name= nil;
+__sunaba_Behavior.prototype.editorIconPath= nil;
+__sunaba_Behavior.prototype.onInit = function(self) 
+end
+__sunaba_Behavior.prototype.onEnterTree = function(self) 
+end
+__sunaba_Behavior.prototype.onExitTree = function(self) 
+end
+__sunaba_Behavior.prototype.onStart = function(self) 
+end
+__sunaba_Behavior.prototype.onEnd = function(self) 
+end
+__sunaba_Behavior.prototype.onUpdate = function(self,deltaTime) 
+end
+__sunaba_Behavior.prototype.onPhysicsUpdate = function(self,deltaTime) 
+end
+__sunaba_Behavior.prototype.onInput = function(self,event) 
+end
+__sunaba_Behavior.prototype.onUnhandledInput = function(self,event) 
+end
+__sunaba_Behavior.prototype.onUnhandledKeyInput = function(self,event) 
+end
+__sunaba_Behavior.prototype.onShortcutInput = function(self,event) 
+end
+__sunaba_Behavior.prototype.getData = function(self) 
+  do return Dictionary.new() end
+end
+__sunaba_Behavior.prototype.setData = function(self,data) 
+end
+__sunaba_Behavior.prototype._onInput = function(self,event) 
+  self:onInput(__sunaba_input_InputEvent.new(event));
+end
+__sunaba_Behavior.prototype._onUnhandledInput = function(self,event) 
+  self:onUnhandledInput(__sunaba_input_InputEvent.new(event));
+end
+__sunaba_Behavior.prototype._onUnhandledKeyInput = function(self,event) 
+  self:onUnhandledKeyInput(__sunaba_input_InputEvent.new(event));
+end
+__sunaba_Behavior.prototype._onShortcutInput = function(self,event) 
+  self:onShortcutInput(__sunaba_input_InputEvent.new(event));
+end
+
+__sunaba_Behavior.prototype.__class__ =  __sunaba_Behavior
+__sunaba_Behavior.__super__ = __sunaba_BaseClass
+setmetatable(__sunaba_Behavior.prototype,{__index=__sunaba_BaseClass.prototype})
+
+__myComponents_RotateComponent.new = function() 
+  local self = _hx_new(__myComponents_RotateComponent.prototype)
+  __myComponents_RotateComponent.super(self)
+  return self
+end
+__myComponents_RotateComponent.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["myComponents.RotateComponent"] = __myComponents_RotateComponent
+__myComponents_RotateComponent.__name__ = "myComponents.RotateComponent"
+__myComponents_RotateComponent.prototype = _hx_e();
+__myComponents_RotateComponent.prototype.transform= nil;
+__myComponents_RotateComponent.prototype.onStart = function(self) 
+  self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+end
+__myComponents_RotateComponent.prototype.onUpdate = function(self,deltaTime) 
+  local rotation = -0.5 * deltaTime;
+  self.transform:rotateY(rotation);
+end
+
+__myComponents_RotateComponent.prototype.__class__ =  __myComponents_RotateComponent
+__myComponents_RotateComponent.__super__ = __sunaba_Behavior
+setmetatable(__myComponents_RotateComponent.prototype,{__index=__sunaba_Behavior.prototype})
+
 __sunaba_App.new = function() 
   local self = _hx_new(__sunaba_App.prototype)
   __sunaba_App.super(self)
@@ -6260,74 +6360,6 @@ end
 __sunaba_AppView.prototype.__class__ =  __sunaba_AppView
 __sunaba_AppView.__super__ = __sunaba_Runtime
 setmetatable(__sunaba_AppView.prototype,{__index=__sunaba_Runtime.prototype})
-
-__sunaba_Behavior.new = function() 
-  local self = _hx_new(__sunaba_Behavior.prototype)
-  __sunaba_Behavior.super(self)
-  return self
-end
-__sunaba_Behavior.super = function(self) 
-  self.editorIconPath = "studio://icons/16/lightning.png";
-end
-_hxClasses["sunaba.Behavior"] = __sunaba_Behavior
-__sunaba_Behavior.__name__ = "sunaba.Behavior"
-__sunaba_Behavior.prototype = _hx_e();
-__sunaba_Behavior.prototype.getComponent_sunaba_spatial_mesh_MeshDisplay = function(self,type) 
-  do return self.entity:getComponent_getComponent_T(type) end
-end
-__sunaba_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type) 
-  do return self.entity:getComponent_getComponent_T(type) end
-end
-__sunaba_Behavior.prototype.entity= nil;
-__sunaba_Behavior.prototype.scene= nil;
-__sunaba_Behavior.prototype.get_scene = function(self) 
-  do return self.entity.scene end
-end
-__sunaba_Behavior.prototype.name= nil;
-__sunaba_Behavior.prototype.editorIconPath= nil;
-__sunaba_Behavior.prototype.onInit = function(self) 
-end
-__sunaba_Behavior.prototype.onEnterTree = function(self) 
-end
-__sunaba_Behavior.prototype.onExitTree = function(self) 
-end
-__sunaba_Behavior.prototype.onStart = function(self) 
-end
-__sunaba_Behavior.prototype.onEnd = function(self) 
-end
-__sunaba_Behavior.prototype.onUpdate = function(self,deltaTime) 
-end
-__sunaba_Behavior.prototype.onPhysicsUpdate = function(self,deltaTime) 
-end
-__sunaba_Behavior.prototype.onInput = function(self,event) 
-end
-__sunaba_Behavior.prototype.onUnhandledInput = function(self,event) 
-end
-__sunaba_Behavior.prototype.onUnhandledKeyInput = function(self,event) 
-end
-__sunaba_Behavior.prototype.onShortcutInput = function(self,event) 
-end
-__sunaba_Behavior.prototype.getData = function(self) 
-  do return Dictionary.new() end
-end
-__sunaba_Behavior.prototype.setData = function(self,data) 
-end
-__sunaba_Behavior.prototype._onInput = function(self,event) 
-  self:onInput(__sunaba_input_InputEvent.new(event));
-end
-__sunaba_Behavior.prototype._onUnhandledInput = function(self,event) 
-  self:onUnhandledInput(__sunaba_input_InputEvent.new(event));
-end
-__sunaba_Behavior.prototype._onUnhandledKeyInput = function(self,event) 
-  self:onUnhandledKeyInput(__sunaba_input_InputEvent.new(event));
-end
-__sunaba_Behavior.prototype._onShortcutInput = function(self,event) 
-  self:onShortcutInput(__sunaba_input_InputEvent.new(event));
-end
-
-__sunaba_Behavior.prototype.__class__ =  __sunaba_Behavior
-__sunaba_Behavior.__super__ = __sunaba_BaseClass
-setmetatable(__sunaba_Behavior.prototype,{__index=__sunaba_BaseClass.prototype})
 
 __sunaba_CanvasItem.new = function(native) 
   local self = _hx_new(__sunaba_CanvasItem.prototype)
@@ -9870,6 +9902,21 @@ __sunaba_Entity.prototype.addComponent_addComponent_T = function(self,type)
   end;
   do return behaviorT end
 end
+__sunaba_Entity.prototype.removeComponent_sunaba_Behavior = function(self,type) 
+  local compName = type.__name__;
+  local _g = 0;
+  local _g1 = self.components;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local component = _g1[_g];
+    _g = _g + 1;
+    if (component.name == compName) then 
+      component:onExitTree();
+      component:onEnd();
+      self.components:remove(component);
+    end;
+  end;
+end
 __sunaba_Entity.prototype.getComponent_getComponent_T = function(self,type) 
   local compName = type.__name__;
   local _g = 0;
@@ -9899,21 +9946,6 @@ __sunaba_Entity.prototype.getComponent_sunaba_spatial_SpatialTransform = functio
     end;
   end;
   do return nil end
-end
-__sunaba_Entity.prototype.removeComponent_sunaba_Behavior = function(self,type) 
-  local compName = type.__name__;
-  local _g = 0;
-  local _g1 = self.components;
-  while (_g < _g1.length) do _hx_do_first_1 = false;
-    
-    local component = _g1[_g];
-    _g = _g + 1;
-    if (component.name == compName) then 
-      component:onExitTree();
-      component:onEnd();
-      self.components:remove(component);
-    end;
-  end;
 end
 __sunaba_Entity.prototype._freed= nil;
 __sunaba_Entity.prototype.name= nil;
@@ -25467,6 +25499,7 @@ __sunaba_studio_Editor.super = function(self,_io)
   self.isGamePaused = false;
   self.buildSystem = Gamepak.new();
   self.isSaveKeyPressed = false;
+  self.projectPlugin = nil;
   self.buildTask = nil;
   self.hasGrabedFocus = false;
   self.plugins = Array.new();
@@ -25608,13 +25641,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   self.window:set_mode(2);
   local _hx_status, _hx_result = pcall(function() 
   
-      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=178,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=179,className="sunaba.studio.Editor",methodName="onReady"}));
       local menuBarControl = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl");
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=180,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=181,className="sunaba.studio.Editor",methodName="onReady"}));
       if (__sunaba_OSService.getName() == "macOS") then 
-        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=182,className="sunaba.studio.Editor",methodName="onReady"}));
+        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=183,className="sunaba.studio.Editor",methodName="onReady"}));
         local windowSize = nil;
-        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=184,className="sunaba.studio.Editor",methodName="onReady"}));
+        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=185,className="sunaba.studio.Editor",methodName="onReady"}));
         local eventFunc = function(eventN) 
           if (_gthis.window == nil) then 
             do return end;
@@ -25634,7 +25667,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
           end;
           if (_gthis.clickcount == 2) then 
-            __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=203,className="sunaba.studio.Editor",methodName="onReady"}));
+            __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=204,className="sunaba.studio.Editor",methodName="onReady"}));
             _gthis.clickcount = 0;
             if (_gthis.window:get_mode() == 2) then 
               _gthis.window:set_mode(0);
@@ -25646,7 +25679,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
           end;
         end;
-        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=214,className="sunaba.studio.Editor",methodName="onReady"}));
+        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=215,className="sunaba.studio.Editor",methodName="onReady"}));
         local menuBar = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/menuBar");
         local toolBarSpacer = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar/hbox/spacer");
         menuBar:get_guiInput():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(eventFunc));
@@ -25777,7 +25810,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end));
       self:refreshLeftSidebar();
       self:refreshRightSidebar();
-      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=330,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=331,className="sunaba.studio.Editor",methodName="onReady"}));
       local args = _G.__args;
       local s = args;
       local array = _hx_tab_array({}, 0);
@@ -25810,13 +25843,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(self.sProjPath)}, 1);
       self.sProjPath = String.prototype.split(__sys_FileSystem.getNative():call("AbsolutePath", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asString(), "\\"):join("/");
-      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=346,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=347,className="sunaba.studio.Editor",methodName="onReady"}));
       local projJson = "";
       if (self.sProjPath ~= "") then 
         projJson = __sys_io_File.getContent(self.sProjPath);
       end;
-      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=353,className="sunaba.studio.Editor",methodName="onReady"}));
-      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=354,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=354,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=355,className="sunaba.studio.Editor",methodName="onReady"}));
       if ((self.sProjPath == "") or (projJson == "")) then 
         __sunaba_Debug.error("Project not found.");
         __sunaba_App.exit(-1);
@@ -25828,12 +25861,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local dirPath = sprojPathArr:join("/");
       dirPath = Std.string(dirPath) .. Std.string("/");
       local assetPath = Std.string(dirPath) .. Std.string(self._projectFile.assetsdir);
-      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=370,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=371,className="sunaba.studio.Editor",methodName="onReady"}));
       while (not StringTools.endsWith(assetPath, self._projectFile.assetsdir)) do _hx_do_first_1 = false;
         
         assetPath = Std.string(assetPath) .. Std.string(self._projectFile.assetsdir);
       end;
-      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=374,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=375,className="sunaba.studio.Editor",methodName="onReady"}));
       local recentProjectsPath = "user://recentProjects.json";
       if (self.io:fileExists(recentProjectsPath)) then 
         local recentProjectsStr = self.io:loadText(recentProjectsPath);
@@ -26018,7 +26051,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
     command1 = command;
   end;
   self.buildTask = _G.coroutine.create(function() 
-    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=536,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=537,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     if (_gthis.pluginBuildWindow ~= nil) then 
       local windowSize = _gthis.pluginBuildWindow:get_size();
       local scaleFactor = _gthis:getWindow():get_contentScaleFactor();
@@ -26044,7 +26077,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       end;
     end;
     _G.coroutine.yield();
-    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command1), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=555,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command1), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=556,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     local args = __sunaba_core_StringArray.create();
     local cmdArr = String.prototype.split(command1, " ");
     local commandName = cmdArr[0];
@@ -26082,7 +26115,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       array:push(value);
     end;
     local exitCode = Sys.command(commandName, array);
-    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=571,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=572,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     _G.coroutine.yield();
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:hide();
@@ -26099,6 +26132,11 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
           local pluginEnv = loader:get_env();
           local plugin = pluginEnv['plugin'];
           if (plugin ~= nil) then 
+            if (_gthis.projectPlugin ~= nil) then 
+              _gthis.projectPlugin:uninit();
+              _gthis.plugins:remove(_gthis.projectPlugin);
+            end;
+            _gthis.projectPlugin = plugin;
             _gthis.plugins:push(plugin);
             plugin:init();
           end;
@@ -26135,6 +26173,11 @@ __sunaba_studio_Editor.prototype.loadProjectPlugin = function(self)
       local pluginEnv = loader:get_env();
       local plugin = pluginEnv['plugin'];
       if (plugin ~= nil) then 
+        if (self.projectPlugin ~= nil) then 
+          self.projectPlugin:uninit();
+          self.plugins:remove(self.projectPlugin);
+        end;
+        self.projectPlugin = plugin;
         self.plugins:push(plugin);
         plugin:init();
       end;
@@ -26154,6 +26197,7 @@ __sunaba_studio_Editor.prototype.loadProjectPlugin = function(self)
     return _hx_result
   end;
 end
+__sunaba_studio_Editor.prototype.projectPlugin= nil;
 __sunaba_studio_Editor.prototype.loadPlugin = function(self,path,name) 
   local loader = __sunaba_LibraryLoader.new();
   loader.libraryName = name;
@@ -26162,9 +26206,18 @@ __sunaba_studio_Editor.prototype.loadPlugin = function(self,path,name)
   local pluginEnv = loader:get_env();
   local plugin = pluginEnv['plugin'];
   if (plugin ~= nil) then 
+    if (self.projectPlugin ~= nil) then 
+      self.projectPlugin:uninit();
+      self.plugins:remove(self.projectPlugin);
+    end;
+    self.projectPlugin = plugin;
     self.plugins:push(plugin);
     plugin:init();
   end;
+end
+__sunaba_studio_Editor.prototype.pushBehaviorClass = function(self,_class) 
+  local className = _class.__name__;
+  _hxClasses[className] = _class;
 end
 __sunaba_studio_Editor.prototype.getExitCode = function(self) 
   local hiddenDir = Std.string(self.explorer.projectDirectory) .. Std.string("/.studio");
@@ -26243,7 +26296,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=702,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=717,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
