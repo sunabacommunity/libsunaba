@@ -13,8 +13,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asIntArray"] = [](const Variant& v) {
-        PackedInt32Array packed_data = v;
         std::vector<int> data;
+        if (v.get_type() != Variant::PACKED_INT32_ARRAY) return data;
+        PackedInt32Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
@@ -22,8 +23,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asIntArray64"] = [](const Variant& v) {
-        PackedInt64Array packed_data = v;
         std::vector<int64_t> data;
+        if (v.get_type() != Variant::PACKED_INT64_ARRAY) return data;
+        PackedInt64Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
@@ -31,8 +33,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asFloatArray"] = [](const Variant& v) {
-        PackedFloat32Array packed_data = v;
         std::vector<float> data;
+        if (v.get_type() != Variant::PACKED_FLOAT32_ARRAY) return data;
+        PackedFloat32Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
@@ -40,8 +43,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asFloatArray64"] = [](const Variant& v) {
-        PackedFloat64Array packed_data = v;
         std::vector<double> data;
+        if (v.get_type() != Variant::PACKED_FLOAT64_ARRAY) return data;
+        PackedFloat64Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
@@ -49,8 +53,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asStringArray"] = [](const Variant& v) {
-        PackedStringArray packed_data = v;
         std::vector<std::string> data;
+        if (v.get_type() != Variant::PACKED_STRING_ARRAY) return data;
+        PackedStringArray packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i].utf8().get_data());
         }
@@ -58,8 +63,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asVector2Array"] = [](const Variant& v) {
-        PackedVector2Array packed_data = v;
         std::vector<Vector2> data;
+        if (v.get_type() != Variant::PACKED_VECTOR2_ARRAY) return data;
+        PackedVector2Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
@@ -67,8 +73,9 @@ void Runtime::luaopen_Variant_arrayMethods() {
     };
 
     variant_type["asVector3Array"] = [](const Variant& v) {
-        PackedVector3Array packed_data = v;
         std::vector<Vector3> data;
+        if (v.get_type() != Variant::PACKED_VECTOR3_ARRAY) return data;
+        PackedVector3Array packed_data = v;
         for (int i = 0; i < packed_data.size(); ++i) {
             data.push_back(packed_data[i]);
         }
