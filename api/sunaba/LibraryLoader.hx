@@ -36,17 +36,17 @@ class LibraryLoader extends BaseClass {
 		io = new IoManager(ioNative);
 	}
 
-	public function loadLibrary(path: String): Void {
+	public function loadLibrary(path: String): LibraryLoadResult {
 		var env = this._env;
 		var code = io.loadText(path);
 		var libName = this.libraryName;
-		untyped __lua__("assert(load(code, libname, 't', env))");
+		return untyped __lua__("load(code, libname, 't', env)");
 	}
 
-	public function loadLibraryFileSystem(path: String): Void {
+	public function loadLibraryFileSystem(path: String): LibraryLoadResult {
 		var env = this._env;
 		var code = File.getContent(path);
 		var libName = this.libraryName;
-		untyped __lua__("assert(load(code, libname, 't', env))");
+		return untyped __lua__("load(code, libname, 't', env)");
 	}
 }
