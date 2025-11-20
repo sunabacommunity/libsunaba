@@ -26,49 +26,42 @@ class LibraryLoader extends BaseClass {
 		return _env;
 	}
 
-
 	public var io: IoInterface;
-
 	public var libraryName: String = "library";
 
-	private var chunk: ()-> Void;
+	private var chunk: ()->Void;
 
 	public function new() {
-		_env = Table.create();
-		var globalEnv: Table<Dynamic, Dynamic> = untyped __lua__("_G");
-		untyped __lua__("
-			for key, value in pairs(_G) do
-				self._env[key] = value
-			end
-		");
+		_env = untyped __lua__("setmetatable({}, { __index = _G })");
+
 		var ioNative: NativeReference = untyped __lua__("_G.__ioManager");
 		io = new IoManager(ioNative);
 	}
 
 	public function loadLibrary(path: String): Void {
 		var env = this._env;
+		if (!io.fileExists(path)) {
+			throw "Asset not found";
+		}
 		var code: String = io.loadText(path);
 
+		// Lua 5.2+ compatible
 		untyped __lua__("
-        	local chunk = _G.loadstring(code)
-			setfenv(chunk, env)
-			chunk()
-    	");
+			local _ENV = env
+            local chunk = load(code)
+        ");
 
 		this.chunk = untyped __lua__("chunk");
 	}
 
-
 	public function loadLibraryFileSystem(path: String): Void {
 		var env = this._env;
 		var code: String = File.getContent(path);
-		var libName = this.libraryName;
 
 		untyped __lua__("
-        	local chunk = _G.loadstring(code)
-			setfenv(chunk, env)
-			chunk()
-    	");
+			local _ENV = env
+            local chunk = load(code)
+        ");
 
 		this.chunk = untyped __lua__("chunk");
 	}
@@ -77,3 +70,4 @@ class LibraryLoader extends BaseClass {
 		chunk();
 	}
 }
+
