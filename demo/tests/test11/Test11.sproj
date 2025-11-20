@@ -8,6 +8,7 @@
     "apisymbols": true,
     "sourcemap": true,
     "entrypoint": "Main",
+    "pluginEntrypoint": "TestPlugin",
     "luabin": "main.lua",
     "libraries": [
         "codegen"
