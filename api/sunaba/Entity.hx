@@ -169,7 +169,7 @@ class Entity extends BaseClass {
 	private var _hasEnteredTree: Bool = false;
 
 	public function addChild(child: Entity) {
-		child._parent = this;
+		child.parent = this;
 		child.scene = scene;
 		children.push(child);
 		if (node != null && child.node != null) {
