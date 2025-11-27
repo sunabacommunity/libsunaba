@@ -70,66 +70,79 @@ class NativeObject {
 
         Variant call(std::string funcname, const Array& args)
         {
+        	if (isNull()) return Variant();
             return native->callv( funcname.c_str(), args );
         }
 
         Variant get(std::string propname)
         {
+        	if (isNull()) return Variant();
             return native->get( propname.c_str() );
         }
 
         void set(std::string propname, Variant value)
         {
+        	if (isNull()) return;
             native->set( propname.c_str(), value );
         }
 
         std::string getClass()
         {
+        	if (isNull()) return "";
             return native->get_class().utf8().get_data();
         }
 
         bool isClass(std::string classname)
         {
+        	if (isNull()) return false;
             return native->is_class( classname.c_str() );
         }
 
         Variant getMeta(std::string name, Variant _default = Variant())
         {
+        	if (isNull()) return Variant();
             return native->get_meta( name.c_str(), _default );
         }
 
         Array getMetaList()
         {
+        	if (isNull()) return Array();
             return native->get_property_list();
         }
 
         int getMethodArgumentCount(std::string method)
         {
+        	if (isNull()) return -1;
             return native->get_method_argument_count( method.c_str() );
         }
 
         Array getMethodList()
         {
+        	if (isNull()) return Array();
             return native->get_method_list();
         }
 
         Array getPropertyList()
         {
+        	if (isNull()) return Array();
             return native->get_property_list();
         }
 
         bool hasMeta(std::string name)
         {
+        	if (isNull()) return false;
             return native->has_meta( name.c_str() );
         }
 
         bool hasMethod(std::string method)
         {
+        	if (isNull()) return false;
             return native->has_method( method.c_str() );
         }
 
         void setMeta(std::string name, Variant value)
         {
+        	if (isNull()) return;
             return;native->set_meta( name.c_str(), value );
         }
 
@@ -144,6 +157,7 @@ class NativeObject {
 
         void free()
         {
+        	if (isNull()) return;
             memfree( native );
         }
 };
