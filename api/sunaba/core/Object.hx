@@ -9,7 +9,7 @@ class Object extends BaseClass {
 
     public function new(?native: NativeObject) {
         nativeInit(native);
-		if (this.native.isNull()) {
+		if (native.isNull()) {
 			throw "Invalid Object Handle";
 		}
     }
