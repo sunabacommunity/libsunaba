@@ -9,7 +9,7 @@ class Reference extends BaseClass {
 
     public function new(?native: NativeReference) {
 		nativeInit(native);
-		if (native.isNull() || native.isValid()) {
+		if (this.native.isNull() || this.native.isValid()) {
 			throw "Invalid Reference Handle";
 		}
     }
