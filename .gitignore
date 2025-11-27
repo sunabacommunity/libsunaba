@@ -72,3 +72,4 @@ ct.lua
 *.vs/*
 demo/.vs/
 demo/export_presets.cfg
+libsunaba.iml
