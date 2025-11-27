@@ -15,13 +15,18 @@ class Entity extends BaseClass {
 	private var components: Array<Behavior> = new Array();
 	private var children: Array<Entity> = new Array();
 
-	var _parent: Entity;
+	var _parent: Entity = null;
 
 	public var scene: SceneRoot;
 
-	public var parent(get, default): Entity;
+	public var parent(get, set): Entity;
 	function get_parent():Entity {
-		return parent;
+		return _parent;
+	}
+	function set_parent(value:Entity):Entity {
+		this._parent = value;
+
+		return _parent;
 	}
 
 	private var _node: Node;
