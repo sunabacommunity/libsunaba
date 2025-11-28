@@ -244,6 +244,7 @@ class Camera extends Behavior {
 	}
 
 	public override function onInit() {
+		editorIconPath = "studio://icons/16/camera-lens.png";
 		_node = new Node(new NativeObject("Camera3D"));
 		node.name = "Camera";
 	}
