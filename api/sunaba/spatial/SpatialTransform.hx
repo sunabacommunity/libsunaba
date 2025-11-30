@@ -337,6 +337,8 @@ class SpatialTransform extends Behavior {
 	}
 
 	public override function onEnd() {
-		entity.node = null;
+		if (entity.node == node) {
+			entity.node = null;
+		}
 	}
 }

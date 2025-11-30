@@ -36,20 +36,24 @@ class Entity extends BaseClass {
 	}
 	function set_node(value:Node):Node {
 		if (_node != null) {
-			if (_node.native == value.native) return _node;
-			if (!_freed && value != null) {
-				var c = new Array<Node>();
-				for (i in 0..._node.getChildCount()) {
-					var child = _node.getChild(i);
-					if (child != null) {
-						c.push(child);
-						_node.removeChild(child);
-					}
-				}
+			if (value != null) {
+				if (!value.isNull()) {
+					if (_node.native == value.native) return _node;
+					if (!_freed && value != null) {
+						var c = new Array<Node>();
+						for (i in 0..._node.getChildCount()) {
+							var child = _node.getChild(i);
+							if (child != null) {
+								c.push(child);
+								_node.removeChild(child);
+							}
+						}
 
-				for (child in c) {
-					if (child != null) {
-						value.addChild(child);
+						for (child in c) {
+							if (child != null) {
+								value.addChild(child);
+							}
+						}
 					}
 				}
 			}
@@ -58,16 +62,18 @@ class Entity extends BaseClass {
 		}
 
 		_node = value;
-		if (_node != null) {
-			if (parent != null) {
-				parent.node.addChild(value);
+		if (value != null) {
+			if (!value.isNull()) {
+				if (parent != null) {
+					parent.node.addChild(value);
+				}
+				else if (scene != null) {
+					scene.addChild(value);
+				}
+				_node.name = this.name;
 			}
-			else if (scene != null) {
-				scene.addChild(value);
-			}
-			_node.name = this.name;
 		}
-		return _node;
+		return value;
 	}
 
 	private var _prefabPath: String = "";
@@ -231,11 +237,15 @@ class Entity extends BaseClass {
 	}
 
 	public function exitTree() {
-		for (comp in components) {
-			comp.onExitTree();
+		if (components != null) {
+			for (comp in components) {
+				comp.onExitTree();
+			}
 		}
-		for (child in children) {
-			child.exitTree();
+		if (children != null) {
+			for (child in children) {
+				child.exitTree();
+			}
 		}
 	}
 
@@ -303,6 +313,7 @@ class Entity extends BaseClass {
 	}
 
 	public function destroy() {
+		exitTree();
 		for (comp in components) {
 			removeComponent(Type.getClass(comp));
 		}
