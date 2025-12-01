@@ -81,6 +81,7 @@ add_library(${LIBNAME} SHARED)
 add_dependencies(${LIBNAME} libluajit)
 
 target_link_directories(${LIBNAME} PRIVATE src)
+target_include_directories(${LIBNAME} PRIVATE quickjs)
 
 target_sources(${LIBNAME}
     PRIVATE
@@ -130,6 +131,7 @@ target_sources(${LIBNAME}
     src/io/Byte.cpp
     src/io/ByteArray.h
     src/io/ByteArray.cpp
+    quickjs/quickjs-amalgam.c
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
