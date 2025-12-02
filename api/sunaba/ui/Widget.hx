@@ -31,14 +31,17 @@ class Widget extends Control {
 		if (_io != null)
 			io = _io;
 
-		var defaultThemes = new NativeReference("res://Engine/DefaultThemes.gd", new ArrayList(), ScriptType.gdscript);
-		var defaultThemeNative = defaultThemes.call("get_system_theme", new ArrayList());
-		theme = new Theme(defaultThemeNative);
 		init();
 	}
 
 	public function init() {
 
+	}
+
+	public function themeUpdate() {
+		var defaultThemes = new NativeReference("res://Engine/DefaultThemes.gd", new ArrayList(), ScriptType.gdscript);
+		var defaultThemeNative = defaultThemes.call("get_system_theme", new ArrayList());
+		theme = new Theme(defaultThemeNative);
 	}
 
 	public function load(path: String): Void {
