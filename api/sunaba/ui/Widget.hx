@@ -31,6 +31,7 @@ class Widget extends Control {
 		if (_io != null)
 			io = _io;
 
+		themeUpdate();
 		init();
 	}
 
