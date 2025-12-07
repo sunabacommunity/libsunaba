@@ -57,7 +57,7 @@ void Runtime::luaopen_Variant_fromMethods() {
     };
 
     variant_type["fromString"] = [](const std::string& str) {
-        return Variant(String(str.c_str()));
+        return Variant(String::utf8(str.c_str()));
     };
 
     variant_type["fromVector2Array"] = [](const std::vector<Vector2>& data) {
