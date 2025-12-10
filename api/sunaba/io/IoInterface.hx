@@ -6,6 +6,7 @@ import sunaba.core.ArrayList;
 import sunaba.core.ByteArray;
 import sunaba.core.native.ScriptType;
 import sunaba.core.Dictionary;
+import sunaba.core.VariantNative;
 
 class IoInterface extends Reference {
 	public override function nativeInit(?native: NativeReference) {
@@ -106,17 +107,44 @@ class IoInterface extends Reference {
 		return native.call("GetTempFilename", new ArrayList());
 	}
 
-	public function loadData(path: String): Dictionary {
-		var args = new ArrayList();
-		args.append(path);
-		return native.call("LoadData", args);
+	public inline function loadData(path: String): Dictionary {
+		var msgpackPath = path;
+		if (!StringTools.endsWith(path, ".msgpack") && !StringTools.endsWith(path, ".dat"))
+			msgpackPath += ".dat";
+
+		if (fileExists((msgpackPath))) {
+			var bytes = loadBytes(msgpackPath);
+
+			var script = new NativeReference("res://Engine/MessagePack.gd", new ArrayList(), ScriptType.gdscript);
+			var args = new ArrayList();
+			args.append(bytes);
+			return script.call("decode", args);
+		}
+		else if (fileExists(path)) {
+			var json = loadText(path);
+			return JSON.parseString(json);
+		}
+		else {
+			throw "Data file not found";
+		}
 	}
 
-	public function saveData(path: String, data: Dictionary, fileType: DataFileType = DataFileType.json) {
-		var args = new ArrayList();
-		args.append(path);
-		args.append(data);
-		args.append(fileType);
-		return native.call("SaveData", args);
+	public inline function saveData(path: String, data: Dictionary, fileType: DataFileType = DataFileType.json) {
+		if (fileType == DataFileType.json) {
+			var json = JSON.stringify(data);
+			saveText(path, json);
+		}
+		else if (fileType == DataFileType.msgPack || StringTools.endsWith(path, ".dat") || StringTools.endsWith(path, ".msgpack")) {
+			var msgpackPath = path;
+			if (!StringTools.endsWith(path, ".msgpack") && !StringTools.endsWith(path, ".dat"))
+				msgpackPath += ".dat";
+
+			var script = new NativeReference("res://Engine/MessagePack.gd", new ArrayList(), ScriptType.gdscript);
+			var args = new ArrayList();
+			args.append(data);
+			var bytes: ByteArray = script.call("encode", args);
+
+			saveBytes(msgpackPath, bytes);
+		}
 	}
 }
