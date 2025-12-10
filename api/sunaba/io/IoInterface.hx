@@ -118,7 +118,8 @@ class IoInterface extends Reference {
 			var script = new NativeReference("res://Engine/MessagePack.gd", new ArrayList(), ScriptType.gdscript);
 			var args = new ArrayList();
 			args.append(bytes);
-			return script.call("decode", args);
+			var result: Dictionary = script.call("decode", args);
+			return result.get("value");
 		}
 		else if (fileExists(path)) {
 			var json = loadText(path);
