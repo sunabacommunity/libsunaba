@@ -634,13 +634,11 @@ class DataUtils {
 		var className = dict.get("class");
 		if (path != "?" && !dict.has("properties")) {
 			if (ioInterface != null) {
-				var jsonStr = ioInterface.loadText(path);
-				var json = new JSON();
-				var err = json.parse(jsonStr);
-				if (err == Error.ok) {
-					var jsonDict = json.data;
-					return dictToRes(jsonDict, ioInterface);
+				var subDict = ioInterface.loadData(path);
+				if (subDict.keys().size() == 0) {
+					throw "Failed to load data for '" + path + "'";
 				}
+				return dictToRes(subDict, ioInterface);
 			}
 		}
 		var nativeReference = new NativeReference(className);
