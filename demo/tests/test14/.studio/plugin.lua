@@ -8006,13 +8006,36 @@ __sunaba_DataUtils.dictToRes = function(dict,ioInterface)
   local className = dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("class"));
   if ((path:asString() ~= "?") and not dict:has(__sunaba_core__Variant_Variant_Impl_.fromString("properties"))) then 
     if (ioInterface ~= nil) then 
-      local jsonStr = ioInterface:loadText(path:asString());
-      local json = __sunaba_JSON.new();
-      local err = json:parse(jsonStr);
-      if (err == 0) then 
-        local jsonDict = json:get_data();
-        do return __sunaba_DataUtils.dictToRes(jsonDict:asDictionary(), ioInterface) end;
+      local path1 = path:asString();
+      local msgpackPath = path1;
+      if (not StringTools.endsWith(path1, ".msgpack") and not StringTools.endsWith(path1, ".dat")) then 
+        msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
       end;
+      local subDict;
+      if (ioInterface:fileExists(msgpackPath)) then 
+        local bytes = ioInterface:loadBytes(msgpackPath);
+        local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+        local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+        args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
+        subDict = script:call("decode", args):asDictionary();
+      else
+        if (ioInterface:fileExists(path1)) then 
+          local json = ioInterface:loadText(path1);
+          subDict = __sunaba_JSON.parseString(json):asDictionary();
+        else
+          _G.error(__haxe_Exception.thrown("Data file not found"),0);
+        end;
+      end;
+      if (subDict:keys():size() == 0) then 
+        _G.error(__haxe_Exception.thrown(Std.string(Std.string("Failed to load data for '") .. Std.string(((function() 
+          local _hx_1
+          if (path == nil) then 
+          _hx_1 = "null"; else 
+          _hx_1 = path:asString(); end
+          return _hx_1
+        end )()))) .. Std.string("'")),0);
+      end;
+      do return __sunaba_DataUtils.dictToRes(subDict, ioInterface) end;
     end;
   end;
   local nativeReference = NativeReference.new(className:asString());
@@ -10413,16 +10436,57 @@ __sunaba_ScriptableObject.prototype.load = function(self,path)
   if (path == nil) then 
     path = self.path;
   end;
-  local variant = __sunaba_core__Variant_Variant_Impl_.fromString(self.io:loadText(path));
-  self:setData(__sunaba_JSON.parseString(variant:asString()):asDictionary());
+  local _this = self.io;
+  local msgpackPath = path;
+  if (not StringTools.endsWith(path, ".msgpack") and not StringTools.endsWith(path, ".dat")) then 
+    msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
+  end;
+  local tmp;
+  if (_this:fileExists(msgpackPath)) then 
+    local bytes = _this:loadBytes(msgpackPath);
+    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
+    tmp = script:call("decode", args):asDictionary();
+  else
+    if (_this:fileExists(path)) then 
+      local json = _this:loadText(path);
+      tmp = __sunaba_JSON.parseString(json):asDictionary();
+    else
+      _G.error(__haxe_Exception.thrown("Data file not found"),0);
+    end;
+  end;
+  self:setData(tmp);
 end
-__sunaba_ScriptableObject.prototype.save = function(self,path) 
+__sunaba_ScriptableObject.prototype.save = function(self,path,fileType) 
+  if (fileType == nil) then 
+    fileType = 0;
+  end;
   if (path == nil) then 
     path = self.path;
   end;
-  local variant = self:getData();
-  local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(variant), "  ");
-  self.io:saveText(path, json);
+  local data = self:getData();
+  local _this = self.io;
+  local fileType = fileType;
+  if (fileType == nil) then 
+    fileType = 0;
+  end;
+  if (fileType == 0) then 
+    local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
+    _this:saveText(path, json);
+  else
+    if (((fileType == 1) or StringTools.endsWith(path, ".dat")) or StringTools.endsWith(path, ".msgpack")) then 
+      local msgpackPath = path;
+      if (not StringTools.endsWith(path, ".msgpack") and not StringTools.endsWith(path, ".dat")) then 
+        msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
+      end;
+      local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+      local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
+      local bytes = script:call("encode", args):asByteArray();
+      _this:saveBytes(msgpackPath, bytes);
+    end;
+  end;
 end
 
 __sunaba_ScriptableObject.prototype.__class__ =  __sunaba_ScriptableObject
