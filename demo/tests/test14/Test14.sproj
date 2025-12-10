@@ -1,0 +1,20 @@
+{
+    "name": "Test14",
+    "version": "1.0",
+    "type": "executable",
+    "rootUrl": "app://",
+    "assetsdir": "assets",
+    "scriptdir": "src",
+    "apisymbols": true,
+    "sourcemap": true,
+    "entrypoint": "Main",
+    "pluginEntrypoint": "TestPlugin",
+    "luabin": "main.lua",
+    "libraries": [
+        "codegen"
+    ],
+    "compilerFlags": [
+        "-D absolute-path",
+        "-D SANDBOXED"
+    ]
+}
