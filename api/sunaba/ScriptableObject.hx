@@ -6,6 +6,7 @@ import sunaba.core.Dictionary;
 import sunaba.core.native.NativeObject;
 import sunaba.io.IoManager;
 import sunaba.core.native.NativeReference;
+import sunaba.io.DataFileType;
 
 abstract class ScriptableObject extends BaseClass {
 	public var path: String = "";
@@ -26,17 +27,15 @@ abstract class ScriptableObject extends BaseClass {
 		if (path == null) {
 			path = this.path;
 		}
-		var variant: Variant = io.loadText(path);
-		setData(JSON.parseString(variant));
+		setData(io.loadData(path));
 	}
 
-	public function save(?path: String) {
+	public function save(?path: String, fileType: DataFileType = DataFileType.json) {
 		if (path == null) {
 			path = this.path;
 		}
-		var variant = getData();
-		var json = JSON.stringify(variant, "  ");
-		io.saveText(path, json);
+		var data = getData();
+		io.saveData(path, data, fileType);
 	}
 
 	public function new() {
