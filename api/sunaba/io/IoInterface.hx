@@ -5,6 +5,7 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.ArrayList;
 import sunaba.core.ByteArray;
 import sunaba.core.native.ScriptType;
+import sunaba.core.Dictionary;
 
 class IoInterface extends Reference {
 	public override function nativeInit(?native: NativeReference) {
@@ -103,5 +104,19 @@ class IoInterface extends Reference {
 
 	public function getTempFilename(): String {
 		return native.call("GetTempFilename", new ArrayList());
+	}
+
+	public function loadData(path: String): Dictionary {
+		var args = new ArrayList();
+		args.append(path);
+		return native.call("LoadData", args);
+	}
+
+	public function saveData(path: String, data: Dictionary, fileType: DataFileType = DataFileType.json) {
+		var args = new ArrayList();
+		args.append(path);
+		args.append(data);
+		args.append(fileType);
+		return native.call("SaveData", args);
 	}
 }
