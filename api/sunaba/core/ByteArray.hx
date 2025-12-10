@@ -25,7 +25,7 @@ extern class ByteArray {
     public function toTable() : TypedArray<Float>;
 }
 
-function BinaryDataToBytes(binaryData: ByteArray) : Bytes {
+inline function BinaryDataToBytes(binaryData: ByteArray) : Bytes {
     var size = binaryData.size();
     var bytes = Bytes.alloc(size);
     for (i in 0...size) {
@@ -34,7 +34,7 @@ function BinaryDataToBytes(binaryData: ByteArray) : Bytes {
     return bytes;
 }
 
-function BytesToBinaryData(bytes: Bytes) : ByteArray {
+inline function BytesToBinaryData(bytes: Bytes) : ByteArray {
     var binaryData = new ByteArray();
     for (i in 0...bytes.length) {
         binaryData.append(ByteObject.fromInt(bytes.get(i)));
