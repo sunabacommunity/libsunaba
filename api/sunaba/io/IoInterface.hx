@@ -132,7 +132,7 @@ class IoInterface extends Reference {
 
 	public inline function saveData(path: String, data: Dictionary, fileType: DataFileType = DataFileType.json) {
 		if (fileType == DataFileType.json) {
-			var json = JSON.stringify(data);
+			var json = JSON.stringify(data, "	");
 			saveText(path, json);
 		}
 		else if (fileType == DataFileType.msgPack || StringTools.endsWith(path, ".dat") || StringTools.endsWith(path, ".msgpack")) {
