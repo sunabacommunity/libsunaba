@@ -1,6 +1,7 @@
 package sunaba.spatial.mesh;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeObject;
+import sunaba.core.VariantNative;
 
 class MeshDisplay extends IGeometryInstance {
 	public function createConvexCollision(): Void {
@@ -39,6 +40,10 @@ class MeshDisplay extends IGeometryInstance {
 	}
 
 	public function setMesh(res: Resource): Void {
+		if (res == null) {
+			node.native.set("mesh", new VariantNative());
+			return;
+		}
 		if (!res.native.isClass("Mesh")) {
 			throw "Invalid mesh";
 		}
