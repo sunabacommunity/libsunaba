@@ -53,6 +53,7 @@ class MeshDisplay extends IGeometryInstance {
 	public override function onInit() {
 		editorIconPath = "studio://icons/16/cushion-gray.png";
 		node = new Node(new NativeObject("MeshInstance3D"));
+		node.name = "MeshDisplay";
 
 		var transform: SpatialTransform = getComponent(SpatialTransform);
 		if (transform != null) {
