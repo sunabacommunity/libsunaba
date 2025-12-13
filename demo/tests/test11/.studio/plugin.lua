@@ -221,14 +221,12 @@ __haxe_format_JsonParser = _hx_e()
 __haxe_format_JsonPrinter = _hx_e()
 __haxe_io_Bytes = _hx_e()
 __haxe_io_BytesBuffer = _hx_e()
-__haxe_io_Input = _hx_e()
-__haxe_io_BytesInput = _hx_e()
 __haxe_io_Output = _hx_e()
 __haxe_io_BytesOutput = _hx_e()
 __haxe_io_Encoding = _hx_e()
 __haxe_io_Eof = _hx_e()
 __haxe_io_Error = _hx_e()
-__haxe_io_FPHelper = _hx_e()
+__haxe_io_Input = _hx_e()
 __haxe_io_Path = _hx_e()
 __haxe_iterators_ArrayIterator = _hx_e()
 __haxe_iterators_ArrayKeyValueIterator = _hx_e()
@@ -244,11 +242,6 @@ __lua_UserData = _hx_e()
 __lua_PairTools = _hx_e()
 __sunaba_Behavior = _hx_e()
 __myComponents_RotateComponent = _hx_e()
-__org_msgpack_DecodeOption = _hx_e()
-__org_msgpack__Decoder_Pair = _hx_e()
-__org_msgpack_Decoder = _hx_e()
-__org_msgpack_Encoder = _hx_e()
-__org_msgpack_MsgPack = _hx_e()
 __sunaba_App = _hx_e()
 __sunaba_core_Object = _hx_e()
 __sunaba_Node = _hx_e()
@@ -1176,7 +1169,6 @@ Gamepak.prototype.build = function(self,snbprojPath)
               newAssetPath = Std.string(newAssetPath) .. Std.string(".dat");
               local assetStr = assetContent:toString();
               local assetData = __haxe_Json.parse(assetStr);
-              assetContent = __org_msgpack_Encoder.new(assetData).o:getBytes();
               break;
             end;
           end;
@@ -1327,7 +1319,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     _G.print("Haxe build command executed successfully.");
     _G.coroutine.yield();
     local mainLuaPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(_gthis.sprojJson.luabin);
-    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=412,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
+    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=417,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
     if (not __sys_FileSystem.exists(mainLuaPath)) then 
       _G.print(Std.string(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)));
       _G.error(__haxe_Exception.thrown(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)),0);
@@ -1398,7 +1390,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       while (assetKey:hasNext()) do _hx_do_first_1 = false;
         
         local assetKey = assetKey:next();
-        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=486,className="Gamepak",methodName="buildCoroutine"}));
+        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=491,className="Gamepak",methodName="buildCoroutine"}));
         local ret = assets.h[assetKey];
         local assetContent = (function() 
           local _hx_4
@@ -1650,27 +1642,6 @@ Lambda.has = function(it,elt)
     end;
   end;
   do return false end;
-end
-Lambda.count = function(it,pred) 
-  local n = 0;
-  if (pred == nil) then 
-    local _ = it:iterator();
-    while (_:hasNext()) do _hx_do_first_1 = false;
-      
-      local _ = _:next();
-      n = n + 1;
-    end;
-  else
-    local x = it:iterator();
-    while (x:hasNext()) do _hx_do_first_1 = false;
-      
-      local x = x:next();
-      if (pred(x)) then 
-        n = n + 1;
-      end;
-    end;
-  end;
-  do return n end;
 end
 
 Math.new = {}
@@ -2752,11 +2723,6 @@ Xml.prototype.__class__ =  Xml
 __haxe_IMap.new = {}
 _hxClasses["haxe.IMap"] = __haxe_IMap
 __haxe_IMap.__name__ = "haxe.IMap"
-__haxe_IMap.prototype = _hx_e();
-__haxe_IMap.prototype.get= nil;
-__haxe_IMap.prototype.keys= nil;
-
-__haxe_IMap.prototype.__class__ =  __haxe_IMap
 
 __haxe_Exception.new = function(message,previous,native) 
   local self = _hx_new(__haxe_Exception.prototype)
@@ -2984,13 +2950,6 @@ __haxe_ds_IntMap.__name__ = "haxe.ds.IntMap"
 __haxe_ds_IntMap.__interfaces__ = {__haxe_IMap}
 __haxe_ds_IntMap.prototype = _hx_e();
 __haxe_ds_IntMap.prototype.h= nil;
-__haxe_ds_IntMap.prototype.get = function(self,key) 
-  local ret = self.h[key];
-  if (ret == __haxe_ds_IntMap.tnull) then 
-    ret = nil;
-  end;
-  do return ret end
-end
 __haxe_ds_IntMap.prototype.keys = function(self) 
   local _gthis = self;
   local next = _G.next;
@@ -3064,13 +3023,6 @@ __haxe_ds_StringMap.__name__ = "haxe.ds.StringMap"
 __haxe_ds_StringMap.__interfaces__ = {__haxe_IMap}
 __haxe_ds_StringMap.prototype = _hx_e();
 __haxe_ds_StringMap.prototype.h= nil;
-__haxe_ds_StringMap.prototype.get = function(self,key) 
-  local ret = self.h[key];
-  if (ret == __haxe_ds_StringMap.tnull) then 
-    do return nil end;
-  end;
-  do return ret end
-end
 __haxe_ds_StringMap.prototype.keys = function(self) 
   local _gthis = self;
   local next = _G.next;
@@ -3872,206 +3824,6 @@ end
 
 __haxe_io_BytesBuffer.prototype.__class__ =  __haxe_io_BytesBuffer
 
-__haxe_io_Input.new = {}
-_hxClasses["haxe.io.Input"] = __haxe_io_Input
-__haxe_io_Input.__name__ = "haxe.io.Input"
-__haxe_io_Input.prototype = _hx_e();
-__haxe_io_Input.prototype.bigEndian= nil;
-__haxe_io_Input.prototype.readByte = function(self) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
-end
-__haxe_io_Input.prototype.readBytes = function(self,s,pos,len) 
-  local k = len;
-  local b = s.b;
-  if (((pos < 0) or (len < 0)) or ((pos + len) > s.length)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
-  end;
-  local _hx_status, _hx_result = pcall(function() 
-  
-      while (k > 0) do _hx_do_first_1 = false;
-        
-        b[pos] = self:readByte();
-        pos = pos + 1;
-        k = k - 1;
-      end;
-    return _hx_pcall_default
-  end)
-  if not _hx_status and _hx_result == "_hx_pcall_break" then
-  elseif not _hx_status then 
-    local _g = _hx_result;
-    if (not __lua_Boot.__instanceof(__haxe_Exception.caught(_g):unwrap(), __haxe_io_Eof)) then 
-      _G.error(_g,0);
-    end;
-  elseif _hx_result ~= _hx_pcall_default then
-    return _hx_result
-  end;
-  do return len - k end
-end
-__haxe_io_Input.prototype.set_bigEndian = function(self,b) 
-  self.bigEndian = b;
-  do return b end
-end
-__haxe_io_Input.prototype.readFullBytes = function(self,s,pos,len) 
-  while (len > 0) do _hx_do_first_1 = false;
-    
-    local k = self:readBytes(s, pos, len);
-    if (k == 0) then 
-      _G.error(__haxe_Exception.thrown(__haxe_io_Error.Blocked),0);
-    end;
-    pos = pos + k;
-    len = len - k;
-  end;
-end
-__haxe_io_Input.prototype.read = function(self,nbytes) 
-  local s = __haxe_io_Bytes.alloc(nbytes);
-  local p = 0;
-  while (nbytes > 0) do _hx_do_first_1 = false;
-    
-    local k = self:readBytes(s, p, nbytes);
-    if (k == 0) then 
-      _G.error(__haxe_Exception.thrown(__haxe_io_Error.Blocked),0);
-    end;
-    p = p + k;
-    nbytes = nbytes - k;
-  end;
-  do return s end
-end
-__haxe_io_Input.prototype.readFloat = function(self) 
-  do return __haxe_io_FPHelper.i32ToFloat(self:readInt32()) end
-end
-__haxe_io_Input.prototype.readDouble = function(self) 
-  local i1 = self:readInt32();
-  local i2 = self:readInt32();
-  if (self.bigEndian) then 
-    do return __haxe_io_FPHelper.i64ToDouble(i2, i1) end;
-  else
-    do return __haxe_io_FPHelper.i64ToDouble(i1, i2) end;
-  end;
-end
-__haxe_io_Input.prototype.readInt8 = function(self) 
-  local n = self:readByte();
-  if (n >= 128) then 
-    do return n - 256 end;
-  end;
-  do return n end
-end
-__haxe_io_Input.prototype.readInt16 = function(self) 
-  local ch1 = self:readByte();
-  local ch2 = self:readByte();
-  local n = (function() 
-    local _hx_1
-    if (self.bigEndian) then 
-    _hx_1 = _hx_bit.bor(ch2,_hx_bit.lshift(ch1,8)); else 
-    _hx_1 = _hx_bit.bor(ch1,_hx_bit.lshift(ch2,8)); end
-    return _hx_1
-  end )();
-  if ((_hx_bit.band(n,32768)) ~= 0) then 
-    do return n - 65536 end;
-  end;
-  do return n end
-end
-__haxe_io_Input.prototype.readUInt16 = function(self) 
-  local ch1 = self:readByte();
-  local ch2 = self:readByte();
-  if (self.bigEndian) then 
-    do return _hx_bit.bor(ch2,_hx_bit.lshift(ch1,8)) end;
-  else
-    do return _hx_bit.bor(ch1,_hx_bit.lshift(ch2,8)) end;
-  end;
-end
-__haxe_io_Input.prototype.readInt32 = function(self) 
-  local ch1 = self:readByte();
-  local ch2 = self:readByte();
-  local ch3 = self:readByte();
-  local ch4 = self:readByte();
-  local n = (function() 
-    local _hx_1
-    if (self.bigEndian) then 
-    _hx_1 = _hx_bit.bor(_hx_bit.bor(_hx_bit.bor(ch4,_hx_bit.lshift(ch3,8)),_hx_bit.lshift(ch2,16)),_hx_bit.lshift(ch1,24)); else 
-    _hx_1 = _hx_bit.bor(_hx_bit.bor(_hx_bit.bor(ch1,_hx_bit.lshift(ch2,8)),_hx_bit.lshift(ch3,16)),_hx_bit.lshift(ch4,24)); end
-    return _hx_1
-  end )();
-  do return _hx_bit_clamp(n) end
-end
-__haxe_io_Input.prototype.readString = function(self,len,encoding) 
-  local b = __haxe_io_Bytes.alloc(len);
-  self:readFullBytes(b, 0, len);
-  do return b:getString(0, len, encoding) end
-end
-
-__haxe_io_Input.prototype.__class__ =  __haxe_io_Input
-
-__haxe_io_BytesInput.new = function(b,pos,len) 
-  local self = _hx_new(__haxe_io_BytesInput.prototype)
-  __haxe_io_BytesInput.super(self,b,pos,len)
-  return self
-end
-__haxe_io_BytesInput.super = function(self,b,pos,len) 
-  if (pos == nil) then 
-    pos = 0;
-  end;
-  if (len == nil) then 
-    len = b.length - pos;
-  end;
-  if (((pos < 0) or (len < 0)) or ((pos + len) > b.length)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
-  end;
-  self.b = b.b;
-  self.pos = pos;
-  self.len = len;
-  self.totlen = len;
-end
-_hxClasses["haxe.io.BytesInput"] = __haxe_io_BytesInput
-__haxe_io_BytesInput.__name__ = "haxe.io.BytesInput"
-__haxe_io_BytesInput.prototype = _hx_e();
-__haxe_io_BytesInput.prototype.b= nil;
-__haxe_io_BytesInput.prototype.pos= nil;
-__haxe_io_BytesInput.prototype.len= nil;
-__haxe_io_BytesInput.prototype.totlen= nil;
-__haxe_io_BytesInput.prototype.readByte = function(self) 
-  if (self.len == 0) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Eof.new()),0);
-  end;
-  self.len = self.len - 1;
-  do return self.b[(function() 
-  local _hx_obj = self;
-  local _hx_fld = 'pos';
-  local _ = _hx_obj[_hx_fld];
-  _hx_obj[_hx_fld] = _hx_obj[_hx_fld]  + 1;
-   return _;
-   end)()] end
-end
-__haxe_io_BytesInput.prototype.readBytes = function(self,buf,pos,len) 
-  if (((pos < 0) or (len < 0)) or ((pos + len) > buf.length)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
-  end;
-  if ((self.len == 0) and (len > 0)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Eof.new()),0);
-  end;
-  if (self.len < len) then 
-    len = self.len;
-  end;
-  local b1 = self.b;
-  local b2 = buf.b;
-  local _g = 0;
-  local _g1 = len;
-  while (_g < _g1) do _hx_do_first_1 = false;
-    
-    _g = _g + 1;
-    local i = _g - 1;
-    b2[pos + i] = b1[self.pos + i];
-  end;
-  local tmp = self;
-  tmp.pos = tmp.pos + len;
-  local tmp = self;
-  tmp.len = tmp.len - len;
-  do return len end
-end
-
-__haxe_io_BytesInput.prototype.__class__ =  __haxe_io_BytesInput
-__haxe_io_BytesInput.__super__ = __haxe_io_Input
-setmetatable(__haxe_io_BytesInput.prototype,{__index=__haxe_io_Input.prototype})
-
 __haxe_io_Output.new = {}
 _hxClasses["haxe.io.Output"] = __haxe_io_Output
 __haxe_io_Output.__name__ = "haxe.io.Output"
@@ -4094,10 +3846,6 @@ __haxe_io_Output.prototype.writeBytes = function(self,s,pos,len)
   end;
   do return len end
 end
-__haxe_io_Output.prototype.set_bigEndian = function(self,b) 
-  self.bigEndian = b;
-  do return b end
-end
 __haxe_io_Output.prototype.write = function(self,s) 
   local l = s.length;
   local p = 0;
@@ -4118,31 +3866,6 @@ __haxe_io_Output.prototype.writeFullBytes = function(self,s,pos,len)
     pos = pos + k;
     len = len - k;
   end;
-end
-__haxe_io_Output.prototype.writeFloat = function(self,x) 
-  self:writeInt32(__haxe_io_FPHelper.floatToI32(x));
-end
-__haxe_io_Output.prototype.writeDouble = function(self,x) 
-  local i64 = __haxe_io_FPHelper.doubleToI64(x);
-  if (self.bigEndian) then 
-    self:writeInt32(i64.high);
-    self:writeInt32(i64.low);
-  else
-    self:writeInt32(i64.low);
-    self:writeInt32(i64.high);
-  end;
-end
-__haxe_io_Output.prototype.writeInt8 = function(self,x) 
-  if ((x < -128) or (x >= 128)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.Overflow),0);
-  end;
-  self:writeByte(_hx_bit.band(x,255));
-end
-__haxe_io_Output.prototype.writeInt16 = function(self,x) 
-  if ((x < -32768) or (x >= 32768)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.Overflow),0);
-  end;
-  self:writeUInt16(_hx_bit.band(x,65535));
 end
 __haxe_io_Output.prototype.writeUInt16 = function(self,x) 
   if ((x < 0) or (x >= 65536)) then 
@@ -4249,139 +3972,47 @@ __haxe_io_Error.OutsideBounds = _hx_tab_array({[0]="OutsideBounds",2,__enum__ = 
 
 __haxe_io_Error.Custom = function(e) local _x = _hx_tab_array({[0]="Custom",3,e,__enum__=__haxe_io_Error}, 3); return _x; end 
 
-__haxe_io_FPHelper.new = {}
-_hxClasses["haxe.io.FPHelper"] = __haxe_io_FPHelper
-__haxe_io_FPHelper.__name__ = "haxe.io.FPHelper"
-__haxe_io_FPHelper.i32ToFloat = function(i) 
-  local sign = 1 - (_hx_bit.lshift(_hx_bit.rshift(i,31),1));
-  local e = _hx_bit.band(_hx_bit.arshift(i,23),255);
-  if (e == 255) then 
-    if ((_hx_bit.band(i,8388607)) == 0) then 
-      if (sign > 0) then 
-        do return _G.math.huge end;
-      else
-        do return -_G.math.huge end;
-      end;
-    else
-      do return (0/0) end;
-    end;
-  else
-    local m = (function() 
-      local _hx_1
-      if (e == 0) then 
-      _hx_1 = _hx_bit.lshift((_hx_bit.band(i,8388607)),1); else 
-      _hx_1 = _hx_bit.bor(_hx_bit.band(i,8388607),8388608); end
-      return _hx_1
-    end )();
-    do return (sign * m) * _G.math.pow(2, e - 150) end;
-  end;
+__haxe_io_Input.new = {}
+_hxClasses["haxe.io.Input"] = __haxe_io_Input
+__haxe_io_Input.__name__ = "haxe.io.Input"
+__haxe_io_Input.prototype = _hx_e();
+__haxe_io_Input.prototype.bigEndian= nil;
+__haxe_io_Input.prototype.readByte = function(self) 
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
 end
-__haxe_io_FPHelper.floatToI32 = function(f) 
-  if (f == 0) then 
-    do return 0 end;
-  else
-    local af = (function() 
-      local _hx_1
-      if (f < 0) then 
-      _hx_1 = -f; else 
-      _hx_1 = f; end
-      return _hx_1
-    end )();
-    local exp = _G.math.floor(_G.math.log(af) / 0.6931471805599453);
-    if (exp > 127) then 
-      do return 2139095040 end;
-    else
-      if (exp <= -127) then 
-        exp = -127;
-        af = af * 7.1362384635298e+44;
-      else
-        af = ((af / _G.math.pow(2, exp)) - 1.0) * 8388608;
-      end;
-      do return _hx_bit.bor(_hx_bit.bor(((function() 
-        local _hx_2
-        if (f < 0) then 
-        _hx_2 = -2147483648; else 
-        _hx_2 = 0; end
-        return _hx_2
-      end )()),_hx_bit.lshift(exp + 127,23)),_G.math.floor(af + 0.5)) end;
-    end;
+__haxe_io_Input.prototype.readBytes = function(self,s,pos,len) 
+  local k = len;
+  local b = s.b;
+  if (((pos < 0) or (len < 0)) or ((pos + len) > s.length)) then 
+    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
   end;
-end
-__haxe_io_FPHelper.i64ToDouble = function(low,high) 
-  local sign = 1 - (_hx_bit.lshift(_hx_bit.rshift(high,31),1));
-  local e = _hx_bit.band(_hx_bit.arshift(high,20),2047);
-  if (e == 2047) then 
-    if ((low == 0) and ((_hx_bit.band(high,1048575)) == 0)) then 
-      if (sign > 0) then 
-        do return _G.math.huge end;
-      else
-        do return -_G.math.huge end;
+  local _hx_status, _hx_result = pcall(function() 
+  
+      while (k > 0) do _hx_do_first_1 = false;
+        
+        b[pos] = self:readByte();
+        pos = pos + 1;
+        k = k - 1;
       end;
-    else
-      do return (0/0) end;
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    if (not __lua_Boot.__instanceof(__haxe_Exception.caught(_g):unwrap(), __haxe_io_Eof)) then 
+      _G.error(_g,0);
     end;
-  else
-    local m = 2.220446049250313e-16 * ((((_hx_bit.band(high,1048575)) * 4294967296.) + ((_hx_bit.rshift(low,31)) * 2147483648.)) + (_hx_bit.band(low,2147483647)));
-    m = (function() 
-      local _hx_1
-      if (e == 0) then 
-      _hx_1 = m * 2.0; else 
-      _hx_1 = m + 1.0; end
-      return _hx_1
-    end )();
-    do return (sign * m) * _G.math.pow(2, e - 1023) end;
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
   end;
+  do return len - k end
 end
-__haxe_io_FPHelper.doubleToI64 = function(v) 
-  local i64 = __haxe_io_FPHelper.i64tmp;
-  if (v == 0) then 
-    i64.low = 0;
-    i64.high = 0;
-  else
-    if (not Math.isFinite(v)) then 
-      i64.low = 0;
-      i64.high = (function() 
-        local _hx_1
-        if (v > 0) then 
-        _hx_1 = 2146435072; else 
-        _hx_1 = -1048576; end
-        return _hx_1
-      end )();
-    else
-      local av = (function() 
-        local _hx_2
-        if (v < 0) then 
-        _hx_2 = -v; else 
-        _hx_2 = v; end
-        return _hx_2
-      end )();
-      local exp = _G.math.floor(_G.math.log(av) / 0.6931471805599453);
-      if (exp > 1023) then 
-        i64.low = -1;
-        i64.high = 2146435071;
-      else
-        if (exp <= -1023) then 
-          exp = -1023;
-          av = av / 2.2250738585072014e-308;
-        else
-          av = (av / _G.math.pow(2, exp)) - 1.0;
-        end;
-        local sig = _G.math.floor((av * 4503599627370496.) + 0.5);
-        local sig_l = Std.int(sig);
-        local sig_h = Std.int(sig / 4294967296.0);
-        i64.low = sig_l;
-        i64.high = _hx_bit.bor(_hx_bit.bor(((function() 
-          local _hx_3
-          if (v < 0) then 
-          _hx_3 = -2147483648; else 
-          _hx_3 = 0; end
-          return _hx_3
-        end )()),_hx_bit.lshift(exp + 1023,20)),sig_h);
-      end;
-    end;
-  end;
-  do return i64 end;
+__haxe_io_Input.prototype.set_bigEndian = function(self,b) 
+  self.bigEndian = b;
+  do return b end
 end
+
+__haxe_io_Input.prototype.__class__ =  __haxe_io_Input
 
 __haxe_io_Path.new = {}
 _hxClasses["haxe.io.Path"] = __haxe_io_Path
@@ -5826,619 +5457,6 @@ end
 __myComponents_RotateComponent.prototype.__class__ =  __myComponents_RotateComponent
 __myComponents_RotateComponent.__super__ = __sunaba_Behavior
 setmetatable(__myComponents_RotateComponent.prototype,{__index=__sunaba_Behavior.prototype})
-_hxClasses["org.msgpack.DecodeOption"] = __org_msgpack_DecodeOption;
-_hxClasses["org.msgpack.DecodeOption"] = { __ename__ = true, __constructs__ = _hx_tab_array({[0]="AsMap","AsObject"},2)}
-__org_msgpack_DecodeOption = _hxClasses["org.msgpack.DecodeOption"];
-__org_msgpack_DecodeOption.AsMap = _hx_tab_array({[0]="AsMap",0,__enum__ = __org_msgpack_DecodeOption},2)
-
-__org_msgpack_DecodeOption.AsObject = _hx_tab_array({[0]="AsObject",1,__enum__ = __org_msgpack_DecodeOption},2)
-
-
-__org_msgpack__Decoder_Pair.new = function(k,v) 
-  local self = _hx_new(__org_msgpack__Decoder_Pair.prototype)
-  __org_msgpack__Decoder_Pair.super(self,k,v)
-  return self
-end
-__org_msgpack__Decoder_Pair.super = function(self,k,v) 
-  self.k = k;
-  self.v = v;
-end
-_hxClasses["org.msgpack._Decoder.Pair"] = __org_msgpack__Decoder_Pair
-__org_msgpack__Decoder_Pair.__name__ = "org.msgpack._Decoder.Pair"
-__org_msgpack__Decoder_Pair.prototype = _hx_e();
-__org_msgpack__Decoder_Pair.prototype.k= nil;
-__org_msgpack__Decoder_Pair.prototype.v= nil;
-
-__org_msgpack__Decoder_Pair.prototype.__class__ =  __org_msgpack__Decoder_Pair
-
-__org_msgpack_Decoder.new = function(b,option) 
-  local self = _hx_new(__org_msgpack_Decoder.prototype)
-  __org_msgpack_Decoder.super(self,b,option)
-  return self
-end
-__org_msgpack_Decoder.super = function(self,b,option) 
-  local i = __haxe_io_BytesInput.new(b);
-  i:set_bigEndian(true);
-  self.o = self:decode(i, option);
-end
-_hxClasses["org.msgpack.Decoder"] = __org_msgpack_Decoder
-__org_msgpack_Decoder.__name__ = "org.msgpack.Decoder"
-__org_msgpack_Decoder.prototype = _hx_e();
-__org_msgpack_Decoder.prototype.o= nil;
-__org_msgpack_Decoder.prototype.decode = function(self,i,option) 
-  local _hx_status, _hx_result = pcall(function() 
-  
-      local b = i:readByte();
-      local b1 = b;
-      if (b1) == 192 then 
-        do return nil end;
-      elseif (b1) == 194 then 
-        do return false end;
-      elseif (b1) == 195 then 
-        do return true end;
-      elseif (b1) == 196 then 
-        do return i:read(i:readByte()) end;
-      elseif (b1) == 197 then 
-        do return i:read(i:readUInt16()) end;
-      elseif (b1) == 198 then 
-        do return i:read(i:readInt32()) end;
-      elseif (b1) == 202 then 
-        do return i:readFloat() end;
-      elseif (b1) == 203 then 
-        do return i:readDouble() end;
-      elseif (b1) == 204 then 
-        do return i:readByte() end;
-      elseif (b1) == 205 then 
-        do return i:readUInt16() end;
-      elseif (b1) == 206 then 
-        do return i:readInt32() end;
-      elseif (b1) == 207 then 
-        _G.error(__haxe_Exception.thrown("UInt64 not supported"),0);
-      elseif (b1) == 208 then 
-        do return i:readInt8() end;
-      elseif (b1) == 209 then 
-        do return i:readInt16() end;
-      elseif (b1) == 210 then 
-        do return i:readInt32() end;
-      elseif (b1) == 211 then 
-        do return self:readInt64(i) end;
-      elseif (b1) == 217 then 
-        do return i:readString(i:readByte()) end;
-      elseif (b1) == 218 then 
-        do return i:readString(i:readUInt16()) end;
-      elseif (b1) == 219 then 
-        do return i:readString(i:readInt32()) end;
-      elseif (b1) == 220 then 
-        do return self:readArray(i, i:readUInt16(), option) end;
-      elseif (b1) == 221 then 
-        do return self:readArray(i, i:readInt32(), option) end;
-      elseif (b1) == 222 then 
-        do return self:readMap(i, i:readUInt16(), option) end;
-      elseif (b1) == 223 then 
-        do return self:readMap(i, i:readInt32(), option) end;else
-      if (b < 128) then 
-        do return b end;
-      else
-        if (b < 144) then 
-          do return self:readMap(i, _hx_bit.band(15,b), option) end;
-        else
-          if (b < 160) then 
-            do return self:readArray(i, _hx_bit.band(15,b), option) end;
-          else
-            if (b < 192) then 
-              do return i:readString(_hx_bit.band(31,b)) end;
-            else
-              if (b > 223) then 
-                do return _hx_bit.bor(-256,b) end;
-              end;
-            end;
-          end;
-        end;
-      end; end;
-    return _hx_pcall_default
-  end)
-  if not _hx_status and _hx_result == "_hx_pcall_break" then
-  elseif not _hx_status then 
-    local _g = _hx_result;
-    if (not __lua_Boot.__instanceof(__haxe_Exception.caught(_g):unwrap(), __haxe_io_Eof)) then 
-      _G.error(_g,0);
-    end;
-  elseif _hx_result ~= _hx_pcall_default then
-    return _hx_result
-  end;
-  do return nil end
-end
-__org_msgpack_Decoder.prototype.readInt64 = function(self,i) 
-  local high = i:readInt32();
-  local low = i:readInt32();
-  do return __haxe__Int64____Int64.new(high, low) end
-end
-__org_msgpack_Decoder.prototype.readArray = function(self,i,length,option) 
-  local a = _hx_tab_array({}, 0);
-  local _g = 0;
-  local _g1 = length;
-  while (_g < _g1) do _hx_do_first_1 = false;
-    
-    _g = _g + 1;
-    local x = _g - 1;
-    a:push(self:decode(i, option));
-  end;
-  do return a end
-end
-__org_msgpack_Decoder.prototype.readMap = function(self,i,length,option) 
-  local tmp = option[1];
-  if (tmp) == 0 then 
-    local pairs = _hx_tab_array({}, 0);
-    local _g = 0;
-    local _g1 = length;
-    while (_g < _g1) do _hx_do_first_1 = false;
-      
-      _g = _g + 1;
-      local n = _g - 1;
-      local k = self:decode(i, option);
-      local v = self:decode(i, option);
-      pairs:push(__org_msgpack__Decoder_Pair.new(k, v));
-    end;
-    if (pairs.length == 0) then 
-      do return __haxe_ds_StringMap.new() end;
-    end;
-    local _g = Type.typeof(pairs[0].k);
-    local tmp = _g[1];
-    if (tmp) == 1 then 
-      local out = __haxe_ds_IntMap.new();
-      local _g = 0;
-      while (_g < pairs.length) do _hx_do_first_1 = false;
-        
-        local p = pairs[_g];
-        _g = _g + 1;
-        if (Type.typeof(p.k)[1] ~= 1) then 
-          _G.error(__haxe_Exception.thrown("Error: Mixed key type when decoding IntMap"),0);
-        end;
-        if (out.h[p.k] ~= nil) then 
-          _G.error(__haxe_Exception.thrown(Std.string("Error: Duplicate keys found => ") .. Std.string(Std.string(p.k))),0);
-        end;
-        local key = p.k;
-        local value = p.v;
-        if (value == nil) then 
-          out.h[key] = __haxe_ds_IntMap.tnull;
-        else
-          out.h[key] = value;
-        end;
-      end;
-      do return out end;
-    elseif (tmp) == 6 then 
-      local c = _g[2];
-      if (c.__name__ == "String") then 
-        local out = __haxe_ds_StringMap.new();
-        local _g = 0;
-        while (_g < pairs.length) do _hx_do_first_1 = false;
-          
-          local p = pairs[_g];
-          _g = _g + 1;
-          local _g = Type.typeof(p.k);
-          if (_g[1] == 6) then 
-            local c = _g[2];
-            if (c.__name__ ~= "String") then 
-              _G.error(__haxe_Exception.thrown("Error: Mixed key type when decoding StringMap"),0);
-            end;
-          else
-            _G.error(__haxe_Exception.thrown("Error: Mixed key type when decoding StringMap"),0);
-          end;
-          if (out.h[p.k] ~= nil) then 
-            _G.error(__haxe_Exception.thrown(Std.string("Error: Duplicate keys found => ") .. Std.string(Std.string(p.k))),0);
-          end;
-          local key = p.k;
-          local value = p.v;
-          if (value == nil) then 
-            out.h[key] = __haxe_ds_StringMap.tnull;
-          else
-            out.h[key] = value;
-          end;
-        end;
-        do return out end;
-      else
-        _G.error(__haxe_Exception.thrown("Error: Unsupported key Type"),0);
-      end;else
-    _G.error(__haxe_Exception.thrown("Error: Unsupported key Type"),0); end;
-  elseif (tmp) == 1 then 
-    local out = _hx_e();
-    local _g = 0;
-    local _g1 = length;
-    while (_g < _g1) do _hx_do_first_1 = false;
-      
-      _g = _g + 1;
-      local n = _g - 1;
-      local k = self:decode(i, option);
-      local v = self:decode(i, option);
-      out[Std.string(k)] = v;
-    end;
-    do return out end; end;
-end
-__org_msgpack_Decoder.prototype.getResult = function(self) 
-  do return self.o end
-end
-
-__org_msgpack_Decoder.prototype.__class__ =  __org_msgpack_Decoder
-
-__org_msgpack_Encoder.new = function(d) 
-  local self = _hx_new(__org_msgpack_Encoder.prototype)
-  __org_msgpack_Encoder.super(self,d)
-  return self
-end
-__org_msgpack_Encoder.super = function(self,d) 
-  self.o = __haxe_io_BytesOutput.new();
-  self.o:set_bigEndian(true);
-  self:encode(d);
-end
-_hxClasses["org.msgpack.Encoder"] = __org_msgpack_Encoder
-__org_msgpack_Encoder.__name__ = "org.msgpack.Encoder"
-__org_msgpack_Encoder.prototype = _hx_e();
-__org_msgpack_Encoder.prototype.o= nil;
-__org_msgpack_Encoder.prototype.encode = function(self,d) 
-  local _g = Type.typeof(d);
-  local tmp = _g[1];
-  if (tmp) == 0 then 
-    self.o:writeByte(192);
-  elseif (tmp) == 1 then 
-    local d = d;
-    if (d < -32) then 
-      if (d < -32768) then 
-        self.o:writeByte(210);
-        self.o:writeInt32(d);
-      else
-        if (d < -128) then 
-          self.o:writeByte(209);
-          self.o:writeInt16(d);
-        else
-          self.o:writeByte(208);
-          self.o:writeInt8(d);
-        end;
-      end;
-    else
-      if (d < 128) then 
-        self.o:writeByte(_hx_bit.band(d,255));
-      else
-        if (d < 256) then 
-          self.o:writeByte(204);
-          self.o:writeByte(d);
-        else
-          if (d < 65536) then 
-            self.o:writeByte(205);
-            self.o:writeUInt16(d);
-          else
-            self.o:writeByte(206);
-            self.o:writeInt32(d);
-          end;
-        end;
-      end;
-    end;
-  elseif (tmp) == 2 then 
-    local d = d;
-    local a = _G.math.abs(d);
-    if ((a > 1.40129846432481707e-45) and (a < 3.40282346638528860e+38)) then 
-      self.o:writeByte(202);
-      self.o:writeFloat(d);
-    else
-      self.o:writeByte(203);
-      self.o:writeDouble(d);
-    end;
-  elseif (tmp) == 3 then 
-    self.o:writeByte((function() 
-      local _hx_1
-      if (d) then 
-      _hx_1 = 195; else 
-      _hx_1 = 194; end
-      return _hx_1
-    end )());
-  elseif (tmp) == 4 then 
-    local f = Reflect.fields(d);
-    local length = Lambda.count(f);
-    if (length < 16) then 
-      self.o:writeByte(_hx_bit.bor(128,length));
-    else
-      if (length < 65536) then 
-        self.o:writeByte(222);
-        self.o:writeUInt16(length);
-      else
-        self.o:writeByte(223);
-        self.o:writeInt32(length);
-      end;
-    end;
-    local _g = 0;
-    while (_g < f.length) do _hx_do_first_1 = false;
-      
-      local k = f[_g];
-      _g = _g + 1;
-      self:encode(k);
-      self:encode(Reflect.field(d, k));
-    end;
-  elseif (tmp) == 5 then 
-    _G.error(__haxe_Exception.thrown("Error: Function not supported"),0);
-  elseif (tmp) == 6 then 
-    local c = _g[2];
-    local _g = c.__name__;
-    if (_g) == "Array" then 
-      local d = d;
-      local length = d.length;
-      if (length < 16) then 
-        self.o:writeByte(_hx_bit.bor(144,length));
-      else
-        if (length < 65536) then 
-          self.o:writeByte(220);
-          self.o:writeUInt16(length);
-        else
-          self.o:writeByte(221);
-          self.o:writeInt32(length);
-        end;
-      end;
-      local _g = 0;
-      while (_g < d.length) do _hx_do_first_1 = false;
-        
-        local e = d[_g];
-        _g = _g + 1;
-        self:encode(e);
-      end;
-    elseif (_g) == "String" then 
-      local b = d;
-      local length = #b;
-      if (length < 32) then 
-        self.o:writeByte(_hx_bit.bor(160,length));
-      else
-        if (length < 256) then 
-          self.o:writeByte(217);
-          self.o:writeByte(length);
-        else
-          if (length < 65536) then 
-            self.o:writeByte(218);
-            self.o:writeUInt16(length);
-          else
-            self.o:writeByte(219);
-            self.o:writeInt32(length);
-          end;
-        end;
-      end;
-      self.o:writeString(b);
-    elseif (_g) == "haxe._Int64.___Int64" then 
-      local d = d;
-      self.o:writeByte(211);
-      self.o:writeInt32(d.high);
-      self.o:writeInt32(d.low);
-    elseif (_g) == "haxe.ds.IntMap" or (_g) == "haxe.ds.StringMap" or (_g) == "haxe.ds.UnsafeStringMap" then 
-      local d = d;
-      local length = 0;
-      local k = d:keys();
-      while (k:hasNext()) do _hx_do_first_1 = false;
-        
-        local k = k:next();
-        length = length + 1;
-      end;
-      if (length < 16) then 
-        self.o:writeByte(_hx_bit.bor(128,length));
-      else
-        if (length < 65536) then 
-          self.o:writeByte(222);
-          self.o:writeUInt16(length);
-        else
-          self.o:writeByte(223);
-          self.o:writeInt32(length);
-        end;
-      end;
-      local k = d:keys();
-      while (k:hasNext()) do _hx_do_first_1 = false;
-        
-        local k = k:next();
-        self:encode(k);
-        self:encode(d:get(k));
-      end;
-    elseif (_g) == "haxe.io.Bytes" then 
-      local b = d;
-      local length = b.length;
-      if (length < 256) then 
-        self.o:writeByte(196);
-        self.o:writeByte(length);
-      else
-        if (length < 65536) then 
-          self.o:writeByte(197);
-          self.o:writeUInt16(length);
-        else
-          self.o:writeByte(198);
-          self.o:writeInt32(length);
-        end;
-      end;
-      self.o:write(b);else
-    _G.error(__haxe_Exception.thrown(Std.string(Std.string("Error: ") .. Std.string(c.__name__)) .. Std.string(" not supported")),0); end;
-  elseif (tmp) == 7 then 
-    local e = _g[2];
-    _G.error(__haxe_Exception.thrown("Error: Enum not supported"),0);
-  elseif (tmp) == 8 then 
-    _G.error(__haxe_Exception.thrown("Error: Unknown Data Type"),0); end;
-end
-__org_msgpack_Encoder.prototype.writeInt64 = function(self,d) 
-  self.o:writeByte(211);
-  self.o:writeInt32(d.high);
-  self.o:writeInt32(d.low);
-end
-__org_msgpack_Encoder.prototype.writeInt = function(self,d) 
-  if (d < -32) then 
-    if (d < -32768) then 
-      self.o:writeByte(210);
-      self.o:writeInt32(d);
-    else
-      if (d < -128) then 
-        self.o:writeByte(209);
-        self.o:writeInt16(d);
-      else
-        self.o:writeByte(208);
-        self.o:writeInt8(d);
-      end;
-    end;
-  else
-    if (d < 128) then 
-      self.o:writeByte(_hx_bit.band(d,255));
-    else
-      if (d < 256) then 
-        self.o:writeByte(204);
-        self.o:writeByte(d);
-      else
-        if (d < 65536) then 
-          self.o:writeByte(205);
-          self.o:writeUInt16(d);
-        else
-          self.o:writeByte(206);
-          self.o:writeInt32(d);
-        end;
-      end;
-    end;
-  end;
-end
-__org_msgpack_Encoder.prototype.writeFloat = function(self,d) 
-  local a = _G.math.abs(d);
-  if ((a > 1.40129846432481707e-45) and (a < 3.40282346638528860e+38)) then 
-    self.o:writeByte(202);
-    self.o:writeFloat(d);
-  else
-    self.o:writeByte(203);
-    self.o:writeDouble(d);
-  end;
-end
-__org_msgpack_Encoder.prototype.writeBinary = function(self,b) 
-  local length = b.length;
-  if (length < 256) then 
-    self.o:writeByte(196);
-    self.o:writeByte(length);
-  else
-    if (length < 65536) then 
-      self.o:writeByte(197);
-      self.o:writeUInt16(length);
-    else
-      self.o:writeByte(198);
-      self.o:writeInt32(length);
-    end;
-  end;
-  self.o:write(b);
-end
-__org_msgpack_Encoder.prototype.writeString = function(self,b) 
-  local length = #b;
-  if (length < 32) then 
-    self.o:writeByte(_hx_bit.bor(160,length));
-  else
-    if (length < 256) then 
-      self.o:writeByte(217);
-      self.o:writeByte(length);
-    else
-      if (length < 65536) then 
-        self.o:writeByte(218);
-        self.o:writeUInt16(length);
-      else
-        self.o:writeByte(219);
-        self.o:writeInt32(length);
-      end;
-    end;
-  end;
-  self.o:writeString(b);
-end
-__org_msgpack_Encoder.prototype.writeArray = function(self,d) 
-  local length = d.length;
-  if (length < 16) then 
-    self.o:writeByte(_hx_bit.bor(144,length));
-  else
-    if (length < 65536) then 
-      self.o:writeByte(220);
-      self.o:writeUInt16(length);
-    else
-      self.o:writeByte(221);
-      self.o:writeInt32(length);
-    end;
-  end;
-  local _g = 0;
-  while (_g < d.length) do _hx_do_first_1 = false;
-    
-    local e = d[_g];
-    _g = _g + 1;
-    self:encode(e);
-  end;
-end
-__org_msgpack_Encoder.prototype.writeMapLength = function(self,length) 
-  if (length < 16) then 
-    self.o:writeByte(_hx_bit.bor(128,length));
-  else
-    if (length < 65536) then 
-      self.o:writeByte(222);
-      self.o:writeUInt16(length);
-    else
-      self.o:writeByte(223);
-      self.o:writeInt32(length);
-    end;
-  end;
-end
-__org_msgpack_Encoder.prototype.writeMap = function(self,d) 
-  local length = 0;
-  local k = d:keys();
-  while (k:hasNext()) do _hx_do_first_1 = false;
-    
-    local k = k:next();
-    length = length + 1;
-  end;
-  if (length < 16) then 
-    self.o:writeByte(_hx_bit.bor(128,length));
-  else
-    if (length < 65536) then 
-      self.o:writeByte(222);
-      self.o:writeUInt16(length);
-    else
-      self.o:writeByte(223);
-      self.o:writeInt32(length);
-    end;
-  end;
-  local k = d:keys();
-  while (k:hasNext()) do _hx_do_first_1 = false;
-    
-    local k = k:next();
-    self:encode(k);
-    self:encode(d:get(k));
-  end;
-end
-__org_msgpack_Encoder.prototype.writeObject = function(self,d) 
-  local f = Reflect.fields(d);
-  local length = Lambda.count(f);
-  if (length < 16) then 
-    self.o:writeByte(_hx_bit.bor(128,length));
-  else
-    if (length < 65536) then 
-      self.o:writeByte(222);
-      self.o:writeUInt16(length);
-    else
-      self.o:writeByte(223);
-      self.o:writeInt32(length);
-    end;
-  end;
-  local _g = 0;
-  while (_g < f.length) do _hx_do_first_1 = false;
-    
-    local k = f[_g];
-    _g = _g + 1;
-    self:encode(k);
-    self:encode(Reflect.field(d, k));
-  end;
-end
-__org_msgpack_Encoder.prototype.getBytes = function(self) 
-  do return self.o:getBytes() end
-end
-
-__org_msgpack_Encoder.prototype.__class__ =  __org_msgpack_Encoder
-
-__org_msgpack_MsgPack.new = {}
-_hxClasses["org.msgpack.MsgPack"] = __org_msgpack_MsgPack
-__org_msgpack_MsgPack.__name__ = "org.msgpack.MsgPack"
-__org_msgpack_MsgPack.encode = function(d) 
-  do return __org_msgpack_Encoder.new(d).o:getBytes() end;
-end
-__org_msgpack_MsgPack.decode = function(b,option) 
-  if (option == nil) then 
-    option = __org_msgpack_DecodeOption.AsObject;
-  end;
-  do return __org_msgpack_Decoder.new(b, option).o end;
-end
 
 __sunaba_App.new = function() 
   local self = _hx_new(__sunaba_App.prototype)
@@ -10960,21 +9978,6 @@ __sunaba_Entity.prototype.addComponent_addComponent_T = function(self,type)
   end;
   do return behaviorT end
 end
-__sunaba_Entity.prototype.removeComponent_sunaba_Behavior = function(self,type) 
-  local compName = type.__name__;
-  local _g = 0;
-  local _g1 = self.components;
-  while (_g < _g1.length) do _hx_do_first_1 = false;
-    
-    local component = _g1[_g];
-    _g = _g + 1;
-    if (component.name == compName) then 
-      component:onExitTree();
-      component:onEnd();
-      self.components:remove(component);
-    end;
-  end;
-end
 __sunaba_Entity.prototype.getComponent_sunaba_spatial_Camera = function(self,type) 
   local compName = type.__name__;
   local _g = 0;
@@ -10989,6 +9992,21 @@ __sunaba_Entity.prototype.getComponent_sunaba_spatial_Camera = function(self,typ
     end;
   end;
   do return nil end
+end
+__sunaba_Entity.prototype.removeComponent_sunaba_Behavior = function(self,type) 
+  local compName = type.__name__;
+  local _g = 0;
+  local _g1 = self.components;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local component = _g1[_g];
+    _g = _g + 1;
+    if (component.name == compName) then 
+      component:onExitTree();
+      component:onEnd();
+      self.components:remove(component);
+    end;
+  end;
 end
 __sunaba_Entity.prototype.addComponent_sunaba_studio_Gizmo3D = function(self,type) 
   local behaviorT = Type.createEmptyInstance(type);
@@ -11491,24 +10509,23 @@ __sunaba_ScriptableObject.prototype.load = function(self,path)
   if (not StringTools.endsWith(path, ".msgpack") and not StringTools.endsWith(path, ".dat")) then 
     msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
   end;
-  local data;
+  local tmp;
   if (_this:fileExists(msgpackPath)) then 
     local bytes = _this:loadBytes(msgpackPath);
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
     args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
     local result = script:call("decode", args):asDictionary();
-    data = result:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+    tmp = result:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
   else
     if (_this:fileExists(path)) then 
       local json = _this:loadText(path);
-      data = __sunaba_JSON.parseString(json):asDictionary();
+      tmp = __sunaba_JSON.parseString(json):asDictionary();
     else
       _G.error(__haxe_Exception.thrown("Data file not found"),0);
     end;
   end;
-  _G.print(Std.string(data));
-  self:setData(data);
+  self:setData(tmp);
 end
 __sunaba_ScriptableObject.prototype.save = function(self,path,fileType) 
   if (fileType == nil) then 
@@ -11524,7 +10541,7 @@ __sunaba_ScriptableObject.prototype.save = function(self,path,fileType)
     fileType = 0;
   end;
   if (fileType == 0) then 
-    local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
+    local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data), "\t");
     _this:saveText(path, json);
   else
     if (((fileType == 1) or StringTools.endsWith(path, ".dat")) or StringTools.endsWith(path, ".msgpack")) then 
@@ -11617,9 +10634,9 @@ __sunaba_EntityData.prototype.createFromEntity = function(self,entity)
     local i = _g - 1;
     local child = entity:getChild(i);
     local childData;
-    if (entity:isPrefab()) then 
+    if (child:isPrefab()) then 
       childData = __sunaba_PrefabPath.new();
-      childData.path = entity:get_prefabPath();
+      childData.path = child:get_prefabPath();
     else
       childData = __sunaba_EntityData.fromEntity(child);
     end;
@@ -24250,7 +23267,7 @@ __sunaba_io_IoInterface.prototype.saveData = function(self,path,data,fileType)
     fileType = 0;
   end;
   if (fileType == 0) then 
-    local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
+    local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data), "\t");
     self:saveText(path, json);
   else
     if (((fileType == 1) or StringTools.endsWith(path, ".dat")) or StringTools.endsWith(path, ".msgpack")) then 
@@ -25753,6 +24770,10 @@ __sunaba_spatial_mesh_MeshDisplay.prototype.setBlendShapeValue = function(self,i
   self.node.native:call("set_blend_shape_value", args);
 end
 __sunaba_spatial_mesh_MeshDisplay.prototype.setMesh = function(self,res) 
+  if (res == nil) then 
+    self.node.native:set("mesh", Variant.new());
+    do return end;
+  end;
   if (not res.native:isClass("Mesh")) then 
     _G.error(__haxe_Exception.thrown("Invalid mesh"),0);
   end;
@@ -28079,7 +27100,7 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.playBuildWindow:hide();
   self.pluginBuildWindow = self:getNodeT_sunaba_desktop_Window(__sunaba_desktop_Window, "pluginBuildWindow");
   self.pluginBuildWindow:hide();
-  local helpMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/Help");
+  local helpMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Help");
   if (__sunaba_OSService.getName() == "macOS") then 
     helpMenu:removeItem(helpMenu:get_itemCount() - 1);
     helpMenu:set_systemMenuId(4);
@@ -28248,7 +27269,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         end;
         _gthis.workspaceChildern = newWorkspaceChildren;
       end));
-      local fileMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/File");
+      local fileMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/File");
       fileMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
         if (id == 0) then 
           __sunaba_Debug.error("'New File' not implemented");
@@ -28279,7 +27300,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       self.saveFileButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
         _gthis:save();
       end));
-      local editMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/Edit");
+      local editMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Edit");
       editMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
         if (id == 0) then 
           __sunaba_Debug.error("'Undo' not implemented");
@@ -28301,13 +27322,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
       end));
-      local viewMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/View");
+      local viewMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/View");
       viewMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
       end));
-      local toolsMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/Tools");
+      local toolsMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Tools");
       toolsMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
       end));
-      self.debugMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/Debug");
+      self.debugMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Debug");
       self.debugMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
         if (id == 0) then 
           if (_gthis.isGameRunning) then 
@@ -28325,7 +27346,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
       end));
-      local helpMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBar/Help");
+      local helpMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Help");
       helpMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
         if (id == 0) then 
           __sunaba_OSService.shellOpen("https://docs.sunaba.gg");
@@ -28580,7 +27601,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     local batContent = Std.string(Std.string("@echo off\r\nset PATH=") .. Std.string(toolchaindir)) .. Std.string(";");
     local haxelibPath = Std.string(toolchaindir) .. Std.string("haxelib.exe");
     batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" newrepo")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install msgpack-haxe")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("msgpack-haxe.zip")));
     batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("libsunaba.zip")));
     batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("gamepak.zip")));
     batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip")));
@@ -28628,7 +27649,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
     end;
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" newrepo")));
-    shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install msgpack-haxe")));
+    shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("msgpack-haxe.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("libsunaba.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("gamepak.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
@@ -29006,6 +28027,9 @@ end
 __sunaba_studio_Editor.prototype.pushBehaviorClass = function(self,_class) 
   local className = _class.__name__;
   _hxClasses[className] = _class;
+  if (self.sceneInspector ~= nil) then 
+    self.sceneInspector.componentClasses:push(_class);
+  end;
 end
 __sunaba_studio_Editor.prototype.getExitCode = function(self) 
   local hiddenDir = Std.string(self.explorer.projectDirectory) .. Std.string("/.studio");
@@ -29079,7 +28103,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1064,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1067,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
@@ -29389,19 +28413,19 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", shpath}, 2)));
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1380,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
-    local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1382,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1383,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
-    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    local data = __sunaba_JSON.parseString(json):asDictionary();
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1385,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1386,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1389,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1388,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1391,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1390,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1393,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local res = script:call("encode", args):asDictionary();
     local bytes = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asByteArray();
-    __haxe_Log.trace(bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1394,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1397,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local size = bytes:size();
     local bytes1 = __haxe_io_Bytes.alloc(size);
     local _g = 0;
@@ -29414,7 +28438,7 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
       bytes1.b[i] = _hx_bit.band(v,255);
     end;
     local haxeBytes = bytes1;
-    __haxe_Log.trace(haxeBytes.length == bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1396,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(haxeBytes.length == bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1399,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     do return haxeBytes end
    end;
   self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
@@ -31830,6 +30854,7 @@ __sunaba_studio_sceneEditor_SceneInspector.new = function(parent,area)
   return self
 end
 __sunaba_studio_sceneEditor_SceneInspector.super = function(self,parent,area) 
+  self.componentClasses = Array.new();
   self.maxEntityIndex = 0;
   self.sceneEditor = nil;
   self.selectedEntityIndex = -1;
@@ -31873,6 +30898,10 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.addComponentDialogTree= nil
 __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self) 
   local _gthis = self;
   self:getEditor():setRightSidebarTabTitle(self, "Scene Inspector");
+  self.componentClasses:push(__sunaba_spatial_SpatialTransform);
+  self.componentClasses:push(__sunaba_spatial_Camera);
+  self.componentClasses:push(__sunaba_spatial_mesh_MeshDisplay);
+  self.componentClasses:push(__sunaba_spatial_mesh_BoxMesh);
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/clapperboard--pencil.png");
   local iconImage = __sunaba_Image.new();
   iconImage:loadPngFromBuffer(iconBin);
@@ -31889,6 +30918,82 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self:set_customMinimumSize(Vector2.new(x, y));
   self:load("studio://SceneInspector.suml");
   self.loadButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vsplit/outliner/toolbar/hbox/load");
+  __sunaba_core__Signal_Signal_Impl_.add(self.loadButton:get_pressed(), function() 
+    local _gthis1 = _gthis;
+    if (_gthis.selectedEntity ~= nil) then 
+      if (_gthis.sceneEditor ~= nil) then 
+        local dialog = __sunaba_desktop_FileDialog.new();
+        dialog:set_fileMode(0);
+        dialog:set_rootSubfolder(_gthis:getEditor().explorer.assetsDirectory);
+        dialog:set_currentDir(_gthis:getEditor().explorer.assetsDirectory);
+        dialog:set_currentFile(Std.string(_gthis.selectedEntity.name) .. Std.string(".vpfb"));
+        dialog:set_access(2);
+        dialog:set_title("Load Prefab");
+        dialog:addFilter("*.vpfb", "Prefab");
+        _gthis:addChild(dialog);
+        dialog:hide();
+        dialog:set_currentDir(_gthis:getEditor().explorer.assetsDirectory);
+        local dialogScaleFactor = _gthis:getWindow():get_contentScaleFactor();
+        dialog:set_contentScaleFactor(dialogScaleFactor);
+        local x = 580;
+        local y = 460;
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        local minSize = Vector2i.new(x, y);
+        minSize.x = Std.int(minSize.x * dialogScaleFactor);
+        minSize.y = Std.int(minSize.y * dialogScaleFactor);
+        dialog:set_minSize(minSize);
+        dialog:get_fileSelected():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(path) 
+          local ioPath = StringTools.replace(path, _gthis1:getEditor().explorer.assetsDirectory, _gthis1:getEditor().projectIo:get_pathUrl());
+          dialog:hide();
+          dialog:queueFree();
+          if ((ioPath == "") or (ioPath == path)) then 
+            __sunaba_Debug.error("Invalid file path.", "Error saving prefab");
+            do return end;
+          end;
+          if (String.prototype.indexOf(ioPath, "///") ~= -1) then 
+            ioPath = StringTools.replace(ioPath, "///", "//");
+          end;
+          local prefabFile = __sunaba_Prefab.new();
+          prefabFile.io = _gthis1:getEditor().projectIo;
+          prefabFile:load(ioPath);
+          local prefab = prefabFile:instance();
+          if (_gthis1.selectedEntity ~= nil) then 
+            _gthis1.selectedEntity:addChild(prefab);
+          else
+            if (_gthis1.sceneEditor.prefab ~= nil) then 
+              _gthis1.sceneEditor.prefab:addChild(prefab);
+            else
+              _gthis1.scene:addEntity(prefab);
+            end;
+          end;
+          _gthis1.selectedEntity = prefab;
+          _gthis1:refreshSceneTree();
+          local idx = _gthis1.entityIndex:keys();
+          while (idx:hasNext()) do _hx_do_first_1 = false;
+            
+            local idx = idx:next();
+            local ret = _gthis1.entityIndex.h[idx];
+            if (ret == __haxe_ds_IntMap.tnull) then 
+              ret = nil;
+            end;
+            if (ret == _gthis1.selectedEntity) then 
+              _gthis1.selectedEntityIndex = idx;
+              break;
+            end;
+          end;
+          _gthis1:refreshInspector();
+          _gthis1:getEditor().explorer:buildTreeRoot();
+          _gthis1.sceneEditor:checkScene();
+        end));
+        dialog:popupCentered();
+      end;
+    end;
+  end);
   self.deleteButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vsplit/outliner/toolbar/hbox/delete");
   self.deleteButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     if (_gthis.sceneEditor ~= nil) then 
@@ -31931,7 +31036,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=114,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=127,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -32229,7 +31334,79 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
     end;
   end));
   self.addComponentDialog = self:getNodeT_sunaba_desktop_AcceptDialog(__sunaba_desktop_AcceptDialog, "addComponentDialog");
-  self.addComponentDialogTree = self:getNodeT_sunaba_ui_Tree(__sunaba_ui_Tree, "addEntityDialog/vbox/tree");
+  self.addComponentDialog:set_contentScaleFactor(self:getWindow():get_contentScaleFactor());
+  self.addComponentDialog:set_size(addEntityDialogSize);
+  self.addComponentDialog:get_confirmed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
+    _gthis.addComponentDialog:hide();
+    if (_gthis.sceneEditor == nil) then 
+      do return end;
+    end;
+    if (_gthis.selectedEntity == nil) then 
+      do return end;
+    end;
+    if (_gthis.selectedEntity ~= nil) then 
+      local selectedItem = _gthis.addComponentDialogTree:getSelected();
+      if (selectedItem ~= nil) then 
+        if (selectedItem:getMetadata(0):asBool() == true) then 
+          local componentName = selectedItem:getText(0);
+          local selectedClass = nil;
+          local _g = 0;
+          local _g1 = _gthis.componentClasses;
+          while (_g < _g1.length) do _hx_do_first_1 = false;
+            
+            local componentClass = _g1[_g];
+            _g = _g + 1;
+            if (componentClass.__name__ == componentName) then 
+              selectedClass = componentClass;
+              break;
+            end;
+          end;
+          if (selectedClass ~= nil) then 
+            _gthis.selectedEntity:addComponentNG(selectedClass);
+            _gthis:refreshInspector();
+          else
+            __sunaba_Debug.error("Component not found");
+          end;
+        end;
+      end;
+    end;
+  end));
+  self.addComponentDialogTree = self:getNodeT_sunaba_ui_Tree(__sunaba_ui_Tree, "addComponentDialog/vbox/tree");
+  __sunaba_core__Signal_Signal_Impl_.add(self.addComponentDialogTree:get_itemActivated(), function() 
+    _gthis.addComponentDialog:hide();
+    if (_gthis.sceneEditor == nil) then 
+      do return end;
+    end;
+    if (_gthis.selectedEntity == nil) then 
+      do return end;
+    end;
+    if (_gthis.selectedEntity ~= nil) then 
+      local selectedItem = _gthis.addComponentDialogTree:getSelected();
+      if (selectedItem ~= nil) then 
+        if (selectedItem:getMetadata(0):asBool() == true) then 
+          local componentName = selectedItem:getText(0);
+          local selectedClass = nil;
+          local _g = 0;
+          local _g1 = _gthis.componentClasses;
+          while (_g < _g1.length) do _hx_do_first_1 = false;
+            
+            local componentClass = _g1[_g];
+            _g = _g + 1;
+            if (componentClass.__name__ == componentName) then 
+              selectedClass = componentClass;
+              break;
+            end;
+          end;
+          if (selectedClass ~= nil) then 
+            _gthis.selectedEntity:addComponentNG(selectedClass);
+            _gthis:refreshInspector();
+          else
+            __sunaba_Debug.error("Component not found");
+          end;
+        end;
+      end;
+    end;
+  end);
   self.entityTemplates = __haxe_ds_StringMap.new();
   local v = function(entity) 
     entity.name = "Entity";
@@ -32278,6 +31455,134 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.showAddEntityTree = functio
     templateItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(templateName));
   end;
   self.addEntityDialog:popupCentered();
+end
+__sunaba_studio_sceneEditor_SceneInspector.prototype.componentClasses= nil;
+__sunaba_studio_sceneEditor_SceneInspector.prototype.showAddComponentTree = function(self) 
+  self.addComponentDialogTree:clear();
+  self.addComponentDialogTree:set_hideRoot(true);
+  local rootItem = self.addComponentDialogTree:createItem();
+  rootItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(false));
+  local _g = 0;
+  local _g1 = self.componentClasses;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local componentClass = _g1[_g];
+    _g = _g + 1;
+    local className = componentClass.__name__;
+    local componentItem = self.addComponentDialogTree:createItem(rootItem);
+    componentItem:setText(0, className);
+    componentItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(true));
+  end;
+  self.addComponentDialog:popupCentered();
+end
+__sunaba_studio_sceneEditor_SceneInspector.prototype.addSelectedComponent = function(self) 
+  if (self.selectedEntity == nil) then 
+    do return end;
+  end;
+  local selectedItem = self.addComponentDialogTree:getSelected();
+  if (selectedItem == nil) then 
+    do return end;
+  end;
+  if (selectedItem:getMetadata(0):asBool() ~= true) then 
+    do return end;
+  end;
+  local componentName = selectedItem:getText(0);
+  local selectedClass = nil;
+  local _g = 0;
+  local _g1 = self.componentClasses;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local componentClass = _g1[_g];
+    _g = _g + 1;
+    if (componentClass.__name__ == componentName) then 
+      selectedClass = componentClass;
+      break;
+    end;
+  end;
+  if (selectedClass ~= nil) then 
+    self.selectedEntity:addComponentNG(selectedClass);
+    self:refreshInspector();
+  else
+    __sunaba_Debug.error("Component not found");
+  end;
+end
+__sunaba_studio_sceneEditor_SceneInspector.prototype.openLoadPrefabDialog = function(self) 
+  local _gthis = self;
+  if (self.selectedEntity == nil) then 
+    do return end;
+  end;
+  if (self.sceneEditor == nil) then 
+    do return end;
+  end;
+  local dialog = __sunaba_desktop_FileDialog.new();
+  dialog:set_fileMode(0);
+  dialog:set_rootSubfolder(self:getEditor().explorer.assetsDirectory);
+  dialog:set_currentDir(self:getEditor().explorer.assetsDirectory);
+  dialog:set_currentFile(Std.string(self.selectedEntity.name) .. Std.string(".vpfb"));
+  dialog:set_access(2);
+  dialog:set_title("Load Prefab");
+  dialog:addFilter("*.vpfb", "Prefab");
+  self:addChild(dialog);
+  dialog:hide();
+  dialog:set_currentDir(self:getEditor().explorer.assetsDirectory);
+  local dialogScaleFactor = self:getWindow():get_contentScaleFactor();
+  dialog:set_contentScaleFactor(dialogScaleFactor);
+  local x = 580;
+  local y = 460;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local minSize = Vector2i.new(x, y);
+  minSize.x = Std.int(minSize.x * dialogScaleFactor);
+  minSize.y = Std.int(minSize.y * dialogScaleFactor);
+  dialog:set_minSize(minSize);
+  dialog:get_fileSelected():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(path) 
+    local ioPath = StringTools.replace(path, _gthis:getEditor().explorer.assetsDirectory, _gthis:getEditor().projectIo:get_pathUrl());
+    dialog:hide();
+    dialog:queueFree();
+    if ((ioPath == "") or (ioPath == path)) then 
+      __sunaba_Debug.error("Invalid file path.", "Error saving prefab");
+      do return end;
+    end;
+    if (String.prototype.indexOf(ioPath, "///") ~= -1) then 
+      ioPath = StringTools.replace(ioPath, "///", "//");
+    end;
+    local prefabFile = __sunaba_Prefab.new();
+    prefabFile.io = _gthis:getEditor().projectIo;
+    prefabFile:load(ioPath);
+    local prefab = prefabFile:instance();
+    if (_gthis.selectedEntity ~= nil) then 
+      _gthis.selectedEntity:addChild(prefab);
+    else
+      if (_gthis.sceneEditor.prefab ~= nil) then 
+        _gthis.sceneEditor.prefab:addChild(prefab);
+      else
+        _gthis.scene:addEntity(prefab);
+      end;
+    end;
+    _gthis.selectedEntity = prefab;
+    _gthis:refreshSceneTree();
+    local idx = _gthis.entityIndex:keys();
+    while (idx:hasNext()) do _hx_do_first_1 = false;
+      
+      local idx = idx:next();
+      local ret = _gthis.entityIndex.h[idx];
+      if (ret == __haxe_ds_IntMap.tnull) then 
+        ret = nil;
+      end;
+      if (ret == _gthis.selectedEntity) then 
+        _gthis.selectedEntityIndex = idx;
+        break;
+      end;
+    end;
+    _gthis:refreshInspector();
+    _gthis:getEditor().explorer:buildTreeRoot();
+    _gthis.sceneEditor:checkScene();
+  end));
+  dialog:popupCentered();
 end
 __sunaba_studio_sceneEditor_SceneInspector.prototype.createEntity = function(self) 
   local selectedItem = self.addEntityDialogTree:getSelected();
@@ -32570,12 +31875,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=497,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=633,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=499,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=500,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=635,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=636,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=502,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=638,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -32611,17 +31916,28 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=533,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=669,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
     local icon = self:getEditor().explorer:loadIcon(iconPath);
     iconTextureRect:set_texture(icon);
     foldableContainer:addTitleBarControl(iconTextureRect);
+    local deleteButton = __sunaba_ui_Button.new();
+    local deleteIcon = self:getEditor().explorer:loadIcon("studio://icons/16/cross.png");
+    deleteButton:set_icon(deleteIcon);
+    __sunaba_core__Signal_Signal_Impl_.add(deleteButton:get_pressed(), (function(component) 
+      do return function() 
+        local compType = Type.getClass(component[0]);
+        entity:removeComponent_sunaba_Behavior(compType);
+        _gthis:refreshInspector();
+      end end;
+    end)(component));
+    foldableContainer:addTitleBarControl(deleteButton);
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=544,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=690,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;
@@ -33396,6 +32712,24 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
   end;
   button:set_customMinimumSize(Vector2.new(x, y));
   button:set_alignment(1);
+  __sunaba_core__Signal_Signal_Impl_.add(button:get_pressed(), function() 
+    _gthis.addComponentDialogTree:clear();
+    _gthis.addComponentDialogTree:set_hideRoot(true);
+    local rootItem = _gthis.addComponentDialogTree:createItem();
+    rootItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(false));
+    local _g = 0;
+    local _g1 = _gthis.componentClasses;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local componentClass = _g1[_g];
+      _g = _g + 1;
+      local className = componentClass.__name__;
+      local componentItem = _gthis.addComponentDialogTree:createItem(rootItem);
+      componentItem:setText(0, className);
+      componentItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(true));
+    end;
+    _gthis.addComponentDialog:popupCentered();
+  end);
   centerContainer:addChild(button);
   self.entityVBox:addChild(centerContainer);
   self.sceneEditor:checkScene();
@@ -40211,8 +39545,6 @@ local _hx_static_init = function()
   
   __haxe_ds_StringMap.tnull = ({});
   
-  __haxe_io_FPHelper.i64tmp = __haxe__Int64____Int64.new(__haxe__Int32_Int32_Impl_.shr(0, 31), 0);
-  
   __haxe_xml_Parser.escapes = (function() 
     local _hx_1
     
@@ -40236,14 +39568,6 @@ local _hx_static_init = function()
   
   __lua_Boot.platformBigEndian = _G.string.byte(_G.string.dump(function() 
   end), 7) > 0;
-  
-  __org_msgpack_Encoder.FLOAT_SINGLE_MIN = 1.40129846432481707e-45;
-  
-  __org_msgpack_Encoder.FLOAT_SINGLE_MAX = 3.40282346638528860e+38;
-  
-  __org_msgpack_Encoder.FLOAT_DOUBLE_MIN = 4.94065645841246544e-324;
-  
-  __org_msgpack_Encoder.FLOAT_DOUBLE_MAX = 1.79769313486231570e+308;
   
   __sunaba__CanvasItemProcessMode_CanvasItemProcessMode_Impl_.inherit = 0;
   
