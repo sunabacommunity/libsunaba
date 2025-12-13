@@ -7,6 +7,7 @@ import sunaba.spatial.Camera;
 import sunaba.spatial.mesh.BoxMesh;
 import sunaba.spatial.mesh.MeshDisplay;
 import myComponents.RotateComponent;
+import myComponents.FreeLook3D;
 import sunaba.Node;
 import sunaba.Environment;
 import sunaba.ResourceLoaderService.ResourceLoaderService.load;

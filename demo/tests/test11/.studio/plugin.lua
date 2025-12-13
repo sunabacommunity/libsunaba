@@ -241,6 +241,7 @@ __lua_Thread = _hx_e()
 __lua_UserData = _hx_e()
 __lua_PairTools = _hx_e()
 __sunaba_Behavior = _hx_e()
+__myComponents_FreeLook3D = _hx_e()
 __myComponents_RotateComponent = _hx_e()
 __sunaba_App = _hx_e()
 __sunaba_core_Object = _hx_e()
@@ -2276,6 +2277,7 @@ TestPlugin.prototype.init = function(self)
   __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
   __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
   self:get_editor():pushBehaviorClass(__myComponents_RotateComponent);
+  self:get_editor():pushBehaviorClass(__myComponents_FreeLook3D);
 end
 
 TestPlugin.prototype.__class__ =  TestPlugin
@@ -5433,6 +5435,312 @@ end
 __sunaba_Behavior.prototype.__class__ =  __sunaba_Behavior
 __sunaba_Behavior.__super__ = __sunaba_BaseClass
 setmetatable(__sunaba_Behavior.prototype,{__index=__sunaba_BaseClass.prototype})
+
+__myComponents_FreeLook3D.new = function() 
+  local self = _hx_new(__myComponents_FreeLook3D.prototype)
+  __myComponents_FreeLook3D.super(self)
+  return self
+end
+__myComponents_FreeLook3D.super = function(self) 
+  self.speedToggle = false;
+  self.isJoystickActive = false;
+  self.active = true;
+  self.velocity = 5.0;
+  self.minSpeed = 0.2;
+  self.maxSpeed = 1000.0;
+  self.boostSpeedMultiplier = 3.0;
+  self.speedScale = 1.17;
+  self.defaultVelocity = 5.0;
+  self.controllerSensitivity = 20.0;
+  self.sensitivity = 3.0;
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["myComponents.FreeLook3D"] = __myComponents_FreeLook3D
+__myComponents_FreeLook3D.__name__ = "myComponents.FreeLook3D"
+__myComponents_FreeLook3D.prototype = _hx_e();
+__myComponents_FreeLook3D.prototype.transform= nil;
+__myComponents_FreeLook3D.prototype.sensitivity= nil;
+__myComponents_FreeLook3D.prototype.controllerSensitivity= nil;
+__myComponents_FreeLook3D.prototype.defaultVelocity= nil;
+__myComponents_FreeLook3D.prototype.speedScale= nil;
+__myComponents_FreeLook3D.prototype.boostSpeedMultiplier= nil;
+__myComponents_FreeLook3D.prototype.maxSpeed= nil;
+__myComponents_FreeLook3D.prototype.minSpeed= nil;
+__myComponents_FreeLook3D.prototype.velocity= nil;
+__myComponents_FreeLook3D.prototype.initialPosition= nil;
+__myComponents_FreeLook3D.prototype.initialRotation= nil;
+__myComponents_FreeLook3D.prototype.active= nil;
+__myComponents_FreeLook3D.prototype.isJoystickActive= nil;
+__myComponents_FreeLook3D.prototype.speedToggle= nil;
+__myComponents_FreeLook3D.prototype.onInit = function(self) 
+  self.sensitivity = 3.0;
+  self.defaultVelocity = 5.0;
+  self.boostSpeedMultiplier = 3.0;
+  self.speedScale = 1.17;
+end
+__myComponents_FreeLook3D.prototype.onStart = function(self) 
+  self.active = true;
+  self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  self.velocity = self.defaultVelocity;
+  if (self.transform == nil) then 
+    do return end;
+  end;
+  self.initialPosition = self.transform:get_globalPosition();
+  self.initialRotation = self.transform:get_globalRotation();
+end
+__myComponents_FreeLook3D.prototype.onInput = function(self,event) 
+  if (not self.active) then 
+    do return end;
+  end;
+  if (self.transform == nil) then 
+    self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (self.transform == nil) then 
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
+      do return end;
+    end;
+  end;
+  if (event.native:isClass("InputEventMouseButton")) then 
+    local eventMouseButton = __sunaba_core_Reference.castTo_sunaba_input_InputEventMouseButton(event, __sunaba_input_InputEventMouseButton);
+    local buttonIndex = eventMouseButton:get_buttonIndex();
+    if (buttonIndex == 2) then 
+      if (eventMouseButton:get_pressed() == true) then 
+        __sunaba_input_InputService.set_mouseMode(2);
+      else
+        __sunaba_input_InputService.set_mouseMode(0);
+      end;
+    else
+      if (buttonIndex == 4) then 
+        local value = self.velocity * self.speedScale;
+        local min = self.minSpeed;
+        local max = self.maxSpeed;
+        self.velocity = (function() 
+          local _hx_1
+          if (value < min) then 
+          _hx_1 = min; elseif (value > max) then 
+          _hx_1 = max; else 
+          _hx_1 = value; end
+          return _hx_1
+        end )();
+      else
+        if (buttonIndex == 5) then 
+          local value = self.velocity / self.speedScale;
+          local min = self.minSpeed;
+          local max = self.maxSpeed;
+          self.velocity = (function() 
+            local _hx_2
+            if (value < min) then 
+            _hx_2 = min; elseif (value > max) then 
+            _hx_2 = max; else 
+            _hx_2 = value; end
+            return _hx_2
+          end )();
+        end;
+      end;
+    end;
+  end;
+  if (__sunaba_input_InputService.get_mouseMode() == 2) then 
+    if (event.native:isClass("InputEventMouseMotion")) then 
+      local eventMouseMotion = __sunaba_core_Reference.castTo_sunaba_input_InputEventMouseMotion(event, __sunaba_input_InputEventMouseMotion);
+      local rotation = self.transform:get_rotation();
+      local rotation1 = rotation;
+      rotation1.y = rotation1.y - ((eventMouseMotion:get_relative().x / 1000) * self.sensitivity);
+      local rotation1 = rotation;
+      rotation1.x = rotation1.x - ((eventMouseMotion:get_relative().y / 1000) * self.sensitivity);
+      local value = rotation.x;
+      local min = _G.math.pi / -2.0;
+      local max = _G.math.pi / 2.0;
+      rotation.x = (function() 
+        local _hx_3
+        if (value < min) then 
+        _hx_3 = min; elseif (value > max) then 
+        _hx_3 = max; else 
+        _hx_3 = value; end
+        return _hx_3
+      end )();
+      self.transform:set_rotation(rotation);
+    end;
+  end;
+end
+__myComponents_FreeLook3D.prototype.onUpdate = function(self,deltaTime) 
+  if (not self.active) then 
+    do return end;
+  end;
+  if (self.transform == nil) then 
+    self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (self.transform == nil) then 
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
+      do return end;
+    end;
+  else
+    if (self.initialPosition == nil) then 
+      self.initialPosition = self.transform:get_globalPosition();
+    end;
+    if (self.initialRotation == nil) then 
+      self.initialRotation = self.transform:get_globalRotation();
+    end;
+  end;
+  local bool1 = __sunaba_input_InputService.isPhysicalKeyPressed(68);
+  local bool2 = __sunaba_input_InputService.isPhysicalKeyPressed(65);
+  local float1 = (function() 
+    local _hx_1
+    if (bool1) then 
+    _hx_1 = 1.0; else 
+    _hx_1 = 0.0; end
+    return _hx_1
+  end )();
+  local float2 = (function() 
+    local _hx_2
+    if (bool2) then 
+    _hx_2 = 1.0; else 
+    _hx_2 = 0.0; end
+    return _hx_2
+  end )();
+  local x = float1 - float2;
+  local bool1 = __sunaba_input_InputService.isPhysicalKeyPressed(69);
+  local bool2 = __sunaba_input_InputService.isPhysicalKeyPressed(81);
+  local float1 = (function() 
+    local _hx_3
+    if (bool1) then 
+    _hx_3 = 1.0; else 
+    _hx_3 = 0.0; end
+    return _hx_3
+  end )();
+  local float2 = (function() 
+    local _hx_4
+    if (bool2) then 
+    _hx_4 = 1.0; else 
+    _hx_4 = 0.0; end
+    return _hx_4
+  end )();
+  local y = float1 - float2;
+  local bool1 = __sunaba_input_InputService.isPhysicalKeyPressed(83);
+  local bool2 = __sunaba_input_InputService.isPhysicalKeyPressed(87);
+  local float1 = (function() 
+    local _hx_5
+    if (bool1) then 
+    _hx_5 = 1.0; else 
+    _hx_5 = 0.0; end
+    return _hx_5
+  end )();
+  local float2 = (function() 
+    local _hx_6
+    if (bool2) then 
+    _hx_6 = 1.0; else 
+    _hx_6 = 0.0; end
+    return _hx_6
+  end )();
+  local z = float1 - float2;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local direction = Vector3.new(x, y, z):normalized();
+  local x = _G.math.floor(__sunaba_input_InputService.getJoyAxis(0, 0) + 0.5);
+  local y = __sunaba_input_InputService.getJoyAxis(0, 5) - __sunaba_input_InputService.getJoyAxis(0, 4);
+  local z = _G.math.floor(__sunaba_input_InputService.getJoyAxis(0, 1) + 0.5);
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local joypadDirection = Vector3.new(x, y, z):normalized();
+  if (__sunaba_input_InputService.isJoyButtonPressed(0, 7)) then 
+    self.speedToggle = not self.speedToggle;
+  end;
+  local x = 0;
+  local y = 0;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local offset = Vector3.new(x, y, z);
+  if (self.speedToggle and self.isJoystickActive) then 
+    offset.x = ((joypadDirection.x * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+    offset.y = ((joypadDirection.y * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+    offset.z = ((joypadDirection.z * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+  else
+    if (self.isJoystickActive) then 
+      offset.x = (joypadDirection.x * self.velocity) * deltaTime;
+      offset.y = (joypadDirection.y * self.velocity) * deltaTime;
+      offset.z = (joypadDirection.z * self.velocity) * deltaTime;
+    else
+      if (__sunaba_input_InputService.isPhysicalKeyPressed(4194325)) then 
+        offset.x = ((direction.x * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+        offset.y = ((direction.y * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+        offset.z = ((direction.z * self.velocity) * deltaTime) * self.boostSpeedMultiplier;
+      else
+        if (self.velocity ~= nil) then 
+          offset.x = (direction.x * self.velocity) * deltaTime;
+          offset.y = (direction.y * self.velocity) * deltaTime;
+          offset.z = (direction.z * self.velocity) * deltaTime;
+        end;
+      end;
+    end;
+  end;
+  self.transform:translate(offset);
+  if (__sunaba_input_InputService.isPhysicalKeyPressed(4194325) and __sunaba_input_InputService.isKeyPressed(82)) then 
+    self.transform:set_globalPosition(self.initialPosition);
+    self.transform:set_globalRotation(self.initialRotation);
+  end;
+  if (__sunaba_input_InputService.isJoyButtonPressed(0, 6)) then 
+    self.transform:set_globalPosition(self.initialPosition);
+    self.transform:set_globalRotation(self.initialRotation);
+  end;
+end
+__myComponents_FreeLook3D.prototype.reset = function(self) 
+  self.transform:set_globalPosition(self.initialPosition);
+  self.transform:set_globalRotation(self.initialRotation);
+end
+__myComponents_FreeLook3D.prototype.getAxis = function(self,bool1,bool2) 
+  local float1 = (function() 
+    local _hx_1
+    if (bool1) then 
+    _hx_1 = 1.0; else 
+    _hx_1 = 0.0; end
+    return _hx_1
+  end )();
+  local float2 = (function() 
+    local _hx_2
+    if (bool2) then 
+    _hx_2 = 1.0; else 
+    _hx_2 = 0.0; end
+    return _hx_2
+  end )();
+  do return float1 - float2 end
+end
+__myComponents_FreeLook3D.prototype.getCombinedAxis = function(self,axis1,axis2) 
+  do return axis1 - axis2 end
+end
+__myComponents_FreeLook3D.prototype.Clamp = function(self,value,min,max) 
+  if (value < min) then 
+    do return min end;
+  else
+    if (value > max) then 
+      do return max end;
+    else
+      do return value end;
+    end;
+  end;
+end
+
+__myComponents_FreeLook3D.prototype.__class__ =  __myComponents_FreeLook3D
+__myComponents_FreeLook3D.__super__ = __sunaba_Behavior
+setmetatable(__myComponents_FreeLook3D.prototype,{__index=__sunaba_Behavior.prototype})
 
 __myComponents_RotateComponent.new = function() 
   local self = _hx_new(__myComponents_RotateComponent.prototype)
@@ -10172,6 +10480,9 @@ end
 __sunaba_Entity.prototype.set_prefabPath = function(self,value) 
   if ((value ~= "") and ((String.prototype.indexOf(value, "://") == -1) and not StringTools.endsWith(value, ".vpfb"))) then 
     _G.error(__haxe_Exception.thrown("Invalid prefab path"),0);
+  end;
+  if (String.prototype.indexOf(value, ":///") ~= -1) then 
+    value = StringTools.replace(value, ":///", "://");
   end;
   self._prefabPath = value do return self._prefabPath end
 end

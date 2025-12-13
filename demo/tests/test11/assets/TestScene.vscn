@@ -95,6 +95,12 @@
 						"vOffset": 0.0
 					},
 					"type": "sunaba.spatial.Camera"
+				},
+				{
+					"data": {
+
+					},
+					"type": "myComponents.FreeLook3D"
 				}
 			],
 			"name": "Camera",

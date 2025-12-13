@@ -1,6 +1,6 @@
 import sunaba.studio.Plugin;
-
 import myComponents.RotateComponent;
+import myComponents.FreeLook3D;
 
 class TestPlugin extends Plugin {
     public static function main() {
@@ -11,5 +11,6 @@ class TestPlugin extends Plugin {
         trace("Hello, World!");
         trace(editor != null);
         editor.pushBehaviorClass(RotateComponent);
+		editor.pushBehaviorClass(FreeLook3D);
     }
 }
