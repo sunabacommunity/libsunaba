@@ -9973,7 +9973,7 @@ __sunaba_Entity.prototype.addComponent_addComponent_T = function(self,type)
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10018,7 +10018,7 @@ __sunaba_Entity.prototype.addComponent_sunaba_studio_Gizmo3D = function(self,typ
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10033,7 +10033,7 @@ __sunaba_Entity.prototype.addComponent_sunaba_studio_sceneEditor_FreeLook3D = fu
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10048,7 +10048,7 @@ __sunaba_Entity.prototype.addComponent_sunaba_spatial_Camera = function(self,typ
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10063,7 +10063,7 @@ __sunaba_Entity.prototype.addComponent_sunaba_spatial_SpatialTransform = functio
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10204,7 +10204,7 @@ __sunaba_Entity.prototype.addComponentNG = function(self,type)
   if (self._hasEnteredTree) then 
     behavior:onEnterTree();
   end;
-  if (self._started) then 
+  if (self._started == true) then 
     behavior:onStart();
   end;
   do return behaviorT end
@@ -10327,6 +10327,7 @@ __sunaba_Entity.prototype.start = function(self)
     _g = _g + 1;
     child:start();
   end;
+  self._started = true;
 end
 __sunaba_Entity.prototype.update = function(self,deltaTime) 
   local _g = 0;
@@ -29424,15 +29425,29 @@ __sunaba_studio_SceneEditor.prototype.checkScene = function(self)
   end;
 end
 __sunaba_studio_SceneEditor.prototype.onSave = function(self) 
-  local sceneFile = __sunaba_SceneFile.create(self.scene);
-  local sceneData = sceneFile:getData();
-  local sceneJson = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(sceneData));
-  if (self.savedSceneJson == sceneJson) then 
-    do return end;
+  if (self.fileType == __sunaba_studio_sceneEditor_FileType.SceneType) then 
+    local sceneFile = __sunaba_SceneFile.create(self.scene);
+    local sceneData = sceneFile:getData();
+    local sceneJson = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(sceneData));
+    if (self.savedSceneJson == sceneJson) then 
+      do return end;
+    end;
+    self.savedSceneJson = sceneJson;
+    sceneFile:save(self.filePath);
+    self:checkScene();
+  else
+    if (self.fileType == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
+      local prefabFile = __sunaba_Prefab.create(self.prefab, self.filePath);
+      local prefabData = prefabFile:getData();
+      local prefabJson = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(prefabData));
+      if (self.savedSceneJson == prefabJson) then 
+        do return end;
+      end;
+      self.savedSceneJson = prefabJson;
+      prefabFile:save(self.filePath);
+      self:checkScene();
+    end;
   end;
-  self.savedSceneJson = sceneJson;
-  sceneFile:save(self.filePath);
-  self:checkScene();
 end
 __sunaba_studio_SceneEditor.prototype.onDestroy = function(self) 
   local sceneInspector = self:getEditor().sceneInspector;
