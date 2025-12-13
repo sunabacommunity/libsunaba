@@ -86,6 +86,8 @@ class Entity extends BaseClass {
 			throw "Invalid prefab path";
 			return value;
 		}
+		if (StringTools.contains(value, ":///"))
+			value = StringTools.replace(value, ":///", "://");
 
 		return this._prefabPath = value;
 	}
