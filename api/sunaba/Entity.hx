@@ -115,7 +115,7 @@ class Entity extends BaseClass {
 		if (_hasEnteredTree) {
 			behavior.onEnterTree();
 		}
-		if (_started) {
+		if (_started == true) {
 			behavior.onStart();
 		}
 		return behaviorT;
@@ -132,7 +132,7 @@ class Entity extends BaseClass {
 		if (_hasEnteredTree) {
 			behavior.onEnterTree();
 		}
-		if (_started) {
+		if (_started == true) {
 			behavior.onStart();
 		}
 		return behaviorT;
@@ -256,6 +256,7 @@ class Entity extends BaseClass {
 		for (child in children) {
 			child.start();
 		}
+		_started = true;
 	}
 
 	public function update(deltaTime: Float) {
