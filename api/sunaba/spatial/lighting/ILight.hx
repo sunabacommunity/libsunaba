@@ -251,7 +251,7 @@ abstract class ILight extends IVisualInstance {
 		data.set("distanceFadeShadow", distanceFadeShadow);
 		data.set("lightAngularDistance", lightAngularDistance);
 		data.set("lightBakeMode", lightBakeMode);
-		data.set("lightColor", lightColor);
+		data.set("lightColor", DataUtils.varToDict(lightColor));
 		data.set("lightCullMask", lightCullMask);
 		data.set("lightEnergy", lightEnergy);
 		data.set("lightIndirectEnergy", lightIndirectEnergy);
@@ -282,7 +282,7 @@ abstract class ILight extends IVisualInstance {
 		distanceFadeShadow = data.get("distanceFadeShadow");
 		lightAngularDistance = data.get("lightAngularDistance");
 		lightBakeMode = data.get("lightBakeMode");
-		lightColor = data.get("lightColor");
+		lightColor = DataUtils.dictToVar(data.get("lightColor"));
 		lightCullMask = data.get("lightCullMask");
 		lightEnergy = data.get("lightEnergy");
 		lightIndirectEnergy = data.get("lightIndirectEnergy");
@@ -323,5 +323,10 @@ abstract class ILight extends IVisualInstance {
 
 	public override function onInit() {
 		editorIconPath = "assets://FugueIcons/icons/light-bulb.png";
+	}
+
+	public override function onEnd() {
+		node.queueFree();
+		node = null;
 	}
 }
