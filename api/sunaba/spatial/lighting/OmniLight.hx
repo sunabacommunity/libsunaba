@@ -1,5 +1,6 @@
 package sunaba.spatial.lighting;
 import sunaba.core.Dictionary;
+import sunaba.core.native.NativeObject;
 
 class OmniLight extends ILight {
 	public var omniAttenuation(get, set): Float;
@@ -45,5 +46,22 @@ class OmniLight extends ILight {
 		omniAttenuation = data.get("omniAttenuation");
 		omniRange = data.get("omniRange");
 		omniShadowMode = data.get("omniShadowMode");
+	}
+
+	public override function onInit() {
+		super.onInit();
+		node = new Node(new NativeObject("OmniLight3D"));
+		node.name = "OmniLight";
+
+		var transform: SpatialTransform = getComponent(SpatialTransform);
+		if (transform != null) {
+			if (transform.node != null) {
+				if (!transform.node.isNull()) {
+					if (!transform.node.native.isNull()) {
+						transform.node.addChild(node);
+					}
+				}
+			}
+		}
 	}
 }
