@@ -43,7 +43,7 @@ class DirectionalLight extends ILight {
 	function get_directionalShadowPancakeSize():Float {
 		return node.native.get("directional_shadow_pancake_size");
 	}
-	function set_directionalShadowPancakeSize(value:Int):Float {
+	function set_directionalShadowPancakeSize(value:Float):Float {
 		node.native.set("directional_shadow_pancake_size", value);
 		return value;
 	}
