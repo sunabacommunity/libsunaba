@@ -1,4 +1,5 @@
 package sunaba.spatial.lighting;
+
 import sunaba.core.Dictionary;
 import sunaba.core.native.NativeObject;
 
