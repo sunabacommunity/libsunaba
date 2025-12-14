@@ -5,7 +5,7 @@ import sunaba.core.Color;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
 
-class ILight extends IVisualInstance {
+abstract class ILight extends IVisualInstance {
 	public var distanceFadeBegin(get, set): Float;
 	function get_distanceFadeBegin():Float {
 		return node.native.get("distance_fade_begin");
