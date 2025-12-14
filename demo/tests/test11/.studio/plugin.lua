@@ -363,6 +363,10 @@ __sunaba_spatial_IGeometryInstance = _hx_e()
 __sunaba_spatial_Sky = _hx_e()
 __sunaba_spatial_SpatialTransform = _hx_e()
 __sunaba_spatial_World3D = _hx_e()
+__sunaba_spatial_lighting_ILight = _hx_e()
+__sunaba_spatial_lighting_DirectionalLight = _hx_e()
+__sunaba_spatial_lighting_OmniLight = _hx_e()
+__sunaba_spatial_lighting_SpotLight = _hx_e()
 __sunaba_spatial_mesh_PrimitiveMesh = _hx_e()
 __sunaba_spatial_mesh_BoxMesh = _hx_e()
 __sunaba_spatial_mesh_MeshDisplay = _hx_e()
@@ -24904,6 +24908,540 @@ __sunaba_spatial_World3D.prototype.__class__ =  __sunaba_spatial_World3D
 __sunaba_spatial_World3D.__super__ = __sunaba_Resource
 setmetatable(__sunaba_spatial_World3D.prototype,{__index=__sunaba_Resource.prototype})
 
+__sunaba_spatial_lighting_ILight.new = function() 
+  local self = _hx_new(__sunaba_spatial_lighting_ILight.prototype)
+  __sunaba_spatial_lighting_ILight.super(self)
+  return self
+end
+__sunaba_spatial_lighting_ILight.super = function(self) 
+  __sunaba_spatial_IVisualInstance.super(self);
+end
+_hxClasses["sunaba.spatial.lighting.ILight"] = __sunaba_spatial_lighting_ILight
+__sunaba_spatial_lighting_ILight.__name__ = "sunaba.spatial.lighting.ILight"
+__sunaba_spatial_lighting_ILight.prototype = _hx_e();
+__sunaba_spatial_lighting_ILight.prototype.get_distanceFadeBegin = function(self) 
+  do return self.node.native:get("distance_fade_begin"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_distanceFadeBegin = function(self,value) 
+  self.node.native:set("distance_fade_begin", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_distanceFadeEnabled = function(self) 
+  do return self.node.native:get("distance_fade_enabled"):asBool() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_distanceFadeEnabled = function(self,value) 
+  self.node.native:set("distance_fade_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_distanceFadeLength = function(self) 
+  do return self.node.native:get("distance_fade_length"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_distanceFadeLength = function(self,value) 
+  self.node.native:set("distance_fade_length", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_distanceFadeShadow = function(self) 
+  do return self.node.native:get("distance_fade_shadow"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_distanceFadeShadow = function(self,value) 
+  self.node.native:set("distance_fade_shadow", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightAngularDistance = function(self) 
+  do return self.node.native:get("light_angular_distance"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightAngularDistance = function(self,value) 
+  self.node.native:set("light_angular_distance", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightBakeMode = function(self) 
+  do return self.node.native:get("light_bake_mode"):asInt() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightBakeMode = function(self,value) 
+  self.node.native:set("light_bake_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightColor = function(self) 
+  do return self.node.native:get("light_color"):asColor() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightColor = function(self,value) 
+  self.node.native:set("light_color", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightCullMask = function(self) 
+  do return self.node.native:get("light_cull_mask"):asInt() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightCullMask = function(self,value) 
+  self.node.native:set("light_cull_mask", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightEnergy = function(self) 
+  do return self.node.native:get("light_energy"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightEnergy = function(self,value) 
+  self.node.native:set("light_energy", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightIndirectEnergy = function(self) 
+  do return self.node.native:get("light_indirect_energy"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightIndirectEnergy = function(self,value) 
+  self.node.native:set("light_indirect_energy", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightIntensityLumens = function(self) 
+  do return self.node.native:get("light_intensity_lumens"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightIntensityLumens = function(self,value) 
+  self.node.native:set("light_intensity_lumens", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightIntensityLux = function(self) 
+  do return self.node.native:get("light_intensity_lux"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightIntensityLux = function(self,value) 
+  self.node.native:set("light_intensity_lux", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightNegative = function(self) 
+  do return self.node.native:get("light_negative"):asBool() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightNegative = function(self,value) 
+  self.node.native:set("light_negative", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightProjector = function(self) 
+  do return __sunaba_Texture2D.new(self.node.native:get("light_projector"):asReference()) end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightProjector = function(self,value) 
+  self.node.native:set("light_projector", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightSize = function(self) 
+  do return self.node.native:get("light_size"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightSize = function(self,value) 
+  self.node.native:set("light_size", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightSpecular = function(self) 
+  do return self.node.native:get("light_specular"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightSpecular = function(self,value) 
+  self.node.native:set("light_specular", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightTemperature = function(self) 
+  do return self.node.native:get("light_temperature"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightTemperature = function(self,value) 
+  self.node.native:set("light_temperature", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_lightVolumetricFogEnergy = function(self) 
+  do return self.node.native:get("light_volumetric_fog_energy"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_lightVolumetricFogEnergy = function(self,value) 
+  self.node.native:set("light_volumetric_fog_energy", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowBias = function(self) 
+  do return self.node.native:get("shadow_bias"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowBias = function(self,value) 
+  self.node.native:set("shadow_bias", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowBlur = function(self) 
+  do return self.node.native:get("shadow_blur"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowBlur = function(self,value) 
+  self.node.native:set("shadow_blur", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowCasterMask = function(self) 
+  do return self.node.native:get("shadow_caster_mask"):asInt() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowCasterMask = function(self,value) 
+  self.node.native:set("shadow_caster_mask", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowEnabled = function(self) 
+  do return self.node.native:get("shadow_enabled"):asBool() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowEnabled = function(self,value) 
+  self.node.native:set("shadow_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowNormalBias = function(self) 
+  do return self.node.native:get("shadow_normal_bias"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowNormalBias = function(self,value) 
+  self.node.native:set("shadow_normal_bias", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowOpacity = function(self) 
+  do return self.node.native:get("shadow_opacity"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowOpacity = function(self,value) 
+  self.node.native:set("shadow_opacity", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowReverseCullFace = function(self) 
+  do return self.node.native:get("shadow_reverse_cull_face"):asBool() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowReverseCullFace = function(self,value) 
+  self.node.native:set("shadow_reverse_cull_face", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.get_shadowTransmittanceBias = function(self) 
+  do return self.node.native:get("shadow_transmittance_bias"):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.set_shadowTransmittanceBias = function(self,value) 
+  self.node.native:set("shadow_transmittance_bias", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_ILight.prototype.getData = function(self) 
+  local data = __sunaba_spatial_IVisualInstance.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeBegin"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_distanceFadeBegin()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeEnabled"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_distanceFadeEnabled()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeLength"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_distanceFadeLength()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeShadow"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_distanceFadeShadow()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightAngularDistance"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightAngularDistance()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightBakeMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_lightBakeMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightColor"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromColor(self:get_lightColor()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightCullMask"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_lightCullMask()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightEnergy"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightEnergy()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightIndirectEnergy"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightIndirectEnergy()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightIntensityLumens"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightIntensityLumens()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightIntensityLux"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightIntensityLux()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightNegative"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_lightNegative()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightProjector"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromReference(self:get_lightProjector()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightSize"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightSize()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightSpecular"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightSpecular()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightTemperature"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightTemperature()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lightVolumetricFogEnergy"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_lightVolumetricFogEnergy()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowBias"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_shadowBias()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowBlur"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_shadowBlur()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowCasterMask"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_shadowCasterMask()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowEnabled"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_shadowEnabled()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowReverseCullFace"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_shadowReverseCullFace()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("shadowTransmittanceBias"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_shadowTransmittanceBias()));
+  do return data end
+end
+__sunaba_spatial_lighting_ILight.prototype.setData = function(self,data) 
+  __sunaba_spatial_IVisualInstance.prototype.setData(self,data);
+  self:set_distanceFadeBegin(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeBegin")):asFloat());
+  self:set_distanceFadeEnabled(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeEnabled")):asBool());
+  self:set_distanceFadeLength(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeLength")):asFloat());
+  self:set_distanceFadeShadow(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("distanceFadeShadow")):asFloat());
+  self:set_lightAngularDistance(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightAngularDistance")):asFloat());
+  self:set_lightBakeMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightBakeMode")):asInt());
+  self:set_lightColor(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightColor")):asDictionary()):asColor());
+  self:set_lightCullMask(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightCullMask")):asInt());
+  self:set_lightEnergy(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightEnergy")):asFloat());
+  self:set_lightIndirectEnergy(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightIndirectEnergy")):asFloat());
+  self:set_lightIntensityLumens(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightIntensityLumens")):asFloat());
+  self:set_lightIntensityLux(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightIntensityLux")):asFloat());
+  self:set_lightNegative(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightNegative")):asBool());
+  self:set_lightProjector(__sunaba_Texture2D.new(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightProjector")):asDictionary()):asReference()));
+  self:set_lightSize(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightSize")):asFloat());
+  self:set_lightSpecular(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightSpecular")):asFloat());
+  self:set_lightTemperature(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightTemperature")):asFloat());
+  self:set_lightVolumetricFogEnergy(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lightVolumetricFogEnergy")):asFloat());
+  self:set_shadowBias(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowBias")):asFloat());
+  self:set_shadowBlur(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowBlur")):asFloat());
+  self:set_shadowCasterMask(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowCasterMask")):asInt());
+  self:set_shadowEnabled(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowEnabled")):asBool());
+  self:set_shadowNormalBias(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowNormalBias")):asFloat());
+  self:set_shadowOpacity(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowOpacity")):asFloat());
+  self:set_shadowReverseCullFace(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowReverseCullFace")):asBool());
+  self:set_shadowTransmittanceBias(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("shadowTransmittanceBias")):asFloat());
+end
+__sunaba_spatial_lighting_ILight.prototype.getCorrelatedColor = function(self) 
+  do return self.node.native:call("get_correlated_color", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asColor() end
+end
+__sunaba_spatial_lighting_ILight.prototype.getParam = function(self,param) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(param));
+  do return self.node.native:call("get_param", args):asFloat() end
+end
+__sunaba_spatial_lighting_ILight.prototype.setParam = function(self,param,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(param));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  self.node.native:call("set_param", args);
+end
+__sunaba_spatial_lighting_ILight.prototype.onInit = function(self) 
+  self.editorIconPath = "assets://FugueIcons/icons/light-bulb.png";
+end
+__sunaba_spatial_lighting_ILight.prototype.onEnd = function(self) 
+  self.node:queueFree();
+  self.node = nil;
+end
+
+__sunaba_spatial_lighting_ILight.prototype.__class__ =  __sunaba_spatial_lighting_ILight
+__sunaba_spatial_lighting_ILight.__super__ = __sunaba_spatial_IVisualInstance
+setmetatable(__sunaba_spatial_lighting_ILight.prototype,{__index=__sunaba_spatial_IVisualInstance.prototype})
+
+__sunaba_spatial_lighting_DirectionalLight.new = function() 
+  local self = _hx_new(__sunaba_spatial_lighting_DirectionalLight.prototype)
+  __sunaba_spatial_lighting_DirectionalLight.super(self)
+  return self
+end
+__sunaba_spatial_lighting_DirectionalLight.super = function(self) 
+  __sunaba_spatial_lighting_ILight.super(self);
+end
+_hxClasses["sunaba.spatial.lighting.DirectionalLight"] = __sunaba_spatial_lighting_DirectionalLight
+__sunaba_spatial_lighting_DirectionalLight.__name__ = "sunaba.spatial.lighting.DirectionalLight"
+__sunaba_spatial_lighting_DirectionalLight.prototype = _hx_e();
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowBlendSplits = function(self) 
+  do return self.node.native:get("directional_shadow_blend_splits"):asBool() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowBlendSplits = function(self,value) 
+  self.node.native:set("directional_shadow_blend_splits", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowFadeStart = function(self) 
+  do return self.node.native:get("directional_shadow_fade_start"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowFadeStart = function(self,value) 
+  self.node.native:set("directional_shadow_fade_start", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowMaxDistance = function(self) 
+  do return self.node.native:get("directional_shadow_max_distance"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowMaxDistance = function(self,value) 
+  self.node.native:set("directional_shadow_max_distance", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowMode = function(self) 
+  do return self.node.native:get("directional_shadow_mode"):asInt() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowMode = function(self,value) 
+  self.node.native:set("directional_shadow_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowPancakeSize = function(self) 
+  do return self.node.native:get("directional_shadow_pancake_size"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowPancakeSize = function(self,value) 
+  self.node.native:set("directional_shadow_pancake_size", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowSplit1 = function(self) 
+  do return self.node.native:get("directional_shadow_split_1"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowSplit1 = function(self,value) 
+  self.node.native:set("directional_shadow_split_1", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowSplit2 = function(self) 
+  do return self.node.native:get("directional_shadow_split_2"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowSplit2 = function(self,value) 
+  self.node.native:set("directional_shadow_split_2", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_directionalShadowSplit3 = function(self) 
+  do return self.node.native:get("directional_shadow_split_3"):asFloat() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_directionalShadowSplit3 = function(self,value) 
+  self.node.native:set("directional_shadow_split_3", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.get_skyMode = function(self) 
+  do return self.node.native:get("sky_mode"):asInt() end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.set_skyMode = function(self,value) 
+  self.node.native:set("sky_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.getData = function(self) 
+  local data = __sunaba_spatial_lighting_ILight.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowBlendSplits"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_directionalShadowBlendSplits()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowFadeStart"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowFadeStart()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowMaxDistance"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowMaxDistance()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_directionalShadowMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowPancakeSize"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowPancakeSize()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit1"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowSplit1()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit2"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowSplit2()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit3"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_directionalShadowSplit3()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("skyMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_skyMode()));
+  do return data end
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.setData = function(self,data) 
+  __sunaba_spatial_lighting_ILight.prototype.setData(self,data);
+  self:set_directionalShadowBlendSplits(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowBlendSplits")):asBool());
+  self:set_directionalShadowFadeStart(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowFadeStart")):asFloat());
+  self:set_directionalShadowMaxDistance(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowMaxDistance")):asFloat());
+  self:set_directionalShadowMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowMode")):asInt());
+  self:set_directionalShadowPancakeSize(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowPancakeSize")):asFloat());
+  self:set_directionalShadowSplit1(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit1")):asFloat());
+  self:set_directionalShadowSplit2(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit2")):asFloat());
+  self:set_directionalShadowSplit3(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("directionalShadowSplit3")):asFloat());
+  self:set_skyMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("skyMode")):asInt());
+end
+__sunaba_spatial_lighting_DirectionalLight.prototype.onInit = function(self) 
+  self.node = __sunaba_Node.new(NativeObject.new("DirectionalLight3D"));
+  self.node:set_name("DirectionalLight");
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    if (transform:get_node() ~= nil) then 
+      if (not transform:get_node():isNull()) then 
+        if (not transform:get_node().native:isNull()) then 
+          transform:get_node():addChild(self.node);
+        end;
+      end;
+    end;
+  end;
+  __sunaba_spatial_lighting_ILight.prototype.onInit(self);
+end
+
+__sunaba_spatial_lighting_DirectionalLight.prototype.__class__ =  __sunaba_spatial_lighting_DirectionalLight
+__sunaba_spatial_lighting_DirectionalLight.__super__ = __sunaba_spatial_lighting_ILight
+setmetatable(__sunaba_spatial_lighting_DirectionalLight.prototype,{__index=__sunaba_spatial_lighting_ILight.prototype})
+
+__sunaba_spatial_lighting_OmniLight.new = function() 
+  local self = _hx_new(__sunaba_spatial_lighting_OmniLight.prototype)
+  __sunaba_spatial_lighting_OmniLight.super(self)
+  return self
+end
+__sunaba_spatial_lighting_OmniLight.super = function(self) 
+  __sunaba_spatial_lighting_ILight.super(self);
+end
+_hxClasses["sunaba.spatial.lighting.OmniLight"] = __sunaba_spatial_lighting_OmniLight
+__sunaba_spatial_lighting_OmniLight.__name__ = "sunaba.spatial.lighting.OmniLight"
+__sunaba_spatial_lighting_OmniLight.prototype = _hx_e();
+__sunaba_spatial_lighting_OmniLight.prototype.get_omniAttenuation = function(self) 
+  do return self.node.native:get("omni_attenuation"):asFloat() end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.set_omniAttenuation = function(self,value) 
+  self.node.native:set("omni_attenuation", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.get_omniRange = function(self) 
+  do return self.node.native:get("omni_range"):asFloat() end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.set_omniRange = function(self,value) 
+  self.node.native:set("omni_range", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.get_omniShadowMode = function(self) 
+  do return self.node.native:get("omni_shadow_mode"):asInt() end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.set_omniShadowMode = function(self,value) 
+  self.node.native:set("omni_shadow_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.getData = function(self) 
+  local data = __sunaba_spatial_lighting_ILight.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("omniAttenuation"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_omniAttenuation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("omniRange"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_omniRange()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("omniShadowMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_omniShadowMode()));
+  do return data end
+end
+__sunaba_spatial_lighting_OmniLight.prototype.setData = function(self,data) 
+  __sunaba_spatial_lighting_ILight.prototype.setData(self,data);
+  self:set_omniAttenuation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("omniAttenuation")):asFloat());
+  self:set_omniRange(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("omniRange")):asFloat());
+  self:set_omniShadowMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("omniShadowMode")):asInt());
+end
+__sunaba_spatial_lighting_OmniLight.prototype.onInit = function(self) 
+  __sunaba_spatial_lighting_ILight.prototype.onInit(self);
+  self.node = __sunaba_Node.new(NativeObject.new("OmniLight3D"));
+  self.node:set_name("OmniLight");
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    if (transform:get_node() ~= nil) then 
+      if (not transform:get_node():isNull()) then 
+        if (not transform:get_node().native:isNull()) then 
+          transform:get_node():addChild(self.node);
+        end;
+      end;
+    end;
+  end;
+end
+
+__sunaba_spatial_lighting_OmniLight.prototype.__class__ =  __sunaba_spatial_lighting_OmniLight
+__sunaba_spatial_lighting_OmniLight.__super__ = __sunaba_spatial_lighting_ILight
+setmetatable(__sunaba_spatial_lighting_OmniLight.prototype,{__index=__sunaba_spatial_lighting_ILight.prototype})
+
+__sunaba_spatial_lighting_SpotLight.new = function() 
+  local self = _hx_new(__sunaba_spatial_lighting_SpotLight.prototype)
+  __sunaba_spatial_lighting_SpotLight.super(self)
+  return self
+end
+__sunaba_spatial_lighting_SpotLight.super = function(self) 
+  __sunaba_spatial_lighting_ILight.super(self);
+end
+_hxClasses["sunaba.spatial.lighting.SpotLight"] = __sunaba_spatial_lighting_SpotLight
+__sunaba_spatial_lighting_SpotLight.__name__ = "sunaba.spatial.lighting.SpotLight"
+__sunaba_spatial_lighting_SpotLight.prototype = _hx_e();
+__sunaba_spatial_lighting_SpotLight.prototype.get_spotAngle = function(self) 
+  do return self.node.native:get("spot_angle"):asFloat() end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.set_spotAngle = function(self,value) 
+  self.node.native:set("spot_angle", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.get_spotAngleAttenuation = function(self) 
+  do return self.node.native:get("spot_angle_attenuation"):asFloat() end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.set_spotAngleAttenuation = function(self,value) 
+  self.node.native:set("spot_angle_attenuation", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.get_spotAttenuation = function(self) 
+  do return self.node.native:get("spot_attenuation"):asFloat() end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.set_spotAttenuation = function(self,value) 
+  self.node.native:set("spot_attenuation", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.get_spotRange = function(self) 
+  do return self.node.native:get("spot_range"):asFloat() end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.set_spotRange = function(self,value) 
+  self.node.native:set("spot_range", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.getData = function(self) 
+  local data = __sunaba_spatial_lighting_ILight.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("spotAngle"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_spotAngle()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("spotAngleAttenuation"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_spotAngleAttenuation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("spotAttenuation"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_spotAttenuation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("spotRange"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_spotRange()));
+  do return data end
+end
+__sunaba_spatial_lighting_SpotLight.prototype.setData = function(self,data) 
+  __sunaba_spatial_lighting_ILight.prototype.setData(self,data);
+  self:set_spotAngle(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("spotAngle")):asFloat());
+  self:set_spotAngleAttenuation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("spotAngleAttenuation")):asFloat());
+  self:set_spotAttenuation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("spotAttenuation")):asFloat());
+  self:set_spotRange(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("spotRange")):asFloat());
+end
+__sunaba_spatial_lighting_SpotLight.prototype.onInit = function(self) 
+  __sunaba_spatial_lighting_ILight.prototype.onInit(self);
+  self.node = __sunaba_Node.new(NativeObject.new("SpotLight3D"));
+  self.node:set_name("SpotLight");
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    if (transform:get_node() ~= nil) then 
+      if (not transform:get_node():isNull()) then 
+        if (not transform:get_node().native:isNull()) then 
+          transform:get_node():addChild(self.node);
+        end;
+      end;
+    end;
+  end;
+end
+
+__sunaba_spatial_lighting_SpotLight.prototype.__class__ =  __sunaba_spatial_lighting_SpotLight
+__sunaba_spatial_lighting_SpotLight.__super__ = __sunaba_spatial_lighting_ILight
+setmetatable(__sunaba_spatial_lighting_SpotLight.prototype,{__index=__sunaba_spatial_lighting_ILight.prototype})
+
 __sunaba_spatial_mesh_PrimitiveMesh.new = function() 
   local self = _hx_new(__sunaba_spatial_mesh_PrimitiveMesh.prototype)
   __sunaba_spatial_mesh_PrimitiveMesh.super(self)
@@ -25094,6 +25632,7 @@ end
 __sunaba_spatial_mesh_MeshDisplay.prototype.onInit = function(self) 
   self.editorIconPath = "studio://icons/16/cushion-gray.png";
   self.node = __sunaba_Node.new(NativeObject.new("MeshInstance3D"));
+  self.node:set_name("MeshDisplay");
   local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
   if (transform ~= nil) then 
     if (transform:get_node() ~= nil) then 
@@ -31228,6 +31767,9 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.componentClasses:push(__sunaba_spatial_Camera);
   self.componentClasses:push(__sunaba_spatial_mesh_MeshDisplay);
   self.componentClasses:push(__sunaba_spatial_mesh_BoxMesh);
+  self.componentClasses:push(__sunaba_spatial_lighting_OmniLight);
+  self.componentClasses:push(__sunaba_spatial_lighting_SpotLight);
+  self.componentClasses:push(__sunaba_spatial_lighting_DirectionalLight);
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/clapperboard--pencil.png");
   local iconImage = __sunaba_Image.new();
   iconImage:loadPngFromBuffer(iconBin);
@@ -31362,7 +31904,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=127,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=133,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -32201,12 +32743,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=633,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=639,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=635,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=636,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=641,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=642,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=638,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=644,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -32242,7 +32784,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=669,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=675,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
@@ -32263,7 +32805,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=690,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=696,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;

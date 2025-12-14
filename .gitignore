@@ -1597,3 +1597,7 @@ libsunaba.iml
 /demo/tests/test11/.haxelib/sunaba-studio/0,0,0/EditorMain.hx
 /demo/tests/test11/.haxelib/sunaba-studio/0,0,0/haxelib.json
 /demo/tests/test11/.haxelib/sunaba-studio/.current
+/demo/tests/test11/.haxelib/libsunaba/0,0,0/sunaba/spatial/lighting/DirectionalLight.hx
+/demo/tests/test11/.haxelib/libsunaba/0,0,0/sunaba/spatial/lighting/ILight.hx
+/demo/tests/test11/.haxelib/libsunaba/0,0,0/sunaba/spatial/lighting/OmniLight.hx
+/demo/tests/test11/.haxelib/libsunaba/0,0,0/sunaba/spatial/lighting/SpotLight.hx
