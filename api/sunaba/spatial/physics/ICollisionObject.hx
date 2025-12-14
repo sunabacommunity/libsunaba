@@ -1,4 +1,5 @@
 package sunaba.spatial.physics;
+import sunaba.core.Dictionary;
 import sunaba.core.Variant;
 import sunaba.core.native.NativeObject;
 import sunaba.core.ArrayList;
@@ -181,5 +182,29 @@ class ICollisionObject extends Behavior {
 		args.append(ownerId);
 		args.append(transform);
 		node.native.call("shape_owner_set_transform", args);
+	}
+
+	public override function getData():Dictionary {
+		var data = super.getData();
+
+		data.set("collisionLayer", collisionLayer);
+		data.set("collisionMask", collisionMask);
+		data.set("collisionPriority", collisionPriority);
+		data.set("disableMode", disableMode);
+		data.set("inputCaptureOnDrag", inputCaptureOnDrag);
+		data.set("inputRayPickable", inputRayPickable);
+
+		return data;
+	}
+
+	public override function setData(data:Dictionary) {
+		super.setData(data);
+
+		collisionLayer = data.get("collisionLayer");
+		collisionMask = data.get("collisionMask");
+		collisionPriority = data.get("collisionPriority");
+		disableMode = data.get("disableMode");
+		inputCaptureOnDrag = data.get("inputCaptureOnDrag");
+		inputRayPickable = data.get("inputRayPickable");
 	}
 }
