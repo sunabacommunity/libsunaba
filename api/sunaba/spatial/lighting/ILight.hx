@@ -320,4 +320,8 @@ class ILight extends IVisualInstance {
 		args.append(value);
 		node.native.call("set_param", args);
 	}
+
+	public override function onInit() {
+		editorIconPath = "assets://FugueIcons/icons/light-bulb.png";
+	}
 }
