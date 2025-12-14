@@ -31,7 +31,6 @@ class AnimatableBody extends StaticBody {
         editorIconPath = "assets://FugueIcons/icons/building.png";
 
         node = new Node(new NativeObject("AnimatableBody3D"));
-		node.name = "AnimatableBody";
 
 		var transform: SpatialTransform = getComponent(SpatialTransform);
 		if (transform != null) {

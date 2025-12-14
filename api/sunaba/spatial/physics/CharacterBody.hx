@@ -267,7 +267,6 @@ class CharacterBody extends IPhysicsBody {
         editorIconPath = "assets://FugueIcons/icons/building.png";
 
         node = new Node(new NativeObject("CharacterBody3D"));
-		node.name = "CharacterBody";
 
 		var transform: SpatialTransform = getComponent(SpatialTransform);
 		if (transform != null) {

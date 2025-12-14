@@ -54,7 +54,6 @@ class StaticBody extends IPhysicsBody {
         editorIconPath = "assets://FugueIcons/icons/building.png";
 
         node = new Node(new NativeObject("StaticBody3D"));
-		node.name = "StaticBody";
 
 		var transform: SpatialTransform = getComponent(SpatialTransform);
 		if (transform != null) {
