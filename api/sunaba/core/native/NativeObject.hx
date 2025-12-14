@@ -9,4 +9,5 @@ extern class NativeObject extends NativeBase {
     public function free(): Void;
     public static function getService(classname: String): NativeObject;
     public static function callStatic(classname: String, methodname: String, args: ArrayList): Variant;
+    public function eq(b: NativeObject): Bool;
 }

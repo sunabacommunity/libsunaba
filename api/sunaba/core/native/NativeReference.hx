@@ -7,4 +7,5 @@ import sunaba.core.ArrayList;
 extern class NativeReference extends NativeBase {
     public function new(classname: String, ?args: ArrayList, ?scriptType: ScriptType);
     public function isValid(): Bool;
+    public function eq(b: NativeReference): Bool;
 }
