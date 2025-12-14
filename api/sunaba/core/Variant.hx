@@ -177,16 +177,14 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toByteArray():ByteArray {
         return this.asByteArray();
     }
-    /*@:from
-    public static function fromIntArray(value:TypedArray<Int>):VariantAbstract {
+    @:from
+    public static function fromIntArray(value:TypedArray<Int>):Variant {
         return Variant.fromIntArray(value);
     }
     @:to
-    public static function toIntArray(value:VariantAbstract):TypedArray<Int> {
+    public static function toIntArray(value:VariantNative):TypedArray<Int> {
         return value.asIntArray();
     }
-    */
-
     @:from
     public static function fromArray(value:ArrayList):Variant {
         return VariantNative.fromArrayList(value);
