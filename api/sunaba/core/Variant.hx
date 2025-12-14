@@ -178,7 +178,7 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
         return this.asByteArray();
     }
     public static function fromIntArray32(value:TypedArray<Int>):Variant {
-        return Variant.fromIntArray(value);
+        return VariantNative.fromIntArray(value);
     }
     public static function toIntArray32(value:VariantNative):TypedArray<Int> {
         return value.asIntArray();
