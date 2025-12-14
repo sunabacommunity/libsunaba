@@ -50,7 +50,7 @@ class StaticBody extends IPhysicsBody {
         physicsMaterialOverride = new PhysicsMaterial(DataUtils.dictToVar(data.get("physicsMaterialOverride")));
     }
 
-    public override function function onInit() {
+    public override function onInit() {
         editorIconPath = "assets://FugueIcons/icons/building.png";
 
         node = new Node(new NativeObject("StaticBody3D"));
