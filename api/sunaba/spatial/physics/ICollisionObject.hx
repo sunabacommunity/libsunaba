@@ -1,4 +1,5 @@
 package sunaba.spatial.physics;
+import sunaba.core.Variant;
 import sunaba.core.native.NativeObject;
 import sunaba.core.ArrayList;
 import sunaba.core.TypedArray;
@@ -81,7 +82,7 @@ class ICollisionObject extends Behavior {
 	}
 
 	public function getShapeOwners(): TypedArray<Int> {
-		return node.native.call("get_shape_owners", new ArrayList()).toIntArray32();
+		return Variant.toIntArray32(node.native.call("get_shape_owners", new ArrayList()));
 	}
 
 	public function isShapeOwnerDisabled(ownerId: Int): Bool {
