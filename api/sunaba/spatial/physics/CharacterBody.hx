@@ -1,4 +1,5 @@
 package sunaba.spatial.physics;
+
 import sunaba.core.Dictionary;
 import sunaba.core.Vector3;
 import sunaba.core.ArrayList;
