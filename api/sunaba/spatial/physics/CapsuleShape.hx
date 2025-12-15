@@ -1,5 +1,6 @@
 package sunaba.spatial.physics;
 
+import sunaba.core.native.NativeReference;
 import sunaba.core.Dictionary;
 
 class CapsuleShape extends ICollisionShape {
@@ -44,5 +45,13 @@ class CapsuleShape extends ICollisionShape {
 
         height = data.get("height");
         radius = data.get("radius");
+    }
+
+    public override function onInit() {
+        super.onInit();
+
+        native = new NativeReference("CapsuleShape3D");
+
+        setShape();
     }
 }
