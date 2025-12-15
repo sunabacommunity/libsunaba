@@ -266,7 +266,7 @@ class CharacterBody extends IPhysicsBody {
     }
 
     public override function onInit() {
-        editorIconPath = "assets://FugueIcons/icons/building.png";
+        editorIconPath = "assets://FugueIcons/icons/dummy.png";
 
         node = new Node(new NativeObject("CharacterBody3D"));
 
