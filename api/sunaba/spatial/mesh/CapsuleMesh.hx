@@ -1,4 +1,5 @@
 package sunaba.spatial.mesh;
+
 import sunaba.core.Dictionary;
 import sunaba.core.native.NativeReference;
 
