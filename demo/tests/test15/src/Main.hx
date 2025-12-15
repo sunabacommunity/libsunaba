@@ -1,6 +1,11 @@
 package;
 
 import sunaba.App;
+import sunaba.SceneFile;
+import sunaba.Node;
+import sunaba.Environment;
+import sunaba.ResourceLoaderService;
+import sunaba.core.native.NativeObject;
 
 class Main extends App {
 	public static function main() {
@@ -8,6 +13,19 @@ class Main extends App {
 	}
 
 	public override function init() {
+		var sceneFile = new SceneFile();
+		sceneFile.load("app://TestScene.vscn");
+
+		var scene = sceneFile.instance();
+
+		var envRes = ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
+		var environment = new Environment(envRes.native);
+		var worldEnv = new Node(new NativeObject("WorldEnvironment"));
+		worldEnv.native.set("environment", environment.native);
+		rootNode.addChild(worldEnv);
+
+		rootNode.addChild(scene);
+
 		trace("");
 	}
 }
