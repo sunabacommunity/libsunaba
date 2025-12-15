@@ -147,7 +147,9 @@ class CharacterBody extends IPhysicsBody {
 
 	public function getFloorAngle(?upDirection: Vector3): Float {
 		var args = new ArrayList();
-		args.append(upDirection);
+		if (upDirection != null) {
+			args.append(upDirection);
+		}
 		return node.native.call("get_floor_angle", args);
 	}
 
