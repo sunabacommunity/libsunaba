@@ -69,6 +69,10 @@ class PrimitiveMesh extends Behavior {
 		material = new Material(DataUtils.dictToVar(data.get("material")));
 	}
 
+	public override function onInit() {
+		editorIconPath = "studio://icons/16/cushion.png";
+	}
+
 	public override function onStart() {
 		var meshDisplay: MeshDisplay = getComponent(MeshDisplay);
 		meshDisplay.setMesh(res);
