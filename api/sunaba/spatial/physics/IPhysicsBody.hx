@@ -158,10 +158,10 @@ abstract class IPhysicsBody extends ICollisionObject {
         args.append(motion);
         if (collision != null) {
             args.append(collision.native);
+            args.append(safeMargin);
+            args.append(recoveryAsCollision);
+            args.append(maxCollisions);
         }
-        args.append(safeMargin);
-        args.append(recoveryAsCollision);
-        args.append(maxCollisions);
         return node.native.call("test_move", args);
     }
 
