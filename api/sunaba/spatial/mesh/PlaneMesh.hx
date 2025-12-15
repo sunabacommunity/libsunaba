@@ -77,4 +77,8 @@ class PlaneMesh extends PrimitiveMesh {
         res = new Resource(new NativeReference("PlaneMesh"));
         super.onInit();
     }
+
+    public function superInit() {
+        super.onInit();
+    }
 }
