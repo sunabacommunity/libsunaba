@@ -6,7 +6,7 @@ import sunaba.core.Vector3;
 import sunaba.core.native.NativeObject;
 import sunaba.core.ArrayList;
 
-class IPhysicsBody extends ICollisionObject {
+abstract class IPhysicsBody extends ICollisionObject {
     public var axisLockAngularX(get, set): Bool;
     function get_axisLockAngularX():Bool {
 		return node.native.get("axis_lock_angular_x");
@@ -78,7 +78,7 @@ class IPhysicsBody extends ICollisionObject {
         var collisionExceptions: Array<IPhysicsBody> = new Array();
         var getPhysBodyFromEntity: Entity->Void;
         getPhysBodyFromEntity = (entity: Entity) -> {
-            var inheritsPhysicsBody: Class<Dynamic>->Bool = null; 
+            var inheritsPhysicsBody: Class<Dynamic>->Bool = null;
             inheritsPhysicsBody = (bClass: Class<Dynamic>) -> {
                 var superClass = std.Type.getSuperClass(bClass);
                 if (superClass == IPhysicsBody) {

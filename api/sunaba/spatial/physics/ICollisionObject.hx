@@ -7,7 +7,7 @@ import sunaba.core.TypedArray;
 import sunaba.core.native.NativeReference;
 import sunaba.core.Transform3D;
 
-class ICollisionObject extends Behavior {
+abstract class ICollisionObject extends Behavior {
 	public var node: Node;
 
 	public var collisionLayer(get, set): Int;
