@@ -368,14 +368,14 @@
 							"type": 9,
 							"value": [
 								0.0,
-								0.349999994039536,
-								3.0
+								3.73647308349609,
+								6.43154430389404
 							]
 						},
 						"rotation": {
 							"type": 9,
 							"value": [
-								0.0,
+								-0.283109843730927,
 								0.0,
 								0.0
 							]
@@ -422,6 +422,1825 @@
 				}
 			],
 			"name": "Camera",
+			"path": ""
+		},
+		{
+			"children": [
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										1.3860000371933,
+										0.0,
+										1.38699996471405
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								},
+								"subdivideDepth": 0,
+								"subdivideHeight": 0,
+								"subdivideWidth": 0,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.BoxMesh"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"margin": 0.0399999991059303,
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.physics.BoxShape"
+						}
+					],
+					"name": "Box1",
+					"path": ""
+				},
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										0.321000009775162,
+										3.83800005912781,
+										0.540000021457672
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								},
+								"subdivideDepth": 0,
+								"subdivideHeight": 0,
+								"subdivideWidth": 0,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.BoxMesh"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"margin": 0.0399999991059303,
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.physics.BoxShape"
+						}
+					],
+					"name": "Box2",
+					"path": ""
+				},
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										1.25600004196167,
+										6.14400005340576,
+										1.27799999713898
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								},
+								"subdivideDepth": 0,
+								"subdivideHeight": 0,
+								"subdivideWidth": 0,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.BoxMesh"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"margin": 0.0399999991059303,
+								"size": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.physics.BoxShape"
+						}
+					],
+					"name": "Box3",
+					"path": ""
+				},
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										-0.0930000022053719,
+										3.60142254829407,
+										1.52300000190735
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"margin": 0.0399999991059303,
+								"radius": 0.5
+							},
+							"type": "sunaba.spatial.physics.SphereShape"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"height": 1.0,
+								"isHemisphere": false,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"radialSegments": 64,
+								"radius": 0.5,
+								"rings": 32,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.SphereMesh"
+						}
+					],
+					"name": "Sphere",
+					"path": ""
+				},
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										-1.30400002002716,
+										0.0,
+										0.0
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"height": 2.0,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"radialSegments": 64,
+								"radius": 0.5,
+								"rings": 8,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.CapsuleMesh"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"height": 2.0,
+								"margin": 0.0399999991059303,
+								"radius": 0.5
+							},
+							"type": "sunaba.spatial.physics.CapsuleShape"
+						}
+					],
+					"name": "Capsule",
+					"path": ""
+				},
+				{
+					"children": [],
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"castShadow": 1,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"extraCullMargin": 0.0,
+								"giMode": 1,
+								"ignoreOcclusionCulling": false,
+								"layerMask": 0,
+								"lightmapScale": 0,
+								"lightmapTexelScale": 0.0,
+								"lodBias": 1.0,
+								"sortingOffset": 0.0,
+								"sortingUseAabbCenter": true,
+								"transparancy": 0.0,
+								"visibilityRangeBegin": 0.0,
+								"visibilityRangeBeginMargin": 0.0,
+								"visibilityRangeEnd": 0.0,
+								"visibilityRangeEndMargin": 0.0,
+								"visibilityRangeFadeMode": 0.0
+							},
+							"type": "sunaba.spatial.mesh.MeshDisplay"
+						},
+						{
+							"data": {
+								"addUv2": false,
+								"bottomRadius": 0.5,
+								"capBottom": true,
+								"capTop": true,
+								"customAabb": {
+									"type": 16,
+									"value": [
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										},
+										{
+											"type": 9,
+											"value": [
+												0.0,
+												0.0,
+												0.0
+											]
+										}
+									]
+								},
+								"flipFaces": false,
+								"height": 2.0,
+								"material": {
+									"type": 24,
+									"value": {
+										"class": "Material",
+										"path": "?",
+										"properties": {
+											"next_pass": {
+												"type": 24
+											},
+											"render_priority": {
+												"type": 2,
+												"value": 0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											}
+										}
+									}
+								},
+								"radialSegments": 64,
+								"rings": 4,
+								"topRadius": 0.5,
+								"uv2Padding": 2.0
+							},
+							"type": "sunaba.spatial.mesh.CylinderMesh"
+						},
+						{
+							"data": {
+								"angularDamp": 0.0,
+								"angularDampMode": 0,
+								"angularVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"axisLockAngularX": false,
+								"axisLockAngularY": false,
+								"axisLockAngularZ": false,
+								"axisLockLinearX": false,
+								"axisLockLinearY": false,
+								"axisLockLinearZ": false,
+								"canSleep": true,
+								"centerOfMass": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"centerOfMassMode": 0,
+								"collisionLayer": 1,
+								"collisionMask": 1,
+								"collisionPriority": 1.0,
+								"constantForce": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"constantTorque": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"contactMonitor": false,
+								"continuousCd": false,
+								"customIntegrator": false,
+								"disableMode": 0,
+								"freeze": false,
+								"freezeMode": 0,
+								"gravityScale": 1.0,
+								"inertia": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"inputCaptureOnDrag": false,
+								"inputRayPickable": true,
+								"linearDamp": 0.0,
+								"linearDampMode": 0,
+								"linearVelocity": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"lockRotation": false,
+								"mass": 1.0,
+								"maxContactsReported": 0,
+								"physicsMaterialOverride": {
+									"type": 24,
+									"value": {
+										"class": "PhysicsMaterial",
+										"path": "?",
+										"properties": {
+											"absorbent": {
+												"type": 1,
+												"value": false
+											},
+											"bounce": {
+												"type": 3,
+												"value": 0.0
+											},
+											"friction": {
+												"type": 3,
+												"value": 1.0
+											},
+											"resource_local_to_scene": {
+												"type": 1,
+												"value": false
+											},
+											"resource_name": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_path": {
+												"type": 4,
+												"value": ""
+											},
+											"resource_scene_unique_id": {
+												"type": 4,
+												"value": ""
+											},
+											"rough": {
+												"type": 1,
+												"value": false
+											}
+										}
+									}
+								},
+								"sleeping": false
+							},
+							"type": "sunaba.spatial.physics.RigidBody"
+						},
+						{
+							"data": {
+								"customSolverBias": 0.0,
+								"height": 2.0,
+								"margin": 0.0399999991059303,
+								"radius": 0.5
+							},
+							"type": "sunaba.spatial.physics.CylinderShape"
+						}
+					],
+					"name": "Entity",
+					"path": ""
+				}
+			],
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				}
+			],
+			"name": "EntityGroup",
 			"path": ""
 		}
 	],
