@@ -27,9 +27,6 @@ import haxe.io.BytesInput;
 
 import lua.NativeStringTools.find;
 
-import lua.lib.luv.net.Dns;
-import lua.lib.luv.Os;
-
 import sunaba.core.native.NativeReference;
 import sunaba.core.ArrayList;
 import sunaba.core.native.ScriptType;
