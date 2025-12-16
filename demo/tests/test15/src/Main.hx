@@ -6,6 +6,13 @@ import sunaba.Node;
 import sunaba.Environment;
 import sunaba.ResourceLoaderService;
 import sunaba.core.native.NativeObject;
+import myComponents.FreeLook3D;
+import sunaba.spatial.Camera;
+import sunaba.spatial.mesh.BoxMesh;
+import sunaba.spatial.mesh.MeshDisplay;
+import sunaba.spatial.lighting.DirectionalLight;
+import sunaba.spatial.physics.StaticBody;
+import sunaba.spatial.physics.BoxShape;
 
 class Main extends App {
 	public static function main() {

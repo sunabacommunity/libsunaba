@@ -1,4 +1,5 @@
 import sunaba.studio.Plugin;
+import myComponents.FreeLook3D;
 
 class TestPlugin extends Plugin {
     public static function main() {
@@ -6,5 +7,6 @@ class TestPlugin extends Plugin {
     }
 
     public override function init() {
+        editor.pushBehaviorClass(FreeLook3D);
     }
 }
