@@ -34,6 +34,7 @@ import sunaba.core.Variant;
 import sunaba.core.VariantType;
 
 @:coreapi
+@:allow(sys.net.Socket)
 class Host {
 	public var host(default, null):String;
 
@@ -41,11 +42,13 @@ class Host {
 
 	var _ip:String;
 
+
 	private var hxNetHost: NativeReference;
 
 	public function new(name:String):Void {
 		hxNetHost = new NativeReference("res://Engine/HxNetHost.cs", new ArrayList(), ScriptType.csharp);
 		host = name;
+		hxNetHost.set("Host", host);
 		if (find(name, "(%d+)%.(%d+)%.(%d+)%.(%d+)").begin != null) {
 			_ip = name;
 		} else {
@@ -54,7 +57,7 @@ class Host {
 
 			if (res.getType() == VariantType.nil)
 				throw "Unrecognized node name";
-			var dnsAddrInfo: NativeReference = resVar;
+			var dnsAddrInfo: NativeReference = res;
 			_ip = dnsAddrInfo.get("Ip");
 			if (_ip == "::1")
 				_ip = "127.0.0.0";
