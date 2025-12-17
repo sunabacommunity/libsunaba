@@ -57,6 +57,10 @@ class Host {
 
 			if (res.getType() == VariantType.nil)
 				throw "Unrecognized node name";
+			else if (res.getType() == VariantType.int) {
+				var msg: String = hxNetHost.get("Msg");
+				throw msg;
+			}
 			var dnsAddrInfo: NativeReference = res;
 			_ip = dnsAddrInfo.get("Ip");
 			if (_ip == "::1")
