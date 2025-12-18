@@ -87,7 +87,15 @@ class ShellConsole extends Reference {
 	}
 
 	public function log(string: String) {
-		var code = "print('" + string + "')";
+		// Escape special characters for Lua string literal
+		var escaped = string
+			.split("\\").join("\\\\")   // Backslash must be first
+			.split("'").join("\\'")     // Single quote
+			.split("\n").join("\\n")    // Newline
+			.split("\r").join("\\r")    // Carriage return
+			.split("\t").join("\\t")    // Tab
+			.split("\x00").join("\\0"); // Null byte
+		var code = "print('" + escaped + "')";
 		eval(code);
 	}
 }
