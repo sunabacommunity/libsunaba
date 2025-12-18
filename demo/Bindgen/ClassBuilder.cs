@@ -702,7 +702,7 @@ public class ClassBuilder
     }
 
     string MapReturnType(string godotType){
-	    if (godotType.StartsWith(("Array{")))
+	    if (godotType.EndsWith("[]"))
 		    return "ArrayList";
 
         if (godotType == "Vector3" || godotType == "Vector2" || godotType == "Quaternion" || godotType == "Basis" ||
@@ -730,7 +730,7 @@ public class ClassBuilder
         if (ClassNames.Contains(godotType))
             return godotType;
 
-        if (godotType.StartsWith(("Array{")))
+        if (godotType.EndsWith("[]"))
 	        return "ArrayList";
 
         switch (godotType)
@@ -812,7 +812,7 @@ public class ClassBuilder
 
     bool isVariantType(string godotType)
     {
-	    if (godotType.StartsWith(("Array{")))
+	    if (godotType.EndsWith("[]"))
 		    return true;
 
         switch (godotType)
