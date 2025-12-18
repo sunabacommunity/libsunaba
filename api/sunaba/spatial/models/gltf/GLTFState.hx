@@ -40,6 +40,14 @@ class GLTFState extends Resource {
       native.set('base_path', value);
         return value;
     }
+    public var buffers(get, set): ArrayList;
+    function get_buffers(): ArrayList {
+        return native.get('buffers');
+    }
+    function set_buffers(value: ArrayList): ArrayList {
+      native.set('buffers', value);
+        return value;
+    }
     public var copyright(get, set): String;
     function get_copyright(): String {
         return native.get('copyright');
@@ -149,6 +157,10 @@ class GLTFState extends Resource {
       args.append(parentNodeIndex);
       return native.call('append_gltf_node', args);
   }
+  public function getAccessors(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_accessors', args);
+  }
   public function getAdditionalData(extensionName: String): Variant {
       var args = new ArrayList();
       args.append(extensionName);
@@ -159,14 +171,46 @@ class GLTFState extends Resource {
       args.append(idx);
       return native.call('get_animation_players_count', args);
   }
+  public function getAnimations(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_animations', args);
+  }
+  public function getBufferViews(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_buffer_views', args);
+  }
+  public function getCameras(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_cameras', args);
+  }
   public function getHandleBinaryImage(): Int {
       var args = new ArrayList();
       return native.call('get_handle_binary_image', args);
+  }
+  public function getImages(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_images', args);
+  }
+  public function getLights(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_lights', args);
+  }
+  public function getMaterials(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_materials', args);
+  }
+  public function getMeshes(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_meshes', args);
   }
   public function getNodeIndex(sceneNode: Node): Int {
       var args = new ArrayList();
       args.append(sceneNode.native);
       return native.call('get_node_index', args);
+  }
+  public function getNodes(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_nodes', args);
   }
   public function getSceneNode(idx: Int): Node {
       var args = new ArrayList();
@@ -174,7 +218,31 @@ class GLTFState extends Resource {
       var ref: NativeObject = native.call('get_scene_node', args);
       return new Node(ref);
   }
-  public function setAccessors(accessors: Variant): Void {
+  public function getSkeletons(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_skeletons', args);
+  }
+  public function getSkins(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_skins', args);
+  }
+  public function getTextureSamplers(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_texture_samplers', args);
+  }
+  public function getTextures(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_textures', args);
+  }
+  public function getUniqueAnimationNames(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_unique_animation_names', args);
+  }
+  public function getUniqueNames(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_unique_names', args);
+  }
+  public function setAccessors(accessors: ArrayList): Void {
       var args = new ArrayList();
       args.append(accessors);
       native.call('set_accessors', args);
@@ -185,17 +253,17 @@ class GLTFState extends Resource {
       args.append(additionalData);
       native.call('set_additional_data', args);
   }
-  public function setAnimations(animations: Variant): Void {
+  public function setAnimations(animations: ArrayList): Void {
       var args = new ArrayList();
       args.append(animations);
       native.call('set_animations', args);
   }
-  public function setBufferViews(bufferViews: Variant): Void {
+  public function setBufferViews(bufferViews: ArrayList): Void {
       var args = new ArrayList();
       args.append(bufferViews);
       native.call('set_buffer_views', args);
   }
-  public function setCameras(cameras: Variant): Void {
+  public function setCameras(cameras: ArrayList): Void {
       var args = new ArrayList();
       args.append(cameras);
       native.call('set_cameras', args);
@@ -205,57 +273,57 @@ class GLTFState extends Resource {
       args.append(method);
       native.call('set_handle_binary_image', args);
   }
-  public function setImages(images: Variant): Void {
+  public function setImages(images: ArrayList): Void {
       var args = new ArrayList();
       args.append(images);
       native.call('set_images', args);
   }
-  public function setLights(lights: Variant): Void {
+  public function setLights(lights: ArrayList): Void {
       var args = new ArrayList();
       args.append(lights);
       native.call('set_lights', args);
   }
-  public function setMaterials(materials: Variant): Void {
+  public function setMaterials(materials: ArrayList): Void {
       var args = new ArrayList();
       args.append(materials);
       native.call('set_materials', args);
   }
-  public function setMeshes(meshes: Variant): Void {
+  public function setMeshes(meshes: ArrayList): Void {
       var args = new ArrayList();
       args.append(meshes);
       native.call('set_meshes', args);
   }
-  public function setNodes(nodes: Variant): Void {
+  public function setNodes(nodes: ArrayList): Void {
       var args = new ArrayList();
       args.append(nodes);
       native.call('set_nodes', args);
   }
-  public function setSkeletons(skeletons: Variant): Void {
+  public function setSkeletons(skeletons: ArrayList): Void {
       var args = new ArrayList();
       args.append(skeletons);
       native.call('set_skeletons', args);
   }
-  public function setSkins(skins: Variant): Void {
+  public function setSkins(skins: ArrayList): Void {
       var args = new ArrayList();
       args.append(skins);
       native.call('set_skins', args);
   }
-  public function setTextureSamplers(textureSamplers: Variant): Void {
+  public function setTextureSamplers(textureSamplers: ArrayList): Void {
       var args = new ArrayList();
       args.append(textureSamplers);
       native.call('set_texture_samplers', args);
   }
-  public function setTextures(textures: Variant): Void {
+  public function setTextures(textures: ArrayList): Void {
       var args = new ArrayList();
       args.append(textures);
       native.call('set_textures', args);
   }
-  public function setUniqueAnimationNames(uniqueAnimationNames: Variant): Void {
+  public function setUniqueAnimationNames(uniqueAnimationNames: ArrayList): Void {
       var args = new ArrayList();
       args.append(uniqueAnimationNames);
       native.call('set_unique_animation_names', args);
   }
-  public function setUniqueNames(uniqueNames: Variant): Void {
+  public function setUniqueNames(uniqueNames: ArrayList): Void {
       var args = new ArrayList();
       args.append(uniqueNames);
       native.call('set_unique_names', args);
