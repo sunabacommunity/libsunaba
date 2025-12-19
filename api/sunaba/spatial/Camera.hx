@@ -9,8 +9,22 @@ import sunaba.core.Dictionary;
 class Camera extends Behavior {
 	private var _node: Node;
 
-	public var node(get, default): Node;
+	public var node(get, set): Node;
 	function get_node():Node {
+		return _node;
+	}
+	function set_node(value:Node): Node {
+		if (value.native.isClass("Camera3D")) {
+			if (_node != null && !_node.isNull()) {
+				_node.queueFree();
+			}
+			_node = value;
+			_node.name = "Camera";
+			var trasnform: SpatialTransform = getComponent(SpatialTransform);
+			if (trasnform != null) {
+				trasnform.node.addChild(node);
+			}
+		}
 		return _node;
 	}
 
