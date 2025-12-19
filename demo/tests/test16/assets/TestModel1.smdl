@@ -1,0 +1,109 @@
+{
+	"children": [
+		{
+			"children": [],
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								-1.0,
+								-1.0,
+								1.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				}
+			],
+			"name": "Node1",
+			"path": ""
+		},
+		{
+			"children": [],
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								-1.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				}
+			],
+			"name": "Node2",
+			"path": ""
+		}
+	],
+	"components": [
+		{
+			"data": {
+				"position": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"rotation": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"scale": {
+					"type": 9,
+					"value": [
+						1.0,
+						1.0,
+						1.0
+					]
+				}
+			},
+			"type": "sunaba.spatial.SpatialTransform"
+		}
+	],
+	"name": "Node3D",
+	"path": "app://TestModel1.smdl"
+}
