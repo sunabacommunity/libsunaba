@@ -71,7 +71,7 @@ class MeshLoader extends Behavior {
 	public override function getData():Dictionary {
 		var data = super.getData();
 
-		data.set("_meshData", DataUtils.varToDict(_meshData.getData()));
+		data.set("_meshData", _meshData.getData());
 
 		return data;
 	}
