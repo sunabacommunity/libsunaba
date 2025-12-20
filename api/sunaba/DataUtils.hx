@@ -1,4 +1,5 @@
 package sunaba;
+import sunaba.core.StringArray;
 import sunaba.core.Dictionary;
 import sunaba.core.Variant;
 import sunaba.io.IoInterface;
@@ -459,7 +460,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.int32Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Int> = untyped __lua__("_G.i32Array()");
+			var newArray: TypedArray<Int> = new VariantNative().asIntArray();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(0));
 			}
@@ -467,7 +468,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.int64Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Int> = untyped __lua__("_G.i32Array()");
+			var newArray: TypedArray<Int> = new VariantNative().asIntArray64();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(0));
 			}
@@ -475,7 +476,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.float32Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Float> = untyped __lua__("_G.f32Array()");
+			var newArray: TypedArray<Float> = new VariantNative().asFloatArray();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(0));
 			}
@@ -483,7 +484,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.float64Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Float> = untyped __lua__("_G.f64Array()");
+			var newArray: TypedArray<Float> = new VariantNative().asFloatArray64();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(0));
 			}
@@ -491,7 +492,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.stringVector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<String> = untyped __lua__("_G.strArray()");
+			var newArray: TypedArray<String> = StringArray.create();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(0));
 			}
@@ -499,7 +500,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.vector2Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Vector2> = untyped __lua__("_G.v2Array()");
+			var newArray: TypedArray<Vector2> = new VariantNative().asVector2Array();
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(0)));
 			}
@@ -507,7 +508,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.vector3Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Vector3> = untyped __lua__("_G.v3Array()");
+			var newArray: TypedArray<Vector3> = new VariantNative().asVector3Array();
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(0)));
 			}
@@ -515,7 +516,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.vector4Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Vector4> = untyped __lua__("_G.v4Array()");
+			var newArray: TypedArray<Vector4> = new VariantNative().asVector4Array();
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(0)));
 			}
@@ -523,7 +524,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.colorVector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Color> = untyped __lua__("_G.clrArray()");
+			var newArray: TypedArray<Color> = new VariantNative().asColorArray();
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(0)));
 			}
