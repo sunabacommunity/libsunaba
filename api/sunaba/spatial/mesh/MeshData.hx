@@ -20,6 +20,8 @@ class MeshData extends ScriptableObject {
 			var surfaceName = importerMesh.getSurfaceName(i);
 			meshData.surfaceNames.push(surfaceName);
 		}
+
+		return meshData;
 	}
 
 	public override function getData():Dictionary {
