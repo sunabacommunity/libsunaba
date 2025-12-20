@@ -16,7 +16,7 @@ void Runtime::luaopen_Variant_fromMethods() {
         return Variant(data.toPackedByteArray());
     };
 
-    variant_type["fromIntArray"] = [](const std::vector<int>& data) {
+    variant_type["fromIntArray"] = [](const std::vector<int64_t>& data) {
         PackedInt32Array packed_data;
         for (const auto& item : data) {
             packed_data.append(item);
