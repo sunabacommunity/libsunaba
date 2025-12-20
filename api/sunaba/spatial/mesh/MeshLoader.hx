@@ -6,7 +6,7 @@ import sunaba.core.native.NativeReference;
 import sunaba.Material;
 
 class MeshLoader extends Behavior {
-	private var _meshData: MeshData;
+	private var _meshData: MeshData = null;
 
 	public var meshData(get, set): MeshData;
 	function get_meshData(): MeshData {
@@ -23,6 +23,9 @@ class MeshLoader extends Behavior {
 
 	private inline function setMeshData(data: MeshData) {
 		_meshData = data;
+
+		if (_meshData == null)
+			return;
 
 		var arrayMesh = new NativeReference("ArrayMesh");
 
