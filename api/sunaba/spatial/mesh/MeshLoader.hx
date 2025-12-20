@@ -1,5 +1,6 @@
 package sunaba.spatial.mesh;
 
+import sunaba.core.Dictionary;
 import sunaba.core.Variant;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
@@ -65,6 +66,22 @@ class MeshLoader extends Behavior {
 		if (meshDisplay != null) {
 			meshDisplay.setMesh(new Resource(arrayMesh));
 		}
+	}
+
+	public override function getData():Dictionary {
+		var data = super.getData();
+
+		data.set("_meshData", DataUtils.varToDict(_meshData.getData()));
+
+		return data;
+	}
+
+	public override function setData(data:Dictionary) {
+		super.setData(data);
+
+		var newMeshData = new MeshData();
+		newMeshData.setData(data.get("_meshData"));
+		setMeshData(newMeshData);
 	}
 
 	public override function onStart() {
