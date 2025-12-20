@@ -8,6 +8,7 @@ import sunaba.core.Object;
 import sunaba.core.ArrayList;
 import sunaba.Resource;
 import sunaba.core.TypedArray;
+import sunaba.spatial.mesh.ImporterMesh;
 import sunaba.core.Signal;
 
 class GLTFMesh extends Resource {
@@ -27,6 +28,23 @@ class GLTFMesh extends Resource {
     }
     function set_blendWeights(value: TypedArray<Float>): TypedArray<Float> {
       native.set('blend_weights', value);
+        return value;
+    }
+    public var instanceMaterials(get, set): ArrayList;
+    function get_instanceMaterials(): ArrayList {
+        return native.get('instance_materials');
+    }
+    function set_instanceMaterials(value: ArrayList): ArrayList {
+      native.set('instance_materials', value);
+        return value;
+    }
+    public var mesh(get, set): ImporterMesh;
+    function get_mesh(): ImporterMesh {
+        var ref: NativeReference = native.get('mesh');
+        return new ImporterMesh(ref);
+    }
+    function set_mesh(value: ImporterMesh): ImporterMesh {
+      native.set('mesh', value.native);
         return value;
     }
     public var originalName(get, set): String;

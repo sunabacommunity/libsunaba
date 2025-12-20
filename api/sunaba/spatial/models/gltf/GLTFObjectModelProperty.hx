@@ -16,6 +16,22 @@ class GLTFObjectModelProperty extends Reference {
         this.native = _native;
     }
 
+    public var jsonPointers(get, set): ArrayList;
+    function get_jsonPointers(): ArrayList {
+        return native.get('json_pointers');
+    }
+    function set_jsonPointers(value: ArrayList): ArrayList {
+      native.set('json_pointers', value);
+        return value;
+    }
+    public var nodePaths(get, set): ArrayList;
+    function get_nodePaths(): ArrayList {
+        return native.get('node_paths');
+    }
+    function set_nodePaths(value: ArrayList): ArrayList {
+      native.set('node_paths', value);
+        return value;
+    }
     public var objectModelType(get, set): Int;
     function get_objectModelType(): Int {
         return native.get('object_model_type');

@@ -7,6 +7,7 @@ import sunaba.core.Reference;
 import sunaba.core.Object;
 import sunaba.core.ArrayList;
 import sunaba.Resource;
+import sunaba.spatial.mesh.ImporterMesh;
 import sunaba.core.Vector3;
 import sunaba.core.Signal;
 import sunaba.core.Dictionary;
@@ -28,6 +29,15 @@ class GLTFPhysicsShape extends Resource {
     }
     function set_height(value: Float): Float {
       native.set('height', value);
+        return value;
+    }
+    public var importerMesh(get, set): ImporterMesh;
+    function get_importerMesh(): ImporterMesh {
+        var ref: NativeReference = native.get('importer_mesh');
+        return new ImporterMesh(ref);
+    }
+    function set_importerMesh(value: ImporterMesh): ImporterMesh {
+      native.set('importer_mesh', value.native);
         return value;
     }
     public var isTrigger(get, set): Bool;

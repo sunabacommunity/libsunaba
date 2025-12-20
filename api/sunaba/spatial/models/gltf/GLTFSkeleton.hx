@@ -48,12 +48,16 @@ class GLTFSkeleton extends Resource {
       var args = new ArrayList();
       return native.call('get_godot_bone_node', args);
   }
+  public function getUniqueNames(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_unique_names', args);
+  }
   public function setGodotBoneNode(godotBoneNode: Dictionary): Void {
       var args = new ArrayList();
       args.append(godotBoneNode);
       native.call('set_godot_bone_node', args);
   }
-  public function setUniqueNames(uniqueNames: Variant): Void {
+  public function setUniqueNames(uniqueNames: ArrayList): Void {
       var args = new ArrayList();
       args.append(uniqueNames);
       native.call('set_unique_names', args);

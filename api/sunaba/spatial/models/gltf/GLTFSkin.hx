@@ -82,6 +82,10 @@ class GLTFSkin extends Resource {
     }
 
 
+  public function getInverseBinds(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_inverse_binds', args);
+  }
   public function getJointIToBoneI(): Dictionary {
       var args = new ArrayList();
       return native.call('get_joint_i_to_bone_i', args);
@@ -90,7 +94,7 @@ class GLTFSkin extends Resource {
       var args = new ArrayList();
       return native.call('get_joint_i_to_name', args);
   }
-  public function setInverseBinds(inverseBinds: Variant): Void {
+  public function setInverseBinds(inverseBinds: ArrayList): Void {
       var args = new ArrayList();
       args.append(inverseBinds);
       native.call('set_inverse_binds', args);
