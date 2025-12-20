@@ -35,7 +35,7 @@ class MeshData extends ScriptableObject {
 	public override function setData(data:Dictionary) {
 		super.setData(data);
 
-		surfaceNames = DataUtils.dictToVar(data.get("surfaceNames")).toStringArray().toArray();
+		surfaceNames = DataUtils.dictToVar(data.get("surfaceNames")).toStringArray();
 		surfaces = DataUtils.dictToVar(data.get("surfaces"));
 		surfaceMaterials = DataUtils.dictToVar(data.get("surfaceMaterials"));
 	}
