@@ -194,23 +194,21 @@ class DataUtils {
 			dict.set("value", MarshallsService.rawToBase64(byteArray));
 		}
 		else if (type == VariantType.int32Vector) {
-			var vNative: VariantNative = variant;
-			var int32Arr: TypedArray<Int> = vNative.asIntArray();
+			var int32Arr: ArrayList = variant;
 			var arr = new ArrayList();
 			for(i in 0...int32Arr.size()) {
+				trace(int32Arr.get(i).toInt());
 				arr.append(int32Arr.get(i));
 			}
 			dict.set("value", arr);
 		}
 		else if (type == VariantType.int64Vector) {
-			var vNative: VariantNative = variant;
-			var int64Arr: TypedArray<Int> = vNative.asIntArray64();
+			var int64Arr: ArrayList = variant;
 			var arr = new ArrayList();
 			for(i in 0...int64Arr.size()) {
 				arr.append(int64Arr.get(i));
 			}
 			dict.set("value", arr);
-
 		}
 		else if (type == VariantType.float32Vector) {
 			var vNative: VariantNative = variant;
@@ -239,18 +237,22 @@ class DataUtils {
 			dict.set("value", arr);
 		}
 		else if (type == VariantType.vector2Vector) {
-			var vector2Arr: TypedArray<Vector2> = variant;
+			var vector2Arr: ArrayList = variant;
 			var arr = new ArrayList();
 			for (i in 0...vector2Arr.size()) {
-				arr.append(vector2Arr.get(i));
+				var vector2 : Vector2 = vector2Arr.get(i);
+				var vector2Dict = varToDict(vector2);
+				arr.append(vector2Dict);
 			}
 			dict.set("value", arr);
 		}
 		else if (type == VariantType.vector3Vector) {
-			var vector3Arr: TypedArray<Vector3> = variant;
+			var vector3Arr: ArrayList = variant;
 			var arr = new ArrayList();
 			for (i in 0...vector3Arr.size()) {
-				arr.append(vector3Arr.get(i));
+				var vector3 : Vector3 = vector3Arr.get(i);
+				var vector3Dict = varToDict(vector3);
+				arr.append(vector3Dict);
 			}
 			dict.set("value", arr);
 		}
@@ -258,7 +260,9 @@ class DataUtils {
 			var vector4Arr: TypedArray<Vector4> = variant;
 			var arr = new ArrayList();
 			for (i in 0...vector4Arr.size()) {
-				arr.append(vector4Arr.get(i));
+				var vector4 : Vector4 = vector4Arr.get(i);
+				var vector4Dict = varToDict(vector4);
+				arr.append(vector4Dict);
 			}
 			dict.set("value", arr);
 		}
