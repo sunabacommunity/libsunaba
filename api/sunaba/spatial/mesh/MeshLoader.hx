@@ -80,7 +80,7 @@ class MeshLoader extends Behavior {
 		super.setData(data);
 
 		var newMeshData = new MeshData();
-		newMeshData.setData(data.get("_meshData"));
+		newMeshData.setData(data.get("_meshData").toDictionary());
 		setMeshData(newMeshData);
 	}
 

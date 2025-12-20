@@ -198,7 +198,6 @@ class DataUtils {
 			var int32Arr: ArrayList = variant;
 			var arr = new ArrayList();
 			for(i in 0...int32Arr.size()) {
-				trace(int32Arr.get(i).toInt());
 				arr.append(int32Arr.get(i));
 			}
 			dict.set("value", arr);
@@ -450,7 +449,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray = new ArrayList();
 			for (i in 0...oldArray.size()) {
-				newArray.append(dictToVar(oldArray.get(1)));
+				newArray.append(dictToVar(oldArray.get(i), ioInterface));
 			}
 			variant = newArray;
 		}
@@ -460,17 +459,17 @@ class DataUtils {
 		}
 		else if (type == VariantType.int32Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Int> = new VariantNative().asIntArray();
+			var newArray: TypedArray<Int> = new VariantNative().asIntArray64();
 			for (i in 0...oldArray.size()) {
-				newArray.add(oldArray.get(0));
+				newArray.add(oldArray.get(i));
 			}
-			variant = newArray;
+			variant = VariantNative.fromIntArray(newArray);
 		}
 		else if (type == VariantType.int64Vector) {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Int> = new VariantNative().asIntArray64();
 			for (i in 0...oldArray.size()) {
-				newArray.add(oldArray.get(0));
+				newArray.add(oldArray.get(i));
 			}
 			variant = newArray;
 		}
@@ -478,7 +477,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Float> = new VariantNative().asFloatArray();
 			for (i in 0...oldArray.size()) {
-				newArray.add(oldArray.get(0));
+				newArray.add(oldArray.get(i));
 			}
 			variant = newArray;
 		}
@@ -486,7 +485,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Float> = new VariantNative().asFloatArray64();
 			for (i in 0...oldArray.size()) {
-				newArray.add(oldArray.get(0));
+				newArray.add(oldArray.get(i));
 			}
 			variant = newArray;
 		}
@@ -494,7 +493,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<String> = StringArray.create();
 			for (i in 0...oldArray.size()) {
-				newArray.add(oldArray.get(0));
+				newArray.add(oldArray.get(i));
 			}
 			variant = newArray;
 		}
@@ -502,7 +501,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Vector2> = new VariantNative().asVector2Array();
 			for (i in 0...oldArray.size()) {
-				newArray.add(dictToVar(oldArray.get(0)));
+				newArray.add(dictToVar(oldArray.get(i)));
 			}
 			variant = newArray;
 		}
@@ -510,7 +509,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Vector3> = new VariantNative().asVector3Array();
 			for (i in 0...oldArray.size()) {
-				newArray.add(dictToVar(oldArray.get(0)));
+				newArray.add(dictToVar(oldArray.get(i)));
 			}
 			variant = newArray;
 		}
@@ -518,7 +517,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Vector4> = new VariantNative().asVector4Array();
 			for (i in 0...oldArray.size()) {
-				newArray.add(dictToVar(oldArray.get(0)));
+				newArray.add(dictToVar(oldArray.get(i)));
 			}
 			variant = newArray;
 		}
@@ -526,7 +525,7 @@ class DataUtils {
 			var oldArray: ArrayList = value;
 			var newArray: TypedArray<Color> = new VariantNative().asColorArray();
 			for (i in 0...oldArray.size()) {
-				newArray.add(dictToVar(oldArray.get(0)));
+				newArray.add(dictToVar(oldArray.get(i)));
 			}
 			variant = newArray;
 		}
