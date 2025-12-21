@@ -324,7 +324,6 @@ class SpatialTransform extends Behavior {
 	}
 
 	public override function setData(data: Dictionary) {
-		Sys.println(JSON.stringify(data, "  "));
 		position = DataUtils.dictToVar(data.get("position"));
 		rotation = DataUtils.dictToVar(data.get("rotation"));
 		scale = DataUtils.dictToVar(data.get("scale"));
