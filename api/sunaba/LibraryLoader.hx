@@ -41,9 +41,8 @@ class LibraryLoader extends BaseClass {
 	public function loadLibrary(path: String): Void {
     	var env = this._env;
     	var code = io.loadText(path);
-    	var libName = this.libraryName;
 
-    	untyped __lua__("local chunk = load(code, libname, 't', env)");
+    	untyped __lua__("local chunk = load(code, nil, 't', env)");
 
 		this.chunk = untyped __lua__("chunk");
 	}
@@ -52,9 +51,7 @@ class LibraryLoader extends BaseClass {
 		var env = this._env;
 		var code: String = File.getContent(path);
 
-		var libName = this.libraryName;
-
-    	untyped __lua__("local chunk = load(code, libname, 't', env)");
+    	untyped __lua__("local chunk = load(code, nil, 't', env)");
 
 		this.chunk = untyped __lua__("chunk");
 	}
