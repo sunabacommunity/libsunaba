@@ -648,6 +648,15 @@
 							""
 						]
 					},
+					"surfacePrimitiveTypes": {
+						"type": 28,
+						"value": [
+							{
+								"type": 2,
+								"value": 3
+							}
+						]
+					},
 					"surfaces": {
 						"type": 28,
 						"value": [
