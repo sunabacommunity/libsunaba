@@ -143,7 +143,8 @@ class IoInterface extends Reference {
 			var script = new NativeReference("res://Engine/MessagePack.gd", new ArrayList(), ScriptType.gdscript);
 			var args = new ArrayList();
 			args.append(data);
-			var bytes: ByteArray = script.call("encode", args);
+			var res: Dictionary = script.call("encode", args);
+            var bytes : ByteArray = res.get("value"); 
 
 			saveBytes(msgpackPath, bytes);
 		}
