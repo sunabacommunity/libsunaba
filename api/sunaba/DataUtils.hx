@@ -212,7 +212,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.float32Vector) {
 			var vNative: VariantNative = variant;
-			var float32Arr: TypedArray<Float> = vNative.asFloatArray64();
+			var float32Arr: TypedArray<Float> = vNative.asFloatArray();
 			var arr = new ArrayList();
 			for (i in 0...float32Arr.size()) {
 				arr.append(float32Arr.get(i));
@@ -475,7 +475,7 @@ class DataUtils {
 		}
 		else if (type == VariantType.float32Vector) {
 			var oldArray: ArrayList = value;
-			var newArray: TypedArray<Float> = new VariantNative().asFloatArray64();
+			var newArray: TypedArray<Float> = new VariantNative().asFloatArray();
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(i));
 			}
@@ -487,7 +487,7 @@ class DataUtils {
 			for (i in 0...oldArray.size()) {
 				newArray.add(oldArray.get(i));
 			}
-			variant = newArray;
+			variant = VariantNative.fromFloatArray64(newArray);
 		}
 		else if (type == VariantType.stringVector) {
 			var oldArray: ArrayList = value;
