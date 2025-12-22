@@ -1,7 +1,9 @@
 package sunaba.spatial.mesh;
 
+import sunaba.core.VariantNative;
 import sunaba.core.Dictionary;
 import sunaba.core.Variant;
+import sunaba.core.VariantType;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
 import sunaba.Material;
@@ -39,7 +41,7 @@ class MeshLoader extends Behavior {
 			}
 
 			var addSurfaceFromArraysArgs = new ArrayList();
-			addSurfaceFromArraysArgs.append(Variant.fromInt(PrimitiveType.triangles));
+			addSurfaceFromArraysArgs.append(meshData.surfacePrimitiveTypes.get(i));
 			addSurfaceFromArraysArgs.append(surface);
 			arrayMesh.call("add_surface_from_arrays", addSurfaceFromArraysArgs);
 		}
