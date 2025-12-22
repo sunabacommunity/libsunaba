@@ -99,4 +99,9 @@ class GLTFLight extends Resource {
       var args = new ArrayList();
       return native.call('to_dictionary', args);
   }
+
+  public function toNode(): Node {
+	  var args = new ArrayList();
+	  return new Node(native.call('to_node', args));
+  }
 }
