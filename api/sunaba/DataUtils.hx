@@ -267,7 +267,7 @@ class DataUtils {
 			dict.set("value", arr);
 		}
 		else if (type == VariantType.colorVector) {
-			var colorArr: TypedArray<Color> = variant;
+			var colorArr: ArrayList = variant;
 			var arr = new ArrayList();
 			for (i in 0...colorArr.size()) {
 				arr.append(varToDict(colorArr.get(i)));
