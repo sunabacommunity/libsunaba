@@ -33,6 +33,13 @@ class MeshData extends ScriptableObject {
 
 		data.set("surfaceNames", DataUtils.varToDict(StringArray.fromArray(surfaceNames)));
 		data.set("surfaces", DataUtils.varToDict(surfaces));
+		/*var backData = DataUtils.dictToVar(data.get("surfaces"));
+		Sys.println(JSON.stringify(surfaces));
+		Sys.println(JSON.stringify(backData));
+		trace(JSON.stringify(surfaces) != JSON.stringify(backData));
+		if (JSON.stringify(surfaces) != JSON.stringify(backData)) {
+			throw "Fuck";
+		}*/
 		data.set("surfacePrimitiveTypes", DataUtils.varToDict(surfacePrimitiveTypes));
 		data.set("surfaceMaterials", DataUtils.varToDict(surfaceMaterials));
 
