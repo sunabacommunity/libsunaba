@@ -1,5 +1,6 @@
 package sunaba.animation;
 
+import sunaba.core.Dictionary;
 import sunaba.core.TypedArray;
 import sunaba.core.ArrayList;
 
@@ -37,6 +38,15 @@ class AnimationPlayer extends AnimationMixer {
 	}
 	function set_currentAnimationLength(value:Float):Float {
 		node.native.set("current_animation_length", value);
+		return value;
+	}
+
+    public var currentAnimationPosition(get, set): Float;
+	function get_currentAnimationPosition():Float {
+		return node.native.get("current_animation_position");
+	}
+	function set_currentAnimationPosition(value:Float):Float {
+		node.native.set("current_animation_position", value);
 		return value;
 	}
 
@@ -377,5 +387,41 @@ class AnimationPlayer extends AnimationMixer {
        var args = new ArrayList();
        args.append(keepState);
        node.native.call("stop", args); 
+    }
+
+    public override function getData():Dictionary {
+        var data = super.getData();
+
+        data.set("assignedAnimation", assignedAnimation);
+        data.set("autoplay", autoplay);
+        data.set("currentAnimation", currentAnimation);
+        data.set("currentAnimationLength", currentAnimationLength);
+        data.set("currentAnimationPosition", currentAnimationPosition);
+        data.set("movieQuitOnFinish", movieQuitOnFinish);
+        data.set("playbackAutoCapture", playbackAutoCapture);
+        data.set("playbackAutoCaptureDuration", playbackAutoCaptureDuration);
+        data.set("playbackAutoCaptureEaseType", playbackAutoCaptureEaseType);
+        data.set("playbackAutoCaptureTransitionType", playbackAutoCaptureTransitionType);
+        data.set("playbackDefaultBlendTime", playbackDefaultBlendTime);
+        data.set("speedScale", speedScale);
+
+        return data;
+    }
+
+    public override function setData(data:Dictionary) {
+        super.setData(data);
+
+        assignedAnimation = data.get("assignedAnimation");
+        autoplay = data.get("autoplay");
+        currentAnimation = data.get("currentAnimation");
+        currentAnimationLength = data.get("currentAnimationLength");
+        currentAnimationPosition = data.get("currentAnimationPosition");
+        movieQuitOnFinish = data.get("movieQuitOnFinish");
+        playbackAutoCapture = data.get("playbackAutoCapture");
+        playbackAutoCaptureDuration = data.get("playbackAutoCaptureDuration");
+        playbackAutoCaptureEaseType = data.get("playbackAutoCaptureEaseType");
+        playbackAutoCaptureTransitionType = data.get("playbackAutoCaptureTransitionType");
+        playbackDefaultBlendTime = data.get("playbackDefaultBlendTime");
+        speedScale = data.get("speedScale");
     }
 }
