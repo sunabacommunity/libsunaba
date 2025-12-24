@@ -1,5 +1,7 @@
 package sunaba.animation;
 
+import sunaba.spatial.models.gltf.GLTFAnimation;
+import sunaba.core.Dictionary;
 import sunaba.core.Quaternion;
 import sunaba.core.Vector3;
 import sunaba.core.TypedArray;
@@ -141,7 +143,7 @@ class AnimationMixer extends Behavior {
 	public function getAnimationLibrary(name: String) {
 		var args = new ArrayList();
         args.append(name);
-        return new Animation(node.native.call("get_animation_library", args));
+        return new AnimationLibrary(node.native.call("get_animation_library", args));
 	}
 
 	public function getAnimationLibraryList(): ArrayList {
@@ -199,5 +201,48 @@ class AnimationMixer extends Behavior {
 		args.append(name);
 		args.append(newname);
 		node.native.call("remove_animation_library", args);
+	}
+
+	public override function getData():Dictionary {
+		var data = super.getData();
+
+		data.set("active", active);
+		data.set("audioMaxPolyphony", audioMaxPolyphony);
+		data.set("callbackModeDiscrete", callbackModeDiscrete);
+		data.set("callbackModeMethod", callbackModeMethod);
+		data.set("callbackModeProcess", callbackModeProcess);
+		data.set("deterministic", deterministic);
+		data.set("resetOnSave", resetOnSave);
+		data.set("rootMotionLocal", rootMotionLocal);
+		data.set("rootMotionTrack", rootMotionTrack);
+		
+		var animationLibraryList = getAnimationLibraryList();
+		var animationLibraryListSerialized = new Dictionary();
+		var animationsPartOfALibrary = [];
+		for (i in 0...animationLibraryList.size()) {
+			var animLibName : String = animationLibraryList.get(i);
+			var animLib = getAnimationLibrary(animLibName);
+			var animList = animLib.getAnimationList();
+			for (si in 0...animList.size()) {
+				var animName: String = animList.get(si);
+				animationsPartOfALibrary.push(animName);
+			}
+			animationLibraryListSerialized.set(animLibName, DataUtils.varToDict(animLib.native));
+		}
+		data.set("animationLibraries", animationLibraryListSerialized);
+
+		var animationList = getAnimationList();
+		var animationListSerialized = new Dictionary();
+		for (i in 0...animationList.size()) {
+			var animName = animationList.get(i);
+			if (animationsPartOfALibrary.contains(animName))
+				continue;
+			var animation = getAnimation(animName);
+			animationListSerialized.set(animName, DataUtils.varToDict(animation.native));
+		}
+		data.set("animations", animationListSerialized);
+
+
+		return data;
 	}
 }
