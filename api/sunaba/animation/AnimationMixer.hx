@@ -1,5 +1,8 @@
 package sunaba.animation;
 
+import sunaba.core.Quaternion;
+import sunaba.core.Vector3;
+import sunaba.core.TypedArray;
 import sunaba.core.ArrayList;
 
 class AnimationMixer extends Behavior {
@@ -134,4 +137,67 @@ class AnimationMixer extends Behavior {
         args.append(name);
         return new Animation(node.native.call("get_animation", args));
     }
+
+	public function getAnimationLibrary(name: String) {
+		var args = new ArrayList();
+        args.append(name);
+        return new Animation(node.native.call("get_animation_library", args));
+	}
+
+	public function getAnimationLibraryList(): ArrayList {
+		return node.native.call("get_animation_library_list", new ArrayList());
+	}
+
+	public function getAnimationList(): TypedArray<String> {
+		return node.native.call("get_animation_list", new ArrayList());
+	}
+
+	public function getRootMotionPosition(): Vector3 {
+		return node.native.call("get_root_motion_position", new ArrayList());
+	}
+
+	public function getRootMotionPositionAccumulator(): Vector3 {
+		return node.native.call("get_root_motion_position_accumulator", new ArrayList());
+	}
+
+	public function getRootMotionRotation(): Quaternion {
+		return node.native.call("get_root_motion_rotation", new ArrayList());
+	}
+
+	public function getRootMotionRotationAccumulator(): Quaternion {
+		return node.native.call("get_root_motion_rotation_accumulator", new ArrayList());
+	}
+
+	public function getRootMotionScale(): Vector3 {
+		return node.native.call("get_root_motion_scale", new ArrayList());
+	}
+
+	public function getRootMotionScaleAccumulator(): Vector3 {
+		return node.native.call("get_root_motion_scale_accumulator", new ArrayList());
+	}
+
+	public function hasAnimation(name: String): Bool {
+		var args = new ArrayList();
+		args.append(name);
+		return node.native.call("has_animation", args);
+	}
+
+	public function hasAnimationLibrary(name: String): Bool {
+		var args = new ArrayList();
+		args.append(name);
+		return node.native.call("has_animation_library", args);
+	}
+
+	public function removeAnimationLibrary(name: String): Void {
+		var args = new ArrayList();
+		args.append(name);
+		node.native.call("remove_animation_library", args);
+	}
+
+	public function renameAnimationLibrary(name: String, newname: String): Void {
+		var args = new ArrayList();
+		args.append(name);
+		args.append(newname);
+		node.native.call("remove_animation_library", args);
+	}
 }
