@@ -3,10 +3,8 @@ package sunaba.animation;
 import sunaba.core.TypedArray;
 import sunaba.core.ArrayList;
 
-class AnimationPlayer extends Behavior {
-   public var node: Node;
-
-	public var assignedAnimation(get, set): String;
+class AnimationPlayer extends AnimationMixer {
+    public var assignedAnimation(get, set): String;
 	function get_assignedAnimation():String {
 		return node.native.get("assigned_animation");
 	}
