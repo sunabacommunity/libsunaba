@@ -231,7 +231,7 @@ class AnimationMixer extends Behavior {
 		}
 		data.set("animationLibraries", animationLibraryListSerialized);
 
-		var animationList = getAnimationList();
+		/*var animationList = getAnimationList();
 		var animationListSerialized = new Dictionary();
 		for (i in 0...animationList.size()) {
 			var animName = animationList.get(i);
@@ -240,9 +240,40 @@ class AnimationMixer extends Behavior {
 			var animation = getAnimation(animName);
 			animationListSerialized.set(animName, DataUtils.varToDict(animation.native));
 		}
-		data.set("animations", animationListSerialized);
+		data.set("animations", animationListSerialized);*/
 
 
 		return data;
+	}
+
+	public override function setData(data:Dictionary) {
+		super.setData(data);
+
+		active = data.get("active");
+		audioMaxPolyphony = data.get("audioMaxPolyphony");
+		callbackModeDiscrete = data.get("callbackModeDiscrete");
+		callbackModeMethod = data.get("callbackModeMethod");
+		callbackModeProcess = data.get("callbackModeProcess");
+		deterministic = data.get("deterministic");
+		resetOnSave = data.get("resetOnSave");
+		rootMotionLocal = data.get("rootMotionLocal");
+		rootMotionTrack = data.get("rootMotionTrack");
+
+		var animationLibraryList: Dictionary = data.get("animationLibraries");
+		var animationLibraryNames = animationLibraryList.keys();
+		for (i in 0...animationLibraryNames.size()) {
+			var animationLibraryName: String = animationLibraryNames.get(i);
+			var animationLibraryData: Dictionary = animationLibraryList.get(animationLibraryName);
+			var animationLibrary = new AnimationLibrary(DataUtils.dictToVar(animationLibraryData));
+			addAnimationLibrary(animationLibraryName, animationLibrary);
+		}
+
+		/*var animationList: Dictionary = data.get("animations");
+		var animationNames = animationList.keys();
+		for (i in 0...animationNames.size()) {
+			var animationName: String = animationNames.get(i);
+			var animationData: Dictionary = animationList.get(animationName);
+			var animation = new Animation(DataUtils.dictToVar(animationData));
+		}*/
 	}
 }
