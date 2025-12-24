@@ -218,15 +218,9 @@ class AnimationMixer extends Behavior {
 		
 		var animationLibraryList = getAnimationLibraryList();
 		var animationLibraryListSerialized = new Dictionary();
-		var animationsPartOfALibrary = [];
 		for (i in 0...animationLibraryList.size()) {
 			var animLibName : String = animationLibraryList.get(i);
 			var animLib = getAnimationLibrary(animLibName);
-			var animList = animLib.getAnimationList();
-			for (si in 0...animList.size()) {
-				var animName: String = animList.get(si);
-				animationsPartOfALibrary.push(animName);
-			}
 			animationLibraryListSerialized.set(animLibName, DataUtils.varToDict(animLib.native));
 		}
 		data.set("animationLibraries", animationLibraryListSerialized);
