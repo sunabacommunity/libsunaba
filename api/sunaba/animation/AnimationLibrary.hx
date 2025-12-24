@@ -66,6 +66,10 @@ class AnimationLibrary extends Resource {
       var ref: NativeReference = native.call('get_animation', args);
       return new Animation(ref);
   }
+  public function getAnimationList(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_animation_list_size', args);
+  }
   public function getAnimationListSize(): Int {
       var args = new ArrayList();
       return native.call('get_animation_list_size', args);
