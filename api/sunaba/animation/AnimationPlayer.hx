@@ -1,5 +1,7 @@
 package sunaba.animation;
 
+import sunaba.spatial.SpatialTransform;
+import sunaba.core.native.NativeObject;
 import sunaba.core.Dictionary;
 import sunaba.core.TypedArray;
 import sunaba.core.ArrayList;
@@ -423,5 +425,23 @@ class AnimationPlayer extends AnimationMixer {
         playbackAutoCaptureTransitionType = data.get("playbackAutoCaptureTransitionType");
         playbackDefaultBlendTime = data.get("playbackDefaultBlendTime");
         speedScale = data.get("speedScale");
+    }
+
+    public override function onInit() {
+        node = new Node(new NativeObject("AnimationPlayer"));
+        
+        var transform = getComponent(SpatialTransform);
+        if (transform != null) {
+            transform.node.addChild(node);
+        }
+    }
+
+    public override function onStart() {
+        if (node.getParent().isNull()) {
+            var transform = getComponent(SpatialTransform);
+            if (transform != null) {
+                transform.node.addChild(node);
+            }
+        }
     }
 }
