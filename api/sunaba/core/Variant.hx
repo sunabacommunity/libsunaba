@@ -180,8 +180,8 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public static function fromIntArray32(value:TypedArray<Int>):Variant {
         return VariantNative.fromIntArray(value);
     }
-    public function toIntArray32(value:VariantNative):TypedArray<Int> {
-        return value.asIntArray();
+    public function toIntArray32():TypedArray<Int> {
+        return this.asIntArray();
     }
     @:from
     public static function fromArray(value:ArrayList):Variant {
