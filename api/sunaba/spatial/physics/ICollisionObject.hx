@@ -83,7 +83,7 @@ abstract class ICollisionObject extends Behavior {
 	}
 
 	public function getShapeOwners(): TypedArray<Int> {
-		return node.native.call("get_shape_owners", new ArrayList()).toIntArray32());
+		return node.native.call("get_shape_owners", new ArrayList()).toIntArray32();
 	}
 
 	public function isShapeOwnerDisabled(ownerId: Int): Bool {
