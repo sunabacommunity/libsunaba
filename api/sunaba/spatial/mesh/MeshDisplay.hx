@@ -4,6 +4,24 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.VariantNative;
 
 class MeshDisplay extends IGeometryInstance {
+	public var skeleton(get, set): String;
+	function get_skeleton():String {
+		return node.native.get("skeleton");
+	}
+	function set_skeleton(value:String):String {
+		node.native.set("skeleton", value);
+		return value;
+	}
+
+	public var skin(get, set): Skin;
+	function get_skin():Skin {
+		return new Skin(node.native.get("skin"));
+	}
+	function set_skin(value:Skin):Skin {
+		node.native.set("skin", value.native);
+		return value;
+	}
+
 	public function createConvexCollision(): Void {
 		node.native.call("create_convex_collision", new ArrayList());
 	}
