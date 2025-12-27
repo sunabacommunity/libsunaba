@@ -200,7 +200,12 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toDictionary():Dictionary {
         return this.asDictionary();
     }
-
+    public static function fromIntArray(value:TypedArray<Int>):Variant {
+        return VariantNative.fromIntArray(value);
+    }
+    public inline function toIntArray():TypedArray<Int> {
+        return this.asIntArray();
+    }
     @:from
     public static function fromIntArray64(value:TypedArray<Int>):Variant {
         return VariantNative.fromIntArray64(value);
