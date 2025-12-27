@@ -1,5 +1,7 @@
 package sunaba.animation;
 
+import sunaba.core.VariantNative;
+import sunaba.core.Variant;
 import sunaba.spatial.models.gltf.GLTFAnimation;
 import sunaba.core.Dictionary;
 import sunaba.core.Quaternion;
@@ -259,6 +261,217 @@ class AnimationMixer extends Behavior {
 			var animationLibraryName: String = animationLibraryNames.get(i);
 			var animationLibraryData: Dictionary = animationLibraryList.get(animationLibraryName);
 			var animationLibrary = new AnimationLibrary(DataUtils.dictToVar(animationLibraryData));
+			var propertiesData: Dictionary = animationLibraryData.get("value").toDictionary().get("properties");
+			var animationListData: Dictionary = propertiesData.get("_data").toDictionary().get("value");
+			trace("");
+			Sys.println(JSON.stringify(animationListData));
+			for (keyv in animationListData.keys().toArray()) {
+				var key: String = keyv;
+				var value = animationListData.get(key);
+				var animation = new Animation(DataUtils.dictToVar(value));
+				animation.clear();
+				trace("");
+				trace(key);
+				Sys.println(JSON.stringify(value));
+				var animationPropertyData: Dictionary = value.toDictionary().get("value").toDictionary().get("properties"); 
+				var trackData: Map<Int, Map<String, Variant>> = new Map();
+				for (propKeyv in animationPropertyData.keys().toArray()) {
+                	var propKey: String = propKeyv;
+					trace(propKey);
+                	if (StringTools.startsWith(propKey, "tracks/")) {
+                    	var parts = propKey.split("/");
+                    	var trackIdx = Std.parseInt(parts[1]);
+                    	var propName = parts[2];
+                    
+                    	if (!trackData.exists(trackIdx)) {
+                        	trackData.set(trackIdx, new Map());
+                    	}
+                    
+						trace("trackIdx: " + trackIdx + " propName: " + propName + " data: " + JSON.stringify(animationPropertyData.get(propKey).toDictionary().get("value")));
+                    	trackData.get(trackIdx).set(propName, 
+                    	    DataUtils.dictToVar(animationPropertyData.get(propKey).toDictionary()));
+                	}
+            	}
+
+				for (trackIdx in trackData.keys()) {
+					var track = trackData.get(trackIdx);
+					var trackType: String = track.get("type");
+					var trackPath: String = track.get("path");
+
+					var godotTrackIdx = -1;
+
+					switch(trackType) {
+        				case "position_3d": godotTrackIdx = animation.addTrack(TrackType.position3d);
+        				case "rotation_3d": godotTrackIdx = animation.addTrack(TrackType.rotation3d);
+        				case "scale_3d": godotTrackIdx = animation.addTrack(TrackType.scale3d);
+        				case "value": godotTrackIdx = animation.addTrack(TrackType.value);
+        				default: trace("WARNING: Unknown track type: " + trackType);
+    				}
+
+					if (godotTrackIdx >= 0) {
+						animation.trackSetPath(
+							godotTrackIdx,
+							trackPath
+						);
+
+						// Set track properties with null checks
+                            if (track.exists("enabled")) {
+                                var enabledVal = track.get("enabled");
+                                if (enabledVal != null) {
+                                    animation.trackSetEnabled(godotTrackIdx, enabledVal.toBool());
+                                }
+                            }
+                            if (track.exists("imported")) {
+                                var importedVal = track.get("imported");
+                                if (importedVal != null) {
+                                    animation.trackSetImported(godotTrackIdx, importedVal.toBool());
+                                }
+                            }
+                            if (track.exists("interp")) {
+                                var interpVal = track.get("interp");
+                                if (interpVal != null) {
+                                    animation.trackSetInterpolationType(godotTrackIdx, interpVal.toInt());
+                                }
+                            }
+                            if (track.exists("loop_wrap")) {
+                                var loopWrapVal = track.get("loop_wrap");
+                                if (loopWrapVal != null) {
+                                    animation.trackSetInterpolationLoopWrap(godotTrackIdx, loopWrapVal.toBool());
+                                }
+                            }
+
+						if (track.exists("keys")) {
+							var keys: Array<Float> = track.get("keys").toFloatArray();
+							
+							if (keys.length > 0) {
+								var step = switch(trackType) {
+                        			case "position_3d", "scale_3d": 5;
+                        			case "rotation_3d": 6;
+                        			default: 2;
+                    			};
+								
+								if (keys.length % step != 0) {
+									trace("ERROR: Invalid keys array length for track " + trackIdx + 
+                              			  ". Expected multiple of " + step + ", got " + keys.length);
+								}
+								else {
+									/*var k = 0;
+									while ( k < keys.length) {
+										var time = keys[k];
+										trace(keys[k]);
+										var transition = keys[k + 1];
+										trace(keys[k + 1]);
+
+										switch(trackType) {
+                                            case "position_3d":
+                                                var pos = new Vector3(
+                                                    keys[k + 2],
+                                                    keys[k + 3],
+                                                    keys[k + 4]
+                                                );
+												trace(keys[k + 2]);
+												trace(keys[k + 3]);
+												trace(keys[k + 4]);
+                                                var res = animation.positionTrackInsertKey(godotTrackIdx, time, pos);
+												trace(res);
+                                            case "rotation_3d":
+                                                var rot = new Quaternion(
+                                                    keys[k + 2],
+                                                    keys[k + 3],
+                                                    keys[k + 4],
+                                                    keys[k + 5]
+                                                );
+												trace(keys[k + 2]);
+												trace(keys[k + 3]);
+												trace(keys[k + 4]);
+												trace(keys[k + 5]);
+                                                var res = animation.rotationTrackInsertKey(godotTrackIdx, time, rot);
+												trace(res);
+                                            case "scale_3d":
+                                                var scale = new Vector3(
+                                                    keys[k + 2],
+                                                    keys[k + 3],
+                                                    keys[k + 4]
+                                                );
+												trace(keys[k + 2]);
+												trace(keys[k + 3]);
+												trace(keys[k + 4]);
+                                                var res = animation.scaleTrackInsertKey(godotTrackIdx, time, scale);
+												trace(res);
+                                            default:
+                                                // For value tracks, you'd need to handle differently
+                                                trace("Value tracks not yet implemented");
+                                        }
+										k += step;
+									}*/
+								}
+							}
+							else {
+								trace("WARNING: Empty keys array for track " + trackIdx + 
+                          			  " (" + trackPath + "). Animation will have no effect.");
+							}
+						}
+						else {
+            				trace("WARNING: No keys property found for track " + trackIdx);
+        				}
+
+						var propKey = 'tracks/' + godotTrackIdx + "/keys";
+						var keysArray = new VariantNative().asFloatArray();
+						var oldKeysArray = animationPropertyData.get(propKey).toDictionary().get("value").toArray();
+						var oldKeysArrayHx = oldKeysArray.toArray();
+						var lastVariantIndex = 0;
+						for (variant in oldKeysArrayHx) {
+							
+							var newLastVariantIndex = oldKeysArrayHx.indexOf(variant);
+							if (newLastVariantIndex > lastVariantIndex)
+								lastVariantIndex = newLastVariantIndex;
+							else 
+								lastVariantIndex++;
+							if (variant.toFloat() != oldKeysArray.get(lastVariantIndex).toFloat())
+								keysArray.add(oldKeysArray.get(lastVariantIndex));
+							else
+								keysArray.add(variant);
+							trace(lastVariantIndex);
+						}
+						trace(lastVariantIndex);
+						trace(oldKeysArray.size());
+
+						animation.native.set(propKey, Variant.fromFloatArray(keysArray));
+						
+
+						if (track.exists("enabled")) {
+							animation.trackSetEnabled(
+								godotTrackIdx,
+								track["enabled"]
+							);
+						}
+						if (track.exists("imported")) {
+							animation.trackSetImported(
+								godotTrackIdx,
+								track["imported"]
+							);
+						}
+						if (track.exists("interp")) {
+							animation.trackSetInterpolationType(
+								godotTrackIdx,
+								track["interp"]
+							);
+						}
+						if (track.exists("loop_wrap")) {
+							animation.trackSetInterpolationLoopWrap(
+								godotTrackIdx,
+								track["loop_wrap"]
+							);
+						}
+					}
+				}
+				
+				trace("");
+				Sys.println(JSON.stringify(DataUtils.varToDict(animation.native)));
+				animationLibrary.addAnimation(key, animation);
+			}
+			trace("");
+			Sys.println(JSON.stringify(DataUtils.varToDict(animationLibrary.native)));
 			addAnimationLibrary(animationLibraryName, animationLibrary);
 		}
 
