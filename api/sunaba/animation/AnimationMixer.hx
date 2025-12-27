@@ -265,6 +265,7 @@ class AnimationMixer extends Behavior {
 			var animationListData: Dictionary = propertiesData.get("_data").toDictionary().get("value");
 			trace("");
 			Sys.println(JSON.stringify(animationListData));
+			// here comes some completely insane hacks
 			for (keyv in animationListData.keys().toArray()) {
 				var key: String = keyv;
 				var value = animationListData.get(key);
