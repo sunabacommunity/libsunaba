@@ -374,7 +374,7 @@ class Skeleton extends Behavior {
         
         var transform = getComponent(SpatialTransform);
         if (transform != null) {
-            transform.node.addChild(node);
+            transform.node = node;
         }
     }
 
@@ -382,7 +382,7 @@ class Skeleton extends Behavior {
         if (node.getParent().isNull()) {
             var transform = getComponent(SpatialTransform);
             if (transform != null) {
-                transform.node.addChild(node);
+                transform.node = node;
             }
         }
     }
