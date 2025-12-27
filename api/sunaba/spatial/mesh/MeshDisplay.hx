@@ -78,6 +78,13 @@ class MeshDisplay extends IGeometryInstance {
 		return data;
 	}
 
+	public override function setData(data:Dictionary) {
+		super.setData(data);
+
+		skeleton = data.get("skeleton");
+		skin = new Skin(DataUtils.dictToVar(data.get("skin")));
+	}
+
 	public override function onInit() {
 		editorIconPath = "studio://icons/16/cushion-gray.png";
 		node = new Node(new NativeObject("MeshInstance3D"));
