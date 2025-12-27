@@ -1,4 +1,5 @@
 package sunaba.spatial.mesh;
+import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeObject;
 import sunaba.core.VariantNative;
@@ -66,6 +67,15 @@ class MeshDisplay extends IGeometryInstance {
 			throw "Invalid mesh";
 		}
 		node.native.set("mesh", res.native);
+	}
+
+	public override function getData():Dictionary {
+		var data = super.getData();
+
+		data.set("skeleton", skeleton);
+		data.set("skin", DataUtils.varToDict(skin.native));
+
+		return data;
 	}
 
 	public override function onInit() {
