@@ -209,14 +209,12 @@ abstract Variant(VariantNative) from VariantNative to VariantNative {
     public inline function toIntArray64():TypedArray<Int> {
         return this.asIntArray64();
     }
-    /*@:from
-    public static function fromFloatArray(value:TypedArray<Float>):VariantAbstract {
-        return Variant.fromFloatArray(value);
+    public static function fromFloatArray(value:TypedArray<Float>):Variant {
+        return VariantNative.fromFloatArray(value);
     }
-    @:to
-    public static function toFloatArray(value:VariantAbstract):TypedArray<Float> {
-        return value.asFloatArray();
-    }*/
+    public function toFloatArray():TypedArray<Float> {
+        return this.asFloatArray();
+    }
     @:from
     public static function fromFloatArray64(value:TypedArray<Float>):Variant {
         return VariantNative.fromFloatArray64(value);
