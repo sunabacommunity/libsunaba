@@ -52,6 +52,6 @@ class MeshData extends ScriptableObject {
 		surfaceNames = DataUtils.dictToVar(data.get("surfaceNames")).toStringArray();
 		surfaces = DataUtils.dictToVar(data.get("surfaces"));
 		surfacePrimitiveTypes = DataUtils.dictToVar(data.get("surfacePrimitiveTypes"));
-		surfaceMaterials = DataUtils.dictToVar(data.get("surfaceMaterials"));
+		surfaceMaterials = DataUtils.dictToVar(data.get("surfaceMaterials"), io);
 	}
 }
