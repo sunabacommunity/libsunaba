@@ -105,13 +105,13 @@ class MeshDisplay extends IGeometryInstance {
             }
         }
 
-		for (bindIdx in bindDataMap.keys()) {
+		/*for (bindIdx in bindDataMap.keys()) {
 			var bindData = bindDataMap.get(bindIdx);
 			var bone = bindData.get("bone");
 			var pose = bindData.get("pose");
 			
 			skin.addBind(bone.toInt(), pose);
-		}
+		}*/
 		for (bindIdx in bindDataMap.keys()) {
 			var bindData = bindDataMap.get(bindIdx);
 			var bone = bindData.get("bone");
