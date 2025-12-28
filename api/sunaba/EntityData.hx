@@ -45,6 +45,7 @@ class EntityData extends EntityBaseData {
 	public function toEntity(): Entity {
 		var entity = new Entity();
 		entity.name = name;
+		entity.io = io;
 
 		for (i in 0...components.size()) {
 			var compDict:Dictionary = components.get(i);
