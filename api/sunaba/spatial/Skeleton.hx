@@ -391,7 +391,24 @@ class Skeleton extends Behavior {
             
             var name = bone.get("name");
             addBone(name);
-            
+
+            var rest = bone.get("rest");
+            setBoneRest(boneIdx, rest);
+
+            var position = bone.get("position");
+            setBonePosePosition(boneIdx, position);
+
+            var rotation = bone.get("rotation");
+            setBonePoseRotation(boneIdx, rotation);
+
+            var scale = bone.get("scale");
+            setBonePoseScale(boneIdx, scale);
+
+            var enabled = bone.get("enabled");
+            setBoneEnabled(enabled);
+        }
+        for (boneIdx in boneDataMap.keys()) {
+            var bone = boneDataMap.get(boneIdx);
             var parent = bone.get("parent");
             setBoneParent(boneIdx, parent);
 
