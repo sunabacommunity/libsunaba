@@ -112,7 +112,7 @@
 										"lightmapScale": 0,
 										"lightmapTexelScale": 0.0,
 										"lodBias": 1.0,
-										"skeleton": "..",
+										"skeleton": "../..",
 										"skin": {
 											"type": 24,
 											"value": {
