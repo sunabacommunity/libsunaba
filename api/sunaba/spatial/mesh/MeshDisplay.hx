@@ -1,4 +1,5 @@
 package sunaba.spatial.mesh;
+import sunaba.core.Variant;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeObject;
@@ -82,7 +83,37 @@ class MeshDisplay extends IGeometryInstance {
 		super.setData(data);
 
 		skeleton = data.get("skeleton");
-		skin = new Skin(DataUtils.dictToVar(data.get("skin")));
+		var skinData: Dictionary = data.get("skin");
+		skin = new Skin(DataUtils.dictToVar(skinData));
+		var skinProperties: Dictionary = skinData.get("value").toDictionary().get("properties");
+		var bindDataMap: Map<Int, Map<String, Variant>> = new Map();
+		for (propKeyv in skinProperties.keys().toArray()) {
+            var propKey: String = propKeyv;
+			trace(propKey);
+            if (StringTools.startsWith(propKey, "bind/")) {
+                var parts = propKey.split("/");
+                var bindIdx = Std.parseInt(parts[1]);
+                var propName = parts[2];
+                    
+                if (!bindDataMap.exists(bindIdx)) {
+                    bindDataMap.set(bindIdx, new Map());
+                }
+                    
+				trace("bindIdx: " + bindIdx + " propName: " + propName + " data: " + JSON.stringify(skinProperties.get(propKey).toDictionary().get("value")));
+                bindDataMap.get(bindIdx).set(propName, 
+                    DataUtils.dictToVar(skinProperties.get(propKey).toDictionary()));
+            }
+        }
+
+		for (bindIdx in bindDataMap.keys()) {
+			var bindData = bindDataMap.get(bindIdx);
+			var bone = bindData.get("bone");
+			var pose = bindData.get("pose");
+			var name: String = bindData.get("name");
+			
+			skin.addBind(bone, pose);
+			skin.setBindName(bindIdx, name);
+		}
 	}
 
 	public override function onInit() {
