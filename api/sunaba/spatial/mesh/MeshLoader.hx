@@ -82,6 +82,7 @@ class MeshLoader extends Behavior {
 		super.setData(data);
 
 		var newMeshData = new MeshData();
+		newMeshData.io	= entity.io;
 		newMeshData.setData(data.get("_meshData").toDictionary());
 		setMeshData(newMeshData);
 	}
