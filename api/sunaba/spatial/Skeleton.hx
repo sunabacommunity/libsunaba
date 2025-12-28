@@ -367,6 +367,49 @@ class Skeleton extends Behavior {
         modifierCallbackModeProcess = data.get("modifierCallbackModeProcess");
         motionScale = data.get("motionScale");
         showRestOnly = data.get("showRestOnly");
+
+        var boneProperties: Dictionary = data.get("boneProperties");
+        var boneDataMap: Map<Int, Map<String, Variant>> = new Map();
+        for (propKeyv in boneProperties.keys().toArray()) {
+            var propKey: String = propKeyv;
+            trace(propKey);
+            var parts = propKey.split("/");
+            var boneIdx = Std.parseInt(parts[1]);
+            var propName = parts[2];
+
+            if (!boneDataMap.exists(boneIdx)) {
+                boneDataMap.set(boneIdx, new Map());
+            }
+
+            trace("boneIdx: " + boneIdx + " propName: " + propName + " data: " + JSON.stringify(boneProperties.get(propKey).toDictionary().get("value")));
+            boneDataMap.get(boneIdx).set(propName, 
+                DataUtils.dictToVar(boneProperties.get(propKey).toDictionary()));
+        }
+
+        for (boneIdx in boneDataMap.keys()) {
+            var bone = boneDataMap.get(boneIdx);
+            
+            var name = bone.get("name");
+            addBone(name);
+            
+            var parent = bone.get("parent");
+            setBoneParent(boneIdx, parent);
+
+            var rest = bone.get("rest");
+            setBoneRest(boneIdx, rest);
+
+            var position = bone.get("position");
+            setBonePosePosition(boneIdx, position);
+
+            var rotation = bone.get("rotation");
+            setBonePoseRotation(boneIdx, rotation);
+
+            var scale = bone.get("scale");
+            setBonePoseScale(boneIdx, scale);
+
+            var enabled = bone.get("enabled");
+            setBoneEnabled(enabled);
+        }
     }
 
     public override function onInit() {
