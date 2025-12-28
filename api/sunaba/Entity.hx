@@ -1,5 +1,6 @@
 package sunaba;
 
+import sunaba.io.IoInterface;
 import Type;
 import sunaba.input.InputEvent;
 
@@ -27,6 +28,18 @@ class Entity extends BaseClass {
 		this._parent = value;
 
 		return _parent;
+	}
+
+	private var _io: IoInterface;
+	public var io(get, set): IoInterface;
+	function get_io() {
+		if (scene != null) {
+			return scene.io;
+		}
+		return _io;
+	}
+	function set_io(value: IoInterface): IoInterface {
+		return _io = value;
 	}
 
 	private var _node: Node;
