@@ -370,6 +370,7 @@ class Skeleton extends Behavior {
 
         var boneProperties: Dictionary = data.get("boneProperties");
         var boneDataMap: Map<Int, Map<String, Variant>> = new Map();
+        var maxBone = 0;
         for (propKeyv in boneProperties.keys().toArray()) {
             var propKey: String = propKeyv;
             trace(propKey);
@@ -380,35 +381,30 @@ class Skeleton extends Behavior {
             if (!boneDataMap.exists(boneIdx)) {
                 boneDataMap.set(boneIdx, new Map());
             }
+            if (boneIdx > maxBone) {
+                maxBone = boneIdx;
+            }
 
             trace("boneIdx: " + boneIdx + " propName: " + propName + " data: " + JSON.stringify(boneProperties.get(propKey).toDictionary().get("value")));
             boneDataMap.get(boneIdx).set(propName, 
                 DataUtils.dictToVar(boneProperties.get(propKey).toDictionary()));
         }
 
-        for (boneIdx in boneDataMap.keys()) {
+        for (boneIdx in 0...maxBone + 1) {
             var bone = boneDataMap.get(boneIdx);
+            if (bone == null) continue;
             
             var name = bone.get("name");
             addBone(name);
 
-            var rest = bone.get("rest");
-            setBoneRest(boneIdx, rest);
-
-            var position = bone.get("position");
-            setBonePosePosition(boneIdx, position);
-
-            var rotation = bone.get("rotation");
-            setBonePoseRotation(boneIdx, rotation);
-
-            var scale = bone.get("scale");
-            setBonePoseScale(boneIdx, scale);
-
-            var enabled = bone.get("enabled");
-            setBoneEnabled(enabled);
         }
-        for (boneIdx in boneDataMap.keys()) {
+        for (boneIdx in 0...maxBone + 1) {
             var bone = boneDataMap.get(boneIdx);
+            if (bone == null) continue;
+
+            var name = bone.get("name");
+            setBoneName(boneIdx, name);
+            
             var parent = bone.get("parent");
             setBoneParent(boneIdx, parent);
 
@@ -427,6 +423,7 @@ class Skeleton extends Behavior {
             var enabled = bone.get("enabled");
             setBoneEnabled(enabled);
         }
+
     }
 
     public override function onInit() {
