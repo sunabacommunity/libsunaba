@@ -3622,7 +3622,7 @@
 											"surfaceNames": {
 												"type": 34,
 												"value": [
-													""
+													"skin"
 												]
 											},
 											"surfacePrimitiveTypes": {
@@ -20115,7 +20115,8 @@
 																]
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
 																"type": 37,
@@ -31447,19 +31448,24 @@
 																]
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
-
+																"type": 0,
+																"value": null
 															},
 															{
 																"type": 30,
@@ -35585,7 +35591,6 @@
 															{
 																"type": 32,
 																"value": [
-																	0.0,
 																	1.0,
 																	0.0,
 																	0.0,
@@ -39700,6 +39705,7 @@
 																	0.0,
 																	0.571428596973419,
 																	0.428571432828903,
+																	0.0,
 																	0.0
 																]
 															},

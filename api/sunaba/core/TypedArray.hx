@@ -17,7 +17,7 @@ extern class TypedArrayNative<T> {
 }
 
 @:generic
-@:forward(set, get, find, erase, insert, add, clear, next)
+@:forward(set, find, erase, insert, add, clear, next)
 abstract TypedArray<T>(TypedArrayNative<T>) from TypedArrayNative<T> to TypedArrayNative<T> {
     public function new() {
         this = new TypedArrayNative<T>();
@@ -31,13 +31,15 @@ abstract TypedArray<T>(TypedArrayNative<T>) from TypedArrayNative<T> to TypedArr
     @:arrayAccess
     public function get(index:Int):T {
         var s = this;
-        return untyped __lua__("s[index]");
+        var luaIndex = index + 1;
+        return untyped __lua__("s[luaIndex]");
     }
 
     @:arrayAccess
     public function set(index:Int, value:T):T {
         var s = this;
-        untyped __lua__("s[index] = value");
+        var luaIndex = index + 1;
+        untyped __lua__("s[luaIndex] = value");
         return value;
     }
 
@@ -45,7 +47,7 @@ abstract TypedArray<T>(TypedArrayNative<T>) from TypedArrayNative<T> to TypedArr
     public inline function toArray():Array<T> {
         var s: TypedArray<T> = this;
         var array: Array<T> = [];
-        for (i in 1...(s.size() + 1)) {
+        for (i in 0...s.size()) {
             var value = s.get(i);
             if (value == null) {
                 throw "TypedArray.toArray: null value at index " + i;

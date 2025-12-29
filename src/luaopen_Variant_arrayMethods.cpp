@@ -89,6 +89,16 @@ void Runtime::luaopen_Variant_arrayMethods() {
         return data;
     };
 
+    variant_type["asVector4Array"] = [](const Variant& v) {
+        std::vector<Vector4> data;
+        if (v.get_type() != Variant::PACKED_VECTOR4_ARRAY) return data;
+        PackedVector4Array packed_data = v;
+        for (int i = 0; i < packed_data.size(); ++i) {
+            data.push_back(packed_data[i]);
+        }
+        return data;
+    };
+
     variant_type["asColorArray"] = [](const Variant& v) {
         std::vector<Color> data;
         if (v.get_type() != Variant::PACKED_COLOR_ARRAY) return data;

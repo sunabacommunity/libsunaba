@@ -76,6 +76,14 @@ void Runtime::luaopen_Variant_fromMethods() {
         return Variant(packed_data);
     };
 
+    variant_type["fromVector4Array"] = [](const std::vector<Vector4>& data) {
+        PackedVector4Array packed_data;
+        for (const auto& item : data) {
+            packed_data.append(item);
+        }
+        return Variant(packed_data);
+    };
+
     variant_type["fromColorArray"] = [](const std::vector<Color>& data) {
         PackedColorArray packed_data;
         for (const auto& item : data) {

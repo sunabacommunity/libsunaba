@@ -74,7 +74,7 @@ class MeshDisplay extends IGeometryInstance {
 		var data = super.getData();
 
 		data.set("skeleton", skeleton);
-		data.set("skin", DataUtils.varToDict(skin.native));
+		//data.set("skin", DataUtils.varToDict(skin.native));
 
 		return data;
 	}
@@ -83,7 +83,7 @@ class MeshDisplay extends IGeometryInstance {
 		super.setData(data);
 
 		skeleton = data.get("skeleton");
-		var skinData: Dictionary = data.get("skin");
+		/*var skinData: Dictionary = data.get("skin");
 		skin = new Skin(DataUtils.dictToVar(skinData));
 		var skinProperties: Dictionary = skinData.get("value").toDictionary().get("properties");
 		var bindDataMap: Map<Int, Map<String, Variant>> = new Map();
@@ -103,7 +103,7 @@ class MeshDisplay extends IGeometryInstance {
                 bindDataMap.get(bindIdx).set(propName, 
                     DataUtils.dictToVar(skinProperties.get(propKey).toDictionary()));
             }
-        }
+        }*/
 
 		/*for (bindIdx in bindDataMap.keys()) {
 			var bindData = bindDataMap.get(bindIdx);
@@ -111,7 +111,7 @@ class MeshDisplay extends IGeometryInstance {
 			var pose = bindData.get("pose");
 			
 			skin.addBind(bone.toInt(), pose);
-		}*/
+		}*//*
 		for (bindIdx in bindDataMap.keys()) {
 			var bindData = bindDataMap.get(bindIdx);
 			var bone = bindData.get("bone");
@@ -121,7 +121,7 @@ class MeshDisplay extends IGeometryInstance {
 			skin.setBindName(bindIdx, name);
 			skin.setBindBone(bindIdx, bone);
 			skin.setBindPose(bindIdx, pose);
-		}
+		}*/
 	}
 
 	public override function onInit() {

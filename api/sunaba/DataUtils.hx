@@ -283,8 +283,7 @@ class DataUtils {
 			}
 		}
 		else {
-			var empty = new Dictionary();
-			return empty;
+			dict.set("value", new VariantNative());
 		}
 
 
@@ -503,7 +502,7 @@ class DataUtils {
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(i)));
 			}
-			variant = newArray;
+			variant = VariantNative.fromVector2Array(newArray);
 		}
 		else if (type == VariantType.vector3Vector) {
 			var oldArray: ArrayList = value;
@@ -511,7 +510,7 @@ class DataUtils {
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(i)));
 			}
-			variant = newArray;
+			variant = VariantNative.fromVector3Array(newArray);
 		}
 		else if (type == VariantType.vector4Vector) {
 			var oldArray: ArrayList = value;
@@ -519,7 +518,7 @@ class DataUtils {
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(i)));
 			}
-			variant = newArray;
+			variant = VariantNative.fromVector4Array(newArray);
 		}
 		else if (type == VariantType.colorVector) {
 			var oldArray: ArrayList = value;
@@ -527,7 +526,7 @@ class DataUtils {
 			for (i in 0...oldArray.size()) {
 				newArray.add(dictToVar(oldArray.get(i)));
 			}
-			variant = newArray;
+			variant = VariantNative.fromColorArray(newArray);
 		}
 		else if (type == VariantType.object) {
 			var resDict: Dictionary = value;
