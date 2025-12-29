@@ -4,7 +4,7 @@ import sys
 
 from methods import print_error
 from SCons.Script import AddOption, GetOption, Default, Glob
-
+from build_luajit import build_luajit
 
 libname = "sunaba"
 projectdir = "demo"
@@ -17,6 +17,8 @@ AddOption('--lua_runtime',
           type='string',
           help="Lua runtime to use (lua or luajit)",
           default='lua')
+env_vars = Variables()
+env_vars.Add(EnumVariable("luaapi_host_cc", "LuaJIT builds some tools to assist with the rest of the build. You can set the host CC to be used here in the case of cross compilation.", "gcc", ("gcc", "clang")))
 lua_runtime = GetOption('lua_runtime') or ARGUMENTS.pop("lua_runtime", "lua")
 if isinstance(lua_runtime, list):
     # Defensive: GetOption might return a single-element list in some environments
@@ -26,6 +28,7 @@ if lua_runtime.lower() not in ["lua", "luajit"]:
     raise ValueError(f"Invalid lua_runtime: expected either 'lua' or 'luajit', got {lua_runtime}")
 
 localEnv = Environment(tools=["default"], PLATFORM="")
+env_vars.Update(localEnv)
 
 # Option to enable AddressSanitizer (adds -fsanitize=address to compile and link)
 AddOption('--asan',
@@ -117,54 +120,11 @@ if (env["lua_runtime"] == "lua"):
 elif(env["lua_runtime"] == "luajit"):
     LUAJIT_DIR = 'luajit'
     LUAJIT_SRC = os.path.join(LUAJIT_DIR, 'src')
-    # Build LuaJIT static lib automatically
-    if (env["platform"] == "windows"):
-        if (env.get("is_msvc")):
-            luajit_lib = env.Command(
-                target=os.path.join(LUAJIT_SRC, 'luajit.lib'),
-                source=None,
-                action=f"cd {LUAJIT_SRC} && msvcbuild.bat static"
-            )
-        else:
-            luajit_lib = env.Command(
-                target=os.path.join(LUAJIT_SRC, 'libluajit.a'),
-                source=None,
-                action=f"cd {LUAJIT_DIR} && mingw32-make BUILDMODE=static"
-            )
-    else:
-        luajit_lib = env.Command(
-            target=os.path.join(LUAJIT_SRC, 'libluajit.a'),
-            source=None,
-            action=f"cd {LUAJIT_DIR} && make BUILDMODE=static"
-        )
-    env.Append(CPPPATH=["luajit/src"])
-    # Ensure the built LuaJIT static library is linked into the final shared library.
-    # Add the luajit build directory to LIBPATH and request the luajit library by name.
-    # On MSVC the produced file is 'luajit.lib', on MinGW it's 'libluajit.a' and
-    # both can be linked by specifying LIBS=['luajit'] and LIBPATH=[LUAJIT_SRC].
-    env.Append(LIBPATH=[LUAJIT_SRC])
-    # Prefer appending the actual build target node so SCons will add it to the
-    # link line once it has been built. Fall back to the library name as a
-    # string if the command wasn't created for some reason.
-    if luajit_lib is not None:
-        env.Append(LIBS=[luajit_lib])
-    else:
-        env.Append(LIBS=["luajit"])
-    # Also add the explicit library file to the link line. Some toolchains
-    # (especially when building a SharedLibrary) may not pick up LIBPATH/LIBS
-    # in all cases, so pass the concrete library path to the linker.
-    if env["platform"] == "windows":
-        if env.get("is_msvc"):
-            env.Append(LINKFLAGS=[os.path.join(LUAJIT_SRC, 'luajit.lib')])
-        else:
-            env.Append(LINKFLAGS=[os.path.join(LUAJIT_SRC, 'libluajit.a')])
-    else:
-        env.Append(LINKFLAGS=[os.path.join(LUAJIT_SRC, 'libluajit.a')])
-    # MSVC build produces both luajit.lib and lua51.lib (compat). Ensure lua51.lib
-    # is also considered by the linker since it can contain the compatibility
-    # symbols expected by code using the Lua C API.
-    if env["platform"] == "windows" and env.get("is_msvc"):
-        env.Append(LINKFLAGS=[os.path.join(LUAJIT_SRC, 'lua51.lib')])
+    build_luajit(env, True)
+
+    env.Append(CPPPATH=["luajit/src/"])
+    env.Append(LIBPATH=[Dir("luajit/src").abspath])
+    env.Append(LIBS=['libluajit'])
 
 ### < LUA STUFF
 
