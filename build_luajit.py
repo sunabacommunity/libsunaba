@@ -51,14 +51,14 @@ def build_luajit(env, extension=False):
             if (host_arch != env['arch']):
                 if (host_arch == 'x86_64' and env['arch'] == 'x86_32'):
                     host_cc = env['luaapi_host_cc'] + ' -m32'
-                    run('make HOST_CC="%s" CROSS="%s" BUILDMODE="static"' % (host_cc, env['CC'].replace("-gcc", "-").replace("-clang", "-")))
+                    run('make HOST_CC="%s" CROSS="%s" BUILDMODE="static" CFLAGS="-fPIC"' % (host_cc, env['CC'].replace("-gcc", "-").replace("-clang", "-")))
 
                 else:
                     print("ERROR: Unsupported cross compile!")
                     sys.exit(-1)
 
             else:
-                run('make CC="%s" BUILDMODE="static"' % env['CC'])
+                run('make CC="%s" BUILDMODE="static" CFLAGS="-fPIC"' % env['CC'])
 
         elif (env["platform"] == "windows"):
             os.chdir("src")
