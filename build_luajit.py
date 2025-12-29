@@ -60,6 +60,9 @@ def build_luajit(env, extension=False):
             else:
                 run('make CC="%s" BUILDMODE="static"' % env['CC'])
 
+        elif (env["platform"] == "windows"):
+            os.chdir("src")
+            run("msvcbuild static")
         else:
             print("ERROR: Unsupported platform '%s'." % env['platform'])
             sys.exit(-1)
