@@ -136,6 +136,9 @@ elif(env["lua_runtime"] == "luajit"):
     env.Append(LIBPATH=[Dir("luajit/src").abspath])
     if env.msvc:
         env.Append(LIBS=['lua51'])
+    elif env["platform"]  == "macos":
+        # On macOS, use the static library directly
+        env.Append(LIBS=[File("luajit/src/libluajit.a")])
     else:
         env.Append(LIBS=['libluajit'])
 
