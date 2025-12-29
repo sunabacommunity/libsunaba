@@ -72,6 +72,10 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 if env['platform'] == 'windows':
     if use_mingw != "yes":
         env.msvc = True
+    else:
+        env.msvc = False
+else:
+    env.msvc = False
 
 # Propagate the ASan option into the active build environment and add flags when requested.
 # Use GetOption here (store_true) so invocation is simply: scons --asan
