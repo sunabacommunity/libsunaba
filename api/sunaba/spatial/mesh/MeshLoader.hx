@@ -75,16 +75,6 @@ class MeshLoader extends Behavior {
 			arrayMesh.call("add_blend_shape", addBlendShapeArgs);
 		}
 
-		for (j in 0..._meshData.blendShapesPerSurface.size()) {
-			
-
-			for (k in 0...surfaceBlendShapes.size()) {
-				var blendShape: ArrayList = surfaceBlendShapes.get(j);
-
-
-			}
-		}
-
 		var meshDisplay = getComponent(MeshDisplay);
 		if (meshDisplay != null) {
 			meshDisplay.setMesh(new Resource(arrayMesh));
