@@ -8,6 +8,9 @@ class MeshData extends ScriptableObject {
 	public var surfaces: ArrayList = new ArrayList();
 	public var surfacePrimitiveTypes: ArrayList = new ArrayList();
 	public var surfaceMaterials: ArrayList = new ArrayList();
+	public var blendShapesPerSurface: ArrayList = new ArrayList();
+	public var blendShapeMode: Int = -1;
+	public var blendShapeNames: Array<String> = new Array();
 
 	public static function fromImporterMesh(importerMesh: ImporterMesh) {
 		var meshData = new MeshData();
@@ -23,6 +26,22 @@ class MeshData extends ScriptableObject {
 
 			var surfaceName = importerMesh.getSurfaceName(i);
 			meshData.surfaceNames.push(surfaceName);
+
+			var surfaceBlendShapes = new ArrayList();
+			for (j in 0...importerMesh.getBlendShapeCount()) {
+				var surfaceBlendShapeArray = importerMesh.getSurfaceBlendShapeArrays(i, j);
+				surfaceBlendShapes.append(surfaceBlendShapeArray);
+			}
+
+			meshData.blendShapesPerSurface.append(surfaceBlendShapes);
+		}
+
+		var blendShapeMode = importerMesh.getBlendShapeMode();
+		meshData.blendShapeMode = blendShapeMode;
+
+		for (i in 0...importerMesh.getBlendShapeCount()) {
+			var blendShapeName = importerMesh.getBlendShapeName(i);
+			meshData.blendShapeNames.push(blendShapeName);
 		}
 
 		return meshData;
@@ -42,6 +61,9 @@ class MeshData extends ScriptableObject {
 		}*/
 		data.set("surfacePrimitiveTypes", DataUtils.varToDict(surfacePrimitiveTypes));
 		data.set("surfaceMaterials", DataUtils.varToDict(surfaceMaterials));
+		data.set("blendShapesPerSurface", DataUtils.varToDict(blendShapesPerSurface));
+		data.set("blendShapeMode", blendShapeMode);
+		data.set("blendShapeNames", DataUtils.varToDict(StringArray.fromArray(blendShapeNames)));
 
 		return data;
 	}
@@ -53,5 +75,8 @@ class MeshData extends ScriptableObject {
 		surfaces = DataUtils.dictToVar(data.get("surfaces"));
 		surfacePrimitiveTypes = DataUtils.dictToVar(data.get("surfacePrimitiveTypes"));
 		surfaceMaterials = DataUtils.dictToVar(data.get("surfaceMaterials"), io);
+		blendShapesPerSurface = DataUtils.dictToVar(data.get("blendShapesPerSurface"));
+		blendShapeMode = data.get("blendShapeMode");
+		blendShapeNames = DataUtils.dictToVar(data.get("blendShapeNames")).toStringArray();
 	}
 }
