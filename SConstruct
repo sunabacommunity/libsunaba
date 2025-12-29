@@ -30,6 +30,8 @@ if lua_runtime.lower() not in ["lua", "luajit"]:
 localEnv = Environment(tools=["default"], PLATFORM="")
 env_vars.Update(localEnv)
 
+use_mingw = ARGUMENTS.get("use_mingw", "no")
+
 # Option to enable AddressSanitizer (adds -fsanitize=address to compile and link)
 AddOption('--asan',
           dest='asan',
@@ -66,6 +68,10 @@ Run the following command to download godot-cpp:
     sys.exit(1)
 
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
+
+if env['platform'] == 'windows':
+    if use_mingw != "yes":
+        env.msvc = True
 
 # Propagate the ASan option into the active build environment and add flags when requested.
 # Use GetOption here (store_true) so invocation is simply: scons --asan
@@ -124,7 +130,10 @@ elif(env["lua_runtime"] == "luajit"):
 
     env.Append(CPPPATH=["luajit/src/"])
     env.Append(LIBPATH=[Dir("luajit/src").abspath])
-    env.Append(LIBS=['libluajit'])
+    if env.msvc:
+        env.Append(LIBS=['lua51'])
+    else:
+        env.Append(LIBS=['libluajit'])
 
 ### < LUA STUFF
 

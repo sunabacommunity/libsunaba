@@ -62,10 +62,44 @@ def build_luajit(env, extension=False):
 
         elif (env["platform"] == "windows"):
             os.chdir("src")
-            run("msvcbuild static")
+            # Determine architecture for msvcbuild
+            # Use subprocess to run msvcbuild with SCons MSVC environment
+            import subprocess
+            
+            # Get the environment from SCons which should have MSVC variables set
+            build_env = dict(os.environ)
+            
+            # Add SCons environment variables needed for MSVC
+            if 'ENV' in env:
+                for key, value in env['ENV'].items():
+                    if isinstance(value, str):
+                        build_env[key] = value
+            
+            # Set architecture hint for msvcbuild
+            if env['arch'] == 'x86_64':
+                build_env['VSCMD_ARG_TGT_ARCH'] = 'x64'
+                print("Building LuaJIT for x64...")
+                result = subprocess.call("msvcbuild.bat static", shell=True, env=build_env)
+            elif env['arch'] == 'x86_32':
+                build_env['VSCMD_ARG_TGT_ARCH'] = 'x86'
+                print("Building LuaJIT for x86...")
+                result = subprocess.call("msvcbuild.bat static", shell=True, env=build_env)
+            else:
+                print("ERROR: Unsupported architecture '%s' for Windows." % env['arch'])
+                sys.exit(-1)
+            
+            if result != 0:
+                print("Error: msvcbuild failed with return code: " + str(result))
+                sys.exit(result)
         else:
             print("ERROR: Unsupported platform '%s'." % env['platform'])
             sys.exit(-1)
     else:
-        os.chdir("luajit/src")
-        run("msvcbuild static")
+        # Determine architecture for msvcbuild
+        if env['arch'] == 'x86_64':
+            run("msvcbuild static")
+        elif env['arch'] == 'x86_32':
+            run("msvcbuild static x86")
+        else:
+            print("ERROR: Unsupported architecture '%s' for Windows." % env['arch'])
+            sys.exit(-1)
