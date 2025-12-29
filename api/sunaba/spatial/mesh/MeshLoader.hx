@@ -32,6 +32,12 @@ class MeshLoader extends Behavior {
 
 		var arrayMesh = new NativeReference("ArrayMesh");
 
+		for (blendShapeName in _meshData.blendShapeNames) {
+			var addBlendShapeArgs = new ArrayList();
+			addBlendShapeArgs.append(blendShapeName);
+			arrayMesh.call("add_blend_shape", addBlendShapeArgs);
+		}
+
 		for (i in 0..._meshData.surfaces.size()) {
 			var surfaceVariant = _meshData.surfaces.get(i);
 			var surface: ArrayList = surfaceVariant;
@@ -39,7 +45,6 @@ class MeshLoader extends Behavior {
 			if (surface.size() == 0) {
 				continue;
 			}
-
 
 			var addSurfaceFromArraysArgs = new ArrayList();
 			addSurfaceFromArraysArgs.append(meshData.surfacePrimitiveTypes.get(i));
@@ -67,12 +72,6 @@ class MeshLoader extends Behavior {
 			surfaceSetMaterialArgs.append(i);
 			surfaceSetMaterialArgs.append(surfaceMaterial.native);
 			arrayMesh.call("surface_set_material", surfaceSetMaterialArgs);
-		}
-
-		for (blendShapeName in _meshData.blendShapeNames) {
-			var addBlendShapeArgs = new ArrayList();
-			addBlendShapeArgs.append(blendShapeName);
-			arrayMesh.call("add_blend_shape", addBlendShapeArgs);
 		}
 
 		var meshDisplay = getComponent(MeshDisplay);
