@@ -44,8 +44,8 @@ class MeshLoader extends Behavior {
 			var addSurfaceFromArraysArgs = new ArrayList();
 			addSurfaceFromArraysArgs.append(meshData.surfacePrimitiveTypes.get(i));
 			addSurfaceFromArraysArgs.append(surface);
-			if (_meshData.blendShapesPerSurface.size() > 0) {
-				var blendShapes: ArrayList = _meshData.blendShapesPerSurface.get(i);
+			var blendShapes = _meshData.blendShapesPerSurface.get(i);
+			if (blendShapes.getType() == VariantType.arrayList) {
 				addSurfaceFromArraysArgs.append(blendShapes);
 			}
 			arrayMesh.call("add_surface_from_arrays", addSurfaceFromArraysArgs);
