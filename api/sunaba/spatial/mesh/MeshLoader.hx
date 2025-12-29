@@ -40,9 +40,14 @@ class MeshLoader extends Behavior {
 				continue;
 			}
 
+
 			var addSurfaceFromArraysArgs = new ArrayList();
 			addSurfaceFromArraysArgs.append(meshData.surfacePrimitiveTypes.get(i));
 			addSurfaceFromArraysArgs.append(surface);
+			if (_meshData.blendShapesPerSurface.size() > 0) {
+				var blendShapes: ArrayList = _meshData.blendShapesPerSurface.get(i);
+				addSurfaceFromArraysArgs.append(blendShapes);
+			}
 			arrayMesh.call("add_surface_from_arrays", addSurfaceFromArraysArgs);
 		}
 
@@ -62,6 +67,22 @@ class MeshLoader extends Behavior {
 			surfaceSetMaterialArgs.append(i);
 			surfaceSetMaterialArgs.append(surfaceMaterial.native);
 			arrayMesh.call("surface_set_material", surfaceSetMaterialArgs);
+		}
+
+		for (blendShapeName in _meshData.blendShapeNames) {
+			var addBlendShapeArgs = new ArrayList();
+			addBlendShapeArgs.append(blendShapeName);
+			arrayMesh.call("add_blend_shape", addBlendShapeArgs);
+		}
+
+		for (j in 0..._meshData.blendShapesPerSurface.size()) {
+			
+
+			for (k in 0...surfaceBlendShapes.size()) {
+				var blendShape: ArrayList = surfaceBlendShapes.get(j);
+
+
+			}
 		}
 
 		var meshDisplay = getComponent(MeshDisplay);
