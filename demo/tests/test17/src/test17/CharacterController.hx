@@ -64,7 +64,7 @@ class CharacterController extends Behavior {
     var camera: Camera;
 
     public override function onInit() {
-        speed = 5.0;
+        speed = defaultSpeed;
         defaultSpeed = 5.0;
         sprintSpeed = 7.0;
         crouchSpeed = 1.0;
@@ -204,8 +204,8 @@ class CharacterController extends Behavior {
             speed = defaultSpeed;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
-            trace(direction.x);
-            trace(direction.z);
+            //trace(direction.x);
+            //trace(direction.z);
             jump();
 
             applyMovement(direction, deltaTime);
@@ -218,7 +218,7 @@ class CharacterController extends Behavior {
             body.maxSlides = 4;
             body.floorMaxAngle = 0.7853;
             body.moveAndSlide();
-            processCollisions();
+            //processCollisions();
         }
     }
 
@@ -273,23 +273,23 @@ class CharacterController extends Behavior {
             var newVelocity = velocity.moveToward(direction * speed, acceleration * deltaTime);
             velocity.x = newVelocity.x;
             velocity.z = newVelocity.z;
-            trace(velocity);
+            //trace(velocity);
             body.velocity = velocity;
         }
     }
 
     inline function applyFriction(direction: Vector3, deltaTime: Float) {
-        if (direction != Vector3.zero()) {
+        if (direction == Vector3.zero()) {
             var velocity = body.velocity;
             if (body.isOnFloor()) {
-                velocity = velocity.moveToward(direction * speed, friction * deltaTime);
+                velocity = velocity.moveToward(Vector3.zero(), friction * deltaTime);
             }
             else {
                 var newVelocity = velocity.moveToward(direction * speed, airFriction * deltaTime);
                 velocity.x = newVelocity.x;
                 velocity.z = newVelocity.z;
             }
-            trace(velocity);
+            //trace(velocity);
             body.velocity = velocity;
         }
     }
