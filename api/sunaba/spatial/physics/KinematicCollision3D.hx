@@ -57,6 +57,13 @@ class KinematicCollision3D extends Reference {
       }
       return native.call('get_collider_velocity', args);
   }
+	public function getCollider(?collisionIndex: Int): Node {
+		var args = new ArrayList();
+		if (collisionIndex != null) {
+			args.append(collisionIndex);
+		}
+		return new Node(native.call('get_collider', args));
+	}
   public function getCollisionCount(): Int {
       var args = new ArrayList();
       return native.call('get_collision_count', args);
