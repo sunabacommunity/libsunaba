@@ -439,6 +439,36 @@ class RigidBody extends IPhysicsBody {
 		return _sleepingStateChanged;
 	}
 
+	public static function getFromNode(node: Node, scene: SceneRoot) {
+		if (node.native.isClass("RigidBody3D")) {
+			for (i in 0...scene.getEntityCount()) {
+				var rigidBody = getFromNodeRec(node, scene.getEntity(i));
+				if (rigidBody != null) {
+					return rigidBody;
+				}
+			}
+		}
+		return null;
+	}
+
+	private static function getFromNodeRec(node: Node, entity: Entity) {
+		var rigidBody = entity.getComponent(RigidBody);
+		if (rigidBody != null) {
+			if (rigidBody.node.native == node.native) {
+				return rigidBody;
+			}
+		}
+
+		for (i in 0...entity.getChildCount()) {
+			var rigidBody = getFromNodeRec(node, entity.getChild(i));
+			if (rigidBody != null) {
+				return rigidBody;
+			}
+		}
+
+		return null;
+	}
+
 	public override function getData():Dictionary {
 		var data = super.getData();
 
