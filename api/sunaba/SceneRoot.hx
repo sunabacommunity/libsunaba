@@ -25,6 +25,8 @@ class SceneRoot extends Node {
 	private var started: Bool = false;
 	private var enteredTree: Bool = false;
 
+	public var isInEditor = false;
+
 	public function addEntity(entity: Entity) {
 		if (entity == null) return;
 
