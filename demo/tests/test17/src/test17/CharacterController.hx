@@ -282,7 +282,7 @@ class CharacterController extends Behavior {
         if (direction != Vector3.zero()) {
             var velocity = body.velocity;
             if (body.isOnFloor()) {
-                velocity = velocity.moveToward(direction * speed, airFriction * deltaTime);
+                velocity = velocity.moveToward(direction * speed, friction * deltaTime);
             }
             else {
                 var newVelocity = velocity.moveToward(direction * speed, airFriction * deltaTime);
