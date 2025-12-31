@@ -16,7 +16,7 @@ class SceneRoot extends Node {
 	function findEnt(path: Array<String>, index: Int) {
 		for (entity in entities) {
 			if (entity.name == path[index]) {
-				return entity.findEnt(path, index + 1);
+				return entity.findEnt(path, index);
 			}
 		}
 		return null;
@@ -62,7 +62,16 @@ class SceneRoot extends Node {
 
 	public function find(path: String) {
 		var split = path.split("/");
-		return findEnt(split, 0);
+		if (split.length == 1) {
+			split = ["Scene", split[0]];
+		}
+		else {
+			var newsplit = ["Scene"];
+			for (string in split) {
+				newsplit.push((string));
+			}
+		}
+		return findEnt(split, 1);
 	}
 
 	public function getEntityCount() {
