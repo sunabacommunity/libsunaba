@@ -113,7 +113,7 @@ class Entity extends BaseClass {
 		if (index == path.length - 1) return this;
 
 		for (child in children) {
-			if (child.name == path[index]) {
+			if (child.name == path[index + 1]) {
 				return child.findEnt(path, index + 1);
 			}
 		}
@@ -228,6 +228,15 @@ class Entity extends BaseClass {
 
 	public function find(path: String) {
 		var split = path.split("/");
+		if (split.length == 1) {
+			split = [name, split[0]];
+		}
+		else {
+			var newsplit = [name];
+			for (string in split) {
+				newsplit.push((string));
+			}
+		}
 		return findEnt(split, 0);
 	}
 
