@@ -114,7 +114,7 @@ class CharacterController extends Behavior {
 
         isStarted = true;
 
-        InputService.mouseMode == MouseMode.captured;
+        InputService.mouseMode = MouseMode.captured;
     }
 
     public override function onUnhandledInput(event:InputEvent) {
