@@ -3,6 +3,8 @@ import sunaba.core.Rect2.Rect2Native;
 import sunaba.core.Rect2.Rect2Native.fromRect2is;
 import sunaba.core.Rect2.Rect2Native.fromFloats;
 import sunaba.core.Rect2.Rect2Native.fromVector2s;
+import sunaba.core.native.ScriptType;
+import sunaba.core.native.NativeReference;
 
 @:native("Rect2i")
 extern class Rect2iNative {
@@ -98,12 +100,17 @@ abstract Rect2i(Rect2iNative) from Rect2iNative to Rect2iNative {
 
 	@:op(A == B)
 	public inline function equals(other : Rect2i)  : Bool {
-		return this.position.equals(other.position) && this.size.equals(other.size);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Rect2i = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("rect2i_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Rect2i)  : Bool {
 		var og: Rect2i = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 }
