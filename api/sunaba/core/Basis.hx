@@ -148,7 +148,7 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 	@:op(A != B)
 	public inline function notEquals(other : Basis) : Bool {
 		var og: Basis = this;
-		return og.equals(other) == false;
+		return og.equals(other) != true;
 	}
 
 	@:op(A / B)
