@@ -125,7 +125,7 @@ abstract class IPhysicsBody extends ICollisionObject {
         return collisionExceptions;
     }
 
-    public function getGravity() {
+    public function getGravity(): Vector3 {
         return node.native.call("get_gravity", new ArrayList());
     }
 
