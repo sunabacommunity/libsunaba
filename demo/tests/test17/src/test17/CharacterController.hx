@@ -82,7 +82,7 @@ class CharacterController extends Behavior {
         timesJumped = 0;
 
         isStarted = false;
-        
+
     }
 
     public override function onStart() {
@@ -118,7 +118,7 @@ class CharacterController extends Behavior {
     }
 
     public override function onUnhandledInput(event:InputEvent) {
-        
+
         if (event.native.isClass("InputEventKey")) {
             var keyEvent = Reference.castTo(event, InputEventKey);
             if (keyEvent.keycode == Key.w) {
@@ -205,19 +205,19 @@ class CharacterController extends Behavior {
             speed = defaultSpeed;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
-        
+
             jump();
             applyMovement(direction, deltaTime);
             applyGravity(deltaTime);
             applyFriction(direction, deltaTime);
             applyControllerRotation();
-        
+
             // Reset jump counter when on floor
             if (body.isOnFloor()) {
                 timesJumped = 0;
             }
-        
-            body.upDirection = new Vector3(0, 1, 0);
+
+            body.upDirection = body.getFloorNormal();
             body.floorStopOnSlope = true;
             body.maxSlides = 4;
             body.floorMaxAngle = 0.7853;
@@ -231,14 +231,14 @@ class CharacterController extends Behavior {
         for (i in 0...body.getSlideCollisionCount()) {
             var collision = body.getSlideCollision(i);
             if (collision.isNull()) continue;
-        
+
             for (j in 0...collision.getCollisionCount()) {
                 var bodyNode = collision.getCollider(j);
                 if (bodyNode.isNull()) continue;
-            
+
                 var rigidBody = RigidBody.getFromNode(bodyNode, scene);
                 if (rigidBody == null || rigidBody.applyImpulse == null) continue;
-            
+
                 var force = 5.0;
                 var point = collision.getPosition() - transform.globalPosition;
                 var negativeNormal = new Vector3(-collision.getNormal(j).x, -collision.getNormal(j).y, -collision.getNormal(j).z);
