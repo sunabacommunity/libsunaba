@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.ScriptType;
+import sunaba.core.native.NativeReference;
 
 @:native("Quaternion")
 extern class QuaternionNative {
@@ -81,33 +83,58 @@ abstract Quaternion(QuaternionNative) from QuaternionNative to QuaternionNative 
 
 	@:op(A + B)
 	public inline function add(other : Quaternion)  : Quaternion {
-		return new Quaternion( this.x + other.x, this.y + other.y, this.z + other.z, this.w + other.w);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("quaternion_add", args);
 	}
 
 	@:op(A - B)
 	public inline function subtract(other : Quaternion)  : Quaternion {
-		return new Quaternion( this.x - other.x, this.y - other.y, this.z - other.z, this.w - other.w);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("quaternion_subrtact", args);
 	}
 
 	@:op(A * B)
 	public inline function multiply(other : Quaternion)  : Quaternion {
-		return new Quaternion( this.x * other.x, this.y * other.y, this.z * other.z, this.w * other.w);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("quaternion_multiply", args);
 	}
 
 	@:op(A / B)
 	public inline function divide(other : Quaternion)  : Quaternion {
-		return new Quaternion( this.x / other.x, this.y / other.y, this.z / other.z, this.w / other.w);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("quaternion_divide", args);
 	}
 
 	@:op(A == B)
 	public inline function equals(other : Quaternion)  : Bool {
-		return this.x == other.x && this.y == other.y && this.z == other.z && this.w == other.w;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("quaternion_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Quaternion)  : Bool {
 		var og: Quaternion = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
 	@:op(A < B)
@@ -216,34 +243,51 @@ abstract Quaternion(QuaternionNative) from QuaternionNative to QuaternionNative 
 
 	@:op(A * B)
 	public inline function multiplyScalar(scalar : Float)  : Quaternion {
-		return new Quaternion( this.x * scalar, this.y * scalar, this.z * scalar, this.w * scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("quaternion_multiply_float", args);
 	}
 
 	@:op(A / B)
 	public inline function divideScalar(scalar : Float)  : Quaternion {
-		return new Quaternion( this.x / scalar, this.y / scalar, this.z / scalar, this.w / scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("quaternion_divide_float", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyIntScalar(scalar : Int)  : Quaternion {
-		return new Quaternion( this.x * scalar, this.y * scalar, this.z * scalar, this.w * scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("quaternion_multiply_int", args);
 	}
 
 	@:op(A / B)
 	public inline function divideIntScalar(scalar : Int)  : Quaternion {
-		return new Quaternion( this.x / scalar, this.y / scalar, this.z / scalar, this.w / scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("quaternion_divide_int", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyVector3(vec : Vector3)  : Vector3 {
-		var ix =  this.w * vec.x + this.y * vec.z - this.z * vec.y;
-		var iy =  this.w * vec.y + this.z * vec.x - this.x * vec.z;
-		var iz =  this.w * vec.z + this.x * vec.y - this.y * vec.x;
-		var iw = -this.x * vec.x - this.y * vec.y - this.z * vec.z;
-		return new Vector3(
-			ix * this.w + iw * -this.x + iy * -this.z - iz * -this.y,
-			iy * this.w + iw * -this.y + iz * -this.x - ix * -this.z,
-			iz * this.w + iw * -this.z + ix * -this.y - iy * -this.x
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Quaternion = this;
+		args.append(og);
+		args.append(vec);
+		return ref.call("quaternion_multiply_vector3", args);
 	}
 }
