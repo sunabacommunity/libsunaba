@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.ScriptType;
+import sunaba.core.native.NativeReference;
 
 @:native("Transform3D")
 extern class Transform3DNative {
@@ -77,64 +79,90 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 
 	@:op(A == B)
 	public inline function equals(other : Transform3D) : Bool {
-		return this.basis == other.basis && this.origin == other.origin;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t3d_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Transform3D) : Bool {
 		var og: Transform3D = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
-	/*
+
 	@:op(A * B)
 	public inline function multiplyVector3(other : Vector3) : Vector3 {
-		return this.basis * other + this.origin;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t3d_multiply_vector3", args);
 	}
-	*/
+
 
 	@:op(A * B)
 	public inline function multiplyScalar(scalar : Float) : Transform3D {
-		var new_basis : Basis = this.basis.multiplyVector3ToBasis(new Vector3(scalar, scalar, scalar));
-		var new_origin : Vector3 = this.origin * scalar;
-		return new Transform3D(new_basis, new_origin);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("t3d_multiply_float", args);
 	}
 
 	@:op(A / B)
 	public inline function divideScalar(scalar : Float) : Transform3D {
-		var new_basis : Basis = this.basis.multiplyVector3ToBasis(new Vector3(1 / scalar, 1 / scalar, 1 / scalar));
-		var new_origin : Vector3 = this.origin / scalar;
-		return new Transform3D(new_basis, new_origin);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("t3d_divide_float", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyIntScalar(scalar : Int) : Transform3D {
-		var thisA: Transform3D = this;
-		return thisA.multiplyScalar(cast scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("t3d_multiply_int", args);
 	}
 
 	@:op(A / B)
 	public inline function divideIntScalar(scalar : Int) : Transform3D {
-		var thisA: Transform3D = this;
-		return thisA.divideScalar(cast scalar);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(scalar);
+		return ref.call("t3d_divide_int", args);
 	}
 
-	/*
 	@:op(A * B)
 	public inline function multiplyPlane(other : Plane) : Plane {
-		var n: Vector3 = other.normal;
-		var p: Vector3 = n * other.d;
-		p = this * p;
-		n = this.basis.multiplyVector3(n).normalized();
-		var d: Float = n.dot(p);
-		return new Plane(n, d);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t3d_multiply_plane", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyAABB(aabb: AABB): AABB {
-		var corners = aabb.getCorners();
-		var transformedCorners = corners.map(corner -> this * corner);
-		return AABB.fromPoints(transformedCorners);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform3D = this;
+		args.append(og);
+		args.append(aabb);
+		return ref.call("t3d_multiply_aabb", args);
 	}
-	*/
+
 }
