@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
 
 @:native("Rect2")
 extern class Rect2Native {
@@ -94,13 +96,18 @@ abstract Rect2(Rect2Native) from Rect2Native to Rect2Native {
 
 	@:op(A == B)
 	public inline function equals(other : Rect2)  : Bool {
-		return this.position.equals(other.position) && this.size.equals(other.size);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Rect2 = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("rect2_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Rect2)  : Bool {
 		var og: Rect2 = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
 	/*
