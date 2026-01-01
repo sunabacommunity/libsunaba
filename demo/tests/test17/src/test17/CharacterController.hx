@@ -180,9 +180,9 @@ class CharacterController extends Behavior {
                 var newRotation = transform.rotation;
                 newRotation.y -= mouseAxis.x * mouseSensitivity *  0.001;
                 transform.rotation = newRotation;
-                var newCameraRotation = cameraTransform.rotation;
-                newCameraRotation.x = Clamp(newCameraRotation.x - mouseAxis.y * mouseSensitivity * 0.001, -1.5, 1.5);
-                cameraTransform.rotation = newCameraRotation;
+                //var newCameraRotation = cameraTransform.rotation;
+                //newCameraRotation.x = Clamp(newCameraRotation.x - mouseAxis.y * mouseSensitivity * 0.001, -1.5, 1.5);
+                //cameraTransform.rotation = newCameraRotation;
             }
         }
     }
@@ -258,13 +258,15 @@ class CharacterController extends Behavior {
         var inputVector = new Vector3();
         inputVector.x = InputService.getActionStrength("moveRight") - InputService.getActionStrength("moveLeft");
         inputVector.z = InputService.getActionStrength("moveBackward") - InputService.getActionStrength("moveForward");
-        return inputVector;
+        return inputVector.normalized();
     }
 
     inline function getDirection(inputVector: Vector3) {
         var direction = new Vector3();
-        direction = (transform.basis.x * inputVector.x) + (transform.basis.z * inputVector.z);
-        return direction;
+        direction = (new Vector3(inputVector.x, inputVector.x, inputVector.x) * transform.basis.x) + (new Vector3(inputVector.z, inputVector.z, inputVector.z) * transform.basis.z);
+        direction.y  = 0;
+        direction = transform.quaternion * direction;
+        return direction.normalized();
     }
 
     inline function applyMovement(direction: Vector3, deltaTime: Float) {
@@ -273,6 +275,7 @@ class CharacterController extends Behavior {
             var newVelocity = velocity.moveToward(direction * speed, acceleration * deltaTime);
             velocity.x = newVelocity.x;
             velocity.z = newVelocity.z;
+            //velocity = transform.quaternion * velocity;
             //trace(velocity);
             body.velocity = velocity;
         }
@@ -320,6 +323,7 @@ class CharacterController extends Behavior {
                 timesJumped++;
             }
             else if (body.velocity.y > jumpImpulse / 2) {
+                updateSnapVector();
                 var velocity = body.velocity;
                 velocity.y = jumpImpulse / 2.0;
                 body.velocity = velocity;
