@@ -82,7 +82,7 @@ class CharacterController extends Behavior {
         timesJumped = 0;
 
         isStarted = false;
-
+        
     }
 
     public override function onStart() {
@@ -118,7 +118,7 @@ class CharacterController extends Behavior {
     }
 
     public override function onUnhandledInput(event:InputEvent) {
-
+        
         if (event.native.isClass("InputEventKey")) {
             var keyEvent = Reference.castTo(event, InputEventKey);
             if (keyEvent.keycode == Key.w) {
@@ -205,18 +205,18 @@ class CharacterController extends Behavior {
             speed = defaultSpeed;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
-
+        
             jump();
             applyMovement(direction, deltaTime);
             applyGravity(deltaTime);
             applyFriction(direction, deltaTime);
             applyControllerRotation();
-
+        
             // Reset jump counter when on floor
             if (body.isOnFloor()) {
                 timesJumped = 0;
             }
-
+        
             body.upDirection = body.getFloorNormal();
             body.floorStopOnSlope = true;
             body.maxSlides = 4;
@@ -231,14 +231,14 @@ class CharacterController extends Behavior {
         for (i in 0...body.getSlideCollisionCount()) {
             var collision = body.getSlideCollision(i);
             if (collision.isNull()) continue;
-
+        
             for (j in 0...collision.getCollisionCount()) {
                 var bodyNode = collision.getCollider(j);
                 if (bodyNode.isNull()) continue;
-
+            
                 var rigidBody = RigidBody.getFromNode(bodyNode, scene);
                 if (rigidBody == null || rigidBody.applyImpulse == null) continue;
-
+            
                 var force = 5.0;
                 var point = collision.getPosition() - transform.globalPosition;
                 var negativeNormal = new Vector3(-collision.getNormal(j).x, -collision.getNormal(j).y, -collision.getNormal(j).z);
@@ -253,29 +253,36 @@ class CharacterController extends Behavior {
 
     // FIXED: Input vector remains normalized for consistent diagonal movement
     inline function getInputVector():Vector3 {
-        var inputVector = new Vector3();
-        inputVector.x = InputService.getActionStrength("moveRight") - InputService.getActionStrength("moveLeft");
-        inputVector.z = InputService.getActionStrength("moveBackward") - InputService.getActionStrength("moveForward");
+        var inputVector = new Vector3(0, 0, 0);
+        inputVector.x = InputService.getVector("moveLeft", "moveRight", "moveForward", "moveBackward").x;
+        inputVector.z = InputService.getVector("moveLeft", "moveRight", "moveForward", "moveBackward").y;
         return inputVector.normalized();
     }
 
     // FIXED: Simplified direction calculation (removed unnecessary quaternion multiplication)
     inline function getDirection(inputVector: Vector3):Vector3 {
-        var direction = transform.basis.x * inputVector.x + transform.basis.z * inputVector.z;
-        direction.y = 0;
+        var direction = transform.transform.basis * inputVector;
         return direction.normalized();
     }
 
     inline function applyMovement(direction: Vector3, deltaTime: Float) {
         if (direction != Vector3.zero()) {
             var velocity = body.velocity;
-            var newVelocity = velocity.moveToward(direction * speed, acceleration * deltaTime);
+            /*var newVelocity = velocity.moveToward(direction * speed, acceleration * deltaTime);
             velocity.x = newVelocity.x;
             velocity.z = newVelocity.z;
             //velocity = transform.quaternion * velocity;
-            //trace(velocity);
+            //trace(velocity);*/
+            velocity.x = moveTowards(velocity.x, direction.x * speed, acceleration * deltaTime);
+            velocity.z = moveTowards(velocity.z, direction.z * speed, acceleration * deltaTime);
             body.velocity = velocity;
         }
+    }
+
+    inline function moveTowards(current:Float, target:Float, maxDelta:Float):Float {
+        if (current < target) return Math.min(current + maxDelta, target);
+        if (current > target) return Math.max(current - maxDelta, target);
+        return target;
     }
 
     // FIXED: Proper friction logic for both ground and air
