@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
 
 @:native("Plane")
 extern class PlaneNative {
@@ -83,15 +85,30 @@ abstract Plane(PlaneNative) from PlaneNative to PlaneNative {
 		return value;
 	}
 
+	@:op(A * B)
+	public inline function multiply(other: Transform3D): Bool {
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Plane = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("plane_multiply", args);
+	}
+
 	@:op(A == B)
 	public inline function equals(other: Plane): Bool {
-		return this.normal == other.normal && this.d == other.d;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Plane = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("plane_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other: Plane): Bool {
 		var og: Plane = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
 	/*
