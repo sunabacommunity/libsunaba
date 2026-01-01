@@ -95,14 +95,14 @@ abstract Transform3D(Transform3DNative) from Transform3DNative to Transform3DNat
 
 	@:op(A * B)
 	public inline function multiplyScalar(scalar : Float) : Transform3D {
-		var new_basis : Basis = this.basis * new Vector3(scalar, scalar, scalar);
+		var new_basis : Basis = this.basis.multiplyVector3ToBasis(new Vector3(scalar, scalar, scalar));
 		var new_origin : Vector3 = this.origin * scalar;
 		return new Transform3D(new_basis, new_origin);
 	}
 
 	@:op(A / B)
 	public inline function divideScalar(scalar : Float) : Transform3D {
-		var new_basis : Basis = this.basis * new Vector3(1 / scalar, 1 / scalar, 1 / scalar);
+		var new_basis : Basis = this.basis.multiplyVector3ToBasis(new Vector3(1 / scalar, 1 / scalar, 1 / scalar));
 		var new_origin : Vector3 = this.origin / scalar;
 		return new Transform3D(new_basis, new_origin);
 	}
