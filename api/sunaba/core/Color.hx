@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.ScriptType;
+import sunaba.core.native.NativeReference;
 
 @:native("Color")
 extern class ColorNative {
@@ -148,28 +150,53 @@ abstract Color(ColorNative) from ColorNative to ColorNative {
 	}
 
 	@:op(A + B) public inline function add(other : Color) : Color {
-		return ColorNative.rgba(this.r + other.r, this.g + other.g, this.b + other.b, this.a + other.a);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Color = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("color_add", args);
 	}
 
 	@:op(A - B) public inline function subtract(other : Color) : Color {
-		return ColorNative.rgba(this.r - other.r, this.g - other.g, this.b - other.b, this.a - other.a);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Color = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("color_subtract", args);
 	}
 
 	@:op(A * B) public inline function multiply(other : Color) : Color {
-		return ColorNative.rgba(this.r * other.r, this.g * other.g, this.b * other.b, this.a * other.a);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Color = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("color_multiply", args);
 	}
 
 	@:op(A / B) public inline function divide(other : Color) : Color {
-		return ColorNative.rgba(this.r / other.r, this.g / other.g, this.b / other.b, this.a / other.a);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Color = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("color_divide", args);
 	}
 
 	@:op(A == B) public inline function equals(other : Color) : Bool {
-		return this.r == other.r && this.g == other.g && this.b == other.b && this.a == other.a;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Color = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("color_equals", args);
 	}
 
 	@:op(A != B) public inline function notEquals(other : Color) : Bool {
 		var og: Color = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
 	@:op(A < B) public inline function lessThan(other : Color) : Bool {
@@ -189,34 +216,22 @@ abstract Color(ColorNative) from ColorNative to ColorNative {
 	}
 
 	@:op(A += B) public inline function addAssign(other : Color) : Color {
-		this.r += other.r;
-		this.g += other.g;
-		this.b += other.b;
-		this.a += other.a;
-		return this;
+		var thisC: Color = this;
+		return thisC.add(other);
 	}
 
 	@:op(A -= B) public inline function subtractAssign(other : Color) : Color {
-		this.r -= other.r;
-		this.g -= other.g;
-		this.b -= other.b;
-		this.a -= other.a;
-		return this;
+		var thisC: Color = this;
+		return thisC.subtract(other);
 	}
 
 	@:op(A *= B) public inline function multiplyAssign(other : Color) : Color {
-		this.r *= other.r;
-		this.g *= other.g;
-		this.b *= other.b;
-		this.a *= other.a;
-		return this;
+		var thisC: Color = this;
+		return thisC.multiply(other);
 	}
 
 	@:op(A /= B) public inline function divideAssign(other : Color) : Color {
-		this.r /= other.r;
-		this.g /= other.g;
-		this.b /= other.b;
-		this.a /= other.a;
-		return this;
+		var thisC: Color = this;
+		return thisC.divide(other);
 	}
 }
