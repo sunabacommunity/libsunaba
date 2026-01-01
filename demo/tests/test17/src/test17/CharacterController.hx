@@ -178,11 +178,11 @@ class CharacterController extends Behavior {
             if (InputService.mouseMode == MouseMode.captured) {
                 var mouseAxis = eventMouseMoution.relative;
                 var newRotation = transform.rotation;
-                newRotation.y -= mouseAxis.x * mouseSensitivity *  0.001;
+                newRotation.y -= mouseAxis.x * mouseSensitivity * 0.001;
                 transform.rotation = newRotation;
-                //var newCameraRotation = cameraTransform.rotation;
-                //newCameraRotation.x = Clamp(newCameraRotation.x - mouseAxis.y * mouseSensitivity * 0.001, -1.5, 1.5);
-                //cameraTransform.rotation = newCameraRotation;
+                var newCameraRotation = cameraTransform.rotation;
+                newCameraRotation.x = Clamp(newCameraRotation.x - mouseAxis.y * mouseSensitivity * 0.001, -1.5, 1.5);
+                cameraTransform.rotation = newCameraRotation;
             }
         }
     }
@@ -199,53 +199,50 @@ class CharacterController extends Behavior {
         }
     }
 
+    // In onPhysicsUpdate, ensure this order and logic:
     public override function onPhysicsUpdate(deltaTime:Float) {
         if (isActive) {
             speed = defaultSpeed;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
-            //trace(direction.x);
-            //trace(direction.z);
+        
             jump();
-
             applyMovement(direction, deltaTime);
             applyGravity(deltaTime);
             applyFriction(direction, deltaTime);
             applyControllerRotation();
-            
+        
+            // Reset jump counter when on floor
+            if (body.isOnFloor()) {
+                timesJumped = 0;
+            }
+        
             body.upDirection = new Vector3(0, 1, 0);
             body.floorStopOnSlope = true;
             body.maxSlides = 4;
             body.floorMaxAngle = 0.7853;
             body.moveAndSlide();
-            //processCollisions();
+            //processCollisions(); // Optional: if you want collision forces
         }
     }
 
+    // Optional: If you want collision forces like Code B
     inline function processCollisions() {
         for (i in 0...body.getSlideCollisionCount()) {
             var collision = body.getSlideCollision(i);
-            if (collision.isNull())
-                continue;
+            if (collision.isNull()) continue;
+        
             for (j in 0...collision.getCollisionCount()) {
                 var bodyNode = collision.getCollider(j);
                 if (bodyNode.isNull()) continue;
+            
                 var rigidBody = RigidBody.getFromNode(bodyNode, scene);
-                if (rigidBody == null) {
-                    continue;
-                }
-
-                var collisionPosition = collision.getPosition();
-                var bodyGlobalPosition = transform.globalPosition;
-                var point = collisionPosition - bodyGlobalPosition;
-
+                if (rigidBody == null || rigidBody.applyImpulse == null) continue;
+            
                 var force = 5.0;
-
-                var collisionNormal = collision.getNormal(k);
-                var negativeCollisionNormal = new Vector3(-collisionNormal.x, -collisionNormal.y, -collisionNormal.z);
-                if (rigidBody.applyImpulse == null)
-                    continue;
-                rigidBody.applyImpulse(negativeCollisionNormal * force, point); 
+                var point = collision.getPosition() - transform.globalPosition;
+                var negativeNormal = new Vector3(-collision.getNormal(j).x, -collision.getNormal(j).y, -collision.getNormal(j).z);
+                rigidBody.applyImpulse(negativeNormal * force, point);
             }
         }
     }
@@ -254,18 +251,18 @@ class CharacterController extends Behavior {
 		return if (value < min) min else if (value > max) max else value;
 	}
 
-    inline function getInputVector() {
+    // FIXED: Input vector remains normalized for consistent diagonal movement
+    inline function getInputVector():Vector3 {
         var inputVector = new Vector3();
         inputVector.x = InputService.getActionStrength("moveRight") - InputService.getActionStrength("moveLeft");
         inputVector.z = InputService.getActionStrength("moveBackward") - InputService.getActionStrength("moveForward");
         return inputVector.normalized();
     }
 
-    inline function getDirection(inputVector: Vector3) {
-        var direction = new Vector3();
-        direction = (new Vector3(inputVector.x, inputVector.x, inputVector.x) * transform.basis.x) + (new Vector3(inputVector.z, inputVector.z, inputVector.z) * transform.basis.z);
-        direction.y  = 0;
-        direction = transform.quaternion * direction;
+    // FIXED: Simplified direction calculation (removed unnecessary quaternion multiplication)
+    inline function getDirection(inputVector: Vector3):Vector3 {
+        var direction = transform.basis.x * inputVector.x + transform.basis.z * inputVector.z;
+        direction.y = 0;
         return direction.normalized();
     }
 
@@ -281,25 +278,27 @@ class CharacterController extends Behavior {
         }
     }
 
+    // FIXED: Proper friction logic for both ground and air
     inline function applyFriction(direction: Vector3, deltaTime: Float) {
         if (direction == Vector3.zero()) {
             var velocity = body.velocity;
             if (body.isOnFloor()) {
+                // Ground friction - slow down all axes
                 velocity = velocity.moveToward(Vector3.zero(), friction * deltaTime);
+            } else {
+                // Air friction - only slow horizontal movement
+                velocity.x = velocity.moveToward(Vector3.zero(), airFriction * deltaTime).x;
+                velocity.z = velocity.moveToward(Vector3.zero(), airFriction * deltaTime).z;
             }
-            else {
-                var newVelocity = velocity.moveToward(direction * speed, airFriction * deltaTime);
-                velocity.x = newVelocity.x;
-                velocity.z = newVelocity.z;
-            }
-            //trace(velocity);
             body.velocity = velocity;
         }
     }
 
-    inline function applyGravity(deltTime: Float) {
+    // FIXED: Typo in parameter name and consistent clamping
+    inline function applyGravity(deltaTime: Float) {
         var velocity = body.velocity;
-        velocity.y += gravity * deltTime;
+        velocity.y += gravity * deltaTime;
+        // Clamp vertical velocity between gravity (max fall) and jumpImpulse (max rise)
         velocity.y = Clamp(velocity.y, gravity, jumpImpulse);
         body.velocity = velocity;
     }
@@ -313,6 +312,7 @@ class CharacterController extends Behavior {
         }
     }
 
+    // FIXED: Simplified jump logic matching Code B
     inline function jump() {
         if (InputService.isActionJustPressed("jump")) {
             if (body.isOnFloor()) {
@@ -322,12 +322,6 @@ class CharacterController extends Behavior {
                 body.velocity = velocity;
                 timesJumped++;
             }
-            else if (body.velocity.y > jumpImpulse / 2) {
-                updateSnapVector();
-                var velocity = body.velocity;
-                velocity.y = jumpImpulse / 2.0;
-                body.velocity = velocity;
-            }   
         }
     }
 
