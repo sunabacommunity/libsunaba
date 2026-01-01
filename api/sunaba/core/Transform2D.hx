@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
 
 @:native("Transform2D")
 extern class Transform2DNative {
@@ -108,55 +110,77 @@ abstract Transform2D(Transform2DNative) from Transform2DNative to Transform2DNat
 
 	@:op(A * B)
 	public inline function multiply(other : Transform2D) : Transform2D {
-		return new Transform2DNative(
-			this.getRotation() + other.getRotation(),
-			this.basisXform(other.getOrigin()) + this.getOrigin()
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_multiply", args);
 	}
 
 	@:op(A == B)
 	public inline function equals(other : Transform2D) : Bool {
-		return this.x == other.x && this.y == other.y && this.origin == other.origin;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_equals", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Transform2D) : Bool {
 		var og: Transform2D = this;
-		return !og.equals(other);
+		return og.equals(other) != true;
 	}
 
 	@:op(A * B)
 	public inline function multiplyVector2(other : Vector2) : Vector2 {
-		return this.basisXform(other) + this.getOrigin();
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_multiply_vector2", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyScalar(other : Float) : Transform2D {
-		return new Transform2DNative(
-			this.getRotation() * other,
-			this.getOrigin() * other
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_multiply_float", args);
 	}
 
 	@:op(A / B)
 	public inline function divideScalar(other : Float) : Transform2D {
-		return new Transform2DNative(
-			this.getRotation() / other,
-			this.getOrigin() / other
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_divide_float", args);
 	}
 
 	@:op(A * B)
 	public inline function multiplyIntScalar(other : Int) : Transform2D {
-		var otherF: Float = cast other;
-		var thisT2d: Transform2D = this;
-		return thisT2d.multiplyScalar(otherF);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_multiply_int", args);
 	}
 
 	@:op(A / B)
 	public inline function divideIntScalar(other : Int) : Transform2D {
-		var otherF: Float = cast other;
-		var thisT2d: Transform2D = this;
-		return thisT2d.divideScalar(cast other);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Transform2D = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("t2d_divide_int", args);
 	}
 }
