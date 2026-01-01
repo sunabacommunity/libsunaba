@@ -1,4 +1,6 @@
 package sunaba.core;
+import sunaba.core.native.NativeReference;
+import sunaba.core.native.ScriptType;
 
 @:native("Basis")
 extern class BasisNative {
@@ -95,23 +97,12 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 
 	@:op(A * B)
 	public inline function multiply(other : Basis) : Basis {
-		return new Basis(
-			new Vector3(
-				this.x.x * other.x.x + this.y.x * other.x.y + this.z.x * other.x.z,
-				this.x.y * other.x.x + this.y.y * other.x.y + this.z.y * other.x.z,
-				this.x.z * other.x.x + this.y.z * other.x.y + this.z.z * other.x.z
-			),
-			new Vector3(
-				this.x.x * other.y.x + this.y.x * other.y.y + this.z.x * other.y.z,
-				this.x.y * other.y.x + this.y.y * other.y.y + this.z.y * other.y.z,
-				this.x.z * other.y.x + this.y.z * other.y.y + this.z.z * other.y.z
-			),
-			new Vector3(
-				this.x.x * other.z.x + this.y.x * other.z.y + this.z.x * other.z.z,
-				this.x.y * other.z.x + this.y.y * other.z.y + this.z.y * other.z.z,
-				this.x.z * other.z.x + this.y.z * other.z.y + this.z.z * other.z.z
-			)
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Basis = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("basis_multiply", args);
 	}
 
 	public inline function multiplyVector3ToBasis(other : Vector3) : Basis {
@@ -136,22 +127,48 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 
 	@:op(A * B)
 	public inline function multiplyVector3(other : Vector3) : Vector3 {
-		return new Vector3(
-		this.x.x * other.x + this.y.x * other.y + this.z.x * other.z,
-		this.x.y * other.x + this.y.y * other.y + this.z.y * other.z,
-		this.x.z * other.x + this.y.z * other.y + this.z.z * other.z
-		);
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Basis = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("basis_multiply_vector3", args);
 	}
 
 	@:op(A == B)
 	public inline function equals(other : Basis) : Bool {
-		return this.x == other.x && this.y == other.y && this.z == other.z;
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Basis = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("basis_equal", args);
 	}
 
 	@:op(A != B)
 	public inline function notEquals(other : Basis) : Bool {
 		var og: Basis = this;
-		return !og.equals(other);
+		return og.equals(other) == false;
+	}
+
+	@:op(A / B)
+	public inline function divideInt(other : Int) : Basis {
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Basis = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("basis_divide_int", args);
+	}
+
+	@:op(A / B)
+	public inline function divideFloat(other : Float) : Basis {
+		var ref = new NativeReference("res://Engine/MathUtils.gd", new ArrayList(), ScriptType.gdscript);
+		var args = new ArrayList();
+		var og: Basis = this;
+		args.append(og);
+		args.append(other);
+		return ref.call("basis_divide_int", args);
 	}
 
 	@:op(A += B)
