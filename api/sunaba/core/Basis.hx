@@ -114,8 +114,7 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 		);
 	}
 
-	@:op(A * B)
-	public inline function multiplyVector3(other : Vector3) : Basis {
+	public inline function multiplyVector3ToBasis(other : Vector3) : Basis {
 		return new Basis(
 			new Vector3(
 				this.x.x * other.x,
@@ -132,6 +131,15 @@ abstract Basis(BasisNative) from BasisNative to BasisNative {
 				this.z.y * other.z,
 				this.z.z * other.z
 			)
+		);
+	}
+
+	@:op(A * B)
+	public inline function multiplyVector3(other : Vector3) : Vector3 {
+		return new Vector3(
+		this.x.x * other.x + this.y.x * other.y + this.z.x * other.z,
+		this.x.y * other.x + this.y.y * other.y + this.z.y * other.z,
+		this.x.z * other.x + this.y.z * other.y + this.z.z * other.z
 		);
 	}
 
