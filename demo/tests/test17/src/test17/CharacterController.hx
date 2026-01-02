@@ -71,7 +71,7 @@ class CharacterController extends Behavior {
         acceleration = 60.0;
         friction = 50.0;
         airFriction = 10.0;
-        jumpImpulse = 20.0;
+        jumpImpulse = 12.5;
         gravity = -40.0;
 
         mouseSensitivity = 1.0;
