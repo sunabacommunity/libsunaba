@@ -161,6 +161,14 @@ class CharacterController extends Behavior {
                     InputService.actionRelease("jump");
                 }
             }
+            if (keyEvent.keycode == Key.shift) {
+                if (keyEvent.isPressed() == true) {
+                    InputService.actionPress("sprint");
+                }
+                else if (keyEvent.isReleased()) {
+                    InputService.actionRelease("sprint");
+                }
+            }
             if (keyEvent.keycode == Key.escape) {
                 if (keyEvent.isPressed() == true) {
                     InputService.actionPress("pause");
@@ -205,6 +213,9 @@ class CharacterController extends Behavior {
             speed = defaultSpeed;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
+
+            if (InputService.isActionPressed("sprint"))
+                speed = sprintSpeed;
         
             jump();
             applyMovement(direction, deltaTime);
