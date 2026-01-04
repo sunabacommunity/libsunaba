@@ -118,7 +118,6 @@ class CharacterController extends Behavior {
     }
 
     public override function onUnhandledInput(event:InputEvent) {
-        
         if (event.native.isClass("InputEventKey")) {
             var keyEvent = Reference.castTo(event, InputEventKey);
             if (keyEvent.keycode == Key.w) {
