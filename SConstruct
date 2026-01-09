@@ -148,18 +148,19 @@ elif(env["lua_runtime"] == "luajit"):
     else:
         env.Append(LIBS=['libluajit'])
 
-env.Append(CPPPATH=["luasocket/src/"])
-lsocket_sources = []
-all_lsocket_files = Glob("luasocket/src/*.c")
+if env["platform"] != "web":
+    env.Append(CPPPATH=["luasocket/src/"])
+    lsocket_sources = []
+    all_lsocket_files = Glob("luasocket/src/*.c")
 
-# Exclude Unix-specific files on Windows
-if env["platform"] == "windows":
-    unix_files = ["serial.c", "unix.c", "unixdgram.c", "unixstream.c", "usocket.c"]
-    lsocket_sources = [f for f in all_lsocket_files if not any(uf in str(f) for uf in unix_files)]
-else:
-    lsocket_sources = all_lsocket_files
+    # Exclude Unix-specific files on Windows
+    if env["platform"] == "windows":
+        unix_files = ["serial.c", "unix.c", "unixdgram.c", "unixstream.c", "usocket.c"]
+        lsocket_sources = [f for f in all_lsocket_files if not any(uf in str(f) for uf in unix_files)]
+    else:
+        lsocket_sources = all_lsocket_files
 
-sources.extend(lsocket_sources)
+    sources.extend(lsocket_sources)
 
 ### < LUA STUFF
 
