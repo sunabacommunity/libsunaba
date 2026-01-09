@@ -12,6 +12,11 @@
 #include <godot_cpp/classes/dir_access.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
 
+#ifdef SUNABA_LUASOCKET_ENABLED
+#include <luasocket.h>
+#include <mime.h>
+#endif
+
 void Runtime::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("init_state", "sandboxed", "classes"), &Runtime::initState);
 	ClassDB::bind_method(D_METHOD("do_string", "code"), &Runtime::do_string);
@@ -175,6 +180,10 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 		global_state.open_libraries( sol::lib::coroutine,
 			sol::lib::count, g );*/
 		lua_state["sandboxed"] = false;
+#ifdef SUNABA_LUASOCKET_ENABLED
+		luaopen_socket_core(lua_state);
+		luaopen_mime_core(lua_state);
+#endif
 	}
 	else {
 		lua_state.open_libraries( sol::lib::base, sol::lib::bit32, sol::lib::coroutine,
