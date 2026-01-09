@@ -161,6 +161,7 @@ if env["platform"] != "web":
         lsocket_sources = all_lsocket_files
 
     sources.extend(lsocket_sources)
+    env.Append(CPPDEFINES=["SUNABA_LUASOCKET_ENABLED"])
 
 ### < LUA STUFF
 
