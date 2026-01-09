@@ -74,6 +74,11 @@ if env['platform'] == 'windows':
         env.msvc = True
     else:
         env.msvc = False
+    # Add Windows libraries for networking and threading
+    env.Append(LIBS=['ws2_32'])
+    # Add explicit linker flags for static pthread linking
+    if env.msvc == False:
+        env.Append(LINKFLAGS=['-lwsock32'])
 else:
     env.msvc = False
 
@@ -118,7 +123,8 @@ if (env["lua_runtime"] == "lua"):
     lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
     # Exclude onelua.c to avoid duplicate symbols with individual .c files
     all_lua_c = Glob("lua-5.4.8/*.c")
-    lua_c_files = [f for f in all_lua_c if "onelua.c" not in str(f)]
+    exclude_files = ["onelua.c", "lua.c"]
+    lua_c_files = [f for f in all_lua_c if not any(ef in str(f) for ef in exclude_files)]
     lua_sources.extend(lua_c_files)
 
     # Only add source files to the sources list
@@ -141,6 +147,19 @@ elif(env["lua_runtime"] == "luajit"):
         env.Append(LIBS=[File("luajit/src/libluajit.a")])
     else:
         env.Append(LIBS=['libluajit'])
+
+env.Append(CPPPATH=["luasocket/src/"])
+lsocket_sources = []
+all_lsocket_files = Glob("luasocket/src/*.c")
+
+# Exclude Unix-specific files on Windows
+if env["platform"] == "windows":
+    unix_files = ["serial.c", "unix.c", "unixdgram.c", "unixstream.c", "usocket.c"]
+    lsocket_sources = [f for f in all_lsocket_files if not any(uf in str(f) for uf in unix_files)]
+else:
+    lsocket_sources = all_lsocket_files
+
+sources.extend(lsocket_sources)
 
 ### < LUA STUFF
 
