@@ -201,6 +201,8 @@ local ValueType = _hx_e()
 local Type = _hx_e()
 ___Xml_XmlType_Impl_ = _hx_e()
 local Xml = _hx_e()
+__haxe_StackItem = _hx_e()
+__haxe__CallStack_CallStack_Impl_ = _hx_e()
 __haxe_IMap = _hx_e()
 __haxe_Exception = _hx_e()
 __haxe__Int32_Int32_Impl_ = _hx_e()
@@ -210,6 +212,7 @@ __haxe_Log = _hx_e()
 __haxe_NativeStackTrace = _hx_e()
 __haxe__Rest_Rest_Impl_ = _hx_e()
 __haxe_ValueException = _hx_e()
+__haxe_io_Bytes = _hx_e()
 __haxe_crypto_Crc32 = _hx_e()
 __haxe_ds_IntMap = _hx_e()
 __haxe_ds_List = _hx_e()
@@ -219,7 +222,6 @@ __haxe_exceptions_PosException = _hx_e()
 __haxe_exceptions_NotImplementedException = _hx_e()
 __haxe_format_JsonParser = _hx_e()
 __haxe_format_JsonPrinter = _hx_e()
-__haxe_io_Bytes = _hx_e()
 __haxe_io_BytesBuffer = _hx_e()
 __haxe_io_Output = _hx_e()
 __haxe_io_BytesOutput = _hx_e()
@@ -251,6 +253,7 @@ __sunaba_AppView = _hx_e()
 __sunaba_CanvasItem = _hx_e()
 __sunaba__CanvasItemProcessMode_CanvasItemProcessMode_Impl_ = _hx_e()
 __sunaba__CloseButtonDisplayPolicy_CloseButtonDisplayPolicy_Impl_ = _hx_e()
+__sunaba_CommandParser = _hx_e()
 __sunaba__CursorShape_CursorShape_Impl_ = _hx_e()
 __sunaba_DataUtils = _hx_e()
 __sunaba_Debug = _hx_e()
@@ -300,17 +303,24 @@ __sunaba_ResourcePathDBService = _hx_e()
 __sunaba_SceneFile = _hx_e()
 __sunaba_SceneRoot = _hx_e()
 __sunaba_Shader = _hx_e()
+__sunaba_ShellConsole = _hx_e()
 __sunaba__SizeFlags_SizeFlags_Impl_ = _hx_e()
 __sunaba_Viewport = _hx_e()
 __sunaba_SubViewport = _hx_e()
 __sunaba_SystemFont = _hx_e()
+__sunaba__TrackType_TrackType_Impl_ = _hx_e()
 __sunaba__VerticalAlignment_VerticalAlignment_Impl_ = _hx_e()
 __sunaba_ViewportTexture = _hx_e()
 __sunaba__WindowMode_WindowMode_Impl_ = _hx_e()
 __sunaba__WindowResizeEdge_WindowResizeEdge_Impl_ = _hx_e()
+__sunaba_animation_Animation = _hx_e()
+__sunaba_animation_AnimationLibrary = _hx_e()
+__sunaba_animation_AnimationMixer = _hx_e()
+__sunaba_animation_AnimationPlayer = _hx_e()
 __sunaba_core__ArrayList_ArrayList_Impl_ = _hx_e()
 __sunaba_core_ArrayListIterator = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
+__sunaba_core_ByteArrayUtils = _hx_e()
 __sunaba_core__ByteArray_ByteArray_Fields_ = _hx_e()
 __sunaba_core__Callable_Callable_Impl_ = _hx_e()
 __sunaba_core__Color_Color_Impl_ = _hx_e()
@@ -356,10 +366,14 @@ __sunaba_io_IoManager = _hx_e()
 __sunaba_networking_MultiplayerAPI = _hx_e()
 __sunaba_networking_PacketPeer = _hx_e()
 __sunaba_networking_MultiplayerPeer = _hx_e()
+__sunaba_spatial_BaseMaterial3D = _hx_e()
 __sunaba_spatial_Camera = _hx_e()
 __sunaba_spatial_CameraAttributes = _hx_e()
 __sunaba_spatial_IVisualInstance = _hx_e()
 __sunaba_spatial_IGeometryInstance = _hx_e()
+__sunaba_spatial_Skeleton = _hx_e()
+__sunaba_spatial_Skin = _hx_e()
+__sunaba_spatial_SkinReference = _hx_e()
 __sunaba_spatial_Sky = _hx_e()
 __sunaba_spatial_SpatialTransform = _hx_e()
 __sunaba_spatial_World3D = _hx_e()
@@ -369,14 +383,49 @@ __sunaba_spatial_lighting_OmniLight = _hx_e()
 __sunaba_spatial_lighting_SpotLight = _hx_e()
 __sunaba_spatial_mesh_PrimitiveMesh = _hx_e()
 __sunaba_spatial_mesh_BoxMesh = _hx_e()
+__sunaba_spatial_mesh_CapsuleMesh = _hx_e()
+__sunaba_spatial_mesh_CylinderMesh = _hx_e()
+__sunaba_spatial_mesh_ImporterMesh = _hx_e()
+__sunaba_spatial_mesh_MeshData = _hx_e()
 __sunaba_spatial_mesh_MeshDisplay = _hx_e()
+__sunaba_spatial_mesh_MeshLoader = _hx_e()
+__sunaba_spatial_mesh_PlaneMesh = _hx_e()
+__sunaba_spatial_mesh_QuadMesh = _hx_e()
+__sunaba_spatial_mesh_SphereMesh = _hx_e()
+__sunaba_spatial_models_gltf_GLTFDocument = _hx_e()
+__sunaba_spatial_models_fbx_FBXDocument = _hx_e()
+__sunaba_spatial_models_gltf_GLTFState = _hx_e()
+__sunaba_spatial_models_fbx_FBXState = _hx_e()
+__sunaba_spatial_models_gltf_GLTFAnimation = _hx_e()
+__sunaba_spatial_models_gltf_GLTFCamera = _hx_e()
+__sunaba_spatial_models_gltf_GLTFDocumentExtension = _hx_e()
+__sunaba_spatial_models_gltf_GLTFLight = _hx_e()
+__sunaba_spatial_models_gltf_GLTFMesh = _hx_e()
+__sunaba_spatial_models_gltf_GLTFNode = _hx_e()
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty = _hx_e()
+__sunaba_spatial_physics_ICollisionObject = _hx_e()
+__sunaba_spatial_physics_IPhysicsBody = _hx_e()
+__sunaba_spatial_physics_StaticBody = _hx_e()
+__sunaba_spatial_physics_AnimatableBody = _hx_e()
+__sunaba_spatial_physics_ICollisionShape = _hx_e()
+__sunaba_spatial_physics_BoxShape = _hx_e()
+__sunaba_spatial_physics_CapsuleShape = _hx_e()
+__sunaba_spatial_physics_CharacterBody = _hx_e()
+__sunaba_spatial_physics_CylinderShape = _hx_e()
+__sunaba_spatial_physics_KinematicCollision3D = _hx_e()
+__sunaba_spatial_physics_PhysicsMaterial = _hx_e()
+__sunaba_spatial_physics_RigidBody = _hx_e()
+__sunaba_spatial_physics_SphereShape = _hx_e()
 __sunaba_ui_Control = _hx_e()
 __sunaba_ui_Widget = _hx_e()
 __sunaba_studio_EditorWidget = _hx_e()
 __sunaba_studio_CodeEditor = _hx_e()
+__sunaba_studio_Console = _hx_e()
 __sunaba_studio_Editor = _hx_e()
 __sunaba_studio_Explorer = _hx_e()
 __sunaba_studio_Gizmo3D = _hx_e()
+__sunaba_studio_ModelImportService = _hx_e()
+__sunaba_studio_ResourceInspector = _hx_e()
 __sunaba_studio_SceneEditor = _hx_e()
 __sunaba_studio_StudioUtils = _hx_e()
 __sunaba_studio_codeEditor_CodeEditorPlugin = _hx_e()
@@ -386,7 +435,11 @@ __sunaba_studio_debugDraw_DebugDrawService3DConfig = _hx_e()
 __sunaba_studio_debugDraw_DebugDrawService3DScopeConfig = _hx_e()
 __sunaba_studio_debugDraw_DebugDrawService3DStats = _hx_e()
 __sunaba_studio_explorer_FileHandler = _hx_e()
+__sunaba_studio_explorer_FileTemplate = _hx_e()
+__sunaba_studio_explorer_NewFileWidget = _hx_e()
 __sunaba_studio_fileHandlers_HxFileHandler = _hx_e()
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler = _hx_e()
+__sunaba_studio_fileHandlers_SmdlFileHandler = _hx_e()
 __sunaba_studio_fileHandlers_VpfbFileHandler = _hx_e()
 __sunaba_studio_fileHandlers_VscnFileHandler = _hx_e()
 __sunaba_studio_sceneEditor_FileType = _hx_e()
@@ -398,6 +451,7 @@ __sunaba_ui_BoxContainer = _hx_e()
 __sunaba_ui_Button = _hx_e()
 __sunaba_ui_ButtonGroup = _hx_e()
 __sunaba_ui_CenterContainer = _hx_e()
+__sunaba_ui_CheckBox = _hx_e()
 __sunaba_ui_CheckButton = _hx_e()
 __sunaba_ui_TextEdit = _hx_e()
 __sunaba_ui_CodeEdit = _hx_e()
@@ -410,12 +464,16 @@ __sunaba_ui_ScrollBar = _hx_e()
 __sunaba_ui_HScrollBar = _hx_e()
 __sunaba_ui_SplitContainer = _hx_e()
 __sunaba_ui_HSplitContainer = _hx_e()
+__sunaba_ui_ItemList = _hx_e()
 __sunaba_ui_Label = _hx_e()
 __sunaba_ui_LineEdit = _hx_e()
 __sunaba_ui_MenuBar = _hx_e()
 __sunaba_ui_MenuButton = _hx_e()
+__sunaba_ui_OptionButton = _hx_e()
 __sunaba_ui_Panel = _hx_e()
 __sunaba_ui_ProgressBar = _hx_e()
+__sunaba_ui_RichTextEffect = _hx_e()
+__sunaba_ui_RichTextLabel = _hx_e()
 __sunaba_ui_ScrollContainer = _hx_e()
 __sunaba_ui_SpinBox = _hx_e()
 __sunaba_ui_StyleBox = _hx_e()
@@ -1474,8 +1532,8 @@ Gamepak.prototype.getAllFilesCR = function(self,dir)
   local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
   local s = result;
   local array = _hx_tab_array({}, 0);
-  local _g1 = 1;
-  local _g2 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g1 = 0;
+  local _g2 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g1 < _g2) do _hx_do_first_1 = false;
     
     _g1 = _g1 + 1;
@@ -1577,8 +1635,8 @@ Gamepak.prototype.getAllFiles = function(self,dir)
   local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
   local s = result;
   local array = _hx_tab_array({}, 0);
-  local _g1 = 1;
-  local _g2 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g1 = 0;
+  local _g2 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g1 < _g2) do _hx_do_first_1 = false;
     
     _g1 = _g1 + 1;
@@ -2125,8 +2183,8 @@ Sys.args = function()
   local args = _G.__args;
   local s = args;
   local array = _hx_tab_array({}, 0);
-  local _g = 1;
-  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
@@ -2329,6 +2387,9 @@ Type.getClass = function(o)
       end;
     end;
   end;
+end
+Type.getSuperClass = function(c) 
+  do return c.__super__ end;
 end
 Type.resolveClass = function(name) 
   local cl = _hxClasses[name];
@@ -2725,6 +2786,124 @@ Xml.prototype.toString = function(self)
 end
 
 Xml.prototype.__class__ =  Xml
+_hxClasses["haxe.StackItem"] = __haxe_StackItem;
+_hxClasses["haxe.StackItem"] = { __ename__ = true, __constructs__ = _hx_tab_array({[0]="CFunction","Module","FilePos","Method","LocalFunction"},5)}
+__haxe_StackItem = _hxClasses["haxe.StackItem"];
+__haxe_StackItem.CFunction = _hx_tab_array({[0]="CFunction",0,__enum__ = __haxe_StackItem},2)
+
+__haxe_StackItem.Module = function(m) local _x = _hx_tab_array({[0]="Module",1,m,__enum__=__haxe_StackItem}, 3); return _x; end 
+__haxe_StackItem.FilePos = function(s,file,line,column) local _x = _hx_tab_array({[0]="FilePos",2,s,file,line,column,__enum__=__haxe_StackItem}, 6); return _x; end 
+__haxe_StackItem.Method = function(classname,method) local _x = _hx_tab_array({[0]="Method",3,classname,method,__enum__=__haxe_StackItem}, 4); return _x; end 
+__haxe_StackItem.LocalFunction = function(v) local _x = _hx_tab_array({[0]="LocalFunction",4,v,__enum__=__haxe_StackItem}, 3); return _x; end 
+
+__haxe__CallStack_CallStack_Impl_.new = {}
+_hxClasses["haxe._CallStack.CallStack_Impl_"] = __haxe__CallStack_CallStack_Impl_
+__haxe__CallStack_CallStack_Impl_.__name__ = "haxe._CallStack.CallStack_Impl_"
+__haxe__CallStack_CallStack_Impl_.toString = function(stack) 
+  local b = StringBuf.new();
+  local _g = 0;
+  local _g1 = stack;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local s = _g1[_g];
+    _g = _g + 1;
+    local str = "\nCalled from ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    __haxe__CallStack_CallStack_Impl_.itemToString(b, s);
+  end;
+  do return _G.table.concat(b.b) end;
+end
+__haxe__CallStack_CallStack_Impl_.itemToString = function(b,s) 
+  local tmp = s[1];
+  if (tmp) == 0 then 
+    local str = "a C function";
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 1 then 
+    local m = s[2];
+    local str = "module ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(m);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 2 then 
+    local s1 = s[2];
+    local file = s[3];
+    local line = s[4];
+    local col = s[5];
+    if (s1 ~= nil) then 
+      __haxe__CallStack_CallStack_Impl_.itemToString(b, s1);
+      local str = " (";
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+    local str = Std.string(file);
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = " line ";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(line);
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    if (col ~= nil) then 
+      local str = " column ";
+      _G.table.insert(b.b, str);
+      local b1 = b;
+      b1.length = b1.length + #str;
+      local str = Std.string(col);
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+    if (s1 ~= nil) then 
+      local str = ")";
+      _G.table.insert(b.b, str);
+      local b = b;
+      b.length = b.length + #str;
+    end;
+  elseif (tmp) == 3 then 
+    local cname = s[2];
+    local meth = s[3];
+    local str = Std.string((function() 
+      local _hx_1
+      if (cname == nil) then 
+      _hx_1 = "<unknown>"; else 
+      _hx_1 = cname; end
+      return _hx_1
+    end )());
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = ".";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(meth);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str;
+  elseif (tmp) == 4 then 
+    local n = s[2];
+    local str = "local function #";
+    _G.table.insert(b.b, str);
+    local b1 = b;
+    b1.length = b1.length + #str;
+    local str = Std.string(n);
+    _G.table.insert(b.b, str);
+    local b = b;
+    b.length = b.length + #str; end;
+end
 
 __haxe_IMap.new = {}
 _hxClasses["haxe.IMap"] = __haxe_IMap
@@ -2768,6 +2947,7 @@ __haxe_Exception.thrown = function(value)
 end
 __haxe_Exception.prototype = _hx_e();
 __haxe_Exception.prototype.__exceptionMessage= nil;
+__haxe_Exception.prototype.__exceptionStack= nil;
 __haxe_Exception.prototype.__nativeStack= nil;
 __haxe_Exception.prototype.__skipStack= nil;
 __haxe_Exception.prototype.__nativeException= nil;
@@ -2778,11 +2958,23 @@ end
 __haxe_Exception.prototype.toString = function(self) 
   do return self:get_message() end
 end
+__haxe_Exception.prototype.__shiftStack = function(self) 
+  self.__skipStack = self.__skipStack + 1;
+end
 __haxe_Exception.prototype.get_message = function(self) 
   do return self.__exceptionMessage end
 end
 __haxe_Exception.prototype.get_native = function(self) 
   do return self.__nativeException end
+end
+__haxe_Exception.prototype.get_stack = function(self) 
+  local _g = self.__exceptionStack;
+  if (_g == nil) then 
+    self.__exceptionStack = __haxe_NativeStackTrace.toHaxe(self.__nativeStack, self.__skipStack) do return self.__exceptionStack end;
+  else
+    local s = _g;
+    do return s end;
+  end;
 end
 
 __haxe_Exception.prototype.__class__ =  __haxe_Exception
@@ -2867,6 +3059,50 @@ end
 __haxe_NativeStackTrace.exceptionStack = function() 
   do return _hx_tab_array({}, 0) end;
 end
+__haxe_NativeStackTrace.toHaxe = function(native,skip) 
+  if (skip == nil) then 
+    skip = 0;
+  end;
+  local stack = _hx_tab_array({}, 0);
+  local cnt = -1;
+  local _g = 0;
+  local _hx_continue_1 = false;
+  while (_g < native.length) do _hx_do_first_1 = false;
+    repeat 
+    local item = native[_g];
+    _g = _g + 1;
+    local parts = String.prototype.split(String.prototype.substr(item, 1), ":");
+    local file = parts[0];
+    if (file == "[C]") then 
+      break;
+    end;
+    cnt = cnt + 1;
+    if (skip > cnt) then 
+      break;
+    end;
+    local line = parts[1];
+    local method;
+    if (parts.length <= 2) then 
+      method = nil;
+    else
+      local methodPos = String.prototype.indexOf(parts[2], "'");
+      method = (function() 
+        local _hx_1
+        if (methodPos < 0) then 
+        _hx_1 = nil; else 
+        _hx_1 = __haxe_StackItem.Method(nil, String.prototype.substring(parts[2], methodPos + 1, #parts[2] - 1)); end
+        return _hx_1
+      end )();
+    end;
+    stack:push(__haxe_StackItem.FilePos(method, file, Std.parseInt(line)));until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  do return stack end;
+end
 
 __haxe__Rest_Rest_Impl_.new = {}
 _hxClasses["haxe._Rest.Rest_Impl_"] = __haxe__Rest_Rest_Impl_
@@ -2904,6 +3140,7 @@ __haxe_ValueException.super = function(self,value,previous,native)
     return _hx_1
   end )(),previous,native);
   self.value = value;
+  self.__skipStack = self.__skipStack + 1;
 end
 _hxClasses["haxe.ValueException"] = __haxe_ValueException
 __haxe_ValueException.__name__ = "haxe.ValueException"
@@ -2916,6 +3153,72 @@ end
 __haxe_ValueException.prototype.__class__ =  __haxe_ValueException
 __haxe_ValueException.__super__ = __haxe_Exception
 setmetatable(__haxe_ValueException.prototype,{__index=__haxe_Exception.prototype})
+
+__haxe_io_Bytes.new = function(length,b) 
+  local self = _hx_new(__haxe_io_Bytes.prototype)
+  __haxe_io_Bytes.super(self,length,b)
+  return self
+end
+__haxe_io_Bytes.super = function(self,length,b) 
+  self.length = length;
+  self.b = b;
+end
+_hxClasses["haxe.io.Bytes"] = __haxe_io_Bytes
+__haxe_io_Bytes.__name__ = "haxe.io.Bytes"
+__haxe_io_Bytes.alloc = function(length) 
+  local a = Array.new();
+  local _g = 0;
+  local _g1 = length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    a:push(0);
+  end;
+  do return __haxe_io_Bytes.new(length, a) end;
+end
+__haxe_io_Bytes.ofString = function(s,encoding) 
+  local _g = _hx_tab_array({}, 0);
+  local _g1 = 0;
+  local _g2 = _G.string.len(s);
+  while (_g1 < _g2) do _hx_do_first_1 = false;
+    
+    _g1 = _g1 + 1;
+    local i = _g1 - 1;
+    _g:push(_G.string.byte(s, i + 1));
+  end;
+  local bytes = _g;
+  do return __haxe_io_Bytes.new(bytes.length, bytes) end;
+end
+__haxe_io_Bytes.prototype = _hx_e();
+__haxe_io_Bytes.prototype.length= nil;
+__haxe_io_Bytes.prototype.b= nil;
+__haxe_io_Bytes.prototype.getString = function(self,pos,len,encoding) 
+  local tmp = encoding == nil;
+  if (((pos < 0) or (len < 0)) or ((pos + len) > self.length)) then 
+    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
+  end;
+  if ((self.b.length - pos) <= __lua_Boot.MAXSTACKSIZE) then 
+    local _end = Math.min(self.b.length, pos + len) - 1;
+    do return _G.string.char(_hx_table.unpack(self.b, pos, _end)) end;
+  else
+    local tbl = ({});
+    local _g = pos;
+    local _g1 = pos + len;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local idx = _g - 1;
+      _G.table.insert(tbl, _G.string.char(self.b[idx]));
+    end;
+    do return _G.table.concat(tbl, "") end;
+  end;
+end
+__haxe_io_Bytes.prototype.toString = function(self) 
+  do return self:getString(0, self.length) end
+end
+
+__haxe_io_Bytes.prototype.__class__ =  __haxe_io_Bytes
 
 __haxe_crypto_Crc32.new = {}
 _hxClasses["haxe.crypto.Crc32"] = __haxe_crypto_Crc32
@@ -3056,6 +3359,7 @@ __haxe_exceptions_PosException.super = function(self,message,previous,pos)
   else
     self.posInfos = pos;
   end;
+  self.__skipStack = self.__skipStack + 1;
 end
 _hxClasses["haxe.exceptions.PosException"] = __haxe_exceptions_PosException
 __haxe_exceptions_PosException.__name__ = "haxe.exceptions.PosException"
@@ -3079,6 +3383,7 @@ __haxe_exceptions_NotImplementedException.super = function(self,message,previous
     message = "Not implemented";
   end;
   __haxe_exceptions_PosException.super(self,message,previous,pos);
+  self.__skipStack = self.__skipStack + 1;
 end
 _hxClasses["haxe.exceptions.NotImplementedException"] = __haxe_exceptions_NotImplementedException
 __haxe_exceptions_NotImplementedException.__name__ = "haxe.exceptions.NotImplementedException"
@@ -3744,72 +4049,6 @@ end
 
 __haxe_format_JsonPrinter.prototype.__class__ =  __haxe_format_JsonPrinter
 
-__haxe_io_Bytes.new = function(length,b) 
-  local self = _hx_new(__haxe_io_Bytes.prototype)
-  __haxe_io_Bytes.super(self,length,b)
-  return self
-end
-__haxe_io_Bytes.super = function(self,length,b) 
-  self.length = length;
-  self.b = b;
-end
-_hxClasses["haxe.io.Bytes"] = __haxe_io_Bytes
-__haxe_io_Bytes.__name__ = "haxe.io.Bytes"
-__haxe_io_Bytes.alloc = function(length) 
-  local a = Array.new();
-  local _g = 0;
-  local _g1 = length;
-  while (_g < _g1) do _hx_do_first_1 = false;
-    
-    _g = _g + 1;
-    local i = _g - 1;
-    a:push(0);
-  end;
-  do return __haxe_io_Bytes.new(length, a) end;
-end
-__haxe_io_Bytes.ofString = function(s,encoding) 
-  local _g = _hx_tab_array({}, 0);
-  local _g1 = 0;
-  local _g2 = _G.string.len(s);
-  while (_g1 < _g2) do _hx_do_first_1 = false;
-    
-    _g1 = _g1 + 1;
-    local i = _g1 - 1;
-    _g:push(_G.string.byte(s, i + 1));
-  end;
-  local bytes = _g;
-  do return __haxe_io_Bytes.new(bytes.length, bytes) end;
-end
-__haxe_io_Bytes.prototype = _hx_e();
-__haxe_io_Bytes.prototype.length= nil;
-__haxe_io_Bytes.prototype.b= nil;
-__haxe_io_Bytes.prototype.getString = function(self,pos,len,encoding) 
-  local tmp = encoding == nil;
-  if (((pos < 0) or (len < 0)) or ((pos + len) > self.length)) then 
-    _G.error(__haxe_Exception.thrown(__haxe_io_Error.OutsideBounds),0);
-  end;
-  if ((self.b.length - pos) <= __lua_Boot.MAXSTACKSIZE) then 
-    local _end = Math.min(self.b.length, pos + len) - 1;
-    do return _G.string.char(_hx_table.unpack(self.b, pos, _end)) end;
-  else
-    local tbl = ({});
-    local _g = pos;
-    local _g1 = pos + len;
-    while (_g < _g1) do _hx_do_first_1 = false;
-      
-      _g = _g + 1;
-      local idx = _g - 1;
-      _G.table.insert(tbl, _G.string.char(self.b[idx]));
-    end;
-    do return _G.table.concat(tbl, "") end;
-  end;
-end
-__haxe_io_Bytes.prototype.toString = function(self) 
-  do return self:getString(0, self.length) end
-end
-
-__haxe_io_Bytes.prototype.__class__ =  __haxe_io_Bytes
-
 __haxe_io_BytesBuffer.new = function() 
   local self = _hx_new(__haxe_io_BytesBuffer.prototype)
   __haxe_io_BytesBuffer.super(self)
@@ -4197,6 +4436,7 @@ end
 __haxe_macro_Error.super = function(self,message,pos,previous) 
   __haxe_Exception.super(self,message,previous);
   self.pos = pos;
+  self.__skipStack = self.__skipStack + 1;
 end
 _hxClasses["haxe.macro.Error"] = __haxe_macro_Error
 __haxe_macro_Error.__name__ = "haxe.macro.Error"
@@ -5383,6 +5623,18 @@ end
 _hxClasses["sunaba.Behavior"] = __sunaba_Behavior
 __sunaba_Behavior.__name__ = "sunaba.Behavior"
 __sunaba_Behavior.prototype = _hx_e();
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_physics_StaticBody = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_physics_AnimatableBody = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_physics_RigidBody = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_physics_CharacterBody = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
 __sunaba_Behavior.prototype.getComponent_sunaba_spatial_mesh_MeshDisplay = function(self,type) 
   do return self.entity:getComponent_getComponent_T(type) end
 end
@@ -7463,6 +7715,64 @@ __sunaba__CloseButtonDisplayPolicy_CloseButtonDisplayPolicy_Impl_.fromString = f
   do return nil end; end;
 end
 
+__sunaba_CommandParser.new = {}
+_hxClasses["sunaba.CommandParser"] = __sunaba_CommandParser
+__sunaba_CommandParser.__name__ = "sunaba.CommandParser"
+__sunaba_CommandParser.parseCommand = function(cmdstr) 
+  local cmdname = "";
+  local cmdargs = _hx_tab_array({}, 0);
+  local current = "";
+  local inQuotes = false;
+  local escapeNext = false;
+  local _g = 0;
+  local _g1 = #cmdstr;
+  local _hx_continue_1 = false;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    repeat 
+    _g = _g + 1;
+    local i = _g - 1;
+    local c = _G.string.sub(cmdstr, i + 1, i + 1);
+    if (escapeNext) then 
+      current = Std.string(current) .. Std.string(c);
+      escapeNext = false;
+      break;
+    end;
+    if (c == "\\") then 
+      escapeNext = true;
+      break;
+    end;
+    if (c == "\"") then 
+      inQuotes = not inQuotes;
+      break;
+    end;
+    if (not inQuotes and (((c == " ") or (c == "\t")) or (c == "\n"))) then 
+      if (current ~= "") then 
+        if (cmdname == "") then 
+          cmdname = current;
+        else
+          cmdargs:push(current);
+        end;
+        current = "";
+      end;
+    else
+      current = Std.string(current) .. Std.string(c);
+    end;until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  if (current ~= "") then 
+    if (cmdname == "") then 
+      cmdname = current;
+    else
+      cmdargs:push(current);
+    end;
+  end;
+  do return _hx_o({__fields__={name=true,args=true},name=cmdname,args=cmdargs}) end;
+end
+
 __sunaba__CursorShape_CursorShape_Impl_.new = {}
 _hxClasses["sunaba._CursorShape.CursorShape_Impl_"] = __sunaba__CursorShape_CursorShape_Impl_
 __sunaba__CursorShape_CursorShape_Impl_.__name__ = "sunaba._CursorShape.CursorShape_Impl_"
@@ -7675,30 +7985,28 @@ __sunaba_DataUtils.varToDict = function(variant)
                                           dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromString(__sunaba_MarshallsService.rawToBase64(byteArray)));
                                         else
                                           if (type == 30) then 
-                                            local vNative = variant;
-                                            local int32Arr = vNative:asIntArray();
+                                            local int32Arr = variant:asArrayList();
                                             local arr = __sunaba_core__ArrayList_ArrayList_Impl_._new();
                                             local _g = 0;
-                                            local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(int32Arr);
+                                            local _g1 = int32Arr:size();
                                             while (_g < _g1) do _hx_do_first_1 = false;
                                               
                                               _g = _g + 1;
                                               local i = _g - 1;
-                                              arr:append(__sunaba_core__Variant_Variant_Impl_.fromInt(__sunaba_core__TypedArray_TypedArray_Impl_.get(int32Arr, i)));
+                                              arr:append(int32Arr:get(i));
                                             end;
                                             dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                           else
                                             if (type == 31) then 
-                                              local vNative = variant;
-                                              local int64Arr = vNative:asIntArray64();
+                                              local int64Arr = variant:asArrayList();
                                               local arr = __sunaba_core__ArrayList_ArrayList_Impl_._new();
                                               local _g = 0;
-                                              local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(int64Arr);
+                                              local _g1 = int64Arr:size();
                                               while (_g < _g1) do _hx_do_first_1 = false;
                                                 
                                                 _g = _g + 1;
                                                 local i = _g - 1;
-                                                arr:append(__sunaba_core__Variant_Variant_Impl_.fromInt(__sunaba_core__TypedArray_TypedArray_Impl_.get(int64Arr, i)));
+                                                arr:append(int64Arr:get(i));
                                               end;
                                               dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                             else
@@ -7744,28 +8052,32 @@ __sunaba_DataUtils.varToDict = function(variant)
                                                     dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                                   else
                                                     if (type == 35) then 
-                                                      local vector2Arr = variant:asVector2Array();
+                                                      local vector2Arr = variant:asArrayList();
                                                       local arr = __sunaba_core__ArrayList_ArrayList_Impl_._new();
                                                       local _g = 0;
-                                                      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(vector2Arr);
+                                                      local _g1 = vector2Arr:size();
                                                       while (_g < _g1) do _hx_do_first_1 = false;
                                                         
                                                         _g = _g + 1;
                                                         local i = _g - 1;
-                                                        arr:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(__sunaba_core__TypedArray_TypedArray_Impl_.get(vector2Arr, i)));
+                                                        local vector2 = vector2Arr:get(i):asVector2();
+                                                        local vector2Dict = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vector2));
+                                                        arr:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(vector2Dict));
                                                       end;
                                                       dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                                     else
                                                       if (type == 36) then 
-                                                        local vector3Arr = variant:asVector3Array();
+                                                        local vector3Arr = variant:asArrayList();
                                                         local arr = __sunaba_core__ArrayList_ArrayList_Impl_._new();
                                                         local _g = 0;
-                                                        local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(vector3Arr);
+                                                        local _g1 = vector3Arr:size();
                                                         while (_g < _g1) do _hx_do_first_1 = false;
                                                           
                                                           _g = _g + 1;
                                                           local i = _g - 1;
-                                                          arr:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(__sunaba_core__TypedArray_TypedArray_Impl_.get(vector3Arr, i)));
+                                                          local vector3 = vector3Arr:get(i):asVector3();
+                                                          local vector3Dict = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vector3));
+                                                          arr:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(vector3Dict));
                                                         end;
                                                         dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                                       else
@@ -7778,20 +8090,22 @@ __sunaba_DataUtils.varToDict = function(variant)
                                                             
                                                             _g = _g + 1;
                                                             local i = _g - 1;
-                                                            arr:append(__sunaba_core__Variant_Variant_Impl_.fromVector4(__sunaba_core__TypedArray_TypedArray_Impl_.get(vector4Arr, i)));
+                                                            local vector4 = __sunaba_core__TypedArray_TypedArray_Impl_.get(vector4Arr, i);
+                                                            local vector4Dict = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vector4));
+                                                            arr:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(vector4Dict));
                                                           end;
                                                           dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                                         else
                                                           if (type == 37) then 
-                                                            local colorArr = variant:asColorArray();
+                                                            local colorArr = variant:asArrayList();
                                                             local arr = __sunaba_core__ArrayList_ArrayList_Impl_._new();
                                                             local _g = 0;
-                                                            local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(colorArr);
+                                                            local _g1 = colorArr:size();
                                                             while (_g < _g1) do _hx_do_first_1 = false;
                                                               
                                                               _g = _g + 1;
                                                               local i = _g - 1;
-                                                              arr:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromColor(__sunaba_core__TypedArray_TypedArray_Impl_.get(colorArr, i)))));
+                                                              arr:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(colorArr:get(i))));
                                                             end;
                                                             dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromArray(arr));
                                                           else
@@ -7803,8 +8117,7 @@ __sunaba_DataUtils.varToDict = function(variant)
                                                                 end;
                                                               end;
                                                             else
-                                                              local empty = Dictionary.new();
-                                                              do return empty end;
+                                                              dict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), Variant.new());
                                                             end;
                                                           end;
                                                         end;
@@ -8108,7 +8421,7 @@ __sunaba_DataUtils.dictToVar = function(dict,ioInterface)
                                           
                                           _g = _g + 1;
                                           local i = _g - 1;
-                                          newArray:append(__sunaba_DataUtils.dictToVar(oldArray:get(1):asDictionary()));
+                                          newArray:append(__sunaba_DataUtils.dictToVar(oldArray:get(i):asDictionary(), ioInterface));
                                         end;
                                         variant = __sunaba_core__Variant_Variant_Impl_.fromArray(newArray);
                                       else
@@ -8118,120 +8431,120 @@ __sunaba_DataUtils.dictToVar = function(dict,ioInterface)
                                         else
                                           if (type == 30) then 
                                             local oldArray = value:asArrayList();
-                                            local newArray = _G.i32Array();
+                                            local newArray = Variant.new():asIntArray64();
                                             local _g = 0;
                                             local _g1 = oldArray:size();
                                             while (_g < _g1) do _hx_do_first_1 = false;
                                               
                                               _g = _g + 1;
                                               local i = _g - 1;
-                                              newArray:add(oldArray:get(0):asInt());
+                                              newArray:add(oldArray:get(i):asInt());
                                             end;
-                                            variant = __sunaba_core__Variant_Variant_Impl_.fromIntArray64(newArray);
+                                            variant = Variant.fromIntArray(newArray);
                                           else
                                             if (type == 31) then 
                                               local oldArray = value:asArrayList();
-                                              local newArray = _G.i32Array();
+                                              local newArray = Variant.new():asIntArray64();
                                               local _g = 0;
                                               local _g1 = oldArray:size();
                                               while (_g < _g1) do _hx_do_first_1 = false;
                                                 
                                                 _g = _g + 1;
                                                 local i = _g - 1;
-                                                newArray:add(oldArray:get(0):asInt());
+                                                newArray:add(oldArray:get(i):asInt());
                                               end;
                                               variant = __sunaba_core__Variant_Variant_Impl_.fromIntArray64(newArray);
                                             else
                                               if (type == 32) then 
                                                 local oldArray = value:asArrayList();
-                                                local newArray = _G.f32Array();
+                                                local newArray = Variant.new():asFloatArray();
                                                 local _g = 0;
                                                 local _g1 = oldArray:size();
                                                 while (_g < _g1) do _hx_do_first_1 = false;
                                                   
                                                   _g = _g + 1;
                                                   local i = _g - 1;
-                                                  newArray:add(oldArray:get(0):asFloat());
+                                                  newArray:add(oldArray:get(i):asFloat());
                                                 end;
-                                                variant = __sunaba_core__Variant_Variant_Impl_.fromFloatArray64(newArray);
+                                                variant = Variant.fromFloatArray(newArray);
                                               else
                                                 if (type == 33) then 
                                                   local oldArray = value:asArrayList();
-                                                  local newArray = _G.f64Array();
+                                                  local newArray = Variant.new():asFloatArray64();
                                                   local _g = 0;
                                                   local _g1 = oldArray:size();
                                                   while (_g < _g1) do _hx_do_first_1 = false;
                                                     
                                                     _g = _g + 1;
                                                     local i = _g - 1;
-                                                    newArray:add(oldArray:get(0):asFloat());
+                                                    newArray:add(oldArray:get(i):asFloat());
                                                   end;
-                                                  variant = __sunaba_core__Variant_Variant_Impl_.fromFloatArray64(newArray);
+                                                  variant = Variant.fromFloatArray64(newArray);
                                                 else
                                                   if (type == 34) then 
                                                     local oldArray = value:asArrayList();
-                                                    local newArray = _G.strArray();
+                                                    local newArray = __sunaba_core_StringArray.create();
                                                     local _g = 0;
                                                     local _g1 = oldArray:size();
                                                     while (_g < _g1) do _hx_do_first_1 = false;
                                                       
                                                       _g = _g + 1;
                                                       local i = _g - 1;
-                                                      newArray:add(oldArray:get(0):asString());
+                                                      newArray:add(oldArray:get(i):asString());
                                                     end;
                                                     variant = __sunaba_core__Variant_Variant_Impl_.fromStringArray(newArray);
                                                   else
                                                     if (type == 35) then 
                                                       local oldArray = value:asArrayList();
-                                                      local newArray = _G.v2Array();
+                                                      local newArray = Variant.new():asVector2Array();
                                                       local _g = 0;
                                                       local _g1 = oldArray:size();
                                                       while (_g < _g1) do _hx_do_first_1 = false;
                                                         
                                                         _g = _g + 1;
                                                         local i = _g - 1;
-                                                        newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(0):asDictionary()):asVector2());
+                                                        newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(i):asDictionary()):asVector2());
                                                       end;
-                                                      variant = __sunaba_core__Variant_Variant_Impl_.fromVector2Array(newArray);
+                                                      variant = Variant.fromVector2Array(newArray);
                                                     else
                                                       if (type == 36) then 
                                                         local oldArray = value:asArrayList();
-                                                        local newArray = _G.v3Array();
+                                                        local newArray = Variant.new():asVector3Array();
                                                         local _g = 0;
                                                         local _g1 = oldArray:size();
                                                         while (_g < _g1) do _hx_do_first_1 = false;
                                                           
                                                           _g = _g + 1;
                                                           local i = _g - 1;
-                                                          newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(0):asDictionary()):asVector3());
+                                                          newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(i):asDictionary()):asVector3());
                                                         end;
-                                                        variant = __sunaba_core__Variant_Variant_Impl_.fromVector3Array(newArray);
+                                                        variant = Variant.fromVector3Array(newArray);
                                                       else
                                                         if (type == 38) then 
                                                           local oldArray = value:asArrayList();
-                                                          local newArray = _G.v4Array();
+                                                          local newArray = Variant.new():asVector4Array();
                                                           local _g = 0;
                                                           local _g1 = oldArray:size();
                                                           while (_g < _g1) do _hx_do_first_1 = false;
                                                             
                                                             _g = _g + 1;
                                                             local i = _g - 1;
-                                                            newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(0):asDictionary()):asVector4());
+                                                            newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(i):asDictionary()):asVector4());
                                                           end;
-                                                          variant = __sunaba_core__Variant_Variant_Impl_.fromVector4Array(newArray);
+                                                          variant = Variant.fromVector4Array(newArray);
                                                         else
                                                           if (type == 37) then 
                                                             local oldArray = value:asArrayList();
-                                                            local newArray = _G.clrArray();
+                                                            local newArray = Variant.new():asColorArray();
                                                             local _g = 0;
                                                             local _g1 = oldArray:size();
                                                             while (_g < _g1) do _hx_do_first_1 = false;
                                                               
                                                               _g = _g + 1;
                                                               local i = _g - 1;
-                                                              newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(0):asDictionary()):asColor());
+                                                              newArray:add(__sunaba_DataUtils.dictToVar(oldArray:get(i):asDictionary()):asColor());
                                                             end;
-                                                            variant = __sunaba_core__Variant_Variant_Impl_.fromColorArray(newArray);
+                                                            variant = Variant.fromColorArray(newArray);
                                                           else
                                                             if (type == 24) then 
                                                               local resDict = value:asDictionary();
@@ -8334,12 +8647,12 @@ __sunaba_DataUtils.resToDict = function(res)
   local path = "?";
   local className = res:getClass();
   data:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString(className));
-  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=596,className="sunaba.DataUtils",methodName="resToDict"}));
-  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=597,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=599,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=600,className="sunaba.DataUtils",methodName="resToDict"}));
   if (res:get("asset_path"):getType() == 4) then 
     if (res:get("asset_path"):asString() ~= "") then 
       path = res:get("asset_path"):asString();
-      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=601,className="sunaba.DataUtils",methodName="resToDict"}));
+      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=604,className="sunaba.DataUtils",methodName="resToDict"}));
     end;
   end;
   if (path == "<null>") then 
@@ -10260,6 +10573,111 @@ end
 _hxClasses["sunaba.Entity"] = __sunaba_Entity
 __sunaba_Entity.__name__ = "sunaba.Entity"
 __sunaba_Entity.prototype = _hx_e();
+__sunaba_Entity.prototype.addComponent_sunaba_animation_AnimationPlayer = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_Skeleton = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_lighting_SpotLight = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_lighting_OmniLight = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_lighting_DirectionalLight = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_mesh_MeshLoader = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_mesh_MeshDisplay = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
+end
 __sunaba_Entity.prototype.removeComponent_removeComponent_T = function(self,type) 
   local compName = type.__name__;
   local _g = 0;
@@ -10289,6 +10707,21 @@ __sunaba_Entity.prototype.addComponent_addComponent_T = function(self,type)
     behavior:onStart();
   end;
   do return behaviorT end
+end
+__sunaba_Entity.prototype.getComponent_sunaba_spatial_physics_RigidBody = function(self,type) 
+  local compName = type.__name__;
+  local _g = 0;
+  local _g1 = self.components;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local component = _g1[_g];
+    _g = _g + 1;
+    if (component.name == compName) then 
+      local compT = component;
+      do return compT end;
+    end;
+  end;
+  do return nil end
 end
 __sunaba_Entity.prototype.getComponent_sunaba_spatial_Camera = function(self,type) 
   local compName = type.__name__;
@@ -10423,6 +10856,16 @@ __sunaba_Entity.prototype.set_parent = function(self,value)
   self._parent = value;
   do return self._parent end
 end
+__sunaba_Entity.prototype._io= nil;
+__sunaba_Entity.prototype.get_io = function(self) 
+  if (self.scene ~= nil) then 
+    do return self.scene.io end;
+  end;
+  do return self._io end
+end
+__sunaba_Entity.prototype.set_io = function(self,value) 
+  self._io = value do return self._io end
+end
 __sunaba_Entity.prototype._node= nil;
 __sunaba_Entity.prototype.get_node = function(self) 
   do return self._node end
@@ -10503,7 +10946,7 @@ __sunaba_Entity.prototype.findEnt = function(self,path,index)
     
     local child = _g1[_g];
     _g = _g + 1;
-    if (child.name == path[index]) then 
+    if (child.name == path[index + 1]) then 
       do return child:findEnt(path, index + 1) end;
     end;
   end;
@@ -10573,6 +11016,18 @@ __sunaba_Entity.prototype.hasChild = function(self,child)
 end
 __sunaba_Entity.prototype.find = function(self,path) 
   local split = String.prototype.split(path, "/");
+  if (split.length == 1) then 
+    split = _hx_tab_array({[0]=self.name, split[0]}, 2);
+  else
+    local newsplit = _hx_tab_array({[0]=self.name}, 1);
+    local _g = 0;
+    while (_g < split.length) do _hx_do_first_1 = false;
+      
+      local string = split[_g];
+      _g = _g + 1;
+      newsplit:push(string);
+    end;
+  end;
   do return self:findEnt(split, 0) end
 end
 __sunaba_Entity.prototype.getChildCount = function(self) 
@@ -10867,8 +11322,10 @@ __sunaba_ScriptableObject.prototype.save = function(self,path,fileType)
       end;
       local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
       local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-      args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
-      local bytes = script:call("encode", args):asByteArray();
+      local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data), "\t");
+      args:append(__sunaba_JSON.parseString(json));
+      local res = script:call("encode", args):asDictionary();
+      local bytes = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asByteArray();
       _this:saveBytes(msgpackPath, bytes);
     end;
   end;
@@ -10962,6 +11419,7 @@ end
 __sunaba_EntityData.prototype.toEntity = function(self) 
   local entity = __sunaba_Entity.new();
   entity.name = self.name;
+  entity:set_io(self.io);
   local _g = 0;
   local _g1 = self.components:size();
   local _hx_continue_1 = false;
@@ -11061,6 +11519,9 @@ __sunaba_core_Reference.super = function(self,native)
 end
 _hxClasses["sunaba.core.Reference"] = __sunaba_core_Reference
 __sunaba_core_Reference.__name__ = "sunaba.core.Reference"
+__sunaba_core_Reference.castTo_sunaba_ImageTexture = function(ref,type) 
+  do return Type.createInstance(type, _hx_tab_array({[0]=ref.native}, 1)) end;
+end
 __sunaba_core_Reference.castTo_sunaba_Font = function(ref,type) 
   do return Type.createInstance(type, _hx_tab_array({[0]=ref.native}, 1)) end;
 end
@@ -14069,23 +14530,14 @@ __sunaba_LibraryLoader.prototype.libraryName= nil;
 __sunaba_LibraryLoader.prototype.chunk= nil;
 __sunaba_LibraryLoader.prototype.loadLibrary = function(self,path) 
   local env = self._env;
-  if (not self.io:fileExists(path)) then 
-    _G.error(__haxe_Exception.thrown("Asset not found"),0);
-  end;
   local code = self.io:loadText(path);
-  
-			local _ENV = env
-            local chunk = load(code)
-        ;
+  local chunk = load(code, nil, 't', env);
   self.chunk = chunk;
 end
 __sunaba_LibraryLoader.prototype.loadLibraryFileSystem = function(self,path) 
   local env = self._env;
   local code = __sys_io_File.getContent(path);
-  
-			local _ENV = env
-            local chunk = load(code)
-        ;
+  local chunk = load(code, nil, 't', env);
   self.chunk = chunk;
 end
 __sunaba_LibraryLoader.prototype.main = function(self) 
@@ -15212,6 +15664,7 @@ __sunaba_SceneRoot.new = function()
   return self
 end
 __sunaba_SceneRoot.super = function(self) 
+  self.isInEditor = false;
   self.enteredTree = false;
   self.started = false;
   __sunaba_Node.super(self);
@@ -15231,13 +15684,14 @@ __sunaba_SceneRoot.prototype.findEnt = function(self,path,index)
     local entity = _g1[_g];
     _g = _g + 1;
     if (entity.name == path[index]) then 
-      do return entity:findEnt(path, index + 1) end;
+      do return entity:findEnt(path, index) end;
     end;
   end;
   do return nil end
 end
 __sunaba_SceneRoot.prototype.started= nil;
 __sunaba_SceneRoot.prototype.enteredTree= nil;
+__sunaba_SceneRoot.prototype.isInEditor= nil;
 __sunaba_SceneRoot.prototype.addEntity = function(self,entity) 
   if (entity == nil) then 
     do return end;
@@ -15274,7 +15728,19 @@ __sunaba_SceneRoot.prototype.hasEntity = function(self,entity)
 end
 __sunaba_SceneRoot.prototype.find = function(self,path) 
   local split = String.prototype.split(path, "/");
-  do return self:findEnt(split, 0) end
+  if (split.length == 1) then 
+    split = _hx_tab_array({[0]="Scene", split[0]}, 2);
+  else
+    local newsplit = _hx_tab_array({[0]="Scene"}, 1);
+    local _g = 0;
+    while (_g < split.length) do _hx_do_first_1 = false;
+      
+      local string = split[_g];
+      _g = _g + 1;
+      newsplit:push(string);
+    end;
+  end;
+  do return self:findEnt(split, 1) end
 end
 __sunaba_SceneRoot.prototype.getEntityCount = function(self) 
   do return self.entities.length end
@@ -15458,6 +15924,117 @@ end
 __sunaba_Shader.prototype.__class__ =  __sunaba_Shader
 __sunaba_Shader.__super__ = __sunaba_Resource
 setmetatable(__sunaba_Shader.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_ShellConsole.new = function(native) 
+  local self = _hx_new(__sunaba_ShellConsole.prototype)
+  __sunaba_ShellConsole.super(self,native)
+  return self
+end
+__sunaba_ShellConsole.super = function(self,native) 
+  __sunaba_core_Reference.super(self,native);
+end
+_hxClasses["sunaba.ShellConsole"] = __sunaba_ShellConsole
+__sunaba_ShellConsole.__name__ = "sunaba.ShellConsole"
+__sunaba_ShellConsole.prototype = _hx_e();
+__sunaba_ShellConsole.prototype.nativeInit = function(self,_native) 
+  local _gthis = self;
+  if (_native == nil) then 
+    _native = NativeReference.new("res://Engine/ShellConsole.cs", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 2);
+  end;
+  self.native = _native;
+  local commandArray = function(args) 
+    local _g = 0;
+    while (_g < args.length) do _hx_do_first_1 = false;
+      
+      local arg = args[_g];
+      _g = _g + 1;
+      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
+      _gthis:cmd(arg);
+    end;
+    do return 0 end;
+  end;
+  self:addCommand("cmd", commandArray);
+  self:eval("$ = function(command) cmd({command}) end");
+end
+__sunaba_ShellConsole.prototype.get_io = function(self) 
+  do return __sunaba_io_IoInterface.new(self.native:get("IoInterface"):asReference()) end
+end
+__sunaba_ShellConsole.prototype.set_io = function(self,value) 
+  self.native:set("IoInterface", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_ShellConsole.prototype._print= nil;
+__sunaba_ShellConsole.prototype.print= nil;
+__sunaba_ShellConsole.prototype.get_print = function(self) 
+  if (self._print == nil) then 
+    self._print = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "Print");
+  end;
+  do return self._print end
+end
+__sunaba_ShellConsole.prototype.addCommand = function(self,name,func) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  local wrappedFunc = function(tableArgs) 
+    local length = nil;
+    local tab = __lua_PairTools.copy(tableArgs);
+    local length = length;
+    local args;
+    if (length == nil) then 
+      length = _hx_table.maxn(tab);
+      if (length > 0) then 
+        local head = tab[1];
+        _G.table.remove(tab, 1);
+        tab[0] = head;
+        args = _hx_tab_array(tab, length);
+      else
+        args = _hx_tab_array({}, 0);
+      end;
+    else
+      args = _hx_tab_array(tab, length);
+    end;
+    do return func(args) end;
+  end;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(wrappedFunc)));
+  self.native:call("AddCommand", args);
+end
+__sunaba_ShellConsole.prototype.eval = function(self,code) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(code));
+  local variant = self.native:call("DoCode", args);
+  if (variant:getType() == 4) then 
+    _G.error(__haxe_Exception.thrown(variant:asString()),0);
+  end;
+end
+__sunaba_ShellConsole.prototype.cmd = function(self,command) 
+  local parsedCommand = __sunaba_CommandParser.parseCommand(command);
+  if (parsedCommand == nil) then 
+    _G.error(__haxe_Exception.thrown("Invalid command format"),0);
+  end;
+  local luastr = Std.string(Std.string("__command('") .. Std.string(parsedCommand.name)) .. Std.string("', {");
+  local _g = 0;
+  local _g1 = parsedCommand.args.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local arg = parsedCommand.args[i];
+    luastr = Std.string(luastr) .. Std.string((Std.string(Std.string("'") .. Std.string(arg)) .. Std.string("'")));
+    if (i ~= (parsedCommand.args.length - 1)) then 
+      luastr = Std.string(luastr) .. Std.string(",");
+    end;
+  end;
+  luastr = Std.string(luastr) .. Std.string("})");
+  self:eval(luastr);
+end
+__sunaba_ShellConsole.prototype.log = function(self,string) 
+  local escaped = String.prototype.split(String.prototype.split(String.prototype.split(String.prototype.split(String.prototype.split(String.prototype.split(string, "\\"):join("\\\\"), "'"):join("\\'"), "\n"):join("\\n"), "\r"):join("\\r"), "\t"):join("\\t"), "\000"):join("\\0");
+  local code = Std.string(Std.string("print('") .. Std.string(escaped)) .. Std.string("')");
+  self:eval(code);
+end
+
+__sunaba_ShellConsole.prototype.__class__ =  __sunaba_ShellConsole
+__sunaba_ShellConsole.__super__ = __sunaba_core_Reference
+setmetatable(__sunaba_ShellConsole.prototype,{__index=__sunaba_core_Reference.prototype})
 
 __sunaba__SizeFlags_SizeFlags_Impl_.new = {}
 _hxClasses["sunaba._SizeFlags.SizeFlags_Impl_"] = __sunaba__SizeFlags_SizeFlags_Impl_
@@ -16181,6 +16758,32 @@ __sunaba_SystemFont.prototype.__class__ =  __sunaba_SystemFont
 __sunaba_SystemFont.__super__ = __sunaba_Font
 setmetatable(__sunaba_SystemFont.prototype,{__index=__sunaba_Font.prototype})
 
+__sunaba__TrackType_TrackType_Impl_.new = {}
+_hxClasses["sunaba._TrackType.TrackType_Impl_"] = __sunaba__TrackType_TrackType_Impl_
+__sunaba__TrackType_TrackType_Impl_.__name__ = "sunaba._TrackType.TrackType_Impl_"
+__sunaba__TrackType_TrackType_Impl_.fromString = function(s) 
+  local s = s;
+  if (s) == "animation" then 
+    do return 8 end;
+  elseif (s) == "audio" then 
+    do return 7 end;
+  elseif (s) == "bezier" then 
+    do return 6 end;
+  elseif (s) == "blendShape" then 
+    do return 4 end;
+  elseif (s) == "method" then 
+    do return 5 end;
+  elseif (s) == "position3d" then 
+    do return 1 end;
+  elseif (s) == "rotation3d" then 
+    do return 2 end;
+  elseif (s) == "scale3d" then 
+    do return 3 end;
+  elseif (s) == "value" then 
+    do return 0 end;else
+  do return nil end; end;
+end
+
 __sunaba__VerticalAlignment_VerticalAlignment_Impl_.new = {}
 _hxClasses["sunaba._VerticalAlignment.VerticalAlignment_Impl_"] = __sunaba__VerticalAlignment_VerticalAlignment_Impl_
 __sunaba__VerticalAlignment_VerticalAlignment_Impl_.__name__ = "sunaba._VerticalAlignment.VerticalAlignment_Impl_"
@@ -16272,6 +16875,1573 @@ __sunaba__WindowResizeEdge_WindowResizeEdge_Impl_.fromString = function(s)
     do return 2 end;else
   do return nil end; end;
 end
+
+__sunaba_animation_Animation.new = function(native) 
+  local self = _hx_new(__sunaba_animation_Animation.prototype)
+  __sunaba_animation_Animation.super(self,native)
+  return self
+end
+__sunaba_animation_Animation.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.animation.Animation"] = __sunaba_animation_Animation
+__sunaba_animation_Animation.__name__ = "sunaba.animation.Animation"
+__sunaba_animation_Animation.prototype = _hx_e();
+__sunaba_animation_Animation.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("Animation");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("Animation"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_animation_Animation.prototype.get_captureIncluded = function(self) 
+  do return self.native:get("capture_included"):asBool() end
+end
+__sunaba_animation_Animation.prototype.set_captureIncluded = function(self,value) 
+  self.native:set("capture_included", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_Animation.prototype.get_length = function(self) 
+  do return self.native:get("length"):asFloat() end
+end
+__sunaba_animation_Animation.prototype.set_length = function(self,value) 
+  self.native:set("length", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_Animation.prototype.get_loopMode = function(self) 
+  do return self.native:get("loop_mode"):asInt() end
+end
+__sunaba_animation_Animation.prototype.set_loopMode = function(self,value) 
+  self.native:set("loop_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_Animation.prototype.get_step = function(self) 
+  do return self.native:get("step"):asFloat() end
+end
+__sunaba_animation_Animation.prototype.set_step = function(self,value) 
+  self.native:set("step", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_Animation.prototype.addMarker = function(self,name,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  self.native:call("add_marker", args);
+end
+__sunaba_animation_Animation.prototype.addTrack = function(self,type,atPosition) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(type));
+  if (atPosition ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(atPosition));
+  end;
+  do return self.native:call("add_track", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.animationTrackGetKeyAnimation = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("animation_track_get_key_animation", args):asString() end
+end
+__sunaba_animation_Animation.prototype.animationTrackInsertKey = function(self,trackIdx,time,animation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animation));
+  do return self.native:call("animation_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.animationTrackSetKeyAnimation = function(self,trackIdx,keyIdx,animation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animation));
+  self.native:call("animation_track_set_key_animation", args);
+end
+__sunaba_animation_Animation.prototype.audioTrackGetKeyEndOffset = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("audio_track_get_key_end_offset", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.audioTrackGetKeyStartOffset = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("audio_track_get_key_start_offset", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.audioTrackGetKeyStream = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  local ref = self.native:call("audio_track_get_key_stream", args):asReference();
+  do return __sunaba_Resource.new(ref) end
+end
+__sunaba_animation_Animation.prototype.audioTrackInsertKey = function(self,trackIdx,time,stream,startOffset,endOffset) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(stream.native));
+  if (startOffset ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(startOffset));
+  end;
+  if (endOffset ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(endOffset));
+  end;
+  do return self.native:call("audio_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.audioTrackIsUseBlend = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("audio_track_is_use_blend", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.audioTrackSetKeyEndOffset = function(self,trackIdx,keyIdx,offset) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(offset));
+  self.native:call("audio_track_set_key_end_offset", args);
+end
+__sunaba_animation_Animation.prototype.audioTrackSetKeyStartOffset = function(self,trackIdx,keyIdx,offset) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(offset));
+  self.native:call("audio_track_set_key_start_offset", args);
+end
+__sunaba_animation_Animation.prototype.audioTrackSetKeyStream = function(self,trackIdx,keyIdx,stream) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(stream.native));
+  self.native:call("audio_track_set_key_stream", args);
+end
+__sunaba_animation_Animation.prototype.audioTrackSetUseBlend = function(self,trackIdx,enable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enable));
+  self.native:call("audio_track_set_use_blend", args);
+end
+__sunaba_animation_Animation.prototype.bezierTrackGetKeyInHandle = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("bezier_track_get_key_in_handle", args):asVector2() end
+end
+__sunaba_animation_Animation.prototype.bezierTrackGetKeyOutHandle = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("bezier_track_get_key_out_handle", args):asVector2() end
+end
+__sunaba_animation_Animation.prototype.bezierTrackGetKeyValue = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("bezier_track_get_key_value", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.bezierTrackInsertKey = function(self,trackIdx,time,value,inHandle,outHandle) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  if (inHandle ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(inHandle));
+  end;
+  if (outHandle ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(outHandle));
+  end;
+  do return self.native:call("bezier_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.bezierTrackInterpolate = function(self,trackIdx,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  do return self.native:call("bezier_track_interpolate", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.bezierTrackSetKeyInHandle = function(self,trackIdx,keyIdx,inHandle,balancedValueTimeRatio) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(inHandle));
+  if (balancedValueTimeRatio ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(balancedValueTimeRatio));
+  end;
+  self.native:call("bezier_track_set_key_in_handle", args);
+end
+__sunaba_animation_Animation.prototype.bezierTrackSetKeyOutHandle = function(self,trackIdx,keyIdx,outHandle,balancedValueTimeRatio) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(outHandle));
+  if (balancedValueTimeRatio ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(balancedValueTimeRatio));
+  end;
+  self.native:call("bezier_track_set_key_out_handle", args);
+end
+__sunaba_animation_Animation.prototype.bezierTrackSetKeyValue = function(self,trackIdx,keyIdx,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  self.native:call("bezier_track_set_key_value", args);
+end
+__sunaba_animation_Animation.prototype.blendShapeTrackInsertKey = function(self,trackIdx,time,amount) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(amount));
+  do return self.native:call("blend_shape_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.blendShapeTrackInterpolate = function(self,trackIdx,timeSec,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(timeSec));
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("blend_shape_track_interpolate", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear", args);
+end
+__sunaba_animation_Animation.prototype.compress = function(self,pageSize,fps,splitTolerance) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (pageSize ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(pageSize));
+  end;
+  if (fps ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(fps));
+  end;
+  if (splitTolerance ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(splitTolerance));
+  end;
+  self.native:call("compress", args);
+end
+__sunaba_animation_Animation.prototype.copyTrack = function(self,trackIdx,toAnimation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(toAnimation.native));
+  self.native:call("copy_track", args);
+end
+__sunaba_animation_Animation.prototype.findTrack = function(self,path,type) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(type));
+  do return self.native:call("find_track", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.getMarkerAtTime = function(self,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  do return self.native:call("get_marker_at_time", args):asString() end
+end
+__sunaba_animation_Animation.prototype.getMarkerColor = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.native:call("get_marker_color", args):asColor() end
+end
+__sunaba_animation_Animation.prototype.getMarkerNames = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_marker_names", args):asStringArray() end
+end
+__sunaba_animation_Animation.prototype.getMarkerTime = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.native:call("get_marker_time", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.getNextMarker = function(self,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  do return self.native:call("get_next_marker", args):asString() end
+end
+__sunaba_animation_Animation.prototype.getPrevMarker = function(self,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  do return self.native:call("get_prev_marker", args):asString() end
+end
+__sunaba_animation_Animation.prototype.getTrackCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_track_count", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.hasMarker = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.native:call("has_marker", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.methodTrackGetName = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("method_track_get_name", args):asString() end
+end
+__sunaba_animation_Animation.prototype.methodTrackGetParams = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("method_track_get_params", args):asArrayList() end
+end
+__sunaba_animation_Animation.prototype.optimize = function(self,allowedVelocityErr,allowedAngularErr,precision) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (allowedVelocityErr ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(allowedVelocityErr));
+  end;
+  if (allowedAngularErr ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(allowedAngularErr));
+  end;
+  if (precision ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(precision));
+  end;
+  self.native:call("optimize", args);
+end
+__sunaba_animation_Animation.prototype.positionTrackInsertKey = function(self,trackIdx,time,position) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(position));
+  do return self.native:call("position_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.positionTrackInterpolate = function(self,trackIdx,timeSec,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(timeSec));
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("position_track_interpolate", args):asVector3() end
+end
+__sunaba_animation_Animation.prototype.removeMarker = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("remove_marker", args);
+end
+__sunaba_animation_Animation.prototype.removeTrack = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  self.native:call("remove_track", args);
+end
+__sunaba_animation_Animation.prototype.rotationTrackInsertKey = function(self,trackIdx,time,rotation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(rotation));
+  do return self.native:call("rotation_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.rotationTrackInterpolate = function(self,trackIdx,timeSec,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(timeSec));
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("rotation_track_interpolate", args):asQuaternion() end
+end
+__sunaba_animation_Animation.prototype.scaleTrackInsertKey = function(self,trackIdx,time,scale) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(scale));
+  do return self.native:call("scale_track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.scaleTrackInterpolate = function(self,trackIdx,timeSec,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(timeSec));
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("scale_track_interpolate", args):asVector3() end
+end
+__sunaba_animation_Animation.prototype.setMarkerColor = function(self,name,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  self.native:call("set_marker_color", args);
+end
+__sunaba_animation_Animation.prototype.trackFindKey = function(self,trackIdx,time,findMode,limit,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  if (findMode ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(findMode));
+  end;
+  if (limit ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(limit));
+  end;
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("track_find_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.trackGetInterpolationLoopWrap = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_get_interpolation_loop_wrap", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.trackGetInterpolationType = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_get_interpolation_type", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.trackGetKeyCount = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_get_key_count", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.trackGetKeyTime = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("track_get_key_time", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.trackGetKeyTransition = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("track_get_key_transition", args):asFloat() end
+end
+__sunaba_animation_Animation.prototype.trackGetKeyValue = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  do return self.native:call("track_get_key_value", args) end
+end
+__sunaba_animation_Animation.prototype.trackGetPath = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_get_path", args):asString() end
+end
+__sunaba_animation_Animation.prototype.trackGetType = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_get_type", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.trackInsertKey = function(self,trackIdx,time,key,transition) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  args:append(key);
+  if (transition ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(transition));
+  end;
+  do return self.native:call("track_insert_key", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.trackIsCompressed = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_is_compressed", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.trackIsEnabled = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_is_enabled", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.trackIsImported = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("track_is_imported", args):asBool() end
+end
+__sunaba_animation_Animation.prototype.trackMoveDown = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  self.native:call("track_move_down", args);
+end
+__sunaba_animation_Animation.prototype.trackMoveTo = function(self,trackIdx,toIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(toIdx));
+  self.native:call("track_move_to", args);
+end
+__sunaba_animation_Animation.prototype.trackMoveUp = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  self.native:call("track_move_up", args);
+end
+__sunaba_animation_Animation.prototype.trackRemoveKey = function(self,trackIdx,keyIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  self.native:call("track_remove_key", args);
+end
+__sunaba_animation_Animation.prototype.trackRemoveKeyAtTime = function(self,trackIdx,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  self.native:call("track_remove_key_at_time", args);
+end
+__sunaba_animation_Animation.prototype.trackSetEnabled = function(self,trackIdx,enabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enabled));
+  self.native:call("track_set_enabled", args);
+end
+__sunaba_animation_Animation.prototype.trackSetImported = function(self,trackIdx,imported) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(imported));
+  self.native:call("track_set_imported", args);
+end
+__sunaba_animation_Animation.prototype.trackSetInterpolationLoopWrap = function(self,trackIdx,interpolation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(interpolation));
+  self.native:call("track_set_interpolation_loop_wrap", args);
+end
+__sunaba_animation_Animation.prototype.trackSetInterpolationType = function(self,trackIdx,interpolation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(interpolation));
+  self.native:call("track_set_interpolation_type", args);
+end
+__sunaba_animation_Animation.prototype.trackSetKeyTime = function(self,trackIdx,keyIdx,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  self.native:call("track_set_key_time", args);
+end
+__sunaba_animation_Animation.prototype.trackSetKeyTransition = function(self,trackIdx,keyIdx,transition) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(keyIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(transition));
+  self.native:call("track_set_key_transition", args);
+end
+__sunaba_animation_Animation.prototype.trackSetKeyValue = function(self,trackIdx,key,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(key));
+  args:append(value);
+  self.native:call("track_set_key_value", args);
+end
+__sunaba_animation_Animation.prototype.trackSetPath = function(self,trackIdx,path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  self.native:call("track_set_path", args);
+end
+__sunaba_animation_Animation.prototype.trackSwap = function(self,trackIdx,withIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(withIdx));
+  self.native:call("track_swap", args);
+end
+__sunaba_animation_Animation.prototype.valueTrackGetUpdateMode = function(self,trackIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  do return self.native:call("value_track_get_update_mode", args):asInt() end
+end
+__sunaba_animation_Animation.prototype.valueTrackInterpolate = function(self,trackIdx,timeSec,backward) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(timeSec));
+  if (backward ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(backward));
+  end;
+  do return self.native:call("value_track_interpolate", args) end
+end
+__sunaba_animation_Animation.prototype.valueTrackSetUpdateMode = function(self,trackIdx,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(trackIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.native:call("value_track_set_update_mode", args);
+end
+
+__sunaba_animation_Animation.prototype.__class__ =  __sunaba_animation_Animation
+__sunaba_animation_Animation.__super__ = __sunaba_Resource
+setmetatable(__sunaba_animation_Animation.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_animation_AnimationLibrary.new = function(native) 
+  local self = _hx_new(__sunaba_animation_AnimationLibrary.prototype)
+  __sunaba_animation_AnimationLibrary.super(self,native)
+  return self
+end
+__sunaba_animation_AnimationLibrary.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.animation.AnimationLibrary"] = __sunaba_animation_AnimationLibrary
+__sunaba_animation_AnimationLibrary.__name__ = "sunaba.animation.AnimationLibrary"
+__sunaba_animation_AnimationLibrary.prototype = _hx_e();
+__sunaba_animation_AnimationLibrary.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AnimationLibrary");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("AnimationLibrary"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_animation_AnimationLibrary.prototype._animationAdded= nil;
+__sunaba_animation_AnimationLibrary.prototype.animationAdded= nil;
+__sunaba_animation_AnimationLibrary.prototype.get_animationAdded = function(self) 
+  if (self._animationAdded == nil) then 
+    self._animationAdded = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "animation_added");
+  end;
+  do return self._animationAdded end
+end
+__sunaba_animation_AnimationLibrary.prototype._animationChanged= nil;
+__sunaba_animation_AnimationLibrary.prototype.animationChanged= nil;
+__sunaba_animation_AnimationLibrary.prototype.get_animationChanged = function(self) 
+  if (self._animationChanged == nil) then 
+    self._animationChanged = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "animation_changed");
+  end;
+  do return self._animationChanged end
+end
+__sunaba_animation_AnimationLibrary.prototype._animationRemoved= nil;
+__sunaba_animation_AnimationLibrary.prototype.animationRemoved= nil;
+__sunaba_animation_AnimationLibrary.prototype.get_animationRemoved = function(self) 
+  if (self._animationRemoved == nil) then 
+    self._animationRemoved = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "animation_removed");
+  end;
+  do return self._animationRemoved end
+end
+__sunaba_animation_AnimationLibrary.prototype._animationRenamed= nil;
+__sunaba_animation_AnimationLibrary.prototype.animationRenamed= nil;
+__sunaba_animation_AnimationLibrary.prototype.get_animationRenamed = function(self) 
+  if (self._animationRenamed == nil) then 
+    self._animationRenamed = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "animation_renamed");
+  end;
+  do return self._animationRenamed end
+end
+__sunaba_animation_AnimationLibrary.prototype.addAnimation = function(self,name,animation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animation.native));
+  do return self.native:call("add_animation", args):asInt() end
+end
+__sunaba_animation_AnimationLibrary.prototype.getAnimation = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  local ref = self.native:call("get_animation", args):asReference();
+  do return __sunaba_animation_Animation.new(ref) end
+end
+__sunaba_animation_AnimationLibrary.prototype.getAnimationList = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_animation_list_size", args):asArrayList() end
+end
+__sunaba_animation_AnimationLibrary.prototype.getAnimationListSize = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_animation_list_size", args):asInt() end
+end
+__sunaba_animation_AnimationLibrary.prototype.hasAnimation = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.native:call("has_animation", args):asBool() end
+end
+__sunaba_animation_AnimationLibrary.prototype.removeAnimation = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("remove_animation", args);
+end
+__sunaba_animation_AnimationLibrary.prototype.renameAnimation = function(self,name,newname) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(newname));
+  self.native:call("rename_animation", args);
+end
+
+__sunaba_animation_AnimationLibrary.prototype.__class__ =  __sunaba_animation_AnimationLibrary
+__sunaba_animation_AnimationLibrary.__super__ = __sunaba_Resource
+setmetatable(__sunaba_animation_AnimationLibrary.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_animation_AnimationMixer.new = function() 
+  local self = _hx_new(__sunaba_animation_AnimationMixer.prototype)
+  __sunaba_animation_AnimationMixer.super(self)
+  return self
+end
+__sunaba_animation_AnimationMixer.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.animation.AnimationMixer"] = __sunaba_animation_AnimationMixer
+__sunaba_animation_AnimationMixer.__name__ = "sunaba.animation.AnimationMixer"
+__sunaba_animation_AnimationMixer.prototype = _hx_e();
+__sunaba_animation_AnimationMixer.prototype.node= nil;
+__sunaba_animation_AnimationMixer.prototype.get_active = function(self) 
+  do return self.node.native:get("active"):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_active = function(self,value) 
+  self.node.native:set("active", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_audioMaxPolyphony = function(self) 
+  do return self.node.native:get("audio_max_polyphony"):asInt() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_audioMaxPolyphony = function(self,value) 
+  self.node.native:set("audio_max_polyphony", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_callbackModeDiscrete = function(self) 
+  do return self.node.native:get("callback_mode_discrete"):asInt() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_callbackModeDiscrete = function(self,value) 
+  self.node.native:set("callback_mode_discrete", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_callbackModeMethod = function(self) 
+  do return self.node.native:get("callback_mode_method"):asInt() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_callbackModeMethod = function(self,value) 
+  self.node.native:set("callback_mode_method", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_callbackModeProcess = function(self) 
+  do return self.node.native:get("callback_mode_process"):asInt() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_callbackModeProcess = function(self,value) 
+  self.node.native:set("callback_mode_process", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_deterministic = function(self) 
+  do return self.node.native:get("deterministic"):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_deterministic = function(self,value) 
+  self.node.native:set("deterministic", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_resetOnSave = function(self) 
+  do return self.node.native:get("reset_on_save"):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_resetOnSave = function(self,value) 
+  self.node.native:set("reset_on_save", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_rootMotionLocal = function(self) 
+  do return self.node.native:get("root_motion_local"):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_rootMotionLocal = function(self,value) 
+  self.node.native:set("root_motion_local", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.get_rootMotionTrack = function(self) 
+  do return self.node.native:get("root_motion_track"):asString() end
+end
+__sunaba_animation_AnimationMixer.prototype.set_rootMotionTrack = function(self,value) 
+  self.node.native:set("root_motion_track", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_animation_AnimationMixer.prototype.addAnimationLibrary = function(self,name,library) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromReference(library));
+  do return self.node.native:call("add_animation_library", args):asInt() end
+end
+__sunaba_animation_AnimationMixer.prototype.advance = function(self,delta) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(delta));
+  self.node.native:call("advance", args);
+end
+__sunaba_animation_AnimationMixer.prototype.capture = function(self,name,duration,transType,easeType) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(duration));
+  if (transType ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(transType));
+  end;
+  if (easeType ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(easeType));
+  end;
+  self.node.native:call("capture", args);
+end
+__sunaba_animation_AnimationMixer.prototype.clearCaches = function(self) 
+  self.node.native:call("clear_caches", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_animation_AnimationMixer.prototype.findAnimation = function(self,animation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromReference(animation));
+  do return self.node.native:call("find_animation", args):asString() end
+end
+__sunaba_animation_AnimationMixer.prototype.findAnimationLibrary = function(self,animation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromReference(animation));
+  do return self.node.native:call("find_animation_library", args):asString() end
+end
+__sunaba_animation_AnimationMixer.prototype.getAnimation = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return __sunaba_animation_Animation.new(self.node.native:call("get_animation", args):asReference()) end
+end
+__sunaba_animation_AnimationMixer.prototype.getAnimationLibrary = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return __sunaba_animation_AnimationLibrary.new(self.node.native:call("get_animation_library", args):asReference()) end
+end
+__sunaba_animation_AnimationMixer.prototype.getAnimationLibraryList = function(self) 
+  do return self.node.native:call("get_animation_library_list", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asArrayList() end
+end
+__sunaba_animation_AnimationMixer.prototype.getAnimationList = function(self) 
+  do return self.node.native:call("get_animation_list", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asStringArray() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionPosition = function(self) 
+  do return self.node.native:call("get_root_motion_position", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionPositionAccumulator = function(self) 
+  do return self.node.native:call("get_root_motion_position_accumulator", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionRotation = function(self) 
+  do return self.node.native:call("get_root_motion_rotation", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asQuaternion() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionRotationAccumulator = function(self) 
+  do return self.node.native:call("get_root_motion_rotation_accumulator", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asQuaternion() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionScale = function(self) 
+  do return self.node.native:call("get_root_motion_scale", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_animation_AnimationMixer.prototype.getRootMotionScaleAccumulator = function(self) 
+  do return self.node.native:call("get_root_motion_scale_accumulator", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_animation_AnimationMixer.prototype.hasAnimation = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.node.native:call("has_animation", args):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.hasAnimationLibrary = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.node.native:call("has_animation_library", args):asBool() end
+end
+__sunaba_animation_AnimationMixer.prototype.removeAnimationLibrary = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.node.native:call("remove_animation_library", args);
+end
+__sunaba_animation_AnimationMixer.prototype.renameAnimationLibrary = function(self,name,newname) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(newname));
+  self.node.native:call("remove_animation_library", args);
+end
+__sunaba_animation_AnimationMixer.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("active"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_active()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("audioMaxPolyphony"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_audioMaxPolyphony()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeDiscrete"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_callbackModeDiscrete()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeMethod"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_callbackModeMethod()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeProcess"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_callbackModeProcess()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("deterministic"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_deterministic()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("resetOnSave"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_resetOnSave()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("rootMotionLocal"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_rootMotionLocal()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("rootMotionTrack"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_rootMotionTrack()));
+  local animationLibraryList = self:getAnimationLibraryList();
+  local animationLibraryListSerialized = Dictionary.new();
+  local _g = 0;
+  local _g1 = animationLibraryList:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local animLibName = animationLibraryList:get(i):asString();
+    local animLib = self:getAnimationLibrary(animLibName);
+    animationLibraryListSerialized:set(__sunaba_core__Variant_Variant_Impl_.fromString(animLibName), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animLib.native))));
+  end;
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("animationLibraries"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(animationLibraryListSerialized));
+  do return data end
+end
+__sunaba_animation_AnimationMixer.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_active(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("active")):asBool());
+  self:set_audioMaxPolyphony(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("audioMaxPolyphony")):asInt());
+  self:set_callbackModeDiscrete(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeDiscrete")):asInt());
+  self:set_callbackModeMethod(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeMethod")):asInt());
+  self:set_callbackModeProcess(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("callbackModeProcess")):asInt());
+  self:set_deterministic(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("deterministic")):asBool());
+  self:set_resetOnSave(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("resetOnSave")):asBool());
+  self:set_rootMotionLocal(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rootMotionLocal")):asBool());
+  self:set_rootMotionTrack(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rootMotionTrack")):asString());
+  local animationLibraryList = data:get(__sunaba_core__Variant_Variant_Impl_.fromString("animationLibraries")):asDictionary();
+  local animationLibraryNames = animationLibraryList:keys();
+  local _g = 0;
+  local _g1 = animationLibraryNames:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local animationLibraryName = animationLibraryNames:get(i):asString();
+    local animationLibraryData = animationLibraryList:get(__sunaba_core__Variant_Variant_Impl_.fromString(animationLibraryName)):asDictionary();
+    local animationLibrary = __sunaba_animation_AnimationLibrary.new(__sunaba_DataUtils.dictToVar(animationLibraryData):asReference());
+    local propertiesData = animationLibraryData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
+    local animationListData = propertiesData:get(__sunaba_core__Variant_Variant_Impl_.fromString("_data")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(animationListData))));
+    local _g = 0;
+    local this1 = animationListData:keys();
+    local result = Array.new();
+    local _g1 = 0;
+    local _g2 = this1:size();
+    while (_g1 < _g2) do _hx_do_first_2 = false;
+      
+      _g1 = _g1 + 1;
+      local i = _g1 - 1;
+      result[i] = this1:get(i);
+    end;
+    local _g1 = result;
+    while (_g < _g1.length) do _hx_do_first_2 = false;
+      
+      local keyv = _g1[_g];
+      _g = _g + 1;
+      local key = keyv:asString();
+      local value = animationListData:get(__sunaba_core__Variant_Variant_Impl_.fromString(key));
+      local animation = __sunaba_animation_Animation.new(__sunaba_DataUtils.dictToVar(value:asDictionary()):asReference());
+      animation:clear();
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      _G.print(Std.string(__sunaba_JSON.stringify(value)));
+      local animationPropertyData = value:asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
+      local trackData = __haxe_ds_IntMap.new();
+      local _g = 0;
+      local this1 = animationPropertyData:keys();
+      local result = Array.new();
+      local _g1 = 0;
+      local _g2 = this1:size();
+      while (_g1 < _g2) do _hx_do_first_3 = false;
+        
+        _g1 = _g1 + 1;
+        local i = _g1 - 1;
+        result[i] = this1:get(i);
+      end;
+      local _g1 = result;
+      while (_g < _g1.length) do _hx_do_first_3 = false;
+        
+        local propKeyv = _g1[_g];
+        _g = _g + 1;
+        local propKey = propKeyv:asString();
+        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+        if (StringTools.startsWith(propKey, "tracks/")) then 
+          local parts = String.prototype.split(propKey, "/");
+          local trackIdx = Std.parseInt(parts[1]);
+          local propName = parts[2];
+          if (trackData.h[trackIdx] == nil) then 
+            local value = __haxe_ds_StringMap.new();
+            if (value == nil) then 
+              trackData.h[trackIdx] = __haxe_ds_IntMap.tnull;
+            else
+              trackData.h[trackIdx] = value;
+            end;
+          end;
+          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          local ret = trackData.h[trackIdx];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          local value = __sunaba_DataUtils.dictToVar(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary());
+          local _this = ret;
+          if (value == nil) then 
+            _this.h[propName] = __haxe_ds_StringMap.tnull;
+          else
+            _this.h[propName] = value;
+          end;
+        end;
+      end;
+      local trackIdx = trackData:keys();
+      while (trackIdx:hasNext()) do _hx_do_first_3 = false;
+        
+        local trackIdx = trackIdx:next();
+        local ret = trackData.h[trackIdx];
+        if (ret == __haxe_ds_IntMap.tnull) then 
+          ret = nil;
+        end;
+        local track = ret;
+        local ret = track.h.type;
+        local trackType = ((function() 
+          local _hx_1
+          if (ret == __haxe_ds_StringMap.tnull) then 
+          _hx_1 = nil; else 
+          _hx_1 = ret; end
+          return _hx_1
+        end )()):asString();
+        local ret = track.h.path;
+        local trackPath = ((function() 
+          local _hx_2
+          if (ret == __haxe_ds_StringMap.tnull) then 
+          _hx_2 = nil; else 
+          _hx_2 = ret; end
+          return _hx_2
+        end )()):asString();
+        local godotTrackIdx = -1;
+        local trackType1 = trackType;
+        if (trackType1) == "position_3d" then 
+          godotTrackIdx = animation:addTrack(1);
+        elseif (trackType1) == "rotation_3d" then 
+          godotTrackIdx = animation:addTrack(2);
+        elseif (trackType1) == "scale_3d" then 
+          godotTrackIdx = animation:addTrack(3);
+        elseif (trackType1) == "value" then 
+          godotTrackIdx = animation:addTrack(0);else
+        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
+        if (godotTrackIdx >= 0) then 
+          animation:trackSetPath(godotTrackIdx, trackPath);
+          if (track.h.enabled ~= nil) then 
+            local ret = track.h.enabled;
+            local enabledVal = (function() 
+              local _hx_3
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_3 = nil; else 
+              _hx_3 = ret; end
+              return _hx_3
+            end )();
+            if (enabledVal ~= nil) then 
+              animation:trackSetEnabled(godotTrackIdx, enabledVal:asBool());
+            end;
+          end;
+          if (track.h.imported ~= nil) then 
+            local ret = track.h.imported;
+            local importedVal = (function() 
+              local _hx_4
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_4 = nil; else 
+              _hx_4 = ret; end
+              return _hx_4
+            end )();
+            if (importedVal ~= nil) then 
+              animation:trackSetImported(godotTrackIdx, importedVal:asBool());
+            end;
+          end;
+          if (track.h.interp ~= nil) then 
+            local ret = track.h.interp;
+            local interpVal = (function() 
+              local _hx_5
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_5 = nil; else 
+              _hx_5 = ret; end
+              return _hx_5
+            end )();
+            if (interpVal ~= nil) then 
+              animation:trackSetInterpolationType(godotTrackIdx, interpVal:asInt());
+            end;
+          end;
+          if (track.h.loop_wrap ~= nil) then 
+            local ret = track.h.loop_wrap;
+            local loopWrapVal = (function() 
+              local _hx_6
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_6 = nil; else 
+              _hx_6 = ret; end
+              return _hx_6
+            end )();
+            if (loopWrapVal ~= nil) then 
+              animation:trackSetInterpolationLoopWrap(godotTrackIdx, loopWrapVal:asBool());
+            end;
+          end;
+          if (track.h.keys ~= nil) then 
+            local ret = track.h.keys;
+            local s = __sunaba_core__Variant_Variant_Impl_.toFloatArray((function() 
+              local _hx_7
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_7 = nil; else 
+              _hx_7 = ret; end
+              return _hx_7
+            end )());
+            local array = _hx_tab_array({}, 0);
+            local _g = 0;
+            local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+            while (_g < _g1) do _hx_do_first_4 = false;
+              
+              _g = _g + 1;
+              local i = _g - 1;
+              local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+              if (value == nil) then 
+                _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+              end;
+              array:push(value);
+            end;
+            local keys = array;
+            if (keys.length > 0) then 
+              local step;
+              local trackType = trackType;
+              if (trackType) == "rotation_3d" then 
+                step = 6;
+              elseif (trackType) == "position_3d" or (trackType) == "scale_3d" then 
+                step = 5;else
+              step = 2; end;
+              if ((_G.math.fmod(keys.length, step)) ~= 0) then 
+                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+              end;
+            else
+              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            end;
+          else
+            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          end;
+          local propKey = Std.string(Std.string("tracks/") .. Std.string(godotTrackIdx)) .. Std.string("/keys");
+          local keysArray = Variant.new():asFloatArray();
+          local oldKeysArray = animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asArrayList();
+          local result = Array.new();
+          local _g = 0;
+          local _g1 = oldKeysArray:size();
+          while (_g < _g1) do _hx_do_first_4 = false;
+            
+            _g = _g + 1;
+            local i = _g - 1;
+            result[i] = oldKeysArray:get(i);
+          end;
+          local oldKeysArrayHx = result;
+          local lastVariantIndex = 0;
+          local _g = 0;
+          while (_g < oldKeysArrayHx.length) do _hx_do_first_4 = false;
+            
+            local variant = oldKeysArrayHx[_g];
+            _g = _g + 1;
+            local newLastVariantIndex = oldKeysArrayHx:indexOf(variant);
+            if (newLastVariantIndex > lastVariantIndex) then 
+              lastVariantIndex = newLastVariantIndex;
+            else
+              lastVariantIndex = lastVariantIndex + 1;
+            end;
+            if (variant:asFloat() ~= oldKeysArray:get(lastVariantIndex):asFloat()) then 
+              keysArray:add(oldKeysArray:get(lastVariantIndex):asFloat());
+            else
+              keysArray:add(variant:asFloat());
+            end;
+            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          end;
+          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          animation.native:set(propKey, __sunaba_core__Variant_Variant_Impl_.fromFloatArray(keysArray));
+          if (track.h.enabled ~= nil) then 
+            local ret = track.h.enabled;
+            animation:trackSetEnabled(godotTrackIdx, ((function() 
+              local _hx_8
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_8 = nil; else 
+              _hx_8 = ret; end
+              return _hx_8
+            end )()):asBool());
+          end;
+          if (track.h.imported ~= nil) then 
+            local ret = track.h.imported;
+            animation:trackSetImported(godotTrackIdx, ((function() 
+              local _hx_9
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_9 = nil; else 
+              _hx_9 = ret; end
+              return _hx_9
+            end )()):asBool());
+          end;
+          if (track.h.interp ~= nil) then 
+            local ret = track.h.interp;
+            animation:trackSetInterpolationType(godotTrackIdx, ((function() 
+              local _hx_10
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_10 = nil; else 
+              _hx_10 = ret; end
+              return _hx_10
+            end )()):asInt());
+          end;
+          if (track.h.loop_wrap ~= nil) then 
+            local ret = track.h.loop_wrap;
+            animation:trackSetInterpolationLoopWrap(godotTrackIdx, ((function() 
+              local _hx_11
+              if (ret == __haxe_ds_StringMap.tnull) then 
+              _hx_11 = nil; else 
+              _hx_11 = ret; end
+              return _hx_11
+            end )()):asBool());
+          end;
+        end;
+      end;
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animation.native))))));
+      animationLibrary:addAnimation(key, animation);
+    end;
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animationLibrary.native))))));
+    self:addAnimationLibrary(animationLibraryName, animationLibrary);
+  end;
+end
+
+__sunaba_animation_AnimationMixer.prototype.__class__ =  __sunaba_animation_AnimationMixer
+__sunaba_animation_AnimationMixer.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_animation_AnimationMixer.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_animation_AnimationPlayer.new = function() 
+  local self = _hx_new(__sunaba_animation_AnimationPlayer.prototype)
+  __sunaba_animation_AnimationPlayer.super(self)
+  return self
+end
+__sunaba_animation_AnimationPlayer.super = function(self) 
+  __sunaba_animation_AnimationMixer.super(self);
+end
+_hxClasses["sunaba.animation.AnimationPlayer"] = __sunaba_animation_AnimationPlayer
+__sunaba_animation_AnimationPlayer.__name__ = "sunaba.animation.AnimationPlayer"
+__sunaba_animation_AnimationPlayer.prototype = _hx_e();
+__sunaba_animation_AnimationPlayer.prototype.get_assignedAnimation = function(self) 
+  do return self.node.native:get("assigned_animation"):asString() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_assignedAnimation = function(self,value) 
+  self.node.native:set("assigned_animation", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_autoplay = function(self) 
+  do return self.node.native:get("autoplay"):asString() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_autoplay = function(self,value) 
+  self.node.native:set("autoplay", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_currentAnimation = function(self) 
+  do return self.node.native:get("current_animation"):asString() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_currentAnimation = function(self,value) 
+  self.node.native:set("current_animation", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_currentAnimationLength = function(self) 
+  do return self.node.native:get("current_animation_length"):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_currentAnimationLength = function(self,value) 
+  self.node.native:set("current_animation_length", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_currentAnimationPosition = function(self) 
+  do return self.node.native:get("current_animation_position"):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_currentAnimationPosition = function(self,value) 
+  self.node.native:set("current_animation_position", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_movieQuitOnFinish = function(self) 
+  do return self.node.native:get("movie_quit_on_finish"):asBool() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_movieQuitOnFinish = function(self,value) 
+  self.node.native:set("movie_quit_on_finish", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_playbackAutoCapture = function(self) 
+  do return self.node.native:get("playback_auto_capture"):asBool() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_playbackAutoCapture = function(self,value) 
+  self.node.native:set("playback_auto_capture", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_playbackAutoCaptureDuration = function(self) 
+  do return self.node.native:get("playback_auto_capture_duration"):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_playbackAutoCaptureDuration = function(self,value) 
+  self.node.native:set("playback_auto_capture_duration", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_playbackAutoCaptureEaseType = function(self) 
+  do return self.node.native:get("playback_auto_capture_ease_type"):asInt() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_playbackAutoCaptureEaseType = function(self,value) 
+  self.node.native:set("playback_auto_capture_ease_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_playbackAutoCaptureTransitionType = function(self) 
+  do return self.node.native:get("playback_auto_capture_transition_type"):asInt() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_playbackAutoCaptureTransitionType = function(self,value) 
+  self.node.native:set("playback_auto_capture_transition_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_playbackDefaultBlendTime = function(self) 
+  do return self.node.native:get("playback_default_blend_time"):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_playbackDefaultBlendTime = function(self,value) 
+  self.node.native:set("playback_default_blend_time", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.get_speedScale = function(self) 
+  do return self.node.native:get("speed_scale"):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.set_speedScale = function(self,value) 
+  self.node.native:set("speed_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_animation_AnimationPlayer.prototype.animationGetNext = function(self,animationFrom) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationFrom));
+  do return self.node.native:call("animation_get_next", args):asString() end
+end
+__sunaba_animation_AnimationPlayer.prototype.animationSetNext = function(self,animationFrom,animationTo) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationFrom));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationTo));
+  self.node.native:call("animation_set_next", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.clearQueue = function(self) 
+  self.node.native:call("clear_queue", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_animation_AnimationPlayer.prototype.getBlendTime = function(self,animationFrom,animationTo) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationFrom));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationTo));
+  do return self.node.native:call("get_blend_time", args):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getMethodCallMode = function(self) 
+  do return self.node.native:call("get_method_call_mode", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asInt() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getPlayingSpeed = function(self) 
+  do return self.node.native:call("get_playing_speed", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getProcessCallback = function(self) 
+  do return self.node.native:call("get_process_callback", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asInt() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getQueue = function(self) 
+  do return self.node.native:call("get_queue", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asStringArray() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getRoot = function(self) 
+  do return self.node.native:call("get_root", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asString() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getSectionEndTime = function(self) 
+  do return self.node.native:call("get_section_end_time", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.getSectionStartTime = function(self) 
+  do return self.node.native:call("get_section_start_time", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asFloat() end
+end
+__sunaba_animation_AnimationPlayer.prototype.hasSection = function(self) 
+  do return self.node.native:call("has_section", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_animation_AnimationPlayer.prototype.isPlaying = function(self) 
+  do return self.node.native:call("is_playing", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_animation_AnimationPlayer.prototype.pause = function(self) 
+  self.node.native:call("pause", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_animation_AnimationPlayer.prototype.play = function(self,name,customBlend,customSpeed,fromEnd) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  if (customSpeed ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customSpeed));
+  end;
+  if (fromEnd ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(fromEnd));
+  end;
+  self.node.native:call("play", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playBackwards = function(self,name,customBlend) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  self.node.native:call("play_backwards", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playSection = function(self,name,startTime,endTime,customBlend,customSpeed,fromEnd) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (startTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(startTime));
+  end;
+  if (endTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(endTime));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  if (customSpeed ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customSpeed));
+  end;
+  if (fromEnd ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(fromEnd));
+  end;
+  self.node.native:call("play_section", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playSectionBackwards = function(self,name,startTime,endTime,customBlend) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (startTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(startTime));
+  end;
+  if (endTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(endTime));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  self.node.native:call("play_backwards", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playSectionWithMarkers = function(self,name,startMarker,endMarker,customBlend,customSpeed,fromEnd) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (startMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(startMarker));
+  end;
+  if (endMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(endMarker));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  if (customSpeed ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customSpeed));
+  end;
+  if (fromEnd ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(fromEnd));
+  end;
+  self.node.native:call("play_section", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playSectionWithMarkersBackwards = function(self,name,startMarker,endMarker,customBlend) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (startMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(startMarker));
+  end;
+  if (endMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(endMarker));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  self.node.native:call("play_backwards", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.playWithCapture = function(self,name,duration,customBlend,customSpeed,fromEnd,transType,easeType) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (duration ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(duration));
+  end;
+  if (customBlend ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customBlend));
+  end;
+  if (customSpeed ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(customSpeed));
+  end;
+  if (fromEnd ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(fromEnd));
+  end;
+  if (transType ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(transType));
+  end;
+  if (easeType ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(easeType));
+  end;
+  self.node.native:call("play_with_capture", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.queue = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  self.node.native:call("queue", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.resetSection = function(self) 
+  self.node.native:call("reset_section", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_animation_AnimationPlayer.prototype.seek = function(self,seconds,update,updateOnly) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(seconds));
+  if (update ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(update));
+  end;
+  if (updateOnly ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(updateOnly));
+  end;
+  self.node.native:call("seek", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setBlendTime = function(self,animationFrom,animationTo,sec) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationFrom));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(animationTo));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(sec));
+  self.node.native:call("set_blend_time", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setMethodCallMode = function(self,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.node.native:call("set_method_call_mode", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setProcessCallback = function(self,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.node.native:call("set_process_callback", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setRoot = function(self,path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  self.node.native:call("set_root", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setSection = function(self,startTime,endTime) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (startTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(startTime));
+  end;
+  if (endTime ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(endTime));
+  end;
+  self.node.native:call("set_section", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.setSectionWithMarkers = function(self,startMarker,endMarker) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (startMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(startMarker));
+  end;
+  if (endMarker ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(endMarker));
+  end;
+  self.node.native:call("set_section", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.stop = function(self,keepState) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(keepState));
+  self.node.native:call("stop", args);
+end
+__sunaba_animation_AnimationPlayer.prototype.getData = function(self) 
+  local data = __sunaba_animation_AnimationMixer.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("assignedAnimation"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_assignedAnimation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("autoplay"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_autoplay()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimation"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_currentAnimation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimationLength"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_currentAnimationLength()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimationPosition"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_currentAnimationPosition()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("movieQuitOnFinish"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_movieQuitOnFinish()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCapture"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_playbackAutoCapture()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureDuration"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_playbackAutoCaptureDuration()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureEaseType"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_playbackAutoCaptureEaseType()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureTransitionType"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_playbackAutoCaptureTransitionType()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackDefaultBlendTime"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_playbackDefaultBlendTime()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("speedScale"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_speedScale()));
+  do return data end
+end
+__sunaba_animation_AnimationPlayer.prototype.setData = function(self,data) 
+  __sunaba_animation_AnimationMixer.prototype.setData(self,data);
+  self:set_assignedAnimation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("assignedAnimation")):asString());
+  self:set_autoplay(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("autoplay")):asString());
+  self:set_currentAnimation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimation")):asString());
+  self:set_currentAnimationLength(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimationLength")):asFloat());
+  self:set_currentAnimationPosition(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("currentAnimationPosition")):asFloat());
+  self:set_movieQuitOnFinish(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("movieQuitOnFinish")):asBool());
+  self:set_playbackAutoCapture(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCapture")):asBool());
+  self:set_playbackAutoCaptureDuration(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureDuration")):asFloat());
+  self:set_playbackAutoCaptureEaseType(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureEaseType")):asInt());
+  self:set_playbackAutoCaptureTransitionType(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackAutoCaptureTransitionType")):asInt());
+  self:set_playbackDefaultBlendTime(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackDefaultBlendTime")):asFloat());
+  self:set_speedScale(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("speedScale")):asFloat());
+end
+__sunaba_animation_AnimationPlayer.prototype.onInit = function(self) 
+  self.node = __sunaba_Node.new(NativeObject.new("AnimationPlayer"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:get_node():addChild(self.node);
+  end;
+end
+__sunaba_animation_AnimationPlayer.prototype.onStart = function(self) 
+  if (self.node:getParent():isNull()) then 
+    local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (transform ~= nil) then 
+      transform:get_node():addChild(self.node);
+    end;
+  end;
+end
+
+__sunaba_animation_AnimationPlayer.prototype.__class__ =  __sunaba_animation_AnimationPlayer
+__sunaba_animation_AnimationPlayer.__super__ = __sunaba_animation_AnimationMixer
+setmetatable(__sunaba_animation_AnimationPlayer.prototype,{__index=__sunaba_animation_AnimationMixer.prototype})
 
 __sunaba_core__ArrayList_ArrayList_Impl_.new = {}
 _hxClasses["sunaba.core._ArrayList.ArrayList_Impl_"] = __sunaba_core__ArrayList_ArrayList_Impl_
@@ -16391,47 +18561,14 @@ __sunaba_core__Basis_Basis_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Basis_Basis_Impl_.multiply = function(this1,other) 
-  local x = ((this1.x.x * other.x.x) + (this1.y.x * other.x.y)) + (this1.z.x * other.x.z);
-  local y = ((this1.x.y * other.x.x) + (this1.y.y * other.x.y)) + (this1.z.y * other.x.z);
-  local z = ((this1.x.z * other.x.x) + (this1.y.z * other.x.y)) + (this1.z.z * other.x.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this2 = Vector3.new(x, y, z);
-  local x = ((this1.x.x * other.y.x) + (this1.y.x * other.y.y)) + (this1.z.x * other.y.z);
-  local y = ((this1.x.y * other.y.x) + (this1.y.y * other.y.y)) + (this1.z.y * other.y.z);
-  local z = ((this1.x.z * other.y.x) + (this1.y.z * other.y.y)) + (this1.z.z * other.y.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = ((this1.x.x * other.z.x) + (this1.y.x * other.z.y)) + (this1.z.x * other.z.z);
-  local y = ((this1.x.y * other.z.x) + (this1.y.y * other.z.y)) + (this1.z.y * other.z.z);
-  local z = ((this1.x.z * other.z.x) + (this1.y.z * other.z.y)) + (this1.z.z * other.z.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Basis.new(this2, this3, Vector3.new(x, y, z)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(other));
+  do return ref:call("basis_multiply", args):asBasis() end;
 end
-__sunaba_core__Basis_Basis_Impl_.multiplyVector3 = function(this1,other) 
+__sunaba_core__Basis_Basis_Impl_.multiplyVector3ToBasis = function(this1,other) 
   local x = this1.x.x * other.x;
   local y = this1.x.y * other.x;
   local z = this1.x.z * other.x;
@@ -16472,50 +18609,46 @@ __sunaba_core__Basis_Basis_Impl_.multiplyVector3 = function(this1,other)
   end;
   do return Basis.new(this2, this3, Vector3.new(x, y, z)) end;
 end
+__sunaba_core__Basis_Basis_Impl_.multiplyVector3 = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(other));
+  do return ref:call("basis_multiply_vector3", args):asVector3() end;
+end
 __sunaba_core__Basis_Basis_Impl_.equals = function(this1,other) 
-  local tmp;
-  local this2 = this1.x;
-  local other1 = other.x;
-  if (((this2.x == other1.x) and (this2.y == other1.y)) and (this2.z == other1.z)) then 
-    local this1 = this1.y;
-    local other = other.y;
-    tmp = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp = false;
-  end;
-  if (tmp) then 
-    local this1 = this1.z;
-    local other = other.z;
-    if ((this1.x == other.x) and (this1.y == other.y)) then 
-      do return this1.z == other.z end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(other));
+  do return ref:call("basis_equal", args):asBool() end;
 end
 __sunaba_core__Basis_Basis_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local tmp1;
-  local this1 = og.x;
-  local other1 = other.x;
-  if (((this1.x == other1.x) and (this1.y == other1.y)) and (this1.z == other1.z)) then 
-    local this1 = og.y;
-    local other = other.y;
-    tmp1 = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = og.z;
-    local other = other.z;
-    tmp = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(other));
+  do return ref:call("basis_equal", args):asBool() ~= true end;
+end
+__sunaba_core__Basis_Basis_Impl_.divideInt = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(other));
+  do return ref:call("basis_divide_int", args):asBasis() end;
+end
+__sunaba_core__Basis_Basis_Impl_.divideFloat = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(other));
+  do return ref:call("basis_divide_int", args):asBasis() end;
 end
 __sunaba_core__Basis_Basis_Impl_.addAssign = function(this1,other) 
   local this2 = this1.x;
@@ -16573,89 +18706,23 @@ __sunaba_core__Basis_Basis_Impl_.subtractAssign = function(this1,other)
 end
 __sunaba_core__Basis_Basis_Impl_.multiplyAssign = function(this1,other) 
   local thisB = this1;
-  local x = ((thisB.x.x * other.x.x) + (thisB.y.x * other.x.y)) + (thisB.z.x * other.x.z);
-  local y = ((thisB.x.y * other.x.x) + (thisB.y.y * other.x.y)) + (thisB.z.y * other.x.z);
-  local z = ((thisB.x.z * other.x.x) + (thisB.y.z * other.x.y)) + (thisB.z.z * other.x.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this2 = Vector3.new(x, y, z);
-  local x = ((thisB.x.x * other.y.x) + (thisB.y.x * other.y.y)) + (thisB.z.x * other.y.z);
-  local y = ((thisB.x.y * other.y.x) + (thisB.y.y * other.y.y)) + (thisB.z.y * other.y.z);
-  local z = ((thisB.x.z * other.y.x) + (thisB.y.z * other.y.y)) + (thisB.z.z * other.y.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = ((thisB.x.x * other.z.x) + (thisB.y.x * other.z.y)) + (thisB.z.x * other.z.z);
-  local y = ((thisB.x.y * other.z.x) + (thisB.y.y * other.z.y)) + (thisB.z.y * other.z.z);
-  local z = ((thisB.x.z * other.z.x) + (thisB.y.z * other.z.y)) + (thisB.z.z * other.z.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  this1 = Basis.new(this2, this3, Vector3.new(x, y, z));
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisB;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(other));
+  this1 = ref:call("basis_multiply", args):asBasis();
   do return this1 end;
 end
 __sunaba_core__Basis_Basis_Impl_.divideAssign = function(this1,other) 
   local thisB = this1;
   local inv = other:inverse();
-  local x = ((thisB.x.x * inv.x.x) + (thisB.y.x * inv.x.y)) + (thisB.z.x * inv.x.z);
-  local y = ((thisB.x.y * inv.x.x) + (thisB.y.y * inv.x.y)) + (thisB.z.y * inv.x.z);
-  local z = ((thisB.x.z * inv.x.x) + (thisB.y.z * inv.x.y)) + (thisB.z.z * inv.x.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this2 = Vector3.new(x, y, z);
-  local x = ((thisB.x.x * inv.y.x) + (thisB.y.x * inv.y.y)) + (thisB.z.x * inv.y.z);
-  local y = ((thisB.x.y * inv.y.x) + (thisB.y.y * inv.y.y)) + (thisB.z.y * inv.y.z);
-  local z = ((thisB.x.z * inv.y.x) + (thisB.y.z * inv.y.y)) + (thisB.z.z * inv.y.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = ((thisB.x.x * inv.z.x) + (thisB.y.x * inv.z.y)) + (thisB.z.x * inv.z.z);
-  local y = ((thisB.x.y * inv.z.x) + (thisB.y.y * inv.z.y)) + (thisB.z.y * inv.z.z);
-  local z = ((thisB.x.z * inv.z.x) + (thisB.y.z * inv.z.y)) + (thisB.z.z * inv.z.z);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  this1 = Basis.new(this2, this3, Vector3.new(x, y, z));
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisB;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBasis(inv));
+  this1 = ref:call("basis_multiply", args):asBasis();
   do return this1 end;
 end
 __sunaba_core__Basis_Basis_Impl_.increment = function(this1) 
@@ -16765,6 +18832,36 @@ __sunaba_core__Basis_Basis_Impl_.preDecrement = function(this1)
   local this2 = this2;
   this2.z = this2.z - other.z;
   do return this1 end;
+end
+
+__sunaba_core_ByteArrayUtils.new = {}
+_hxClasses["sunaba.core.ByteArrayUtils"] = __sunaba_core_ByteArrayUtils
+__sunaba_core_ByteArrayUtils.__name__ = "sunaba.core.ByteArrayUtils"
+__sunaba_core_ByteArrayUtils.binaryDataToBytes = function(binaryData) 
+  local size = binaryData:size();
+  local bytes = __haxe_io_Bytes.alloc(size);
+  local _g = 0;
+  local _g1 = size;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local v = binaryData:get(i):getInt64();
+    bytes.b[i] = _hx_bit.band(v,255);
+  end;
+  do return bytes end;
+end
+__sunaba_core_ByteArrayUtils.bytesToBinaryData = function(bytes) 
+  local binaryData = ByteArray.new();
+  local _g = 0;
+  local _g1 = bytes.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    binaryData:append(Byte.new(bytes.b[i]));
+  end;
+  do return binaryData end;
 end
 
 __sunaba_core__ByteArray_ByteArray_Fields_.new = {}
@@ -16903,27 +19000,53 @@ __sunaba_core__Color_Color_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Color_Color_Impl_.add = function(this1,other) 
-  do return Color.new(this1.r + other.r, this1.g + other.g, this1.b + other.b, this1.a + other.a) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_add", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.subtract = function(this1,other) 
-  do return Color.new(this1.r - other.r, this1.g - other.g, this1.b - other.b, this1.a - other.a) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_subtract", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.multiply = function(this1,other) 
-  do return Color.new(this1.r * other.r, this1.g * other.g, this1.b * other.b, this1.a * other.a) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_multiply", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.divide = function(this1,other) 
-  do return Color.new(this1.r / other.r, this1.g / other.g, this1.b / other.b, this1.a / other.a) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_divide", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.equals = function(this1,other) 
-  if (((this1.r == other.r) and (this1.g == other.g)) and (this1.b == other.b)) then 
-    do return this1.a == other.a end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_equals", args):asBool() end;
 end
 __sunaba_core__Color_Color_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  do return not ((((og.r == other.r) and (og.g == other.g)) and (og.b == other.b)) and (og.a == other.a)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_equals", args):asBool() ~= true end;
 end
 __sunaba_core__Color_Color_Impl_.lessThan = function(this1,other) 
   if (((this1.r < other.r) and (this1.g < other.g)) and (this1.b < other.b)) then 
@@ -16954,48 +19077,40 @@ __sunaba_core__Color_Color_Impl_.greaterThanOrEqual = function(this1,other)
   end;
 end
 __sunaba_core__Color_Color_Impl_.addAssign = function(this1,other) 
-  local this2 = this1;
-  this2.r = this2.r + other.r;
-  local this2 = this1;
-  this2.g = this2.g + other.g;
-  local this2 = this1;
-  this2.b = this2.b + other.b;
-  local this2 = this1;
-  this2.a = this2.a + other.a;
-  do return this1 end;
+  local thisC = this1;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisC;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_add", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.subtractAssign = function(this1,other) 
-  local this2 = this1;
-  this2.r = this2.r - other.r;
-  local this2 = this1;
-  this2.g = this2.g - other.g;
-  local this2 = this1;
-  this2.b = this2.b - other.b;
-  local this2 = this1;
-  this2.a = this2.a - other.a;
-  do return this1 end;
+  local thisC = this1;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisC;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_subtract", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.multiplyAssign = function(this1,other) 
-  local this2 = this1;
-  this2.r = this2.r * other.r;
-  local this2 = this1;
-  this2.g = this2.g * other.g;
-  local this2 = this1;
-  this2.b = this2.b * other.b;
-  local this2 = this1;
-  this2.a = this2.a * other.a;
-  do return this1 end;
+  local thisC = this1;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisC;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_multiply", args):asColor() end;
 end
 __sunaba_core__Color_Color_Impl_.divideAssign = function(this1,other) 
-  local this2 = this1;
-  this2.r = this2.r / other.r;
-  local this2 = this1;
-  this2.g = this2.g / other.g;
-  local this2 = this1;
-  this2.b = this2.b / other.b;
-  local this2 = this1;
-  this2.a = this2.a / other.a;
-  do return this1 end;
+  local thisC = this1;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = thisC;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(other));
+  do return ref:call("color_divide", args):asColor() end;
 end
 
 __sunaba_core_DictionaryIterator.new = function(dict) 
@@ -17090,20 +19205,30 @@ __sunaba_core__Plane_Plane_Impl_.set = function(this1,index,value)
   _G.error(__haxe_Exception.thrown(Std.string("Index out of bounds: ") .. Std.string(index)),0); end;
   do return value end;
 end
+__sunaba_core__Plane_Plane_Impl_.multiply = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(other));
+  do return ref:call("plane_multiply", args):asBool() end;
+end
 __sunaba_core__Plane_Plane_Impl_.equals = function(this1,other) 
-  local this2 = this1.normal;
-  local other1 = other.normal;
-  if (((this2.x == other1.x) and (this2.y == other1.y)) and (this2.z == other1.z)) then 
-    do return this1.d == other.d end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(other));
+  do return ref:call("plane_equals", args):asBool() end;
 end
 __sunaba_core__Plane_Plane_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local this1 = og.normal;
-  local other1 = other.normal;
-  do return not ((((this1.x == other1.x) and (this1.y == other1.y)) and (this1.z == other1.z)) and (og.d == other.d)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(other));
+  do return ref:call("plane_equals", args):asBool() ~= true end;
 end
 
 __sunaba_core__Projection_Projection_Impl_.new = {}
@@ -17155,66 +19280,38 @@ __sunaba_core__Projection_Projection_Impl_.set = function(this1,index,value)
   _G.error(__haxe_Exception.thrown(Std.string("Index out of bounds: ") .. Std.string(index)),0); end;
   do return value end;
 end
+__sunaba_core__Projection_Projection_Impl_.multiply = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(other));
+  do return ref:call("projection_multiply", args):asProjection() end;
+end
+__sunaba_core__Projection_Projection_Impl_.multiplyVector4 = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector4(other));
+  do return ref:call("projection_multiply", args):asProjection() end;
+end
 __sunaba_core__Projection_Projection_Impl_.equals = function(this1,other) 
-  local tmp;
-  local tmp1;
-  local this2 = this1.x;
-  local other1 = other.x;
-  if ((((this2.x == other1.x) and (this2.y == other1.y)) and (this2.z == other1.z)) and (this2.w == other1.w)) then 
-    local this1 = this1.y;
-    local other = other.y;
-    tmp1 = (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) and (this1.w == other.w);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = this1.z;
-    local other = other.z;
-    tmp = (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) and (this1.w == other.w);
-  else
-    tmp = false;
-  end;
-  if (tmp) then 
-    local this1 = this1.w;
-    local other = other.w;
-    if (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) then 
-      do return this1.w == other.w end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(other));
+  do return ref:call("projection_equals", args):asBool() end;
 end
 __sunaba_core__Projection_Projection_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local tmp1;
-  local tmp2;
-  local this1 = og.x;
-  local other1 = other.x;
-  if ((((this1.x == other1.x) and (this1.y == other1.y)) and (this1.z == other1.z)) and (this1.w == other1.w)) then 
-    local this1 = og.y;
-    local other = other.y;
-    tmp2 = (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) and (this1.w == other.w);
-  else
-    tmp2 = false;
-  end;
-  if (tmp2) then 
-    local this1 = og.z;
-    local other = other.z;
-    tmp1 = (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) and (this1.w == other.w);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = og.w;
-    local other = other.w;
-    tmp = (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) and (this1.w == other.w);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromProjection(other));
+  do return ref:call("projection_equals", args):asBool() ~= true end;
 end
 
 __sunaba_core__Quaternion_Quaternion_Impl_.new = {}
@@ -17264,91 +19361,53 @@ __sunaba_core__Quaternion_Quaternion_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.add = function(this1,other) 
-  local x = this1.x + other.x;
-  local y = this1.y + other.y;
-  local z = this1.z + other.z;
-  local w = this1.w + other.w;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_add", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.subtract = function(this1,other) 
-  local x = this1.x - other.x;
-  local y = this1.y - other.y;
-  local z = this1.z - other.z;
-  local w = this1.w - other.w;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_subrtact", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.multiply = function(this1,other) 
-  local x = this1.x * other.x;
-  local y = this1.y * other.y;
-  local z = this1.z * other.z;
-  local w = this1.w * other.w;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_multiply", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.divide = function(this1,other) 
-  local x = this1.x / other.x;
-  local y = this1.y / other.y;
-  local z = this1.z / other.z;
-  local w = this1.w / other.w;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_divide", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.equals = function(this1,other) 
-  if (((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z)) then 
-    do return this1.w == other.w end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_equals", args):asBool() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  do return not ((((og.x == other.x) and (og.y == other.y)) and (og.z == other.z)) and (og.w == other.w)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(other));
+  do return ref:call("quaternion_equals", args):asBool() ~= true end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.lessThan = function(this1,other) 
   if (this1.x ~= other.x) then 
@@ -17471,99 +19530,44 @@ __sunaba_core__Quaternion_Quaternion_Impl_.preDecrement = function(this1)
   do return this1 end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.multiplyScalar = function(this1,scalar) 
-  local x = this1.x * scalar;
-  local y = this1.y * scalar;
-  local z = this1.z * scalar;
-  local w = this1.w * scalar;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(scalar));
+  do return ref:call("quaternion_multiply_float", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.divideScalar = function(this1,scalar) 
-  local x = this1.x / scalar;
-  local y = this1.y / scalar;
-  local z = this1.z / scalar;
-  local w = this1.w / scalar;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(scalar));
+  do return ref:call("quaternion_divide_float", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.multiplyIntScalar = function(this1,scalar) 
-  local x = this1.x * scalar;
-  local y = this1.y * scalar;
-  local z = this1.z * scalar;
-  local w = this1.w * scalar;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(scalar));
+  do return ref:call("quaternion_multiply_int", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.divideIntScalar = function(this1,scalar) 
-  local x = this1.x / scalar;
-  local y = this1.y / scalar;
-  local z = this1.z / scalar;
-  local w = this1.w / scalar;
-  if (w == nil) then 
-    w = 1;
-  end;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Quaternion.new(x, y, z, w) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(scalar));
+  do return ref:call("quaternion_divide_int", args):asQuaternion() end;
 end
 __sunaba_core__Quaternion_Quaternion_Impl_.multiplyVector3 = function(this1,vec) 
-  local ix = ((this1.w * vec.x) + (this1.y * vec.z)) - (this1.z * vec.y);
-  local iy = ((this1.w * vec.y) + (this1.z * vec.x)) - (this1.x * vec.z);
-  local iz = ((this1.w * vec.z) + (this1.x * vec.y)) - (this1.y * vec.x);
-  local iw = ((-this1.x * vec.x) - (this1.y * vec.y)) - (this1.z * vec.z);
-  local x = (((ix * this1.w) + (iw * -this1.x)) + (iy * -this1.z)) - (iz * -this1.y);
-  local y = (((iy * this1.w) + (iw * -this1.y)) + (iz * -this1.x)) - (ix * -this1.z);
-  local z = (((iz * this1.w) + (iw * -this1.z)) + (ix * -this1.y)) - (iy * -this1.x);
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Vector3.new(x, y, z) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec));
+  do return ref:call("quaternion_multiply_vector3", args):asVector3() end;
 end
 
 __sunaba_core__Rect2_Rect2_Impl_.new = {}
@@ -17630,33 +19634,21 @@ __sunaba_core__Rect2_Rect2_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Rect2_Rect2_Impl_.equals = function(this1,other) 
-  local this2 = this1.position;
-  local other1 = other.position;
-  if ((this2.x == other1.x) and (this2.y == other1.y)) then 
-    local this1 = this1.size;
-    local other = other.size;
-    if (this1.x == other.x) then 
-      do return this1.y == other.y end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(other));
+  do return ref:call("rect2_equals", args):asBool() end;
 end
 __sunaba_core__Rect2_Rect2_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local this1 = og.position;
-  local other1 = other.position;
-  if ((this1.x == other1.x) and (this1.y == other1.y)) then 
-    local this1 = og.size;
-    local other = other.size;
-    tmp = (this1.x == other.x) and (this1.y == other.y);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(other));
+  do return ref:call("rect2_equals", args):asBool() ~= true end;
 end
 
 __sunaba_core__Rect2i_Rect2i_Impl_.new = {}
@@ -17731,33 +19723,21 @@ __sunaba_core__Rect2i_Rect2i_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Rect2i_Rect2i_Impl_.equals = function(this1,other) 
-  local this2 = this1.position;
-  local other1 = other.position;
-  if ((this2.x == other1.x) and (this2.y == other1.y)) then 
-    local this1 = this1.size;
-    local other = other.size;
-    if (this1.x == other.x) then 
-      do return this1.y == other.y end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2i(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2i(other));
+  do return ref:call("rect2i_equals", args):asBool() end;
 end
 __sunaba_core__Rect2i_Rect2i_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local this1 = og.position;
-  local other1 = other.position;
-  if ((this1.x == other1.x) and (this1.y == other1.y)) then 
-    local this1 = og.size;
-    local other = other.size;
-    tmp = (this1.x == other.x) and (this1.y == other.y);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2i(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2i(other));
+  do return ref:call("rect2i_equals", args):asBool() ~= true end;
 end
 
 __sunaba_core__Signal_Signal_Impl_.new = {}
@@ -17848,133 +19828,69 @@ __sunaba_core__Transform2D_Transform2D_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.multiply = function(this1,other) 
-  local tmp = this1:getRotation() + other:getRotation();
-  local this2 = this1:basisXform(other:getOrigin());
-  local other = this1:getOrigin();
-  local x = this2.x + other.x;
-  local y = this2.y + other.y;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Transform2D.new(tmp, Vector2.new(x, y)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(other));
+  do return ref:call("t2d_multiply", args):asTransform2D() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.equals = function(this1,other) 
-  local tmp;
-  local this2 = this1.x;
-  local other1 = other.x;
-  if ((this2.x == other1.x) and (this2.y == other1.y)) then 
-    local this1 = this1.y;
-    local other = other.y;
-    tmp = (this1.x == other.x) and (this1.y == other.y);
-  else
-    tmp = false;
-  end;
-  if (tmp) then 
-    local this1 = this1.origin;
-    local other = other.origin;
-    if (this1.x == other.x) then 
-      do return this1.y == other.y end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(other));
+  do return ref:call("t2d_equals", args):asBool() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local tmp1;
-  local this1 = og.x;
-  local other1 = other.x;
-  if ((this1.x == other1.x) and (this1.y == other1.y)) then 
-    local this1 = og.y;
-    local other = other.y;
-    tmp1 = (this1.x == other.x) and (this1.y == other.y);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = og.origin;
-    local other = other.origin;
-    tmp = (this1.x == other.x) and (this1.y == other.y);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(other));
+  do return ref:call("t2d_equals", args):asBool() ~= true end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.multiplyVector2 = function(this1,other) 
-  local this2 = this1:basisXform(other);
-  local other = this1:getOrigin();
-  local x = this2.x + other.x;
-  local y = this2.y + other.y;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Vector2.new(x, y) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(other));
+  do return ref:call("t2d_multiply_vector2", args):asVector2() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.multiplyScalar = function(this1,other) 
-  local tmp = this1:getRotation() * other;
-  local this1 = this1:getOrigin();
-  local x = this1.x * other;
-  local y = this1.y * other;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Transform2D.new(tmp, Vector2.new(x, y)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(other));
+  do return ref:call("t2d_multiply_float", args):asTransform2D() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.divideScalar = function(this1,other) 
-  local tmp = this1:getRotation() / other;
-  local this1 = this1:getOrigin();
-  local x = this1.x / other;
-  local y = this1.y / other;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Transform2D.new(tmp, Vector2.new(x, y)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(other));
+  do return ref:call("t2d_divide_float", args):asTransform2D() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.multiplyIntScalar = function(this1,other) 
-  local otherF = other;
-  local thisT2d = this1;
-  local tmp = thisT2d:getRotation() * otherF;
-  local this1 = thisT2d:getOrigin();
-  local x = this1.x * otherF;
-  local y = this1.y * otherF;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Transform2D.new(tmp, Vector2.new(x, y)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(other));
+  do return ref:call("t2d_multiply_int", args):asTransform2D() end;
 end
 __sunaba_core__Transform2D_Transform2D_Impl_.divideIntScalar = function(this1,other) 
-  local otherF = other;
-  local thisT2d = this1;
-  local other = other;
-  local tmp = thisT2d:getRotation() / other;
-  local this1 = thisT2d:getOrigin();
-  local x = this1.x / other;
-  local y = this1.y / other;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  do return Transform2D.new(tmp, Vector2.new(x, y)) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform2D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(other));
+  do return ref:call("t2d_divide_int", args):asTransform2D() end;
 end
 
 __sunaba_core__Transform3D_Transform3D_Impl_.new = {}
@@ -18004,353 +19920,77 @@ __sunaba_core__Transform3D_Transform3D_Impl_.set = function(this1,index,value)
   do return value end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.equals = function(this1,other) 
-  local this2 = this1.basis;
-  local other1 = other.basis;
-  local tmp;
-  local tmp1;
-  local this3 = this2.x;
-  local other2 = other1.x;
-  if (((this3.x == other2.x) and (this3.y == other2.y)) and (this3.z == other2.z)) then 
-    local this1 = this2.y;
-    local other = other1.y;
-    tmp1 = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = this2.z;
-    local other = other1.z;
-    tmp = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp = false;
-  end;
-  if (tmp) then 
-    local this1 = this1.origin;
-    local other = other.origin;
-    if ((this1.x == other.x) and (this1.y == other.y)) then 
-      do return this1.z == other.z end;
-    else
-      do return false end;
-    end;
-  else
-    do return false end;
-  end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(other));
+  do return ref:call("t3d_equals", args):asBool() end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.notEquals = function(this1,other) 
   local og = this1;
-  local tmp;
-  local this1 = og.basis;
-  local other1 = other.basis;
-  local tmp1;
-  local tmp2;
-  local this2 = this1.x;
-  local other2 = other1.x;
-  if (((this2.x == other2.x) and (this2.y == other2.y)) and (this2.z == other2.z)) then 
-    local this1 = this1.y;
-    local other = other1.y;
-    tmp2 = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp2 = false;
-  end;
-  if (tmp2) then 
-    local this1 = this1.z;
-    local other = other1.z;
-    tmp1 = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp1 = false;
-  end;
-  if (tmp1) then 
-    local this1 = og.origin;
-    local other = other.origin;
-    tmp = ((this1.x == other.x) and (this1.y == other.y)) and (this1.z == other.z);
-  else
-    tmp = false;
-  end;
-  do return not tmp end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = og;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(other));
+  do return ref:call("t3d_equals", args):asBool() ~= true end;
+end
+__sunaba_core__Transform3D_Transform3D_Impl_.multiplyVector3 = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(other));
+  do return ref:call("t3d_multiply_vector3", args):asVector3() end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.multiplyScalar = function(this1,scalar) 
-  local this2 = this1.basis;
-  local x = scalar;
-  local y = scalar;
-  local z = scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local other = Vector3.new(x, y, z);
-  local x = this2.x.x * other.x;
-  local y = this2.x.y * other.x;
-  local z = this2.x.z * other.x;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = this2.y.x * other.y;
-  local y = this2.y.y * other.y;
-  local z = this2.y.z * other.y;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this4 = Vector3.new(x, y, z);
-  local x = this2.z.x * other.z;
-  local y = this2.z.y * other.z;
-  local z = this2.z.z * other.z;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_basis = Basis.new(this3, this4, Vector3.new(x, y, z));
-  local this1 = this1.origin;
-  local x = this1.x * scalar;
-  local y = this1.y * scalar;
-  local z = this1.z * scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_origin = Vector3.new(x, y, z);
-  do return Transform3D.new(new_basis, new_origin) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(scalar));
+  do return ref:call("t3d_multiply_float", args):asTransform3D() end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.divideScalar = function(this1,scalar) 
-  local this2 = this1.basis;
-  local x = 1 / scalar;
-  local y = 1 / scalar;
-  local z = 1 / scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local other = Vector3.new(x, y, z);
-  local x = this2.x.x * other.x;
-  local y = this2.x.y * other.x;
-  local z = this2.x.z * other.x;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = this2.y.x * other.y;
-  local y = this2.y.y * other.y;
-  local z = this2.y.z * other.y;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this4 = Vector3.new(x, y, z);
-  local x = this2.z.x * other.z;
-  local y = this2.z.y * other.z;
-  local z = this2.z.z * other.z;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_basis = Basis.new(this3, this4, Vector3.new(x, y, z));
-  local this1 = this1.origin;
-  local x = this1.x / scalar;
-  local y = this1.y / scalar;
-  local z = this1.z / scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_origin = Vector3.new(x, y, z);
-  do return Transform3D.new(new_basis, new_origin) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(scalar));
+  do return ref:call("t3d_divide_float", args):asTransform3D() end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.multiplyIntScalar = function(this1,scalar) 
-  local thisA = this1;
-  local scalar = scalar;
-  local this1 = thisA.basis;
-  local x = scalar;
-  local y = scalar;
-  local z = scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local other = Vector3.new(x, y, z);
-  local x = this1.x.x * other.x;
-  local y = this1.x.y * other.x;
-  local z = this1.x.z * other.x;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this2 = Vector3.new(x, y, z);
-  local x = this1.y.x * other.y;
-  local y = this1.y.y * other.y;
-  local z = this1.y.z * other.y;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = this1.z.x * other.z;
-  local y = this1.z.y * other.z;
-  local z = this1.z.z * other.z;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_basis = Basis.new(this2, this3, Vector3.new(x, y, z));
-  local this1 = thisA.origin;
-  local x = this1.x * scalar;
-  local y = this1.y * scalar;
-  local z = this1.z * scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_origin = Vector3.new(x, y, z);
-  do return Transform3D.new(new_basis, new_origin) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(scalar));
+  do return ref:call("t3d_multiply_int", args):asTransform3D() end;
 end
 __sunaba_core__Transform3D_Transform3D_Impl_.divideIntScalar = function(this1,scalar) 
-  local thisA = this1;
-  local scalar = scalar;
-  local this1 = thisA.basis;
-  local x = 1 / scalar;
-  local y = 1 / scalar;
-  local z = 1 / scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local other = Vector3.new(x, y, z);
-  local x = this1.x.x * other.x;
-  local y = this1.x.y * other.x;
-  local z = this1.x.z * other.x;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this2 = Vector3.new(x, y, z);
-  local x = this1.y.x * other.y;
-  local y = this1.y.y * other.y;
-  local z = this1.y.z * other.y;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local this3 = Vector3.new(x, y, z);
-  local x = this1.z.x * other.z;
-  local y = this1.z.y * other.z;
-  local z = this1.z.z * other.z;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_basis = Basis.new(this2, this3, Vector3.new(x, y, z));
-  local this1 = thisA.origin;
-  local x = this1.x / scalar;
-  local y = this1.y / scalar;
-  local z = this1.z / scalar;
-  if (z == nil) then 
-    z = 0;
-  end;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  local new_origin = Vector3.new(x, y, z);
-  do return Transform3D.new(new_basis, new_origin) end;
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(scalar));
+  do return ref:call("t3d_divide_int", args):asTransform3D() end;
+end
+__sunaba_core__Transform3D_Transform3D_Impl_.multiplyPlane = function(this1,other) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromPlane(other));
+  do return __sunaba_core__Variant_Variant_Impl_.toPlane(ref:call("t3d_multiply_plane", args)) end;
+end
+__sunaba_core__Transform3D_Transform3D_Impl_.multiplyAABB = function(this1,aabb) 
+  local ref = NativeReference.new("res://Engine/MathUtils.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local og = this1;
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(og));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromAABB(aabb));
+  do return ref:call("t3d_multiply_aabb", args):asAABB() end;
 end
 
 __sunaba_core__TypedArray_TypedArray_Impl_.new = {}
@@ -18365,18 +20005,20 @@ __sunaba_core__TypedArray_TypedArray_Impl_.size = function(this1)
 end
 __sunaba_core__TypedArray_TypedArray_Impl_.get = function(this1,index) 
   local s = this1;
-  do return s[index] end;
+  local luaIndex = index + 1;
+  do return s[luaIndex] end;
 end
 __sunaba_core__TypedArray_TypedArray_Impl_.set = function(this1,index,value) 
   local s = this1;
-  s[index] = value;
+  local luaIndex = index + 1;
+  s[luaIndex] = value;
   do return value end;
 end
 __sunaba_core__TypedArray_TypedArray_Impl_.toArray = function(this1) 
   local s = this1;
   local array = _hx_tab_array({}, 0);
-  local _g = 1;
-  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
@@ -18537,6 +20179,12 @@ end
 __sunaba_core__Variant_Variant_Impl_.toByteArray = function(this1) 
   do return this1:asByteArray() end;
 end
+__sunaba_core__Variant_Variant_Impl_.fromIntArray32 = function(value) 
+  do return Variant.fromIntArray(value) end;
+end
+__sunaba_core__Variant_Variant_Impl_.toIntArray32 = function(this1) 
+  do return this1:asIntArray() end;
+end
 __sunaba_core__Variant_Variant_Impl_.fromArray = function(value) 
   do return Variant.fromArrayList(value) end;
 end
@@ -18554,6 +20202,12 @@ __sunaba_core__Variant_Variant_Impl_.fromIntArray64 = function(value)
 end
 __sunaba_core__Variant_Variant_Impl_.toIntArray64 = function(this1) 
   do return this1:asIntArray64() end;
+end
+__sunaba_core__Variant_Variant_Impl_.fromFloatArray = function(value) 
+  do return Variant.fromFloatArray(value) end;
+end
+__sunaba_core__Variant_Variant_Impl_.toFloatArray = function(this1) 
+  do return this1:asFloatArray() end;
 end
 __sunaba_core__Variant_Variant_Impl_.fromFloatArray64 = function(value) 
   do return Variant.fromFloatArray64(value) end;
@@ -23593,8 +25247,10 @@ __sunaba_io_IoInterface.prototype.saveData = function(self,path,data,fileType)
       end;
       local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
       local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-      args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
-      local bytes = script:call("encode", args):asByteArray();
+      local json = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data), "\t");
+      args:append(__sunaba_JSON.parseString(json));
+      local res = script:call("encode", args):asDictionary();
+      local bytes = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asByteArray();
       self:saveBytes(msgpackPath, bytes);
     end;
   end;
@@ -23998,6 +25654,1001 @@ __sunaba_networking_MultiplayerPeer.prototype.__class__ =  __sunaba_networking_M
 __sunaba_networking_MultiplayerPeer.__super__ = __sunaba_networking_PacketPeer
 setmetatable(__sunaba_networking_MultiplayerPeer.prototype,{__index=__sunaba_networking_PacketPeer.prototype})
 
+__sunaba_spatial_BaseMaterial3D.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_BaseMaterial3D.prototype)
+  __sunaba_spatial_BaseMaterial3D.super(self,native)
+  return self
+end
+__sunaba_spatial_BaseMaterial3D.super = function(self,native) 
+  __sunaba_Material.super(self,native);
+end
+_hxClasses["sunaba.spatial.BaseMaterial3D"] = __sunaba_spatial_BaseMaterial3D
+__sunaba_spatial_BaseMaterial3D.__name__ = "sunaba.spatial.BaseMaterial3D"
+__sunaba_spatial_BaseMaterial3D.prototype = _hx_e();
+__sunaba_spatial_BaseMaterial3D.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("BaseMaterial3D");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("BaseMaterial3D"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_albedoColor = function(self) 
+  do return self.native:get("albedo_color"):asColor() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_albedoColor = function(self,value) 
+  self.native:set("albedo_color", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_albedoTexture = function(self) 
+  local ref = self.native:get("albedo_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_albedoTexture = function(self,value) 
+  self.native:set("albedo_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_albedoTextureForceSrgb = function(self) 
+  do return self.native:get("albedo_texture_force_srgb"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_albedoTextureForceSrgb = function(self,value) 
+  self.native:set("albedo_texture_force_srgb", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_albedoTextureMsdf = function(self) 
+  do return self.native:get("albedo_texture_msdf"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_albedoTextureMsdf = function(self,value) 
+  self.native:set("albedo_texture_msdf", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_alphaAntialiasingEdge = function(self) 
+  do return self.native:get("alpha_antialiasing_edge"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_alphaAntialiasingEdge = function(self,value) 
+  self.native:set("alpha_antialiasing_edge", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_alphaAntialiasingMode = function(self) 
+  do return self.native:get("alpha_antialiasing_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_alphaAntialiasingMode = function(self,value) 
+  self.native:set("alpha_antialiasing_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_alphaHashScale = function(self) 
+  do return self.native:get("alpha_hash_scale"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_alphaHashScale = function(self,value) 
+  self.native:set("alpha_hash_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_alphaScissorThreshold = function(self) 
+  do return self.native:get("alpha_scissor_threshold"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_alphaScissorThreshold = function(self,value) 
+  self.native:set("alpha_scissor_threshold", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_anisotropy = function(self) 
+  do return self.native:get("anisotropy"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_anisotropy = function(self,value) 
+  self.native:set("anisotropy", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_anisotropyEnabled = function(self) 
+  do return self.native:get("anisotropy_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_anisotropyEnabled = function(self,value) 
+  self.native:set("anisotropy_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_anisotropyFlowmap = function(self) 
+  local ref = self.native:get("anisotropy_flowmap"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_anisotropyFlowmap = function(self,value) 
+  self.native:set("anisotropy_flowmap", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_aoEnabled = function(self) 
+  do return self.native:get("ao_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_aoEnabled = function(self,value) 
+  self.native:set("ao_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_aoLightAffect = function(self) 
+  do return self.native:get("ao_light_affect"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_aoLightAffect = function(self,value) 
+  self.native:set("ao_light_affect", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_aoOnUv2 = function(self) 
+  do return self.native:get("ao_on_uv2"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_aoOnUv2 = function(self,value) 
+  self.native:set("ao_on_uv2", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_aoTexture = function(self) 
+  local ref = self.native:get("ao_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_aoTexture = function(self,value) 
+  self.native:set("ao_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_aoTextureChannel = function(self) 
+  do return self.native:get("ao_texture_channel"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_aoTextureChannel = function(self,value) 
+  self.native:set("ao_texture_channel", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_backlight = function(self) 
+  do return self.native:get("backlight"):asColor() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_backlight = function(self,value) 
+  self.native:set("backlight", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_backlightEnabled = function(self) 
+  do return self.native:get("backlight_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_backlightEnabled = function(self,value) 
+  self.native:set("backlight_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_backlightTexture = function(self) 
+  local ref = self.native:get("backlight_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_backlightTexture = function(self,value) 
+  self.native:set("backlight_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_bentNormalEnabled = function(self) 
+  do return self.native:get("bent_normal_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_bentNormalEnabled = function(self,value) 
+  self.native:set("bent_normal_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_bentNormalTexture = function(self) 
+  local ref = self.native:get("bent_normal_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_bentNormalTexture = function(self,value) 
+  self.native:set("bent_normal_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_billboardKeepScale = function(self) 
+  do return self.native:get("billboard_keep_scale"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_billboardKeepScale = function(self,value) 
+  self.native:set("billboard_keep_scale", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_billboardMode = function(self) 
+  do return self.native:get("billboard_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_billboardMode = function(self,value) 
+  self.native:set("billboard_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_blendMode = function(self) 
+  do return self.native:get("blend_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_blendMode = function(self,value) 
+  self.native:set("blend_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_clearcoat = function(self) 
+  do return self.native:get("clearcoat"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_clearcoat = function(self,value) 
+  self.native:set("clearcoat", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_clearcoatEnabled = function(self) 
+  do return self.native:get("clearcoat_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_clearcoatEnabled = function(self,value) 
+  self.native:set("clearcoat_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_clearcoatRoughness = function(self) 
+  do return self.native:get("clearcoat_roughness"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_clearcoatRoughness = function(self,value) 
+  self.native:set("clearcoat_roughness", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_clearcoatTexture = function(self) 
+  local ref = self.native:get("clearcoat_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_clearcoatTexture = function(self,value) 
+  self.native:set("clearcoat_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_cullMode = function(self) 
+  do return self.native:get("cull_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_cullMode = function(self,value) 
+  self.native:set("cull_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_depthDrawMode = function(self) 
+  do return self.native:get("depth_draw_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_depthDrawMode = function(self,value) 
+  self.native:set("depth_draw_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_depthTest = function(self) 
+  do return self.native:get("depth_test"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_depthTest = function(self,value) 
+  self.native:set("depth_test", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailAlbedo = function(self) 
+  local ref = self.native:get("detail_albedo"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailAlbedo = function(self,value) 
+  self.native:set("detail_albedo", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailBlendMode = function(self) 
+  do return self.native:get("detail_blend_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailBlendMode = function(self,value) 
+  self.native:set("detail_blend_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailEnabled = function(self) 
+  do return self.native:get("detail_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailEnabled = function(self,value) 
+  self.native:set("detail_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailMask = function(self) 
+  local ref = self.native:get("detail_mask"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailMask = function(self,value) 
+  self.native:set("detail_mask", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailNormal = function(self) 
+  local ref = self.native:get("detail_normal"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailNormal = function(self,value) 
+  self.native:set("detail_normal", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_detailUvLayer = function(self) 
+  do return self.native:get("detail_uv_layer"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_detailUvLayer = function(self,value) 
+  self.native:set("detail_uv_layer", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_diffuseMode = function(self) 
+  do return self.native:get("diffuse_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_diffuseMode = function(self,value) 
+  self.native:set("diffuse_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_disableAmbientLight = function(self) 
+  do return self.native:get("disable_ambient_light"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_disableAmbientLight = function(self,value) 
+  self.native:set("disable_ambient_light", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_disableFog = function(self) 
+  do return self.native:get("disable_fog"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_disableFog = function(self,value) 
+  self.native:set("disable_fog", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_disableReceiveShadows = function(self) 
+  do return self.native:get("disable_receive_shadows"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_disableReceiveShadows = function(self,value) 
+  self.native:set("disable_receive_shadows", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_disableSpecularOcclusion = function(self) 
+  do return self.native:get("disable_specular_occlusion"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_disableSpecularOcclusion = function(self,value) 
+  self.native:set("disable_specular_occlusion", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_distanceFadeMaxDistance = function(self) 
+  do return self.native:get("distance_fade_max_distance"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_distanceFadeMaxDistance = function(self,value) 
+  self.native:set("distance_fade_max_distance", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_distanceFadeMinDistance = function(self) 
+  do return self.native:get("distance_fade_min_distance"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_distanceFadeMinDistance = function(self,value) 
+  self.native:set("distance_fade_min_distance", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_distanceFadeMode = function(self) 
+  do return self.native:get("distance_fade_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_distanceFadeMode = function(self,value) 
+  self.native:set("distance_fade_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emission = function(self) 
+  do return self.native:get("emission"):asColor() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emission = function(self,value) 
+  self.native:set("emission", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionEnabled = function(self) 
+  do return self.native:get("emission_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionEnabled = function(self,value) 
+  self.native:set("emission_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionEnergyMultiplier = function(self) 
+  do return self.native:get("emission_energy_multiplier"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionEnergyMultiplier = function(self,value) 
+  self.native:set("emission_energy_multiplier", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionIntensity = function(self) 
+  do return self.native:get("emission_intensity"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionIntensity = function(self,value) 
+  self.native:set("emission_intensity", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionOnUv2 = function(self) 
+  do return self.native:get("emission_on_uv2"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionOnUv2 = function(self,value) 
+  self.native:set("emission_on_uv2", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionOperator = function(self) 
+  do return self.native:get("emission_operator"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionOperator = function(self,value) 
+  self.native:set("emission_operator", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_emissionTexture = function(self) 
+  local ref = self.native:get("emission_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_emissionTexture = function(self,value) 
+  self.native:set("emission_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_fixedSize = function(self) 
+  do return self.native:get("fixed_size"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_fixedSize = function(self,value) 
+  self.native:set("fixed_size", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_fovOverride = function(self) 
+  do return self.native:get("fov_override"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_fovOverride = function(self,value) 
+  self.native:set("fov_override", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_grow = function(self) 
+  do return self.native:get("grow"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_grow = function(self,value) 
+  self.native:set("grow", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_growAmount = function(self) 
+  do return self.native:get("grow_amount"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_growAmount = function(self,value) 
+  self.native:set("grow_amount", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapDeepParallax = function(self) 
+  do return self.native:get("heightmap_deep_parallax"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapDeepParallax = function(self,value) 
+  self.native:set("heightmap_deep_parallax", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapEnabled = function(self) 
+  do return self.native:get("heightmap_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapEnabled = function(self,value) 
+  self.native:set("heightmap_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapFlipBinormal = function(self) 
+  do return self.native:get("heightmap_flip_binormal"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapFlipBinormal = function(self,value) 
+  self.native:set("heightmap_flip_binormal", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapFlipTangent = function(self) 
+  do return self.native:get("heightmap_flip_tangent"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapFlipTangent = function(self,value) 
+  self.native:set("heightmap_flip_tangent", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapFlipTexture = function(self) 
+  do return self.native:get("heightmap_flip_texture"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapFlipTexture = function(self,value) 
+  self.native:set("heightmap_flip_texture", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapMaxLayers = function(self) 
+  do return self.native:get("heightmap_max_layers"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapMaxLayers = function(self,value) 
+  self.native:set("heightmap_max_layers", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapMinLayers = function(self) 
+  do return self.native:get("heightmap_min_layers"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapMinLayers = function(self,value) 
+  self.native:set("heightmap_min_layers", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapScale = function(self) 
+  do return self.native:get("heightmap_scale"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapScale = function(self,value) 
+  self.native:set("heightmap_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_heightmapTexture = function(self) 
+  local ref = self.native:get("heightmap_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_heightmapTexture = function(self,value) 
+  self.native:set("heightmap_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_metallic = function(self) 
+  do return self.native:get("metallic"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_metallic = function(self,value) 
+  self.native:set("metallic", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_metallicSpecular = function(self) 
+  do return self.native:get("metallic_specular"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_metallicSpecular = function(self,value) 
+  self.native:set("metallic_specular", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_metallicTexture = function(self) 
+  local ref = self.native:get("metallic_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_metallicTexture = function(self,value) 
+  self.native:set("metallic_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_metallicTextureChannel = function(self) 
+  do return self.native:get("metallic_texture_channel"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_metallicTextureChannel = function(self,value) 
+  self.native:set("metallic_texture_channel", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_msdfOutlineSize = function(self) 
+  do return self.native:get("msdf_outline_size"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_msdfOutlineSize = function(self,value) 
+  self.native:set("msdf_outline_size", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_msdfPixelRange = function(self) 
+  do return self.native:get("msdf_pixel_range"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_msdfPixelRange = function(self,value) 
+  self.native:set("msdf_pixel_range", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_noDepthTest = function(self) 
+  do return self.native:get("no_depth_test"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_noDepthTest = function(self,value) 
+  self.native:set("no_depth_test", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_normalEnabled = function(self) 
+  do return self.native:get("normal_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_normalEnabled = function(self,value) 
+  self.native:set("normal_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_normalScale = function(self) 
+  do return self.native:get("normal_scale"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_normalScale = function(self,value) 
+  self.native:set("normal_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_normalTexture = function(self) 
+  local ref = self.native:get("normal_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_normalTexture = function(self,value) 
+  self.native:set("normal_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_ormTexture = function(self) 
+  local ref = self.native:get("orm_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_ormTexture = function(self,value) 
+  self.native:set("orm_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_particlesAnimHFrames = function(self) 
+  do return self.native:get("particles_anim_h_frames"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_particlesAnimHFrames = function(self,value) 
+  self.native:set("particles_anim_h_frames", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_particlesAnimLoop = function(self) 
+  do return self.native:get("particles_anim_loop"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_particlesAnimLoop = function(self,value) 
+  self.native:set("particles_anim_loop", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_particlesAnimVFrames = function(self) 
+  do return self.native:get("particles_anim_v_frames"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_particlesAnimVFrames = function(self,value) 
+  self.native:set("particles_anim_v_frames", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_pointSize = function(self) 
+  do return self.native:get("point_size"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_pointSize = function(self,value) 
+  self.native:set("point_size", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_proximityFadeDistance = function(self) 
+  do return self.native:get("proximity_fade_distance"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_proximityFadeDistance = function(self,value) 
+  self.native:set("proximity_fade_distance", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_proximityFadeEnabled = function(self) 
+  do return self.native:get("proximity_fade_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_proximityFadeEnabled = function(self,value) 
+  self.native:set("proximity_fade_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_refractionEnabled = function(self) 
+  do return self.native:get("refraction_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_refractionEnabled = function(self,value) 
+  self.native:set("refraction_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_refractionScale = function(self) 
+  do return self.native:get("refraction_scale"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_refractionScale = function(self,value) 
+  self.native:set("refraction_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_refractionTexture = function(self) 
+  local ref = self.native:get("refraction_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_refractionTexture = function(self,value) 
+  self.native:set("refraction_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_refractionTextureChannel = function(self) 
+  do return self.native:get("refraction_texture_channel"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_refractionTextureChannel = function(self,value) 
+  self.native:set("refraction_texture_channel", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_rim = function(self) 
+  do return self.native:get("rim"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_rim = function(self,value) 
+  self.native:set("rim", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_rimEnabled = function(self) 
+  do return self.native:get("rim_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_rimEnabled = function(self,value) 
+  self.native:set("rim_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_rimTexture = function(self) 
+  local ref = self.native:get("rim_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_rimTexture = function(self,value) 
+  self.native:set("rim_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_rimTint = function(self) 
+  do return self.native:get("rim_tint"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_rimTint = function(self,value) 
+  self.native:set("rim_tint", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_roughness = function(self) 
+  do return self.native:get("roughness"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_roughness = function(self,value) 
+  self.native:set("roughness", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_roughnessTexture = function(self) 
+  local ref = self.native:get("roughness_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_roughnessTexture = function(self,value) 
+  self.native:set("roughness_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_roughnessTextureChannel = function(self) 
+  do return self.native:get("roughness_texture_channel"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_roughnessTextureChannel = function(self,value) 
+  self.native:set("roughness_texture_channel", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_shadingMode = function(self) 
+  do return self.native:get("shading_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_shadingMode = function(self,value) 
+  self.native:set("shading_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_shadowToOpacity = function(self) 
+  do return self.native:get("shadow_to_opacity"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_shadowToOpacity = function(self,value) 
+  self.native:set("shadow_to_opacity", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_specularMode = function(self) 
+  do return self.native:get("specular_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_specularMode = function(self,value) 
+  self.native:set("specular_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilColor = function(self) 
+  do return self.native:get("stencil_color"):asColor() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilColor = function(self,value) 
+  self.native:set("stencil_color", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilCompare = function(self) 
+  do return self.native:get("stencil_compare"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilCompare = function(self,value) 
+  self.native:set("stencil_compare", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilFlags = function(self) 
+  do return self.native:get("stencil_flags"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilFlags = function(self,value) 
+  self.native:set("stencil_flags", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilMode = function(self) 
+  do return self.native:get("stencil_mode"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilMode = function(self,value) 
+  self.native:set("stencil_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilOutlineThickness = function(self) 
+  do return self.native:get("stencil_outline_thickness"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilOutlineThickness = function(self,value) 
+  self.native:set("stencil_outline_thickness", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_stencilReference = function(self) 
+  do return self.native:get("stencil_reference"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_stencilReference = function(self,value) 
+  self.native:set("stencil_reference", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterEnabled = function(self) 
+  do return self.native:get("subsurf_scatter_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterEnabled = function(self,value) 
+  self.native:set("subsurf_scatter_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterSkinMode = function(self) 
+  do return self.native:get("subsurf_scatter_skin_mode"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterSkinMode = function(self,value) 
+  self.native:set("subsurf_scatter_skin_mode", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterStrength = function(self) 
+  do return self.native:get("subsurf_scatter_strength"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterStrength = function(self,value) 
+  self.native:set("subsurf_scatter_strength", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTexture = function(self) 
+  local ref = self.native:get("subsurf_scatter_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTexture = function(self,value) 
+  self.native:set("subsurf_scatter_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTransmittanceBoost = function(self) 
+  do return self.native:get("subsurf_scatter_transmittance_boost"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTransmittanceBoost = function(self,value) 
+  self.native:set("subsurf_scatter_transmittance_boost", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTransmittanceColor = function(self) 
+  do return self.native:get("subsurf_scatter_transmittance_color"):asColor() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTransmittanceColor = function(self,value) 
+  self.native:set("subsurf_scatter_transmittance_color", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTransmittanceDepth = function(self) 
+  do return self.native:get("subsurf_scatter_transmittance_depth"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTransmittanceDepth = function(self,value) 
+  self.native:set("subsurf_scatter_transmittance_depth", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTransmittanceEnabled = function(self) 
+  do return self.native:get("subsurf_scatter_transmittance_enabled"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTransmittanceEnabled = function(self,value) 
+  self.native:set("subsurf_scatter_transmittance_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_subsurfScatterTransmittanceTexture = function(self) 
+  local ref = self.native:get("subsurf_scatter_transmittance_texture"):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_subsurfScatterTransmittanceTexture = function(self,value) 
+  self.native:set("subsurf_scatter_transmittance_texture", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_textureFilter = function(self) 
+  do return self.native:get("texture_filter"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_textureFilter = function(self,value) 
+  self.native:set("texture_filter", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_textureRepeat = function(self) 
+  do return self.native:get("texture_repeat"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_textureRepeat = function(self,value) 
+  self.native:set("texture_repeat", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_transparency = function(self) 
+  do return self.native:get("transparency"):asInt() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_transparency = function(self,value) 
+  self.native:set("transparency", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_useFovOverride = function(self) 
+  do return self.native:get("use_fov_override"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_useFovOverride = function(self,value) 
+  self.native:set("use_fov_override", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_useParticleTrails = function(self) 
+  do return self.native:get("use_particle_trails"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_useParticleTrails = function(self,value) 
+  self.native:set("use_particle_trails", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_usePointSize = function(self) 
+  do return self.native:get("use_point_size"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_usePointSize = function(self,value) 
+  self.native:set("use_point_size", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_useZClipScale = function(self) 
+  do return self.native:get("use_z_clip_scale"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_useZClipScale = function(self,value) 
+  self.native:set("use_z_clip_scale", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv1Offset = function(self) 
+  do return self.native:get("uv1_offset"):asVector3() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv1Offset = function(self,value) 
+  self.native:set("uv1_offset", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv1Scale = function(self) 
+  do return self.native:get("uv1_scale"):asVector3() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv1Scale = function(self,value) 
+  self.native:set("uv1_scale", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv1Triplanar = function(self) 
+  do return self.native:get("uv1_triplanar"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv1Triplanar = function(self,value) 
+  self.native:set("uv1_triplanar", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv1TriplanarSharpness = function(self) 
+  do return self.native:get("uv1_triplanar_sharpness"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv1TriplanarSharpness = function(self,value) 
+  self.native:set("uv1_triplanar_sharpness", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv1WorldTriplanar = function(self) 
+  do return self.native:get("uv1_world_triplanar"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv1WorldTriplanar = function(self,value) 
+  self.native:set("uv1_world_triplanar", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv2Offset = function(self) 
+  do return self.native:get("uv2_offset"):asVector3() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv2Offset = function(self,value) 
+  self.native:set("uv2_offset", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv2Scale = function(self) 
+  do return self.native:get("uv2_scale"):asVector3() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv2Scale = function(self,value) 
+  self.native:set("uv2_scale", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv2Triplanar = function(self) 
+  do return self.native:get("uv2_triplanar"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv2Triplanar = function(self,value) 
+  self.native:set("uv2_triplanar", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv2TriplanarSharpness = function(self) 
+  do return self.native:get("uv2_triplanar_sharpness"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv2TriplanarSharpness = function(self,value) 
+  self.native:set("uv2_triplanar_sharpness", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_uv2WorldTriplanar = function(self) 
+  do return self.native:get("uv2_world_triplanar"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_uv2WorldTriplanar = function(self,value) 
+  self.native:set("uv2_world_triplanar", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_vertexColorIsSrgb = function(self) 
+  do return self.native:get("vertex_color_is_srgb"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_vertexColorIsSrgb = function(self,value) 
+  self.native:set("vertex_color_is_srgb", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_vertexColorUseAsAlbedo = function(self) 
+  do return self.native:get("vertex_color_use_as_albedo"):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_vertexColorUseAsAlbedo = function(self,value) 
+  self.native:set("vertex_color_use_as_albedo", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.get_zClipScale = function(self) 
+  do return self.native:get("z_clip_scale"):asFloat() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.set_zClipScale = function(self,value) 
+  self.native:set("z_clip_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.getFeature = function(self,feature) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(feature));
+  do return self.native:call("get_feature", args):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.getFlag = function(self,flag) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flag));
+  do return self.native:call("get_flag", args):asBool() end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.getTexture = function(self,param) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(param));
+  local ref = self.native:call("get_texture", args):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_BaseMaterial3D.prototype.setFeature = function(self,feature,enable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(feature));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enable));
+  self.native:call("set_feature", args);
+end
+__sunaba_spatial_BaseMaterial3D.prototype.setFlag = function(self,flag,enable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flag));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enable));
+  self.native:call("set_flag", args);
+end
+__sunaba_spatial_BaseMaterial3D.prototype.setTexture = function(self,param,texture) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(param));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(texture.native));
+  self.native:call("set_texture", args);
+end
+
+__sunaba_spatial_BaseMaterial3D.prototype.__class__ =  __sunaba_spatial_BaseMaterial3D
+__sunaba_spatial_BaseMaterial3D.__super__ = __sunaba_Material
+setmetatable(__sunaba_spatial_BaseMaterial3D.prototype,{__index=__sunaba_Material.prototype})
+
 __sunaba_spatial_Camera.new = function() 
   local self = _hx_new(__sunaba_spatial_Camera.prototype)
   __sunaba_spatial_Camera.super(self)
@@ -24010,8 +26661,21 @@ _hxClasses["sunaba.spatial.Camera"] = __sunaba_spatial_Camera
 __sunaba_spatial_Camera.__name__ = "sunaba.spatial.Camera"
 __sunaba_spatial_Camera.prototype = _hx_e();
 __sunaba_spatial_Camera.prototype._node= nil;
-__sunaba_spatial_Camera.prototype.node= nil;
 __sunaba_spatial_Camera.prototype.get_node = function(self) 
+  do return self._node end
+end
+__sunaba_spatial_Camera.prototype.set_node = function(self,value) 
+  if (value.native:isClass("Camera3D")) then 
+    if ((self._node ~= nil) and not self._node:isNull()) then 
+      self._node:queueFree();
+    end;
+    self._node = value;
+    self._node:set_name("Camera");
+    local trasnform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (trasnform ~= nil) then 
+      trasnform:get_node():addChild(self:get_node());
+    end;
+  end;
   do return self._node end
 end
 __sunaba_spatial_Camera.prototype.get_cullMask = function(self) 
@@ -24497,6 +27161,609 @@ __sunaba_spatial_IGeometryInstance.prototype.__class__ =  __sunaba_spatial_IGeom
 __sunaba_spatial_IGeometryInstance.__super__ = __sunaba_spatial_IVisualInstance
 setmetatable(__sunaba_spatial_IGeometryInstance.prototype,{__index=__sunaba_spatial_IVisualInstance.prototype})
 
+__sunaba_spatial_Skeleton.new = function() 
+  local self = _hx_new(__sunaba_spatial_Skeleton.prototype)
+  __sunaba_spatial_Skeleton.super(self)
+  return self
+end
+__sunaba_spatial_Skeleton.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.Skeleton"] = __sunaba_spatial_Skeleton
+__sunaba_spatial_Skeleton.__name__ = "sunaba.spatial.Skeleton"
+__sunaba_spatial_Skeleton.prototype = _hx_e();
+__sunaba_spatial_Skeleton.prototype.node= nil;
+__sunaba_spatial_Skeleton.prototype.get_animatePhysicalBones = function(self) 
+  do return self.node.native:get("animate_physical_bones"):asBool() end
+end
+__sunaba_spatial_Skeleton.prototype.set_animatePhysicalBones = function(self,value) 
+  self.node.native:set("animate_physical_bones", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_Skeleton.prototype.get_modifierCallbackModeProcess = function(self) 
+  do return self.node.native:get("modifier_callback_mode_process"):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.set_modifierCallbackModeProcess = function(self,value) 
+  self.node.native:set("modifier_callback_mode_process", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_Skeleton.prototype.get_motionScale = function(self) 
+  do return self.node.native:get("motion_scale"):asFloat() end
+end
+__sunaba_spatial_Skeleton.prototype.set_motionScale = function(self,value) 
+  self.node.native:set("motion_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_Skeleton.prototype.get_showRestOnly = function(self) 
+  do return self.node.native:get("show_rest_only"):asBool() end
+end
+__sunaba_spatial_Skeleton.prototype.set_showRestOnly = function(self,value) 
+  self.node.native:set("show_rest_only", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_Skeleton.prototype.addBone = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.node.native:call("add_bone", args):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.advance = function(self,delta) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(delta));
+  self.node.native:call("advance", args);
+end
+__sunaba_spatial_Skeleton.prototype.clearBones = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("clear_bones", args);
+end
+__sunaba_spatial_Skeleton.prototype.clearBonesGlobalPoseOverride = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("clear_bones_global_pose_override", args);
+end
+__sunaba_spatial_Skeleton.prototype.findBone = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  do return self.node.native:call("find_bone", args):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.forceUpdateAllBoneTransforms = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("force_update_all_bone_transforms", args);
+end
+__sunaba_spatial_Skeleton.prototype.forceUpdateBoneChildTransform = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  self.node.native:call("force_update_bone_child_transform", args);
+end
+__sunaba_spatial_Skeleton.prototype.getBoneChildren = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return __sunaba_core__Variant_Variant_Impl_.toIntArray32(self.node.native:call("get_bone_children", args)) end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.node.native:call("get_bone_count", args):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneGlobalPose = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_global_pose", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneGlobalPoseNoOverride = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_global_pose_no_override", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneGlobalPoseOverride = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_global_pose_override", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneGlobalRest = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_global_rest", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneMeta = function(self,boneIdx,key) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(key));
+  do return self.node.native:call("get_bone_meta", args) end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneMetaList = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_meta_list", args):asArrayList() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneName = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_name", args):asString() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneParent = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_parent", args):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.getBonePose = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_pose", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getBonePosePosition = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_pose_position", args):asVector3() end
+end
+__sunaba_spatial_Skeleton.prototype.getBonePoseRotation = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_pose_rotation", args):asQuaternion() end
+end
+__sunaba_spatial_Skeleton.prototype.getBonePoseScale = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_pose_scale", args):asVector3() end
+end
+__sunaba_spatial_Skeleton.prototype.getBoneRest = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("get_bone_rest", args):asTransform3D() end
+end
+__sunaba_spatial_Skeleton.prototype.getConcatenatedBoneNames = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.node.native:call("get_concatenated_bone_names", args):asString() end
+end
+__sunaba_spatial_Skeleton.prototype.getParentlessBones = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_core__Variant_Variant_Impl_.toIntArray32(self.node.native:call("get_parentless_bones", args)) end
+end
+__sunaba_spatial_Skeleton.prototype.getVersion = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.node.native:call("get_version", args):asInt() end
+end
+__sunaba_spatial_Skeleton.prototype.hasBoneMeta = function(self,boneIdx,key) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(key));
+  do return self.node.native:call("has_bone_meta", args):asBool() end
+end
+__sunaba_spatial_Skeleton.prototype.isBoneEnabled = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.node.native:call("is_bone_enabled", args):asBool() end
+end
+__sunaba_spatial_Skeleton.prototype.localizeRests = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("localize_rests", args);
+end
+__sunaba_spatial_Skeleton.prototype.physicalBonesAddCollisionException = function(self,exception) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(exception);
+  self.node.native:call("physical_bones_add_collision_exception", args);
+end
+__sunaba_spatial_Skeleton.prototype.physicalBonesRemoveCollisionException = function(self,exception) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(exception);
+  self.node.native:call("physical_bones_remove_collision_exception", args);
+end
+__sunaba_spatial_Skeleton.prototype.physicalBonesStartSimulation = function(self,bones) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (bones ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(bones));
+  end;
+  self.node.native:call("physical_bones_start_simulation", args);
+end
+__sunaba_spatial_Skeleton.prototype.physicalBonesStopSimulation = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("physical_bones_stop_simulation", args);
+end
+__sunaba_spatial_Skeleton.prototype.registerSkin = function(self,skin) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(skin.native));
+  do return __sunaba_spatial_SkinReference.new(self.node.native:call("register_skin", args):asReference()) end
+end
+__sunaba_spatial_Skeleton.prototype.resetBonePose = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  self.node.native:call("reset_bone_pose", args);
+end
+__sunaba_spatial_Skeleton.prototype.resetBonePoses = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("reset_bone_poses", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneEnabled = function(self,boneIdx,enabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  if (enabled ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enabled));
+  end;
+  self.node.native:call("set_bone_enabled", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneGlobalPose = function(self,boneIdx,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(pose));
+  self.node.native:call("set_bone_global_pose", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneGlobalPoseOverride = function(self,boneIdx,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(pose));
+  self.node.native:call("set_bone_global_pose_override", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneMeta = function(self,boneIdx,key,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(key));
+  args:append(value);
+  self.node.native:call("set_bone_meta", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneName = function(self,boneIdx,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.node.native:call("set_bone_name", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneParent = function(self,boneIdx,parentIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(parentIdx));
+  self.node.native:call("set_bone_parent", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBonePose = function(self,boneIdx,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(pose));
+  self.node.native:call("set_bone_pose", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBonePosePosition = function(self,boneIdx,position) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(position));
+  self.node.native:call("set_bone_pose_position", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBonePoseRotation = function(self,boneIdx,rotation) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromQuaternion(rotation));
+  self.node.native:call("set_bone_pose_rotation", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBonePoseScale = function(self,boneIdx,scale) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(scale));
+  self.node.native:call("set_bone_pose_scale", args);
+end
+__sunaba_spatial_Skeleton.prototype.setBoneRest = function(self,boneIdx,rest) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(rest));
+  self.node.native:call("set_bone_rest", args);
+end
+__sunaba_spatial_Skeleton.prototype.unparentBoneAndRest = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  self.node.native:call("unparent_bone_and_rest", args);
+end
+__sunaba_spatial_Skeleton.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("animatePhysicalBones"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_animatePhysicalBones()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("modifierCallbackModeProcess"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_modifierCallbackModeProcess()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("motionScale"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_motionScale()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("showRestOnly"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_showRestOnly()));
+  local propertyList = self.node.native:getPropertyList();
+  local boneProperties = Dictionary.new();
+  local _g = 0;
+  local _g1 = propertyList:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local prop = propertyList:get(i):asDictionary();
+    local name = prop:get(__sunaba_core__Variant_Variant_Impl_.fromString("name")):asString();
+    if (StringTools.startsWith(name, "bones/")) then 
+      boneProperties:set(__sunaba_core__Variant_Variant_Impl_.fromString(name), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(self.node.native:get(name))));
+    end;
+  end;
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("boneProperties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(boneProperties));
+  do return data end
+end
+__sunaba_spatial_Skeleton.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_animatePhysicalBones(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("animatePhysicalBones")):asBool());
+  self:set_modifierCallbackModeProcess(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("modifierCallbackModeProcess")):asInt());
+  self:set_motionScale(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("motionScale")):asFloat());
+  self:set_showRestOnly(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("showRestOnly")):asBool());
+  local boneProperties = data:get(__sunaba_core__Variant_Variant_Impl_.fromString("boneProperties")):asDictionary();
+  local boneDataMap_h = ({});
+  local maxBone = 0;
+  local _g = 0;
+  local this1 = boneProperties:keys();
+  local result = Array.new();
+  local _g1 = 0;
+  local _g2 = this1:size();
+  while (_g1 < _g2) do _hx_do_first_1 = false;
+    
+    _g1 = _g1 + 1;
+    local i = _g1 - 1;
+    result[i] = this1:get(i);
+  end;
+  local _g1 = result;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local propKeyv = _g1[_g];
+    _g = _g + 1;
+    local propKey = propKeyv:asString();
+    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    local parts = String.prototype.split(propKey, "/");
+    local boneIdx = Std.parseInt(parts[1]);
+    local propName = parts[2];
+    if (boneDataMap_h[boneIdx] == nil) then 
+      local value = __haxe_ds_StringMap.new();
+      if (value == nil) then 
+        boneDataMap_h[boneIdx] = __haxe_ds_IntMap.tnull;
+      else
+        boneDataMap_h[boneIdx] = value;
+      end;
+    end;
+    if (boneIdx > maxBone) then 
+      maxBone = boneIdx;
+    end;
+    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    local ret = boneDataMap_h[boneIdx];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    local value = __sunaba_DataUtils.dictToVar(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary());
+    local _this = ret;
+    if (value == nil) then 
+      _this.h[propName] = __haxe_ds_StringMap.tnull;
+    else
+      _this.h[propName] = value;
+    end;
+  end;
+  local _g = 0;
+  local _g1 = maxBone + 1;
+  local _hx_continue_1 = false;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    repeat 
+    _g = _g + 1;
+    local boneIdx = _g - 1;
+    local ret = boneDataMap_h[boneIdx];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    local bone = ret;
+    if (bone == nil) then 
+      break;
+    end;
+    local ret = bone.h.name;
+    local name = (function() 
+      local _hx_1
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_1 = nil; else 
+      _hx_1 = ret; end
+      return _hx_1
+    end )();
+    self:addBone(name:asString());until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  local _g = 0;
+  local _g1 = maxBone + 1;
+  local _hx_continue_1 = false;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    repeat 
+    _g = _g + 1;
+    local boneIdx = _g - 1;
+    local ret = boneDataMap_h[boneIdx];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    local bone = ret;
+    if (bone == nil) then 
+      break;
+    end;
+    local ret = bone.h.name;
+    local name = (function() 
+      local _hx_2
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_2 = nil; else 
+      _hx_2 = ret; end
+      return _hx_2
+    end )();
+    self:setBoneName(boneIdx, name:asString());
+    local ret = bone.h.parent;
+    local parent = (function() 
+      local _hx_3
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_3 = nil; else 
+      _hx_3 = ret; end
+      return _hx_3
+    end )();
+    self:setBoneParent(boneIdx, parent:asInt());
+    local ret = bone.h.rest;
+    local rest = (function() 
+      local _hx_4
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_4 = nil; else 
+      _hx_4 = ret; end
+      return _hx_4
+    end )();
+    self:setBoneRest(boneIdx, rest:asTransform3D());
+    local ret = bone.h.position;
+    local position = (function() 
+      local _hx_5
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_5 = nil; else 
+      _hx_5 = ret; end
+      return _hx_5
+    end )();
+    self:setBonePosePosition(boneIdx, position:asVector3());
+    local ret = bone.h.rotation;
+    local rotation = (function() 
+      local _hx_6
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_6 = nil; else 
+      _hx_6 = ret; end
+      return _hx_6
+    end )();
+    self:setBonePoseRotation(boneIdx, rotation:asQuaternion());
+    local ret = bone.h.scale;
+    local scale = (function() 
+      local _hx_7
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_7 = nil; else 
+      _hx_7 = ret; end
+      return _hx_7
+    end )();
+    self:setBonePoseScale(boneIdx, scale:asVector3());
+    local ret = bone.h.enabled;
+    local enabled = (function() 
+      local _hx_8
+      if (ret == __haxe_ds_StringMap.tnull) then 
+      _hx_8 = nil; else 
+      _hx_8 = ret; end
+      return _hx_8
+    end )();
+    self:setBoneEnabled(enabled:asInt());until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+end
+__sunaba_spatial_Skeleton.prototype.onInit = function(self) 
+  self.node = __sunaba_Node.new(NativeObject.new("Skeleton3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+__sunaba_spatial_Skeleton.prototype.onStart = function(self) 
+  if (self.node:getParent():isNull()) then 
+    local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (transform ~= nil) then 
+      transform:set_node(self.node);
+    end;
+  end;
+end
+
+__sunaba_spatial_Skeleton.prototype.__class__ =  __sunaba_spatial_Skeleton
+__sunaba_spatial_Skeleton.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_Skeleton.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_Skin.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_Skin.prototype)
+  __sunaba_spatial_Skin.super(self,native)
+  return self
+end
+__sunaba_spatial_Skin.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.Skin"] = __sunaba_spatial_Skin
+__sunaba_spatial_Skin.__name__ = "sunaba.spatial.Skin"
+__sunaba_spatial_Skin.prototype = _hx_e();
+__sunaba_spatial_Skin.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("Skin");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("Skin"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_Skin.prototype.addBind = function(self,bone,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bone));
+  args:append(pose);
+  self.native:call("add_bind", args);
+end
+__sunaba_spatial_Skin.prototype.addNamedBind = function(self,name,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  args:append(pose);
+  self.native:call("add_named_bind", args);
+end
+__sunaba_spatial_Skin.prototype.clearBinds = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear_binds", args);
+end
+__sunaba_spatial_Skin.prototype.getBindBone = function(self,bindIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindIndex));
+  do return self.native:call("get_bind_bone", args):asInt() end
+end
+__sunaba_spatial_Skin.prototype.getBindCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_bind_count", args):asInt() end
+end
+__sunaba_spatial_Skin.prototype.getBindName = function(self,bindIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindIndex));
+  do return self.native:call("get_bind_name", args):asString() end
+end
+__sunaba_spatial_Skin.prototype.setBindBone = function(self,bindIndex,bone) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindIndex));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bone));
+  self.native:call("set_bind_bone", args);
+end
+__sunaba_spatial_Skin.prototype.setBindCount = function(self,bindCount) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindCount));
+  self.native:call("set_bind_count", args);
+end
+__sunaba_spatial_Skin.prototype.setBindName = function(self,bindIndex,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindIndex));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("set_bind_name", args);
+end
+__sunaba_spatial_Skin.prototype.setBindPose = function(self,bindIndex,pose) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(bindIndex));
+  args:append(pose);
+  self.native:call("set_bind_pose", args);
+end
+
+__sunaba_spatial_Skin.prototype.__class__ =  __sunaba_spatial_Skin
+__sunaba_spatial_Skin.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_Skin.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_SkinReference.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_SkinReference.prototype)
+  __sunaba_spatial_SkinReference.super(self,native)
+  return self
+end
+__sunaba_spatial_SkinReference.super = function(self,native) 
+  __sunaba_core_Reference.super(self,native);
+end
+_hxClasses["sunaba.spatial.SkinReference"] = __sunaba_spatial_SkinReference
+__sunaba_spatial_SkinReference.__name__ = "sunaba.spatial.SkinReference"
+__sunaba_spatial_SkinReference.prototype = _hx_e();
+__sunaba_spatial_SkinReference.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("SkinReference");
+  end;
+  self.native = _native;
+end
+__sunaba_spatial_SkinReference.prototype.getSkeleton = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_skeleton", args) end
+end
+__sunaba_spatial_SkinReference.prototype.getSkin = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_spatial_Skin.new(self.native:call("get_skin", args):asReference()) end
+end
+
+__sunaba_spatial_SkinReference.prototype.__class__ =  __sunaba_spatial_SkinReference
+__sunaba_spatial_SkinReference.__super__ = __sunaba_core_Reference
+setmetatable(__sunaba_spatial_SkinReference.prototype,{__index=__sunaba_core_Reference.prototype})
+
 __sunaba_spatial_Sky.new = function(native) 
   local self = _hx_new(__sunaba_spatial_Sky.prototype)
   __sunaba_spatial_Sky.super(self,native)
@@ -24819,7 +28086,6 @@ __sunaba_spatial_SpatialTransform.prototype.getData = function(self)
   do return data end
 end
 __sunaba_spatial_SpatialTransform.prototype.setData = function(self,data) 
-  _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data), "  ")));
   self:set_position(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("position")):asDictionary()):asVector3());
   self:set_rotation(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rotation")):asDictionary()):asVector3());
   self:set_scale(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("scale")):asDictionary()):asVector3());
@@ -25284,6 +28550,7 @@ __sunaba_spatial_lighting_DirectionalLight.prototype.setData = function(self,dat
   self:set_skyMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("skyMode")):asInt());
 end
 __sunaba_spatial_lighting_DirectionalLight.prototype.onInit = function(self) 
+  __sunaba_spatial_lighting_ILight.prototype.onInit(self);
   self.node = __sunaba_Node.new(NativeObject.new("DirectionalLight3D"));
   self.node:set_name("DirectionalLight");
   local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
@@ -25296,7 +28563,6 @@ __sunaba_spatial_lighting_DirectionalLight.prototype.onInit = function(self)
       end;
     end;
   end;
-  __sunaba_spatial_lighting_ILight.prototype.onInit(self);
 end
 
 __sunaba_spatial_lighting_DirectionalLight.prototype.__class__ =  __sunaba_spatial_lighting_DirectionalLight
@@ -25504,6 +28770,9 @@ __sunaba_spatial_mesh_PrimitiveMesh.prototype.setData = function(self,data)
   self:set_flipFaces(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("flipFaces")):asBool());
   self:set_material(__sunaba_Material.new(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("material")):asDictionary()):asReference()));
 end
+__sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit = function(self) 
+  self.editorIconPath = "studio://icons/16/cushion.png";
+end
 __sunaba_spatial_mesh_PrimitiveMesh.prototype.onStart = function(self) 
   local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
   meshDisplay:setMesh(self.res);
@@ -25580,6 +28849,433 @@ __sunaba_spatial_mesh_BoxMesh.prototype.__class__ =  __sunaba_spatial_mesh_BoxMe
 __sunaba_spatial_mesh_BoxMesh.__super__ = __sunaba_spatial_mesh_PrimitiveMesh
 setmetatable(__sunaba_spatial_mesh_BoxMesh.prototype,{__index=__sunaba_spatial_mesh_PrimitiveMesh.prototype})
 
+__sunaba_spatial_mesh_CapsuleMesh.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_CapsuleMesh.prototype)
+  __sunaba_spatial_mesh_CapsuleMesh.super(self)
+  return self
+end
+__sunaba_spatial_mesh_CapsuleMesh.super = function(self) 
+  __sunaba_spatial_mesh_PrimitiveMesh.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.CapsuleMesh"] = __sunaba_spatial_mesh_CapsuleMesh
+__sunaba_spatial_mesh_CapsuleMesh.__name__ = "sunaba.spatial.mesh.CapsuleMesh"
+__sunaba_spatial_mesh_CapsuleMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_CapsuleMesh.prototype.get_height = function(self) 
+  do return self.res.native:get("height"):asFloat() end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.set_height = function(self,value) 
+  self.res.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.get_radialSegments = function(self) 
+  do return self.res.native:get("radial_segments"):asInt() end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.set_radialSegments = function(self,value) 
+  self.res.native:set("radial_segments", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.get_radius = function(self) 
+  do return self.res.native:get("radius"):asFloat() end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.set_radius = function(self,value) 
+  self.res.native:set("radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.get_rings = function(self) 
+  do return self.res.native:get("rings"):asInt() end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.set_rings = function(self,value) 
+  self.res.native:set("rings", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.getData = function(self) 
+  local data = __sunaba_spatial_mesh_PrimitiveMesh.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("height"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_height()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_radialSegments()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_radius()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("rings"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_rings()));
+  do return data end
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.setData = function(self,data) 
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.setData(self,data);
+  self:set_height(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("height")):asFloat());
+  self:set_radialSegments(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments")):asInt());
+  self:set_radius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radius")):asFloat());
+  self:set_rings(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rings")):asInt());
+end
+__sunaba_spatial_mesh_CapsuleMesh.prototype.onInit = function(self) 
+  self.res = __sunaba_Resource.new(NativeReference.new("CapsuleMesh"));
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit(self);
+end
+
+__sunaba_spatial_mesh_CapsuleMesh.prototype.__class__ =  __sunaba_spatial_mesh_CapsuleMesh
+__sunaba_spatial_mesh_CapsuleMesh.__super__ = __sunaba_spatial_mesh_PrimitiveMesh
+setmetatable(__sunaba_spatial_mesh_CapsuleMesh.prototype,{__index=__sunaba_spatial_mesh_PrimitiveMesh.prototype})
+
+__sunaba_spatial_mesh_CylinderMesh.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_CylinderMesh.prototype)
+  __sunaba_spatial_mesh_CylinderMesh.super(self)
+  return self
+end
+__sunaba_spatial_mesh_CylinderMesh.super = function(self) 
+  __sunaba_spatial_mesh_PrimitiveMesh.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.CylinderMesh"] = __sunaba_spatial_mesh_CylinderMesh
+__sunaba_spatial_mesh_CylinderMesh.__name__ = "sunaba.spatial.mesh.CylinderMesh"
+__sunaba_spatial_mesh_CylinderMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_bottomRadius = function(self) 
+  do return self.res.native:get("bottom_radius"):asFloat() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_bottomRadius = function(self,value) 
+  self.res.native:set("bottom_radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_capBottom = function(self) 
+  do return self.res.native:get("cap_bottom"):asBool() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_capBottom = function(self,value) 
+  self.res.native:set("cap_bottom", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_capTop = function(self) 
+  do return self.res.native:get("cap_top"):asBool() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_capTop = function(self,value) 
+  self.res.native:set("cap_top", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_height = function(self) 
+  do return self.res.native:get("height"):asFloat() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_height = function(self,value) 
+  self.res.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_radialSegments = function(self) 
+  do return self.res.native:get("radial_segments"):asInt() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_radialSegments = function(self,value) 
+  self.res.native:set("radial_segments", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_rings = function(self) 
+  do return self.res.native:get("rings"):asInt() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_rings = function(self,value) 
+  self.res.native:set("rings", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.get_topRadius = function(self) 
+  do return self.res.native:get("top_radius"):asFloat() end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.set_topRadius = function(self,value) 
+  self.res.native:set("top_radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.getData = function(self) 
+  local data = __sunaba_spatial_mesh_PrimitiveMesh.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("bottomRadius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_bottomRadius()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("capBottom"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_capBottom()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("capTop"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_capTop()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("height"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_height()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_radialSegments()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("rings"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_rings()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("topRadius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_topRadius()));
+  do return data end
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.setData = function(self,data) 
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.setData(self,data);
+  self:set_bottomRadius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("bottomRadius")):asFloat());
+  self:set_capBottom(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("capBottom")):asBool());
+  self:set_capTop(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("capTop")):asBool());
+  self:set_height(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("height")):asFloat());
+  self:set_radialSegments(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments")):asInt());
+  self:set_rings(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rings")):asInt());
+  self:set_topRadius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("topRadius")):asFloat());
+end
+__sunaba_spatial_mesh_CylinderMesh.prototype.onInit = function(self) 
+  self.res = __sunaba_Resource.new(NativeReference.new("CylinderMesh"));
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit(self);
+end
+
+__sunaba_spatial_mesh_CylinderMesh.prototype.__class__ =  __sunaba_spatial_mesh_CylinderMesh
+__sunaba_spatial_mesh_CylinderMesh.__super__ = __sunaba_spatial_mesh_PrimitiveMesh
+setmetatable(__sunaba_spatial_mesh_CylinderMesh.prototype,{__index=__sunaba_spatial_mesh_PrimitiveMesh.prototype})
+
+__sunaba_spatial_mesh_ImporterMesh.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_mesh_ImporterMesh.prototype)
+  __sunaba_spatial_mesh_ImporterMesh.super(self,native)
+  return self
+end
+__sunaba_spatial_mesh_ImporterMesh.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.mesh.ImporterMesh"] = __sunaba_spatial_mesh_ImporterMesh
+__sunaba_spatial_mesh_ImporterMesh.__name__ = "sunaba.spatial.mesh.ImporterMesh"
+__sunaba_spatial_mesh_ImporterMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_ImporterMesh.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("ImporterMesh");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("ImporterMesh"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.addBlendShape = function(self,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("add_blend_shape", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.addSurface = function(self,primitive,arrays,blendShapes,lods,material,name,flags) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(primitive));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(arrays));
+  if (blendShapes ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(blendShapes));
+  end;
+  if (lods ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(lods));
+  end;
+  if (material ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(material.native));
+  end;
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  if (flags ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flags));
+  end;
+  self.native:call("add_surface", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.generateLods = function(self,normalMergeAngle,normalSplitAngle,boneTransformArray) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(normalMergeAngle));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(normalSplitAngle));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(boneTransformArray));
+  self.native:call("generate_lods", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getBlendShapeCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_blend_shape_count", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getBlendShapeMode = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_blend_shape_mode", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getBlendShapeName = function(self,blendShapeIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(blendShapeIdx));
+  do return self.native:call("get_blend_shape_name", args):asString() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getLightmapSizeHint = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_lightmap_size_hint", args):asVector2i() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceArrays = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  do return self.native:call("get_surface_arrays", args):asArrayList() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceBlendShapeArrays = function(self,surfaceIdx,blendShapeIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(blendShapeIdx));
+  do return self.native:call("get_surface_blend_shape_arrays", args):asArrayList() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_surface_count", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceFormat = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  do return self.native:call("get_surface_format", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceLodCount = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  do return self.native:call("get_surface_lod_count", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceLodIndices = function(self,surfaceIdx,lodIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(lodIdx));
+  do return self.native:call("get_surface_lod_indices", args):asIntArray64() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceLodSize = function(self,surfaceIdx,lodIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(lodIdx));
+  do return self.native:call("get_surface_lod_size", args):asFloat() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceMaterial = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  local ref = self.native:call("get_surface_material", args):asReference();
+  do return __sunaba_Material.new(ref) end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfaceName = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  do return self.native:call("get_surface_name", args):asString() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.getSurfacePrimitiveType = function(self,surfaceIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  do return self.native:call("get_surface_primitive_type", args):asInt() end
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.setBlendShapeMode = function(self,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.native:call("set_blend_shape_mode", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.setLightmapSizeHint = function(self,size) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2i(size));
+  self.native:call("set_lightmap_size_hint", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.setSurfaceMaterial = function(self,surfaceIdx,material) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(material.native));
+  self.native:call("set_surface_material", args);
+end
+__sunaba_spatial_mesh_ImporterMesh.prototype.setSurfaceName = function(self,surfaceIdx,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfaceIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("set_surface_name", args);
+end
+
+__sunaba_spatial_mesh_ImporterMesh.prototype.__class__ =  __sunaba_spatial_mesh_ImporterMesh
+__sunaba_spatial_mesh_ImporterMesh.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_mesh_ImporterMesh.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_mesh_MeshData.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_MeshData.prototype)
+  __sunaba_spatial_mesh_MeshData.super(self)
+  return self
+end
+__sunaba_spatial_mesh_MeshData.super = function(self) 
+  self.blendShapeNames = Array.new();
+  self.blendShapeMode = -1;
+  self.blendShapesPerSurface = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.surfaceMaterials = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.surfacePrimitiveTypes = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.surfaces = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.surfaceNames = Array.new();
+  __sunaba_ScriptableObject.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.MeshData"] = __sunaba_spatial_mesh_MeshData
+__sunaba_spatial_mesh_MeshData.__name__ = "sunaba.spatial.mesh.MeshData"
+__sunaba_spatial_mesh_MeshData.fromImporterMesh = function(importerMesh) 
+  local meshData = __sunaba_spatial_mesh_MeshData.new();
+  local _g = 0;
+  local _g1 = importerMesh:getSurfaceCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local surfaceArrays = importerMesh:getSurfaceArrays(i);
+    meshData.surfaces:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surfaceArrays));
+    local surfacePrimitiveType = importerMesh:getSurfacePrimitiveType(i);
+    meshData.surfacePrimitiveTypes:append(__sunaba_core__Variant_Variant_Impl_.fromInt(surfacePrimitiveType));
+    local surfaceMaterial = importerMesh:getSurfaceMaterial(i);
+    meshData.surfaceMaterials:append(__sunaba_core__Variant_Variant_Impl_.fromReference(surfaceMaterial));
+    local surfaceName = importerMesh:getSurfaceName(i);
+    meshData.surfaceNames:push(surfaceName);
+    local surfaceBlendShapes = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    local _g = 0;
+    local _g1 = importerMesh:getBlendShapeCount();
+    while (_g < _g1) do _hx_do_first_2 = false;
+      
+      _g = _g + 1;
+      local j = _g - 1;
+      local surfaceBlendShapeArray = importerMesh:getSurfaceBlendShapeArrays(i, j);
+      surfaceBlendShapes:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surfaceBlendShapeArray));
+    end;
+    meshData.blendShapesPerSurface:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surfaceBlendShapes));
+  end;
+  local blendShapeMode = importerMesh:getBlendShapeMode();
+  meshData.blendShapeMode = blendShapeMode;
+  local _g = 0;
+  local _g1 = importerMesh:getBlendShapeCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local blendShapeName = importerMesh:getBlendShapeName(i);
+    meshData.blendShapeNames:push(blendShapeName);
+  end;
+  do return meshData end;
+end
+__sunaba_spatial_mesh_MeshData.prototype = _hx_e();
+__sunaba_spatial_mesh_MeshData.prototype.surfaceNames= nil;
+__sunaba_spatial_mesh_MeshData.prototype.surfaces= nil;
+__sunaba_spatial_mesh_MeshData.prototype.surfacePrimitiveTypes= nil;
+__sunaba_spatial_mesh_MeshData.prototype.surfaceMaterials= nil;
+__sunaba_spatial_mesh_MeshData.prototype.blendShapesPerSurface= nil;
+__sunaba_spatial_mesh_MeshData.prototype.blendShapeMode= nil;
+__sunaba_spatial_mesh_MeshData.prototype.blendShapeNames= nil;
+__sunaba_spatial_mesh_MeshData.prototype.getData = function(self) 
+  local data = __sunaba_ScriptableObject.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("surfaceNames"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromStringArray(__sunaba_core_StringArray.fromArray(self.surfaceNames)))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("surfaces"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromArray(self.surfaces))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("surfacePrimitiveTypes"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromArray(self.surfacePrimitiveTypes))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("surfaceMaterials"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromArray(self.surfaceMaterials))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapesPerSurface"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromArray(self.blendShapesPerSurface))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapeMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self.blendShapeMode));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapeNames"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromStringArray(__sunaba_core_StringArray.fromArray(self.blendShapeNames)))));
+  do return data end
+end
+__sunaba_spatial_mesh_MeshData.prototype.setData = function(self,data) 
+  __sunaba_ScriptableObject.prototype.setData(self,data);
+  local s = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("surfaceNames")):asDictionary()):asStringArray();
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  self.surfaceNames = array;
+  self.surfaces = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("surfaces")):asDictionary()):asArrayList();
+  self.surfacePrimitiveTypes = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("surfacePrimitiveTypes")):asDictionary()):asArrayList();
+  self.surfaceMaterials = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("surfaceMaterials")):asDictionary(), self.io):asArrayList();
+  self.blendShapesPerSurface = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapesPerSurface")):asDictionary()):asArrayList();
+  self.blendShapeMode = data:get(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapeMode")):asInt();
+  local s = __sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("blendShapeNames")):asDictionary()):asStringArray();
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  self.blendShapeNames = array;
+end
+
+__sunaba_spatial_mesh_MeshData.prototype.__class__ =  __sunaba_spatial_mesh_MeshData
+__sunaba_spatial_mesh_MeshData.__super__ = __sunaba_ScriptableObject
+setmetatable(__sunaba_spatial_mesh_MeshData.prototype,{__index=__sunaba_ScriptableObject.prototype})
+
 __sunaba_spatial_mesh_MeshDisplay.new = function() 
   local self = _hx_new(__sunaba_spatial_mesh_MeshDisplay.prototype)
   __sunaba_spatial_mesh_MeshDisplay.super(self)
@@ -25591,6 +29287,20 @@ end
 _hxClasses["sunaba.spatial.mesh.MeshDisplay"] = __sunaba_spatial_mesh_MeshDisplay
 __sunaba_spatial_mesh_MeshDisplay.__name__ = "sunaba.spatial.mesh.MeshDisplay"
 __sunaba_spatial_mesh_MeshDisplay.prototype = _hx_e();
+__sunaba_spatial_mesh_MeshDisplay.prototype.get_skeleton = function(self) 
+  do return self.node.native:get("skeleton"):asString() end
+end
+__sunaba_spatial_mesh_MeshDisplay.prototype.set_skeleton = function(self,value) 
+  self.node.native:set("skeleton", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_mesh_MeshDisplay.prototype.get_skin = function(self) 
+  do return __sunaba_spatial_Skin.new(self.node.native:get("skin"):asReference()) end
+end
+__sunaba_spatial_mesh_MeshDisplay.prototype.set_skin = function(self,value) 
+  self.node.native:set("skin", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
 __sunaba_spatial_mesh_MeshDisplay.prototype.createConvexCollision = function(self) 
   self.node.native:call("create_convex_collision", __sunaba_core__ArrayList_ArrayList_Impl_._new());
 end
@@ -25629,6 +29339,15 @@ __sunaba_spatial_mesh_MeshDisplay.prototype.setMesh = function(self,res)
   end;
   self.node.native:set("mesh", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(res.native));
 end
+__sunaba_spatial_mesh_MeshDisplay.prototype.getData = function(self) 
+  local data = __sunaba_spatial_IGeometryInstance.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("skeleton"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_skeleton()));
+  do return data end
+end
+__sunaba_spatial_mesh_MeshDisplay.prototype.setData = function(self,data) 
+  __sunaba_spatial_IGeometryInstance.prototype.setData(self,data);
+  self:set_skeleton(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("skeleton")):asString());
+end
 __sunaba_spatial_mesh_MeshDisplay.prototype.onInit = function(self) 
   self.editorIconPath = "studio://icons/16/cushion-gray.png";
   self.node = __sunaba_Node.new(NativeObject.new("MeshInstance3D"));
@@ -25652,6 +29371,3168 @@ end
 __sunaba_spatial_mesh_MeshDisplay.prototype.__class__ =  __sunaba_spatial_mesh_MeshDisplay
 __sunaba_spatial_mesh_MeshDisplay.__super__ = __sunaba_spatial_IGeometryInstance
 setmetatable(__sunaba_spatial_mesh_MeshDisplay.prototype,{__index=__sunaba_spatial_IGeometryInstance.prototype})
+
+__sunaba_spatial_mesh_MeshLoader.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_MeshLoader.prototype)
+  __sunaba_spatial_mesh_MeshLoader.super(self)
+  return self
+end
+__sunaba_spatial_mesh_MeshLoader.super = function(self) 
+  self._meshData = nil;
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.MeshLoader"] = __sunaba_spatial_mesh_MeshLoader
+__sunaba_spatial_mesh_MeshLoader.__name__ = "sunaba.spatial.mesh.MeshLoader"
+__sunaba_spatial_mesh_MeshLoader.prototype = _hx_e();
+__sunaba_spatial_mesh_MeshLoader.prototype._meshData= nil;
+__sunaba_spatial_mesh_MeshLoader.prototype.get_meshData = function(self) 
+  do return self._meshData end
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.set_meshData = function(self,value) 
+  self._meshData = value;
+  if (self._meshData ~= nil) then 
+    local arrayMesh = NativeReference.new("ArrayMesh");
+    local _g = 0;
+    local _g1 = self._meshData.blendShapeNames;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local blendShapeName = _g1[_g];
+      _g = _g + 1;
+      local addBlendShapeArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addBlendShapeArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(blendShapeName));
+      arrayMesh:call("add_blend_shape", addBlendShapeArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaces:size();
+    local _hx_continue_1 = false;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      repeat 
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceVariant = self._meshData.surfaces:get(i);
+      local surface = surfaceVariant:asArrayList();
+      if (surface:size() == 0) then 
+        break;
+      end;
+      local addSurfaceFromArraysArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addSurfaceFromArraysArgs:append(self:get_meshData().surfacePrimitiveTypes:get(i));
+      addSurfaceFromArraysArgs:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surface));
+      local blendShapes = self._meshData.blendShapesPerSurface:get(i);
+      if (blendShapes:getType() == 28) then 
+        addSurfaceFromArraysArgs:append(blendShapes);
+      end;
+      arrayMesh:call("add_surface_from_arrays", addSurfaceFromArraysArgs);until true
+      if _hx_continue_1 then 
+      _hx_continue_1 = false;
+      break;
+      end;
+      
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceNames.length;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceName = self._meshData.surfaceNames[i];
+      local surfaceSetNameArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(surfaceName));
+      arrayMesh:call("surface_set_name", surfaceSetNameArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceMaterials:size();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceMaterial = __sunaba_Material.new(self._meshData.surfaceMaterials:get(i):asReference());
+      local surfaceSetMaterialArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(surfaceMaterial.native));
+      arrayMesh:call("surface_set_material", surfaceSetMaterialArgs);
+    end;
+    local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+    if (meshDisplay ~= nil) then 
+      meshDisplay:setMesh(__sunaba_Resource.new(arrayMesh));
+    end;
+  end;
+  do return value end
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.onInit = function(self) 
+  self.editorIconPath = "studio://icons/16/cushion.png";
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.setMeshData = function(self,data) 
+  self._meshData = data;
+  if (self._meshData == nil) then 
+    do return end;
+  end;
+  local arrayMesh = NativeReference.new("ArrayMesh");
+  local _g = 0;
+  local _g1 = self._meshData.blendShapeNames;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local blendShapeName = _g1[_g];
+    _g = _g + 1;
+    local addBlendShapeArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    addBlendShapeArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(blendShapeName));
+    arrayMesh:call("add_blend_shape", addBlendShapeArgs);
+  end;
+  local _g = 0;
+  local _g1 = self._meshData.surfaces:size();
+  local _hx_continue_1 = false;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    repeat 
+    _g = _g + 1;
+    local i = _g - 1;
+    local surfaceVariant = self._meshData.surfaces:get(i);
+    local surface = surfaceVariant:asArrayList();
+    if (surface:size() == 0) then 
+      break;
+    end;
+    local addSurfaceFromArraysArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    addSurfaceFromArraysArgs:append(self:get_meshData().surfacePrimitiveTypes:get(i));
+    addSurfaceFromArraysArgs:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surface));
+    local blendShapes = self._meshData.blendShapesPerSurface:get(i);
+    if (blendShapes:getType() == 28) then 
+      addSurfaceFromArraysArgs:append(blendShapes);
+    end;
+    arrayMesh:call("add_surface_from_arrays", addSurfaceFromArraysArgs);until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  local _g = 0;
+  local _g1 = self._meshData.surfaceNames.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local surfaceName = self._meshData.surfaceNames[i];
+    local surfaceSetNameArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+    surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(surfaceName));
+    arrayMesh:call("surface_set_name", surfaceSetNameArgs);
+  end;
+  local _g = 0;
+  local _g1 = self._meshData.surfaceMaterials:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local surfaceMaterial = __sunaba_Material.new(self._meshData.surfaceMaterials:get(i):asReference());
+    local surfaceSetMaterialArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+    surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(surfaceMaterial.native));
+    arrayMesh:call("surface_set_material", surfaceSetMaterialArgs);
+  end;
+  local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+  if (meshDisplay ~= nil) then 
+    meshDisplay:setMesh(__sunaba_Resource.new(arrayMesh));
+  end;
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("_meshData"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(self._meshData:getData()));
+  do return data end
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  local newMeshData = __sunaba_spatial_mesh_MeshData.new();
+  newMeshData.io = self.entity:get_io();
+  newMeshData:setData(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("_meshData")):asDictionary());
+  self._meshData = newMeshData;
+  if (self._meshData ~= nil) then 
+    local arrayMesh = NativeReference.new("ArrayMesh");
+    local _g = 0;
+    local _g1 = self._meshData.blendShapeNames;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local blendShapeName = _g1[_g];
+      _g = _g + 1;
+      local addBlendShapeArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addBlendShapeArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(blendShapeName));
+      arrayMesh:call("add_blend_shape", addBlendShapeArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaces:size();
+    local _hx_continue_1 = false;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      repeat 
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceVariant = self._meshData.surfaces:get(i);
+      local surface = surfaceVariant:asArrayList();
+      if (surface:size() == 0) then 
+        break;
+      end;
+      local addSurfaceFromArraysArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addSurfaceFromArraysArgs:append(self:get_meshData().surfacePrimitiveTypes:get(i));
+      addSurfaceFromArraysArgs:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surface));
+      local blendShapes = self._meshData.blendShapesPerSurface:get(i);
+      if (blendShapes:getType() == 28) then 
+        addSurfaceFromArraysArgs:append(blendShapes);
+      end;
+      arrayMesh:call("add_surface_from_arrays", addSurfaceFromArraysArgs);until true
+      if _hx_continue_1 then 
+      _hx_continue_1 = false;
+      break;
+      end;
+      
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceNames.length;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceName = self._meshData.surfaceNames[i];
+      local surfaceSetNameArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(surfaceName));
+      arrayMesh:call("surface_set_name", surfaceSetNameArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceMaterials:size();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceMaterial = __sunaba_Material.new(self._meshData.surfaceMaterials:get(i):asReference());
+      local surfaceSetMaterialArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(surfaceMaterial.native));
+      arrayMesh:call("surface_set_material", surfaceSetMaterialArgs);
+    end;
+    local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+    if (meshDisplay ~= nil) then 
+      meshDisplay:setMesh(__sunaba_Resource.new(arrayMesh));
+    end;
+  end;
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.onStart = function(self) 
+  self._meshData = self._meshData;
+  if (self._meshData ~= nil) then 
+    local arrayMesh = NativeReference.new("ArrayMesh");
+    local _g = 0;
+    local _g1 = self._meshData.blendShapeNames;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local blendShapeName = _g1[_g];
+      _g = _g + 1;
+      local addBlendShapeArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addBlendShapeArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(blendShapeName));
+      arrayMesh:call("add_blend_shape", addBlendShapeArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaces:size();
+    local _hx_continue_1 = false;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      repeat 
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceVariant = self._meshData.surfaces:get(i);
+      local surface = surfaceVariant:asArrayList();
+      if (surface:size() == 0) then 
+        break;
+      end;
+      local addSurfaceFromArraysArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      addSurfaceFromArraysArgs:append(self:get_meshData().surfacePrimitiveTypes:get(i));
+      addSurfaceFromArraysArgs:append(__sunaba_core__Variant_Variant_Impl_.fromArray(surface));
+      local blendShapes = self._meshData.blendShapesPerSurface:get(i);
+      if (blendShapes:getType() == 28) then 
+        addSurfaceFromArraysArgs:append(blendShapes);
+      end;
+      arrayMesh:call("add_surface_from_arrays", addSurfaceFromArraysArgs);until true
+      if _hx_continue_1 then 
+      _hx_continue_1 = false;
+      break;
+      end;
+      
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceNames.length;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceName = self._meshData.surfaceNames[i];
+      local surfaceSetNameArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetNameArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(surfaceName));
+      arrayMesh:call("surface_set_name", surfaceSetNameArgs);
+    end;
+    local _g = 0;
+    local _g1 = self._meshData.surfaceMaterials:size();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local surfaceMaterial = __sunaba_Material.new(self._meshData.surfaceMaterials:get(i):asReference());
+      local surfaceSetMaterialArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromInt(i));
+      surfaceSetMaterialArgs:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(surfaceMaterial.native));
+      arrayMesh:call("surface_set_material", surfaceSetMaterialArgs);
+    end;
+    local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+    if (meshDisplay ~= nil) then 
+      meshDisplay:setMesh(__sunaba_Resource.new(arrayMesh));
+    end;
+  end;
+end
+__sunaba_spatial_mesh_MeshLoader.prototype.onEnd = function(self) 
+  local meshDisplay = self:getComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+  meshDisplay:setMesh(nil);
+end
+
+__sunaba_spatial_mesh_MeshLoader.prototype.__class__ =  __sunaba_spatial_mesh_MeshLoader
+__sunaba_spatial_mesh_MeshLoader.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_mesh_MeshLoader.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_mesh_PlaneMesh.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_PlaneMesh.prototype)
+  __sunaba_spatial_mesh_PlaneMesh.super(self)
+  return self
+end
+__sunaba_spatial_mesh_PlaneMesh.super = function(self) 
+  __sunaba_spatial_mesh_PrimitiveMesh.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.PlaneMesh"] = __sunaba_spatial_mesh_PlaneMesh
+__sunaba_spatial_mesh_PlaneMesh.__name__ = "sunaba.spatial.mesh.PlaneMesh"
+__sunaba_spatial_mesh_PlaneMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_PlaneMesh.prototype.get_centerOffset = function(self) 
+  do return self.res.native:get("center_offset"):asVector3() end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.set_centerOffset = function(self,value) 
+  self.res.native:set("center_offset", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.get_orientation = function(self) 
+  do return self.res.native:get("orientation"):asInt() end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.set_orientation = function(self,value) 
+  self.res.native:set("orientation", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.get_size = function(self) 
+  do return self.res.native:get("size"):asVector2() end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.set_size = function(self,value) 
+  self.res.native:set("size", __sunaba_core__Variant_Variant_Impl_.fromVector2(value));
+  do return value end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.get_subdivideDepth = function(self) 
+  do return self.res.native:get("subdivide_depth"):asInt() end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.set_subdivideDepth = function(self,value) 
+  self.res.native:set("subdivide_depth", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.get_subdivideWidth = function(self) 
+  do return self.res.native:get("subdivide_width"):asInt() end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.set_subdivideWidth = function(self,value) 
+  self.res.native:set("subdivide_width", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.getData = function(self) 
+  local data = __sunaba_spatial_mesh_PrimitiveMesh.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("centerOffset"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_centerOffset()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("orientation"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_orientation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("size"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(self:get_size()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("subdivideDepth"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_subdivideDepth()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("subdivideWidth"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_subdivideWidth()));
+  do return data end
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.setData = function(self,data) 
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.setData(self,data);
+  self:set_centerOffset(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("centerOffset")):asDictionary()):asVector3());
+  self:set_orientation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("orientation")):asInt());
+  self:set_size(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("size")):asDictionary()):asVector2());
+  self:set_subdivideDepth(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("subdivideDepth")):asInt());
+  self:set_subdivideWidth(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("subdivideWidth")):asInt());
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.onInit = function(self) 
+  self.res = __sunaba_Resource.new(NativeReference.new("PlaneMesh"));
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit(self);
+end
+__sunaba_spatial_mesh_PlaneMesh.prototype.superInit = function(self) 
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit(self);
+end
+
+__sunaba_spatial_mesh_PlaneMesh.prototype.__class__ =  __sunaba_spatial_mesh_PlaneMesh
+__sunaba_spatial_mesh_PlaneMesh.__super__ = __sunaba_spatial_mesh_PrimitiveMesh
+setmetatable(__sunaba_spatial_mesh_PlaneMesh.prototype,{__index=__sunaba_spatial_mesh_PrimitiveMesh.prototype})
+
+__sunaba_spatial_mesh_QuadMesh.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_QuadMesh.prototype)
+  __sunaba_spatial_mesh_QuadMesh.super(self)
+  return self
+end
+__sunaba_spatial_mesh_QuadMesh.super = function(self) 
+  __sunaba_spatial_mesh_PlaneMesh.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.QuadMesh"] = __sunaba_spatial_mesh_QuadMesh
+__sunaba_spatial_mesh_QuadMesh.__name__ = "sunaba.spatial.mesh.QuadMesh"
+__sunaba_spatial_mesh_QuadMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_QuadMesh.prototype.onInit = function(self) 
+  self.res = __sunaba_Resource.new(NativeReference.new("QuadMesh"));
+  self:superInit();
+end
+
+__sunaba_spatial_mesh_QuadMesh.prototype.__class__ =  __sunaba_spatial_mesh_QuadMesh
+__sunaba_spatial_mesh_QuadMesh.__super__ = __sunaba_spatial_mesh_PlaneMesh
+setmetatable(__sunaba_spatial_mesh_QuadMesh.prototype,{__index=__sunaba_spatial_mesh_PlaneMesh.prototype})
+
+__sunaba_spatial_mesh_SphereMesh.new = function() 
+  local self = _hx_new(__sunaba_spatial_mesh_SphereMesh.prototype)
+  __sunaba_spatial_mesh_SphereMesh.super(self)
+  return self
+end
+__sunaba_spatial_mesh_SphereMesh.super = function(self) 
+  __sunaba_spatial_mesh_PrimitiveMesh.super(self);
+end
+_hxClasses["sunaba.spatial.mesh.SphereMesh"] = __sunaba_spatial_mesh_SphereMesh
+__sunaba_spatial_mesh_SphereMesh.__name__ = "sunaba.spatial.mesh.SphereMesh"
+__sunaba_spatial_mesh_SphereMesh.prototype = _hx_e();
+__sunaba_spatial_mesh_SphereMesh.prototype.get_height = function(self) 
+  do return self.res.native:get("height"):asFloat() end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.set_height = function(self,value) 
+  self.res.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.get_isHemisphere = function(self) 
+  do return self.res.native:get("is_hemisphere"):asBool() end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.set_isHemisphere = function(self,value) 
+  self.res.native:set("is_hemisphere", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.get_radialSegments = function(self) 
+  do return self.res.native:get("radial_segments"):asInt() end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.set_radialSegments = function(self,value) 
+  self.res.native:set("radial_segments", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.get_radius = function(self) 
+  do return self.res.native:get("radius"):asFloat() end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.set_radius = function(self,value) 
+  self.res.native:set("radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.get_rings = function(self) 
+  do return self.res.native:get("rings"):asInt() end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.set_rings = function(self,value) 
+  self.res.native:set("rings", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.getData = function(self) 
+  local data = __sunaba_spatial_mesh_PrimitiveMesh.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("height"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_height()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("isHemisphere"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_isHemisphere()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_radialSegments()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_radius()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("rings"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_rings()));
+  do return data end
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.setData = function(self,data) 
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.setData(self,data);
+  self:set_height(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("height")):asFloat());
+  self:set_isHemisphere(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("isHemisphere")):asBool());
+  self:set_radialSegments(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radialSegments")):asInt());
+  self:set_radius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radius")):asFloat());
+  self:set_rings(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("rings")):asInt());
+end
+__sunaba_spatial_mesh_SphereMesh.prototype.onInit = function(self) 
+  self.res = __sunaba_Resource.new(NativeReference.new("SphereMesh"));
+  __sunaba_spatial_mesh_PrimitiveMesh.prototype.onInit(self);
+end
+
+__sunaba_spatial_mesh_SphereMesh.prototype.__class__ =  __sunaba_spatial_mesh_SphereMesh
+__sunaba_spatial_mesh_SphereMesh.__super__ = __sunaba_spatial_mesh_PrimitiveMesh
+setmetatable(__sunaba_spatial_mesh_SphereMesh.prototype,{__index=__sunaba_spatial_mesh_PrimitiveMesh.prototype})
+
+__sunaba_spatial_models_gltf_GLTFDocument.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFDocument.prototype)
+  __sunaba_spatial_models_gltf_GLTFDocument.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFDocument.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFDocument"] = __sunaba_spatial_models_gltf_GLTFDocument
+__sunaba_spatial_models_gltf_GLTFDocument.__name__ = "sunaba.spatial.models.gltf.GLTFDocument"
+__sunaba_spatial_models_gltf_GLTFDocument.exportObjectModelProperty = function(state,nodePath,godotNode,gltfNodeIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(godotNode.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(gltfNodeIndex));
+  local ref = NativeObject.callStatic("GLTFDocument", "export_object_model_property", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFObjectModelProperty.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFDocument.getSupportedGltfExtensions = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return NativeObject.callStatic("GLTFDocument", "get_supported_gltf_extensions", args):asStringArray() end;
+end
+__sunaba_spatial_models_gltf_GLTFDocument.importObjectModelProperty = function(state,jsonPointer) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(jsonPointer));
+  local ref = NativeObject.callStatic("GLTFDocument", "import_object_model_property", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFObjectModelProperty.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFDocument.registerGltfDocumentExtension = function(extension,firstPriority) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(extension.native));
+  if (firstPriority ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(firstPriority));
+  end;
+  NativeObject.callStatic("GLTFDocument", "register_gltf_document_extension", args);
+end
+__sunaba_spatial_models_gltf_GLTFDocument.unregisterGltfDocumentExtension = function(extension) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(extension.native));
+  NativeObject.callStatic("GLTFDocument", "unregister_gltf_document_extension", args);
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFDocument");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFDocument"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_fallbackImageFormat = function(self) 
+  do return self.native:get("fallback_image_format"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_fallbackImageFormat = function(self,value) 
+  self.native:set("fallback_image_format", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_fallbackImageQuality = function(self) 
+  do return self.native:get("fallback_image_quality"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_fallbackImageQuality = function(self,value) 
+  self.native:set("fallback_image_quality", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_imageFormat = function(self) 
+  do return self.native:get("image_format"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_imageFormat = function(self,value) 
+  self.native:set("image_format", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_lossyQuality = function(self) 
+  do return self.native:get("lossy_quality"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_lossyQuality = function(self,value) 
+  self.native:set("lossy_quality", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_rootNodeMode = function(self) 
+  do return self.native:get("root_node_mode"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_rootNodeMode = function(self,value) 
+  self.native:set("root_node_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.get_visibilityMode = function(self) 
+  do return self.native:get("visibility_mode"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.set_visibilityMode = function(self,value) 
+  self.native:set("visibility_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.appendFromBuffer = function(self,bytes,basePath,state,flags) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(basePath));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  if (flags ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flags));
+  end;
+  do return self.native:call("append_from_buffer", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.appendFromFile = function(self,path,state,flags,basePath) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  if (flags ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flags));
+  end;
+  if (basePath ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(basePath));
+  end;
+  do return self.native:call("append_from_file", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.appendFromScene = function(self,node,state,flags) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(node.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  if (flags ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flags));
+  end;
+  do return self.native:call("append_from_scene", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.generateBuffer = function(self,state) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  do return self.native:call("generate_buffer", args):asByteArray() end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.generateScene = function(self,state,bakeFps,trimming,removeImmutableTracks) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  if (bakeFps ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(bakeFps));
+  end;
+  if (trimming ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(trimming));
+  end;
+  if (removeImmutableTracks ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(removeImmutableTracks));
+  end;
+  local ref = self.native:call("generate_scene", args):asObject();
+  do return __sunaba_Node.new(ref) end
+end
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.writeToFilesystem = function(self,state,path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  do return self.native:call("write_to_filesystem", args):asInt() end
+end
+
+__sunaba_spatial_models_gltf_GLTFDocument.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFDocument
+__sunaba_spatial_models_gltf_GLTFDocument.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFDocument.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_fbx_FBXDocument.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_fbx_FBXDocument.prototype)
+  __sunaba_spatial_models_fbx_FBXDocument.super(self,native)
+  return self
+end
+__sunaba_spatial_models_fbx_FBXDocument.super = function(self,native) 
+  __sunaba_spatial_models_gltf_GLTFDocument.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.fbx.FBXDocument"] = __sunaba_spatial_models_fbx_FBXDocument
+__sunaba_spatial_models_fbx_FBXDocument.__name__ = "sunaba.spatial.models.fbx.FBXDocument"
+__sunaba_spatial_models_fbx_FBXDocument.prototype = _hx_e();
+__sunaba_spatial_models_fbx_FBXDocument.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("FBXDocument");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("FBXDocument"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+
+__sunaba_spatial_models_fbx_FBXDocument.prototype.__class__ =  __sunaba_spatial_models_fbx_FBXDocument
+__sunaba_spatial_models_fbx_FBXDocument.__super__ = __sunaba_spatial_models_gltf_GLTFDocument
+setmetatable(__sunaba_spatial_models_fbx_FBXDocument.prototype,{__index=__sunaba_spatial_models_gltf_GLTFDocument.prototype})
+
+__sunaba_spatial_models_gltf_GLTFState.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFState.prototype)
+  __sunaba_spatial_models_gltf_GLTFState.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFState.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFState"] = __sunaba_spatial_models_gltf_GLTFState
+__sunaba_spatial_models_gltf_GLTFState.__name__ = "sunaba.spatial.models.gltf.GLTFState"
+__sunaba_spatial_models_gltf_GLTFState.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFState.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFState");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFState"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_bakeFps = function(self) 
+  do return self.native:get("bake_fps"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_bakeFps = function(self,value) 
+  self.native:set("bake_fps", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_basePath = function(self) 
+  do return self.native:get("base_path"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_basePath = function(self,value) 
+  self.native:set("base_path", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_buffers = function(self) 
+  do return self.native:get("buffers"):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_buffers = function(self,value) 
+  self.native:set("buffers", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_copyright = function(self) 
+  do return self.native:get("copyright"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_copyright = function(self,value) 
+  self.native:set("copyright", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_createAnimations = function(self) 
+  do return self.native:get("create_animations"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_createAnimations = function(self,value) 
+  self.native:set("create_animations", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_filename = function(self) 
+  do return self.native:get("filename"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_filename = function(self,value) 
+  self.native:set("filename", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_glbData = function(self) 
+  do return self.native:get("glb_data"):asByteArray() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_glbData = function(self,value) 
+  self.native:set("glb_data", __sunaba_core__Variant_Variant_Impl_.fromByteArray(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_importAsSkeletonBones = function(self) 
+  do return self.native:get("import_as_skeleton_bones"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_importAsSkeletonBones = function(self,value) 
+  self.native:set("import_as_skeleton_bones", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_json = function(self) 
+  do return self.native:get("json"):asDictionary() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_json = function(self,value) 
+  self.native:set("json", __sunaba_core__Variant_Variant_Impl_.fromDictionary(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_majorVersion = function(self) 
+  do return self.native:get("major_version"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_majorVersion = function(self,value) 
+  self.native:set("major_version", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_minorVersion = function(self) 
+  do return self.native:get("minor_version"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_minorVersion = function(self,value) 
+  self.native:set("minor_version", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_rootNodes = function(self) 
+  do return self.native:get("root_nodes"):asIntArray64() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_rootNodes = function(self,value) 
+  self.native:set("root_nodes", __sunaba_core__Variant_Variant_Impl_.fromIntArray64(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_sceneName = function(self) 
+  do return self.native:get("scene_name"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_sceneName = function(self,value) 
+  self.native:set("scene_name", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_useNamedSkinBinds = function(self) 
+  do return self.native:get("use_named_skin_binds"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_useNamedSkinBinds = function(self,value) 
+  self.native:set("use_named_skin_binds", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.addUsedExtension = function(self,extensionName,required) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(required));
+  self.native:call("add_used_extension", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.appendDataToBuffers = function(self,data,deduplication) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(data));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(deduplication));
+  do return self.native:call("append_data_to_buffers", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.appendGltfNode = function(self,gltfNode,godotSceneNode,parentNodeIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(gltfNode.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(godotSceneNode.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(parentNodeIndex));
+  do return self.native:call("append_gltf_node", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getAccessors = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_accessors", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getAdditionalData = function(self,extensionName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  do return self.native:call("get_additional_data", args) end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getAnimationPlayersCount = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_animation_players_count", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getAnimations = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_animations", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getBufferViews = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_buffer_views", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getCameras = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_cameras", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getHandleBinaryImage = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_handle_binary_image", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getImages = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_images", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getLights = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_lights", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getMaterials = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_materials", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getMeshes = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_meshes", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getNodeIndex = function(self,sceneNode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(sceneNode.native));
+  do return self.native:call("get_node_index", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getNodes = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_nodes", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getSceneNode = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  local ref = self.native:call("get_scene_node", args):asObject();
+  do return __sunaba_Node.new(ref) end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getSkeletons = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_skeletons", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getSkins = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_skins", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getTextureSamplers = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_texture_samplers", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getTextures = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_textures", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getUniqueAnimationNames = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_unique_animation_names", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.getUniqueNames = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_unique_names", args):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setAccessors = function(self,accessors) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(accessors));
+  self.native:call("set_accessors", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setAdditionalData = function(self,extensionName,additionalData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(additionalData);
+  self.native:call("set_additional_data", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setAnimations = function(self,animations) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(animations));
+  self.native:call("set_animations", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setBufferViews = function(self,bufferViews) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(bufferViews));
+  self.native:call("set_buffer_views", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setCameras = function(self,cameras) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(cameras));
+  self.native:call("set_cameras", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setHandleBinaryImage = function(self,method) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(method));
+  self.native:call("set_handle_binary_image", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setImages = function(self,images) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(images));
+  self.native:call("set_images", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setLights = function(self,lights) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(lights));
+  self.native:call("set_lights", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setMaterials = function(self,materials) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(materials));
+  self.native:call("set_materials", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setMeshes = function(self,meshes) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(meshes));
+  self.native:call("set_meshes", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setNodes = function(self,nodes) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(nodes));
+  self.native:call("set_nodes", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setSkeletons = function(self,skeletons) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(skeletons));
+  self.native:call("set_skeletons", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setSkins = function(self,skins) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(skins));
+  self.native:call("set_skins", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setTextureSamplers = function(self,textureSamplers) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(textureSamplers));
+  self.native:call("set_texture_samplers", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setTextures = function(self,textures) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(textures));
+  self.native:call("set_textures", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setUniqueAnimationNames = function(self,uniqueAnimationNames) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(uniqueAnimationNames));
+  self.native:call("set_unique_animation_names", args);
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.setUniqueNames = function(self,uniqueNames) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromArray(uniqueNames));
+  self.native:call("set_unique_names", args);
+end
+
+__sunaba_spatial_models_gltf_GLTFState.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFState
+__sunaba_spatial_models_gltf_GLTFState.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFState.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_fbx_FBXState.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_fbx_FBXState.prototype)
+  __sunaba_spatial_models_fbx_FBXState.super(self,native)
+  return self
+end
+__sunaba_spatial_models_fbx_FBXState.super = function(self,native) 
+  __sunaba_spatial_models_gltf_GLTFState.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.fbx.FBXState"] = __sunaba_spatial_models_fbx_FBXState
+__sunaba_spatial_models_fbx_FBXState.__name__ = "sunaba.spatial.models.fbx.FBXState"
+__sunaba_spatial_models_fbx_FBXState.prototype = _hx_e();
+__sunaba_spatial_models_fbx_FBXState.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("FBXState");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("FBXState"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_fbx_FBXState.prototype.get_allowGeometryHelperNodes = function(self) 
+  do return self.native:get("allow_geometry_helper_nodes"):asBool() end
+end
+__sunaba_spatial_models_fbx_FBXState.prototype.set_allowGeometryHelperNodes = function(self,value) 
+  self.native:set("allow_geometry_helper_nodes", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+
+__sunaba_spatial_models_fbx_FBXState.prototype.__class__ =  __sunaba_spatial_models_fbx_FBXState
+__sunaba_spatial_models_fbx_FBXState.__super__ = __sunaba_spatial_models_gltf_GLTFState
+setmetatable(__sunaba_spatial_models_fbx_FBXState.prototype,{__index=__sunaba_spatial_models_gltf_GLTFState.prototype})
+
+__sunaba_spatial_models_gltf_GLTFAnimation.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFAnimation.prototype)
+  __sunaba_spatial_models_gltf_GLTFAnimation.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFAnimation"] = __sunaba_spatial_models_gltf_GLTFAnimation
+__sunaba_spatial_models_gltf_GLTFAnimation.__name__ = "sunaba.spatial.models.gltf.GLTFAnimation"
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFAnimation");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFAnimation"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.get_loop = function(self) 
+  do return self.native:get("loop"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.set_loop = function(self,value) 
+  self.native:set("loop", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.get_originalName = function(self) 
+  do return self.native:get("original_name"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.set_originalName = function(self,value) 
+  self.native:set("original_name", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.getAdditionalData = function(self,extensionName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  do return self.native:call("get_additional_data", args) end
+end
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.setAdditionalData = function(self,extensionName,additionalData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(additionalData);
+  self.native:call("set_additional_data", args);
+end
+
+__sunaba_spatial_models_gltf_GLTFAnimation.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFAnimation
+__sunaba_spatial_models_gltf_GLTFAnimation.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFAnimation.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFCamera.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFCamera.prototype)
+  __sunaba_spatial_models_gltf_GLTFCamera.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFCamera.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFCamera"] = __sunaba_spatial_models_gltf_GLTFCamera
+__sunaba_spatial_models_gltf_GLTFCamera.__name__ = "sunaba.spatial.models.gltf.GLTFCamera"
+__sunaba_spatial_models_gltf_GLTFCamera.fromDictionary = function(dictionary) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(dictionary));
+  local ref = NativeObject.callStatic("GLTFCamera", "from_dictionary", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFCamera.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFCamera.fromNode = function(cameraNode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(cameraNode);
+  local ref = NativeObject.callStatic("GLTFCamera", "from_node", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFCamera.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFCamera");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFCamera"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.get_depthFar = function(self) 
+  do return self.native:get("depth_far"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.set_depthFar = function(self,value) 
+  self.native:set("depth_far", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.get_depthNear = function(self) 
+  do return self.native:get("depth_near"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.set_depthNear = function(self,value) 
+  self.native:set("depth_near", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.get_fov = function(self) 
+  do return self.native:get("fov"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.set_fov = function(self,value) 
+  self.native:set("fov", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.get_perspective = function(self) 
+  do return self.native:get("perspective"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.set_perspective = function(self,value) 
+  self.native:set("perspective", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.get_sizeMag = function(self) 
+  do return self.native:get("size_mag"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.set_sizeMag = function(self,value) 
+  self.native:set("size_mag", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.toDictionary = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("to_dictionary", args):asDictionary() end
+end
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.toNode = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_Node.new(self.native:call("to_node", args):asObject()) end
+end
+
+__sunaba_spatial_models_gltf_GLTFCamera.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFCamera
+__sunaba_spatial_models_gltf_GLTFCamera.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFCamera.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFDocumentExtension.prototype)
+  __sunaba_spatial_models_gltf_GLTFDocumentExtension.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFDocumentExtension"] = __sunaba_spatial_models_gltf_GLTFDocumentExtension
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.__name__ = "sunaba.spatial.models.gltf.GLTFDocumentExtension"
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFDocumentExtension");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFDocumentExtension"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFDocumentExtension
+__sunaba_spatial_models_gltf_GLTFDocumentExtension.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFDocumentExtension.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFLight.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFLight.prototype)
+  __sunaba_spatial_models_gltf_GLTFLight.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFLight.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFLight"] = __sunaba_spatial_models_gltf_GLTFLight
+__sunaba_spatial_models_gltf_GLTFLight.__name__ = "sunaba.spatial.models.gltf.GLTFLight"
+__sunaba_spatial_models_gltf_GLTFLight.fromDictionary = function(dictionary) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(dictionary));
+  local ref = NativeObject.callStatic("GLTFLight", "from_dictionary", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFLight.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFLight.fromNode = function(lightNode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(lightNode);
+  local ref = NativeObject.callStatic("GLTFLight", "from_node", args):asReference();
+  do return __sunaba_spatial_models_gltf_GLTFLight.new(ref) end;
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFLight.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFLight");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFLight"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_color = function(self) 
+  do return self.native:get("color"):asColor() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_color = function(self,value) 
+  self.native:set("color", __sunaba_core__Variant_Variant_Impl_.fromColor(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_innerConeAngle = function(self) 
+  do return self.native:get("inner_cone_angle"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_innerConeAngle = function(self,value) 
+  self.native:set("inner_cone_angle", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_intensity = function(self) 
+  do return self.native:get("intensity"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_intensity = function(self,value) 
+  self.native:set("intensity", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_lightType = function(self) 
+  do return self.native:get("light_type"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_lightType = function(self,value) 
+  self.native:set("light_type", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_outerConeAngle = function(self) 
+  do return self.native:get("outer_cone_angle"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_outerConeAngle = function(self,value) 
+  self.native:set("outer_cone_angle", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.get_range = function(self) 
+  do return self.native:get("range"):asFloat() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.set_range = function(self,value) 
+  self.native:set("range", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.getAdditionalData = function(self,extensionName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  do return self.native:call("get_additional_data", args) end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.setAdditionalData = function(self,extensionName,additionalData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(additionalData);
+  self.native:call("set_additional_data", args);
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.toDictionary = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("to_dictionary", args):asDictionary() end
+end
+__sunaba_spatial_models_gltf_GLTFLight.prototype.toNode = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_Node.new(self.native:call("to_node", args):asObject()) end
+end
+
+__sunaba_spatial_models_gltf_GLTFLight.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFLight
+__sunaba_spatial_models_gltf_GLTFLight.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFLight.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFMesh.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFMesh.prototype)
+  __sunaba_spatial_models_gltf_GLTFMesh.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFMesh.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFMesh"] = __sunaba_spatial_models_gltf_GLTFMesh
+__sunaba_spatial_models_gltf_GLTFMesh.__name__ = "sunaba.spatial.models.gltf.GLTFMesh"
+__sunaba_spatial_models_gltf_GLTFMesh.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFMesh");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFMesh"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.get_blendWeights = function(self) 
+  do return self.native:get("blend_weights"):asFloatArray64() end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.set_blendWeights = function(self,value) 
+  self.native:set("blend_weights", __sunaba_core__Variant_Variant_Impl_.fromFloatArray64(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.get_instanceMaterials = function(self) 
+  do return self.native:get("instance_materials"):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.set_instanceMaterials = function(self,value) 
+  self.native:set("instance_materials", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.get_mesh = function(self) 
+  local ref = self.native:get("mesh"):asReference();
+  do return __sunaba_spatial_mesh_ImporterMesh.new(ref) end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.set_mesh = function(self,value) 
+  self.native:set("mesh", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.get_originalName = function(self) 
+  do return self.native:get("original_name"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.set_originalName = function(self,value) 
+  self.native:set("original_name", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.getAdditionalData = function(self,extensionName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  do return self.native:call("get_additional_data", args) end
+end
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.setAdditionalData = function(self,extensionName,additionalData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(additionalData);
+  self.native:call("set_additional_data", args);
+end
+
+__sunaba_spatial_models_gltf_GLTFMesh.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFMesh
+__sunaba_spatial_models_gltf_GLTFMesh.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFMesh.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFNode.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFNode.prototype)
+  __sunaba_spatial_models_gltf_GLTFNode.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFNode.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFNode"] = __sunaba_spatial_models_gltf_GLTFNode
+__sunaba_spatial_models_gltf_GLTFNode.__name__ = "sunaba.spatial.models.gltf.GLTFNode"
+__sunaba_spatial_models_gltf_GLTFNode.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFNode.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFNode");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("GLTFNode"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_camera = function(self) 
+  do return self.native:get("camera"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_camera = function(self,value) 
+  self.native:set("camera", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_children = function(self) 
+  do return self.native:get("children"):asIntArray64() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_children = function(self,value) 
+  self.native:set("children", __sunaba_core__Variant_Variant_Impl_.fromIntArray64(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_height = function(self) 
+  do return self.native:get("height"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_height = function(self,value) 
+  self.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_light = function(self) 
+  do return self.native:get("light"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_light = function(self,value) 
+  self.native:set("light", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_mesh = function(self) 
+  do return self.native:get("mesh"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_mesh = function(self,value) 
+  self.native:set("mesh", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_originalName = function(self) 
+  do return self.native:get("original_name"):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_originalName = function(self,value) 
+  self.native:set("original_name", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_parent = function(self) 
+  do return self.native:get("parent"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_parent = function(self,value) 
+  self.native:set("parent", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_position = function(self) 
+  do return self.native:get("position"):asVector3() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_position = function(self,value) 
+  self.native:set("position", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_rotation = function(self) 
+  do return self.native:get("rotation"):asQuaternion() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_rotation = function(self,value) 
+  self.native:set("rotation", __sunaba_core__Variant_Variant_Impl_.fromQuaternion(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_scale = function(self) 
+  do return self.native:get("scale"):asVector3() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_scale = function(self,value) 
+  self.native:set("scale", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_skeleton = function(self) 
+  do return self.native:get("skeleton"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_skeleton = function(self,value) 
+  self.native:set("skeleton", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_skin = function(self) 
+  do return self.native:get("skin"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_skin = function(self,value) 
+  self.native:set("skin", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.get_visible = function(self) 
+  do return self.native:get("visible"):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.set_visible = function(self,value) 
+  self.native:set("visible", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.appendChildIndex = function(self,childIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(childIndex));
+  self.native:call("append_child_index", args);
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.getAdditionalData = function(self,extensionName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  do return self.native:call("get_additional_data", args) end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.getSceneNodePath = function(self,gltfState,handleSkeletons) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(gltfState.native));
+  if (handleSkeletons ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(handleSkeletons));
+  end;
+  do return self.native:call("get_scene_node_path", args):asString() end
+end
+__sunaba_spatial_models_gltf_GLTFNode.prototype.setAdditionalData = function(self,extensionName,additionalData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
+  args:append(additionalData);
+  self.native:call("set_additional_data", args);
+end
+
+__sunaba_spatial_models_gltf_GLTFNode.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFNode
+__sunaba_spatial_models_gltf_GLTFNode.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_models_gltf_GLTFNode.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype)
+  __sunaba_spatial_models_gltf_GLTFObjectModelProperty.super(self,native)
+  return self
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.super = function(self,native) 
+  __sunaba_core_Reference.super(self,native);
+end
+_hxClasses["sunaba.spatial.models.gltf.GLTFObjectModelProperty"] = __sunaba_spatial_models_gltf_GLTFObjectModelProperty
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.__name__ = "sunaba.spatial.models.gltf.GLTFObjectModelProperty"
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype = _hx_e();
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("GLTFObjectModelProperty");
+  end;
+  self.native = _native;
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_jsonPointers = function(self) 
+  do return self.native:get("json_pointers"):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_jsonPointers = function(self,value) 
+  self.native:set("json_pointers", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_nodePaths = function(self) 
+  do return self.native:get("node_paths"):asArrayList() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_nodePaths = function(self,value) 
+  self.native:set("node_paths", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_objectModelType = function(self) 
+  do return self.native:get("object_model_type"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_objectModelType = function(self,value) 
+  self.native:set("object_model_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_variantType = function(self) 
+  do return self.native:get("variant_type"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_variantType = function(self,value) 
+  self.native:set("variant_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.appendNodePath = function(self,nodePath) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
+  self.native:call("append_node_path", args);
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.appendPathToProperty = function(self,nodePath,propName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(propName));
+  self.native:call("append_path_to_property", args);
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.getAccessorType = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_accessor_type", args):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.hasJsonPointers = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("has_json_pointers", args):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.hasNodePaths = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("has_node_paths", args):asBool() end
+end
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.setTypes = function(self,variantType,objModelType) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(variantType));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(objModelType));
+  self.native:call("set_types", args);
+end
+
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFObjectModelProperty
+__sunaba_spatial_models_gltf_GLTFObjectModelProperty.__super__ = __sunaba_core_Reference
+setmetatable(__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype,{__index=__sunaba_core_Reference.prototype})
+
+__sunaba_spatial_physics_ICollisionObject.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_ICollisionObject.prototype)
+  __sunaba_spatial_physics_ICollisionObject.super(self)
+  return self
+end
+__sunaba_spatial_physics_ICollisionObject.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.physics.ICollisionObject"] = __sunaba_spatial_physics_ICollisionObject
+__sunaba_spatial_physics_ICollisionObject.__name__ = "sunaba.spatial.physics.ICollisionObject"
+__sunaba_spatial_physics_ICollisionObject.prototype = _hx_e();
+__sunaba_spatial_physics_ICollisionObject.prototype.node= nil;
+__sunaba_spatial_physics_ICollisionObject.prototype.get_collisionLayer = function(self) 
+  do return self.node.native:get("collision_layer"):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_collisionLayer = function(self,value) 
+  self.node.native:set("collision_layer", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.get_collisionMask = function(self) 
+  do return self.node.native:get("collision_mask"):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_collisionMask = function(self,value) 
+  self.node.native:set("collision_mask", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.get_collisionPriority = function(self) 
+  do return self.node.native:get("collision_priority"):asFloat() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_collisionPriority = function(self,value) 
+  self.node.native:set("collision_priority", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.get_disableMode = function(self) 
+  do return self.node.native:get("disable_mode"):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_disableMode = function(self,value) 
+  self.node.native:set("disable_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.get_inputCaptureOnDrag = function(self) 
+  do return self.node.native:get("input_capture_on_drag"):asBool() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_inputCaptureOnDrag = function(self,value) 
+  self.node.native:set("input_capture_on_drag", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.get_inputRayPickable = function(self) 
+  do return self.node.native:get("input_ray_pickable"):asBool() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.set_inputRayPickable = function(self,value) 
+  self.node.native:set("input_ray_pickable", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.createShapeOwner = function(self,owner) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(owner));
+  do return self.node.native:call("create_shape_owner", args):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.getCollisionLayerValue = function(self,layerNumber) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(layerNumber));
+  do return self.node.native:call("get_collision_layer_value", args):asBool() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.getCollisionMaskValue = function(self,layerNumber) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(layerNumber));
+  do return self.node.native:call("get_collision_mask_value", args):asBool() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.getShapeOwners = function(self) 
+  do return __sunaba_core__Variant_Variant_Impl_.toIntArray32(self.node.native:call("get_shape_owners", __sunaba_core__ArrayList_ArrayList_Impl_._new())) end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.isShapeOwnerDisabled = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  do return self.node.native:call("is_shape_owner_disabled", args):asBool() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.removeShapeOwner = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  self.node.native:call("remove_shape_owner", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.setCollisionLayerValue = function(self,layerNumber,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(layerNumber));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  self.node.native:call("set_collision_layer_value", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.setCollisionMaskValue = function(self,layerNumber,value) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(layerNumber));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  self.node.native:call("set_collision_mask_value", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeFindOwner = function(self,shapeIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(shapeIdx));
+  do return self.node.native:call("shape_find_owner", args):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerAddShapeNative = function(self,ownerId,shape) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(shape));
+  self.node.native:call("shape_owner_add_shape", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerClearShapes = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  self.node.native:call("shape_owner_clear_shapes", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerGetOwner = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  do return self.node.native:call("shape_owner_clear_shapes", args):asObject() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerGetShapeNative = function(self,ownerId,shapeId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(shapeId));
+  do return self.node.native:call("shape_owner_get_shape", args):asReference() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerGetShapeCount = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  do return self.node.native:call("shape_owner_get_shape_count", args):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerGetShapeIndex = function(self,ownerId,shapeId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(shapeId));
+  do return self.node.native:call("shape_owner_get_shape_index", args):asInt() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerGetTransform = function(self,ownerId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  do return self.node.native:call("shape_owner_get_transform", args):asTransform3D() end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerRemoveShape = function(self,ownerId,shapeId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(shapeId));
+  self.node.native:call("shape_owner_remove_shape", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerSetDisabled = function(self,ownerId,disabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(disabled));
+  self.node.native:call("shape_owner_set_disabled", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.shapeOwnerSetTransform = function(self,ownerId,transform) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ownerId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(transform));
+  self.node.native:call("shape_owner_set_transform", args);
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("collisionLayer"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_collisionLayer()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("collisionMask"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_collisionMask()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("collisionPriority"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_collisionPriority()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("disableMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_disableMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("inputCaptureOnDrag"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_inputCaptureOnDrag()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("inputRayPickable"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_inputRayPickable()));
+  do return data end
+end
+__sunaba_spatial_physics_ICollisionObject.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_collisionLayer(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("collisionLayer")):asInt());
+  self:set_collisionMask(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("collisionMask")):asInt());
+  self:set_collisionPriority(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("collisionPriority")):asFloat());
+  self:set_disableMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("disableMode")):asInt());
+  self:set_inputCaptureOnDrag(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("inputCaptureOnDrag")):asBool());
+  self:set_inputRayPickable(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("inputRayPickable")):asBool());
+end
+
+__sunaba_spatial_physics_ICollisionObject.prototype.__class__ =  __sunaba_spatial_physics_ICollisionObject
+__sunaba_spatial_physics_ICollisionObject.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_physics_ICollisionObject.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_physics_IPhysicsBody.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_IPhysicsBody.prototype)
+  __sunaba_spatial_physics_IPhysicsBody.super(self)
+  return self
+end
+__sunaba_spatial_physics_IPhysicsBody.super = function(self) 
+  __sunaba_spatial_physics_ICollisionObject.super(self);
+end
+_hxClasses["sunaba.spatial.physics.IPhysicsBody"] = __sunaba_spatial_physics_IPhysicsBody
+__sunaba_spatial_physics_IPhysicsBody.__name__ = "sunaba.spatial.physics.IPhysicsBody"
+__sunaba_spatial_physics_IPhysicsBody.prototype = _hx_e();
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockAngularX = function(self) 
+  do return self.node.native:get("axis_lock_angular_x"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockAngularX = function(self,value) 
+  self.node.native:set("axis_lock_angular_x", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockAngularY = function(self) 
+  do return self.node.native:get("axis_lock_angular_y"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockAngularY = function(self,value) 
+  self.node.native:set("axis_lock_angular_y", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockAngularZ = function(self) 
+  do return self.node.native:get("axis_lock_angular_z"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockAngularZ = function(self,value) 
+  self.node.native:set("axis_lock_angular_z", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockLinearX = function(self) 
+  do return self.node.native:get("axis_lock_linear_x"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockLinearX = function(self,value) 
+  self.node.native:set("axis_lock_linear_x", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockLinearY = function(self) 
+  do return self.node.native:get("axis_lock_linear_y"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockLinearY = function(self,value) 
+  self.node.native:set("axis_lock_linear_y", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.get_axisLockLinearZ = function(self) 
+  do return self.node.native:get("axis_lock_linear_z"):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.set_axisLockLinearZ = function(self,value) 
+  self.node.native:set("axis_lock_linear_z", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.addCollisionExceptionWith = function(self,body) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromObject(body.node));
+  self.node.native:call("add_collision_exception_with", args);
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.getAxisLock = function(self,axis) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(axis));
+  do return self.node.native:call("get_axis_lock", args):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.getCollisionExceptions = function(self) 
+  local nativeArr = self.node.native:call("get_collision_exceptions", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asArrayList();
+  local collisionExceptions = Array.new();
+  local getPhysBodyFromEntity = function(entity) 
+    local inheritsPhysicsBody = nil;
+    inheritsPhysicsBody = function(bClass) 
+      local superClass = Type.getSuperClass(bClass);
+      if (superClass == __sunaba_spatial_physics_IPhysicsBody) then 
+        do return true end;
+      else
+        if (inheritsPhysicsBody(superClass) == true) then 
+          do return true end;
+        else
+          do return false end;
+        end;
+      end;
+    end;
+    local components = entity:getConponents();
+    local _g = 0;
+    while (_g < components.length) do _hx_do_first_1 = false;
+      
+      local component = components[_g];
+      _g = _g + 1;
+      if (inheritsPhysicsBody(Type.getClass(component))) then 
+        local physicsBody = component;
+        local physBodyFound = false;
+        local _g = 0;
+        local _g1 = nativeArr:size();
+        while (_g < _g1) do _hx_do_first_2 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local nativePhysBody = nativeArr:get(i):asObject();
+          if (physicsBody.node.native:eq(nativePhysBody)) then 
+            collisionExceptions:push(physicsBody);
+            physBodyFound = true;
+            break;
+          end;
+        end;
+        if (physBodyFound == true) then 
+          break;
+        end;
+      end;
+    end;
+    local _g = 0;
+    local _g1 = entity:getChildCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local child = entity:getChild(i);
+      getPhysBodyFromEntity(child);
+    end;
+  end;
+  local _g = 0;
+  local _g1 = self:get_scene():getEntityCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local entity = self:get_scene():getEntity(i);
+    getPhysBodyFromEntity(entity);
+  end;
+  do return collisionExceptions end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.getGravity = function(self) 
+  do return self.node.native:call("get_gravity", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.moveAndCollide = function(self,motion,testOnly,safeMargin,recoveryAsCollision,maxCollisions) 
+  if (maxCollisions == nil) then 
+    maxCollisions = 1;
+  end;
+  if (recoveryAsCollision == nil) then 
+    recoveryAsCollision = false;
+  end;
+  if (safeMargin == nil) then 
+    safeMargin = 0.001;
+  end;
+  if (testOnly == nil) then 
+    testOnly = false;
+  end;
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(motion));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(testOnly));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(safeMargin));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(recoveryAsCollision));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(maxCollisions));
+  do return __sunaba_spatial_physics_KinematicCollision3D.new(self.node.native:call("move_and_collide", args):asReference()) end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.removeCollisionExceptionWith = function(self,body) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromObject(body.node));
+  self.node.native:call("remove_collision_exception_with", args);
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.setAxisLock = function(self,axis,lock) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(axis));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(lock));
+  self.node.native:call("set_axis_lock", args);
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.testMove = function(self,from,motion,collision,safeMargin,recoveryAsCollision,maxCollisions) 
+  if (maxCollisions == nil) then 
+    maxCollisions = 1;
+  end;
+  if (recoveryAsCollision == nil) then 
+    recoveryAsCollision = false;
+  end;
+  if (safeMargin == nil) then 
+    safeMargin = 0.001;
+  end;
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromTransform3D(from));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(motion));
+  if (collision ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(collision.native));
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(safeMargin));
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(recoveryAsCollision));
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(maxCollisions));
+  end;
+  do return self.node.native:call("test_move", args):asBool() end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_ICollisionObject.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularX"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockAngularX()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularY"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockAngularY()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularZ"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockAngularZ()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearX"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockLinearX()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearY"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockLinearY()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearZ"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_axisLockLinearZ()));
+  do return data end
+end
+__sunaba_spatial_physics_IPhysicsBody.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_ICollisionObject.prototype.setData(self,data);
+  self:set_axisLockAngularX(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularX")):asBool());
+  self:set_axisLockAngularY(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularY")):asBool());
+  self:set_axisLockAngularZ(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockAngularZ")):asBool());
+  self:set_axisLockLinearX(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearX")):asBool());
+  self:set_axisLockLinearY(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearY")):asBool());
+  self:set_axisLockLinearZ(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("axisLockLinearZ")):asBool());
+end
+
+__sunaba_spatial_physics_IPhysicsBody.prototype.__class__ =  __sunaba_spatial_physics_IPhysicsBody
+__sunaba_spatial_physics_IPhysicsBody.__super__ = __sunaba_spatial_physics_ICollisionObject
+setmetatable(__sunaba_spatial_physics_IPhysicsBody.prototype,{__index=__sunaba_spatial_physics_ICollisionObject.prototype})
+
+__sunaba_spatial_physics_StaticBody.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_StaticBody.prototype)
+  __sunaba_spatial_physics_StaticBody.super(self)
+  return self
+end
+__sunaba_spatial_physics_StaticBody.super = function(self) 
+  __sunaba_spatial_physics_IPhysicsBody.super(self);
+end
+_hxClasses["sunaba.spatial.physics.StaticBody"] = __sunaba_spatial_physics_StaticBody
+__sunaba_spatial_physics_StaticBody.__name__ = "sunaba.spatial.physics.StaticBody"
+__sunaba_spatial_physics_StaticBody.prototype = _hx_e();
+__sunaba_spatial_physics_StaticBody.prototype.get_constantAngularVelocity = function(self) 
+  do return self.node.native:get("constant_angular_velocity"):asVector3() end
+end
+__sunaba_spatial_physics_StaticBody.prototype.set_constantAngularVelocity = function(self,value) 
+  self.node.native:set("constant_angular_velocity", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_StaticBody.prototype.get_constantLinearVelocity = function(self) 
+  do return self.node.native:get("constant_linear_velocity"):asVector3() end
+end
+__sunaba_spatial_physics_StaticBody.prototype.set_constantLinearVelocity = function(self,value) 
+  self.node.native:set("constant_linear_velocity", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_StaticBody.prototype.get_physicsMaterialOverride = function(self) 
+  do return __sunaba_spatial_physics_PhysicsMaterial.new(self.node.native:get("physics_material_override"):asReference()) end
+end
+__sunaba_spatial_physics_StaticBody.prototype.set_physicsMaterialOverride = function(self,value) 
+  self.node.native:set("physics_material_override", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_physics_StaticBody.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_IPhysicsBody.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("constantAngularVelocity"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_constantAngularVelocity()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("constantLinearVelocity"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_constantLinearVelocity()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("physicsMaterialOverride"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(self:get_physicsMaterialOverride().native))));
+  do return data end
+end
+__sunaba_spatial_physics_StaticBody.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_IPhysicsBody.prototype.setData(self,data);
+  self:set_constantAngularVelocity(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("constantAngularVelocity")):asDictionary()):asVector3());
+  self:set_constantLinearVelocity(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("constantLinearVelocity")):asDictionary()):asVector3());
+  self:set_physicsMaterialOverride(__sunaba_spatial_physics_PhysicsMaterial.new(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("physicsMaterialOverride")):asDictionary()):asReference()));
+end
+__sunaba_spatial_physics_StaticBody.prototype.onInit = function(self) 
+  self.editorIconPath = "assets://FugueIcons/icons/building.png";
+  self.node = __sunaba_Node.new(NativeObject.new("StaticBody3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+
+__sunaba_spatial_physics_StaticBody.prototype.__class__ =  __sunaba_spatial_physics_StaticBody
+__sunaba_spatial_physics_StaticBody.__super__ = __sunaba_spatial_physics_IPhysicsBody
+setmetatable(__sunaba_spatial_physics_StaticBody.prototype,{__index=__sunaba_spatial_physics_IPhysicsBody.prototype})
+
+__sunaba_spatial_physics_AnimatableBody.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_AnimatableBody.prototype)
+  __sunaba_spatial_physics_AnimatableBody.super(self)
+  return self
+end
+__sunaba_spatial_physics_AnimatableBody.super = function(self) 
+  __sunaba_spatial_physics_StaticBody.super(self);
+end
+_hxClasses["sunaba.spatial.physics.AnimatableBody"] = __sunaba_spatial_physics_AnimatableBody
+__sunaba_spatial_physics_AnimatableBody.__name__ = "sunaba.spatial.physics.AnimatableBody"
+__sunaba_spatial_physics_AnimatableBody.prototype = _hx_e();
+__sunaba_spatial_physics_AnimatableBody.prototype.get_syncToPhysics = function(self) 
+  do return self.node.native:get("sync_to_physics"):asBool() end
+end
+__sunaba_spatial_physics_AnimatableBody.prototype.set_syncToPhysics = function(self,value) 
+  self.node.native:set("sync_to_physics", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_AnimatableBody.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_StaticBody.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("syncToPhysics"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_syncToPhysics()));
+  do return data end
+end
+__sunaba_spatial_physics_AnimatableBody.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_StaticBody.prototype.setData(self,data);
+  self:set_syncToPhysics(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("syncToPhysics")):asBool());
+end
+__sunaba_spatial_physics_AnimatableBody.prototype.onInit = function(self) 
+  self.editorIconPath = "assets://FugueIcons/icons/building.png";
+  self.node = __sunaba_Node.new(NativeObject.new("AnimatableBody3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+
+__sunaba_spatial_physics_AnimatableBody.prototype.__class__ =  __sunaba_spatial_physics_AnimatableBody
+__sunaba_spatial_physics_AnimatableBody.__super__ = __sunaba_spatial_physics_StaticBody
+setmetatable(__sunaba_spatial_physics_AnimatableBody.prototype,{__index=__sunaba_spatial_physics_StaticBody.prototype})
+
+__sunaba_spatial_physics_ICollisionShape.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_ICollisionShape.prototype)
+  __sunaba_spatial_physics_ICollisionShape.super(self)
+  return self
+end
+__sunaba_spatial_physics_ICollisionShape.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.physics.ICollisionShape"] = __sunaba_spatial_physics_ICollisionShape
+__sunaba_spatial_physics_ICollisionShape.__name__ = "sunaba.spatial.physics.ICollisionShape"
+__sunaba_spatial_physics_ICollisionShape.prototype = _hx_e();
+__sunaba_spatial_physics_ICollisionShape.prototype.native= nil;
+__sunaba_spatial_physics_ICollisionShape.prototype.node= nil;
+__sunaba_spatial_physics_ICollisionShape.prototype.get_customSolverBias = function(self) 
+  do return self.native:get("custom_solver_bias"):asFloat() end
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.set_customSolverBias = function(self,value) 
+  self.native:set("custom_solver_bias", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.get_margin = function(self) 
+  do return self.native:get("margin"):asFloat() end
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.set_margin = function(self,value) 
+  self.native:set("margin", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("customSolverBias"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_customSolverBias()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("margin"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_margin()));
+  do return data end
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_customSolverBias(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("customSolverBias")):asFloat());
+  self:set_margin(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("margin")):asFloat());
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.onInit = function(self) 
+  local collisionObject = nil;
+  local characterBody = self:getComponent_sunaba_spatial_physics_CharacterBody(__sunaba_spatial_physics_CharacterBody);
+  if (characterBody ~= nil) then 
+    collisionObject = characterBody;
+  else
+    local rigidBody = self:getComponent_sunaba_spatial_physics_RigidBody(__sunaba_spatial_physics_RigidBody);
+    if (rigidBody ~= nil) then 
+      collisionObject = rigidBody;
+    else
+      local animatableBody = self:getComponent_sunaba_spatial_physics_AnimatableBody(__sunaba_spatial_physics_AnimatableBody);
+      if (animatableBody ~= nil) then 
+        collisionObject = animatableBody;
+      else
+        local staticBody = self:getComponent_sunaba_spatial_physics_StaticBody(__sunaba_spatial_physics_StaticBody);
+        if (staticBody ~= nil) then 
+          collisionObject = staticBody;
+        end;
+      end;
+    end;
+  end;
+  if (collisionObject ~= nil) then 
+    self.node = __sunaba_Node.new(NativeObject.new("CollisionShape3D"));
+    self.node:set_name("CollisionShape");
+    collisionObject.node:addChild(self.node);
+  end;
+end
+__sunaba_spatial_physics_ICollisionShape.prototype.setShape = function(self) 
+  self.node.native:set("shape", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native));
+end
+
+__sunaba_spatial_physics_ICollisionShape.prototype.__class__ =  __sunaba_spatial_physics_ICollisionShape
+__sunaba_spatial_physics_ICollisionShape.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_physics_ICollisionShape.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_physics_BoxShape.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_BoxShape.prototype)
+  __sunaba_spatial_physics_BoxShape.super(self)
+  return self
+end
+__sunaba_spatial_physics_BoxShape.super = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.super(self);
+end
+_hxClasses["sunaba.spatial.physics.BoxShape"] = __sunaba_spatial_physics_BoxShape
+__sunaba_spatial_physics_BoxShape.__name__ = "sunaba.spatial.physics.BoxShape"
+__sunaba_spatial_physics_BoxShape.prototype = _hx_e();
+__sunaba_spatial_physics_BoxShape.prototype.get_size = function(self) 
+  do return self.native:get("size"):asVector3() end
+end
+__sunaba_spatial_physics_BoxShape.prototype.set_size = function(self,value) 
+  self.native:set("size", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_BoxShape.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_ICollisionShape.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("size"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_size()))));
+  do return data end
+end
+__sunaba_spatial_physics_BoxShape.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.setData(self,data);
+  self:set_size(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("size")):asDictionary()):asVector3());
+end
+__sunaba_spatial_physics_BoxShape.prototype.onInit = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.onInit(self);
+  self.native = NativeReference.new("BoxShape3D");
+  self.node.native:set("shape", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native));
+end
+
+__sunaba_spatial_physics_BoxShape.prototype.__class__ =  __sunaba_spatial_physics_BoxShape
+__sunaba_spatial_physics_BoxShape.__super__ = __sunaba_spatial_physics_ICollisionShape
+setmetatable(__sunaba_spatial_physics_BoxShape.prototype,{__index=__sunaba_spatial_physics_ICollisionShape.prototype})
+
+__sunaba_spatial_physics_CapsuleShape.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_CapsuleShape.prototype)
+  __sunaba_spatial_physics_CapsuleShape.super(self)
+  return self
+end
+__sunaba_spatial_physics_CapsuleShape.super = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.super(self);
+end
+_hxClasses["sunaba.spatial.physics.CapsuleShape"] = __sunaba_spatial_physics_CapsuleShape
+__sunaba_spatial_physics_CapsuleShape.__name__ = "sunaba.spatial.physics.CapsuleShape"
+__sunaba_spatial_physics_CapsuleShape.prototype = _hx_e();
+__sunaba_spatial_physics_CapsuleShape.prototype.get_height = function(self) 
+  do return self.native:get("height"):asFloat() end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.set_height = function(self,value) 
+  self.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.get_midHeight = function(self) 
+  do return self.native:get("mid_height"):asFloat() end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.set_midHeight = function(self,value) 
+  self.native:set("mid_height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.get_radius = function(self) 
+  do return self.native:get("radius"):asFloat() end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.set_radius = function(self,value) 
+  self.native:set("radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_ICollisionShape.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("height"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_height()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_radius()));
+  do return data end
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.setData(self,data);
+  self:set_height(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("height")):asFloat());
+  self:set_radius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radius")):asFloat());
+end
+__sunaba_spatial_physics_CapsuleShape.prototype.onInit = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.onInit(self);
+  self.native = NativeReference.new("CapsuleShape3D");
+  self.node.native:set("shape", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native));
+end
+
+__sunaba_spatial_physics_CapsuleShape.prototype.__class__ =  __sunaba_spatial_physics_CapsuleShape
+__sunaba_spatial_physics_CapsuleShape.__super__ = __sunaba_spatial_physics_ICollisionShape
+setmetatable(__sunaba_spatial_physics_CapsuleShape.prototype,{__index=__sunaba_spatial_physics_ICollisionShape.prototype})
+
+__sunaba_spatial_physics_CharacterBody.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_CharacterBody.prototype)
+  __sunaba_spatial_physics_CharacterBody.super(self)
+  return self
+end
+__sunaba_spatial_physics_CharacterBody.super = function(self) 
+  __sunaba_spatial_physics_IPhysicsBody.super(self);
+end
+_hxClasses["sunaba.spatial.physics.CharacterBody"] = __sunaba_spatial_physics_CharacterBody
+__sunaba_spatial_physics_CharacterBody.__name__ = "sunaba.spatial.physics.CharacterBody"
+__sunaba_spatial_physics_CharacterBody.prototype = _hx_e();
+__sunaba_spatial_physics_CharacterBody.prototype.get_floorBlockOnWall = function(self) 
+  do return self.node.native:get("floor_block_on_wall"):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_floorBlockOnWall = function(self,value) 
+  self.node.native:set("floor_block_on_wall", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_floorConstantSpeed = function(self) 
+  do return self.node.native:get("floor_constant_speed"):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_floorConstantSpeed = function(self,value) 
+  self.node.native:set("floor_constant_speed", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_floorMaxAngle = function(self) 
+  do return self.node.native:get("floor_max_angle"):asFloat() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_floorMaxAngle = function(self,value) 
+  self.node.native:set("floor_max_angle", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_floorSnapLength = function(self) 
+  do return self.node.native:get("floor_snap_length"):asFloat() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_floorSnapLength = function(self,value) 
+  self.node.native:set("floor_snap_length", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_floorStopOnSlope = function(self) 
+  do return self.node.native:get("floor_stop_on_slope"):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_floorStopOnSlope = function(self,value) 
+  self.node.native:set("floor_stop_on_slope", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_maxSlides = function(self) 
+  do return self.node.native:get("max_slides"):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_maxSlides = function(self,value) 
+  self.node.native:set("max_slides", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_motionMode = function(self) 
+  do return self.node.native:get("motion_mode"):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_motionMode = function(self,value) 
+  self.node.native:set("motion_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_platformFloorLayers = function(self) 
+  do return self.node.native:get("platform_floor_layers"):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_platformFloorLayers = function(self,value) 
+  self.node.native:set("platform_floor_layers", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_platformOnLeave = function(self) 
+  do return self.node.native:get("platform_on_leave"):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_platformOnLeave = function(self,value) 
+  self.node.native:set("platform_on_leave", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_platformWallLayers = function(self) 
+  do return self.node.native:get("platform_wall_layers"):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_platformWallLayers = function(self,value) 
+  self.node.native:set("platform_wall_layers", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_safeMargin = function(self) 
+  do return self.node.native:get("safe_margin"):asFloat() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_safeMargin = function(self,value) 
+  self.node.native:set("safe_margin", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_slideOnCeiling = function(self) 
+  do return self.node.native:get("slide_on_ceiling"):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_slideOnCeiling = function(self,value) 
+  self.node.native:set("slide_on_ceiling", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_upDirection = function(self) 
+  do return self.node.native:get("up_direction"):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_upDirection = function(self,value) 
+  self.node.native:set("up_direction", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_velocity = function(self) 
+  do return self.node.native:get("velocity"):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_velocity = function(self,value) 
+  self.node.native:set("velocity", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.get_wallMinSlideAngle = function(self) 
+  do return self.node.native:get("wall_min_slide_angle"):asFloat() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.set_wallMinSlideAngle = function(self,value) 
+  self.node.native:set("wall_min_slide_angle", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.applyFloorSnap = function(self) 
+  self.node.native:call("apply_floor_snap", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getFloorAngle = function(self,upDirection) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (upDirection ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(upDirection));
+  end;
+  do return self.node.native:call("get_floor_angle", args):asFloat() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getFloorNormal = function(self) 
+  do return self.node.native:call("get_floor_normal", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getLastMotion = function(self) 
+  do return self.node.native:call("get_last_motion", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getLastSlideCollision = function(self) 
+  do return __sunaba_spatial_physics_KinematicCollision3D.new(self.node.native:call("get_last_slide_collision", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asReference()) end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getPlatformAngularVelocity = function(self) 
+  do return self.node.native:call("get_platform_angular_velocity", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getPlatformVelocity = function(self) 
+  do return self.node.native:call("get_platform_velocity", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getPositionDelta = function(self) 
+  do return self.node.native:call("get_platform_velocity", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getRealVelocity = function(self) 
+  do return self.node.native:call("get_real_velocity", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getSlideCollision = function(self,slideIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(slideIdx));
+  do return __sunaba_spatial_physics_KinematicCollision3D.new(self.node.native:call("get_slide_collision", args):asReference()) end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getSlideCollisionCount = function(self) 
+  do return self.node.native:call("get_slide_collision_count", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asInt() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getWallNormal = function(self) 
+  do return self.node.native:call("get_wall_normal", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asVector3() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnCeiling = function(self) 
+  do return self.node.native:call("is_on_ceiling", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnCeilingOnly = function(self) 
+  do return self.node.native:call("is_on_ceiling_only", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnFloor = function(self) 
+  do return self.node.native:call("is_on_floor", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnFloorOnly = function(self) 
+  do return self.node.native:call("is_on_floor_only", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnWall = function(self) 
+  do return self.node.native:call("is_on_wall", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.isOnWallOnly = function(self) 
+  do return self.node.native:call("is_on_wall_only", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.moveAndSlide = function(self) 
+  do return self.node.native:call("move_and_slide", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBool() end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_IPhysicsBody.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("floorBlockOnWall"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_floorBlockOnWall()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("floorConstantSpeed"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_floorConstantSpeed()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("floorMaxAngle"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_floorMaxAngle()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("floorSnapLength"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_floorSnapLength()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("floorStopOnSlope"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_floorStopOnSlope()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("maxSlides"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_maxSlides()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("motionMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_motionMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("platformFloorLayers"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_platformFloorLayers()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("platformOnLeave"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_platformOnLeave()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("platformWallLayers"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_platformWallLayers()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("safeMargin"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_safeMargin()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("slideOnCeiling"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_slideOnCeiling()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("upDirection"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_upDirection()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("velocity"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_velocity()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("wallMinSlideAngle"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_wallMinSlideAngle()));
+  do return data end
+end
+__sunaba_spatial_physics_CharacterBody.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_IPhysicsBody.prototype.setData(self,data);
+  self:set_floorBlockOnWall(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("floorBlockOnWall")):asBool());
+  self:set_floorConstantSpeed(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("floorConstantSpeed")):asBool());
+  self:set_floorMaxAngle(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("floorMaxAngle")):asFloat());
+  self:set_floorSnapLength(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("floorSnapLength")):asFloat());
+  self:set_floorStopOnSlope(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("floorStopOnSlope")):asBool());
+  self:set_maxSlides(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("maxSlides")):asInt());
+  self:set_motionMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("motionMode")):asInt());
+  self:set_platformFloorLayers(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("platformFloorLayers")):asInt());
+  self:set_platformOnLeave(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("platformOnLeave")):asInt());
+  self:set_platformWallLayers(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("platformWallLayers")):asInt());
+  self:set_safeMargin(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("safeMargin")):asFloat());
+  self:set_slideOnCeiling(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("slideOnCeiling")):asBool());
+  self:set_upDirection(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("upDirection")):asDictionary()):asVector3());
+  self:set_velocity(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("velocity")):asDictionary()):asVector3());
+  self:set_wallMinSlideAngle(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("wallMinSlideAngle")):asFloat());
+end
+__sunaba_spatial_physics_CharacterBody.prototype.onInit = function(self) 
+  self.editorIconPath = "assets://FugueIcons/icons/dummy.png";
+  self.node = __sunaba_Node.new(NativeObject.new("CharacterBody3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+
+__sunaba_spatial_physics_CharacterBody.prototype.__class__ =  __sunaba_spatial_physics_CharacterBody
+__sunaba_spatial_physics_CharacterBody.__super__ = __sunaba_spatial_physics_IPhysicsBody
+setmetatable(__sunaba_spatial_physics_CharacterBody.prototype,{__index=__sunaba_spatial_physics_IPhysicsBody.prototype})
+
+__sunaba_spatial_physics_CylinderShape.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_CylinderShape.prototype)
+  __sunaba_spatial_physics_CylinderShape.super(self)
+  return self
+end
+__sunaba_spatial_physics_CylinderShape.super = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.super(self);
+end
+_hxClasses["sunaba.spatial.physics.CylinderShape"] = __sunaba_spatial_physics_CylinderShape
+__sunaba_spatial_physics_CylinderShape.__name__ = "sunaba.spatial.physics.CylinderShape"
+__sunaba_spatial_physics_CylinderShape.prototype = _hx_e();
+__sunaba_spatial_physics_CylinderShape.prototype.get_height = function(self) 
+  do return self.native:get("height"):asFloat() end
+end
+__sunaba_spatial_physics_CylinderShape.prototype.set_height = function(self,value) 
+  self.native:set("height", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CylinderShape.prototype.get_radius = function(self) 
+  do return self.native:get("radius"):asFloat() end
+end
+__sunaba_spatial_physics_CylinderShape.prototype.set_radius = function(self,value) 
+  self.native:set("radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_CylinderShape.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_ICollisionShape.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("height"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_height()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_radius()));
+  do return data end
+end
+__sunaba_spatial_physics_CylinderShape.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.setData(self,data);
+  self:set_height(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("height")):asFloat());
+  self:set_radius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radius")):asFloat());
+end
+__sunaba_spatial_physics_CylinderShape.prototype.onInit = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.onInit(self);
+  self.native = NativeReference.new("CylinderShape3D");
+  self.node.native:set("shape", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native));
+end
+
+__sunaba_spatial_physics_CylinderShape.prototype.__class__ =  __sunaba_spatial_physics_CylinderShape
+__sunaba_spatial_physics_CylinderShape.__super__ = __sunaba_spatial_physics_ICollisionShape
+setmetatable(__sunaba_spatial_physics_CylinderShape.prototype,{__index=__sunaba_spatial_physics_ICollisionShape.prototype})
+
+__sunaba_spatial_physics_KinematicCollision3D.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_physics_KinematicCollision3D.prototype)
+  __sunaba_spatial_physics_KinematicCollision3D.super(self,native)
+  return self
+end
+__sunaba_spatial_physics_KinematicCollision3D.super = function(self,native) 
+  __sunaba_core_Reference.super(self,native);
+end
+_hxClasses["sunaba.spatial.physics.KinematicCollision3D"] = __sunaba_spatial_physics_KinematicCollision3D
+__sunaba_spatial_physics_KinematicCollision3D.__name__ = "sunaba.spatial.physics.KinematicCollision3D"
+__sunaba_spatial_physics_KinematicCollision3D.prototype = _hx_e();
+__sunaba_spatial_physics_KinematicCollision3D.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("KinematicCollision3D");
+  end;
+  self.native = _native;
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getAngle = function(self,collisionIndex,upDirection) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  if (upDirection ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(upDirection));
+  end;
+  do return self.native:call("get_angle", args):asFloat() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getColliderId = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_collider_id", args):asInt() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getColliderRid = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_collider_rid", args):asInt() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getColliderShapeIndex = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_collider_shape_index", args):asInt() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getColliderVelocity = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_collider_velocity", args):asVector3() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getCollider = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return __sunaba_Node.new(self.native:call("get_collider", args):asObject()) end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getCollisionCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_collision_count", args):asInt() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getDepth = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_depth", args):asFloat() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getNormal = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_normal", args):asVector3() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getPosition = function(self,collisionIndex) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (collisionIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(collisionIndex));
+  end;
+  do return self.native:call("get_position", args):asVector3() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getRemainder = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_remainder", args):asVector3() end
+end
+__sunaba_spatial_physics_KinematicCollision3D.prototype.getTravel = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_travel", args):asVector3() end
+end
+
+__sunaba_spatial_physics_KinematicCollision3D.prototype.__class__ =  __sunaba_spatial_physics_KinematicCollision3D
+__sunaba_spatial_physics_KinematicCollision3D.__super__ = __sunaba_core_Reference
+setmetatable(__sunaba_spatial_physics_KinematicCollision3D.prototype,{__index=__sunaba_core_Reference.prototype})
+
+__sunaba_spatial_physics_PhysicsMaterial.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_physics_PhysicsMaterial.prototype)
+  __sunaba_spatial_physics_PhysicsMaterial.super(self,native)
+  return self
+end
+__sunaba_spatial_physics_PhysicsMaterial.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.physics.PhysicsMaterial"] = __sunaba_spatial_physics_PhysicsMaterial
+__sunaba_spatial_physics_PhysicsMaterial.__name__ = "sunaba.spatial.physics.PhysicsMaterial"
+__sunaba_spatial_physics_PhysicsMaterial.prototype = _hx_e();
+__sunaba_spatial_physics_PhysicsMaterial.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("PhysicsMaterial");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("PhysicsMaterial"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.get_absorbent = function(self) 
+  do return self.native:get("absorbent"):asBool() end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.set_absorbent = function(self,value) 
+  self.native:set("absorbent", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.get_bounce = function(self) 
+  do return self.native:get("bounce"):asFloat() end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.set_bounce = function(self,value) 
+  self.native:set("bounce", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.get_friction = function(self) 
+  do return self.native:get("friction"):asFloat() end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.set_friction = function(self,value) 
+  self.native:set("friction", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.get_rough = function(self) 
+  do return self.native:get("rough"):asBool() end
+end
+__sunaba_spatial_physics_PhysicsMaterial.prototype.set_rough = function(self,value) 
+  self.native:set("rough", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+
+__sunaba_spatial_physics_PhysicsMaterial.prototype.__class__ =  __sunaba_spatial_physics_PhysicsMaterial
+__sunaba_spatial_physics_PhysicsMaterial.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_physics_PhysicsMaterial.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_spatial_physics_RigidBody.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_RigidBody.prototype)
+  __sunaba_spatial_physics_RigidBody.super(self)
+  return self
+end
+__sunaba_spatial_physics_RigidBody.super = function(self) 
+  self._bodyEntered = nil;
+  __sunaba_spatial_physics_IPhysicsBody.super(self);
+end
+_hxClasses["sunaba.spatial.physics.RigidBody"] = __sunaba_spatial_physics_RigidBody
+__sunaba_spatial_physics_RigidBody.__name__ = "sunaba.spatial.physics.RigidBody"
+__sunaba_spatial_physics_RigidBody.getFromNode = function(node,scene) 
+  if (node.native:isClass("RigidBody3D")) then 
+    local _g = 0;
+    local _g1 = scene:getEntityCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local rigidBody = __sunaba_spatial_physics_RigidBody.getFromNodeRec(node, scene:getEntity(i));
+      if (rigidBody ~= nil) then 
+        do return rigidBody end;
+      end;
+    end;
+  end;
+  do return nil end;
+end
+__sunaba_spatial_physics_RigidBody.getFromNodeRec = function(node,entity) 
+  local rigidBody = entity:getComponent_sunaba_spatial_physics_RigidBody(__sunaba_spatial_physics_RigidBody);
+  if (rigidBody ~= nil) then 
+    if (rigidBody.node.native == node.native) then 
+      do return rigidBody end;
+    end;
+  end;
+  local _g = 0;
+  local _g1 = entity:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local rigidBody = __sunaba_spatial_physics_RigidBody.getFromNodeRec(node, entity:getChild(i));
+    if (rigidBody ~= nil) then 
+      do return rigidBody end;
+    end;
+  end;
+  do return nil end;
+end
+__sunaba_spatial_physics_RigidBody.prototype = _hx_e();
+__sunaba_spatial_physics_RigidBody.prototype.get_angularDamp = function(self) 
+  do return self.node.native:get("angular_damp"):asFloat() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_angularDamp = function(self,value) 
+  self.node.native:set("angular_damp", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_angularDampMode = function(self) 
+  do return self.node.native:get("angular_damp_mode"):asInt() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_angularDampMode = function(self,value) 
+  self.node.native:set("angular_damp_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_angularVelocity = function(self) 
+  do return self.node.native:get("angular_velocity"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_angularVelocity = function(self,value) 
+  self.node.native:set("angular_velocity", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_canSleep = function(self) 
+  do return self.node.native:get("can_sleep"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_canSleep = function(self,value) 
+  self.node.native:set("can_sleep", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_centerOfMass = function(self) 
+  do return self.node.native:get("center_of_mass"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_centerOfMass = function(self,value) 
+  self.node.native:set("center_of_mass", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_centerOfMassMode = function(self) 
+  do return self.node.native:get("center_of_mass"):asInt() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_centerOfMassMode = function(self,value) 
+  self.node.native:set("center_of_mass", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_constantForce = function(self) 
+  do return self.node.native:get("constant_force"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_constantForce = function(self,value) 
+  self.node.native:set("constant_force", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_constantTorque = function(self) 
+  do return self.node.native:get("constant_torque"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_constantTorque = function(self,value) 
+  self.node.native:set("constant_torque", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_contactMonitor = function(self) 
+  do return self.node.native:get("contact_monitor"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_contactMonitor = function(self,value) 
+  self.node.native:set("contact_monitor", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_continuousCd = function(self) 
+  do return self.node.native:get("continuous_cd"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_continuousCd = function(self,value) 
+  self.node.native:set("continuous_cd", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_customIntegrator = function(self) 
+  do return self.node.native:get("custom_integrator"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_customIntegrator = function(self,value) 
+  self.node.native:set("custom_integrator", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_freeze = function(self) 
+  do return self.node.native:get("freeze"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_freeze = function(self,value) 
+  self.node.native:set("freeze", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_freezeMode = function(self) 
+  do return self.node.native:get("freeze_mode"):asInt() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_freezeMode = function(self,value) 
+  self.node.native:set("freeze_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_gravityScale = function(self) 
+  do return self.node.native:get("gravity_scale"):asFloat() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_gravityScale = function(self,value) 
+  self.node.native:set("gravity_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_inertia = function(self) 
+  do return self.node.native:get("inertia"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_inertia = function(self,value) 
+  self.node.native:set("inertia", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_linearDamp = function(self) 
+  do return self.node.native:get("linear_damp"):asFloat() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_linearDamp = function(self,value) 
+  self.node.native:set("linear_damp", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_linearDampMode = function(self) 
+  do return self.node.native:get("linear_damp_mode"):asInt() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_linearDampMode = function(self,value) 
+  self.node.native:set("linear_damp_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_linearVelocity = function(self) 
+  do return self.node.native:get("linear_velocity"):asVector3() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_linearVelocity = function(self,value) 
+  self.node.native:set("linear_velocity", __sunaba_core__Variant_Variant_Impl_.fromVector3(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_lockRotation = function(self) 
+  do return self.node.native:get("lock_rotation"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_lockRotation = function(self,value) 
+  self.node.native:set("lock_rotation", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_mass = function(self) 
+  do return self.node.native:get("mass"):asFloat() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_mass = function(self,value) 
+  self.node.native:set("mass", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_maxContactsReported = function(self) 
+  do return self.node.native:get("max_contacts_reported"):asInt() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_maxContactsReported = function(self,value) 
+  self.node.native:set("max_contacts_reported", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_physicsMaterialOverride = function(self) 
+  do return __sunaba_spatial_physics_PhysicsMaterial.new(self.node.native:get("physics_material_override"):asReference()) end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_physicsMaterialOverride = function(self,value) 
+  self.node.native:set("physics_material_override", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.get_sleeping = function(self) 
+  do return self.node.native:get("sleeping"):asBool() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.set_sleeping = function(self,value) 
+  self.node.native:set("sleeping", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_physics_RigidBody.prototype.addConstantCentralForce = function(self,force) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(force));
+  self.node.native:call("add_constant_central_force", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.addConstantForce = function(self,force,position) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(force));
+  if (position ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(position));
+  end;
+  self.node.native:call("add_constant_force", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.addConstantTorque = function(self,torque) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(torque));
+  self.node.native:call("add_constant_torque", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyCentralForce = function(self,force) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(force));
+  self.node.native:call("apply_central_force", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyCentralImpulse = function(self,impulse) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(impulse));
+  self.node.native:call("add_central_inpule", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyForce = function(self,force,position) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(force));
+  if (position ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(position));
+  end;
+  self.node.native:call("add_force", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyImpulse = function(self,impulse,position) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(impulse));
+  if (position ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(position));
+  end;
+  self.node.native:call("add_inpule", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyTorque = function(self,torque) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(torque));
+  self.node.native:call("apply_torque", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.applyTorqueImpulse = function(self,impulse) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(impulse));
+  self.node.native:call("apply_torque_inpule", args);
+end
+__sunaba_spatial_physics_RigidBody.prototype.getCollidingBodies = function(self) 
+  local collidingBodiesNative = self.node.native:call("get_colliding_bodies", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asArrayList();
+  local collidingBodies = Array.new();
+  local getPhysBodyFromEntity = function(entity) 
+    local inheritsPhysicsBody = nil;
+    inheritsPhysicsBody = function(bClass) 
+      local superClass = Type.getSuperClass(bClass);
+      if (superClass == __sunaba_spatial_physics_IPhysicsBody) then 
+        do return true end;
+      else
+        if (inheritsPhysicsBody(superClass) == true) then 
+          do return true end;
+        else
+          do return false end;
+        end;
+      end;
+    end;
+    local components = entity:getConponents();
+    local _g = 0;
+    while (_g < components.length) do _hx_do_first_1 = false;
+      
+      local component = components[_g];
+      _g = _g + 1;
+      if (inheritsPhysicsBody(Type.getClass(component))) then 
+        local physicsBody = component;
+        local physBodyFound = false;
+        local _g = 0;
+        local _g1 = collidingBodiesNative:size();
+        while (_g < _g1) do _hx_do_first_2 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local nativePhysBody = collidingBodiesNative:get(i):asObject();
+          if (physicsBody.node.native:eq(nativePhysBody)) then 
+            collidingBodies:push(entity);
+            physBodyFound = true;
+            break;
+          end;
+        end;
+        if (physBodyFound == true) then 
+          break;
+        end;
+      end;
+    end;
+    local _g = 0;
+    local _g1 = entity:getChildCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local child = entity:getChild(i);
+      getPhysBodyFromEntity(child);
+    end;
+  end;
+  local _g = 0;
+  local _g1 = self:get_scene():getEntityCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local entity = self:get_scene():getEntity(i);
+    getPhysBodyFromEntity(entity);
+  end;
+  do return collidingBodies end
+end
+__sunaba_spatial_physics_RigidBody.prototype.getContactCount = function(self) 
+  self.node.native:call("get_contact_count", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_spatial_physics_RigidBody.prototype.getInverseInertiaTensor = function(self) 
+  do return self.node.native:call("get_inverse_inertia_tensor", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asBasis() end
+end
+__sunaba_spatial_physics_RigidBody.prototype.setAxisVelocity = function(self,axisVelocity) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(axisVelocity));
+  self.node.native:call("set_axis_velocity", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+__sunaba_spatial_physics_RigidBody.prototype.getCollidingEntity = function(self,pNode) 
+  local ent = nil;
+  local getPhysBodyFromEntity = function(entity) 
+    local inheritsPhysicsBody = nil;
+    inheritsPhysicsBody = function(bClass) 
+      local superClass = Type.getSuperClass(bClass);
+      if (superClass == __sunaba_spatial_physics_IPhysicsBody) then 
+        do return true end;
+      else
+        if (inheritsPhysicsBody(superClass) == true) then 
+          do return true end;
+        else
+          do return false end;
+        end;
+      end;
+    end;
+    local components = entity:getConponents();
+    local _g = 0;
+    while (_g < components.length) do _hx_do_first_1 = false;
+      
+      local component = components[_g];
+      _g = _g + 1;
+      if (inheritsPhysicsBody(Type.getClass(component))) then 
+        local physicsBody = component;
+        if (physicsBody.node.native:eq(pNode.native)) then 
+          ent = entity;
+          do return end;
+        end;
+      end;
+    end;
+    local _g = 0;
+    local _g1 = entity:getChildCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local child = entity:getChild(i);
+      getPhysBodyFromEntity(child);
+      if (ent ~= nil) then 
+        break;
+      end;
+    end;
+  end;
+  local _g = 0;
+  local _g1 = self:get_scene():getEntityCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local entity = self:get_scene():getEntity(i);
+    getPhysBodyFromEntity(entity);
+    if (ent ~= nil) then 
+      break;
+    end;
+  end;
+  do return ent end
+end
+__sunaba_spatial_physics_RigidBody.prototype._bodyEntered= nil;
+__sunaba_spatial_physics_RigidBody.prototype.bodyEntered= nil;
+__sunaba_spatial_physics_RigidBody.prototype.get_bodyEntered = function(self) 
+  if (self._bodyEntered == nil) then 
+    self._bodyEntered = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.node.native, "body_entered");
+  end;
+  do return self._bodyEntered end
+end
+__sunaba_spatial_physics_RigidBody.prototype._bodyExited= nil;
+__sunaba_spatial_physics_RigidBody.prototype.bodyExited= nil;
+__sunaba_spatial_physics_RigidBody.prototype.get_bodyExited = function(self) 
+  if (self._bodyExited == nil) then 
+    self._bodyExited = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.node.native, "body_exited");
+  end;
+  do return self._bodyExited end
+end
+__sunaba_spatial_physics_RigidBody.prototype._bodyShapeEntered= nil;
+__sunaba_spatial_physics_RigidBody.prototype.bodyShapeEntered= nil;
+__sunaba_spatial_physics_RigidBody.prototype.get_bodyShapeEntered = function(self) 
+  if (self._bodyShapeEntered == nil) then 
+    self._bodyShapeEntered = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.node.native, "body_shape_entered");
+  end;
+  do return self._bodyShapeEntered end
+end
+__sunaba_spatial_physics_RigidBody.prototype._bodyShapeExited= nil;
+__sunaba_spatial_physics_RigidBody.prototype.bodyShapeExited= nil;
+__sunaba_spatial_physics_RigidBody.prototype.get_bodyShapeExited = function(self) 
+  if (self._bodyShapeExited == nil) then 
+    self._bodyShapeExited = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.node.native, "body_shape_exited");
+  end;
+  do return self._bodyShapeExited end
+end
+__sunaba_spatial_physics_RigidBody.prototype._sleepingStateChanged= nil;
+__sunaba_spatial_physics_RigidBody.prototype.sleepingStateChanged= nil;
+__sunaba_spatial_physics_RigidBody.prototype.get_sleepingStateChanged = function(self) 
+  if (self._sleepingStateChanged == nil) then 
+    self._sleepingStateChanged = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.node.native, "sleeping_state_changed");
+  end;
+  do return self._sleepingStateChanged end
+end
+__sunaba_spatial_physics_RigidBody.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_IPhysicsBody.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("angularDamp"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_angularDamp()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("angularDampMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_angularDampMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("angularVelocity"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_angularVelocity()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("canSleep"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_canSleep()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("centerOfMass"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_centerOfMass()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("centerOfMassMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_centerOfMassMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("constantForce"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_constantForce()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("constantTorque"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_constantTorque()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("contactMonitor"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_contactMonitor()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("continuousCd"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_continuousCd()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("customIntegrator"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_customIntegrator()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("freeze"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_freeze()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("freezeMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_freezeMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("gravityScale"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_gravityScale()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("inertia"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_inertia()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("linearDamp"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_linearDamp()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("linearDampMode"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_linearDampMode()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("linearVelocity"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(self:get_linearVelocity()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("lockRotation"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_lockRotation()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("mass"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_mass()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("maxContactsReported"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_maxContactsReported()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("physicsMaterialOverride"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(self:get_physicsMaterialOverride().native))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("sleeping"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_sleeping()));
+  do return data end
+end
+__sunaba_spatial_physics_RigidBody.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_IPhysicsBody.prototype.setData(self,data);
+  self:set_angularDamp(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("angularDamp")):asFloat());
+  self:set_angularDampMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("angularDampMode")):asInt());
+  self:set_angularVelocity(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("angularVelocity")):asDictionary()):asVector3());
+  self:set_canSleep(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("canSleep")):asBool());
+  self:set_centerOfMass(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("centerOfMass")):asDictionary()):asVector3());
+  self:set_centerOfMassMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("centerOfMassMode")):asInt());
+  self:set_constantForce(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("constantForce")):asDictionary()):asVector3());
+  self:set_constantTorque(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("constantTorque")):asDictionary()):asVector3());
+  self:set_contactMonitor(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("contactMonitor")):asBool());
+  self:set_continuousCd(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("continuousCd")):asBool());
+  self:set_customIntegrator(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("customIntegrator")):asBool());
+  self:set_freeze(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("freeze")):asBool());
+  self:set_freezeMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("freezeMode")):asInt());
+  self:set_gravityScale(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("gravityScale")):asFloat());
+  self:set_inertia(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("inertia")):asDictionary()):asVector3());
+  self:set_linearDamp(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("linearDamp")):asFloat());
+  self:set_linearDampMode(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("linearDampMode")):asInt());
+  self:set_linearVelocity(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("linearVelocity")):asDictionary()):asVector3());
+  self:set_lockRotation(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("lockRotation")):asBool());
+  self:set_mass(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("mass")):asFloat());
+  self:set_maxContactsReported(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("maxContactsReported")):asInt());
+  self:set_physicsMaterialOverride(__sunaba_spatial_physics_PhysicsMaterial.new(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("physicsMaterialOverride")):asDictionary()):asReference()));
+  self:set_sleeping(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("sleeping")):asBool());
+end
+__sunaba_spatial_physics_RigidBody.prototype.onInit = function(self) 
+  self.editorIconPath = "assets://FugueIcons/icons/sport.png";
+  self.node = __sunaba_Node.new(NativeObject.new("RigidBody3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+
+__sunaba_spatial_physics_RigidBody.prototype.__class__ =  __sunaba_spatial_physics_RigidBody
+__sunaba_spatial_physics_RigidBody.__super__ = __sunaba_spatial_physics_IPhysicsBody
+setmetatable(__sunaba_spatial_physics_RigidBody.prototype,{__index=__sunaba_spatial_physics_IPhysicsBody.prototype})
+
+__sunaba_spatial_physics_SphereShape.new = function() 
+  local self = _hx_new(__sunaba_spatial_physics_SphereShape.prototype)
+  __sunaba_spatial_physics_SphereShape.super(self)
+  return self
+end
+__sunaba_spatial_physics_SphereShape.super = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.super(self);
+end
+_hxClasses["sunaba.spatial.physics.SphereShape"] = __sunaba_spatial_physics_SphereShape
+__sunaba_spatial_physics_SphereShape.__name__ = "sunaba.spatial.physics.SphereShape"
+__sunaba_spatial_physics_SphereShape.prototype = _hx_e();
+__sunaba_spatial_physics_SphereShape.prototype.get_radius = function(self) 
+  do return self.native:get("radius"):asFloat() end
+end
+__sunaba_spatial_physics_SphereShape.prototype.set_radius = function(self,value) 
+  self.native:set("radius", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_spatial_physics_SphereShape.prototype.getData = function(self) 
+  local data = __sunaba_spatial_physics_ICollisionShape.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("radius"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_radius()));
+  do return data end
+end
+__sunaba_spatial_physics_SphereShape.prototype.setData = function(self,data) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.setData(self,data);
+  self:set_radius(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("radius")):asFloat());
+end
+__sunaba_spatial_physics_SphereShape.prototype.onInit = function(self) 
+  __sunaba_spatial_physics_ICollisionShape.prototype.onInit(self);
+  self.native = NativeReference.new("SphereShape3D");
+  self.node.native:set("shape", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native));
+end
+
+__sunaba_spatial_physics_SphereShape.prototype.__class__ =  __sunaba_spatial_physics_SphereShape
+__sunaba_spatial_physics_SphereShape.__super__ = __sunaba_spatial_physics_ICollisionShape
+setmetatable(__sunaba_spatial_physics_SphereShape.prototype,{__index=__sunaba_spatial_physics_ICollisionShape.prototype})
 
 __sunaba_ui_Control.new = function(native) 
   local self = _hx_new(__sunaba_ui_Control.prototype)
@@ -26570,6 +33451,16 @@ __sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_TabContainer = function(self,cla
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
   do return instance end
 end
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_RichTextLabel = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_OptionButton = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
 __sunaba_ui_Widget.prototype.getNodeT_sunaba_desktop_AcceptDialog = function(self,classT,path) 
   local node = self:getNode(path);
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
@@ -26600,6 +33491,11 @@ __sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_CodeEdit = function(self,classT,
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
   do return instance end
 end
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_desktop_ConfirmationDialog = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
 __sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_Tree = function(self,classT,path) 
   local node = self:getNode(path);
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
@@ -26621,6 +33517,16 @@ __sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_MenuButton = function(self,class
   do return instance end
 end
 __sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_Button = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_LineEdit = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_ItemList = function(self,classT,path) 
   local node = self:getNode(path);
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
   do return instance end
@@ -27697,6 +34603,10 @@ __sunaba_studio_EditorWidget.super = function(self,parent,area)
     else
       if (area == 2) then 
         parent:addWorkspaceChild(self);
+      else
+        if (area == 3) then 
+          parent:addDockChild(self);
+        end;
       end;
     end;
   end;
@@ -27817,6 +34727,185 @@ __sunaba_studio_CodeEditor.prototype.__class__ =  __sunaba_studio_CodeEditor
 __sunaba_studio_CodeEditor.__super__ = __sunaba_studio_EditorWidget
 setmetatable(__sunaba_studio_CodeEditor.prototype,{__index=__sunaba_studio_EditorWidget.prototype})
 
+__sunaba_studio_Console.new = function(parent,area) 
+  local self = _hx_new(__sunaba_studio_Console.prototype)
+  __sunaba_studio_Console.super(self,parent,area)
+  return self
+end
+__sunaba_studio_Console.super = function(self,parent,area) 
+  self.txt = "";
+  self.mode = 0;
+  __sunaba_studio_EditorWidget.super(self,parent,area);
+end
+_hxClasses["sunaba.studio.Console"] = __sunaba_studio_Console
+__sunaba_studio_Console.__name__ = "sunaba.studio.Console"
+__sunaba_studio_Console.prototype = _hx_e();
+__sunaba_studio_Console.prototype.output= nil;
+__sunaba_studio_Console.prototype.input= nil;
+__sunaba_studio_Console.prototype.console= nil;
+__sunaba_studio_Console.prototype.mode= nil;
+__sunaba_studio_Console.prototype.txt= nil;
+__sunaba_studio_Console.prototype.editorInit = function(self) 
+  local _gthis = self;
+  self:load("studio://Console.suml");
+  self.mode = 0;
+  self.output = self:getNodeT_sunaba_ui_RichTextLabel(__sunaba_ui_RichTextLabel, "vbox/panel/output");
+  self.output:set_selectionEnabled(true);
+  self.output:set_contextMenuEnabled(true);
+  self.output:set_bbcodeEnabled(true);
+  self.output:set_scrollActive(true);
+  self.output:set_scrollFollowing(true);
+  local outputColor = self.output:getThemeColor("default_color");
+  local i = self:getNode("vbox/input");
+  if (i == nil) then 
+    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
+    do return end;
+  end;
+  self.input = self:getNodeT_sunaba_ui_LineEdit(__sunaba_ui_LineEdit, "vbox/hbox/input");
+  local option = self:getNodeT_sunaba_ui_OptionButton(__sunaba_ui_OptionButton, "vbox/hbox/option");
+  option:addItem("Command Mode", 0);
+  option:addItem("Code Mode", 1);
+  __sunaba_core__Signal_Signal_Impl_.add(option:get_itemSelected(), function(id) 
+    if ((id ~= 0) and (id ~= 1)) then 
+      __sunaba_Debug.error("Invalid Mode");
+    end;
+    _gthis.mode = id;
+    if (id == 0) then 
+      _gthis.input:set_placeholderText("Enter console commands here...");
+    else
+      if (id == 1) then 
+        _gthis.input:set_placeholderText("Enter shell code here...");
+      end;
+    end;
+  end);
+  self.console = __sunaba_ShellConsole.new();
+  self.console:set_io(self.io);
+  __sunaba_core__Signal_Signal_Impl_.add(self.console:get_print(), function(log) 
+    local _gthis1 = _gthis;
+    _gthis1.txt = Std.string(_gthis1.txt) .. Std.string((Std.string(log) .. Std.string("\n")));
+    _gthis.output:parseBbcode(Std.string(Std.string("[code]") .. Std.string(_gthis.txt)) .. Std.string("[/code]"));
+    _gthis.output:set_scrollFollowing(true);
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self.input:get_textSubmitted(), function(text) 
+    if (text ~= "") then 
+      local _hx_status, _hx_result = pcall(function() 
+      
+          if (_gthis.mode == 1) then 
+            _gthis.console:eval(text);
+          else
+            if (_gthis.mode == 0) then 
+              _gthis.console:cmd(text);
+            end;
+          end;
+        return _hx_pcall_default
+      end)
+      if not _hx_status and _hx_result == "_hx_pcall_break" then
+      elseif not _hx_status then 
+        local _g = _hx_result;
+        local e = __haxe_Exception.caught(_g);
+        local tmp = Std.string(Std.string(_gthis.txt) .. Std.string("[color=red]Error: ")) .. Std.string(Std.string(e));
+        _gthis.txt = Std.string(tmp) .. Std.string("[/color]\n");
+        _gthis.output:parseBbcode(Std.string(Std.string("[code]") .. Std.string(_gthis.txt)) .. Std.string("[/code]"));
+      elseif _hx_result ~= _hx_pcall_default then
+        return _hx_result
+      end;
+      _gthis.input:clear();
+    end;
+  end);
+  self.console:addCommand("echo", function(args) 
+    if (args.length > 0) then 
+      local text = args:join(" ");
+      _G.print(Std.string(text));
+    else
+      _G.print("Usage: echo <text>");
+    end;
+    do return 0 end;
+  end);
+  local rootNode = _G.__rootNode;
+  local outputTa = rootNode:get("output"):asStringArray();
+  local s = outputTa;
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  local output = array;
+  local _g = 0;
+  while (_g < output.length) do _hx_do_first_1 = false;
+    
+    local line = output[_g];
+    _g = _g + 1;
+    self.console:log(line);
+  end;
+  local onPrint = __sunaba_core__Signal_Signal_Impl_.createFromObject(rootNode, "on_print");
+  __sunaba_core__Signal_Signal_Impl_.add(onPrint, function(line) 
+    _gthis.console:log(line);
+  end);
+  self:getEditor():setDockTabTitle(self, "Console");
+  local tmp = self:getEditor();
+  local iconBytes = self:getEditor().io:loadBytes("studio://icons/16/terminal.png");
+  local tmp1;
+  if (iconBytes ~= nil) then 
+    local iconImage = __sunaba_Image.new();
+    iconImage:loadPngFromBuffer(iconBytes);
+    local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+    tmp1 = iconTexture;
+  else
+    tmp1 = nil;
+  end;
+  tmp:setDockTabIcon(self, tmp1);
+end
+__sunaba_studio_Console.prototype.log = function(self,...) 
+  local messages = {...}
+  local finalMsg = _hx_tab_array({}, 0);
+  local _g_current = 0;
+  local _g_args = messages;
+  while (_g_current < _hx_table.maxn(_g_args)) do _hx_do_first_1 = false;
+    
+    _g_current = _g_current + 1;
+    local msg = _g_args[(_g_current - 1) + 1];
+    finalMsg:push(msg);
+  end;
+  local finalMsgStr = finalMsg:join(" ");
+  self.console:log(finalMsgStr);
+end
+__sunaba_studio_Console.prototype.error = function(self,...) 
+  local messages = {...}
+  local finalMsg = _hx_tab_array({}, 0);
+  local _g_current = 0;
+  local _g_args = messages;
+  while (_g_current < _hx_table.maxn(_g_args)) do _hx_do_first_1 = false;
+    
+    _g_current = _g_current + 1;
+    local msg = _g_args[(_g_current - 1) + 1];
+    finalMsg:push(msg);
+  end;
+  local finalMsgStr = finalMsg:join(" ");
+  self.txt = Std.string(Std.string(Std.string(self.txt) .. Std.string("[color=red]Error: ")) .. Std.string(finalMsgStr)) .. Std.string("[/color]\n");
+  self.output:parseBbcode(Std.string(Std.string("[code]") .. Std.string(self.txt)) .. Std.string("[/code]"));
+end
+__sunaba_studio_Console.prototype.addCommand = function(self,name,func) 
+  self.console:addCommand(name, func);
+end
+__sunaba_studio_Console.prototype.evalCmd = function(self,command) 
+  self.console:cmd(command);
+end
+__sunaba_studio_Console.prototype.evalCode = function(self,code) 
+  self.console:eval(code);
+end
+
+__sunaba_studio_Console.prototype.__class__ =  __sunaba_studio_Console
+__sunaba_studio_Console.__super__ = __sunaba_studio_EditorWidget
+setmetatable(__sunaba_studio_Console.prototype,{__index=__sunaba_studio_EditorWidget.prototype})
+
 __sunaba_studio_Editor.new = function(_io) 
   local self = _hx_new(__sunaba_studio_Editor.prototype)
   __sunaba_studio_Editor.super(self,_io)
@@ -27843,6 +34932,7 @@ __sunaba_studio_Editor.super = function(self,_io)
   self.timeSinceClick = 0.1;
   self.clickcount = 0;
   self.titlebarLmbPressed = false;
+  self.dockChildren = _hx_tab_array({}, 0);
   self.workspaceChildern = _hx_tab_array({}, 0);
   self.rightSidebarChildren = _hx_tab_array({}, 0);
   self.leftSidebarChildren = _hx_tab_array({}, 0);
@@ -27865,11 +34955,15 @@ __sunaba_studio_Editor.prototype.leftTabBar= nil;
 __sunaba_studio_Editor.prototype.rightTabBar= nil;
 __sunaba_studio_Editor.prototype.leftTabContainer= nil;
 __sunaba_studio_Editor.prototype.centerTabContainer= nil;
+__sunaba_studio_Editor.prototype.bottomCenterTabContainer= nil;
 __sunaba_studio_Editor.prototype.rightTabContainer= nil;
 __sunaba_studio_Editor.prototype.leftSidebarChildren= nil;
 __sunaba_studio_Editor.prototype.rightSidebarChildren= nil;
 __sunaba_studio_Editor.prototype.workspaceChildern= nil;
+__sunaba_studio_Editor.prototype.dockChildren= nil;
 __sunaba_studio_Editor.prototype.saveFileButton= nil;
+__sunaba_studio_Editor.prototype.undoButton= nil;
+__sunaba_studio_Editor.prototype.redoButton= nil;
 __sunaba_studio_Editor.prototype.reloadButton= nil;
 __sunaba_studio_Editor.prototype.buildButton= nil;
 __sunaba_studio_Editor.prototype.playButton= nil;
@@ -27887,7 +34981,10 @@ __sunaba_studio_Editor.prototype.playBuildWindow= nil;
 __sunaba_studio_Editor.prototype.pluginBuildWindow= nil;
 __sunaba_studio_Editor.prototype.explorer= nil;
 __sunaba_studio_Editor.prototype.sceneInspector= nil;
+__sunaba_studio_Editor.prototype.resourceInspector= nil;
+__sunaba_studio_Editor.prototype.console= nil;
 __sunaba_studio_Editor.prototype.projectIo= nil;
+__sunaba_studio_Editor.prototype.sourceIo= nil;
 __sunaba_studio_Editor.prototype.resizePreview= nil;
 __sunaba_studio_Editor.prototype.resizeThreshold= nil;
 __sunaba_studio_Editor.prototype.resizeThresholdBottomRight= nil;
@@ -27895,6 +34992,21 @@ __sunaba_studio_Editor.prototype._projectFile= nil;
 __sunaba_studio_Editor.prototype.projectFile= nil;
 __sunaba_studio_Editor.prototype.get_projectFile = function(self) 
   do return self._projectFile end
+end
+__sunaba_studio_Editor.prototype.get_customTitlebar = function(self) 
+  do return self.window:get_borderless() end
+end
+__sunaba_studio_Editor.prototype.set_customTitlebar = function(self,value) 
+  local minimizeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/minimizeButton");
+  minimizeButton:set_visible(value);
+  local maximizeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/maximizeButton");
+  maximizeButton:set_visible(value);
+  local closeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/closeButton");
+  closeButton:set_visible(value);
+  local iconContainer = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/hbox/iconContainer");
+  iconContainer:set_visible(value);
+  self.windowTitle:set_visible(value);
+  do return self.window:set_borderless(value) end
 end
 __sunaba_studio_Editor.prototype.playerSubViewportContainer= nil;
 __sunaba_studio_Editor.prototype.playerAppView= nil;
@@ -27913,12 +35025,21 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.leftTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/leftSidebar");
   self.leftTabContainer:hide();
   self.leftTabContainer:set_tabsVisible(false);
-  self.centerTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/workspace");
+  self.centerTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/vsplit/workspace");
   self.centerTabContainer:getTabBar():set_tabCloseDisplayPolicy(1);
+  self.bottomCenterTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/vsplit/dock");
   self.rightTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/rightSidebar");
   self.rightTabContainer:hide();
   self.rightTabContainer:set_tabsVisible(false);
   self.saveFileButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/saveFile");
+  self.undoButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/undo");
+  __sunaba_core__Signal_Signal_Impl_.add(self.undoButton:get_pressed(), function() 
+    _gthis:undo();
+  end);
+  self.redoButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/redo");
+  __sunaba_core__Signal_Signal_Impl_.add(self.redoButton:get_pressed(), function() 
+    _gthis:redo();
+  end);
   self.reloadButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/reload");
   self.reloadButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     _gthis:buildPlugin();
@@ -27946,7 +35067,7 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.stopButton:set_disabled(true);
   self.windowTitle = self:getNodeT_sunaba_ui_Label(__sunaba_ui_Label, "vbox/menuBarControl/windowTitle");
   self.windowTitle:show();
-  self.windowTitle:addThemeFontOverride("font", __sunaba_core_Reference.castTo_sunaba_Font(__sunaba_ResourceLoaderService.load("res://Engine/Theme/fonts/Inter-Medium.ttf"), __sunaba_Font));
+  self.windowTitle:addThemeFontOverride("font", __sunaba_core_Reference.castTo_sunaba_Font(__sunaba_ResourceLoaderService.load("res://Engine/Theme/fonts/NunitoSans-Medium.ttf"), __sunaba_Font));
   self.playBuildWindow = self:getNodeT_sunaba_desktop_Window(__sunaba_desktop_Window, "playBuildWindow");
   self.playBuildWindow:hide();
   self.pluginBuildWindow = self:getNodeT_sunaba_desktop_Window(__sunaba_desktop_Window, "pluginBuildWindow");
@@ -27958,9 +35079,9 @@ __sunaba_studio_Editor.prototype.init = function(self)
     local appMenu = __sunaba_desktop_NativeMenuService.getSystemMenu(2);
     __sunaba_desktop_NativeMenuService.addSeparator(appMenu);
     local settingsIdx = __sunaba_desktop_NativeMenuService.addItem(appMenu, "Settings", __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=197,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=235,className="sunaba.studio.Editor",methodName="init"}));
     end)), __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=200,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=238,className="sunaba.studio.Editor",methodName="init"}));
     end)), Variant.new(), _hx_bit.bor(134217728,44));
     local iconBytes = self.io:loadBytes("studio://icons/16/gear.png");
     local tmp;
@@ -28012,7 +35133,36 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     end;
     __sunaba_DisplayService.windowSetWindowButtonsOffset(Vector2i.new(x, y), self.window:getWindowId());
   else
-    self.window:set_borderless(true);
+    local useCustomTitlebar = true;
+    local args = _G.__args;
+    local s = args;
+    local array = _hx_tab_array({}, 0);
+    local _g = 0;
+    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+      if (value == nil) then 
+        _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+      end;
+      array:push(value);
+    end;
+    local args = array;
+    local osArgs = args;
+    local _g = 0;
+    local _g1 = osArgs.length;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local arg = osArgs[i];
+      if (arg == "--no-custom-titlebar") then 
+        useCustomTitlebar = false;
+      end;
+    end;
+    self.window:set_borderless(useCustomTitlebar);
   end;
   self.haxePath = Std.string(__sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory()) .. Std.string("/haxe");
   if (Sys.systemName() == "Windows") then 
@@ -28021,10 +35171,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   end;
   local _hx_status, _hx_result = pcall(function() 
   
-      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=240,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=286,className="sunaba.studio.Editor",methodName="onReady"}));
       local menuBarControl = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/hbox/spacer");
       local eventFunc = function(eventN) 
         if (_gthis.window == nil) then 
+          do return end;
+        end;
+        if (_gthis:get_customTitlebar() == false) then 
           do return end;
         end;
         if (((__sunaba_input_InputService.isMouseButtonPressed(1) and not _gthis.titlebarLmbPressed) and (_gthis.window:get_mode() == 0)) and (_gthis.clickcount == 0)) then 
@@ -28060,7 +35213,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
         if (_gthis.clickcount == 2) then 
-          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=286,className="sunaba.studio.Editor",methodName="onReady"}));
+          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=335,className="sunaba.studio.Editor",methodName="onReady"}));
           _gthis.clickcount = 0;
           local maximizeButton = _gthis:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/maximizeButton");
           if (_gthis.window:get_mode() == 2) then 
@@ -28073,11 +35226,17 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
               _gthis.window:set_size(_gthis.windowSize);
             end;
             maximizeButton:set_text("🗖");
+            if (__sunaba_OSService.getName() == "Windows") then 
+              maximizeButton:set_text("");
+            end;
           else
             if (_gthis.window:get_mode() == 0) then 
               _gthis.windowSize = _gthis.window:get_size();
               _gthis.window:set_mode(2);
               maximizeButton:set_text("🗗");
+              if (__sunaba_OSService.getName() == "Windows") then 
+                maximizeButton:set_text("");
+              end;
             end;
           end;
         end;
@@ -28154,10 +35313,10 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local editMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Edit");
       editMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
         if (id == 0) then 
-          __sunaba_Debug.error("'Undo' not implemented");
+          _gthis:undo();
         else
           if (id == 1) then 
-            __sunaba_Debug.error("'Redo' not implemented");
+            _gthis:redo();
           else
             if (id == 3) then 
               __sunaba_Debug.error("'Cut' not implemented");
@@ -28210,7 +35369,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local styleBoxEmpty = __sunaba_ui_StyleBoxEmpty.new();
       local buttonFont = __sunaba_SystemFont.new();
       if (__sunaba_OSService.getName() == "Windows") then 
-        buttonFont:set_fontNames(__sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="Segoe MDL2 Assets", "Segoe UI Symbol", "Arial Unicode MS"}, 3)));
+        buttonFont:set_fontNames(__sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="Segoe Fluent icons", "Segoe MDL2 Assets"}, 2)));
       else
         if (__sunaba_OSService.getName() == "Linux") then 
           local fontNames = buttonFont:get_fontNames();
@@ -28220,8 +35379,8 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           local tmp = __haxe_Log.trace;
           local s = fontNames;
           local array = _hx_tab_array({}, 0);
-          local _g = 1;
-          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+          local _g = 0;
+          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
           while (_g < _g1) do _hx_do_first_1 = false;
             
             _g = _g + 1;
@@ -28232,12 +35391,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
             array:push(value);
           end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=433,className="sunaba.studio.Editor",methodName="onReady"}));
+          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=487,className="sunaba.studio.Editor",methodName="onReady"}));
           local tmp = __haxe_Log.trace;
           local s = buttonFont:get_fontNames();
           local array = _hx_tab_array({}, 0);
-          local _g = 1;
-          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+          local _g = 0;
+          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
           while (_g < _g1) do _hx_do_first_1 = false;
             
             _g = _g + 1;
@@ -28248,14 +35407,20 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
             array:push(value);
           end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=434,className="sunaba.studio.Editor",methodName="onReady"}));
+          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=488,className="sunaba.studio.Editor",methodName="onReady"}));
         end;
       end;
       local minimizeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/minimizeButton");
       minimizeButton:addThemeStyleboxOverride("normal", styleBoxEmpty);
       minimizeButton:set_focusMode(0);
       minimizeButton:addThemeFontOverride("font", buttonFont);
+      local newCustomMinimumSize = minimizeButton:get_customMinimumSize();
       minimizeButton:set_text("🗕");
+      if (__sunaba_OSService.getName() == "Windows") then 
+        minimizeButton:set_text("");
+        newCustomMinimumSize.x = 40;
+        minimizeButton:set_customMinimumSize(newCustomMinimumSize);
+      end;
       minimizeButton:set_alignment(1);
       local isMaximized = true;
       __sunaba_core__Signal_Signal_Impl_.add(minimizeButton:get_pressed(), function() 
@@ -28276,14 +35441,26 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       maximizeButton:addThemeFontOverride("font", buttonFont);
       maximizeButton:set_text("🗗");
       maximizeButton:set_alignment(1);
+      if (__sunaba_OSService.getName() == "Windows") then 
+        maximizeButton:set_customMinimumSize(newCustomMinimumSize);
+      end;
       if (self.window:get_mode() == 2) then 
         maximizeButton:set_text("🗗");
+        if (__sunaba_OSService.getName() == "Windows") then 
+          maximizeButton:set_text("");
+        end;
       else
         maximizeButton:set_text("🗖");
+        if (__sunaba_OSService.getName() == "Windows") then 
+          maximizeButton:set_text("");
+        end;
       end;
       __sunaba_core__Signal_Signal_Impl_.add(maximizeButton:get_pressed(), function() 
         if (_gthis.window:get_mode() == 2) then 
           maximizeButton:set_text("🗖");
+          if (__sunaba_OSService.getName() == "Windows") then 
+            maximizeButton:set_text("");
+          end;
           local maximizedSize = _gthis.window:get_size();
           _gthis.window:set_mode(0);
           if ((_gthis.window:get_size().x == maximizedSize.x) and (_gthis.window:get_size().y == maximizedSize.y)) then 
@@ -28295,6 +35472,9 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         else
           if (_gthis.window:get_mode() == 0) then 
             maximizeButton:set_text("🗗");
+            if (__sunaba_OSService.getName() == "Windows") then 
+              maximizeButton:set_text("");
+            end;
             _gthis.windowSize = _gthis.window:get_size();
             _gthis.window:set_mode(2);
           end;
@@ -28305,6 +35485,10 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       closeButton:set_focusMode(0);
       closeButton:addThemeFontOverride("font", buttonFont);
       closeButton:set_text("🗙");
+      if (__sunaba_OSService.getName() == "Windows") then 
+        closeButton:set_text("");
+        closeButton:set_customMinimumSize(newCustomMinimumSize);
+      end;
       closeButton:set_alignment(1);
       __sunaba_core__Signal_Signal_Impl_.add(closeButton:get_pressed(), function() 
         __sunaba_App.exit(0);
@@ -28317,12 +35501,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       self:refreshLeftSidebar();
       self:refreshRightSidebar();
-      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=510,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=589,className="sunaba.studio.Editor",methodName="onReady"}));
       local args = _G.__args;
       local s = args;
       local array = _hx_tab_array({}, 0);
-      local _g = 1;
-      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+      local _g = 0;
+      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
       while (_g < _g1) do _hx_do_first_1 = false;
         
         _g = _g + 1;
@@ -28350,13 +35534,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(self.sProjPath)}, 1);
       self.sProjPath = String.prototype.split(__sys_FileSystem.getNative():call("AbsolutePath", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asString(), "\\"):join("/");
-      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=526,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=605,className="sunaba.studio.Editor",methodName="onReady"}));
       local projJson = "";
       if (self.sProjPath ~= "") then 
         projJson = __sys_io_File.getContent(self.sProjPath);
       end;
-      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=533,className="sunaba.studio.Editor",methodName="onReady"}));
-      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=534,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=612,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=613,className="sunaba.studio.Editor",methodName="onReady"}));
       if ((self.sProjPath == "") or (projJson == "")) then 
         __sunaba_Debug.error("Project not found.");
         __sunaba_App.exit(-1);
@@ -28368,12 +35552,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local dirPath = sprojPathArr:join("/");
       dirPath = Std.string(dirPath) .. Std.string("/");
       local assetPath = Std.string(dirPath) .. Std.string(self._projectFile.assetsdir);
-      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=550,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=629,className="sunaba.studio.Editor",methodName="onReady"}));
       while (not StringTools.endsWith(assetPath, self._projectFile.assetsdir)) do _hx_do_first_1 = false;
         
         assetPath = Std.string(assetPath) .. Std.string(self._projectFile.assetsdir);
       end;
-      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=554,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=633,className="sunaba.studio.Editor",methodName="onReady"}));
       local recentProjectsPath = "user://recentProjects.json";
       if (self.io:fileExists(recentProjectsPath)) then 
         local recentProjectsStr = self.io:loadText(recentProjectsPath);
@@ -28402,6 +35586,17 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_HxFileHandler.new(self.explorer));
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_VscnFileHandler.new(self.explorer));
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_VpfbFileHandler.new(self.explorer));
+      self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_SmdlFileHandler.new(self.explorer));
+      self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.new(self.explorer));
+      self.explorer.newFileWidget:addAssetFileTemplate("Empty Scene", ".vscn", self.explorer:loadIcon("studio://icons/16_2x/clapperboard.png"), function(path) 
+        local sceneRoot = __sunaba_SceneRoot.new();
+        local sceneFile = __sunaba_SceneFile.create(sceneRoot);
+        sceneFile:save(path);
+        sceneRoot:queueFree();
+      end);
+      self.explorer.newFileWidget:addScriptFileTemplate("Empty Script", ".hx", self.explorer:loadIcon("studio://icons/16_2x/document.png"), function(path) 
+        _gthis.sourceIo:saveText(path, "");
+      end);
       self.explorer:startExplorer();
       local hiddenDir = Std.string(self.explorer.projectDirectory) .. Std.string("/.studio");
       self.localPluginIo = __sunaba_io_FileSystemIo.new();
@@ -28410,6 +35605,105 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       ioManager:register(self.projectIo);
       ioManager:register(self.localPluginIo);
       self.sceneInspector = __sunaba_studio_sceneEditor_SceneInspector.new(self, 1);
+      self.resourceInspector = __sunaba_studio_ResourceInspector.new(self, 1);
+      self.console = __sunaba_studio_Console.new(self, 3);
+      self.console:addCommand("toggle-custom-titlebar", function(args) 
+        if (__sunaba_OSService.getName() == "macOS") then 
+          _gthis.console:log("The custom titlebar cannot be disabled on macOS");
+          do return -1 end;
+        end;
+        _gthis:set_customTitlebar(not _gthis:get_customTitlebar());
+        _gthis.explorer:buildTreeRoot();
+        do return 0 end;
+      end);
+      self.console:addCommand("import-model", function(args) 
+        local srcPath = args[0];
+        local destPath = args[1];
+        __sunaba_studio_ModelImportService.isRunningCoroutine = false;
+        local _hx_status, _hx_result = pcall(function() 
+        
+            __sunaba_studio_ModelImportService.inport(srcPath, destPath);
+          return _hx_pcall_default
+        end)
+        if not _hx_status and _hx_result == "_hx_pcall_break" then
+        elseif not _hx_status then 
+          local _g = _hx_result;
+          local e = __haxe_Exception.caught(_g);
+          local _gthis = _gthis.console;
+          local tmp = Std.string(e:get_message()) .. Std.string(" : ");
+          local tmp1 = e:get_stack();
+          _gthis:error(Std.string(tmp) .. Std.string(((function() 
+            local _hx_1
+            if (tmp1 == nil) then 
+            _hx_1 = "null"; else 
+            _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+            return _hx_1
+          end )())));
+          do return -1 end;
+        elseif _hx_result ~= _hx_pcall_default then
+          return _hx_result
+        end;
+        do return 0 end;
+      end);
+      self.console:addCommand("import-model-binary", function(args) 
+        local srcPath = args[0];
+        local destPath = args[1];
+        __sunaba_studio_ModelImportService.isRunningCoroutine = false;
+        local _hx_status, _hx_result = pcall(function() 
+        
+            __sunaba_studio_ModelImportService.inport(srcPath, destPath, true);
+          return _hx_pcall_default
+        end)
+        if not _hx_status and _hx_result == "_hx_pcall_break" then
+        elseif not _hx_status then 
+          local _g = _hx_result;
+          local e = __haxe_Exception.caught(_g);
+          local _gthis = _gthis.console;
+          local tmp = Std.string(e:get_message()) .. Std.string(" : ");
+          local tmp1 = e:get_stack();
+          _gthis:error(Std.string(tmp) .. Std.string(((function() 
+            local _hx_2
+            if (tmp1 == nil) then 
+            _hx_2 = "null"; else 
+            _hx_2 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+            return _hx_2
+          end )())));
+          do return -1 end;
+        elseif _hx_result ~= _hx_pcall_default then
+          return _hx_result
+        end;
+        do return 0 end;
+      end);
+      local args = _G.__args;
+      local s = args;
+      local array = _hx_tab_array({}, 0);
+      local _g = 0;
+      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+        if (value == nil) then 
+          _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+        end;
+        array:push(value);
+      end;
+      local args = array;
+      local osArgs = args;
+      local _g = 0;
+      local _g1 = osArgs.length;
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local arg = osArgs[i];
+        if (__sunaba_OSService.getName() ~= "macOS") then 
+          if (arg == "--no-custom-titlebar") then 
+            self:set_customTitlebar(false);
+          end;
+        end;
+      end;
     return _hx_pcall_default
   end)
   if not _hx_status and _hx_result == "_hx_pcall_break" then
@@ -28506,7 +35800,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(self.haxePath)) .. Std.string("\" \"$@\" ")));
     __sys_io_File.saveContent(wrapper, shContent);
-    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=693,className="sunaba.studio.Editor",methodName="onReady"}));
+    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=838,className="sunaba.studio.Editor",methodName="onReady"}));
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", wrapper}, 2)));
     self.haxePath = wrapper;
   end;
@@ -28514,7 +35808,7 @@ end
 __sunaba_studio_Editor.prototype.localPluginIo= nil;
 __sunaba_studio_Editor.prototype.showAboutDialog = function(self) 
   local aboutString = "Sunaba Studio\n";
-  aboutString = Std.string(aboutString) .. Std.string("Version 0.7.0\n");
+  aboutString = Std.string(aboutString) .. Std.string("Version 0.7.6\n");
   aboutString = Std.string(aboutString) .. Std.string("(C) 2022-2025 mintkat\n");
   aboutString = Std.string(aboutString) .. Std.string("\n");
   local osname = __sunaba_OSService.getName();
@@ -28612,7 +35906,7 @@ __sunaba_studio_Editor.prototype.onProcess = function(self,deltaTime)
   else
     self.centerTabContainer:getTabBar():set_tabCloseDisplayPolicy(1);
   end;
-  if (__sunaba_OSService.getName() ~= "macOS") then 
+  if ((__sunaba_OSService.getName() ~= "macOS") and self:get_customTitlebar()) then 
     if (self.window ~= nil) then 
       if (self.window:get_mode() ~= 0) then 
         do return end;
@@ -28639,7 +35933,6 @@ __sunaba_studio_Editor.prototype.onProcess = function(self,deltaTime)
         __sunaba_DisplayService.cursorSetShape(10);
         do return end;
       end;
-      __haxe_Log.trace(mousePosition.x > (windowsize.x + 50.0), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=834,className="sunaba.studio.Editor",methodName="onProcess"}));
       if (mousePosition.x > (windowsize.x - self.resizeThreshold)) then 
         __sunaba_DisplayService.cursorSetShape(10);
         do return end;
@@ -28689,7 +35982,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
   command = Std.string(command) .. Std.string((Std.string(" ") .. Std.string(self:get_projectFile().compilerFlags:join(" "))));
   local command = command;
   self.buildTask = _G.coroutine.create(function() 
-    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=872,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1016,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     if (_gthis.pluginBuildWindow ~= nil) then 
       local windowSize = _gthis.pluginBuildWindow:get_size();
       local scaleFactor = _gthis:getWindow():get_contentScaleFactor();
@@ -28715,7 +36008,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       end;
     end;
     _G.coroutine.yield();
-    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=891,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1035,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     local args = __sunaba_core_StringArray.create();
     local cmdArr = String.prototype.split(command, " ");
     local commandName = cmdArr[0];
@@ -28740,8 +36033,8 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
     _G.coroutine.yield();
     local s = args;
     local array = _hx_tab_array({}, 0);
-    local _g = 1;
-    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+    local _g = 0;
+    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
     while (_g < _g1) do _hx_do_first_1 = false;
       
       _g = _g + 1;
@@ -28753,7 +36046,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       array:push(value);
     end;
     local exitCode = Sys.command(commandName, array);
-    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=907,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1051,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     _G.coroutine.yield();
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:hide();
@@ -28954,7 +36247,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1067,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1211,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
@@ -29102,6 +36395,22 @@ __sunaba_studio_Editor.prototype.getWorkspaceTabTitle = function(self,widget)
   local index = self.workspaceChildern:indexOf(widget);
   do return self.centerTabContainer:getTabTitle(index) end
 end
+__sunaba_studio_Editor.prototype.setDockTabIcon = function(self,widget,icon) 
+  local index = self.dockChildren:indexOf(widget);
+  self.bottomCenterTabContainer:setTabIcon(index, icon);
+end
+__sunaba_studio_Editor.prototype.getDockTabIcon = function(self,widget,icon) 
+  local index = self.dockChildren:indexOf(widget);
+  do return self.bottomCenterTabContainer:getTabIcon(index) end
+end
+__sunaba_studio_Editor.prototype.getDockTabTitle = function(self,widget) 
+  local index = self.dockChildren:indexOf(widget);
+  do return self.bottomCenterTabContainer:getTabTitle(index) end
+end
+__sunaba_studio_Editor.prototype.setDockTabTitle = function(self,widget,title) 
+  local index = self.dockChildren:indexOf(widget);
+  self.bottomCenterTabContainer:setTabTitle(index, title);
+end
 __sunaba_studio_Editor.prototype.addLeftSidebarChild = function(self,child) 
   self.leftSidebarChildren:push(child);
   self.leftTabContainer:addChild(child);
@@ -29127,14 +36436,46 @@ __sunaba_studio_Editor.prototype.addWorkspaceChild = function(self,child)
   self.centerTabContainer:addChild(child);
   self.centerTabContainer:set_currentTab(self.centerTabContainer:getTabIdxFromControl(child));
 end
+__sunaba_studio_Editor.prototype.addDockChild = function(self,child) 
+  self.dockChildren:push(child);
+  self.bottomCenterTabContainer:addChild(child);
+  self.bottomCenterTabContainer:set_currentTab(self.bottomCenterTabContainer:getTabIdxFromControl(child));
+end
 __sunaba_studio_Editor.prototype.getCurrentWorkspaceChild = function(self) 
   do return self.workspaceChildern[self.centerTabContainer:get_currentTab()] end
+end
+__sunaba_studio_Editor.prototype.setCurrentWorkspaceChild = function(self,child) 
+  if (self.workspaceChildern:contains(child)) then 
+    local index = self.workspaceChildern:indexOf(child);
+    self.centerTabContainer:set_currentTab(index);
+  end;
 end
 __sunaba_studio_Editor.prototype.getCurrentLeftSidebarChild = function(self) 
   do return self.leftSidebarChildren[self.leftTabContainer:get_currentTab()] end
 end
+__sunaba_studio_Editor.prototype.setCurrentLeftSidebarChild = function(self,child) 
+  if (self.leftSidebarChildren:contains(child)) then 
+    local index = self.leftSidebarChildren:indexOf(child);
+    self.leftTabContainer:set_currentTab(index);
+  end;
+end
 __sunaba_studio_Editor.prototype.getCurrentRightSidebarChild = function(self) 
   do return self.rightSidebarChildren[self.rightTabContainer:get_currentTab()] end
+end
+__sunaba_studio_Editor.prototype.setCurrentRightSidebarChild = function(self,child) 
+  if (self.rightSidebarChildren:contains(child)) then 
+    local index = self.rightSidebarChildren:indexOf(child);
+    self.rightTabContainer:set_currentTab(index);
+  end;
+end
+__sunaba_studio_Editor.prototype.getCurrentDockChild = function(self) 
+  do return self.dockChildren[self.bottomCenterTabContainer:get_currentTab()] end
+end
+__sunaba_studio_Editor.prototype.setCurrentDockChlid = function(self,child) 
+  if (self.dockChildren:contains(child)) then 
+    local index = self.dockChildren:indexOf(child);
+    self.bottomCenterTabContainer:set_currentTab(index);
+  end;
 end
 __sunaba_studio_Editor.prototype.isSaveKeyPressed= nil;
 __sunaba_studio_Editor.prototype.onInput = function(self,event) 
@@ -29163,7 +36504,7 @@ __sunaba_studio_Editor.prototype.onInput = function(self,event)
       self:buildSnbForPlay();
     end;
   end;
-  if (__sunaba_OSService.getName() ~= "macOS") then 
+  if ((__sunaba_OSService.getName() ~= "macOS") and self:get_customTitlebar()) then 
     if (event.native:isClass("InputEventMouseButton")) then 
       local eventMouseButton = __sunaba_core_Reference.castTo_sunaba_input_InputEventMouseButton(event, __sunaba_input_InputEventMouseButton);
       if (self.window:get_mode() ~= 0) then 
@@ -29224,6 +36565,12 @@ __sunaba_studio_Editor.prototype.isControlKeyPressed = function(self)
     do return __sunaba_input_InputService.isKeyLabelPressed(4194326) end;
   end;
 end
+__sunaba_studio_Editor.prototype.undo = function(self) 
+  __sunaba_Debug.error("'Undo' not implemented");
+end
+__sunaba_studio_Editor.prototype.redo = function(self) 
+  __sunaba_Debug.error("'Redo' not implemented");
+end
 __sunaba_studio_Editor.prototype.save = function(self) 
   if (self.centerTabContainer:get_currentTab() == -1) then 
     do return end;
@@ -29264,19 +36611,13 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", shpath}, 2)));
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1383,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1385,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1386,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1595,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1389,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1391,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1393,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local res = script:call("encode", args):asDictionary();
     local bytes = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asByteArray();
-    __haxe_Log.trace(bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1397,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local size = bytes:size();
     local bytes1 = __haxe_io_Bytes.alloc(size);
     local _g = 0;
@@ -29289,7 +36630,6 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
       bytes1.b[i] = _hx_bit.band(v,255);
     end;
     local haxeBytes = bytes1;
-    __haxe_Log.trace(haxeBytes.length == bytes:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1399,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     do return haxeBytes end
    end;
   self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
@@ -29326,11 +36666,17 @@ __sunaba_studio_Editor.prototype.stop = function(self)
   self.debugMenu:setItemDisabled(2, true);
   self.isGameRunning = false;
   self.isGamePaused = false;
+  __sunaba_core__Signal_Signal_Impl_.remove(self.playerOnPrint, self.playerPrintCallable);
+  self.playerPrintCallable = nil;
+  self.playerOnPrint = nil;
   self.playerSubViewportContainer:queueFree();
   self.playerSubViewportContainer = nil;
   self.playerAppView = nil;
 end
+__sunaba_studio_Editor.prototype.playerPrintCallable= nil;
+__sunaba_studio_Editor.prototype.playerOnPrint= nil;
 __sunaba_studio_Editor.prototype.play = function(self) 
+  local _gthis = self;
   self.playButton:set_disabled(true);
   self.pauseButton:set_disabled(false);
   self.stopButton:set_disabled(false);
@@ -29354,7 +36700,11 @@ __sunaba_studio_Editor.prototype.play = function(self)
   self.playerSubViewportContainer:addChild(subViewport);
   subViewport:set_guiEmbedSubwindows(true);
   local snbPath = self.buildSystem.zipOutputPath;
-  self.playerAppView = __sunaba_DesktopAppView.new();
+  self.playerAppView = __sunaba_DesktopAppView.new(NativeObject.new("res://Studio/game_view.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1));
+  self.playerOnPrint = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.playerAppView.native, "on_print");
+  self.playerPrintCallable = __sunaba_core__Signal_Signal_Impl_.add(self.playerOnPrint, function(line) 
+    _gthis.console:log(line);
+  end);
   subViewport:addChild(self.playerAppView);
   self.playerAppView:init(false);
   self.playerAppView:loadApp(snbPath);
@@ -29416,9 +36766,11 @@ __sunaba_studio_Explorer.prototype.projectDirectory= nil;
 __sunaba_studio_Explorer.prototype.assetsDirectory= nil;
 __sunaba_studio_Explorer.prototype.sourceDirectory= nil;
 __sunaba_studio_Explorer.prototype.fileHandlers= nil;
+__sunaba_studio_Explorer.prototype.newFileDialog= nil;
+__sunaba_studio_Explorer.prototype.newFileWidget= nil;
 __sunaba_studio_Explorer.prototype.editorInit = function(self) 
   local _gthis = self;
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=39,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
   self:getEditor():setLeftSidebarTabTitle(self, "Project Explorer");
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/blue-folder-stand.png");
   local iconImage = __sunaba_Image.new();
@@ -29432,8 +36784,8 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
   self.throbberParent = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar1/hbox/throbber");
   self.throbberRect = self:getNodeT_sunaba_ui_TextureRect(__sunaba_ui_TextureRect, "vbox/toolbar1/hbox/throbber/textureRect");
   local throbberPath = "studio://throbber-animated";
-  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=59,className="sunaba.studio.Explorer",methodName="editorInit"}));
-  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=60,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local throbberTxtListN = self.io:getFileList(throbberPath, ".png", false);
   local result = Array.new();
   local _g = 0;
@@ -29455,12 +36807,12 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
       if (self.io:fileExists(iconPath)) then 
         throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
       else
-        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=69,className="sunaba.studio.Explorer",methodName="editorInit"}));
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
         break;
       end;
     end;
   end;
-  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=74,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local _g = 0;
   while (_g < throbberTxtList.length) do _hx_do_first_1 = false;
     
@@ -29481,30 +36833,80 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
     end;
   end));
   self.singleColumnTree = self:getNodeT_sunaba_ui_Tree(__sunaba_ui_Tree, "vbox/view/singleColumn/tree");
+  self.newFileDialog = self:getNodeT_sunaba_desktop_ConfirmationDialog(__sunaba_desktop_ConfirmationDialog, "newFileDialog");
+  self.newFileDialog:set_contentScaleFactor(self:getWindow():get_contentScaleFactor());
+  local nfwMinSize = self.newFileDialog:get_minSize();
+  nfwMinSize.x = Std.int(nfwMinSize.x * self.newFileDialog:get_contentScaleFactor());
+  nfwMinSize.y = Std.int(nfwMinSize.y * self.newFileDialog:get_contentScaleFactor());
+  self.newFileDialog:set_minSize(nfwMinSize);
+  self.newFileWidget = __sunaba_studio_explorer_NewFileWidget.new(self);
+  self.newFileDialog:addChild(self.newFileWidget);
 end
 __sunaba_studio_Explorer.prototype.startExplorer = function(self) 
   local _gthis = self;
   local projFilePathArray = String.prototype.split(String.prototype.split(self:getEditor():get_projectFilePath(), "\\"):join("/"), "/");
   if (projFilePathArray.length > 0) then 
     self.projectDirectory = projFilePathArray:slice(0, projFilePathArray.length - 1):join("/");
-    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=101,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=116,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (((self:getEditor():get_projectFile().assetsdir ~= nil) and (self:getEditor():get_projectFile().assetsdir ~= "")) and (String.prototype.indexOf(self:getEditor():get_projectFile().assetsdir, "null") == -1)) then 
-      self.assetsDirectory = Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().assetsdir);
+      self.assetsDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().assetsdir)) .. Std.string("/");
     else
       self.assetsDirectory = "";
     end;
-    self.sourceDirectory = Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().scriptdir);
-    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=112,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=113,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    self.sourceDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().scriptdir)) .. Std.string("/");
+    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=127,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=128,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (self.assetsDirectory ~= "") then 
       local projectIo = __sunaba_io_FileSystemIo.new();
       projectIo:open(self.assetsDirectory, self:getEditor():get_projectFile().rootUrl);
       self:getEditor().projectIo = projectIo;
     end;
+    local sourceIo = __sunaba_io_FileSystemIo.new();
+    sourceIo:open(self.sourceDirectory, "src://");
+    self:getEditor().sourceIo = sourceIo;
     self.singleColumnTree:get_itemActivated():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
       local treeItem = _gthis.singleColumnTree:getSelected();
       _gthis:onTreeItemActivated(treeItem);
     end));
+    local newMenu = self.newButton:getPopup();
+    newMenu:addIconItem(self:loadIcon("stduio://icons/16/blue-folder.png"), "Folder");
+    newMenu:addIconItem(self:loadIcon("stduio://icons/16/document.png"), "File");
+    __sunaba_core__Signal_Signal_Impl_.add(newMenu:get_idPressed(), function(id) 
+      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=151,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+      if (id == 0) then 
+        __sunaba_Debug.error("Folder creation not implemented.");
+      else
+        if (id == 1) then 
+          local selectedItem = _gthis.singleColumnTree:getSelected();
+          if (selectedItem ~= nil) then 
+            local dirPath = selectedItem:getMetadata(0):asString();
+            if (dirPath == "Root") then 
+              do return end;
+            end;
+            if (not StringTools.endsWith(dirPath, "/")) then 
+              local dirPathArray = String.prototype.split(dirPath, "/");
+              dirPathArray = dirPathArray:slice(dirPathArray.length);
+              dirPath = dirPathArray:join("/");
+            end;
+            local pathType = -1;
+            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=167,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=168,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            if (StringTools.startsWith(dirPath, _gthis.assetsDirectory)) then 
+              pathType = 0;
+            else
+              if (StringTools.startsWith(dirPath, _gthis.sourceDirectory)) then 
+                pathType = 1;
+              end;
+            end;
+            if (pathType ~= -1) then 
+              _gthis.newFileWidget:open(pathType, dirPath);
+              _gthis.newFileDialog:popupCentered();
+            end;
+          end;
+        end;
+      end;
+    end);
     self:buildTreeRoot();
   end;
 end
@@ -29530,6 +36932,9 @@ __sunaba_studio_Explorer.prototype.dirTreeCoroutines= nil;
 __sunaba_studio_Explorer.prototype.rootTreeItem= nil;
 __sunaba_studio_Explorer.prototype.dirIconTexture= nil;
 __sunaba_studio_Explorer.prototype.fileIconTexture= nil;
+__sunaba_studio_Explorer.prototype.refresh = function(self) 
+  self:buildTreeRoot();
+end
 __sunaba_studio_Explorer.prototype.buildTreeRoot = function(self) 
   local projectName = self:getEditor():get_projectFile().name;
   self.dirTreeCoroutines = Array.new();
@@ -29537,6 +36942,7 @@ __sunaba_studio_Explorer.prototype.buildTreeRoot = function(self)
   self.throbberParent:show();
   self.rootTreeItem = self.singleColumnTree:createItem();
   self.rootTreeItem:setText(0, projectName);
+  self.rootTreeItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString("Root"));
   local projectIconBytes = self.io:loadBytes("studio://icons/16/application-blue-studio.png");
   local projectIconImage = __sunaba_Image.new();
   projectIconImage:loadPngFromBuffer(projectIconBytes);
@@ -29555,10 +36961,12 @@ __sunaba_studio_Explorer.prototype.buildTreeRoot = function(self)
     assetsItem = self.singleColumnTree:createItem(self.rootTreeItem);
     assetsItem:setText(0, "Assets");
     assetsItem:setIcon(0, self.dirIconTexture);
+    assetsItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(self.assetsDirectory));
   end;
   local sourceItem = self.singleColumnTree:createItem(self.rootTreeItem);
   sourceItem:setText(0, "Scripts");
   sourceItem:setIcon(0, self.dirIconTexture);
+  sourceItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(self.sourceDirectory));
   if (self.assetsDirectory ~= "") then 
     self:buildDirTree(self.assetsDirectory, assetsItem);
   end;
@@ -29609,8 +37017,8 @@ __sunaba_studio_Explorer.prototype.buildDirTree = function(self,dirPath,parentIt
     local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
     local s = result;
     local array = _hx_tab_array({}, 0);
-    local _g = 1;
-    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+    local _g = 0;
+    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
     while (_g < _g1) do _hx_do_first_1 = false;
       
       _g = _g + 1;
@@ -29633,6 +37041,7 @@ __sunaba_studio_Explorer.prototype.buildDirTree = function(self,dirPath,parentIt
         dirItem:setText(0, entry);
         dirItem:setIcon(0, _gthis.dirIconTexture);
         _gthis:buildDirTree(Std.string(dirPath) .. Std.string(entry), dirItem);
+        dirItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(Std.string(Std.string(dirPath) .. Std.string(entry)) .. Std.string("/")));
         dirItem:set_collapsed(true);
       else
         local fileItem = _gthis.singleColumnTree:createItem(parentItem);
@@ -29841,6 +37250,10 @@ __sunaba_studio_Gizmo3D.prototype.deselect = function(self,target)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(target:get_node().native));
   self.node.native:call("deselect", args);
 end
+__sunaba_studio_Gizmo3D.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.node.native:call("clear", args);
+end
 __sunaba_studio_Gizmo3D.prototype.isSelected = function(self,target) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(target:get_node().native));
@@ -29856,6 +37269,2717 @@ end
 __sunaba_studio_Gizmo3D.prototype.__class__ =  __sunaba_studio_Gizmo3D
 __sunaba_studio_Gizmo3D.__super__ = __sunaba_Behavior
 setmetatable(__sunaba_studio_Gizmo3D.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_studio_ModelImportService.new = {}
+_hxClasses["sunaba.studio.ModelImportService"] = __sunaba_studio_ModelImportService
+__sunaba_studio_ModelImportService.__name__ = "sunaba.studio.ModelImportService"
+__sunaba_studio_ModelImportService.yeild = function() 
+  if (__sunaba_studio_ModelImportService.isRunningCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+end
+__sunaba_studio_ModelImportService.inport = function(srcPath,destPath,binaryFile,io) 
+  if (binaryFile == nil) then 
+    binaryFile = false;
+  end;
+  if (io == nil) then 
+    local ioNative = _G.__ioManager;
+    io = __sunaba_io_IoManager.new(ioNative);
+  end;
+  if ((srcPath == nil) or (srcPath == "")) then 
+    do return end;
+  end;
+  if (not StringTools.endsWith(destPath, ".smdl") and (binaryFile == false)) then 
+    destPath = Std.string(destPath) .. Std.string(".smdl");
+  end;
+  if (not StringTools.endsWith(destPath, ".smdl.dat") and (binaryFile == true)) then 
+    if (StringTools.endsWith(destPath, ".smdl")) then 
+      destPath = Std.string(destPath) .. Std.string(".dat");
+    else
+      destPath = Std.string(destPath) .. Std.string(".smdl.dat");
+    end;
+  end;
+  local destPathArray = String.prototype.split(String.prototype.split(destPath, "\\"):join("/"), "/");
+  local modelName = String.prototype.split(destPathArray[destPathArray.length - 1], ".")[0];
+  destPathArray = destPathArray:slice(0, destPathArray.length - 1);
+  local destDir = destPathArray:join("/");
+  if (not StringTools.endsWith(destDir, "/") or StringTools.endsWith(destDir, ":/")) then 
+    destDir = Std.string(destDir) .. Std.string("/");
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  local isIoPath = false;
+  if (StringTools.endsWith(srcPath, "://")) then 
+    isIoPath = true;
+  end;
+  local modelBuffer = nil;
+  if (isIoPath) then 
+    modelBuffer = io:loadBytes(srcPath);
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  if (StringTools.endsWith(srcPath, ".gltf") and isIoPath) then 
+    __sunaba_Debug.warn("This is a '.gltf' file, it is recomended to use the '.glb' file format");
+  end;
+  local modelDocument = nil;
+  local modelState = nil;
+  __sunaba_studio_ModelImportService.yeild();
+  if (StringTools.endsWith(srcPath, ".glb") or StringTools.endsWith(srcPath, ".gltf")) then 
+    modelState = __sunaba_spatial_models_gltf_GLTFState.new();
+    modelDocument = __sunaba_spatial_models_gltf_GLTFDocument.new();
+    __sunaba_studio_ModelImportService.yeild();
+    if (isIoPath and (modelBuffer ~= nil)) then 
+      modelDocument:appendFromBuffer(modelBuffer, "", modelState);
+    else
+      modelDocument:appendFromFile(srcPath, modelState);
+    end;
+  else
+    if (StringTools.endsWith(srcPath, ".fbx")) then 
+      modelState = __sunaba_spatial_models_fbx_FBXState.new();
+      modelDocument = __sunaba_spatial_models_fbx_FBXDocument.new();
+      __sunaba_studio_ModelImportService.yeild();
+      if (isIoPath and (modelBuffer ~= nil)) then 
+        modelDocument:appendFromBuffer(modelBuffer, "", modelState);
+      else
+        modelDocument:appendFromFile(srcPath, modelState);
+      end;
+    end;
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  if ((modelDocument ~= nil) and (modelState ~= nil)) then 
+    local imageFormat = modelDocument:get_imageFormat();
+    local fileExtension = "";
+    if (imageFormat == "PNG") then 
+      fileExtension = ".png";
+    else
+      if (imageFormat == "JPEG") then 
+        fileExtension = ".jpg";
+      else
+        if ((imageFormat == "Lossless WebP") or (imageFormat == "Lossy WebP")) then 
+          fileExtension = ".webp";
+        end;
+      end;
+    end;
+    local modelTextures = modelState:getTextures();
+    local modelImages = modelState:getImages();
+    local lossyQuality = modelDocument:get_lossyQuality();
+    __sunaba_studio_ModelImportService.yeild();
+    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
+    local textureDb = Array.new();
+    local tmp = imageFormat ~= "None";
+    __sunaba_studio_ModelImportService.yeild();
+    local gdscene = modelDocument:generateScene(modelState);
+    __sunaba_studio_ModelImportService.yeild();
+    local scene = __sunaba_SceneRoot.new();
+    local nodes = modelState:getNodes();
+    local rootNodes = modelState:get_rootNodes();
+    __sunaba_studio_ModelImportService.yeild();
+    local rootEntity = __sunaba_studio_ModelImportService.createEntity(modelDocument, modelState, gdscene, destDir, io);
+    __sunaba_studio_ModelImportService.yeild();
+    __sunaba_studio_ModelImportService.yeild();
+    if (modelState:get_createAnimations() == true) then 
+      __sunaba_studio_ModelImportService.yeild();
+      local animationPlayer = rootEntity:addComponent_sunaba_animation_AnimationPlayer(__sunaba_animation_AnimationPlayer);
+      __sunaba_studio_ModelImportService.yeild();
+      local animPlayerNode = nil;
+      __sunaba_studio_ModelImportService.yeild();
+      local _g = 0;
+      local _g1 = gdscene:getChildCount();
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        __sunaba_studio_ModelImportService.yeild();
+        local node = gdscene:getChild(i);
+        __sunaba_studio_ModelImportService.yeild();
+        if (node.native:isClass("AnimationPlayer")) then 
+          __sunaba_studio_ModelImportService.yeild();
+          animPlayerNode = node;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      if (animPlayerNode ~= nil) then 
+        __sunaba_studio_ModelImportService.yeild();
+        local animationList = animPlayerNode.native:call("get_animation_list", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asArrayList();
+        __sunaba_studio_ModelImportService.yeild();
+        local modelAnimationLibrary = __sunaba_animation_AnimationLibrary.new();
+        __sunaba_studio_ModelImportService.yeild();
+        local _g = 0;
+        local _g1 = animationList:size();
+        while (_g < _g1) do _hx_do_first_1 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          __sunaba_studio_ModelImportService.yeild();
+          local animationName = animationList:get(i):asString();
+          __sunaba_studio_ModelImportService.yeild();
+          local getAnimationArgs = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(animationName)}, 1);
+          __sunaba_studio_ModelImportService.yeild();
+          local animation = __sunaba_animation_Animation.new(animPlayerNode.native:call("get_animation", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(getAnimationArgs)):asReference());
+          __sunaba_studio_ModelImportService.yeild();
+          modelAnimationLibrary:addAnimation(animationName, animation);
+          __sunaba_studio_ModelImportService.yeild();
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        animationPlayer:addAnimationLibrary(modelState:get_sceneName(), modelAnimationLibrary);
+        __sunaba_studio_ModelImportService.yeild();
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      __sunaba_studio_ModelImportService.yeild();
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    local prefab = __sunaba_Prefab.create(rootEntity, destPath);
+    __sunaba_studio_ModelImportService.yeild();
+    local fileType = 0;
+    __sunaba_studio_ModelImportService.yeild();
+    if (binaryFile == true) then 
+      __sunaba_studio_ModelImportService.yeild();
+      fileType = 1;
+      __sunaba_studio_ModelImportService.yeild();
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    prefab:save(nil, fileType);
+    __sunaba_studio_ModelImportService.yeild();
+    scene:destroy();
+    __sunaba_studio_ModelImportService.yeild();
+    gdscene:queueFree();
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+end
+__sunaba_studio_ModelImportService.importAnimations = function(document,state,animationPlayer,gdscene) 
+  local animPlayerNode = nil;
+  __sunaba_studio_ModelImportService.yeild();
+  local _g = 0;
+  local _g1 = gdscene:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    __sunaba_studio_ModelImportService.yeild();
+    local node = gdscene:getChild(i);
+    __sunaba_studio_ModelImportService.yeild();
+    if (node.native:isClass("AnimationPlayer")) then 
+      __sunaba_studio_ModelImportService.yeild();
+      animPlayerNode = node;
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  if (animPlayerNode ~= nil) then 
+    __sunaba_studio_ModelImportService.yeild();
+    local animationList = animPlayerNode.native:call("get_animation_list", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asArrayList();
+    __sunaba_studio_ModelImportService.yeild();
+    local modelAnimationLibrary = __sunaba_animation_AnimationLibrary.new();
+    __sunaba_studio_ModelImportService.yeild();
+    local _g = 0;
+    local _g1 = animationList:size();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      __sunaba_studio_ModelImportService.yeild();
+      local animationName = animationList:get(i):asString();
+      __sunaba_studio_ModelImportService.yeild();
+      local getAnimationArgs = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(animationName)}, 1);
+      __sunaba_studio_ModelImportService.yeild();
+      local animation = __sunaba_animation_Animation.new(animPlayerNode.native:call("get_animation", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(getAnimationArgs)):asReference());
+      __sunaba_studio_ModelImportService.yeild();
+      modelAnimationLibrary:addAnimation(animationName, animation);
+      __sunaba_studio_ModelImportService.yeild();
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    animationPlayer:addAnimationLibrary(state:get_sceneName(), modelAnimationLibrary);
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+end
+__sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode,modelDir,io) 
+  if (document == nil) then 
+    _G.error(__haxe_Exception.thrown("ModelImporter: document could not be found"),0);
+  end;
+  if (state == nil) then 
+    _G.error(__haxe_Exception.thrown("ModelImporter: state could not be found"),0);
+  end;
+  if (gdnode == nil) then 
+    _G.error(__haxe_Exception.thrown("ModelImporter: Node could not be found"),0);
+  end;
+  local entity = __sunaba_Entity.new();
+  __sunaba_studio_ModelImportService.yeild();
+  entity.name = gdnode:get_name();
+  __sunaba_studio_ModelImportService.yeild();
+  local transform = entity:addComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  __sunaba_studio_ModelImportService.yeild();
+  if (not gdnode:getParent():isNull()) then 
+    __sunaba_studio_ModelImportService.yeild();
+    gdnode:getParent():removeChild(gdnode);
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  transform:set_node(gdnode);
+  __sunaba_studio_ModelImportService.yeild();
+  if (gdnode.native:isClass("Camera3D")) then 
+    __sunaba_studio_ModelImportService.yeild();
+    local camera = entity:addComponent_sunaba_spatial_Camera(__sunaba_spatial_Camera);
+    __sunaba_studio_ModelImportService.yeild();
+    camera:set_node(gdnode);
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  if (gdnode.native:isClass("MeshInstance3D")) then 
+    __sunaba_studio_ModelImportService.yeild();
+    local node = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode);
+    if (node ~= nil) then 
+      __sunaba_studio_ModelImportService.yeild();
+      local meshes = state:getMeshes();
+      __sunaba_studio_ModelImportService.yeild();
+      local mesh = __sunaba_spatial_models_gltf_GLTFMesh.new(meshes:get(node:get_mesh()):asReference());
+      __sunaba_studio_ModelImportService.yeild();
+      local meshData = __sunaba_spatial_mesh_MeshData.fromImporterMesh(mesh:get_mesh());
+      __sunaba_studio_ModelImportService.yeild();
+      local meshDisplay = entity:addComponent_sunaba_spatial_mesh_MeshDisplay(__sunaba_spatial_mesh_MeshDisplay);
+      __sunaba_studio_ModelImportService.yeild();
+      meshDisplay:set_skeleton(gdnode.native:get("skeleton"):asString());
+      if (meshDisplay:get_skeleton() == "..") then 
+        meshDisplay:set_skeleton(Std.string(meshDisplay:get_skeleton()) .. Std.string("/.."));
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      if (gdnode.native:get("skin"):getType() == 24) then 
+        __sunaba_studio_ModelImportService.yeild();
+        if (gdnode.native:get("skin"):asReference() ~= nil) then 
+          if (gdnode.native:get("skin"):asReference():isValid()) then 
+            __sunaba_studio_ModelImportService.yeild();
+            meshDisplay:set_skin(__sunaba_spatial_Skin.new(gdnode.native:get("skin"):asReference()));
+            __sunaba_studio_ModelImportService.yeild();
+          end;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      local _g = 0;
+      local _g1 = meshData.surfaceMaterials:size();
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        __sunaba_studio_ModelImportService.yeild();
+        local surfaceMaterial = __sunaba_spatial_BaseMaterial3D.new(meshData.surfaceMaterials:get(i):asReference());
+        __sunaba_studio_ModelImportService.yeild();
+        local param = 0;
+        while (param < 20) do _hx_do_first_2 = false;
+          
+          __sunaba_studio_ModelImportService.yeild();
+          local txt2d = surfaceMaterial:getTexture(param);
+          if (not txt2d:isNull()) then 
+            if (txt2d:isObjectValid()) then 
+              __sunaba_studio_ModelImportService.yeild();
+              local ogTexture = __sunaba_core_Reference.castTo_sunaba_ImageTexture(txt2d, __sunaba_ImageTexture);
+              __sunaba_studio_ModelImportService.yeild();
+              if (ogTexture:getImage():getData():size() > 0) then 
+                __sunaba_studio_ModelImportService.yeild();
+                local ogTextureBytes = ogTexture:getImage():saveWebpToBuffer(false);
+                __sunaba_studio_ModelImportService.yeild();
+                local textureName = Std.string(Std.string(Std.string(entity.name) .. Std.string("_")) .. Std.string(Std.string(param))) .. Std.string(".webp");
+                __sunaba_studio_ModelImportService.yeild();
+                io:saveBytes(Std.string(modelDir) .. Std.string(textureName), ogTextureBytes);
+                __sunaba_studio_ModelImportService.yeild();
+                ogTexture.native:set("asset_path", __sunaba_core__Variant_Variant_Impl_.fromString(Std.string(modelDir) .. Std.string(textureName)));
+              end;
+              __sunaba_studio_ModelImportService.yeild();
+            end;
+            __sunaba_studio_ModelImportService.yeild();
+          end;
+          __sunaba_studio_ModelImportService.yeild();
+          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=371,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
+          param = param + 1;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      local meshLoader = entity:addComponent_sunaba_spatial_mesh_MeshLoader(__sunaba_spatial_mesh_MeshLoader);
+      __sunaba_studio_ModelImportService.yeild();
+      meshLoader:set_meshData(meshData);
+      __sunaba_studio_ModelImportService.yeild();
+    end;
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  if (gdnode.native:getClass() == "DirectionalLight3D") then 
+    __sunaba_studio_ModelImportService.yeild();
+    local directionalLight = entity:addComponent_sunaba_spatial_lighting_DirectionalLight(__sunaba_spatial_lighting_DirectionalLight);
+    __sunaba_studio_ModelImportService.yeild();
+    directionalLight.node:queueFree();
+    __sunaba_studio_ModelImportService.yeild();
+    directionalLight.node = gdnode;
+    __sunaba_studio_ModelImportService.yeild();
+  else
+    if (gdnode.native:getClass() == "OmniLight3D") then 
+      __sunaba_studio_ModelImportService.yeild();
+      local omniLight = entity:addComponent_sunaba_spatial_lighting_OmniLight(__sunaba_spatial_lighting_OmniLight);
+      __sunaba_studio_ModelImportService.yeild();
+      omniLight.node:queueFree();
+      __sunaba_studio_ModelImportService.yeild();
+      omniLight.node = gdnode;
+      __sunaba_studio_ModelImportService.yeild();
+    else
+      if (gdnode.native:getClass() == "SpotLight3D") then 
+        __sunaba_studio_ModelImportService.yeild();
+        local spotLight = entity:addComponent_sunaba_spatial_lighting_SpotLight(__sunaba_spatial_lighting_SpotLight);
+        __sunaba_studio_ModelImportService.yeild();
+        spotLight.node:queueFree();
+        __sunaba_studio_ModelImportService.yeild();
+        spotLight.node = gdnode;
+        __sunaba_studio_ModelImportService.yeild();
+      end;
+    end;
+  end;
+  if (gdnode.native:isClass("Skeleton3D")) then 
+    local skeletonComponent = entity:addComponent_sunaba_spatial_Skeleton(__sunaba_spatial_Skeleton);
+    __sunaba_studio_ModelImportService.yeild();
+    skeletonComponent.node = gdnode;
+    __sunaba_studio_ModelImportService.yeild();
+    entity:set_node(gdnode);
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  __sunaba_studio_ModelImportService.yeild();
+  local _g = 0;
+  local _g1 = gdnode:getChildCount();
+  local _hx_continue_1 = false;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    repeat 
+    _g = _g + 1;
+    local childIdx = _g - 1;
+    __sunaba_studio_ModelImportService.yeild();
+    local childNode = gdnode:getChild(childIdx);
+    __sunaba_studio_ModelImportService.yeild();
+    if (childNode:get_name() == "MeshDisplay") then 
+      __sunaba_studio_ModelImportService.yeild();
+      break;
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    local child = __sunaba_studio_ModelImportService.createEntity(document, state, childNode, modelDir, io);
+    __sunaba_studio_ModelImportService.yeild();
+    entity:addChild(child);
+    __sunaba_studio_ModelImportService.yeild();until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  do return entity end;
+end
+__sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,state,gdnode,node) 
+  local nodes = state:getNodes();
+  __sunaba_studio_ModelImportService.yeild();
+  if (node ~= nil) then 
+    __sunaba_studio_ModelImportService.yeild();
+    if (node:isNull()) then 
+      __sunaba_studio_ModelImportService.yeild();
+      do return nil end;
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    if (node:get_originalName() == gdnode:get_name()) then 
+      __sunaba_studio_ModelImportService.yeild();
+      do return node end;
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+    local s = node:get_children();
+    local array = _hx_tab_array({}, 0);
+    local _g = 0;
+    local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+      if (value == nil) then 
+        _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+      end;
+      array:push(value);
+    end;
+    local children = array;
+    __sunaba_studio_ModelImportService.yeild();
+    local _g = 0;
+    local _hx_continue_1 = false;
+    while (_g < children.length) do _hx_do_first_1 = false;
+      repeat 
+      local childIdx = children[_g];
+      _g = _g + 1;
+      __sunaba_studio_ModelImportService.yeild();
+      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=463,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+      __sunaba_studio_ModelImportService.yeild();
+      local childNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(childIdx):asReference());
+      __sunaba_studio_ModelImportService.yeild();
+      if (childNode:isNull()) then 
+        __sunaba_studio_ModelImportService.yeild();
+        break;
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, childNode);
+      __sunaba_studio_ModelImportService.yeild();
+      if (result ~= nil) then 
+        __sunaba_studio_ModelImportService.yeild();
+        do return result end;
+      end;
+      __sunaba_studio_ModelImportService.yeild();until true
+      if _hx_continue_1 then 
+      _hx_continue_1 = false;
+      break;
+      end;
+      
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+  else
+    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=483,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+    __sunaba_studio_ModelImportService.yeild();
+    local rootNodes = state:get_rootNodes();
+    local nodes = state:getNodes();
+    if (__sunaba_core__TypedArray_TypedArray_Impl_.size(rootNodes) == 0) then 
+      __sunaba_studio_ModelImportService.yeild();
+      local _g = 0;
+      local _g1 = nodes:size() + 1;
+      local _hx_continue_1 = false;
+      while (_g < _g1) do _hx_do_first_1 = false;
+        repeat 
+        _g = _g + 1;
+        local i = _g - 1;
+        __sunaba_studio_ModelImportService.yeild();
+        local nodeIdx = nodes:get(i);
+        __haxe_Log.trace((function() 
+          local _hx_1
+          if (nodeIdx == nil) then 
+          _hx_1 = "null"; else 
+          _hx_1 = nodeIdx:asString(); end
+          return _hx_1
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=492,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __sunaba_studio_ModelImportService.yeild();
+        if (nodeIdx == nil) then 
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local rootNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(nodeIdx:asInt()):asReference());
+        __sunaba_studio_ModelImportService.yeild();
+        if (rootNode:isNull()) then 
+          __sunaba_studio_ModelImportService.yeild();
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
+        __sunaba_studio_ModelImportService.yeild();
+        if (result ~= nil) then 
+          __sunaba_studio_ModelImportService.yeild();
+          do return result end;
+        end;
+        __sunaba_studio_ModelImportService.yeild();until true
+        if _hx_continue_1 then 
+        _hx_continue_1 = false;
+        break;
+        end;
+        
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+    else
+      __sunaba_studio_ModelImportService.yeild();
+      local _g = 0;
+      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(rootNodes) + 1;
+      local _hx_continue_1 = false;
+      while (_g < _g1) do _hx_do_first_1 = false;
+        repeat 
+        _g = _g + 1;
+        local i = _g - 1;
+        __sunaba_studio_ModelImportService.yeild();
+        local nodeIdx = __sunaba_core__TypedArray_TypedArray_Impl_.get(rootNodes, i);
+        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=519,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __sunaba_studio_ModelImportService.yeild();
+        if (nodeIdx == nil) then 
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local rootNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(nodeIdx):asReference());
+        __sunaba_studio_ModelImportService.yeild();
+        if (rootNode:isNull()) then 
+          __sunaba_studio_ModelImportService.yeild();
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
+        __sunaba_studio_ModelImportService.yeild();
+        if (result ~= nil) then 
+          __sunaba_studio_ModelImportService.yeild();
+          do return result end;
+        end;
+        __sunaba_studio_ModelImportService.yeild();until true
+        if _hx_continue_1 then 
+        _hx_continue_1 = false;
+        break;
+        end;
+        
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+      local _g = 0;
+      local _g1 = nodes:size() + 1;
+      local _hx_continue_1 = false;
+      while (_g < _g1) do _hx_do_first_1 = false;
+        repeat 
+        _g = _g + 1;
+        local i = _g - 1;
+        __sunaba_studio_ModelImportService.yeild();
+        local nodeIdx = nodes:get(i);
+        __haxe_Log.trace((function() 
+          local _hx_2
+          if (nodeIdx == nil) then 
+          _hx_2 = "null"; else 
+          _hx_2 = nodeIdx:asString(); end
+          return _hx_2
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=543,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __sunaba_studio_ModelImportService.yeild();
+        if (nodeIdx == nil) then 
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local rootNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(nodeIdx:asInt()):asReference());
+        __sunaba_studio_ModelImportService.yeild();
+        if (rootNode:isNull()) then 
+          __sunaba_studio_ModelImportService.yeild();
+          break;
+        end;
+        __sunaba_studio_ModelImportService.yeild();
+        local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
+        __sunaba_studio_ModelImportService.yeild();
+        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=557,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        if (result ~= nil) then 
+          __sunaba_studio_ModelImportService.yeild();
+          do return result end;
+        end;
+        __sunaba_studio_ModelImportService.yeild();until true
+        if _hx_continue_1 then 
+        _hx_continue_1 = false;
+        break;
+        end;
+        
+      end;
+      __sunaba_studio_ModelImportService.yeild();
+    end;
+    __sunaba_studio_ModelImportService.yeild();
+  end;
+  __sunaba_studio_ModelImportService.yeild();
+  do return nil end;
+end
+
+__sunaba_studio_ResourceInspector.new = function(parent,area) 
+  local self = _hx_new(__sunaba_studio_ResourceInspector.prototype)
+  __sunaba_studio_ResourceInspector.super(self,parent,area)
+  return self
+end
+__sunaba_studio_ResourceInspector.super = function(self,parent,area) 
+  self.selectedIndex = -1;
+  self.objectIndex = -1;
+  self.assetNames = __haxe_ds_IntMap.new();
+  self.assetParentObjects = __haxe_ds_IntMap.new();
+  self.assetParentResources = __haxe_ds_IntMap.new();
+  self.assetEntities = __haxe_ds_IntMap.new();
+  self.scriptableObjectList = __haxe_ds_IntMap.new();
+  self.resourceList = __haxe_ds_IntMap.new();
+  __sunaba_studio_EditorWidget.super(self,parent,area);
+end
+_hxClasses["sunaba.studio.ResourceInspector"] = __sunaba_studio_ResourceInspector
+__sunaba_studio_ResourceInspector.__name__ = "sunaba.studio.ResourceInspector"
+__sunaba_studio_ResourceInspector.prototype = _hx_e();
+__sunaba_studio_ResourceInspector.prototype.resourceList= nil;
+__sunaba_studio_ResourceInspector.prototype.scriptableObjectList= nil;
+__sunaba_studio_ResourceInspector.prototype.assetEntities= nil;
+__sunaba_studio_ResourceInspector.prototype.assetParentResources= nil;
+__sunaba_studio_ResourceInspector.prototype.assetParentObjects= nil;
+__sunaba_studio_ResourceInspector.prototype.assetNames= nil;
+__sunaba_studio_ResourceInspector.prototype.objectIndex= nil;
+__sunaba_studio_ResourceInspector.prototype.selectedIndex= nil;
+__sunaba_studio_ResourceInspector.prototype.saveButton= nil;
+__sunaba_studio_ResourceInspector.prototype.closeButton= nil;
+__sunaba_studio_ResourceInspector.prototype.currentResourceButton= nil;
+__sunaba_studio_ResourceInspector.prototype.inspectorVbox= nil;
+__sunaba_studio_ResourceInspector.prototype.editorInit = function(self) 
+  self:load("studio://ResourceInspector.suml");
+  local tmp = self:getEditor();
+  local iconBytes = self:getEditor().io:loadBytes("studio://icons/16_1-5x/document--pencil.png");
+  local tmp1;
+  if (iconBytes ~= nil) then 
+    local iconImage = __sunaba_Image.new();
+    iconImage:loadPngFromBuffer(iconBytes);
+    local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+    tmp1 = iconTexture;
+  else
+    tmp1 = nil;
+  end;
+  tmp:setRightSiderbarTabIcon(self, tmp1);
+  local x = 275;
+  local y = 0;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  self:set_customMinimumSize(Vector2.new(x, y));
+  self.saveButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/save");
+  self.closeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/close");
+  self.currentResourceButton = self:getNodeT_sunaba_ui_OptionButton(__sunaba_ui_OptionButton, "vbox/currentResource");
+  self.inspectorVbox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vbox/scroll/vbox");
+end
+__sunaba_studio_ResourceInspector.prototype.openResource = function(self,res,parentDictIsResource,name,entity,parentAsset) 
+  if (parentDictIsResource == nil) then 
+    parentDictIsResource = false;
+  end;
+  local listContainsResource = false;
+  local index = self.resourceList:keys();
+  local _hx_continue_1 = false;
+  while (index:hasNext()) do _hx_do_first_1 = false;
+    repeat 
+    local index = index:next();
+    local ret = self.resourceList.h[index];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    if (__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(ret)) == __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(res))) then 
+      local ret = self.assetNames.h[index];
+      if (ret == __haxe_ds_IntMap.tnull) then 
+        ret = nil;
+      end;
+      if (ret ~= name) then 
+        if (entity ~= nil) then 
+          local ret = self.assetEntities.h[index];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          if (ret ~= entity) then 
+            break;
+          end;
+        else
+          if (parentAsset ~= nil) then 
+            if (parentDictIsResource == true) then 
+              local ret = self.assetParentResources.h[self.selectedIndex];
+              if (ret == __haxe_ds_IntMap.tnull) then 
+                ret = nil;
+              end;
+              if (__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(ret)) ~= __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(parentAsset))) then 
+                break;
+              end;
+            else
+              local ret = self.assetParentObjects.h[self.selectedIndex];
+              if (ret == __haxe_ds_IntMap.tnull) then 
+                ret = nil;
+              end;
+              if (__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(ret)) ~= __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(parentAsset))) then 
+                break;
+              end;
+            end;
+          end;
+        end;
+      end;
+      listContainsResource = true;
+      self.selectedIndex = index;
+      _hx_continue_1 = true;break;
+    end;until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  if (listContainsResource == false) then 
+    self.objectIndex = self.objectIndex + 1;
+    local k = self.objectIndex;
+    local _this = self.resourceList;
+    if (res == nil) then 
+      _this.h[k] = __haxe_ds_IntMap.tnull;
+    else
+      _this.h[k] = res;
+    end;
+    self.selectedIndex = self.objectIndex;
+    if (name ~= nil) then 
+      local k = self.objectIndex;
+      local _this = self.assetNames;
+      if (name == nil) then 
+        _this.h[k] = __haxe_ds_IntMap.tnull;
+      else
+        _this.h[k] = name;
+      end;
+    end;
+    if (entity ~= nil) then 
+      local k = self.objectIndex;
+      local _this = self.assetEntities;
+      if (entity == nil) then 
+        _this.h[k] = __haxe_ds_IntMap.tnull;
+      else
+        _this.h[k] = entity;
+      end;
+    end;
+    if (parentAsset ~= nil) then 
+      if (parentDictIsResource == true) then 
+        local k = self.selectedIndex;
+        local _this = self.assetParentResources;
+        if (parentAsset == nil) then 
+          _this.h[k] = __haxe_ds_IntMap.tnull;
+        else
+          _this.h[k] = parentAsset;
+        end;
+      else
+        local k = self.selectedIndex;
+        local _this = self.assetParentObjects;
+        if (parentAsset == nil) then 
+          _this.h[k] = __haxe_ds_IntMap.tnull;
+        else
+          _this.h[k] = parentAsset;
+        end;
+      end;
+    end;
+    local className = Std.string("Resource ") .. Std.string(Std.string(self.objectIndex));
+    if (res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString() ~= "?") then 
+      className = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString();
+    else
+      if (res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):getType() == 4) then 
+        className = Std.string(className) .. Std.string((Std.string(Std.string(" (") .. Std.string(res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):asString())) .. Std.string(")")));
+      end;
+    end;
+    self.currentResourceButton:addItem(className, self.objectIndex);
+    self.currentResourceButton:set_selected(self.objectIndex);
+  end;
+  self:getEditor():setCurrentRightSidebarChild(self);
+  local _gthis = self;
+  local _g = 0;
+  local _g1 = self.inspectorVbox:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local inspectorVboxChild = self.inspectorVbox:getChild(i);
+    inspectorVboxChild:queueFree();
+  end;
+  if (self.selectedIndex ~= -1) then 
+    local ret = self.resourceList.h[self.selectedIndex];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    if (ret ~= nil) then 
+      local ret = self.resourceList.h[self.selectedIndex];
+      if (ret == __haxe_ds_IntMap.tnull) then 
+        ret = nil;
+      end;
+      local resourceData = ret;
+      local resourceDataValue = resourceData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+      local properties = resourceDataValue:get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
+      local propertyNames = properties:keys();
+      local _g = 0;
+      local _g1 = propertyNames:size();
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+        local propertyValue = _hx_tab_array({[0]=properties:get(propertyName[0]):asDictionary()}, 1);
+        if (propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+          local propertyContainer = __sunaba_ui_HBoxContainer.new();
+          local propertyLabel = __sunaba_ui_Label.new();
+          propertyLabel:set_text(propertyName[0]:asString());
+          propertyLabel:set_horizontalAlignment(0);
+          propertyLabel:set_verticalAlignment(1);
+          local x = 0.0;
+          local y = 20.0;
+          if (y == nil) then 
+            y = 0;
+          end;
+          if (x == nil) then 
+            x = 0;
+          end;
+          propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+          propertyLabel:set_clipText(true);
+          propertyContainer:addChild(propertyLabel);
+          propertyLabel:set_sizeFlagsHorizontal(3);
+          local propertyType = propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+          if (propertyType == 4) then 
+            local strLineEdit = __sunaba_ui_LineEdit.new();
+            strLineEdit:set_text(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asString());
+            local x = 150.0;
+            local y = 20.0;
+            if (y == nil) then 
+              y = 0;
+            end;
+            if (x == nil) then 
+              x = 0;
+            end;
+            strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+            __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyValue,propertyName) 
+              do return function(newValue) 
+                propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+                properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                local k = _gthis.selectedIndex;
+                local _this = _gthis.resourceList;
+                if (resourceData == nil) then 
+                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                else
+                  _this.h[k] = resourceData;
+                end;
+                do return resourceData end;
+              end end;
+            end)(propertyValue, propertyName));
+            propertyContainer:addChild(strLineEdit);
+          else
+            if (propertyType == 3) then 
+              local floatSpinBox = __sunaba_ui_SpinBox.new();
+              floatSpinBox:set_maxValue(500);
+              floatSpinBox:set_minValue(-500);
+              floatSpinBox:set_allowGreater(true);
+              floatSpinBox:set_allowLesser(true);
+              floatSpinBox:set_step(0.001);
+              floatSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asFloat());
+              local x = 150.0;
+              local y = 20.0;
+              if (y == nil) then 
+                y = 0;
+              end;
+              if (x == nil) then 
+                x = 0;
+              end;
+              floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+              __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyValue,propertyName) 
+                do return function(newValue) 
+                  propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                  local k = _gthis.selectedIndex;
+                  local _this = _gthis.resourceList;
+                  if (resourceData == nil) then 
+                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                  else
+                    _this.h[k] = resourceData;
+                  end;
+                  do return resourceData end;
+                end end;
+              end)(propertyValue, propertyName));
+              propertyContainer:addChild(floatSpinBox);
+            else
+              if (propertyType == 2) then 
+                local intSpinBox = __sunaba_ui_SpinBox.new();
+                intSpinBox:set_maxValue(2147483648);
+                intSpinBox:set_minValue(-2147483648);
+                intSpinBox:set_allowGreater(true);
+                intSpinBox:set_allowLesser(true);
+                intSpinBox:set_step(1);
+                intSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asInt());
+                local x = 150.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                intSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                __sunaba_core__Signal_Signal_Impl_.add(intSpinBox:get_valueChanged(), (function(propertyValue,propertyName) 
+                  do return function(newValue) 
+                    propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+                    properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                    resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                    resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                    local k = _gthis.selectedIndex;
+                    local _this = _gthis.resourceList;
+                    if (resourceData == nil) then 
+                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                    else
+                      _this.h[k] = resourceData;
+                    end;
+                    do return resourceData end;
+                  end end;
+                end)(propertyValue, propertyName));
+                propertyContainer:addChild(intSpinBox);
+              else
+                if (propertyType == 1) then 
+                  local boolCheckBox = __sunaba_ui_CheckBox.new();
+                  boolCheckBox:set_buttonPressed(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asBool());
+                  local x = 0.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+                  boolCheckBox:set_flat(true);
+                  __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyValue,propertyName) 
+                    do return function(newValue) 
+                      propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                      properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                      resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                      resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.resourceList;
+                      if (resourceData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = resourceData;
+                      end;
+                      do return resourceData end;
+                    end end;
+                  end)(propertyValue, propertyName));
+                  propertyContainer:addChild(boolCheckBox);
+                else
+                  if (propertyType == 5) then 
+                    local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2()}, 1);
+                    local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                    local xSpinBox = __sunaba_ui_SpinBox.new();
+                    xSpinBox:set_maxValue(500);
+                    xSpinBox:set_minValue(-500);
+                    xSpinBox:set_allowGreater(true);
+                    xSpinBox:set_allowLesser(true);
+                    xSpinBox:set_step(0.001);
+                    xSpinBox:set_value(vec2[0].x);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec2[0].x = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec2, propertyValue, propertyName));
+                    local xLabel = __sunaba_ui_Label.new();
+                    xLabel:set_text("x");
+                    xLabel:set_horizontalAlignment(1);
+                    xLabel:set_verticalAlignment(1);
+                    local xHBox = __sunaba_ui_HBoxContainer.new();
+                    xHBox:addChild(xLabel);
+                    xHBox:addChild(xSpinBox);
+                    vec2Vbox:addChild(xHBox);
+                    local ySpinBox = __sunaba_ui_SpinBox.new();
+                    ySpinBox:set_maxValue(500);
+                    ySpinBox:set_minValue(-500);
+                    ySpinBox:set_allowGreater(true);
+                    ySpinBox:set_allowLesser(true);
+                    ySpinBox:set_step(0.001);
+                    ySpinBox:set_value(vec2[0].y);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec2[0].y = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec2, propertyValue, propertyName));
+                    local yLabel = __sunaba_ui_Label.new();
+                    yLabel:set_text("y");
+                    yLabel:set_horizontalAlignment(1);
+                    yLabel:set_verticalAlignment(1);
+                    local yHBox = __sunaba_ui_HBoxContainer.new();
+                    yHBox:addChild(yLabel);
+                    yHBox:addChild(ySpinBox);
+                    vec2Vbox:addChild(yHBox);
+                    propertyContainer:addChild(vec2Vbox);
+                  else
+                    if (propertyType == 9) then 
+                      local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3()}, 1);
+                      local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                      local xSpinBox = __sunaba_ui_SpinBox.new();
+                      xSpinBox:set_maxValue(500);
+                      xSpinBox:set_minValue(-500);
+                      xSpinBox:set_allowGreater(true);
+                      xSpinBox:set_allowLesser(true);
+                      xSpinBox:set_step(0.001);
+                      xSpinBox:set_value(vec3[0].x);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                        do return function(newValue) 
+                          vec3[0].x = newValue;
+                          propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                          properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                          resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.resourceList;
+                          if (resourceData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData;
+                          end;
+                          do return resourceData end;
+                        end end;
+                      end)(vec3, propertyValue, propertyName));
+                      local xLabel = __sunaba_ui_Label.new();
+                      xLabel:set_text("x");
+                      xLabel:set_horizontalAlignment(1);
+                      xLabel:set_verticalAlignment(1);
+                      local xHBox = __sunaba_ui_HBoxContainer.new();
+                      xHBox:addChild(xLabel);
+                      xHBox:addChild(xSpinBox);
+                      vec3Vbox:addChild(xHBox);
+                      local ySpinBox = __sunaba_ui_SpinBox.new();
+                      ySpinBox:set_maxValue(500);
+                      ySpinBox:set_minValue(-500);
+                      ySpinBox:set_allowGreater(true);
+                      ySpinBox:set_allowLesser(true);
+                      ySpinBox:set_step(0.001);
+                      ySpinBox:set_value(vec3[0].y);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                        do return function(newValue) 
+                          vec3[0].y = newValue;
+                          propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                          properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                          resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.resourceList;
+                          if (resourceData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData;
+                          end;
+                          do return resourceData end;
+                        end end;
+                      end)(vec3, propertyValue, propertyName));
+                      local yLabel = __sunaba_ui_Label.new();
+                      yLabel:set_text("y");
+                      yLabel:set_horizontalAlignment(1);
+                      yLabel:set_verticalAlignment(1);
+                      local yHBox = __sunaba_ui_HBoxContainer.new();
+                      yHBox:addChild(yLabel);
+                      yHBox:addChild(ySpinBox);
+                      vec3Vbox:addChild(yHBox);
+                      local zSpinBox = __sunaba_ui_SpinBox.new();
+                      zSpinBox:set_maxValue(500);
+                      zSpinBox:set_minValue(-500);
+                      zSpinBox:set_allowGreater(true);
+                      zSpinBox:set_allowLesser(true);
+                      zSpinBox:set_step(0.001);
+                      zSpinBox:set_value(vec3[0].z);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                        do return function(newValue) 
+                          vec3[0].z = newValue;
+                          propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                          properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                          resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.resourceList;
+                          if (resourceData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData;
+                          end;
+                          do return resourceData end;
+                        end end;
+                      end)(vec3, propertyValue, propertyName));
+                      local zLabel = __sunaba_ui_Label.new();
+                      zLabel:set_text("z");
+                      zLabel:set_horizontalAlignment(1);
+                      zLabel:set_verticalAlignment(1);
+                      local zHBox = __sunaba_ui_HBoxContainer.new();
+                      zHBox:addChild(zLabel);
+                      zHBox:addChild(zSpinBox);
+                      vec3Vbox:addChild(zHBox);
+                      propertyContainer:addChild(vec3Vbox);
+                    else
+                      if (propertyType == 12) then 
+                        local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4()}, 1);
+                        local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                        local xSpinBox = __sunaba_ui_SpinBox.new();
+                        xSpinBox:set_maxValue(500);
+                        xSpinBox:set_minValue(-500);
+                        xSpinBox:set_allowGreater(true);
+                        xSpinBox:set_allowLesser(true);
+                        xSpinBox:set_step(0.001);
+                        xSpinBox:set_value(vec4[0].x);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec4[0].x = newValue;
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec4, propertyValue, propertyName));
+                        local xLabel = __sunaba_ui_Label.new();
+                        xLabel:set_text("x");
+                        xLabel:set_horizontalAlignment(1);
+                        xLabel:set_verticalAlignment(1);
+                        local xHBox = __sunaba_ui_HBoxContainer.new();
+                        xHBox:addChild(xLabel);
+                        xHBox:addChild(xSpinBox);
+                        vec4Vbox:addChild(xHBox);
+                        local ySpinBox = __sunaba_ui_SpinBox.new();
+                        ySpinBox:set_maxValue(500);
+                        ySpinBox:set_minValue(-500);
+                        ySpinBox:set_allowGreater(true);
+                        ySpinBox:set_allowLesser(true);
+                        ySpinBox:set_step(0.001);
+                        ySpinBox:set_value(vec4[0].y);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec4[0].y = newValue;
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec4, propertyValue, propertyName));
+                        local yLabel = __sunaba_ui_Label.new();
+                        yLabel:set_text("y");
+                        yLabel:set_horizontalAlignment(1);
+                        yLabel:set_verticalAlignment(1);
+                        local yHBox = __sunaba_ui_HBoxContainer.new();
+                        yHBox:addChild(yLabel);
+                        yHBox:addChild(ySpinBox);
+                        vec4Vbox:addChild(yHBox);
+                        local zSpinBox = __sunaba_ui_SpinBox.new();
+                        zSpinBox:set_maxValue(500);
+                        zSpinBox:set_minValue(-500);
+                        zSpinBox:set_allowGreater(true);
+                        zSpinBox:set_allowLesser(true);
+                        zSpinBox:set_step(0.001);
+                        zSpinBox:set_value(vec4[0].z);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec4[0].z = newValue;
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec4, propertyValue, propertyName));
+                        local zLabel = __sunaba_ui_Label.new();
+                        zLabel:set_text("z");
+                        zLabel:set_horizontalAlignment(1);
+                        zLabel:set_verticalAlignment(1);
+                        local zHBox = __sunaba_ui_HBoxContainer.new();
+                        zHBox:addChild(zLabel);
+                        zHBox:addChild(zSpinBox);
+                        vec4Vbox:addChild(zHBox);
+                        local wSpinBox = __sunaba_ui_SpinBox.new();
+                        wSpinBox:set_maxValue(500);
+                        wSpinBox:set_minValue(-500);
+                        wSpinBox:set_allowGreater(true);
+                        wSpinBox:set_allowLesser(true);
+                        wSpinBox:set_step(0.001);
+                        wSpinBox:set_value(vec4[0].z);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec4[0].z = newValue;
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec4, propertyValue, propertyName));
+                        local wLabel = __sunaba_ui_Label.new();
+                        wLabel:set_text("w");
+                        wLabel:set_horizontalAlignment(1);
+                        wLabel:set_verticalAlignment(1);
+                        local wHBox = __sunaba_ui_HBoxContainer.new();
+                        wHBox:addChild(wLabel);
+                        wHBox:addChild(wSpinBox);
+                        vec4Vbox:addChild(zHBox);
+                        propertyContainer:addChild(vec4Vbox);
+                      else
+                        if (propertyType == 6) then 
+                          local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2i()}, 1);
+                          local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                          local xSpinBox = __sunaba_ui_SpinBox.new();
+                          xSpinBox:set_maxValue(500);
+                          xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
+                          xSpinBox:set_step(1);
+                          xSpinBox:set_value(vec2[0].x);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec2[0].x = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec2, propertyValue, propertyName));
+                          local xLabel = __sunaba_ui_Label.new();
+                          xLabel:set_text("x");
+                          xLabel:set_horizontalAlignment(1);
+                          xLabel:set_verticalAlignment(1);
+                          local xHBox = __sunaba_ui_HBoxContainer.new();
+                          xHBox:addChild(xLabel);
+                          xHBox:addChild(xSpinBox);
+                          vec2Vbox:addChild(xHBox);
+                          local ySpinBox = __sunaba_ui_SpinBox.new();
+                          ySpinBox:set_maxValue(500);
+                          ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
+                          ySpinBox:set_step(1);
+                          ySpinBox:set_value(vec2[0].y);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec2[0].y = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec2, propertyValue, propertyName));
+                          local yLabel = __sunaba_ui_Label.new();
+                          yLabel:set_text("y");
+                          yLabel:set_horizontalAlignment(1);
+                          yLabel:set_verticalAlignment(1);
+                          local yHBox = __sunaba_ui_HBoxContainer.new();
+                          yHBox:addChild(yLabel);
+                          yHBox:addChild(ySpinBox);
+                          vec2Vbox:addChild(yHBox);
+                          propertyContainer:addChild(vec2Vbox);
+                        else
+                          if (propertyType == 10) then 
+                            local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3i()}, 1);
+                            local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                            local xSpinBox = __sunaba_ui_SpinBox.new();
+                            xSpinBox:set_maxValue(500);
+                            xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
+                            xSpinBox:set_step(1);
+                            xSpinBox:set_value(vec3[0].x);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                              do return function(newValue) 
+                                vec3[0].x = Std.int(newValue);
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.resourceList;
+                                if (resourceData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData;
+                                end;
+                                do return resourceData end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName));
+                            local xLabel = __sunaba_ui_Label.new();
+                            xLabel:set_text("x");
+                            xLabel:set_horizontalAlignment(1);
+                            xLabel:set_verticalAlignment(1);
+                            local xHBox = __sunaba_ui_HBoxContainer.new();
+                            xHBox:addChild(xLabel);
+                            xHBox:addChild(xSpinBox);
+                            vec3Vbox:addChild(xHBox);
+                            local ySpinBox = __sunaba_ui_SpinBox.new();
+                            ySpinBox:set_maxValue(500);
+                            ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
+                            ySpinBox:set_step(1);
+                            ySpinBox:set_value(vec3[0].y);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                              do return function(newValue) 
+                                vec3[0].y = Std.int(newValue);
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.resourceList;
+                                if (resourceData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData;
+                                end;
+                                do return resourceData end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName));
+                            local yLabel = __sunaba_ui_Label.new();
+                            yLabel:set_text("y");
+                            yLabel:set_horizontalAlignment(1);
+                            yLabel:set_verticalAlignment(1);
+                            local yHBox = __sunaba_ui_HBoxContainer.new();
+                            yHBox:addChild(yLabel);
+                            yHBox:addChild(ySpinBox);
+                            vec3Vbox:addChild(yHBox);
+                            local zSpinBox = __sunaba_ui_SpinBox.new();
+                            zSpinBox:set_maxValue(500);
+                            zSpinBox:set_minValue(-500);
+                            zSpinBox:set_allowGreater(true);
+                            zSpinBox:set_allowLesser(true);
+                            zSpinBox:set_step(1);
+                            zSpinBox:set_value(vec3[0].z);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                              do return function(newValue) 
+                                vec3[0].z = Std.int(newValue);
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.resourceList;
+                                if (resourceData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData;
+                                end;
+                                do return resourceData end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName));
+                            local zLabel = __sunaba_ui_Label.new();
+                            zLabel:set_text("z");
+                            zLabel:set_horizontalAlignment(1);
+                            zLabel:set_verticalAlignment(1);
+                            local zHBox = __sunaba_ui_HBoxContainer.new();
+                            zHBox:addChild(zLabel);
+                            zHBox:addChild(zSpinBox);
+                            vec3Vbox:addChild(zHBox);
+                            propertyContainer:addChild(vec3Vbox);
+                          else
+                            if (propertyType == 13) then 
+                              local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4i()}, 1);
+                              local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                              local xSpinBox = __sunaba_ui_SpinBox.new();
+                              xSpinBox:set_maxValue(500);
+                              xSpinBox:set_minValue(-500);
+                              xSpinBox:set_allowGreater(true);
+                              xSpinBox:set_allowLesser(true);
+                              xSpinBox:set_step(1);
+                              xSpinBox:set_value(vec4[0].x);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                                do return function(newValue) 
+                                  vec4[0].x = Std.int(newValue);
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.resourceList;
+                                  if (resourceData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData;
+                                  end;
+                                  do return resourceData end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName));
+                              local xLabel = __sunaba_ui_Label.new();
+                              xLabel:set_text("x");
+                              xLabel:set_horizontalAlignment(1);
+                              xLabel:set_verticalAlignment(1);
+                              local xHBox = __sunaba_ui_HBoxContainer.new();
+                              xHBox:addChild(xLabel);
+                              xHBox:addChild(xSpinBox);
+                              vec4Vbox:addChild(xHBox);
+                              local ySpinBox = __sunaba_ui_SpinBox.new();
+                              ySpinBox:set_maxValue(500);
+                              ySpinBox:set_minValue(-500);
+                              ySpinBox:set_allowGreater(true);
+                              ySpinBox:set_allowLesser(true);
+                              ySpinBox:set_step(0.001);
+                              ySpinBox:set_value(vec4[0].y);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                                do return function(newValue) 
+                                  vec4[0].y = Std.int(newValue);
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.resourceList;
+                                  if (resourceData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData;
+                                  end;
+                                  do return resourceData end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName));
+                              local yLabel = __sunaba_ui_Label.new();
+                              yLabel:set_text("y");
+                              yLabel:set_horizontalAlignment(1);
+                              yLabel:set_verticalAlignment(1);
+                              local yHBox = __sunaba_ui_HBoxContainer.new();
+                              yHBox:addChild(yLabel);
+                              yHBox:addChild(ySpinBox);
+                              vec4Vbox:addChild(yHBox);
+                              local zSpinBox = __sunaba_ui_SpinBox.new();
+                              zSpinBox:set_maxValue(500);
+                              zSpinBox:set_minValue(-500);
+                              zSpinBox:set_allowGreater(true);
+                              zSpinBox:set_allowLesser(true);
+                              zSpinBox:set_step(0.001);
+                              zSpinBox:set_value(vec4[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                                do return function(newValue) 
+                                  vec4[0].z = Std.int(newValue);
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.resourceList;
+                                  if (resourceData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData;
+                                  end;
+                                  do return resourceData end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName));
+                              local zLabel = __sunaba_ui_Label.new();
+                              zLabel:set_text("z");
+                              zLabel:set_horizontalAlignment(1);
+                              zLabel:set_verticalAlignment(1);
+                              local zHBox = __sunaba_ui_HBoxContainer.new();
+                              zHBox:addChild(zLabel);
+                              zHBox:addChild(zSpinBox);
+                              vec4Vbox:addChild(zHBox);
+                              local wSpinBox = __sunaba_ui_SpinBox.new();
+                              wSpinBox:set_maxValue(500);
+                              wSpinBox:set_minValue(-500);
+                              wSpinBox:set_allowGreater(true);
+                              wSpinBox:set_allowLesser(true);
+                              wSpinBox:set_step(1);
+                              wSpinBox:set_value(vec4[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                                do return function(newValue) 
+                                  vec4[0].z = Std.int(newValue);
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.resourceList;
+                                  if (resourceData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData;
+                                  end;
+                                  do return resourceData end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName));
+                              local wLabel = __sunaba_ui_Label.new();
+                              wLabel:set_text("w");
+                              wLabel:set_horizontalAlignment(1);
+                              wLabel:set_verticalAlignment(1);
+                              local wHBox = __sunaba_ui_HBoxContainer.new();
+                              wHBox:addChild(wLabel);
+                              wHBox:addChild(wSpinBox);
+                              vec4Vbox:addChild(zHBox);
+                              propertyContainer:addChild(vec4Vbox);
+                            end;
+                          end;
+                        end;
+                      end;
+                    end;
+                  end;
+                end;
+              end;
+            end;
+          end;
+          self.inspectorVbox:addChild(propertyContainer);
+        end;
+      end;
+    end;
+  end;
+end
+__sunaba_studio_ResourceInspector.prototype.buildInspectorFromResource = function(self) 
+  local _gthis = self;
+  local _g = 0;
+  local _g1 = self.inspectorVbox:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local inspectorVboxChild = self.inspectorVbox:getChild(i);
+    inspectorVboxChild:queueFree();
+  end;
+  if (self.selectedIndex == -1) then 
+    do return end;
+  end;
+  local ret = self.resourceList.h[self.selectedIndex];
+  if (ret == __haxe_ds_IntMap.tnull) then 
+    ret = nil;
+  end;
+  if (ret == nil) then 
+    do return end;
+  end;
+  local ret = self.resourceList.h[self.selectedIndex];
+  if (ret == __haxe_ds_IntMap.tnull) then 
+    ret = nil;
+  end;
+  local resourceData = ret;
+  local resourceDataValue = resourceData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+  local properties = resourceDataValue:get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
+  local propertyNames = properties:keys();
+  local _g = 0;
+  local _g1 = propertyNames:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+    local propertyValue = _hx_tab_array({[0]=properties:get(propertyName[0]):asDictionary()}, 1);
+    if (propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+      local propertyContainer = __sunaba_ui_HBoxContainer.new();
+      local propertyLabel = __sunaba_ui_Label.new();
+      propertyLabel:set_text(propertyName[0]:asString());
+      propertyLabel:set_horizontalAlignment(0);
+      propertyLabel:set_verticalAlignment(1);
+      local x = 0.0;
+      local y = 20.0;
+      if (y == nil) then 
+        y = 0;
+      end;
+      if (x == nil) then 
+        x = 0;
+      end;
+      propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+      propertyLabel:set_clipText(true);
+      propertyContainer:addChild(propertyLabel);
+      propertyLabel:set_sizeFlagsHorizontal(3);
+      local propertyType = propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+      if (propertyType == 4) then 
+        local strLineEdit = __sunaba_ui_LineEdit.new();
+        strLineEdit:set_text(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asString());
+        local x = 150.0;
+        local y = 20.0;
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+        __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyValue,propertyName) 
+          do return function(newValue) 
+            propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+            local k = _gthis.selectedIndex;
+            local _this = _gthis.resourceList;
+            if (resourceData == nil) then 
+              _this.h[k] = __haxe_ds_IntMap.tnull;
+            else
+              _this.h[k] = resourceData;
+            end;
+            do return resourceData end;
+          end end;
+        end)(propertyValue, propertyName));
+        propertyContainer:addChild(strLineEdit);
+      else
+        if (propertyType == 3) then 
+          local floatSpinBox = __sunaba_ui_SpinBox.new();
+          floatSpinBox:set_maxValue(500);
+          floatSpinBox:set_minValue(-500);
+          floatSpinBox:set_allowGreater(true);
+          floatSpinBox:set_allowLesser(true);
+          floatSpinBox:set_step(0.001);
+          floatSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asFloat());
+          local x = 150.0;
+          local y = 20.0;
+          if (y == nil) then 
+            y = 0;
+          end;
+          if (x == nil) then 
+            x = 0;
+          end;
+          floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+          __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyValue,propertyName) 
+            do return function(newValue) 
+              propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+              local k = _gthis.selectedIndex;
+              local _this = _gthis.resourceList;
+              if (resourceData == nil) then 
+                _this.h[k] = __haxe_ds_IntMap.tnull;
+              else
+                _this.h[k] = resourceData;
+              end;
+              do return resourceData end;
+            end end;
+          end)(propertyValue, propertyName));
+          propertyContainer:addChild(floatSpinBox);
+        else
+          if (propertyType == 2) then 
+            local intSpinBox = __sunaba_ui_SpinBox.new();
+            intSpinBox:set_maxValue(2147483648);
+            intSpinBox:set_minValue(-2147483648);
+            intSpinBox:set_allowGreater(true);
+            intSpinBox:set_allowLesser(true);
+            intSpinBox:set_step(1);
+            intSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asInt());
+            local x = 150.0;
+            local y = 20.0;
+            if (y == nil) then 
+              y = 0;
+            end;
+            if (x == nil) then 
+              x = 0;
+            end;
+            intSpinBox:set_customMinimumSize(Vector2.new(x, y));
+            __sunaba_core__Signal_Signal_Impl_.add(intSpinBox:get_valueChanged(), (function(propertyValue,propertyName) 
+              do return function(newValue) 
+                propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+                properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                local k = _gthis.selectedIndex;
+                local _this = _gthis.resourceList;
+                if (resourceData == nil) then 
+                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                else
+                  _this.h[k] = resourceData;
+                end;
+                do return resourceData end;
+              end end;
+            end)(propertyValue, propertyName));
+            propertyContainer:addChild(intSpinBox);
+          else
+            if (propertyType == 1) then 
+              local boolCheckBox = __sunaba_ui_CheckBox.new();
+              boolCheckBox:set_buttonPressed(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asBool());
+              local x = 0.0;
+              local y = 20.0;
+              if (y == nil) then 
+                y = 0;
+              end;
+              if (x == nil) then 
+                x = 0;
+              end;
+              boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+              boolCheckBox:set_flat(true);
+              __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyValue,propertyName) 
+                do return function(newValue) 
+                  propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                  properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                  resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                  resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                  local k = _gthis.selectedIndex;
+                  local _this = _gthis.resourceList;
+                  if (resourceData == nil) then 
+                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                  else
+                    _this.h[k] = resourceData;
+                  end;
+                  do return resourceData end;
+                end end;
+              end)(propertyValue, propertyName));
+              propertyContainer:addChild(boolCheckBox);
+            else
+              if (propertyType == 5) then 
+                local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2()}, 1);
+                local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                local xSpinBox = __sunaba_ui_SpinBox.new();
+                xSpinBox:set_maxValue(500);
+                xSpinBox:set_minValue(-500);
+                xSpinBox:set_allowGreater(true);
+                xSpinBox:set_allowLesser(true);
+                xSpinBox:set_step(0.001);
+                xSpinBox:set_value(vec2[0].x);
+                local x = 150.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                  do return function(newValue) 
+                    vec2[0].x = newValue;
+                    propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                    properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                    resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                    resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                    local k = _gthis.selectedIndex;
+                    local _this = _gthis.resourceList;
+                    if (resourceData == nil) then 
+                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                    else
+                      _this.h[k] = resourceData;
+                    end;
+                    do return resourceData end;
+                  end end;
+                end)(vec2, propertyValue, propertyName));
+                local xLabel = __sunaba_ui_Label.new();
+                xLabel:set_text("x");
+                xLabel:set_horizontalAlignment(1);
+                xLabel:set_verticalAlignment(1);
+                local xHBox = __sunaba_ui_HBoxContainer.new();
+                xHBox:addChild(xLabel);
+                xHBox:addChild(xSpinBox);
+                vec2Vbox:addChild(xHBox);
+                local ySpinBox = __sunaba_ui_SpinBox.new();
+                ySpinBox:set_maxValue(500);
+                ySpinBox:set_minValue(-500);
+                ySpinBox:set_allowGreater(true);
+                ySpinBox:set_allowLesser(true);
+                ySpinBox:set_step(0.001);
+                ySpinBox:set_value(vec2[0].y);
+                local x = 150.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                  do return function(newValue) 
+                    vec2[0].y = newValue;
+                    propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                    properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                    resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                    resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                    local k = _gthis.selectedIndex;
+                    local _this = _gthis.resourceList;
+                    if (resourceData == nil) then 
+                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                    else
+                      _this.h[k] = resourceData;
+                    end;
+                    do return resourceData end;
+                  end end;
+                end)(vec2, propertyValue, propertyName));
+                local yLabel = __sunaba_ui_Label.new();
+                yLabel:set_text("y");
+                yLabel:set_horizontalAlignment(1);
+                yLabel:set_verticalAlignment(1);
+                local yHBox = __sunaba_ui_HBoxContainer.new();
+                yHBox:addChild(yLabel);
+                yHBox:addChild(ySpinBox);
+                vec2Vbox:addChild(yHBox);
+                propertyContainer:addChild(vec2Vbox);
+              else
+                if (propertyType == 9) then 
+                  local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3()}, 1);
+                  local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                  local xSpinBox = __sunaba_ui_SpinBox.new();
+                  xSpinBox:set_maxValue(500);
+                  xSpinBox:set_minValue(-500);
+                  xSpinBox:set_allowGreater(true);
+                  xSpinBox:set_allowLesser(true);
+                  xSpinBox:set_step(0.001);
+                  xSpinBox:set_value(vec3[0].x);
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                    do return function(newValue) 
+                      vec3[0].x = newValue;
+                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                      properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                      resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                      resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.resourceList;
+                      if (resourceData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = resourceData;
+                      end;
+                      do return resourceData end;
+                    end end;
+                  end)(vec3, propertyValue, propertyName));
+                  local xLabel = __sunaba_ui_Label.new();
+                  xLabel:set_text("x");
+                  xLabel:set_horizontalAlignment(1);
+                  xLabel:set_verticalAlignment(1);
+                  local xHBox = __sunaba_ui_HBoxContainer.new();
+                  xHBox:addChild(xLabel);
+                  xHBox:addChild(xSpinBox);
+                  vec3Vbox:addChild(xHBox);
+                  local ySpinBox = __sunaba_ui_SpinBox.new();
+                  ySpinBox:set_maxValue(500);
+                  ySpinBox:set_minValue(-500);
+                  ySpinBox:set_allowGreater(true);
+                  ySpinBox:set_allowLesser(true);
+                  ySpinBox:set_step(0.001);
+                  ySpinBox:set_value(vec3[0].y);
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                    do return function(newValue) 
+                      vec3[0].y = newValue;
+                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                      properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                      resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                      resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.resourceList;
+                      if (resourceData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = resourceData;
+                      end;
+                      do return resourceData end;
+                    end end;
+                  end)(vec3, propertyValue, propertyName));
+                  local yLabel = __sunaba_ui_Label.new();
+                  yLabel:set_text("y");
+                  yLabel:set_horizontalAlignment(1);
+                  yLabel:set_verticalAlignment(1);
+                  local yHBox = __sunaba_ui_HBoxContainer.new();
+                  yHBox:addChild(yLabel);
+                  yHBox:addChild(ySpinBox);
+                  vec3Vbox:addChild(yHBox);
+                  local zSpinBox = __sunaba_ui_SpinBox.new();
+                  zSpinBox:set_maxValue(500);
+                  zSpinBox:set_minValue(-500);
+                  zSpinBox:set_allowGreater(true);
+                  zSpinBox:set_allowLesser(true);
+                  zSpinBox:set_step(0.001);
+                  zSpinBox:set_value(vec3[0].z);
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                    do return function(newValue) 
+                      vec3[0].z = newValue;
+                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                      properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                      resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                      resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.resourceList;
+                      if (resourceData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = resourceData;
+                      end;
+                      do return resourceData end;
+                    end end;
+                  end)(vec3, propertyValue, propertyName));
+                  local zLabel = __sunaba_ui_Label.new();
+                  zLabel:set_text("z");
+                  zLabel:set_horizontalAlignment(1);
+                  zLabel:set_verticalAlignment(1);
+                  local zHBox = __sunaba_ui_HBoxContainer.new();
+                  zHBox:addChild(zLabel);
+                  zHBox:addChild(zSpinBox);
+                  vec3Vbox:addChild(zHBox);
+                  propertyContainer:addChild(vec3Vbox);
+                else
+                  if (propertyType == 12) then 
+                    local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4()}, 1);
+                    local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                    local xSpinBox = __sunaba_ui_SpinBox.new();
+                    xSpinBox:set_maxValue(500);
+                    xSpinBox:set_minValue(-500);
+                    xSpinBox:set_allowGreater(true);
+                    xSpinBox:set_allowLesser(true);
+                    xSpinBox:set_step(0.001);
+                    xSpinBox:set_value(vec4[0].x);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec4[0].x = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec4, propertyValue, propertyName));
+                    local xLabel = __sunaba_ui_Label.new();
+                    xLabel:set_text("x");
+                    xLabel:set_horizontalAlignment(1);
+                    xLabel:set_verticalAlignment(1);
+                    local xHBox = __sunaba_ui_HBoxContainer.new();
+                    xHBox:addChild(xLabel);
+                    xHBox:addChild(xSpinBox);
+                    vec4Vbox:addChild(xHBox);
+                    local ySpinBox = __sunaba_ui_SpinBox.new();
+                    ySpinBox:set_maxValue(500);
+                    ySpinBox:set_minValue(-500);
+                    ySpinBox:set_allowGreater(true);
+                    ySpinBox:set_allowLesser(true);
+                    ySpinBox:set_step(0.001);
+                    ySpinBox:set_value(vec4[0].y);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec4[0].y = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec4, propertyValue, propertyName));
+                    local yLabel = __sunaba_ui_Label.new();
+                    yLabel:set_text("y");
+                    yLabel:set_horizontalAlignment(1);
+                    yLabel:set_verticalAlignment(1);
+                    local yHBox = __sunaba_ui_HBoxContainer.new();
+                    yHBox:addChild(yLabel);
+                    yHBox:addChild(ySpinBox);
+                    vec4Vbox:addChild(yHBox);
+                    local zSpinBox = __sunaba_ui_SpinBox.new();
+                    zSpinBox:set_maxValue(500);
+                    zSpinBox:set_minValue(-500);
+                    zSpinBox:set_allowGreater(true);
+                    zSpinBox:set_allowLesser(true);
+                    zSpinBox:set_step(0.001);
+                    zSpinBox:set_value(vec4[0].z);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec4[0].z = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec4, propertyValue, propertyName));
+                    local zLabel = __sunaba_ui_Label.new();
+                    zLabel:set_text("z");
+                    zLabel:set_horizontalAlignment(1);
+                    zLabel:set_verticalAlignment(1);
+                    local zHBox = __sunaba_ui_HBoxContainer.new();
+                    zHBox:addChild(zLabel);
+                    zHBox:addChild(zSpinBox);
+                    vec4Vbox:addChild(zHBox);
+                    local wSpinBox = __sunaba_ui_SpinBox.new();
+                    wSpinBox:set_maxValue(500);
+                    wSpinBox:set_minValue(-500);
+                    wSpinBox:set_allowGreater(true);
+                    wSpinBox:set_allowLesser(true);
+                    wSpinBox:set_step(0.001);
+                    wSpinBox:set_value(vec4[0].z);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                      do return function(newValue) 
+                        vec4[0].z = newValue;
+                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                        properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                        resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.resourceList;
+                        if (resourceData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData;
+                        end;
+                        do return resourceData end;
+                      end end;
+                    end)(vec4, propertyValue, propertyName));
+                    local wLabel = __sunaba_ui_Label.new();
+                    wLabel:set_text("w");
+                    wLabel:set_horizontalAlignment(1);
+                    wLabel:set_verticalAlignment(1);
+                    local wHBox = __sunaba_ui_HBoxContainer.new();
+                    wHBox:addChild(wLabel);
+                    wHBox:addChild(wSpinBox);
+                    vec4Vbox:addChild(zHBox);
+                    propertyContainer:addChild(vec4Vbox);
+                  else
+                    if (propertyType == 6) then 
+                      local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2i()}, 1);
+                      local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                      local xSpinBox = __sunaba_ui_SpinBox.new();
+                      xSpinBox:set_maxValue(500);
+                      xSpinBox:set_minValue(-500);
+                      xSpinBox:set_allowGreater(true);
+                      xSpinBox:set_allowLesser(true);
+                      xSpinBox:set_step(1);
+                      xSpinBox:set_value(vec2[0].x);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                        do return function(newValue) 
+                          vec2[0].x = Std.int(newValue);
+                          propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                          properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                          resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.resourceList;
+                          if (resourceData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData;
+                          end;
+                          do return resourceData end;
+                        end end;
+                      end)(vec2, propertyValue, propertyName));
+                      local xLabel = __sunaba_ui_Label.new();
+                      xLabel:set_text("x");
+                      xLabel:set_horizontalAlignment(1);
+                      xLabel:set_verticalAlignment(1);
+                      local xHBox = __sunaba_ui_HBoxContainer.new();
+                      xHBox:addChild(xLabel);
+                      xHBox:addChild(xSpinBox);
+                      vec2Vbox:addChild(xHBox);
+                      local ySpinBox = __sunaba_ui_SpinBox.new();
+                      ySpinBox:set_maxValue(500);
+                      ySpinBox:set_minValue(-500);
+                      ySpinBox:set_allowGreater(true);
+                      ySpinBox:set_allowLesser(true);
+                      ySpinBox:set_step(1);
+                      ySpinBox:set_value(vec2[0].y);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName) 
+                        do return function(newValue) 
+                          vec2[0].y = Std.int(newValue);
+                          propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                          properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                          resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.resourceList;
+                          if (resourceData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData;
+                          end;
+                          do return resourceData end;
+                        end end;
+                      end)(vec2, propertyValue, propertyName));
+                      local yLabel = __sunaba_ui_Label.new();
+                      yLabel:set_text("y");
+                      yLabel:set_horizontalAlignment(1);
+                      yLabel:set_verticalAlignment(1);
+                      local yHBox = __sunaba_ui_HBoxContainer.new();
+                      yHBox:addChild(yLabel);
+                      yHBox:addChild(ySpinBox);
+                      vec2Vbox:addChild(yHBox);
+                      propertyContainer:addChild(vec2Vbox);
+                    else
+                      if (propertyType == 10) then 
+                        local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3i()}, 1);
+                        local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                        local xSpinBox = __sunaba_ui_SpinBox.new();
+                        xSpinBox:set_maxValue(500);
+                        xSpinBox:set_minValue(-500);
+                        xSpinBox:set_allowGreater(true);
+                        xSpinBox:set_allowLesser(true);
+                        xSpinBox:set_step(1);
+                        xSpinBox:set_value(vec3[0].x);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].x = Std.int(newValue);
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec3, propertyValue, propertyName));
+                        local xLabel = __sunaba_ui_Label.new();
+                        xLabel:set_text("x");
+                        xLabel:set_horizontalAlignment(1);
+                        xLabel:set_verticalAlignment(1);
+                        local xHBox = __sunaba_ui_HBoxContainer.new();
+                        xHBox:addChild(xLabel);
+                        xHBox:addChild(xSpinBox);
+                        vec3Vbox:addChild(xHBox);
+                        local ySpinBox = __sunaba_ui_SpinBox.new();
+                        ySpinBox:set_maxValue(500);
+                        ySpinBox:set_minValue(-500);
+                        ySpinBox:set_allowGreater(true);
+                        ySpinBox:set_allowLesser(true);
+                        ySpinBox:set_step(1);
+                        ySpinBox:set_value(vec3[0].y);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].y = Std.int(newValue);
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec3, propertyValue, propertyName));
+                        local yLabel = __sunaba_ui_Label.new();
+                        yLabel:set_text("y");
+                        yLabel:set_horizontalAlignment(1);
+                        yLabel:set_verticalAlignment(1);
+                        local yHBox = __sunaba_ui_HBoxContainer.new();
+                        yHBox:addChild(yLabel);
+                        yHBox:addChild(ySpinBox);
+                        vec3Vbox:addChild(yHBox);
+                        local zSpinBox = __sunaba_ui_SpinBox.new();
+                        zSpinBox:set_maxValue(500);
+                        zSpinBox:set_minValue(-500);
+                        zSpinBox:set_allowGreater(true);
+                        zSpinBox:set_allowLesser(true);
+                        zSpinBox:set_step(1);
+                        zSpinBox:set_value(vec3[0].z);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].z = Std.int(newValue);
+                            propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                            properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                            resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.resourceList;
+                            if (resourceData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData;
+                            end;
+                            do return resourceData end;
+                          end end;
+                        end)(vec3, propertyValue, propertyName));
+                        local zLabel = __sunaba_ui_Label.new();
+                        zLabel:set_text("z");
+                        zLabel:set_horizontalAlignment(1);
+                        zLabel:set_verticalAlignment(1);
+                        local zHBox = __sunaba_ui_HBoxContainer.new();
+                        zHBox:addChild(zLabel);
+                        zHBox:addChild(zSpinBox);
+                        vec3Vbox:addChild(zHBox);
+                        propertyContainer:addChild(vec3Vbox);
+                      else
+                        if (propertyType == 13) then 
+                          local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4i()}, 1);
+                          local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                          local xSpinBox = __sunaba_ui_SpinBox.new();
+                          xSpinBox:set_maxValue(500);
+                          xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
+                          xSpinBox:set_step(1);
+                          xSpinBox:set_value(vec4[0].x);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].x = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec4, propertyValue, propertyName));
+                          local xLabel = __sunaba_ui_Label.new();
+                          xLabel:set_text("x");
+                          xLabel:set_horizontalAlignment(1);
+                          xLabel:set_verticalAlignment(1);
+                          local xHBox = __sunaba_ui_HBoxContainer.new();
+                          xHBox:addChild(xLabel);
+                          xHBox:addChild(xSpinBox);
+                          vec4Vbox:addChild(xHBox);
+                          local ySpinBox = __sunaba_ui_SpinBox.new();
+                          ySpinBox:set_maxValue(500);
+                          ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
+                          ySpinBox:set_step(0.001);
+                          ySpinBox:set_value(vec4[0].y);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].y = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec4, propertyValue, propertyName));
+                          local yLabel = __sunaba_ui_Label.new();
+                          yLabel:set_text("y");
+                          yLabel:set_horizontalAlignment(1);
+                          yLabel:set_verticalAlignment(1);
+                          local yHBox = __sunaba_ui_HBoxContainer.new();
+                          yHBox:addChild(yLabel);
+                          yHBox:addChild(ySpinBox);
+                          vec4Vbox:addChild(yHBox);
+                          local zSpinBox = __sunaba_ui_SpinBox.new();
+                          zSpinBox:set_maxValue(500);
+                          zSpinBox:set_minValue(-500);
+                          zSpinBox:set_allowGreater(true);
+                          zSpinBox:set_allowLesser(true);
+                          zSpinBox:set_step(0.001);
+                          zSpinBox:set_value(vec4[0].z);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].z = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec4, propertyValue, propertyName));
+                          local zLabel = __sunaba_ui_Label.new();
+                          zLabel:set_text("z");
+                          zLabel:set_horizontalAlignment(1);
+                          zLabel:set_verticalAlignment(1);
+                          local zHBox = __sunaba_ui_HBoxContainer.new();
+                          zHBox:addChild(zLabel);
+                          zHBox:addChild(zSpinBox);
+                          vec4Vbox:addChild(zHBox);
+                          local wSpinBox = __sunaba_ui_SpinBox.new();
+                          wSpinBox:set_maxValue(500);
+                          wSpinBox:set_minValue(-500);
+                          wSpinBox:set_allowGreater(true);
+                          wSpinBox:set_allowLesser(true);
+                          wSpinBox:set_step(1);
+                          wSpinBox:set_value(vec4[0].z);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].z = Std.int(newValue);
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                              properties:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties));
+                              resourceData:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.resourceList;
+                              if (resourceData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData;
+                              end;
+                              do return resourceData end;
+                            end end;
+                          end)(vec4, propertyValue, propertyName));
+                          local wLabel = __sunaba_ui_Label.new();
+                          wLabel:set_text("w");
+                          wLabel:set_horizontalAlignment(1);
+                          wLabel:set_verticalAlignment(1);
+                          local wHBox = __sunaba_ui_HBoxContainer.new();
+                          wHBox:addChild(wLabel);
+                          wHBox:addChild(wSpinBox);
+                          vec4Vbox:addChild(zHBox);
+                          propertyContainer:addChild(vec4Vbox);
+                        end;
+                      end;
+                    end;
+                  end;
+                end;
+              end;
+            end;
+          end;
+        end;
+      end;
+      self.inspectorVbox:addChild(propertyContainer);
+    end;
+  end;
+end
+
+__sunaba_studio_ResourceInspector.prototype.__class__ =  __sunaba_studio_ResourceInspector
+__sunaba_studio_ResourceInspector.__super__ = __sunaba_studio_EditorWidget
+setmetatable(__sunaba_studio_ResourceInspector.prototype,{__index=__sunaba_studio_EditorWidget.prototype})
 
 __sunaba_studio_SceneEditor.new = function(parent,area) 
   local self = _hx_new(__sunaba_studio_SceneEditor.prototype)
@@ -29944,16 +40068,37 @@ __sunaba_studio_SceneEditor.prototype.openScene = function(self,path)
   local name = String.prototype.split(path, "/"):pop();
   self:getEditor():setWorkspaceTabTitle(self, name);
   self.sceneName = name;
-  local sceneJson = self.io:loadText(path);
-  local sceneData = __sunaba_JSON.parseString(sceneJson);
-  sceneJson = __sunaba_JSON.stringify(sceneData);
+  local sceneJson = "";
+  local _this = self.io;
+  local msgpackPath = path;
+  if (not StringTools.endsWith(path, ".msgpack") and not StringTools.endsWith(path, ".dat")) then 
+    msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
+  end;
+  local sceneData;
+  if (_this:fileExists(msgpackPath)) then 
+    local bytes = _this:loadBytes(msgpackPath);
+    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
+    local result = script:call("decode", args):asDictionary();
+    sceneData = result:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+  else
+    if (_this:fileExists(path)) then 
+      local json = _this:loadText(path);
+      sceneData = __sunaba_JSON.parseString(json):asDictionary();
+    else
+      _G.error(__haxe_Exception.thrown("Data file not found"),0);
+    end;
+  end;
+  sceneJson = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(sceneData));
   self.savedSceneJson = sceneJson;
   self.savedSceneJsonInitialized = true;
   local sceneFile = __sunaba_SceneFile.new();
   sceneFile.io = self:getEditor().projectIo;
   sceneFile:load(path);
   self.scene = sceneFile:instance();
-  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\SceneEditor.hx",lineNumber=127,className="sunaba.studio.SceneEditor",methodName="openScene"}));
+  self.scene.isInEditor = true;
+  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
   self.scene:set_processMode(4);
   self.viewport:addChild(self.scene);
   local envRes = __sunaba_ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
@@ -29971,15 +40116,37 @@ __sunaba_studio_SceneEditor.prototype.openPrefab = function(self,path)
   local name = String.prototype.split(path, "/"):pop();
   self:getEditor():setWorkspaceTabTitle(self, name);
   self.sceneName = name;
-  local sceneJson = self.io:loadText(path);
-  local sceneData = __sunaba_JSON.parseString(sceneJson);
-  sceneJson = __sunaba_JSON.stringify(sceneData);
+  local sceneJson = "";
+  local _this = self.io;
+  local msgpackPath = path;
+  if (not StringTools.endsWith(path, ".msgpack") and not StringTools.endsWith(path, ".dat")) then 
+    msgpackPath = Std.string(msgpackPath) .. Std.string(".dat");
+  end;
+  local sceneData;
+  if (_this:fileExists(msgpackPath)) then 
+    local bytes = _this:loadBytes(msgpackPath);
+    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(bytes));
+    local result = script:call("decode", args):asDictionary();
+    sceneData = result:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+  else
+    if (_this:fileExists(path)) then 
+      local json = _this:loadText(path);
+      sceneData = __sunaba_JSON.parseString(json):asDictionary();
+    else
+      _G.error(__haxe_Exception.thrown("Data file not found"),0);
+    end;
+  end;
+  sceneJson = __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(sceneData));
   self.savedSceneJson = sceneJson;
   self.savedSceneJsonInitialized = true;
   local prefabFile = __sunaba_Prefab.new();
   prefabFile.io = self:getEditor().projectIo;
   prefabFile:load(path);
   self.scene = __sunaba_SceneRoot.new();
+  self.scene.isInEditor = true;
+  self.scene.io = self:getEditor().projectIo;
   self.scene:set_processMode(4);
   self.prefab = prefabFile:instance();
   self.scene:addEntity(self.prefab);
@@ -30125,6 +40292,7 @@ __sunaba_studio_SceneEditor.prototype.onProcess = function(self,deltaTime)
     local sceneInspector = self:getEditor().sceneInspector;
     if (sceneInspector.sceneEditor ~= self) then 
       sceneInspector:openSceneEditor(self);
+      self:getEditor():setCurrentRightSidebarChild(sceneInspector);
     end;
   end;
   local scopeConfig = __sunaba_studio_debugDraw_DebugDrawService3D.newScopedConfig():setViewport(self.viewport):setThickness(0.015);
@@ -31324,6 +41492,286 @@ end
 
 __sunaba_studio_explorer_FileHandler.prototype.__class__ =  __sunaba_studio_explorer_FileHandler
 
+__sunaba_studio_explorer_FileTemplate.new = function(_name,_fileExtension,_icon,_createFile) 
+  local self = _hx_new(__sunaba_studio_explorer_FileTemplate.prototype)
+  __sunaba_studio_explorer_FileTemplate.super(self,_name,_fileExtension,_icon,_createFile)
+  return self
+end
+__sunaba_studio_explorer_FileTemplate.super = function(self,_name,_fileExtension,_icon,_createFile) 
+  self.name = _name;
+  self.fileExtension = _fileExtension;
+  self.icon = _icon;
+  self.createFile = _createFile;
+end
+_hxClasses["sunaba.studio.explorer.FileTemplate"] = __sunaba_studio_explorer_FileTemplate
+__sunaba_studio_explorer_FileTemplate.__name__ = "sunaba.studio.explorer.FileTemplate"
+__sunaba_studio_explorer_FileTemplate.prototype = _hx_e();
+__sunaba_studio_explorer_FileTemplate.prototype.name= nil;
+__sunaba_studio_explorer_FileTemplate.prototype.fileExtension= nil;
+__sunaba_studio_explorer_FileTemplate.prototype.icon= nil;
+__sunaba_studio_explorer_FileTemplate.prototype.createFile= nil;
+
+__sunaba_studio_explorer_FileTemplate.prototype.__class__ =  __sunaba_studio_explorer_FileTemplate
+
+__sunaba_studio_explorer_NewFileWidget.new = function(pExplorer) 
+  local self = _hx_new(__sunaba_studio_explorer_NewFileWidget.prototype)
+  __sunaba_studio_explorer_NewFileWidget.super(self,pExplorer)
+  return self
+end
+__sunaba_studio_explorer_NewFileWidget.super = function(self,pExplorer) 
+  self.scriptFileName = "";
+  self.assetFileName = "";
+  self.scriptFilePath = "";
+  self.assetFilePath = "";
+  self._explorer = pExplorer;
+  __sunaba_ui_Widget.super(self);
+end
+_hxClasses["sunaba.studio.explorer.NewFileWidget"] = __sunaba_studio_explorer_NewFileWidget
+__sunaba_studio_explorer_NewFileWidget.__name__ = "sunaba.studio.explorer.NewFileWidget"
+__sunaba_studio_explorer_NewFileWidget.prototype = _hx_e();
+__sunaba_studio_explorer_NewFileWidget.prototype._explorer= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.assetFileTemplates= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.scriptFileTemplates= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.assetLastSelected= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.scriptLastSelected= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.pathType= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.baseDir= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.assetFilePath= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.scriptFilePath= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.assetFileName= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.scriptFileName= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.itemList= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.lineEdit= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.browseButton= nil;
+__sunaba_studio_explorer_NewFileWidget.prototype.init = function(self) 
+  local _gthis = self;
+  self:load("studio://NewFileWidget.suml");
+  self.itemList = self:getNodeT_sunaba_ui_ItemList(__sunaba_ui_ItemList, "vbox/itemList");
+  self.lineEdit = self:getNodeT_sunaba_ui_LineEdit(__sunaba_ui_LineEdit, "vbox/hbox/lineEdit");
+  self.browseButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/hbox/browseButton");
+  __sunaba_core__Signal_Signal_Impl_.add(self.browseButton:get_pressed(), function() 
+    local fileDialog = __sunaba_desktop_FileDialog.new();
+    fileDialog:set_fileMode(4);
+    fileDialog:set_access(2);
+    local realBasePath = "";
+    if (_gthis.pathType == 0) then 
+      realBasePath = _gthis._explorer:getEditor().projectIo:getFilePath(_gthis.baseDir);
+      if (_gthis.assetFileName == "") then 
+        local tmp = String.prototype.split(String.prototype.split(_gthis.assetFilePath, "/"):pop(), ".");
+        _gthis.assetFileName = tmp[0];
+      end;
+      fileDialog:set_currentFile(Std.string(_gthis.assetFileName) .. Std.string(_gthis.assetLastSelected.fileExtension));
+    else
+      if (_gthis.pathType == 1) then 
+        realBasePath = StringTools.replace(_gthis.baseDir, "src://", _gthis._explorer.sourceDirectory);
+        if (_gthis.scriptFileName == "") then 
+          local tmp = String.prototype.split(String.prototype.split(_gthis.scriptFilePath, "/"):pop(), ".");
+          _gthis.scriptFileName = tmp[0];
+        end;
+        fileDialog:set_currentFile(Std.string(_gthis.scriptFileName) .. Std.string(_gthis.scriptLastSelected.fileExtension));
+      end;
+    end;
+    fileDialog:set_currentDir(realBasePath);
+    if (_gthis.pathType == 0) then 
+      fileDialog:addFilter(Std.string("*") .. Std.string(_gthis.assetLastSelected.fileExtension), _gthis.assetLastSelected.name);
+      fileDialog:set_title("Set Asset File Path");
+    else
+      if (_gthis.pathType == 1) then 
+        fileDialog:addFilter(Std.string("*") .. Std.string(_gthis.scriptLastSelected.fileExtension), _gthis.scriptLastSelected.name);
+        fileDialog:set_title("Set Script File Path");
+      end;
+    end;
+    _gthis:addChild(fileDialog);
+    fileDialog:hide();
+    fileDialog:set_contentScaleFactor(_gthis:getWindow():get_contentScaleFactor());
+    fileDialog:set_minSize(_gthis:getWindow():get_minSize());
+    __sunaba_core__Signal_Signal_Impl_.add(fileDialog:get_fileSelected(), function(path) 
+      local filePath = path;
+      local fileName = String.prototype.split(String.prototype.split(filePath, "/"):pop(), ".")[0];
+      if (_gthis.pathType == 0) then 
+        filePath = _gthis._explorer:getEditor().projectIo:getFileUrl(path);
+        _gthis.assetFilePath = filePath;
+        _gthis.assetFileName = fileName;
+      else
+        if (_gthis.pathType == 1) then 
+          filePath = StringTools.replace(path, _gthis._explorer.sourceDirectory, "src://");
+          _gthis.scriptFilePath = filePath;
+          _gthis.scriptFileName = fileName;
+        end;
+      end;
+      local filePathArray = String.prototype.split(filePath, "/");
+      _gthis.baseDir = filePathArray:slice(filePathArray.length):join("/");
+      _gthis.lineEdit:set_text(filePath);
+      fileDialog:queueFree();
+    end);
+    fileDialog:popupCentered();
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self.lineEdit:get_textChanged(), function(path) 
+    local filePath = path;
+    local fileName = String.prototype.split(String.prototype.split(filePath, "/"):pop(), ".")[0];
+    if (_gthis.pathType == 0) then 
+      filePath = _gthis._explorer:getEditor().projectIo:getFileUrl(path);
+      _gthis.assetFilePath = filePath;
+      _gthis.assetFileName = fileName;
+    else
+      if (_gthis.pathType == 1) then 
+        filePath = StringTools.replace(path, _gthis._explorer.sourceDirectory, "src://");
+        _gthis.scriptFilePath = filePath;
+        _gthis.scriptFileName = fileName;
+      end;
+    end;
+    local filePathArray = String.prototype.split(filePath, "/");
+    _gthis.baseDir = filePathArray:slice(filePathArray.length):join("/") do return _gthis.baseDir end;
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self._explorer.newFileDialog:get_confirmed(), function() 
+    if (_gthis.pathType == 0) then 
+      _gthis.assetLastSelected.createFile(_gthis.assetFilePath);
+    else
+      if (_gthis.pathType == 1) then 
+        _gthis.scriptLastSelected.createFile(_gthis.scriptFilePath);
+      end;
+    end;
+    _gthis._explorer:buildTreeRoot();
+  end);
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.addAssetFileTemplate = function(self,name,fileExtension,icon,createFile) 
+  local template = __sunaba_studio_explorer_FileTemplate.new(name, fileExtension, icon, createFile);
+  if (self.assetFileTemplates == nil) then 
+    self.assetFileTemplates = _hx_tab_array({}, 0);
+  end;
+  self.assetFileTemplates:push(template);
+  do return template end
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.addScriptFileTemplate = function(self,name,fileExtension,icon,createFile) 
+  if (fileExtension ~= ".hx") then 
+    _G.error(__haxe_Exception.thrown("Script file must end in '.hx'"),0);
+  end;
+  local template = __sunaba_studio_explorer_FileTemplate.new(name, fileExtension, icon, createFile);
+  if (self.scriptFileTemplates == nil) then 
+    self.scriptFileTemplates = _hx_tab_array({}, 0);
+  end;
+  self.scriptFileTemplates:push(template);
+  do return template end
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.removeAssetFileTemplate = function(self,template) 
+  if (self.assetFileTemplates ~= nil) then 
+    local index = self.assetFileTemplates:indexOf(template);
+    if (index >= 0) then 
+      self.assetFileTemplates:splice(index, 1);
+    end;
+  end;
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.removeScriptFileTemplate = function(self,template) 
+  if (self.scriptFileTemplates ~= nil) then 
+    local index = self.scriptFileTemplates:indexOf(template);
+    if (index >= 0) then 
+      self.scriptFileTemplates:splice(index, 1);
+    end;
+  end;
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.open = function(self,pType,pBaseDir) 
+  self.pathType = pType;
+  self.baseDir = pBaseDir;
+  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\explorer\\NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
+  if (not StringTools.endsWith(self.baseDir, "/")) then 
+    local tmp = self;
+    tmp.baseDir = Std.string(tmp.baseDir) .. Std.string("/");
+  end;
+  if (not StringTools.startsWith(self.baseDir, "assets://") and (self.pathType == 0)) then 
+    self.baseDir = self._explorer:getEditor().projectIo:getFileUrl(self.baseDir);
+  else
+    if (not StringTools.startsWith(self.baseDir, "src://") and (self.pathType == 1)) then 
+      self.baseDir = StringTools.replace(self.baseDir, self._explorer.sourceDirectory, "src://");
+    end;
+  end;
+  if (not StringTools.endsWith(self.baseDir, "/")) then 
+    local tmp = self;
+    tmp.baseDir = Std.string(tmp.baseDir) .. Std.string("/");
+  end;
+  if (self.pathType == 0) then 
+    if (self.assetLastSelected == nil) then 
+      self:assetSelect(0);
+    end;
+    self.itemList:clear();
+    local _g = 0;
+    local _g1 = self.assetFileTemplates;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local fileTemplate = _g1[_g];
+      _g = _g + 1;
+      local item = self.itemList:addItem(fileTemplate.name, fileTemplate.icon, true);
+    end;
+  else
+    if (self.pathType == 1) then 
+      if (self.scriptLastSelected == nil) then 
+        self:scriptSelect(0);
+      end;
+      self.itemList:clear();
+      local _g = 0;
+      local _g1 = self.scriptFileTemplates;
+      while (_g < _g1.length) do _hx_do_first_1 = false;
+        
+        local fileTemplate = _g1[_g];
+        _g = _g + 1;
+        local item = self.itemList:addItem(fileTemplate.name, fileTemplate.icon, true);
+      end;
+    end;
+  end;
+  self:getWindow():popupCentered();
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.assetSelect = function(self,index) 
+  if (self.assetLastSelected == nil) then 
+    self.assetLastSelected = self.assetFileTemplates[0];
+  end;
+  local fileName = "";
+  local oldFileName = self.assetLastSelected.name;
+  if (String.prototype.indexOf(oldFileName, " ") ~= -1) then 
+    oldFileName = StringTools.replace(oldFileName, " ", "");
+  end;
+  self.assetLastSelected = self.assetFileTemplates[index];
+  fileName = self.assetLastSelected.name;
+  if (String.prototype.indexOf(fileName, " ") ~= -1) then 
+    fileName = StringTools.replace(fileName, " ", "");
+  end;
+  if (self.assetFilePath ~= "") then 
+    local lastFileName = String.prototype.split(String.prototype.split(self.assetFilePath, "/"):pop(), ".")[0];
+    if (lastFileName ~= oldFileName) then 
+      fileName = lastFileName;
+    end;
+  end;
+  self.assetFileName = fileName;
+  self.assetFilePath = Std.string(Std.string(self.baseDir) .. Std.string(fileName)) .. Std.string(self.assetLastSelected.fileExtension);
+  self.lineEdit:set_text(self.assetFilePath);
+end
+__sunaba_studio_explorer_NewFileWidget.prototype.scriptSelect = function(self,index) 
+  if (self.scriptLastSelected == nil) then 
+    self.scriptLastSelected = self.scriptFileTemplates[0];
+  end;
+  local fileName = "";
+  local oldFileName = self.scriptLastSelected.name;
+  if (String.prototype.indexOf(oldFileName, " ") ~= -1) then 
+    oldFileName = StringTools.replace(oldFileName, " ", "");
+  end;
+  self.scriptLastSelected = self.scriptFileTemplates[index];
+  fileName = self.scriptLastSelected.name;
+  if (String.prototype.indexOf(fileName, " ") ~= -1) then 
+    fileName = StringTools.replace(fileName, " ", "");
+  end;
+  if (self.scriptFilePath ~= "") then 
+    local lastFileName = String.prototype.split(String.prototype.split(self.scriptFilePath, "/"):pop(), ".")[0];
+    if (lastFileName ~= oldFileName) then 
+      fileName = lastFileName;
+    end;
+  end;
+  self.scriptFileName = fileName;
+  self.scriptFilePath = Std.string(Std.string(self.baseDir) .. Std.string(fileName)) .. Std.string(self.scriptLastSelected.fileExtension);
+  self.lineEdit:set_text(self.scriptFilePath);
+end
+
+__sunaba_studio_explorer_NewFileWidget.prototype.__class__ =  __sunaba_studio_explorer_NewFileWidget
+__sunaba_studio_explorer_NewFileWidget.__super__ = __sunaba_ui_Widget
+setmetatable(__sunaba_studio_explorer_NewFileWidget.prototype,{__index=__sunaba_ui_Widget.prototype})
+
 __sunaba_studio_fileHandlers_HxFileHandler.new = function(explorer) 
   local self = _hx_new(__sunaba_studio_fileHandlers_HxFileHandler.prototype)
   __sunaba_studio_fileHandlers_HxFileHandler.super(self,explorer)
@@ -31348,6 +41796,71 @@ end
 __sunaba_studio_fileHandlers_HxFileHandler.prototype.__class__ =  __sunaba_studio_fileHandlers_HxFileHandler
 __sunaba_studio_fileHandlers_HxFileHandler.__super__ = __sunaba_studio_explorer_FileHandler
 setmetatable(__sunaba_studio_fileHandlers_HxFileHandler.prototype,{__index=__sunaba_studio_explorer_FileHandler.prototype})
+
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.new = function(explorer) 
+  local self = _hx_new(__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype)
+  __sunaba_studio_fileHandlers_SmdlBinaryFileHandler.super(self,explorer)
+  return self
+end
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.super = function(self,explorer) 
+  __sunaba_studio_explorer_FileHandler.super(self,explorer);
+end
+_hxClasses["sunaba.studio.fileHandlers.SmdlBinaryFileHandler"] = __sunaba_studio_fileHandlers_SmdlBinaryFileHandler
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.__name__ = "sunaba.studio.fileHandlers.SmdlBinaryFileHandler"
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype = _hx_e();
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype.init = function(self) 
+  self.extension = "smdl.dat";
+  self.iconPath = "studio://icons/16/block.png";
+end
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype.openFile = function(self,path) 
+  local assetPath = StringTools.replace(path, self:get_explorer().assetsDirectory, self:get_editor().projectIo:get_pathUrl());
+  local sceneEditor = __sunaba_studio_SceneEditor.new(self:get_editor(), 2);
+  self:get_editor():setWorkspaceTabIcon(sceneEditor, self:get_explorer():loadIcon(self.iconPath));
+  sceneEditor:openPrefab(assetPath);
+end
+
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype.__class__ =  __sunaba_studio_fileHandlers_SmdlBinaryFileHandler
+__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.__super__ = __sunaba_studio_explorer_FileHandler
+setmetatable(__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype,{__index=__sunaba_studio_explorer_FileHandler.prototype})
+
+__sunaba_studio_fileHandlers_SmdlFileHandler.new = function(explorer) 
+  local self = _hx_new(__sunaba_studio_fileHandlers_SmdlFileHandler.prototype)
+  __sunaba_studio_fileHandlers_SmdlFileHandler.super(self,explorer)
+  return self
+end
+__sunaba_studio_fileHandlers_SmdlFileHandler.super = function(self,explorer) 
+  __sunaba_studio_explorer_FileHandler.super(self,explorer);
+end
+_hxClasses["sunaba.studio.fileHandlers.SmdlFileHandler"] = __sunaba_studio_fileHandlers_SmdlFileHandler
+__sunaba_studio_fileHandlers_SmdlFileHandler.__name__ = "sunaba.studio.fileHandlers.SmdlFileHandler"
+__sunaba_studio_fileHandlers_SmdlFileHandler.prototype = _hx_e();
+__sunaba_studio_fileHandlers_SmdlFileHandler.prototype.init = function(self) 
+  self.extension = "smdl";
+  self.iconPath = "studio://icons/16/block.png";
+end
+__sunaba_studio_fileHandlers_SmdlFileHandler.prototype.openFile = function(self,path) 
+  local assetPath = StringTools.replace(path, self:get_explorer().assetsDirectory, self:get_editor().projectIo:get_pathUrl());
+  local sceneEditor = __sunaba_studio_SceneEditor.new(self:get_editor(), 2);
+  self:get_editor():setWorkspaceTabIcon(sceneEditor, self:get_explorer():loadIcon(self.iconPath));
+  local _hx_status, _hx_result = pcall(function() 
+  
+      sceneEditor:openPrefab(assetPath);
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    local e = __haxe_Exception.caught(_g);
+    __sunaba_Debug.error(e:toString(), "Error opening model");
+    self:get_editor().console:error(Std.string("Error opening model: ") .. Std.string(e:toString()));
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
+  end;
+end
+
+__sunaba_studio_fileHandlers_SmdlFileHandler.prototype.__class__ =  __sunaba_studio_fileHandlers_SmdlFileHandler
+__sunaba_studio_fileHandlers_SmdlFileHandler.__super__ = __sunaba_studio_explorer_FileHandler
+setmetatable(__sunaba_studio_fileHandlers_SmdlFileHandler.prototype,{__index=__sunaba_studio_explorer_FileHandler.prototype})
 
 __sunaba_studio_fileHandlers_VpfbFileHandler.new = function(explorer) 
   local self = _hx_new(__sunaba_studio_fileHandlers_VpfbFileHandler.prototype)
@@ -31449,6 +41962,8 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onInit = function(self)
   self.defaultVelocity = 5.0;
   self.boostSpeedMultiplier = 3.0;
   self.speedScale = 1.17;
+  self.minSpeed = 0.2;
+  self.maxSpeed = 1000.0;
 end
 __sunaba_studio_sceneEditor_FreeLook3D.prototype.onStart = function(self) 
   self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
@@ -31466,7 +41981,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=56,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -31539,7 +42054,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onUpdate = function(self,deltaT
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=115,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -31767,9 +42282,22 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.componentClasses:push(__sunaba_spatial_Camera);
   self.componentClasses:push(__sunaba_spatial_mesh_MeshDisplay);
   self.componentClasses:push(__sunaba_spatial_mesh_BoxMesh);
+  self.componentClasses:push(__sunaba_spatial_mesh_CapsuleMesh);
+  self.componentClasses:push(__sunaba_spatial_mesh_CylinderMesh);
+  self.componentClasses:push(__sunaba_spatial_mesh_SphereMesh);
+  self.componentClasses:push(__sunaba_spatial_mesh_PlaneMesh);
+  self.componentClasses:push(__sunaba_spatial_mesh_QuadMesh);
   self.componentClasses:push(__sunaba_spatial_lighting_OmniLight);
   self.componentClasses:push(__sunaba_spatial_lighting_SpotLight);
   self.componentClasses:push(__sunaba_spatial_lighting_DirectionalLight);
+  self.componentClasses:push(__sunaba_spatial_physics_CharacterBody);
+  self.componentClasses:push(__sunaba_spatial_physics_RigidBody);
+  self.componentClasses:push(__sunaba_spatial_physics_StaticBody);
+  self.componentClasses:push(__sunaba_spatial_physics_AnimatableBody);
+  self.componentClasses:push(__sunaba_spatial_physics_BoxShape);
+  self.componentClasses:push(__sunaba_spatial_physics_CapsuleShape);
+  self.componentClasses:push(__sunaba_spatial_physics_CylinderShape);
+  self.componentClasses:push(__sunaba_spatial_physics_SphereShape);
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/clapperboard--pencil.png");
   local iconImage = __sunaba_Image.new();
   iconImage:loadPngFromBuffer(iconBin);
@@ -31854,6 +42382,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
               break;
             end;
           end;
+          _gthis1.sceneEditor.gizmo:clear();
           _gthis1:refreshInspector();
           _gthis1:getEditor().explorer:buildTreeRoot();
           _gthis1.sceneEditor:checkScene();
@@ -31866,6 +42395,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.deleteButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     if (_gthis.sceneEditor ~= nil) then 
       if (_gthis.selectedEntity ~= nil) then 
+        if (_gthis.selectedEntity ~= nil) then 
+          local transform = _gthis.selectedEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+          if (transform ~= nil) then 
+            _gthis.sceneEditor.gizmo:deselect(transform);
+          end;
+        end;
         _gthis.selectedEntity:destroy();
         _gthis.selectedEntity = nil;
         _gthis:refreshSceneTree();
@@ -31904,7 +42439,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=133,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=157,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -32014,6 +42549,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
         break;
       end;
     end;
+    _gthis.sceneEditor.gizmo:clear();
     _gthis:refreshInspector();
     _gthis.sceneEditor:checkScene();
   end));
@@ -32105,6 +42641,20 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
               break;
             end;
           end;
+          if (_gthis.selectedEntity ~= nil) then 
+            local transform = _gthis.selectedEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+            if (transform ~= nil) then 
+              _gthis.sceneEditor.gizmo:deselect(transform);
+            end;
+          end;
+          local ret = _gthis.entityIndex.h[_gthis.selectedEntityIndex];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          local transform = ret:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+          if (transform ~= nil) then 
+            _gthis.sceneEditor.gizmo:select(transform);
+          end;
           _gthis:refreshInspector();
           _gthis.sceneEditor:checkScene();
         end;
@@ -32194,6 +42744,20 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
               _gthis.selectedEntityIndex = idx;
               break;
             end;
+          end;
+          if (_gthis.selectedEntity ~= nil) then 
+            local transform = _gthis.selectedEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+            if (transform ~= nil) then 
+              _gthis.sceneEditor.gizmo:deselect(transform);
+            end;
+          end;
+          local ret = _gthis.entityIndex.h[_gthis.selectedEntityIndex];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          local transform = ret:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+          if (transform ~= nil) then 
+            _gthis.sceneEditor.gizmo:select(transform);
           end;
           _gthis:refreshInspector();
           _gthis.sceneEditor:checkScene();
@@ -32302,6 +42866,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.deleteEntity = function(sel
   end;
   if (self.selectedEntity == nil) then 
     do return end;
+  end;
+  if (self.selectedEntity ~= nil) then 
+    local transform = self.selectedEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (transform ~= nil) then 
+      self.sceneEditor.gizmo:deselect(transform);
+    end;
   end;
   self.selectedEntity:destroy();
   self.selectedEntity = nil;
@@ -32446,6 +43016,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.openLoadPrefabDialog = func
         break;
       end;
     end;
+    _gthis.sceneEditor.gizmo:clear();
     _gthis:refreshInspector();
     _gthis:getEditor().explorer:buildTreeRoot();
     _gthis.sceneEditor:checkScene();
@@ -32537,6 +43108,20 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.createEntity = function(sel
       break;
     end;
   end;
+  if (self.selectedEntity ~= nil) then 
+    local transform = self.selectedEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (transform ~= nil) then 
+      self.sceneEditor.gizmo:deselect(transform);
+    end;
+  end;
+  local ret = self.entityIndex.h[self.selectedEntityIndex];
+  if (ret == __haxe_ds_IntMap.tnull) then 
+    ret = nil;
+  end;
+  local transform = ret:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    self.sceneEditor.gizmo:select(transform);
+  end;
   self:refreshInspector();
   self.sceneEditor:checkScene();
 end
@@ -32616,6 +43201,9 @@ end
 __sunaba_studio_sceneEditor_SceneInspector.prototype.openSceneEditor = function(self,_sceneEditor) 
   if (_sceneEditor == nil) then 
     if (not self.nothingSelected) then 
+      if (self.sceneEditor ~= nil) then 
+        self.sceneEditor.gizmo:clear();
+      end;
       self.sceneEditor = nil;
       self.scene = nil;
       self.prefab = nil;
@@ -32626,6 +43214,9 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.openSceneEditor = function(
   end;
   if (_sceneEditor ~= self.sceneEditor) then 
     self.nothingSelected = false;
+    if (self.sceneEditor ~= nil) then 
+      self.sceneEditor.gizmo:clear();
+    end;
     self.sceneEditor = _sceneEditor;
     self.scene = self.sceneEditor.scene;
     self.prefab = self.sceneEditor.prefab;
@@ -32743,12 +43334,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=639,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=692,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=641,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=642,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=694,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=695,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=644,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=697,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -32784,7 +43375,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=675,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=728,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
@@ -32798,6 +43389,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
       do return function() 
         local compType = Type.getClass(component[0]);
         entity:removeComponent_sunaba_Behavior(compType);
+        _gthis.sceneEditor.gizmo:clear();
         _gthis:refreshInspector();
       end end;
     end)(component));
@@ -32805,7 +43397,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=696,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=750,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;
@@ -32855,8 +43447,10 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
       else
         if (value:getType() == 3) then 
           local floatSpinBox = __sunaba_ui_SpinBox.new();
-          floatSpinBox:set_maxValue(3.40282347e+38);
-          floatSpinBox:set_minValue(-3.40282347e+38);
+          floatSpinBox:set_maxValue(500);
+          floatSpinBox:set_minValue(-500);
+          floatSpinBox:set_allowGreater(true);
+          floatSpinBox:set_allowLesser(true);
           floatSpinBox:set_step(0.001);
           floatSpinBox:set_value(value:asFloat());
           local x = 150.0;
@@ -32882,7 +43476,10 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
             local intSpinBox = __sunaba_ui_SpinBox.new();
             intSpinBox:set_maxValue(2147483648);
             intSpinBox:set_minValue(-2147483648);
+            intSpinBox:set_allowGreater(true);
+            intSpinBox:set_allowLesser(true);
             intSpinBox:set_step(1);
+            intSpinBox:set_value(value:asInt());
             local x = 150.0;
             local y = 20.0;
             if (y == nil) then 
@@ -32927,14 +43524,16 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
               propertyContainer:addChild(boolCheckButton);
             else
               if (value:getType() == 27) then 
-                local dict = value:asDictionary();
-                if (dict:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and dict:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
-                  if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 5) then 
-                    local vec2 = __sunaba_DataUtils.dictToVar(dict):asVector2();
+                local dict = _hx_tab_array({[0]=value:asDictionary()}, 1);
+                if (dict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and dict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                  if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 5) then 
+                    local vec2 = __sunaba_DataUtils.dictToVar(dict[0]):asVector2();
                     local vec2Vbox = __sunaba_ui_VBoxContainer.new();
                     local xSpinBox = __sunaba_ui_SpinBox.new();
                     xSpinBox:set_maxValue(500);
                     xSpinBox:set_minValue(-500);
+                    xSpinBox:set_allowGreater(true);
+                    xSpinBox:set_allowLesser(true);
                     xSpinBox:set_step(0.001);
                     xSpinBox:set_value(vec2.x);
                     local x = 150.0;
@@ -32967,6 +43566,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                     local ySpinBox = __sunaba_ui_SpinBox.new();
                     ySpinBox:set_maxValue(500);
                     ySpinBox:set_minValue(-500);
+                    ySpinBox:set_allowGreater(true);
+                    ySpinBox:set_allowLesser(true);
                     ySpinBox:set_step(0.001);
                     ySpinBox:set_value(vec2.y);
                     local x = 150.0;
@@ -32998,12 +43599,14 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                     vec2Vbox:addChild(yHBox);
                     propertyContainer:addChild(vec2Vbox);
                   else
-                    if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 9) then 
-                      local vec3 = __sunaba_DataUtils.dictToVar(dict):asVector3();
+                    if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 9) then 
+                      local vec3 = __sunaba_DataUtils.dictToVar(dict[0]):asVector3();
                       local vec3Vbox = __sunaba_ui_VBoxContainer.new();
                       local xSpinBox = __sunaba_ui_SpinBox.new();
                       xSpinBox:set_maxValue(500);
                       xSpinBox:set_minValue(-500);
+                      xSpinBox:set_allowGreater(true);
+                      xSpinBox:set_allowLesser(true);
                       xSpinBox:set_step(0.001);
                       xSpinBox:set_value(vec3.x);
                       local x = 150.0;
@@ -33036,6 +43639,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                       local ySpinBox = __sunaba_ui_SpinBox.new();
                       ySpinBox:set_maxValue(500);
                       ySpinBox:set_minValue(-500);
+                      ySpinBox:set_allowGreater(true);
+                      ySpinBox:set_allowLesser(true);
                       ySpinBox:set_step(0.001);
                       ySpinBox:set_value(vec3.y);
                       local x = 150.0;
@@ -33068,6 +43673,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                       local zSpinBox = __sunaba_ui_SpinBox.new();
                       zSpinBox:set_maxValue(500);
                       zSpinBox:set_minValue(-500);
+                      zSpinBox:set_allowGreater(true);
+                      zSpinBox:set_allowLesser(true);
                       zSpinBox:set_step(0.001);
                       zSpinBox:set_value(vec3.z);
                       local x = 150.0;
@@ -33099,12 +43706,14 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                       vec3Vbox:addChild(zHBox);
                       propertyContainer:addChild(vec3Vbox);
                     else
-                      if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 12) then 
-                        local vec4 = __sunaba_DataUtils.dictToVar(dict):asVector4();
+                      if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 12) then 
+                        local vec4 = __sunaba_DataUtils.dictToVar(dict[0]):asVector4();
                         local vec4Vbox = __sunaba_ui_VBoxContainer.new();
                         local xSpinBox = __sunaba_ui_SpinBox.new();
                         xSpinBox:set_maxValue(500);
                         xSpinBox:set_minValue(-500);
+                        xSpinBox:set_allowGreater(true);
+                        xSpinBox:set_allowLesser(true);
                         xSpinBox:set_step(0.001);
                         xSpinBox:set_value(vec4.x);
                         local x = 150.0;
@@ -33137,6 +43746,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                         local ySpinBox = __sunaba_ui_SpinBox.new();
                         ySpinBox:set_maxValue(500);
                         ySpinBox:set_minValue(-500);
+                        ySpinBox:set_allowGreater(true);
+                        ySpinBox:set_allowLesser(true);
                         ySpinBox:set_step(0.001);
                         ySpinBox:set_value(vec4.y);
                         local x = 150.0;
@@ -33169,6 +43780,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                         local zSpinBox = __sunaba_ui_SpinBox.new();
                         zSpinBox:set_maxValue(500);
                         zSpinBox:set_minValue(-500);
+                        zSpinBox:set_allowGreater(true);
+                        zSpinBox:set_allowLesser(true);
                         zSpinBox:set_step(0.001);
                         zSpinBox:set_value(vec4.z);
                         local x = 150.0;
@@ -33201,6 +43814,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                         local wSpinBox = __sunaba_ui_SpinBox.new();
                         wSpinBox:set_maxValue(500);
                         wSpinBox:set_minValue(-500);
+                        wSpinBox:set_allowGreater(true);
+                        wSpinBox:set_allowLesser(true);
                         wSpinBox:set_step(0.001);
                         wSpinBox:set_value(vec4.w);
                         local x = 150.0;
@@ -33232,12 +43847,14 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                         vec4Vbox:addChild(wHBox);
                         propertyContainer:addChild(vec4Vbox);
                       else
-                        if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 6) then 
-                          local vec2 = __sunaba_DataUtils.dictToVar(dict):asVector2i();
+                        if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 6) then 
+                          local vec2 = __sunaba_DataUtils.dictToVar(dict[0]):asVector2i();
                           local vec2Vbox = __sunaba_ui_VBoxContainer.new();
                           local xSpinBox = __sunaba_ui_SpinBox.new();
                           xSpinBox:set_maxValue(500);
                           xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
                           xSpinBox:set_step(1);
                           xSpinBox:set_value(vec2.x);
                           local x = 150.0;
@@ -33270,6 +43887,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                           local ySpinBox = __sunaba_ui_SpinBox.new();
                           ySpinBox:set_maxValue(500);
                           ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
                           ySpinBox:set_step(1);
                           ySpinBox:set_value(vec2.y);
                           local x = 150.0;
@@ -33301,12 +43920,14 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                           vec2Vbox:addChild(yHBox);
                           propertyContainer:addChild(vec2Vbox);
                         else
-                          if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 10) then 
-                            local vec3 = __sunaba_DataUtils.dictToVar(dict):asVector3i();
+                          if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 10) then 
+                            local vec3 = __sunaba_DataUtils.dictToVar(dict[0]):asVector3i();
                             local vec3Vbox = __sunaba_ui_VBoxContainer.new();
                             local xSpinBox = __sunaba_ui_SpinBox.new();
                             xSpinBox:set_maxValue(500);
                             xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
                             xSpinBox:set_step(1);
                             xSpinBox:set_value(vec3.x);
                             local x = 150.0;
@@ -33339,6 +43960,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                             local ySpinBox = __sunaba_ui_SpinBox.new();
                             ySpinBox:set_maxValue(500);
                             ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
                             ySpinBox:set_step(1);
                             ySpinBox:set_value(vec3.y);
                             local x = 150.0;
@@ -33371,6 +43994,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                             local zSpinBox = __sunaba_ui_SpinBox.new();
                             zSpinBox:set_maxValue(500);
                             zSpinBox:set_minValue(-500);
+                            zSpinBox:set_allowGreater(true);
+                            zSpinBox:set_allowLesser(true);
                             zSpinBox:set_step(1);
                             zSpinBox:set_value(vec3.z);
                             local x = 150.0;
@@ -33402,12 +44027,14 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                             vec3Vbox:addChild(zHBox);
                             propertyContainer:addChild(vec3Vbox);
                           else
-                            if (dict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 13) then 
-                              local vec4 = __sunaba_DataUtils.dictToVar(dict):asVector4i();
+                            if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 13) then 
+                              local vec4 = __sunaba_DataUtils.dictToVar(dict[0]):asVector4i();
                               local vec4Vbox = __sunaba_ui_VBoxContainer.new();
                               local xSpinBox = __sunaba_ui_SpinBox.new();
                               xSpinBox:set_maxValue(500);
                               xSpinBox:set_minValue(-500);
+                              xSpinBox:set_allowGreater(true);
+                              xSpinBox:set_allowLesser(true);
                               xSpinBox:set_step(1);
                               xSpinBox:set_value(vec4.x);
                               local x = 150.0;
@@ -33440,6 +44067,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               local ySpinBox = __sunaba_ui_SpinBox.new();
                               ySpinBox:set_maxValue(500);
                               ySpinBox:set_minValue(-500);
+                              ySpinBox:set_allowGreater(true);
+                              ySpinBox:set_allowLesser(true);
                               ySpinBox:set_step(1);
                               ySpinBox:set_value(vec4.y);
                               local x = 150.0;
@@ -33472,6 +44101,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               local zSpinBox = __sunaba_ui_SpinBox.new();
                               zSpinBox:set_maxValue(500);
                               zSpinBox:set_minValue(-500);
+                              zSpinBox:set_allowGreater(true);
+                              zSpinBox:set_allowLesser(true);
                               zSpinBox:set_step(1);
                               zSpinBox:set_value(vec4.z);
                               local x = 150.0;
@@ -33504,6 +44135,8 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               local wSpinBox = __sunaba_ui_SpinBox.new();
                               wSpinBox:set_maxValue(500);
                               wSpinBox:set_minValue(-500);
+                              wSpinBox:set_allowGreater(true);
+                              wSpinBox:set_allowLesser(true);
                               wSpinBox:set_step(1);
                               wSpinBox:set_value(vec4.w);
                               local x = 150.0;
@@ -33534,6 +44167,26 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               wHBox:addChild(wSpinBox);
                               vec4Vbox:addChild(wHBox);
                               propertyContainer:addChild(vec4Vbox);
+                            else
+                              if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 24) then 
+                                local resButton = __sunaba_ui_Button.new();
+                                resButton:set_text("Edit");
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                resButton:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(dict,key) 
+                                  do return function() 
+                                    _gthis:getEditor().resourceInspector:openResource(dict[0], false, key[0]:asString(), _gthis.selectedEntity);
+                                  end end;
+                                end)(dict, key));
+                                propertyContainer:addChild(resButton);
+                              end;
                             end;
                           end;
                         end;
@@ -34023,6 +44676,28 @@ end
 __sunaba_ui_CenterContainer.prototype.__class__ =  __sunaba_ui_CenterContainer
 __sunaba_ui_CenterContainer.__super__ = __sunaba_ui_Container
 setmetatable(__sunaba_ui_CenterContainer.prototype,{__index=__sunaba_ui_Container.prototype})
+
+__sunaba_ui_CheckBox.new = function(native) 
+  local self = _hx_new(__sunaba_ui_CheckBox.prototype)
+  __sunaba_ui_CheckBox.super(self,native)
+  return self
+end
+__sunaba_ui_CheckBox.super = function(self,native) 
+  __sunaba_ui_Button.super(self,native);
+end
+_hxClasses["sunaba.ui.CheckBox"] = __sunaba_ui_CheckBox
+__sunaba_ui_CheckBox.__name__ = "sunaba.ui.CheckBox"
+__sunaba_ui_CheckBox.prototype = _hx_e();
+__sunaba_ui_CheckBox.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("CheckBox");
+  end;
+  self.native = _native;
+end
+
+__sunaba_ui_CheckBox.prototype.__class__ =  __sunaba_ui_CheckBox
+__sunaba_ui_CheckBox.__super__ = __sunaba_ui_Button
+setmetatable(__sunaba_ui_CheckBox.prototype,{__index=__sunaba_ui_Button.prototype})
 
 __sunaba_ui_CheckButton.new = function(native) 
   local self = _hx_new(__sunaba_ui_CheckButton.prototype)
@@ -36540,6 +47215,448 @@ __sunaba_ui_HSplitContainer.prototype.__class__ =  __sunaba_ui_HSplitContainer
 __sunaba_ui_HSplitContainer.__super__ = __sunaba_ui_SplitContainer
 setmetatable(__sunaba_ui_HSplitContainer.prototype,{__index=__sunaba_ui_SplitContainer.prototype})
 
+__sunaba_ui_ItemList.new = function(native) 
+  local self = _hx_new(__sunaba_ui_ItemList.prototype)
+  __sunaba_ui_ItemList.super(self,native)
+  return self
+end
+__sunaba_ui_ItemList.super = function(self,native) 
+  __sunaba_ui_Control.super(self,native);
+end
+_hxClasses["sunaba.ui.ItemList"] = __sunaba_ui_ItemList
+__sunaba_ui_ItemList.__name__ = "sunaba.ui.ItemList"
+__sunaba_ui_ItemList.prototype = _hx_e();
+__sunaba_ui_ItemList.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("ItemList");
+  end;
+  self.native = _native;
+end
+__sunaba_ui_ItemList.prototype.get_allowReselect = function(self) 
+  do return self.native:get("allow_reselect"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_allowReselect = function(self,value) 
+  self.native:set("allow_reselect", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_allowRmbSelect = function(self) 
+  do return self.native:get("allow_rmb_select"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_allowRmbSelect = function(self,value) 
+  self.native:set("allow_rmb_select", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_allowSearch = function(self) 
+  do return self.native:get("allow_search"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_allowSearch = function(self,value) 
+  self.native:set("allow_search", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_autoHeight = function(self) 
+  do return self.native:get("auto_height"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_autoHeight = function(self,value) 
+  self.native:set("auto_height", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_autoWidth = function(self) 
+  do return self.native:get("auto_width"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_autoWidth = function(self,value) 
+  self.native:set("auto_width", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_fixedColumnWidth = function(self) 
+  do return self.native:get("fixed_column_width"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_fixedColumnWidth = function(self,value) 
+  self.native:set("fixed_column_width", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_fixedIconSize = function(self) 
+  do return self.native:get("fixed_icon_size"):asVector2i() end
+end
+__sunaba_ui_ItemList.prototype.set_fixedIconSize = function(self,value) 
+  self.native:set("fixed_icon_size", __sunaba_core__Variant_Variant_Impl_.fromVector2i(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_iconMode = function(self) 
+  do return self.native:get("icon_mode"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_iconMode = function(self,value) 
+  self.native:set("icon_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_iconScale = function(self) 
+  do return self.native:get("icon_scale"):asFloat() end
+end
+__sunaba_ui_ItemList.prototype.set_iconScale = function(self,value) 
+  self.native:set("icon_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_itemCount = function(self) 
+  do return self.native:get("item_count"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_itemCount = function(self,value) 
+  self.native:set("item_count", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_maxColumns = function(self) 
+  do return self.native:get("max_columns"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_maxColumns = function(self,value) 
+  self.native:set("max_columns", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_maxTextLines = function(self) 
+  do return self.native:get("max_text_lines"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_maxTextLines = function(self,value) 
+  self.native:set("max_text_lines", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_sameColumnWidth = function(self) 
+  do return self.native:get("same_column_width"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_sameColumnWidth = function(self,value) 
+  self.native:set("same_column_width", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_selectMode = function(self) 
+  do return self.native:get("select_mode"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_selectMode = function(self,value) 
+  self.native:set("select_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_textOverrunBehavior = function(self) 
+  do return self.native:get("text_overrun_behavior"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_textOverrunBehavior = function(self,value) 
+  self.native:set("text_overrun_behavior", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_wraparoundItems = function(self) 
+  do return self.native:get("wraparound_items"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_wraparoundItems = function(self,value) 
+  self.native:set("wraparound_items", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype._emptyClicked= nil;
+__sunaba_ui_ItemList.prototype.emptyClicked= nil;
+__sunaba_ui_ItemList.prototype.get_emptyClicked = function(self) 
+  if (self._emptyClicked == nil) then 
+    self._emptyClicked = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "empty_clicked");
+  end;
+  do return self._emptyClicked end
+end
+__sunaba_ui_ItemList.prototype._itemActivated= nil;
+__sunaba_ui_ItemList.prototype.itemActivated= nil;
+__sunaba_ui_ItemList.prototype.get_itemActivated = function(self) 
+  if (self._itemActivated == nil) then 
+    self._itemActivated = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "item_activated");
+  end;
+  do return self._itemActivated end
+end
+__sunaba_ui_ItemList.prototype._itemClicked= nil;
+__sunaba_ui_ItemList.prototype.itemClicked= nil;
+__sunaba_ui_ItemList.prototype.get_itemClicked = function(self) 
+  if (self._itemClicked == nil) then 
+    self._itemClicked = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "item_clicked");
+  end;
+  do return self._itemClicked end
+end
+__sunaba_ui_ItemList.prototype._itemSelected= nil;
+__sunaba_ui_ItemList.prototype.itemSelected= nil;
+__sunaba_ui_ItemList.prototype.get_itemSelected = function(self) 
+  if (self._itemSelected == nil) then 
+    self._itemSelected = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "item_selected");
+  end;
+  do return self._itemSelected end
+end
+__sunaba_ui_ItemList.prototype._multiSelected= nil;
+__sunaba_ui_ItemList.prototype.multiSelected= nil;
+__sunaba_ui_ItemList.prototype.get_multiSelected = function(self) 
+  if (self._multiSelected == nil) then 
+    self._multiSelected = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "multi_selected");
+  end;
+  do return self._multiSelected end
+end
+__sunaba_ui_ItemList.prototype.addIconItem = function(self,icon,selectable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(icon.native));
+  if (selectable ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(selectable));
+  end;
+  do return self.native:call("add_icon_item", args):asInt() end
+end
+__sunaba_ui_ItemList.prototype.addItem = function(self,text,icon,selectable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(text));
+  if (icon ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(icon.native));
+  end;
+  if (selectable ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(selectable));
+  end;
+  do return self.native:call("add_item", args):asInt() end
+end
+__sunaba_ui_ItemList.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear", args);
+end
+__sunaba_ui_ItemList.prototype.deselect = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  self.native:call("deselect", args);
+end
+__sunaba_ui_ItemList.prototype.deselectAll = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("deselect_all", args);
+end
+__sunaba_ui_ItemList.prototype.ensureCurrentIsVisible = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("ensure_current_is_visible", args);
+end
+__sunaba_ui_ItemList.prototype.forceUpdateListSize = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("force_update_list_size", args);
+end
+__sunaba_ui_ItemList.prototype.getHScrollBar = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_h_scroll_bar", args):asObject();
+  do return __sunaba_ui_HScrollBar.new(ref) end
+end
+__sunaba_ui_ItemList.prototype.getItemAtPosition = function(self,position,exact) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(position));
+  if (exact ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(exact));
+  end;
+  do return self.native:call("get_item_at_position", args):asInt() end
+end
+__sunaba_ui_ItemList.prototype.getItemAutoTranslateMode = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_auto_translate_mode", args):asInt() end
+end
+__sunaba_ui_ItemList.prototype.getItemCustomBgColor = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_custom_bg_color", args):asColor() end
+end
+__sunaba_ui_ItemList.prototype.getItemCustomFgColor = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_custom_fg_color", args):asColor() end
+end
+__sunaba_ui_ItemList.prototype.getItemIcon = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  local ref = self.native:call("get_item_icon", args):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_ui_ItemList.prototype.getItemIconModulate = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_icon_modulate", args):asColor() end
+end
+__sunaba_ui_ItemList.prototype.getItemIconRegion = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_icon_region", args):asRect2() end
+end
+__sunaba_ui_ItemList.prototype.getItemLanguage = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_language", args):asString() end
+end
+__sunaba_ui_ItemList.prototype.getItemMetadata = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_metadata", args) end
+end
+__sunaba_ui_ItemList.prototype.getItemRect = function(self,idx,expand) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  if (expand ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(expand));
+  end;
+  do return self.native:call("get_item_rect", args):asRect2() end
+end
+__sunaba_ui_ItemList.prototype.getItemText = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_text", args):asString() end
+end
+__sunaba_ui_ItemList.prototype.getItemTextDirection = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_text_direction", args):asInt() end
+end
+__sunaba_ui_ItemList.prototype.getItemTooltip = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_tooltip", args):asString() end
+end
+__sunaba_ui_ItemList.prototype.getSelectedItems = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selected_items", args):asIntArray64() end
+end
+__sunaba_ui_ItemList.prototype.getVScrollBar = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_v_scroll_bar", args):asObject();
+  do return __sunaba_ui_VScrollBar.new(ref) end
+end
+__sunaba_ui_ItemList.prototype.isAnythingSelected = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_anything_selected", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.isItemDisabled = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_disabled", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.isItemIconTransposed = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_icon_transposed", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.isItemSelectable = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_selectable", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.isItemTooltipEnabled = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_tooltip_enabled", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.isSelected = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_selected", args):asBool() end
+end
+__sunaba_ui_ItemList.prototype.moveItem = function(self,fromIdx,toIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(fromIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(toIdx));
+  self.native:call("move_item", args);
+end
+__sunaba_ui_ItemList.prototype.removeItem = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  self.native:call("remove_item", args);
+end
+__sunaba_ui_ItemList.prototype.select = function(self,idx,single) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  if (single ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(single));
+  end;
+  self.native:call("select", args);
+end
+__sunaba_ui_ItemList.prototype.setItemAutoTranslateMode = function(self,idx,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.native:call("set_item_auto_translate_mode", args);
+end
+__sunaba_ui_ItemList.prototype.setItemCustomBgColor = function(self,idx,customBgColor) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(customBgColor));
+  self.native:call("set_item_custom_bg_color", args);
+end
+__sunaba_ui_ItemList.prototype.setItemCustomFgColor = function(self,idx,customFgColor) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(customFgColor));
+  self.native:call("set_item_custom_fg_color", args);
+end
+__sunaba_ui_ItemList.prototype.setItemDisabled = function(self,idx,disabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(disabled));
+  self.native:call("set_item_disabled", args);
+end
+__sunaba_ui_ItemList.prototype.setItemIcon = function(self,idx,icon) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(icon.native));
+  self.native:call("set_item_icon", args);
+end
+__sunaba_ui_ItemList.prototype.setItemIconModulate = function(self,idx,modulate) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(modulate));
+  self.native:call("set_item_icon_modulate", args);
+end
+__sunaba_ui_ItemList.prototype.setItemIconRegion = function(self,idx,rect) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(rect));
+  self.native:call("set_item_icon_region", args);
+end
+__sunaba_ui_ItemList.prototype.setItemIconTransposed = function(self,idx,transposed) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(transposed));
+  self.native:call("set_item_icon_transposed", args);
+end
+__sunaba_ui_ItemList.prototype.setItemLanguage = function(self,idx,language) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(language));
+  self.native:call("set_item_language", args);
+end
+__sunaba_ui_ItemList.prototype.setItemMetadata = function(self,idx,metadata) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(metadata);
+  self.native:call("set_item_metadata", args);
+end
+__sunaba_ui_ItemList.prototype.setItemSelectable = function(self,idx,selectable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(selectable));
+  self.native:call("set_item_selectable", args);
+end
+__sunaba_ui_ItemList.prototype.setItemText = function(self,idx,text) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(text));
+  self.native:call("set_item_text", args);
+end
+__sunaba_ui_ItemList.prototype.setItemTextDirection = function(self,idx,direction) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(direction));
+  self.native:call("set_item_text_direction", args);
+end
+__sunaba_ui_ItemList.prototype.setItemTooltip = function(self,idx,tooltip) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltip));
+  self.native:call("set_item_tooltip", args);
+end
+__sunaba_ui_ItemList.prototype.setItemTooltipEnabled = function(self,idx,enable) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(enable));
+  self.native:call("set_item_tooltip_enabled", args);
+end
+__sunaba_ui_ItemList.prototype.sortItemsByText = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("sort_items_by_text", args);
+end
+
+__sunaba_ui_ItemList.prototype.__class__ =  __sunaba_ui_ItemList
+__sunaba_ui_ItemList.__super__ = __sunaba_ui_Control
+setmetatable(__sunaba_ui_ItemList.prototype,{__index=__sunaba_ui_Control.prototype})
+
 __sunaba_ui_Label.new = function(native) 
   local self = _hx_new(__sunaba_ui_Label.prototype)
   __sunaba_ui_Label.super(self,native)
@@ -37325,6 +48442,231 @@ __sunaba_ui_MenuButton.prototype.__class__ =  __sunaba_ui_MenuButton
 __sunaba_ui_MenuButton.__super__ = __sunaba_ui_Button
 setmetatable(__sunaba_ui_MenuButton.prototype,{__index=__sunaba_ui_Button.prototype})
 
+__sunaba_ui_OptionButton.new = function(native) 
+  local self = _hx_new(__sunaba_ui_OptionButton.prototype)
+  __sunaba_ui_OptionButton.super(self,native)
+  return self
+end
+__sunaba_ui_OptionButton.super = function(self,native) 
+  __sunaba_ui_Button.super(self,native);
+end
+_hxClasses["sunaba.ui.OptionButton"] = __sunaba_ui_OptionButton
+__sunaba_ui_OptionButton.__name__ = "sunaba.ui.OptionButton"
+__sunaba_ui_OptionButton.prototype = _hx_e();
+__sunaba_ui_OptionButton.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("OptionButton");
+  end;
+  self.native = _native;
+end
+__sunaba_ui_OptionButton.prototype.get_allowReselect = function(self) 
+  do return self.native:get("allow_reselect"):asBool() end
+end
+__sunaba_ui_OptionButton.prototype.set_allowReselect = function(self,value) 
+  self.native:set("allow_reselect", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_OptionButton.prototype.get_fitToLongestItem = function(self) 
+  do return self.native:get("fit_to_longest_item"):asBool() end
+end
+__sunaba_ui_OptionButton.prototype.set_fitToLongestItem = function(self,value) 
+  self.native:set("fit_to_longest_item", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_OptionButton.prototype.get_itemCount = function(self) 
+  do return self.native:get("item_count"):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.set_itemCount = function(self,value) 
+  self.native:set("item_count", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_OptionButton.prototype.get_selected = function(self) 
+  do return self.native:get("selected"):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.set_selected = function(self,value) 
+  self.native:set("selected", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_OptionButton.prototype._itemFocused= nil;
+__sunaba_ui_OptionButton.prototype.itemFocused= nil;
+__sunaba_ui_OptionButton.prototype.get_itemFocused = function(self) 
+  if (self._itemFocused == nil) then 
+    self._itemFocused = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "item_focused");
+  end;
+  do return self._itemFocused end
+end
+__sunaba_ui_OptionButton.prototype._itemSelected= nil;
+__sunaba_ui_OptionButton.prototype.itemSelected= nil;
+__sunaba_ui_OptionButton.prototype.get_itemSelected = function(self) 
+  if (self._itemSelected == nil) then 
+    self._itemSelected = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "item_selected");
+  end;
+  do return self._itemSelected end
+end
+__sunaba_ui_OptionButton.prototype.addIconItem = function(self,texture,label,id) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(texture.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(label));
+  if (id ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(id));
+  end;
+  self.native:call("add_icon_item", args);
+end
+__sunaba_ui_OptionButton.prototype.addItem = function(self,label,id) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(label));
+  if (id ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(id));
+  end;
+  self.native:call("add_item", args);
+end
+__sunaba_ui_OptionButton.prototype.addSeparator = function(self,text) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (text ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(text));
+  end;
+  self.native:call("add_separator", args);
+end
+__sunaba_ui_OptionButton.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear", args);
+end
+__sunaba_ui_OptionButton.prototype.getItemAutoTranslateMode = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_auto_translate_mode", args):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.getItemIcon = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  local ref = self.native:call("get_item_icon", args):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_ui_OptionButton.prototype.getItemId = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_id", args):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.getItemIndex = function(self,id) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(id));
+  do return self.native:call("get_item_index", args):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.getItemMetadata = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_metadata", args) end
+end
+__sunaba_ui_OptionButton.prototype.getItemText = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_text", args):asString() end
+end
+__sunaba_ui_OptionButton.prototype.getItemTooltip = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("get_item_tooltip", args):asString() end
+end
+__sunaba_ui_OptionButton.prototype.getPopup = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_popup", args):asObject();
+  do return __sunaba_desktop_PopupMenu.new(ref) end
+end
+__sunaba_ui_OptionButton.prototype.getSelectableItem = function(self,fromLast) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (fromLast ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(fromLast));
+  end;
+  do return self.native:call("get_selectable_item", args):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.getSelectedId = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selected_id", args):asInt() end
+end
+__sunaba_ui_OptionButton.prototype.getSelectedMetadata = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selected_metadata", args) end
+end
+__sunaba_ui_OptionButton.prototype.hasSelectableItems = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("has_selectable_items", args):asBool() end
+end
+__sunaba_ui_OptionButton.prototype.isItemDisabled = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_disabled", args):asBool() end
+end
+__sunaba_ui_OptionButton.prototype.isItemSeparator = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  do return self.native:call("is_item_separator", args):asBool() end
+end
+__sunaba_ui_OptionButton.prototype.removeItem = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  self.native:call("remove_item", args);
+end
+__sunaba_ui_OptionButton.prototype.select = function(self,idx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  self.native:call("select", args);
+end
+__sunaba_ui_OptionButton.prototype.setDisableShortcuts = function(self,disabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(disabled));
+  self.native:call("set_disable_shortcuts", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemAutoTranslateMode = function(self,idx,mode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mode));
+  self.native:call("set_item_auto_translate_mode", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemDisabled = function(self,idx,disabled) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(disabled));
+  self.native:call("set_item_disabled", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemIcon = function(self,idx,texture) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(texture.native));
+  self.native:call("set_item_icon", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemId = function(self,idx,id) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(id));
+  self.native:call("set_item_id", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemMetadata = function(self,idx,metadata) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(metadata);
+  self.native:call("set_item_metadata", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemText = function(self,idx,text) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(text));
+  self.native:call("set_item_text", args);
+end
+__sunaba_ui_OptionButton.prototype.setItemTooltip = function(self,idx,tooltip) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltip));
+  self.native:call("set_item_tooltip", args);
+end
+__sunaba_ui_OptionButton.prototype.showPopup = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("show_popup", args);
+end
+
+__sunaba_ui_OptionButton.prototype.__class__ =  __sunaba_ui_OptionButton
+__sunaba_ui_OptionButton.__super__ = __sunaba_ui_Button
+setmetatable(__sunaba_ui_OptionButton.prototype,{__index=__sunaba_ui_Button.prototype})
+
 __sunaba_ui_Panel.new = function(native) 
   local self = _hx_new(__sunaba_ui_Panel.prototype)
   __sunaba_ui_Panel.super(self,native)
@@ -37396,6 +48738,802 @@ end
 __sunaba_ui_ProgressBar.prototype.__class__ =  __sunaba_ui_ProgressBar
 __sunaba_ui_ProgressBar.__super__ = __sunaba_ui_Range
 setmetatable(__sunaba_ui_ProgressBar.prototype,{__index=__sunaba_ui_Range.prototype})
+
+__sunaba_ui_RichTextEffect.new = function(native) 
+  local self = _hx_new(__sunaba_ui_RichTextEffect.prototype)
+  __sunaba_ui_RichTextEffect.super(self,native)
+  return self
+end
+__sunaba_ui_RichTextEffect.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.ui.RichTextEffect"] = __sunaba_ui_RichTextEffect
+__sunaba_ui_RichTextEffect.__name__ = "sunaba.ui.RichTextEffect"
+__sunaba_ui_RichTextEffect.prototype = _hx_e();
+__sunaba_ui_RichTextEffect.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("RichTextEffect");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("RichTextEffect"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+
+__sunaba_ui_RichTextEffect.prototype.__class__ =  __sunaba_ui_RichTextEffect
+__sunaba_ui_RichTextEffect.__super__ = __sunaba_Resource
+setmetatable(__sunaba_ui_RichTextEffect.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_ui_RichTextLabel.new = function(native) 
+  local self = _hx_new(__sunaba_ui_RichTextLabel.prototype)
+  __sunaba_ui_RichTextLabel.super(self,native)
+  return self
+end
+__sunaba_ui_RichTextLabel.super = function(self,native) 
+  __sunaba_ui_Control.super(self,native);
+end
+_hxClasses["sunaba.ui.RichTextLabel"] = __sunaba_ui_RichTextLabel
+__sunaba_ui_RichTextLabel.__name__ = "sunaba.ui.RichTextLabel"
+__sunaba_ui_RichTextLabel.prototype = _hx_e();
+__sunaba_ui_RichTextLabel.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("RichTextLabel");
+  end;
+  self.native = _native;
+end
+__sunaba_ui_RichTextLabel.prototype.get_autowrapMode = function(self) 
+  do return self.native:get("autowrap_mode"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_autowrapMode = function(self,value) 
+  self.native:set("autowrap_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_autowrapTrimFlags = function(self) 
+  do return self.native:get("autowrap_trim_flags"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_autowrapTrimFlags = function(self,value) 
+  self.native:set("autowrap_trim_flags", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_bbcodeEnabled = function(self) 
+  do return self.native:get("bbcode_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_bbcodeEnabled = function(self,value) 
+  self.native:set("bbcode_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_contextMenuEnabled = function(self) 
+  do return self.native:get("context_menu_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_contextMenuEnabled = function(self,value) 
+  self.native:set("context_menu_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_customEffects = function(self) 
+  do return self.native:get("custom_effects"):asArrayList() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_customEffects = function(self,value) 
+  self.native:set("custom_effects", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_deselectOnFocusLossEnabled = function(self) 
+  do return self.native:get("deselect_on_focus_loss_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_deselectOnFocusLossEnabled = function(self,value) 
+  self.native:set("deselect_on_focus_loss_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_dragAndDropSelectionEnabled = function(self) 
+  do return self.native:get("drag_and_drop_selection_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_dragAndDropSelectionEnabled = function(self,value) 
+  self.native:set("drag_and_drop_selection_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_fitContent = function(self) 
+  do return self.native:get("fit_content"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_fitContent = function(self,value) 
+  self.native:set("fit_content", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_hintUnderlined = function(self) 
+  do return self.native:get("hint_underlined"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_hintUnderlined = function(self,value) 
+  self.native:set("hint_underlined", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_horizontalAlignment = function(self) 
+  do return self.native:get("horizontal_alignment"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_horizontalAlignment = function(self,value) 
+  self.native:set("horizontal_alignment", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_justificationFlags = function(self) 
+  do return self.native:get("justification_flags"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_justificationFlags = function(self,value) 
+  self.native:set("justification_flags", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_language = function(self) 
+  do return self.native:get("language"):asString() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_language = function(self,value) 
+  self.native:set("language", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_metaUnderlined = function(self) 
+  do return self.native:get("meta_underlined"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_metaUnderlined = function(self,value) 
+  self.native:set("meta_underlined", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_progressBarDelay = function(self) 
+  do return self.native:get("progress_bar_delay"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_progressBarDelay = function(self,value) 
+  self.native:set("progress_bar_delay", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_scrollActive = function(self) 
+  do return self.native:get("scroll_active"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_scrollActive = function(self,value) 
+  self.native:set("scroll_active", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_scrollFollowing = function(self) 
+  do return self.native:get("scroll_following"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_scrollFollowing = function(self,value) 
+  self.native:set("scroll_following", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_scrollFollowingVisibleCharacters = function(self) 
+  do return self.native:get("scroll_following_visible_characters"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_scrollFollowingVisibleCharacters = function(self,value) 
+  self.native:set("scroll_following_visible_characters", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_selectionEnabled = function(self) 
+  do return self.native:get("selection_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_selectionEnabled = function(self,value) 
+  self.native:set("selection_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_shortcutKeysEnabled = function(self) 
+  do return self.native:get("shortcut_keys_enabled"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_shortcutKeysEnabled = function(self,value) 
+  self.native:set("shortcut_keys_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_structuredTextBidiOverride = function(self) 
+  do return self.native:get("structured_text_bidi_override"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_structuredTextBidiOverride = function(self,value) 
+  self.native:set("structured_text_bidi_override", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_structuredTextBidiOverrideOptions = function(self) 
+  do return self.native:get("structured_text_bidi_override_options"):asArrayList() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_structuredTextBidiOverrideOptions = function(self,value) 
+  self.native:set("structured_text_bidi_override_options", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_tabSize = function(self) 
+  do return self.native:get("tab_size"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_tabSize = function(self,value) 
+  self.native:set("tab_size", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_tabStops = function(self) 
+  do return self.native:get("tab_stops"):asFloatArray64() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_tabStops = function(self,value) 
+  self.native:set("tab_stops", __sunaba_core__Variant_Variant_Impl_.fromFloatArray64(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_text = function(self) 
+  do return self.native:get("text"):asString() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_text = function(self,value) 
+  self.native:set("text", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_textDirection = function(self) 
+  do return self.native:get("text_direction"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_textDirection = function(self,value) 
+  self.native:set("text_direction", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_threaded = function(self) 
+  do return self.native:get("threaded"):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_threaded = function(self,value) 
+  self.native:set("threaded", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_verticalAlignment = function(self) 
+  do return self.native:get("vertical_alignment"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_verticalAlignment = function(self,value) 
+  self.native:set("vertical_alignment", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_visibleCharacters = function(self) 
+  do return self.native:get("visible_characters"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_visibleCharacters = function(self,value) 
+  self.native:set("visible_characters", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_visibleCharactersBehavior = function(self) 
+  do return self.native:get("visible_characters_behavior"):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_visibleCharactersBehavior = function(self,value) 
+  self.native:set("visible_characters_behavior", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype.get_visibleRatio = function(self) 
+  do return self.native:get("visible_ratio"):asFloat() end
+end
+__sunaba_ui_RichTextLabel.prototype.set_visibleRatio = function(self,value) 
+  self.native:set("visible_ratio", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_ui_RichTextLabel.prototype._finished= nil;
+__sunaba_ui_RichTextLabel.prototype.finished= nil;
+__sunaba_ui_RichTextLabel.prototype.get_finished = function(self) 
+  if (self._finished == nil) then 
+    self._finished = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "finished");
+  end;
+  do return self._finished end
+end
+__sunaba_ui_RichTextLabel.prototype._metaClicked= nil;
+__sunaba_ui_RichTextLabel.prototype.metaClicked= nil;
+__sunaba_ui_RichTextLabel.prototype.get_metaClicked = function(self) 
+  if (self._metaClicked == nil) then 
+    self._metaClicked = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "meta_clicked");
+  end;
+  do return self._metaClicked end
+end
+__sunaba_ui_RichTextLabel.prototype._metaHoverEnded= nil;
+__sunaba_ui_RichTextLabel.prototype.metaHoverEnded= nil;
+__sunaba_ui_RichTextLabel.prototype.get_metaHoverEnded = function(self) 
+  if (self._metaHoverEnded == nil) then 
+    self._metaHoverEnded = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "meta_hover_ended");
+  end;
+  do return self._metaHoverEnded end
+end
+__sunaba_ui_RichTextLabel.prototype._metaHoverStarted= nil;
+__sunaba_ui_RichTextLabel.prototype.metaHoverStarted= nil;
+__sunaba_ui_RichTextLabel.prototype.get_metaHoverStarted = function(self) 
+  if (self._metaHoverStarted == nil) then 
+    self._metaHoverStarted = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "meta_hover_started");
+  end;
+  do return self._metaHoverStarted end
+end
+__sunaba_ui_RichTextLabel.prototype.addHr = function(self,width,height,color,alignment,widthInPercent,heightInPercent) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (width ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(width));
+  end;
+  if (height ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(height));
+  end;
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  if (alignment ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(alignment));
+  end;
+  if (widthInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(widthInPercent));
+  end;
+  if (heightInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(heightInPercent));
+  end;
+  self.native:call("add_hr", args);
+end
+__sunaba_ui_RichTextLabel.prototype.addImage = function(self,image,width,height,color,inlineAlign,region,key,pad,tooltip,widthInPercent,heightInPercent,altText) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(image.native));
+  if (width ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(width));
+  end;
+  if (height ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(height));
+  end;
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  if (inlineAlign ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(inlineAlign));
+  end;
+  if (region ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(region));
+  end;
+  if (key ~= nil) then 
+    args:append(key);
+  end;
+  if (pad ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(pad));
+  end;
+  if (tooltip ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltip));
+  end;
+  if (widthInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(widthInPercent));
+  end;
+  if (heightInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(heightInPercent));
+  end;
+  if (altText ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(altText));
+  end;
+  self.native:call("add_image", args);
+end
+__sunaba_ui_RichTextLabel.prototype.addText = function(self,text) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(text));
+  self.native:call("add_text", args);
+end
+__sunaba_ui_RichTextLabel.prototype.appendText = function(self,bbcode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(bbcode));
+  self.native:call("append_text", args);
+end
+__sunaba_ui_RichTextLabel.prototype.clear = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("clear", args);
+end
+__sunaba_ui_RichTextLabel.prototype.deselect = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("deselect", args);
+end
+__sunaba_ui_RichTextLabel.prototype.getCharacterLine = function(self,character) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(character));
+  do return self.native:call("get_character_line", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getCharacterParagraph = function(self,character) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(character));
+  do return self.native:call("get_character_paragraph", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getContentHeight = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_content_height", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getContentWidth = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_content_width", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getLineCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_line_count", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getLineHeight = function(self,line) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
+  do return self.native:call("get_line_height", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getLineOffset = function(self,line) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
+  do return self.native:call("get_line_offset", args):asFloat() end
+end
+__sunaba_ui_RichTextLabel.prototype.getLineRange = function(self,line) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
+  do return self.native:call("get_line_range", args):asVector2i() end
+end
+__sunaba_ui_RichTextLabel.prototype.getLineWidth = function(self,line) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
+  do return self.native:call("get_line_width", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getMenu = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_menu", args):asObject();
+  do return __sunaba_desktop_PopupMenu.new(ref) end
+end
+__sunaba_ui_RichTextLabel.prototype.getParagraphCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_paragraph_count", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getParagraphOffset = function(self,paragraph) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(paragraph));
+  do return self.native:call("get_paragraph_offset", args):asFloat() end
+end
+__sunaba_ui_RichTextLabel.prototype.getParsedText = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_parsed_text", args):asString() end
+end
+__sunaba_ui_RichTextLabel.prototype.getSelectedText = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selected_text", args):asString() end
+end
+__sunaba_ui_RichTextLabel.prototype.getSelectionFrom = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selection_from", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getSelectionLineOffset = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selection_line_offset", args):asFloat() end
+end
+__sunaba_ui_RichTextLabel.prototype.getSelectionTo = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_selection_to", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getTotalCharacterCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_total_character_count", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getVScrollBar = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_v_scroll_bar", args):asObject();
+  do return __sunaba_ui_VScrollBar.new(ref) end
+end
+__sunaba_ui_RichTextLabel.prototype.getVisibleContentRect = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_visible_content_rect", args):asRect2i() end
+end
+__sunaba_ui_RichTextLabel.prototype.getVisibleLineCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_visible_line_count", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.getVisibleParagraphCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_visible_paragraph_count", args):asInt() end
+end
+__sunaba_ui_RichTextLabel.prototype.installEffect = function(self,effect) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(effect);
+  self.native:call("install_effect", args);
+end
+__sunaba_ui_RichTextLabel.prototype.invalidateParagraph = function(self,paragraph) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(paragraph));
+  do return self.native:call("invalidate_paragraph", args):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.isFinished = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_finished", args):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.isMenuVisible = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_menu_visible", args):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.isReady = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_ready", args):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.menuOption = function(self,option) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(option));
+  self.native:call("menu_option", args);
+end
+__sunaba_ui_RichTextLabel.prototype.newline = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("newline", args);
+end
+__sunaba_ui_RichTextLabel.prototype.parseBbcode = function(self,bbcode) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(bbcode));
+  self.native:call("parse_bbcode", args);
+end
+__sunaba_ui_RichTextLabel.prototype.parseExpressionsForValues = function(self,expressions) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromStringArray(expressions));
+  do return self.native:call("parse_expressions_for_values", args):asDictionary() end
+end
+__sunaba_ui_RichTextLabel.prototype.pop = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("pop", args);
+end
+__sunaba_ui_RichTextLabel.prototype.popAll = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("pop_all", args);
+end
+__sunaba_ui_RichTextLabel.prototype.popContext = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("pop_context", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushBgcolor = function(self,bgcolor) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(bgcolor));
+  self.native:call("push_bgcolor", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushBold = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_bold", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushBoldItalics = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_bold_italics", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushCell = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_cell", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushColor = function(self,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  self.native:call("push_color", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushContext = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_context", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushCustomfx = function(self,effect,env) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(effect.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(env));
+  self.native:call("push_customfx", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushDropcap = function(self,string,font,size,dropcapMargins,color,outlineSize,outlineColor) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(string));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(font.native));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(size));
+  if (dropcapMargins ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(dropcapMargins));
+  end;
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  if (outlineSize ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(outlineSize));
+  end;
+  if (outlineColor ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(outlineColor));
+  end;
+  self.native:call("push_dropcap", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushFgcolor = function(self,fgcolor) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(fgcolor));
+  self.native:call("push_fgcolor", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushFont = function(self,font,fontSize) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(font.native));
+  if (fontSize ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(fontSize));
+  end;
+  self.native:call("push_font", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushFontSize = function(self,fontSize) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(fontSize));
+  self.native:call("push_font_size", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushHint = function(self,description) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(description));
+  self.native:call("push_hint", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushIndent = function(self,level) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(level));
+  self.native:call("push_indent", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushItalics = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_italics", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushLanguage = function(self,language) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(language));
+  self.native:call("push_language", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushList = function(self,level,type,capitalize,bullet) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(level));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(type));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(capitalize));
+  if (bullet ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(bullet));
+  end;
+  self.native:call("push_list", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushMeta = function(self,data,underlineMode,tooltip) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(data);
+  if (underlineMode ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(underlineMode));
+  end;
+  if (tooltip ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltip));
+  end;
+  self.native:call("push_meta", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushMono = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_mono", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushNormal = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("push_normal", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushOutlineColor = function(self,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  self.native:call("push_outline_color", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushOutlineSize = function(self,outlineSize) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(outlineSize));
+  self.native:call("push_outline_size", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushParagraph = function(self,alignment,baseDirection,language,stParser,justificationFlags,tabStops) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(alignment));
+  if (baseDirection ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(baseDirection));
+  end;
+  if (language ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(language));
+  end;
+  if (stParser ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(stParser));
+  end;
+  if (justificationFlags ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(justificationFlags));
+  end;
+  if (tabStops ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloatArray64(tabStops));
+  end;
+  self.native:call("push_paragraph", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushStrikethrough = function(self,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  self.native:call("push_strikethrough", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushTable = function(self,columns,inlineAlign,alignToRow,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(columns));
+  if (inlineAlign ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(inlineAlign));
+  end;
+  if (alignToRow ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(alignToRow));
+  end;
+  if (name ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  end;
+  self.native:call("push_table", args);
+end
+__sunaba_ui_RichTextLabel.prototype.pushUnderline = function(self,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  self.native:call("push_underline", args);
+end
+__sunaba_ui_RichTextLabel.prototype.reloadEffects = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("reload_effects", args);
+end
+__sunaba_ui_RichTextLabel.prototype.removeParagraph = function(self,paragraph,noInvalidate) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(paragraph));
+  if (noInvalidate ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(noInvalidate));
+  end;
+  do return self.native:call("remove_paragraph", args):asBool() end
+end
+__sunaba_ui_RichTextLabel.prototype.scrollToLine = function(self,line) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
+  self.native:call("scroll_to_line", args);
+end
+__sunaba_ui_RichTextLabel.prototype.scrollToParagraph = function(self,paragraph) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(paragraph));
+  self.native:call("scroll_to_paragraph", args);
+end
+__sunaba_ui_RichTextLabel.prototype.scrollToSelection = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("scroll_to_selection", args);
+end
+__sunaba_ui_RichTextLabel.prototype.selectAll = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("select_all", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setCellBorderColor = function(self,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  self.native:call("set_cell_border_color", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setCellPadding = function(self,padding) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(padding));
+  self.native:call("set_cell_padding", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setCellRowBackgroundColor = function(self,oddRowBg,evenRowBg) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(oddRowBg));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(evenRowBg));
+  self.native:call("set_cell_row_background_color", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setCellSizeOverride = function(self,minSize,maxSize) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(minSize));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(maxSize));
+  self.native:call("set_cell_size_override", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setTableColumnExpand = function(self,column,expand,ratio,shrink) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(expand));
+  if (ratio ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(ratio));
+  end;
+  if (shrink ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(shrink));
+  end;
+  self.native:call("set_table_column_expand", args);
+end
+__sunaba_ui_RichTextLabel.prototype.setTableColumnName = function(self,column,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  self.native:call("set_table_column_name", args);
+end
+__sunaba_ui_RichTextLabel.prototype.updateImage = function(self,key,mask,image,width,height,color,inlineAlign,region,pad,tooltip,widthInPercent,heightInPercent) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(key);
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(mask));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(image.native));
+  if (width ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(width));
+  end;
+  if (height ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(height));
+  end;
+  if (color ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  end;
+  if (inlineAlign ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(inlineAlign));
+  end;
+  if (region ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromRect2(region));
+  end;
+  if (pad ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(pad));
+  end;
+  if (tooltip ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltip));
+  end;
+  if (widthInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(widthInPercent));
+  end;
+  if (heightInPercent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(heightInPercent));
+  end;
+  self.native:call("update_image", args);
+end
+
+__sunaba_ui_RichTextLabel.prototype.__class__ =  __sunaba_ui_RichTextLabel
+__sunaba_ui_RichTextLabel.__super__ = __sunaba_ui_Control
+setmetatable(__sunaba_ui_RichTextLabel.prototype,{__index=__sunaba_ui_Control.prototype})
 
 __sunaba_ui_ScrollContainer.new = function(native) 
   local self = _hx_new(__sunaba_ui_ScrollContainer.prototype)
@@ -40133,8 +52271,8 @@ __sys_FileSystem.readDirectory = function(path)
   local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
   local s = result;
   local array = _hx_tab_array({}, 0);
-  local _g = 1;
-  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s) + 1;
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
   while (_g < _g1) do _hx_do_first_1 = false;
     
     _g = _g + 1;
@@ -41213,6 +53351,26 @@ local _hx_static_init = function()
   
   __sunaba__SizeFlags_SizeFlags_Impl_.values = _hx_tab_array({[0]=0, 1, 2, 3, 4, 8}, 6);
   
+  __sunaba__TrackType_TrackType_Impl_.value = 0;
+  
+  __sunaba__TrackType_TrackType_Impl_.position3d = 1;
+  
+  __sunaba__TrackType_TrackType_Impl_.rotation3d = 2;
+  
+  __sunaba__TrackType_TrackType_Impl_.scale3d = 3;
+  
+  __sunaba__TrackType_TrackType_Impl_.blendShape = 4;
+  
+  __sunaba__TrackType_TrackType_Impl_.method = 5;
+  
+  __sunaba__TrackType_TrackType_Impl_.bezier = 6;
+  
+  __sunaba__TrackType_TrackType_Impl_.audio = 7;
+  
+  __sunaba__TrackType_TrackType_Impl_.animation = 8;
+  
+  __sunaba__TrackType_TrackType_Impl_.values = _hx_tab_array({[0]=0, 1, 2, 3, 4, 5, 6, 7, 8}, 9);
+  
   __sunaba__VerticalAlignment_VerticalAlignment_Impl_.top = 0;
   
   __sunaba__VerticalAlignment_VerticalAlignment_Impl_.center = 1;
@@ -41834,6 +53992,8 @@ local _hx_static_init = function()
   __sunaba_core__Vector4_Vector4_Impl_.ZERO = Vector4.new();
   
   __sunaba_core__Vector4i_Vector4i_Impl_.ZERO = Vector4i.new();
+  
+  __sunaba_studio_ModelImportService.isRunningCoroutine = false;
   
   
 end
