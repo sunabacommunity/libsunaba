@@ -158,7 +158,8 @@ if env["platform"] != "web":
         unix_files = ["serial.c", "unix.c", "unixdgram.c", "unixstream.c", "usocket.c"]
         lsocket_sources = [f for f in all_lsocket_files if not any(uf in str(f) for uf in unix_files)]
     else:
-        lsocket_sources = all_lsocket_files
+        win32_files = ["wsocket.c"]
+        lsocket_sources = [f for f in all_lsocket_files if not any(wf in str(f) for wf in win32_files)]
 
     sources.extend(lsocket_sources)
     env.Append(CPPDEFINES=["SUNABA_LUASOCKET_ENABLED"])
