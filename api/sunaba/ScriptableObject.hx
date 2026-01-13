@@ -16,6 +16,7 @@ abstract class ScriptableObject extends BaseClass {
 	public function getData() : Dictionary {
 		var data = new Dictionary();
 		data.set("path", path);
+		data.set("classType", std.Type.getClassName(std.Type.getClass(this)));
 		return data;
 	}
 
