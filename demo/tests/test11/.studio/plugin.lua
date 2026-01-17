@@ -1382,7 +1382,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     _G.print("Haxe build command executed successfully.");
     _G.coroutine.yield();
     local mainLuaPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(_gthis.sprojJson.luabin);
-    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=417,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
+    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="/Users/Shared/studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=417,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
     if (not __sys_FileSystem.exists(mainLuaPath)) then 
       _G.print(Std.string(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)));
       _G.error(__haxe_Exception.thrown(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)),0);
@@ -1453,7 +1453,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       while (assetKey:hasNext()) do _hx_do_first_1 = false;
         
         local assetKey = assetKey:next();
-        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\gamepak\\libsrc\\Gamepak.hx",lineNumber=491,className="Gamepak",methodName="buildCoroutine"}));
+        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=491,className="Gamepak",methodName="buildCoroutine"}));
         local ret = assets.h[assetKey];
         local assetContent = (function() 
           local _hx_4
@@ -2336,8 +2336,8 @@ TestPlugin.main = function()
 end
 TestPlugin.prototype = _hx_e();
 TestPlugin.prototype.init = function(self) 
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
-  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
   self:get_editor():pushBehaviorClass(__myComponents_RotateComponent);
   self:get_editor():pushBehaviorClass(__myComponents_FreeLook3D);
 end
@@ -4075,7 +4075,7 @@ __haxe_io_Output.__name__ = "haxe.io.Output"
 __haxe_io_Output.prototype = _hx_e();
 __haxe_io_Output.prototype.bigEndian= nil;
 __haxe_io_Output.prototype.writeByte = function(self,c) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/std/haxe/io/Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
 end
 __haxe_io_Output.prototype.writeBytes = function(self,s,pos,len) 
   if (((pos < 0) or (len < 0)) or ((pos + len) > s.length)) then 
@@ -4223,7 +4223,7 @@ __haxe_io_Input.__name__ = "haxe.io.Input"
 __haxe_io_Input.prototype = _hx_e();
 __haxe_io_Input.prototype.bigEndian= nil;
 __haxe_io_Input.prototype.readByte = function(self) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/std/haxe/io/Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
 end
 __haxe_io_Input.prototype.readBytes = function(self,s,pos,len) 
   local k = len;
@@ -5751,7 +5751,7 @@ __myComponents_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -5824,7 +5824,7 @@ __myComponents_FreeLook3D.prototype.onUpdate = function(self,deltaTime)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -6043,7 +6043,7 @@ __sunaba_App.super = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g);
-    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
+    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
     __sunaba_Debug.error(e:get_message());
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
@@ -6961,6 +6961,10 @@ __sunaba_AppView.prototype.loadApp = function(self,path)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
   self.native:call("load_app", args);
+end
+__sunaba_AppView.prototype.enableDebugging = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("enable_debugging", args);
 end
 
 __sunaba_AppView.prototype.__class__ =  __sunaba_AppView
@@ -8647,12 +8651,12 @@ __sunaba_DataUtils.resToDict = function(res)
   local path = "?";
   local className = res:getClass();
   data:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString(className));
-  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=599,className="sunaba.DataUtils",methodName="resToDict"}));
-  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=600,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=599,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=600,className="sunaba.DataUtils",methodName="resToDict"}));
   if (res:get("asset_path"):getType() == 4) then 
     if (res:get("asset_path"):asString() ~= "") then 
       path = res:get("asset_path"):asString();
-      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=604,className="sunaba.DataUtils",methodName="resToDict"}));
+      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=604,className="sunaba.DataUtils",methodName="resToDict"}));
     end;
   end;
   if (path == "<null>") then 
@@ -11266,6 +11270,9 @@ __sunaba_ScriptableObject.prototype.io= nil;
 __sunaba_ScriptableObject.prototype.getData = function(self) 
   local data = Dictionary.new();
   data:set(__sunaba_core__Variant_Variant_Impl_.fromString("path"), __sunaba_core__Variant_Variant_Impl_.fromString(self.path));
+  local tmp = __sunaba_core__Variant_Variant_Impl_.fromString("classType");
+  local c = Type.getClass(self);
+  data:set(tmp, __sunaba_core__Variant_Variant_Impl_.fromString(c.__name__));
   do return data end
 end
 __sunaba_ScriptableObject.prototype.setData = function(self,data) 
@@ -15948,7 +15955,7 @@ __sunaba_ShellConsole.prototype.nativeInit = function(self,_native)
       
       local arg = args[_g];
       _g = _g + 1;
-      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
+      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
       _gthis:cmd(arg);
     end;
     do return 0 end;
@@ -17760,7 +17767,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
     local animationLibrary = __sunaba_animation_AnimationLibrary.new(__sunaba_DataUtils.dictToVar(animationLibraryData):asReference());
     local propertiesData = animationLibraryData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
     local animationListData = propertiesData:get(__sunaba_core__Variant_Variant_Impl_.fromString("_data")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(animationListData))));
     local _g = 0;
     local this1 = animationListData:keys();
@@ -17782,8 +17789,8 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
       local value = animationListData:get(__sunaba_core__Variant_Variant_Impl_.fromString(key));
       local animation = __sunaba_animation_Animation.new(__sunaba_DataUtils.dictToVar(value:asDictionary()):asReference());
       animation:clear();
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(value)));
       local animationPropertyData = value:asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
       local trackData = __haxe_ds_IntMap.new();
@@ -17804,7 +17811,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
         local propKeyv = _g1[_g];
         _g = _g + 1;
         local propKey = propKeyv:asString();
-        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
         if (StringTools.startsWith(propKey, "tracks/")) then 
           local parts = String.prototype.split(propKey, "/");
           local trackIdx = Std.parseInt(parts[1]);
@@ -17817,7 +17824,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
               trackData.h[trackIdx] = value;
             end;
           end;
-          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           local ret = trackData.h[trackIdx];
           if (ret == __haxe_ds_IntMap.tnull) then 
             ret = nil;
@@ -17866,7 +17873,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           godotTrackIdx = animation:addTrack(3);
         elseif (trackType1) == "value" then 
           godotTrackIdx = animation:addTrack(0);else
-        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
+        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
         if (godotTrackIdx >= 0) then 
           animation:trackSetPath(godotTrackIdx, trackPath);
           if (track.h.enabled ~= nil) then 
@@ -17953,13 +17960,13 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
                 step = 5;else
               step = 2; end;
               if ((_G.math.fmod(keys.length, step)) ~= 0) then 
-                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
               end;
             else
-              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
             end;
           else
-            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
           local propKey = Std.string(Std.string("tracks/") .. Std.string(godotTrackIdx)) .. Std.string("/keys");
           local keysArray = Variant.new():asFloatArray();
@@ -17991,10 +17998,10 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
             else
               keysArray:add(variant:asFloat());
             end;
-            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
-          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           animation.native:set(propKey, __sunaba_core__Variant_Variant_Impl_.fromFloatArray(keysArray));
           if (track.h.enabled ~= nil) then 
             local ret = track.h.enabled;
@@ -18038,11 +18045,11 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           end;
         end;
       end;
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animation.native))))));
       animationLibrary:addAnimation(key, animation);
     end;
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animationLibrary.native))))));
     self:addAnimationLibrary(animationLibraryName, animationLibrary);
   end;
@@ -27493,7 +27500,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     local propKeyv = _g1[_g];
     _g = _g + 1;
     local propKey = propKeyv:asString();
-    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local parts = String.prototype.split(propKey, "/");
     local boneIdx = Std.parseInt(parts[1]);
     local propName = parts[2];
@@ -27508,7 +27515,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     if (boneIdx > maxBone) then 
       maxBone = boneIdx;
     end;
-    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local ret = boneDataMap_h[boneIdx];
     if (ret == __haxe_ds_IntMap.tnull) then 
       ret = nil;
@@ -34569,12 +34576,12 @@ __sunaba_ui_Widget.prototype.isValueTexture = function(self,node,propName)
 end
 __sunaba_ui_Widget.prototype.isTextureType = function(self,value) 
   local nativeRef = value:asReference();
-  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=755,className="sunaba.ui.Widget",methodName="isTextureType"}));
-  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=756,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=755,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=756,className="sunaba.ui.Widget",methodName="isTextureType"}));
   if (nativeRef ~= nil) then 
-    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=758,className="sunaba.ui.Widget",methodName="isTextureType"}));
+    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=758,className="sunaba.ui.Widget",methodName="isTextureType"}));
     if (nativeRef:isValid()) then 
-      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=760,className="sunaba.ui.Widget",methodName="isTextureType"}));
+      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=760,className="sunaba.ui.Widget",methodName="isTextureType"}));
       if (nativeRef:isClass("Texture")) then 
         do return true end;
       end;
@@ -34758,7 +34765,7 @@ __sunaba_studio_Console.prototype.editorInit = function(self)
   local outputColor = self.output:getThemeColor("default_color");
   local i = self:getNode("vbox/input");
   if (i == nil) then 
-    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
+    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
     do return end;
   end;
   self.input = self:getNodeT_sunaba_ui_LineEdit(__sunaba_ui_LineEdit, "vbox/hbox/input");
@@ -35079,9 +35086,9 @@ __sunaba_studio_Editor.prototype.init = function(self)
     local appMenu = __sunaba_desktop_NativeMenuService.getSystemMenu(2);
     __sunaba_desktop_NativeMenuService.addSeparator(appMenu);
     local settingsIdx = __sunaba_desktop_NativeMenuService.addItem(appMenu, "Settings", __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=235,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=235,className="sunaba.studio.Editor",methodName="init"}));
     end)), __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=238,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=238,className="sunaba.studio.Editor",methodName="init"}));
     end)), Variant.new(), _hx_bit.bor(134217728,44));
     local iconBytes = self.io:loadBytes("studio://icons/16/gear.png");
     local tmp;
@@ -35171,13 +35178,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   end;
   local _hx_status, _hx_result = pcall(function() 
   
-      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=286,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=286,className="sunaba.studio.Editor",methodName="onReady"}));
       local menuBarControl = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/hbox/spacer");
       local eventFunc = function(eventN) 
         if (_gthis.window == nil) then 
           do return end;
         end;
-        if (_gthis:get_customTitlebar() == false) then 
+        if ((_gthis:get_customTitlebar() == false) and (__sunaba_OSService.getName() ~= "macOS")) then 
           do return end;
         end;
         if (((__sunaba_input_InputService.isMouseButtonPressed(1) and not _gthis.titlebarLmbPressed) and (_gthis.window:get_mode() == 0)) and (_gthis.clickcount == 0)) then 
@@ -35213,7 +35220,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
         if (_gthis.clickcount == 2) then 
-          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=335,className="sunaba.studio.Editor",methodName="onReady"}));
+          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=335,className="sunaba.studio.Editor",methodName="onReady"}));
           _gthis.clickcount = 0;
           local maximizeButton = _gthis:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/maximizeButton");
           if (_gthis.window:get_mode() == 2) then 
@@ -35391,7 +35398,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
             array:push(value);
           end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=487,className="sunaba.studio.Editor",methodName="onReady"}));
+          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=487,className="sunaba.studio.Editor",methodName="onReady"}));
           local tmp = __haxe_Log.trace;
           local s = buttonFont:get_fontNames();
           local array = _hx_tab_array({}, 0);
@@ -35407,7 +35414,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             end;
             array:push(value);
           end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=488,className="sunaba.studio.Editor",methodName="onReady"}));
+          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=488,className="sunaba.studio.Editor",methodName="onReady"}));
         end;
       end;
       local minimizeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/minimizeButton");
@@ -35501,7 +35508,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       self:refreshLeftSidebar();
       self:refreshRightSidebar();
-      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=589,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=589,className="sunaba.studio.Editor",methodName="onReady"}));
       local args = _G.__args;
       local s = args;
       local array = _hx_tab_array({}, 0);
@@ -35534,13 +35541,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(self.sProjPath)}, 1);
       self.sProjPath = String.prototype.split(__sys_FileSystem.getNative():call("AbsolutePath", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asString(), "\\"):join("/");
-      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=605,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=605,className="sunaba.studio.Editor",methodName="onReady"}));
       local projJson = "";
       if (self.sProjPath ~= "") then 
         projJson = __sys_io_File.getContent(self.sProjPath);
       end;
-      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=612,className="sunaba.studio.Editor",methodName="onReady"}));
-      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=613,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=612,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=613,className="sunaba.studio.Editor",methodName="onReady"}));
       if ((self.sProjPath == "") or (projJson == "")) then 
         __sunaba_Debug.error("Project not found.");
         __sunaba_App.exit(-1);
@@ -35552,12 +35559,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local dirPath = sprojPathArr:join("/");
       dirPath = Std.string(dirPath) .. Std.string("/");
       local assetPath = Std.string(dirPath) .. Std.string(self._projectFile.assetsdir);
-      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=629,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=629,className="sunaba.studio.Editor",methodName="onReady"}));
       while (not StringTools.endsWith(assetPath, self._projectFile.assetsdir)) do _hx_do_first_1 = false;
         
         assetPath = Std.string(assetPath) .. Std.string(self._projectFile.assetsdir);
       end;
-      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=633,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=633,className="sunaba.studio.Editor",methodName="onReady"}));
       local recentProjectsPath = "user://recentProjects.json";
       if (self.io:fileExists(recentProjectsPath)) then 
         local recentProjectsStr = self.io:loadText(recentProjectsPath);
@@ -35800,7 +35807,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(self.haxePath)) .. Std.string("\" \"$@\" ")));
     __sys_io_File.saveContent(wrapper, shContent);
-    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=838,className="sunaba.studio.Editor",methodName="onReady"}));
+    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=838,className="sunaba.studio.Editor",methodName="onReady"}));
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", wrapper}, 2)));
     self.haxePath = wrapper;
   end;
@@ -35982,7 +35989,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
   command = Std.string(command) .. Std.string((Std.string(" ") .. Std.string(self:get_projectFile().compilerFlags:join(" "))));
   local command = command;
   self.buildTask = _G.coroutine.create(function() 
-    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1016,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1016,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     if (_gthis.pluginBuildWindow ~= nil) then 
       local windowSize = _gthis.pluginBuildWindow:get_size();
       local scaleFactor = _gthis:getWindow():get_contentScaleFactor();
@@ -36008,7 +36015,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       end;
     end;
     _G.coroutine.yield();
-    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1035,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1035,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     local args = __sunaba_core_StringArray.create();
     local cmdArr = String.prototype.split(command, " ");
     local commandName = cmdArr[0];
@@ -36046,7 +36053,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       array:push(value);
     end;
     local exitCode = Sys.command(commandName, array);
-    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1051,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1051,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     _G.coroutine.yield();
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:hide();
@@ -36247,7 +36254,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1211,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1211,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
@@ -36612,7 +36619,7 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
     local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1595,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1595,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
@@ -36770,7 +36777,7 @@ __sunaba_studio_Explorer.prototype.newFileDialog= nil;
 __sunaba_studio_Explorer.prototype.newFileWidget= nil;
 __sunaba_studio_Explorer.prototype.editorInit = function(self) 
   local _gthis = self;
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
   self:getEditor():setLeftSidebarTabTitle(self, "Project Explorer");
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/blue-folder-stand.png");
   local iconImage = __sunaba_Image.new();
@@ -36784,8 +36791,8 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
   self.throbberParent = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar1/hbox/throbber");
   self.throbberRect = self:getNodeT_sunaba_ui_TextureRect(__sunaba_ui_TextureRect, "vbox/toolbar1/hbox/throbber/textureRect");
   local throbberPath = "studio://throbber-animated";
-  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
-  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local throbberTxtListN = self.io:getFileList(throbberPath, ".png", false);
   local result = Array.new();
   local _g = 0;
@@ -36807,12 +36814,12 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
       if (self.io:fileExists(iconPath)) then 
         throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
       else
-        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
         break;
       end;
     end;
   end;
-  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local _g = 0;
   while (_g < throbberTxtList.length) do _hx_do_first_1 = false;
     
@@ -36847,15 +36854,15 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
   local projFilePathArray = String.prototype.split(String.prototype.split(self:getEditor():get_projectFilePath(), "\\"):join("/"), "/");
   if (projFilePathArray.length > 0) then 
     self.projectDirectory = projFilePathArray:slice(0, projFilePathArray.length - 1):join("/");
-    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=116,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=116,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (((self:getEditor():get_projectFile().assetsdir ~= nil) and (self:getEditor():get_projectFile().assetsdir ~= "")) and (String.prototype.indexOf(self:getEditor():get_projectFile().assetsdir, "null") == -1)) then 
       self.assetsDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().assetsdir)) .. Std.string("/");
     else
       self.assetsDirectory = "";
     end;
     self.sourceDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().scriptdir)) .. Std.string("/");
-    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=127,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=128,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=127,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=128,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (self.assetsDirectory ~= "") then 
       local projectIo = __sunaba_io_FileSystemIo.new();
       projectIo:open(self.assetsDirectory, self:getEditor():get_projectFile().rootUrl);
@@ -36872,7 +36879,7 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/blue-folder.png"), "Folder");
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/document.png"), "File");
     __sunaba_core__Signal_Signal_Impl_.add(newMenu:get_idPressed(), function(id) 
-      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=151,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=151,className="sunaba.studio.Explorer",methodName="startExplorer"}));
       if (id == 0) then 
         __sunaba_Debug.error("Folder creation not implemented.");
       else
@@ -36889,9 +36896,9 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
               dirPath = dirPathArray:join("/");
             end;
             local pathType = -1;
-            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=167,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=168,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=167,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=168,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
             if (StringTools.startsWith(dirPath, _gthis.assetsDirectory)) then 
               pathType = 0;
             else
@@ -37362,7 +37369,7 @@ __sunaba_studio_ModelImportService.inport = function(srcPath,destPath,binaryFile
     local modelImages = modelState:getImages();
     local lossyQuality = modelDocument:get_lossyQuality();
     __sunaba_studio_ModelImportService.yeild();
-    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
+    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
     local textureDb = Array.new();
     local tmp = imageFormat ~= "None";
     __sunaba_studio_ModelImportService.yeild();
@@ -37587,7 +37594,7 @@ __sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode
             __sunaba_studio_ModelImportService.yeild();
           end;
           __sunaba_studio_ModelImportService.yeild();
-          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=371,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
+          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=371,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
           param = param + 1;
         end;
         __sunaba_studio_ModelImportService.yeild();
@@ -37705,7 +37712,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
       local childIdx = children[_g];
       _g = _g + 1;
       __sunaba_studio_ModelImportService.yeild();
-      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=463,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=463,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
       __sunaba_studio_ModelImportService.yeild();
       local childNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(childIdx):asReference());
       __sunaba_studio_ModelImportService.yeild();
@@ -37729,7 +37736,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
     end;
     __sunaba_studio_ModelImportService.yeild();
   else
-    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=483,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=483,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
     __sunaba_studio_ModelImportService.yeild();
     local rootNodes = state:get_rootNodes();
     local nodes = state:getNodes();
@@ -37750,7 +37757,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_1 = "null"; else 
           _hx_1 = nodeIdx:asString(); end
           return _hx_1
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=492,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=492,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37788,7 +37795,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         local i = _g - 1;
         __sunaba_studio_ModelImportService.yeild();
         local nodeIdx = __sunaba_core__TypedArray_TypedArray_Impl_.get(rootNodes, i);
-        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=519,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=519,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37830,7 +37837,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_2 = "null"; else 
           _hx_2 = nodeIdx:asString(); end
           return _hx_2
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=543,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=543,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37845,7 +37852,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         __sunaba_studio_ModelImportService.yeild();
         local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
         __sunaba_studio_ModelImportService.yeild();
-        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=557,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=557,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         if (result ~= nil) then 
           __sunaba_studio_ModelImportService.yeild();
           do return result end;
@@ -37897,6 +37904,7 @@ __sunaba_studio_ResourceInspector.prototype.closeButton= nil;
 __sunaba_studio_ResourceInspector.prototype.currentResourceButton= nil;
 __sunaba_studio_ResourceInspector.prototype.inspectorVbox= nil;
 __sunaba_studio_ResourceInspector.prototype.editorInit = function(self) 
+  local _gthis = self;
   self:load("studio://ResourceInspector.suml");
   local tmp = self:getEditor();
   local iconBytes = self:getEditor().io:loadBytes("studio://icons/16_1-5x/document--pencil.png");
@@ -37922,6 +37930,1929 @@ __sunaba_studio_ResourceInspector.prototype.editorInit = function(self)
   self.saveButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/save");
   self.closeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/close");
   self.currentResourceButton = self:getNodeT_sunaba_ui_OptionButton(__sunaba_ui_OptionButton, "vbox/currentResource");
+  __sunaba_core__Signal_Signal_Impl_.add(self.currentResourceButton:get_itemSelected(), function(idx) 
+    local key = _gthis.resourceList:keys();
+    while (key:hasNext()) do _hx_do_first_1 = false;
+      
+      local key = key:next();
+      if (key == idx) then 
+        _gthis.selectedIndex = idx;
+        local _gthis1 = _hx_tab_array({[0]=_gthis}, 1);
+        local _g = 0;
+        local _g1 = _gthis.inspectorVbox:getChildCount();
+        while (_g < _g1) do _hx_do_first_2 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local inspectorVboxChild = _gthis.inspectorVbox:getChild(i);
+          inspectorVboxChild:queueFree();
+        end;
+        if (_gthis.selectedIndex ~= -1) then 
+          local ret = _gthis.resourceList.h[_gthis.selectedIndex];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          if (ret ~= nil) then 
+            local ret = _gthis.resourceList.h[_gthis.selectedIndex];
+            if (ret == __haxe_ds_IntMap.tnull) then 
+              ret = nil;
+            end;
+            local resourceData = _hx_tab_array({[0]=ret}, 1);
+            local resourceDataValue = _hx_tab_array({[0]=resourceData[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()}, 1);
+            local properties = _hx_tab_array({[0]=resourceDataValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary()}, 1);
+            local propertyNames = properties[0]:keys();
+            local _g = 0;
+            local _g1 = propertyNames:size();
+            while (_g < _g1) do _hx_do_first_2 = false;
+              
+              _g = _g + 1;
+              local i = _g - 1;
+              local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+              local propertyValue = _hx_tab_array({[0]=properties[0]:get(propertyName[0]):asDictionary()}, 1);
+              if (propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyValue[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                local propertyContainer = __sunaba_ui_HBoxContainer.new();
+                local propertyLabel = __sunaba_ui_Label.new();
+                propertyLabel:set_text(propertyName[0]:asString());
+                propertyLabel:set_horizontalAlignment(0);
+                propertyLabel:set_verticalAlignment(1);
+                local x = 0.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+                propertyLabel:set_clipText(true);
+                propertyContainer:addChild(propertyLabel);
+                propertyLabel:set_sizeFlagsHorizontal(3);
+                local propertyType = propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+                if (propertyType == 4) then 
+                  local strLineEdit = __sunaba_ui_LineEdit.new();
+                  strLineEdit:set_text(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asString());
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                    do return function(newValue) 
+                      propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+                      properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                      resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                      resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                      local k = _gthis[0].selectedIndex;
+                      local _this = _gthis[0].resourceList;
+                      if (resourceData[0] == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = resourceData[0];
+                      end;
+                      do return resourceData[0] end;
+                    end end;
+                  end)(propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                  propertyContainer:addChild(strLineEdit);
+                else
+                  if (propertyType == 3) then 
+                    local floatSpinBox = __sunaba_ui_SpinBox.new();
+                    floatSpinBox:set_maxValue(500);
+                    floatSpinBox:set_minValue(-500);
+                    floatSpinBox:set_allowGreater(true);
+                    floatSpinBox:set_allowLesser(true);
+                    floatSpinBox:set_step(0.001);
+                    floatSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asFloat());
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                      do return function(newValue) 
+                        propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+                        properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                        resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                        resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                        local k = _gthis[0].selectedIndex;
+                        local _this = _gthis[0].resourceList;
+                        if (resourceData[0] == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = resourceData[0];
+                        end;
+                        do return resourceData[0] end;
+                      end end;
+                    end)(propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                    propertyContainer:addChild(floatSpinBox);
+                  else
+                    if (propertyType == 2) then 
+                      local intSpinBox = __sunaba_ui_SpinBox.new();
+                      intSpinBox:set_maxValue(2147483648);
+                      intSpinBox:set_minValue(-2147483648);
+                      intSpinBox:set_allowGreater(true);
+                      intSpinBox:set_allowLesser(true);
+                      intSpinBox:set_step(1);
+                      intSpinBox:set_value(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asInt());
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      intSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(intSpinBox:get_valueChanged(), (function(propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                        do return function(newValue) 
+                          propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+                          properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                          resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                          resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                          local k = _gthis[0].selectedIndex;
+                          local _this = _gthis[0].resourceList;
+                          if (resourceData[0] == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = resourceData[0];
+                          end;
+                          do return resourceData[0] end;
+                        end end;
+                      end)(propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                      propertyContainer:addChild(intSpinBox);
+                    else
+                      if (propertyType == 1) then 
+                        local boolCheckBox = __sunaba_ui_CheckBox.new();
+                        boolCheckBox:set_buttonPressed(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asBool());
+                        local x = 0.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+                        boolCheckBox:set_flat(true);
+                        __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                          do return function(newValue) 
+                            propertyValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                            properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                            resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                            resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                            local k = _gthis[0].selectedIndex;
+                            local _this = _gthis[0].resourceList;
+                            if (resourceData[0] == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = resourceData[0];
+                            end;
+                            do return resourceData[0] end;
+                          end end;
+                        end)(propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                        propertyContainer:addChild(boolCheckBox);
+                      else
+                        if (propertyType == 5) then 
+                          local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2()}, 1);
+                          local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                          local xSpinBox = __sunaba_ui_SpinBox.new();
+                          xSpinBox:set_maxValue(500);
+                          xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
+                          xSpinBox:set_step(0.001);
+                          xSpinBox:set_value(vec2[0].x);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                            do return function(newValue) 
+                              vec2[0].x = newValue;
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                              properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                              resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                              local k = _gthis[0].selectedIndex;
+                              local _this = _gthis[0].resourceList;
+                              if (resourceData[0] == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData[0];
+                              end;
+                              do return resourceData[0] end;
+                            end end;
+                          end)(vec2, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                          local xLabel = __sunaba_ui_Label.new();
+                          xLabel:set_text("x");
+                          xLabel:set_horizontalAlignment(1);
+                          xLabel:set_verticalAlignment(1);
+                          local xHBox = __sunaba_ui_HBoxContainer.new();
+                          xHBox:addChild(xLabel);
+                          xHBox:addChild(xSpinBox);
+                          vec2Vbox:addChild(xHBox);
+                          local ySpinBox = __sunaba_ui_SpinBox.new();
+                          ySpinBox:set_maxValue(500);
+                          ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
+                          ySpinBox:set_step(0.001);
+                          ySpinBox:set_value(vec2[0].y);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                            do return function(newValue) 
+                              vec2[0].y = newValue;
+                              propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]));
+                              properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                              resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                              resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                              local k = _gthis[0].selectedIndex;
+                              local _this = _gthis[0].resourceList;
+                              if (resourceData[0] == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = resourceData[0];
+                              end;
+                              do return resourceData[0] end;
+                            end end;
+                          end)(vec2, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                          local yLabel = __sunaba_ui_Label.new();
+                          yLabel:set_text("y");
+                          yLabel:set_horizontalAlignment(1);
+                          yLabel:set_verticalAlignment(1);
+                          local yHBox = __sunaba_ui_HBoxContainer.new();
+                          yHBox:addChild(yLabel);
+                          yHBox:addChild(ySpinBox);
+                          vec2Vbox:addChild(yHBox);
+                          propertyContainer:addChild(vec2Vbox);
+                        else
+                          if (propertyType == 9) then 
+                            local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3()}, 1);
+                            local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                            local xSpinBox = __sunaba_ui_SpinBox.new();
+                            xSpinBox:set_maxValue(500);
+                            xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
+                            xSpinBox:set_step(0.001);
+                            xSpinBox:set_value(vec3[0].x);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                              do return function(newValue) 
+                                vec3[0].x = newValue;
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                                properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                local k = _gthis[0].selectedIndex;
+                                local _this = _gthis[0].resourceList;
+                                if (resourceData[0] == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData[0];
+                                end;
+                                do return resourceData[0] end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                            local xLabel = __sunaba_ui_Label.new();
+                            xLabel:set_text("x");
+                            xLabel:set_horizontalAlignment(1);
+                            xLabel:set_verticalAlignment(1);
+                            local xHBox = __sunaba_ui_HBoxContainer.new();
+                            xHBox:addChild(xLabel);
+                            xHBox:addChild(xSpinBox);
+                            vec3Vbox:addChild(xHBox);
+                            local ySpinBox = __sunaba_ui_SpinBox.new();
+                            ySpinBox:set_maxValue(500);
+                            ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
+                            ySpinBox:set_step(0.001);
+                            ySpinBox:set_value(vec3[0].y);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                              do return function(newValue) 
+                                vec3[0].y = newValue;
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                                properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                local k = _gthis[0].selectedIndex;
+                                local _this = _gthis[0].resourceList;
+                                if (resourceData[0] == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData[0];
+                                end;
+                                do return resourceData[0] end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                            local yLabel = __sunaba_ui_Label.new();
+                            yLabel:set_text("y");
+                            yLabel:set_horizontalAlignment(1);
+                            yLabel:set_verticalAlignment(1);
+                            local yHBox = __sunaba_ui_HBoxContainer.new();
+                            yHBox:addChild(yLabel);
+                            yHBox:addChild(ySpinBox);
+                            vec3Vbox:addChild(yHBox);
+                            local zSpinBox = __sunaba_ui_SpinBox.new();
+                            zSpinBox:set_maxValue(500);
+                            zSpinBox:set_minValue(-500);
+                            zSpinBox:set_allowGreater(true);
+                            zSpinBox:set_allowLesser(true);
+                            zSpinBox:set_step(0.001);
+                            zSpinBox:set_value(vec3[0].z);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                              do return function(newValue) 
+                                vec3[0].z = newValue;
+                                propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]));
+                                properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                local k = _gthis[0].selectedIndex;
+                                local _this = _gthis[0].resourceList;
+                                if (resourceData[0] == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = resourceData[0];
+                                end;
+                                do return resourceData[0] end;
+                              end end;
+                            end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                            local zLabel = __sunaba_ui_Label.new();
+                            zLabel:set_text("z");
+                            zLabel:set_horizontalAlignment(1);
+                            zLabel:set_verticalAlignment(1);
+                            local zHBox = __sunaba_ui_HBoxContainer.new();
+                            zHBox:addChild(zLabel);
+                            zHBox:addChild(zSpinBox);
+                            vec3Vbox:addChild(zHBox);
+                            propertyContainer:addChild(vec3Vbox);
+                          else
+                            if (propertyType == 12) then 
+                              local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4()}, 1);
+                              local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                              local xSpinBox = __sunaba_ui_SpinBox.new();
+                              xSpinBox:set_maxValue(500);
+                              xSpinBox:set_minValue(-500);
+                              xSpinBox:set_allowGreater(true);
+                              xSpinBox:set_allowLesser(true);
+                              xSpinBox:set_step(0.001);
+                              xSpinBox:set_value(vec4[0].x);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                do return function(newValue) 
+                                  vec4[0].x = newValue;
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                                  properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                  resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].resourceList;
+                                  if (resourceData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData[0];
+                                  end;
+                                  do return resourceData[0] end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                              local xLabel = __sunaba_ui_Label.new();
+                              xLabel:set_text("x");
+                              xLabel:set_horizontalAlignment(1);
+                              xLabel:set_verticalAlignment(1);
+                              local xHBox = __sunaba_ui_HBoxContainer.new();
+                              xHBox:addChild(xLabel);
+                              xHBox:addChild(xSpinBox);
+                              vec4Vbox:addChild(xHBox);
+                              local ySpinBox = __sunaba_ui_SpinBox.new();
+                              ySpinBox:set_maxValue(500);
+                              ySpinBox:set_minValue(-500);
+                              ySpinBox:set_allowGreater(true);
+                              ySpinBox:set_allowLesser(true);
+                              ySpinBox:set_step(0.001);
+                              ySpinBox:set_value(vec4[0].y);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                do return function(newValue) 
+                                  vec4[0].y = newValue;
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                                  properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                  resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].resourceList;
+                                  if (resourceData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData[0];
+                                  end;
+                                  do return resourceData[0] end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                              local yLabel = __sunaba_ui_Label.new();
+                              yLabel:set_text("y");
+                              yLabel:set_horizontalAlignment(1);
+                              yLabel:set_verticalAlignment(1);
+                              local yHBox = __sunaba_ui_HBoxContainer.new();
+                              yHBox:addChild(yLabel);
+                              yHBox:addChild(ySpinBox);
+                              vec4Vbox:addChild(yHBox);
+                              local zSpinBox = __sunaba_ui_SpinBox.new();
+                              zSpinBox:set_maxValue(500);
+                              zSpinBox:set_minValue(-500);
+                              zSpinBox:set_allowGreater(true);
+                              zSpinBox:set_allowLesser(true);
+                              zSpinBox:set_step(0.001);
+                              zSpinBox:set_value(vec4[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                do return function(newValue) 
+                                  vec4[0].z = newValue;
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                                  properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                  resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].resourceList;
+                                  if (resourceData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData[0];
+                                  end;
+                                  do return resourceData[0] end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                              local zLabel = __sunaba_ui_Label.new();
+                              zLabel:set_text("z");
+                              zLabel:set_horizontalAlignment(1);
+                              zLabel:set_verticalAlignment(1);
+                              local zHBox = __sunaba_ui_HBoxContainer.new();
+                              zHBox:addChild(zLabel);
+                              zHBox:addChild(zSpinBox);
+                              vec4Vbox:addChild(zHBox);
+                              local wSpinBox = __sunaba_ui_SpinBox.new();
+                              wSpinBox:set_maxValue(500);
+                              wSpinBox:set_minValue(-500);
+                              wSpinBox:set_allowGreater(true);
+                              wSpinBox:set_allowLesser(true);
+                              wSpinBox:set_step(0.001);
+                              wSpinBox:set_value(vec4[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                do return function(newValue) 
+                                  vec4[0].z = newValue;
+                                  propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]));
+                                  properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                  resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                  resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].resourceList;
+                                  if (resourceData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = resourceData[0];
+                                  end;
+                                  do return resourceData[0] end;
+                                end end;
+                              end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                              local wLabel = __sunaba_ui_Label.new();
+                              wLabel:set_text("w");
+                              wLabel:set_horizontalAlignment(1);
+                              wLabel:set_verticalAlignment(1);
+                              local wHBox = __sunaba_ui_HBoxContainer.new();
+                              wHBox:addChild(wLabel);
+                              wHBox:addChild(wSpinBox);
+                              vec4Vbox:addChild(zHBox);
+                              propertyContainer:addChild(vec4Vbox);
+                            else
+                              if (propertyType == 6) then 
+                                local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector2i()}, 1);
+                                local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                                local xSpinBox = __sunaba_ui_SpinBox.new();
+                                xSpinBox:set_maxValue(500);
+                                xSpinBox:set_minValue(-500);
+                                xSpinBox:set_allowGreater(true);
+                                xSpinBox:set_allowLesser(true);
+                                xSpinBox:set_step(1);
+                                xSpinBox:set_value(vec2[0].x);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                  do return function(newValue) 
+                                    vec2[0].x = Std.int(newValue);
+                                    propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                                    properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                    resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                    resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].resourceList;
+                                    if (resourceData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = resourceData[0];
+                                    end;
+                                    do return resourceData[0] end;
+                                  end end;
+                                end)(vec2, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                local xLabel = __sunaba_ui_Label.new();
+                                xLabel:set_text("x");
+                                xLabel:set_horizontalAlignment(1);
+                                xLabel:set_verticalAlignment(1);
+                                local xHBox = __sunaba_ui_HBoxContainer.new();
+                                xHBox:addChild(xLabel);
+                                xHBox:addChild(xSpinBox);
+                                vec2Vbox:addChild(xHBox);
+                                local ySpinBox = __sunaba_ui_SpinBox.new();
+                                ySpinBox:set_maxValue(500);
+                                ySpinBox:set_minValue(-500);
+                                ySpinBox:set_allowGreater(true);
+                                ySpinBox:set_allowLesser(true);
+                                ySpinBox:set_step(1);
+                                ySpinBox:set_value(vec2[0].y);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                  do return function(newValue) 
+                                    vec2[0].y = Std.int(newValue);
+                                    propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]));
+                                    properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                    resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                    resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].resourceList;
+                                    if (resourceData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = resourceData[0];
+                                    end;
+                                    do return resourceData[0] end;
+                                  end end;
+                                end)(vec2, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                local yLabel = __sunaba_ui_Label.new();
+                                yLabel:set_text("y");
+                                yLabel:set_horizontalAlignment(1);
+                                yLabel:set_verticalAlignment(1);
+                                local yHBox = __sunaba_ui_HBoxContainer.new();
+                                yHBox:addChild(yLabel);
+                                yHBox:addChild(ySpinBox);
+                                vec2Vbox:addChild(yHBox);
+                                propertyContainer:addChild(vec2Vbox);
+                              else
+                                if (propertyType == 10) then 
+                                  local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector3i()}, 1);
+                                  local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                                  local xSpinBox = __sunaba_ui_SpinBox.new();
+                                  xSpinBox:set_maxValue(500);
+                                  xSpinBox:set_minValue(-500);
+                                  xSpinBox:set_allowGreater(true);
+                                  xSpinBox:set_allowLesser(true);
+                                  xSpinBox:set_step(1);
+                                  xSpinBox:set_value(vec3[0].x);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                    do return function(newValue) 
+                                      vec3[0].x = Std.int(newValue);
+                                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                      properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                      resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                      resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                      local k = _gthis[0].selectedIndex;
+                                      local _this = _gthis[0].resourceList;
+                                      if (resourceData[0] == nil) then 
+                                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                                      else
+                                        _this.h[k] = resourceData[0];
+                                      end;
+                                      do return resourceData[0] end;
+                                    end end;
+                                  end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                  local xLabel = __sunaba_ui_Label.new();
+                                  xLabel:set_text("x");
+                                  xLabel:set_horizontalAlignment(1);
+                                  xLabel:set_verticalAlignment(1);
+                                  local xHBox = __sunaba_ui_HBoxContainer.new();
+                                  xHBox:addChild(xLabel);
+                                  xHBox:addChild(xSpinBox);
+                                  vec3Vbox:addChild(xHBox);
+                                  local ySpinBox = __sunaba_ui_SpinBox.new();
+                                  ySpinBox:set_maxValue(500);
+                                  ySpinBox:set_minValue(-500);
+                                  ySpinBox:set_allowGreater(true);
+                                  ySpinBox:set_allowLesser(true);
+                                  ySpinBox:set_step(1);
+                                  ySpinBox:set_value(vec3[0].y);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                    do return function(newValue) 
+                                      vec3[0].y = Std.int(newValue);
+                                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                      properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                      resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                      resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                      local k = _gthis[0].selectedIndex;
+                                      local _this = _gthis[0].resourceList;
+                                      if (resourceData[0] == nil) then 
+                                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                                      else
+                                        _this.h[k] = resourceData[0];
+                                      end;
+                                      do return resourceData[0] end;
+                                    end end;
+                                  end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                  local yLabel = __sunaba_ui_Label.new();
+                                  yLabel:set_text("y");
+                                  yLabel:set_horizontalAlignment(1);
+                                  yLabel:set_verticalAlignment(1);
+                                  local yHBox = __sunaba_ui_HBoxContainer.new();
+                                  yHBox:addChild(yLabel);
+                                  yHBox:addChild(ySpinBox);
+                                  vec3Vbox:addChild(yHBox);
+                                  local zSpinBox = __sunaba_ui_SpinBox.new();
+                                  zSpinBox:set_maxValue(500);
+                                  zSpinBox:set_minValue(-500);
+                                  zSpinBox:set_allowGreater(true);
+                                  zSpinBox:set_allowLesser(true);
+                                  zSpinBox:set_step(1);
+                                  zSpinBox:set_value(vec3[0].z);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                    do return function(newValue) 
+                                      vec3[0].z = Std.int(newValue);
+                                      propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]));
+                                      properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                      resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                      resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                      local k = _gthis[0].selectedIndex;
+                                      local _this = _gthis[0].resourceList;
+                                      if (resourceData[0] == nil) then 
+                                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                                      else
+                                        _this.h[k] = resourceData[0];
+                                      end;
+                                      do return resourceData[0] end;
+                                    end end;
+                                  end)(vec3, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                  local zLabel = __sunaba_ui_Label.new();
+                                  zLabel:set_text("z");
+                                  zLabel:set_horizontalAlignment(1);
+                                  zLabel:set_verticalAlignment(1);
+                                  local zHBox = __sunaba_ui_HBoxContainer.new();
+                                  zHBox:addChild(zLabel);
+                                  zHBox:addChild(zSpinBox);
+                                  vec3Vbox:addChild(zHBox);
+                                  propertyContainer:addChild(vec3Vbox);
+                                else
+                                  if (propertyType == 13) then 
+                                    local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyValue[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary()):asVector4i()}, 1);
+                                    local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                                    local xSpinBox = __sunaba_ui_SpinBox.new();
+                                    xSpinBox:set_maxValue(500);
+                                    xSpinBox:set_minValue(-500);
+                                    xSpinBox:set_allowGreater(true);
+                                    xSpinBox:set_allowLesser(true);
+                                    xSpinBox:set_step(1);
+                                    xSpinBox:set_value(vec4[0].x);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                      do return function(newValue) 
+                                        vec4[0].x = Std.int(newValue);
+                                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                        properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                        resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                        resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].resourceList;
+                                        if (resourceData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = resourceData[0];
+                                        end;
+                                        do return resourceData[0] end;
+                                      end end;
+                                    end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                    local xLabel = __sunaba_ui_Label.new();
+                                    xLabel:set_text("x");
+                                    xLabel:set_horizontalAlignment(1);
+                                    xLabel:set_verticalAlignment(1);
+                                    local xHBox = __sunaba_ui_HBoxContainer.new();
+                                    xHBox:addChild(xLabel);
+                                    xHBox:addChild(xSpinBox);
+                                    vec4Vbox:addChild(xHBox);
+                                    local ySpinBox = __sunaba_ui_SpinBox.new();
+                                    ySpinBox:set_maxValue(500);
+                                    ySpinBox:set_minValue(-500);
+                                    ySpinBox:set_allowGreater(true);
+                                    ySpinBox:set_allowLesser(true);
+                                    ySpinBox:set_step(0.001);
+                                    ySpinBox:set_value(vec4[0].y);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                      do return function(newValue) 
+                                        vec4[0].y = Std.int(newValue);
+                                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                        properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                        resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                        resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].resourceList;
+                                        if (resourceData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = resourceData[0];
+                                        end;
+                                        do return resourceData[0] end;
+                                      end end;
+                                    end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                    local yLabel = __sunaba_ui_Label.new();
+                                    yLabel:set_text("y");
+                                    yLabel:set_horizontalAlignment(1);
+                                    yLabel:set_verticalAlignment(1);
+                                    local yHBox = __sunaba_ui_HBoxContainer.new();
+                                    yHBox:addChild(yLabel);
+                                    yHBox:addChild(ySpinBox);
+                                    vec4Vbox:addChild(yHBox);
+                                    local zSpinBox = __sunaba_ui_SpinBox.new();
+                                    zSpinBox:set_maxValue(500);
+                                    zSpinBox:set_minValue(-500);
+                                    zSpinBox:set_allowGreater(true);
+                                    zSpinBox:set_allowLesser(true);
+                                    zSpinBox:set_step(0.001);
+                                    zSpinBox:set_value(vec4[0].z);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                      do return function(newValue) 
+                                        vec4[0].z = Std.int(newValue);
+                                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                        properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                        resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                        resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].resourceList;
+                                        if (resourceData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = resourceData[0];
+                                        end;
+                                        do return resourceData[0] end;
+                                      end end;
+                                    end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                    local zLabel = __sunaba_ui_Label.new();
+                                    zLabel:set_text("z");
+                                    zLabel:set_horizontalAlignment(1);
+                                    zLabel:set_verticalAlignment(1);
+                                    local zHBox = __sunaba_ui_HBoxContainer.new();
+                                    zHBox:addChild(zLabel);
+                                    zHBox:addChild(zSpinBox);
+                                    vec4Vbox:addChild(zHBox);
+                                    local wSpinBox = __sunaba_ui_SpinBox.new();
+                                    wSpinBox:set_maxValue(500);
+                                    wSpinBox:set_minValue(-500);
+                                    wSpinBox:set_allowGreater(true);
+                                    wSpinBox:set_allowLesser(true);
+                                    wSpinBox:set_step(1);
+                                    wSpinBox:set_value(vec4[0].z);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyValue,propertyName,properties,resourceDataValue,resourceData,_gthis) 
+                                      do return function(newValue) 
+                                        vec4[0].z = Std.int(newValue);
+                                        propertyValue[0] = __sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]));
+                                        properties[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(propertyValue[0]));
+                                        resourceDataValue[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("properties"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(properties[0]));
+                                        resourceData[0]:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resourceDataValue[0]));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].resourceList;
+                                        if (resourceData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = resourceData[0];
+                                        end;
+                                        do return resourceData[0] end;
+                                      end end;
+                                    end)(vec4, propertyValue, propertyName, properties, resourceDataValue, resourceData, _gthis1));
+                                    local wLabel = __sunaba_ui_Label.new();
+                                    wLabel:set_text("w");
+                                    wLabel:set_horizontalAlignment(1);
+                                    wLabel:set_verticalAlignment(1);
+                                    local wHBox = __sunaba_ui_HBoxContainer.new();
+                                    wHBox:addChild(wLabel);
+                                    wHBox:addChild(wSpinBox);
+                                    vec4Vbox:addChild(zHBox);
+                                    propertyContainer:addChild(vec4Vbox);
+                                  end;
+                                end;
+                              end;
+                            end;
+                          end;
+                        end;
+                      end;
+                    end;
+                  end;
+                end;
+                _gthis.inspectorVbox:addChild(propertyContainer);
+              end;
+            end;
+          end;
+        end;
+        do return end;
+      end;
+    end;
+    local key = _gthis.scriptableObjectList:keys();
+    while (key:hasNext()) do _hx_do_first_1 = false;
+      
+      local key = key:next();
+      if (key == idx) then 
+        _gthis.selectedIndex = idx;
+        local _gthis1 = _hx_tab_array({[0]=_gthis}, 1);
+        local _g = 0;
+        local _g1 = _gthis.inspectorVbox:getChildCount();
+        while (_g < _g1) do _hx_do_first_2 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local inspectorVboxChild = _gthis.inspectorVbox:getChild(i);
+          inspectorVboxChild:queueFree();
+        end;
+        if (_gthis.selectedIndex ~= -1) then 
+          local ret = _gthis.scriptableObjectList.h[_gthis.selectedIndex];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          if (ret ~= nil) then 
+            local ret = _gthis.scriptableObjectList.h[_gthis.selectedIndex];
+            if (ret == __haxe_ds_IntMap.tnull) then 
+              ret = nil;
+            end;
+            local objectData = _hx_tab_array({[0]=ret}, 1);
+            local propertyNames = objectData[0]:keys();
+            local _g = 0;
+            local _g1 = propertyNames:size();
+            while (_g < _g1) do _hx_do_first_2 = false;
+              
+              _g = _g + 1;
+              local i = _g - 1;
+              local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+              local propertyValue = objectData[0]:get(propertyName[0]);
+              local propertyContainer = __sunaba_ui_HBoxContainer.new();
+              local propertyLabel = __sunaba_ui_Label.new();
+              propertyLabel:set_text(propertyName[0]:asString());
+              propertyLabel:set_horizontalAlignment(0);
+              propertyLabel:set_verticalAlignment(1);
+              local x = 0.0;
+              local y = 20.0;
+              if (y == nil) then 
+                y = 0;
+              end;
+              if (x == nil) then 
+                x = 0;
+              end;
+              propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+              propertyLabel:set_clipText(true);
+              propertyContainer:addChild(propertyLabel);
+              propertyLabel:set_sizeFlagsHorizontal(3);
+              if (propertyValue:getType() == 4) then 
+                local strLineEdit = __sunaba_ui_LineEdit.new();
+                strLineEdit:set_text(propertyValue:asString());
+                local x = 150.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+                __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyName,objectData,_gthis) 
+                  do return function(newValue) 
+                    objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+                    local k = _gthis[0].selectedIndex;
+                    local _this = _gthis[0].scriptableObjectList;
+                    if (objectData[0] == nil) then 
+                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                    else
+                      _this.h[k] = objectData[0];
+                    end;
+                    do return objectData[0] end;
+                  end end;
+                end)(propertyName, objectData, _gthis1));
+                propertyContainer:addChild(strLineEdit);
+              else
+                if (propertyValue:getType() == 3) then 
+                  local floatSpinBox = __sunaba_ui_SpinBox.new();
+                  floatSpinBox:set_maxValue(500);
+                  floatSpinBox:set_minValue(-500);
+                  floatSpinBox:set_allowGreater(true);
+                  floatSpinBox:set_allowLesser(true);
+                  floatSpinBox:set_step(0.001);
+                  floatSpinBox:set_value(propertyValue:asFloat());
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName,objectData,_gthis) 
+                    do return function(newValue) 
+                      objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+                      local k = _gthis[0].selectedIndex;
+                      local _this = _gthis[0].scriptableObjectList;
+                      if (objectData[0] == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = objectData[0];
+                      end;
+                      do return objectData[0] end;
+                    end end;
+                  end)(propertyName, objectData, _gthis1));
+                  propertyContainer:addChild(floatSpinBox);
+                else
+                  if (propertyValue:getType() == 2) then 
+                    local floatSpinBox = __sunaba_ui_SpinBox.new();
+                    floatSpinBox:set_maxValue(2147483648);
+                    floatSpinBox:set_minValue(-2147483648);
+                    floatSpinBox:set_allowGreater(true);
+                    floatSpinBox:set_allowLesser(true);
+                    floatSpinBox:set_step(0.001);
+                    floatSpinBox:set_value(propertyValue:asInt());
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName,objectData,_gthis) 
+                      do return function(newValue) 
+                        objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+                        local k = _gthis[0].selectedIndex;
+                        local _this = _gthis[0].scriptableObjectList;
+                        if (objectData[0] == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = objectData[0];
+                        end;
+                        do return objectData[0] end;
+                      end end;
+                    end)(propertyName, objectData, _gthis1));
+                    propertyContainer:addChild(floatSpinBox);
+                  else
+                    if (propertyValue:getType() == 1) then 
+                      local boolCheckBox = __sunaba_ui_CheckBox.new();
+                      boolCheckBox:set_buttonPressed(propertyValue:asBool());
+                      local x = 0.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+                      boolCheckBox:set_flat(true);
+                      __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyName,objectData,_gthis) 
+                        do return function(newValue) 
+                          objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                          local k = _gthis[0].selectedIndex;
+                          local _this = _gthis[0].scriptableObjectList;
+                          if (objectData[0] == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData[0];
+                          end;
+                          do return objectData[0] end;
+                        end end;
+                      end)(propertyName, objectData, _gthis1));
+                      propertyContainer:addChild(boolCheckBox);
+                    else
+                      if (propertyValue:getType() == 27) then 
+                        local propertyDict = _hx_tab_array({[0]=propertyValue:asDictionary()}, 1);
+                        if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                          local propertyDictType = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+                          local propertyDictValue = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value"));
+                          if (propertyDictType == 5) then 
+                            local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2()}, 1);
+                            local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                            local xSpinBox = __sunaba_ui_SpinBox.new();
+                            xSpinBox:set_maxValue(500);
+                            xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
+                            xSpinBox:set_step(0.001);
+                            xSpinBox:set_value(vec2[0].x);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName,objectData,_gthis) 
+                              do return function(newValue) 
+                                vec2[0].x = newValue;
+                                objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                                local k = _gthis[0].selectedIndex;
+                                local _this = _gthis[0].scriptableObjectList;
+                                if (objectData[0] == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData[0];
+                                end;
+                                do return objectData[0] end;
+                              end end;
+                            end)(vec2, propertyName, objectData, _gthis1));
+                            local xLabel = __sunaba_ui_Label.new();
+                            xLabel:set_text("x");
+                            xLabel:set_horizontalAlignment(1);
+                            xLabel:set_verticalAlignment(1);
+                            local xHBox = __sunaba_ui_HBoxContainer.new();
+                            xHBox:addChild(xLabel);
+                            xHBox:addChild(xSpinBox);
+                            vec2Vbox:addChild(xHBox);
+                            local ySpinBox = __sunaba_ui_SpinBox.new();
+                            ySpinBox:set_maxValue(500);
+                            ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
+                            ySpinBox:set_step(0.001);
+                            ySpinBox:set_value(vec2[0].y);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName,objectData,_gthis) 
+                              do return function(newValue) 
+                                vec2[0].y = newValue;
+                                objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                                local k = _gthis[0].selectedIndex;
+                                local _this = _gthis[0].scriptableObjectList;
+                                if (objectData[0] == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData[0];
+                                end;
+                                do return objectData[0] end;
+                              end end;
+                            end)(vec2, propertyName, objectData, _gthis1));
+                            local yLabel = __sunaba_ui_Label.new();
+                            yLabel:set_text("y");
+                            yLabel:set_horizontalAlignment(1);
+                            yLabel:set_verticalAlignment(1);
+                            local yHBox = __sunaba_ui_HBoxContainer.new();
+                            yHBox:addChild(yLabel);
+                            yHBox:addChild(ySpinBox);
+                            vec2Vbox:addChild(yHBox);
+                            propertyContainer:addChild(vec2Vbox);
+                          else
+                            if (propertyDictType == 9) then 
+                              local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3()}, 1);
+                              local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                              local xSpinBox = __sunaba_ui_SpinBox.new();
+                              xSpinBox:set_maxValue(500);
+                              xSpinBox:set_minValue(-500);
+                              xSpinBox:set_allowGreater(true);
+                              xSpinBox:set_allowLesser(true);
+                              xSpinBox:set_step(0.001);
+                              xSpinBox:set_value(vec3[0].x);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                do return function(newValue) 
+                                  vec3[0].x = newValue;
+                                  objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].scriptableObjectList;
+                                  if (objectData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData[0];
+                                  end;
+                                  do return objectData[0] end;
+                                end end;
+                              end)(vec3, propertyName, objectData, _gthis1));
+                              local xLabel = __sunaba_ui_Label.new();
+                              xLabel:set_text("x");
+                              xLabel:set_horizontalAlignment(1);
+                              xLabel:set_verticalAlignment(1);
+                              local xHBox = __sunaba_ui_HBoxContainer.new();
+                              xHBox:addChild(xLabel);
+                              xHBox:addChild(xSpinBox);
+                              vec3Vbox:addChild(xHBox);
+                              local ySpinBox = __sunaba_ui_SpinBox.new();
+                              ySpinBox:set_maxValue(500);
+                              ySpinBox:set_minValue(-500);
+                              ySpinBox:set_allowGreater(true);
+                              ySpinBox:set_allowLesser(true);
+                              ySpinBox:set_step(0.001);
+                              ySpinBox:set_value(vec3[0].y);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                do return function(newValue) 
+                                  vec3[0].y = newValue;
+                                  objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].scriptableObjectList;
+                                  if (objectData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData[0];
+                                  end;
+                                  do return objectData[0] end;
+                                end end;
+                              end)(vec3, propertyName, objectData, _gthis1));
+                              local yLabel = __sunaba_ui_Label.new();
+                              yLabel:set_text("y");
+                              yLabel:set_horizontalAlignment(1);
+                              yLabel:set_verticalAlignment(1);
+                              local yHBox = __sunaba_ui_HBoxContainer.new();
+                              yHBox:addChild(yLabel);
+                              yHBox:addChild(ySpinBox);
+                              vec3Vbox:addChild(yHBox);
+                              local zSpinBox = __sunaba_ui_SpinBox.new();
+                              zSpinBox:set_maxValue(500);
+                              zSpinBox:set_minValue(-500);
+                              zSpinBox:set_allowGreater(true);
+                              zSpinBox:set_allowLesser(true);
+                              zSpinBox:set_step(0.001);
+                              zSpinBox:set_value(vec3[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                do return function(newValue) 
+                                  vec3[0].z = newValue;
+                                  objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                                  local k = _gthis[0].selectedIndex;
+                                  local _this = _gthis[0].scriptableObjectList;
+                                  if (objectData[0] == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData[0];
+                                  end;
+                                  do return objectData[0] end;
+                                end end;
+                              end)(vec3, propertyName, objectData, _gthis1));
+                              local zLabel = __sunaba_ui_Label.new();
+                              zLabel:set_text("z");
+                              zLabel:set_horizontalAlignment(1);
+                              zLabel:set_verticalAlignment(1);
+                              local zHBox = __sunaba_ui_HBoxContainer.new();
+                              zHBox:addChild(zLabel);
+                              zHBox:addChild(zSpinBox);
+                              vec3Vbox:addChild(zHBox);
+                              propertyContainer:addChild(vec3Vbox);
+                            else
+                              if (propertyDictType == 12) then 
+                                local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4()}, 1);
+                                local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                                local xSpinBox = __sunaba_ui_SpinBox.new();
+                                xSpinBox:set_maxValue(500);
+                                xSpinBox:set_minValue(-500);
+                                xSpinBox:set_allowGreater(true);
+                                xSpinBox:set_allowLesser(true);
+                                xSpinBox:set_step(0.001);
+                                xSpinBox:set_value(vec4[0].x);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                  do return function(newValue) 
+                                    vec4[0].x = newValue;
+                                    objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].scriptableObjectList;
+                                    if (objectData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData[0];
+                                    end;
+                                    do return objectData[0] end;
+                                  end end;
+                                end)(vec4, propertyName, objectData, _gthis1));
+                                local xLabel = __sunaba_ui_Label.new();
+                                xLabel:set_text("x");
+                                xLabel:set_horizontalAlignment(1);
+                                xLabel:set_verticalAlignment(1);
+                                local xHBox = __sunaba_ui_HBoxContainer.new();
+                                xHBox:addChild(xLabel);
+                                xHBox:addChild(xSpinBox);
+                                vec4Vbox:addChild(xHBox);
+                                local ySpinBox = __sunaba_ui_SpinBox.new();
+                                ySpinBox:set_maxValue(500);
+                                ySpinBox:set_minValue(-500);
+                                ySpinBox:set_allowGreater(true);
+                                ySpinBox:set_allowLesser(true);
+                                ySpinBox:set_step(0.001);
+                                ySpinBox:set_value(vec4[0].y);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                  do return function(newValue) 
+                                    vec4[0].y = newValue;
+                                    objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].scriptableObjectList;
+                                    if (objectData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData[0];
+                                    end;
+                                    do return objectData[0] end;
+                                  end end;
+                                end)(vec4, propertyName, objectData, _gthis1));
+                                local yLabel = __sunaba_ui_Label.new();
+                                yLabel:set_text("y");
+                                yLabel:set_horizontalAlignment(1);
+                                yLabel:set_verticalAlignment(1);
+                                local yHBox = __sunaba_ui_HBoxContainer.new();
+                                yHBox:addChild(yLabel);
+                                yHBox:addChild(ySpinBox);
+                                vec4Vbox:addChild(yHBox);
+                                local zSpinBox = __sunaba_ui_SpinBox.new();
+                                zSpinBox:set_maxValue(500);
+                                zSpinBox:set_minValue(-500);
+                                zSpinBox:set_allowGreater(true);
+                                zSpinBox:set_allowLesser(true);
+                                zSpinBox:set_step(0.001);
+                                zSpinBox:set_value(vec4[0].z);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                  do return function(newValue) 
+                                    vec4[0].z = newValue;
+                                    objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].scriptableObjectList;
+                                    if (objectData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData[0];
+                                    end;
+                                    do return objectData[0] end;
+                                  end end;
+                                end)(vec4, propertyName, objectData, _gthis1));
+                                local zLabel = __sunaba_ui_Label.new();
+                                zLabel:set_text("z");
+                                zLabel:set_horizontalAlignment(1);
+                                zLabel:set_verticalAlignment(1);
+                                local zHBox = __sunaba_ui_HBoxContainer.new();
+                                zHBox:addChild(zLabel);
+                                zHBox:addChild(zSpinBox);
+                                vec4Vbox:addChild(zHBox);
+                                local wSpinBox = __sunaba_ui_SpinBox.new();
+                                wSpinBox:set_maxValue(500);
+                                wSpinBox:set_minValue(-500);
+                                wSpinBox:set_allowGreater(true);
+                                wSpinBox:set_allowLesser(true);
+                                wSpinBox:set_step(0.001);
+                                wSpinBox:set_value(vec4[0].w);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                  do return function(newValue) 
+                                    vec4[0].w = newValue;
+                                    objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                                    local k = _gthis[0].selectedIndex;
+                                    local _this = _gthis[0].scriptableObjectList;
+                                    if (objectData[0] == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData[0];
+                                    end;
+                                    do return objectData[0] end;
+                                  end end;
+                                end)(vec4, propertyName, objectData, _gthis1));
+                                local wLabel = __sunaba_ui_Label.new();
+                                wLabel:set_text("w");
+                                wLabel:set_horizontalAlignment(1);
+                                wLabel:set_verticalAlignment(1);
+                                local wHBox = __sunaba_ui_HBoxContainer.new();
+                                wHBox:addChild(wLabel);
+                                wHBox:addChild(wSpinBox);
+                                vec4Vbox:addChild(wHBox);
+                                propertyContainer:addChild(vec4Vbox);
+                              else
+                                if (propertyDictType == 6) then 
+                                  local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2i()}, 1);
+                                  local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                                  local xSpinBox = __sunaba_ui_SpinBox.new();
+                                  xSpinBox:set_maxValue(500);
+                                  xSpinBox:set_minValue(-500);
+                                  xSpinBox:set_allowGreater(true);
+                                  xSpinBox:set_allowLesser(true);
+                                  xSpinBox:set_step(1);
+                                  xSpinBox:set_value(vec2[0].x);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName,objectData,_gthis) 
+                                    do return function(newValue) 
+                                      vec2[0].x = Std.int(newValue);
+                                      objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                                      local k = _gthis[0].selectedIndex;
+                                      local _this = _gthis[0].scriptableObjectList;
+                                      if (objectData[0] == nil) then 
+                                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                                      else
+                                        _this.h[k] = objectData[0];
+                                      end;
+                                      do return objectData[0] end;
+                                    end end;
+                                  end)(vec2, propertyName, objectData, _gthis1));
+                                  local xLabel = __sunaba_ui_Label.new();
+                                  xLabel:set_text("x");
+                                  xLabel:set_horizontalAlignment(1);
+                                  xLabel:set_verticalAlignment(1);
+                                  local xHBox = __sunaba_ui_HBoxContainer.new();
+                                  xHBox:addChild(xLabel);
+                                  xHBox:addChild(xSpinBox);
+                                  vec2Vbox:addChild(xHBox);
+                                  local ySpinBox = __sunaba_ui_SpinBox.new();
+                                  ySpinBox:set_maxValue(500);
+                                  ySpinBox:set_minValue(-500);
+                                  ySpinBox:set_allowGreater(true);
+                                  ySpinBox:set_allowLesser(true);
+                                  ySpinBox:set_step(1);
+                                  ySpinBox:set_value(vec2[0].y);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName,objectData,_gthis) 
+                                    do return function(newValue) 
+                                      vec2[0].y = Std.int(newValue);
+                                      objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                                      local k = _gthis[0].selectedIndex;
+                                      local _this = _gthis[0].scriptableObjectList;
+                                      if (objectData[0] == nil) then 
+                                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                                      else
+                                        _this.h[k] = objectData[0];
+                                      end;
+                                      do return objectData[0] end;
+                                    end end;
+                                  end)(vec2, propertyName, objectData, _gthis1));
+                                  local yLabel = __sunaba_ui_Label.new();
+                                  yLabel:set_text("y");
+                                  yLabel:set_horizontalAlignment(1);
+                                  yLabel:set_verticalAlignment(1);
+                                  local yHBox = __sunaba_ui_HBoxContainer.new();
+                                  yHBox:addChild(yLabel);
+                                  yHBox:addChild(ySpinBox);
+                                  vec2Vbox:addChild(yHBox);
+                                  propertyContainer:addChild(vec2Vbox);
+                                else
+                                  if (propertyDictType == 10) then 
+                                    local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3i()}, 1);
+                                    local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                                    local xSpinBox = __sunaba_ui_SpinBox.new();
+                                    xSpinBox:set_maxValue(500);
+                                    xSpinBox:set_minValue(-500);
+                                    xSpinBox:set_allowGreater(true);
+                                    xSpinBox:set_allowLesser(true);
+                                    xSpinBox:set_step(1);
+                                    xSpinBox:set_value(vec3[0].x);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                      do return function(newValue) 
+                                        vec3[0].x = Std.int(newValue);
+                                        objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].scriptableObjectList;
+                                        if (objectData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = objectData[0];
+                                        end;
+                                        do return objectData[0] end;
+                                      end end;
+                                    end)(vec3, propertyName, objectData, _gthis1));
+                                    local xLabel = __sunaba_ui_Label.new();
+                                    xLabel:set_text("x");
+                                    xLabel:set_horizontalAlignment(1);
+                                    xLabel:set_verticalAlignment(1);
+                                    local xHBox = __sunaba_ui_HBoxContainer.new();
+                                    xHBox:addChild(xLabel);
+                                    xHBox:addChild(xSpinBox);
+                                    vec3Vbox:addChild(xHBox);
+                                    local ySpinBox = __sunaba_ui_SpinBox.new();
+                                    ySpinBox:set_maxValue(500);
+                                    ySpinBox:set_minValue(-500);
+                                    ySpinBox:set_allowGreater(true);
+                                    ySpinBox:set_allowLesser(true);
+                                    ySpinBox:set_step(1);
+                                    ySpinBox:set_value(vec3[0].y);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                      do return function(newValue) 
+                                        vec3[0].y = Std.int(newValue);
+                                        objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].scriptableObjectList;
+                                        if (objectData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = objectData[0];
+                                        end;
+                                        do return objectData[0] end;
+                                      end end;
+                                    end)(vec3, propertyName, objectData, _gthis1));
+                                    local yLabel = __sunaba_ui_Label.new();
+                                    yLabel:set_text("y");
+                                    yLabel:set_horizontalAlignment(1);
+                                    yLabel:set_verticalAlignment(1);
+                                    local yHBox = __sunaba_ui_HBoxContainer.new();
+                                    yHBox:addChild(yLabel);
+                                    yHBox:addChild(ySpinBox);
+                                    vec3Vbox:addChild(yHBox);
+                                    local zSpinBox = __sunaba_ui_SpinBox.new();
+                                    zSpinBox:set_maxValue(500);
+                                    zSpinBox:set_minValue(-500);
+                                    zSpinBox:set_allowGreater(true);
+                                    zSpinBox:set_allowLesser(true);
+                                    zSpinBox:set_step(1);
+                                    zSpinBox:set_value(vec3[0].z);
+                                    local x = 150.0;
+                                    local y = 20.0;
+                                    if (y == nil) then 
+                                      y = 0;
+                                    end;
+                                    if (x == nil) then 
+                                      x = 0;
+                                    end;
+                                    zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                    __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName,objectData,_gthis) 
+                                      do return function(newValue) 
+                                        vec3[0].z = Std.int(newValue);
+                                        objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                        local k = _gthis[0].selectedIndex;
+                                        local _this = _gthis[0].scriptableObjectList;
+                                        if (objectData[0] == nil) then 
+                                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                                        else
+                                          _this.h[k] = objectData[0];
+                                        end;
+                                        do return objectData[0] end;
+                                      end end;
+                                    end)(vec3, propertyName, objectData, _gthis1));
+                                    local zLabel = __sunaba_ui_Label.new();
+                                    zLabel:set_text("z");
+                                    zLabel:set_horizontalAlignment(1);
+                                    zLabel:set_verticalAlignment(1);
+                                    local zHBox = __sunaba_ui_HBoxContainer.new();
+                                    zHBox:addChild(zLabel);
+                                    zHBox:addChild(zSpinBox);
+                                    vec3Vbox:addChild(zHBox);
+                                    propertyContainer:addChild(vec3Vbox);
+                                  else
+                                    if (propertyDictType == 13) then 
+                                      local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4i()}, 1);
+                                      local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                                      local xSpinBox = __sunaba_ui_SpinBox.new();
+                                      xSpinBox:set_maxValue(500);
+                                      xSpinBox:set_minValue(-500);
+                                      xSpinBox:set_allowGreater(true);
+                                      xSpinBox:set_allowLesser(true);
+                                      xSpinBox:set_step(1);
+                                      xSpinBox:set_value(vec4[0].x);
+                                      local x = 150.0;
+                                      local y = 20.0;
+                                      if (y == nil) then 
+                                        y = 0;
+                                      end;
+                                      if (x == nil) then 
+                                        x = 0;
+                                      end;
+                                      xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                      __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                        do return function(newValue) 
+                                          vec4[0].x = Std.int(newValue);
+                                          objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                          local k = _gthis[0].selectedIndex;
+                                          local _this = _gthis[0].scriptableObjectList;
+                                          if (objectData[0] == nil) then 
+                                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                                          else
+                                            _this.h[k] = objectData[0];
+                                          end;
+                                          do return objectData[0] end;
+                                        end end;
+                                      end)(vec4, propertyName, objectData, _gthis1));
+                                      local xLabel = __sunaba_ui_Label.new();
+                                      xLabel:set_text("x");
+                                      xLabel:set_horizontalAlignment(1);
+                                      xLabel:set_verticalAlignment(1);
+                                      local xHBox = __sunaba_ui_HBoxContainer.new();
+                                      xHBox:addChild(xLabel);
+                                      xHBox:addChild(xSpinBox);
+                                      vec4Vbox:addChild(xHBox);
+                                      local ySpinBox = __sunaba_ui_SpinBox.new();
+                                      ySpinBox:set_maxValue(500);
+                                      ySpinBox:set_minValue(-500);
+                                      ySpinBox:set_allowGreater(true);
+                                      ySpinBox:set_allowLesser(true);
+                                      ySpinBox:set_step(1);
+                                      ySpinBox:set_value(vec4[0].y);
+                                      local x = 150.0;
+                                      local y = 20.0;
+                                      if (y == nil) then 
+                                        y = 0;
+                                      end;
+                                      if (x == nil) then 
+                                        x = 0;
+                                      end;
+                                      ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                      __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                        do return function(newValue) 
+                                          vec4[0].y = Std.int(newValue);
+                                          objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                          local k = _gthis[0].selectedIndex;
+                                          local _this = _gthis[0].scriptableObjectList;
+                                          if (objectData[0] == nil) then 
+                                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                                          else
+                                            _this.h[k] = objectData[0];
+                                          end;
+                                          do return objectData[0] end;
+                                        end end;
+                                      end)(vec4, propertyName, objectData, _gthis1));
+                                      local yLabel = __sunaba_ui_Label.new();
+                                      yLabel:set_text("y");
+                                      yLabel:set_horizontalAlignment(1);
+                                      yLabel:set_verticalAlignment(1);
+                                      local yHBox = __sunaba_ui_HBoxContainer.new();
+                                      yHBox:addChild(yLabel);
+                                      yHBox:addChild(ySpinBox);
+                                      vec4Vbox:addChild(yHBox);
+                                      local zSpinBox = __sunaba_ui_SpinBox.new();
+                                      zSpinBox:set_maxValue(500);
+                                      zSpinBox:set_minValue(-500);
+                                      zSpinBox:set_allowGreater(true);
+                                      zSpinBox:set_allowLesser(true);
+                                      zSpinBox:set_step(1);
+                                      zSpinBox:set_value(vec4[0].z);
+                                      local x = 150.0;
+                                      local y = 20.0;
+                                      if (y == nil) then 
+                                        y = 0;
+                                      end;
+                                      if (x == nil) then 
+                                        x = 0;
+                                      end;
+                                      zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                      __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                        do return function(newValue) 
+                                          vec4[0].z = Std.int(newValue);
+                                          objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                          local k = _gthis[0].selectedIndex;
+                                          local _this = _gthis[0].scriptableObjectList;
+                                          if (objectData[0] == nil) then 
+                                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                                          else
+                                            _this.h[k] = objectData[0];
+                                          end;
+                                          do return objectData[0] end;
+                                        end end;
+                                      end)(vec4, propertyName, objectData, _gthis1));
+                                      local zLabel = __sunaba_ui_Label.new();
+                                      zLabel:set_text("z");
+                                      zLabel:set_horizontalAlignment(1);
+                                      zLabel:set_verticalAlignment(1);
+                                      local zHBox = __sunaba_ui_HBoxContainer.new();
+                                      zHBox:addChild(zLabel);
+                                      zHBox:addChild(zSpinBox);
+                                      vec4Vbox:addChild(zHBox);
+                                      local wSpinBox = __sunaba_ui_SpinBox.new();
+                                      wSpinBox:set_maxValue(500);
+                                      wSpinBox:set_minValue(-500);
+                                      wSpinBox:set_allowGreater(true);
+                                      wSpinBox:set_allowLesser(true);
+                                      wSpinBox:set_step(1);
+                                      wSpinBox:set_value(vec4[0].w);
+                                      local x = 150.0;
+                                      local y = 20.0;
+                                      if (y == nil) then 
+                                        y = 0;
+                                      end;
+                                      if (x == nil) then 
+                                        x = 0;
+                                      end;
+                                      wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                      __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName,objectData,_gthis) 
+                                        do return function(newValue) 
+                                          vec4[0].w = Std.int(newValue);
+                                          objectData[0]:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                          local k = _gthis[0].selectedIndex;
+                                          local _this = _gthis[0].scriptableObjectList;
+                                          if (objectData[0] == nil) then 
+                                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                                          else
+                                            _this.h[k] = objectData[0];
+                                          end;
+                                          do return objectData[0] end;
+                                        end end;
+                                      end)(vec4, propertyName, objectData, _gthis1));
+                                      local wLabel = __sunaba_ui_Label.new();
+                                      wLabel:set_text("w");
+                                      wLabel:set_horizontalAlignment(1);
+                                      wLabel:set_verticalAlignment(1);
+                                      local wHBox = __sunaba_ui_HBoxContainer.new();
+                                      wHBox:addChild(wLabel);
+                                      wHBox:addChild(wSpinBox);
+                                      vec4Vbox:addChild(wHBox);
+                                      propertyContainer:addChild(vec4Vbox);
+                                    else
+                                      if (propertyDictType == 24) then 
+                                        local resButton = __sunaba_ui_Button.new();
+                                        resButton:set_text("Edit");
+                                        local x = 150.0;
+                                        local y = 20.0;
+                                        if (y == nil) then 
+                                          y = 0;
+                                        end;
+                                        if (x == nil) then 
+                                          x = 0;
+                                        end;
+                                        resButton:set_customMinimumSize(Vector2.new(x, y));
+                                        __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName,objectData,_gthis) 
+                                          do return function() 
+                                            _gthis[0]:openResource(propertyDict[0], false, propertyName[0]:asString(), nil, objectData[0]);
+                                          end end;
+                                        end)(propertyDict, propertyName, objectData, _gthis1));
+                                        propertyContainer:addChild(resButton);
+                                      end;
+                                    end;
+                                  end;
+                                end;
+                              end;
+                            end;
+                          end;
+                        else
+                          if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("path")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("classType"))) then 
+                            local resButton = __sunaba_ui_Button.new();
+                            resButton:set_text("Edit");
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            resButton:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName,objectData,_gthis) 
+                              do return function() 
+                                _gthis[0]:openScriptableObject(propertyDict[0], propertyName[0]:asString(), nil, objectData[0]);
+                              end end;
+                            end)(propertyDict, propertyName, objectData, _gthis1));
+                            propertyContainer:addChild(resButton);
+                          end;
+                        end;
+                      end;
+                    end;
+                  end;
+                end;
+              end;
+            end;
+          end;
+        end;
+        do return end;
+      end;
+    end;
+  end);
   self.inspectorVbox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vbox/scroll/vbox");
 end
 __sunaba_studio_ResourceInspector.prototype.openResource = function(self,res,parentDictIsResource,name,entity,parentAsset) 
@@ -37994,15 +39925,6 @@ __sunaba_studio_ResourceInspector.prototype.openResource = function(self,res,par
       _this.h[k] = res;
     end;
     self.selectedIndex = self.objectIndex;
-    if (name ~= nil) then 
-      local k = self.objectIndex;
-      local _this = self.assetNames;
-      if (name == nil) then 
-        _this.h[k] = __haxe_ds_IntMap.tnull;
-      else
-        _this.h[k] = name;
-      end;
-    end;
     if (entity ~= nil) then 
       local k = self.objectIndex;
       local _this = self.assetEntities;
@@ -38038,6 +39960,16 @@ __sunaba_studio_ResourceInspector.prototype.openResource = function(self,res,par
       if (res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):getType() == 4) then 
         className = Std.string(className) .. Std.string((Std.string(Std.string(" (") .. Std.string(res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):asString())) .. Std.string(")")));
       end;
+    end;
+    if (name ~= nil) then 
+      className = name;
+    end;
+    local k = self.objectIndex;
+    local _this = self.assetNames;
+    if (className == nil) then 
+      _this.h[k] = __haxe_ds_IntMap.tnull;
+    else
+      _this.h[k] = className;
     end;
     self.currentResourceButton:addItem(className, self.objectIndex);
     self.currentResourceButton:set_selected(self.objectIndex);
@@ -39976,6 +41908,1986 @@ __sunaba_studio_ResourceInspector.prototype.buildInspectorFromResource = functio
     end;
   end;
 end
+__sunaba_studio_ResourceInspector.prototype.openScriptableObject = function(self,sobj,name,entity,parentObject) 
+  local listContainsObject = false;
+  local index = self.scriptableObjectList:keys();
+  local _hx_continue_1 = false;
+  while (index:hasNext()) do _hx_do_first_1 = false;
+    repeat 
+    local index = index:next();
+    local ret = self.scriptableObjectList.h[index];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    if (__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(ret)) == __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(sobj))) then 
+      local ret = self.assetNames.h[index];
+      if (ret == __haxe_ds_IntMap.tnull) then 
+        ret = nil;
+      end;
+      if (ret ~= name) then 
+        if (entity ~= nil) then 
+          local ret = self.assetEntities.h[index];
+          if (ret == __haxe_ds_IntMap.tnull) then 
+            ret = nil;
+          end;
+          if (ret ~= entity) then 
+            break;
+          end;
+        else
+          if (parentObject ~= nil) then 
+            local ret = self.assetParentObjects.h[self.selectedIndex];
+            if (ret == __haxe_ds_IntMap.tnull) then 
+              ret = nil;
+            end;
+            if (__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(ret)) ~= __sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(parentObject))) then 
+              break;
+            end;
+          end;
+        end;
+      end;
+      listContainsObject = true;
+      self.selectedIndex = index;
+      _hx_continue_1 = true;break;
+    end;until true
+    if _hx_continue_1 then 
+    _hx_continue_1 = false;
+    break;
+    end;
+    
+  end;
+  if (listContainsObject == false) then 
+    self.objectIndex = self.objectIndex + 1;
+    local k = self.objectIndex;
+    local _this = self.scriptableObjectList;
+    if (sobj == nil) then 
+      _this.h[k] = __haxe_ds_IntMap.tnull;
+    else
+      _this.h[k] = sobj;
+    end;
+    self.selectedIndex = self.objectIndex;
+    if (entity ~= nil) then 
+      local k = self.objectIndex;
+      local _this = self.assetEntities;
+      if (entity == nil) then 
+        _this.h[k] = __haxe_ds_IntMap.tnull;
+      else
+        _this.h[k] = entity;
+      end;
+    end;
+    if (parentObject ~= nil) then 
+      local k = self.selectedIndex;
+      local _this = self.assetParentObjects;
+      if (parentObject == nil) then 
+        _this.h[k] = __haxe_ds_IntMap.tnull;
+      else
+        _this.h[k] = parentObject;
+      end;
+    end;
+    local className = Std.string("Scriptable Object ") .. Std.string(Std.string(self.objectIndex));
+    if (sobj:get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString() ~= "?") then 
+      className = sobj:get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString();
+    else
+      if (sobj:get(__sunaba_core__Variant_Variant_Impl_.fromString("classType")):getType() == 4) then 
+        className = Std.string(className) .. Std.string((Std.string(Std.string(" (") .. Std.string(sobj:get(__sunaba_core__Variant_Variant_Impl_.fromString("classType")):asString())) .. Std.string(")")));
+      end;
+    end;
+    if (name ~= nil) then 
+      className = name;
+    end;
+    local k = self.objectIndex;
+    local _this = self.assetNames;
+    if (className == nil) then 
+      _this.h[k] = __haxe_ds_IntMap.tnull;
+    else
+      _this.h[k] = className;
+    end;
+    self.currentResourceButton:addItem(className, self.objectIndex);
+    self.currentResourceButton:set_selected(self.objectIndex);
+  end;
+  self:getEditor():setCurrentRightSidebarChild(self);
+  local _gthis = self;
+  local _g = 0;
+  local _g1 = self.inspectorVbox:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local inspectorVboxChild = self.inspectorVbox:getChild(i);
+    inspectorVboxChild:queueFree();
+  end;
+  if (self.selectedIndex ~= -1) then 
+    local ret = self.scriptableObjectList.h[self.selectedIndex];
+    if (ret == __haxe_ds_IntMap.tnull) then 
+      ret = nil;
+    end;
+    if (ret ~= nil) then 
+      local ret = self.scriptableObjectList.h[self.selectedIndex];
+      if (ret == __haxe_ds_IntMap.tnull) then 
+        ret = nil;
+      end;
+      local objectData = ret;
+      local propertyNames = objectData:keys();
+      local _g = 0;
+      local _g1 = propertyNames:size();
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+        local propertyValue = objectData:get(propertyName[0]);
+        local propertyContainer = __sunaba_ui_HBoxContainer.new();
+        local propertyLabel = __sunaba_ui_Label.new();
+        propertyLabel:set_text(propertyName[0]:asString());
+        propertyLabel:set_horizontalAlignment(0);
+        propertyLabel:set_verticalAlignment(1);
+        local x = 0.0;
+        local y = 20.0;
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+        propertyLabel:set_clipText(true);
+        propertyContainer:addChild(propertyLabel);
+        propertyLabel:set_sizeFlagsHorizontal(3);
+        if (propertyValue:getType() == 4) then 
+          local strLineEdit = __sunaba_ui_LineEdit.new();
+          strLineEdit:set_text(propertyValue:asString());
+          local x = 150.0;
+          local y = 20.0;
+          if (y == nil) then 
+            y = 0;
+          end;
+          if (x == nil) then 
+            x = 0;
+          end;
+          strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+          __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyName) 
+            do return function(newValue) 
+              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+              local k = _gthis.selectedIndex;
+              local _this = _gthis.scriptableObjectList;
+              if (objectData == nil) then 
+                _this.h[k] = __haxe_ds_IntMap.tnull;
+              else
+                _this.h[k] = objectData;
+              end;
+              do return objectData end;
+            end end;
+          end)(propertyName));
+          propertyContainer:addChild(strLineEdit);
+        else
+          if (propertyValue:getType() == 3) then 
+            local floatSpinBox = __sunaba_ui_SpinBox.new();
+            floatSpinBox:set_maxValue(500);
+            floatSpinBox:set_minValue(-500);
+            floatSpinBox:set_allowGreater(true);
+            floatSpinBox:set_allowLesser(true);
+            floatSpinBox:set_step(0.001);
+            floatSpinBox:set_value(propertyValue:asFloat());
+            local x = 150.0;
+            local y = 20.0;
+            if (y == nil) then 
+              y = 0;
+            end;
+            if (x == nil) then 
+              x = 0;
+            end;
+            floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+            __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName) 
+              do return function(newValue) 
+                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+                local k = _gthis.selectedIndex;
+                local _this = _gthis.scriptableObjectList;
+                if (objectData == nil) then 
+                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                else
+                  _this.h[k] = objectData;
+                end;
+                do return objectData end;
+              end end;
+            end)(propertyName));
+            propertyContainer:addChild(floatSpinBox);
+          else
+            if (propertyValue:getType() == 2) then 
+              local floatSpinBox = __sunaba_ui_SpinBox.new();
+              floatSpinBox:set_maxValue(2147483648);
+              floatSpinBox:set_minValue(-2147483648);
+              floatSpinBox:set_allowGreater(true);
+              floatSpinBox:set_allowLesser(true);
+              floatSpinBox:set_step(0.001);
+              floatSpinBox:set_value(propertyValue:asInt());
+              local x = 150.0;
+              local y = 20.0;
+              if (y == nil) then 
+                y = 0;
+              end;
+              if (x == nil) then 
+                x = 0;
+              end;
+              floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+              __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName) 
+                do return function(newValue) 
+                  objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+                  local k = _gthis.selectedIndex;
+                  local _this = _gthis.scriptableObjectList;
+                  if (objectData == nil) then 
+                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                  else
+                    _this.h[k] = objectData;
+                  end;
+                  do return objectData end;
+                end end;
+              end)(propertyName));
+              propertyContainer:addChild(floatSpinBox);
+            else
+              if (propertyValue:getType() == 1) then 
+                local boolCheckBox = __sunaba_ui_CheckBox.new();
+                boolCheckBox:set_buttonPressed(propertyValue:asBool());
+                local x = 0.0;
+                local y = 20.0;
+                if (y == nil) then 
+                  y = 0;
+                end;
+                if (x == nil) then 
+                  x = 0;
+                end;
+                boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+                boolCheckBox:set_flat(true);
+                __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyName) 
+                  do return function(newValue) 
+                    objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                    local k = _gthis.selectedIndex;
+                    local _this = _gthis.scriptableObjectList;
+                    if (objectData == nil) then 
+                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                    else
+                      _this.h[k] = objectData;
+                    end;
+                    do return objectData end;
+                  end end;
+                end)(propertyName));
+                propertyContainer:addChild(boolCheckBox);
+              else
+                if (propertyValue:getType() == 27) then 
+                  local propertyDict = _hx_tab_array({[0]=propertyValue:asDictionary()}, 1);
+                  if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                    local propertyDictType = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+                    local propertyDictValue = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value"));
+                    if (propertyDictType == 5) then 
+                      local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2()}, 1);
+                      local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                      local xSpinBox = __sunaba_ui_SpinBox.new();
+                      xSpinBox:set_maxValue(500);
+                      xSpinBox:set_minValue(-500);
+                      xSpinBox:set_allowGreater(true);
+                      xSpinBox:set_allowLesser(true);
+                      xSpinBox:set_step(0.001);
+                      xSpinBox:set_value(vec2[0].x);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                        do return function(newValue) 
+                          vec2[0].x = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec2, propertyName));
+                      local xLabel = __sunaba_ui_Label.new();
+                      xLabel:set_text("x");
+                      xLabel:set_horizontalAlignment(1);
+                      xLabel:set_verticalAlignment(1);
+                      local xHBox = __sunaba_ui_HBoxContainer.new();
+                      xHBox:addChild(xLabel);
+                      xHBox:addChild(xSpinBox);
+                      vec2Vbox:addChild(xHBox);
+                      local ySpinBox = __sunaba_ui_SpinBox.new();
+                      ySpinBox:set_maxValue(500);
+                      ySpinBox:set_minValue(-500);
+                      ySpinBox:set_allowGreater(true);
+                      ySpinBox:set_allowLesser(true);
+                      ySpinBox:set_step(0.001);
+                      ySpinBox:set_value(vec2[0].y);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                        do return function(newValue) 
+                          vec2[0].y = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec2, propertyName));
+                      local yLabel = __sunaba_ui_Label.new();
+                      yLabel:set_text("y");
+                      yLabel:set_horizontalAlignment(1);
+                      yLabel:set_verticalAlignment(1);
+                      local yHBox = __sunaba_ui_HBoxContainer.new();
+                      yHBox:addChild(yLabel);
+                      yHBox:addChild(ySpinBox);
+                      vec2Vbox:addChild(yHBox);
+                      propertyContainer:addChild(vec2Vbox);
+                    else
+                      if (propertyDictType == 9) then 
+                        local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3()}, 1);
+                        local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                        local xSpinBox = __sunaba_ui_SpinBox.new();
+                        xSpinBox:set_maxValue(500);
+                        xSpinBox:set_minValue(-500);
+                        xSpinBox:set_allowGreater(true);
+                        xSpinBox:set_allowLesser(true);
+                        xSpinBox:set_step(0.001);
+                        xSpinBox:set_value(vec3[0].x);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].x = newValue;
+                            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.scriptableObjectList;
+                            if (objectData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = objectData;
+                            end;
+                            do return objectData end;
+                          end end;
+                        end)(vec3, propertyName));
+                        local xLabel = __sunaba_ui_Label.new();
+                        xLabel:set_text("x");
+                        xLabel:set_horizontalAlignment(1);
+                        xLabel:set_verticalAlignment(1);
+                        local xHBox = __sunaba_ui_HBoxContainer.new();
+                        xHBox:addChild(xLabel);
+                        xHBox:addChild(xSpinBox);
+                        vec3Vbox:addChild(xHBox);
+                        local ySpinBox = __sunaba_ui_SpinBox.new();
+                        ySpinBox:set_maxValue(500);
+                        ySpinBox:set_minValue(-500);
+                        ySpinBox:set_allowGreater(true);
+                        ySpinBox:set_allowLesser(true);
+                        ySpinBox:set_step(0.001);
+                        ySpinBox:set_value(vec3[0].y);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].y = newValue;
+                            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.scriptableObjectList;
+                            if (objectData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = objectData;
+                            end;
+                            do return objectData end;
+                          end end;
+                        end)(vec3, propertyName));
+                        local yLabel = __sunaba_ui_Label.new();
+                        yLabel:set_text("y");
+                        yLabel:set_horizontalAlignment(1);
+                        yLabel:set_verticalAlignment(1);
+                        local yHBox = __sunaba_ui_HBoxContainer.new();
+                        yHBox:addChild(yLabel);
+                        yHBox:addChild(ySpinBox);
+                        vec3Vbox:addChild(yHBox);
+                        local zSpinBox = __sunaba_ui_SpinBox.new();
+                        zSpinBox:set_maxValue(500);
+                        zSpinBox:set_minValue(-500);
+                        zSpinBox:set_allowGreater(true);
+                        zSpinBox:set_allowLesser(true);
+                        zSpinBox:set_step(0.001);
+                        zSpinBox:set_value(vec3[0].z);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                          do return function(newValue) 
+                            vec3[0].z = newValue;
+                            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.scriptableObjectList;
+                            if (objectData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = objectData;
+                            end;
+                            do return objectData end;
+                          end end;
+                        end)(vec3, propertyName));
+                        local zLabel = __sunaba_ui_Label.new();
+                        zLabel:set_text("z");
+                        zLabel:set_horizontalAlignment(1);
+                        zLabel:set_verticalAlignment(1);
+                        local zHBox = __sunaba_ui_HBoxContainer.new();
+                        zHBox:addChild(zLabel);
+                        zHBox:addChild(zSpinBox);
+                        vec3Vbox:addChild(zHBox);
+                        propertyContainer:addChild(vec3Vbox);
+                      else
+                        if (propertyDictType == 12) then 
+                          local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4()}, 1);
+                          local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                          local xSpinBox = __sunaba_ui_SpinBox.new();
+                          xSpinBox:set_maxValue(500);
+                          xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
+                          xSpinBox:set_step(0.001);
+                          xSpinBox:set_value(vec4[0].x);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].x = newValue;
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec4, propertyName));
+                          local xLabel = __sunaba_ui_Label.new();
+                          xLabel:set_text("x");
+                          xLabel:set_horizontalAlignment(1);
+                          xLabel:set_verticalAlignment(1);
+                          local xHBox = __sunaba_ui_HBoxContainer.new();
+                          xHBox:addChild(xLabel);
+                          xHBox:addChild(xSpinBox);
+                          vec4Vbox:addChild(xHBox);
+                          local ySpinBox = __sunaba_ui_SpinBox.new();
+                          ySpinBox:set_maxValue(500);
+                          ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
+                          ySpinBox:set_step(0.001);
+                          ySpinBox:set_value(vec4[0].y);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].y = newValue;
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec4, propertyName));
+                          local yLabel = __sunaba_ui_Label.new();
+                          yLabel:set_text("y");
+                          yLabel:set_horizontalAlignment(1);
+                          yLabel:set_verticalAlignment(1);
+                          local yHBox = __sunaba_ui_HBoxContainer.new();
+                          yHBox:addChild(yLabel);
+                          yHBox:addChild(ySpinBox);
+                          vec4Vbox:addChild(yHBox);
+                          local zSpinBox = __sunaba_ui_SpinBox.new();
+                          zSpinBox:set_maxValue(500);
+                          zSpinBox:set_minValue(-500);
+                          zSpinBox:set_allowGreater(true);
+                          zSpinBox:set_allowLesser(true);
+                          zSpinBox:set_step(0.001);
+                          zSpinBox:set_value(vec4[0].z);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].z = newValue;
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec4, propertyName));
+                          local zLabel = __sunaba_ui_Label.new();
+                          zLabel:set_text("z");
+                          zLabel:set_horizontalAlignment(1);
+                          zLabel:set_verticalAlignment(1);
+                          local zHBox = __sunaba_ui_HBoxContainer.new();
+                          zHBox:addChild(zLabel);
+                          zHBox:addChild(zSpinBox);
+                          vec4Vbox:addChild(zHBox);
+                          local wSpinBox = __sunaba_ui_SpinBox.new();
+                          wSpinBox:set_maxValue(500);
+                          wSpinBox:set_minValue(-500);
+                          wSpinBox:set_allowGreater(true);
+                          wSpinBox:set_allowLesser(true);
+                          wSpinBox:set_step(0.001);
+                          wSpinBox:set_value(vec4[0].w);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                            do return function(newValue) 
+                              vec4[0].w = newValue;
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec4, propertyName));
+                          local wLabel = __sunaba_ui_Label.new();
+                          wLabel:set_text("w");
+                          wLabel:set_horizontalAlignment(1);
+                          wLabel:set_verticalAlignment(1);
+                          local wHBox = __sunaba_ui_HBoxContainer.new();
+                          wHBox:addChild(wLabel);
+                          wHBox:addChild(wSpinBox);
+                          vec4Vbox:addChild(wHBox);
+                          propertyContainer:addChild(vec4Vbox);
+                        else
+                          if (propertyDictType == 6) then 
+                            local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2i()}, 1);
+                            local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                            local xSpinBox = __sunaba_ui_SpinBox.new();
+                            xSpinBox:set_maxValue(500);
+                            xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
+                            xSpinBox:set_step(1);
+                            xSpinBox:set_value(vec2[0].x);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                              do return function(newValue) 
+                                vec2[0].x = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec2, propertyName));
+                            local xLabel = __sunaba_ui_Label.new();
+                            xLabel:set_text("x");
+                            xLabel:set_horizontalAlignment(1);
+                            xLabel:set_verticalAlignment(1);
+                            local xHBox = __sunaba_ui_HBoxContainer.new();
+                            xHBox:addChild(xLabel);
+                            xHBox:addChild(xSpinBox);
+                            vec2Vbox:addChild(xHBox);
+                            local ySpinBox = __sunaba_ui_SpinBox.new();
+                            ySpinBox:set_maxValue(500);
+                            ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
+                            ySpinBox:set_step(1);
+                            ySpinBox:set_value(vec2[0].y);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                              do return function(newValue) 
+                                vec2[0].y = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec2, propertyName));
+                            local yLabel = __sunaba_ui_Label.new();
+                            yLabel:set_text("y");
+                            yLabel:set_horizontalAlignment(1);
+                            yLabel:set_verticalAlignment(1);
+                            local yHBox = __sunaba_ui_HBoxContainer.new();
+                            yHBox:addChild(yLabel);
+                            yHBox:addChild(ySpinBox);
+                            vec2Vbox:addChild(yHBox);
+                            propertyContainer:addChild(vec2Vbox);
+                          else
+                            if (propertyDictType == 10) then 
+                              local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3i()}, 1);
+                              local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                              local xSpinBox = __sunaba_ui_SpinBox.new();
+                              xSpinBox:set_maxValue(500);
+                              xSpinBox:set_minValue(-500);
+                              xSpinBox:set_allowGreater(true);
+                              xSpinBox:set_allowLesser(true);
+                              xSpinBox:set_step(1);
+                              xSpinBox:set_value(vec3[0].x);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                                do return function(newValue) 
+                                  vec3[0].x = Std.int(newValue);
+                                  objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.scriptableObjectList;
+                                  if (objectData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData;
+                                  end;
+                                  do return objectData end;
+                                end end;
+                              end)(vec3, propertyName));
+                              local xLabel = __sunaba_ui_Label.new();
+                              xLabel:set_text("x");
+                              xLabel:set_horizontalAlignment(1);
+                              xLabel:set_verticalAlignment(1);
+                              local xHBox = __sunaba_ui_HBoxContainer.new();
+                              xHBox:addChild(xLabel);
+                              xHBox:addChild(xSpinBox);
+                              vec3Vbox:addChild(xHBox);
+                              local ySpinBox = __sunaba_ui_SpinBox.new();
+                              ySpinBox:set_maxValue(500);
+                              ySpinBox:set_minValue(-500);
+                              ySpinBox:set_allowGreater(true);
+                              ySpinBox:set_allowLesser(true);
+                              ySpinBox:set_step(1);
+                              ySpinBox:set_value(vec3[0].y);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                                do return function(newValue) 
+                                  vec3[0].y = Std.int(newValue);
+                                  objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.scriptableObjectList;
+                                  if (objectData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData;
+                                  end;
+                                  do return objectData end;
+                                end end;
+                              end)(vec3, propertyName));
+                              local yLabel = __sunaba_ui_Label.new();
+                              yLabel:set_text("y");
+                              yLabel:set_horizontalAlignment(1);
+                              yLabel:set_verticalAlignment(1);
+                              local yHBox = __sunaba_ui_HBoxContainer.new();
+                              yHBox:addChild(yLabel);
+                              yHBox:addChild(ySpinBox);
+                              vec3Vbox:addChild(yHBox);
+                              local zSpinBox = __sunaba_ui_SpinBox.new();
+                              zSpinBox:set_maxValue(500);
+                              zSpinBox:set_minValue(-500);
+                              zSpinBox:set_allowGreater(true);
+                              zSpinBox:set_allowLesser(true);
+                              zSpinBox:set_step(1);
+                              zSpinBox:set_value(vec3[0].z);
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                                do return function(newValue) 
+                                  vec3[0].z = Std.int(newValue);
+                                  objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                                  local k = _gthis.selectedIndex;
+                                  local _this = _gthis.scriptableObjectList;
+                                  if (objectData == nil) then 
+                                    _this.h[k] = __haxe_ds_IntMap.tnull;
+                                  else
+                                    _this.h[k] = objectData;
+                                  end;
+                                  do return objectData end;
+                                end end;
+                              end)(vec3, propertyName));
+                              local zLabel = __sunaba_ui_Label.new();
+                              zLabel:set_text("z");
+                              zLabel:set_horizontalAlignment(1);
+                              zLabel:set_verticalAlignment(1);
+                              local zHBox = __sunaba_ui_HBoxContainer.new();
+                              zHBox:addChild(zLabel);
+                              zHBox:addChild(zSpinBox);
+                              vec3Vbox:addChild(zHBox);
+                              propertyContainer:addChild(vec3Vbox);
+                            else
+                              if (propertyDictType == 13) then 
+                                local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4i()}, 1);
+                                local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                                local xSpinBox = __sunaba_ui_SpinBox.new();
+                                xSpinBox:set_maxValue(500);
+                                xSpinBox:set_minValue(-500);
+                                xSpinBox:set_allowGreater(true);
+                                xSpinBox:set_allowLesser(true);
+                                xSpinBox:set_step(1);
+                                xSpinBox:set_value(vec4[0].x);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                                  do return function(newValue) 
+                                    vec4[0].x = Std.int(newValue);
+                                    objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                    local k = _gthis.selectedIndex;
+                                    local _this = _gthis.scriptableObjectList;
+                                    if (objectData == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData;
+                                    end;
+                                    do return objectData end;
+                                  end end;
+                                end)(vec4, propertyName));
+                                local xLabel = __sunaba_ui_Label.new();
+                                xLabel:set_text("x");
+                                xLabel:set_horizontalAlignment(1);
+                                xLabel:set_verticalAlignment(1);
+                                local xHBox = __sunaba_ui_HBoxContainer.new();
+                                xHBox:addChild(xLabel);
+                                xHBox:addChild(xSpinBox);
+                                vec4Vbox:addChild(xHBox);
+                                local ySpinBox = __sunaba_ui_SpinBox.new();
+                                ySpinBox:set_maxValue(500);
+                                ySpinBox:set_minValue(-500);
+                                ySpinBox:set_allowGreater(true);
+                                ySpinBox:set_allowLesser(true);
+                                ySpinBox:set_step(1);
+                                ySpinBox:set_value(vec4[0].y);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                                  do return function(newValue) 
+                                    vec4[0].y = Std.int(newValue);
+                                    objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                    local k = _gthis.selectedIndex;
+                                    local _this = _gthis.scriptableObjectList;
+                                    if (objectData == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData;
+                                    end;
+                                    do return objectData end;
+                                  end end;
+                                end)(vec4, propertyName));
+                                local yLabel = __sunaba_ui_Label.new();
+                                yLabel:set_text("y");
+                                yLabel:set_horizontalAlignment(1);
+                                yLabel:set_verticalAlignment(1);
+                                local yHBox = __sunaba_ui_HBoxContainer.new();
+                                yHBox:addChild(yLabel);
+                                yHBox:addChild(ySpinBox);
+                                vec4Vbox:addChild(yHBox);
+                                local zSpinBox = __sunaba_ui_SpinBox.new();
+                                zSpinBox:set_maxValue(500);
+                                zSpinBox:set_minValue(-500);
+                                zSpinBox:set_allowGreater(true);
+                                zSpinBox:set_allowLesser(true);
+                                zSpinBox:set_step(1);
+                                zSpinBox:set_value(vec4[0].z);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                                  do return function(newValue) 
+                                    vec4[0].z = Std.int(newValue);
+                                    objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                    local k = _gthis.selectedIndex;
+                                    local _this = _gthis.scriptableObjectList;
+                                    if (objectData == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData;
+                                    end;
+                                    do return objectData end;
+                                  end end;
+                                end)(vec4, propertyName));
+                                local zLabel = __sunaba_ui_Label.new();
+                                zLabel:set_text("z");
+                                zLabel:set_horizontalAlignment(1);
+                                zLabel:set_verticalAlignment(1);
+                                local zHBox = __sunaba_ui_HBoxContainer.new();
+                                zHBox:addChild(zLabel);
+                                zHBox:addChild(zSpinBox);
+                                vec4Vbox:addChild(zHBox);
+                                local wSpinBox = __sunaba_ui_SpinBox.new();
+                                wSpinBox:set_maxValue(500);
+                                wSpinBox:set_minValue(-500);
+                                wSpinBox:set_allowGreater(true);
+                                wSpinBox:set_allowLesser(true);
+                                wSpinBox:set_step(1);
+                                wSpinBox:set_value(vec4[0].w);
+                                local x = 150.0;
+                                local y = 20.0;
+                                if (y == nil) then 
+                                  y = 0;
+                                end;
+                                if (x == nil) then 
+                                  x = 0;
+                                end;
+                                wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                                __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                                  do return function(newValue) 
+                                    vec4[0].w = Std.int(newValue);
+                                    objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                    local k = _gthis.selectedIndex;
+                                    local _this = _gthis.scriptableObjectList;
+                                    if (objectData == nil) then 
+                                      _this.h[k] = __haxe_ds_IntMap.tnull;
+                                    else
+                                      _this.h[k] = objectData;
+                                    end;
+                                    do return objectData end;
+                                  end end;
+                                end)(vec4, propertyName));
+                                local wLabel = __sunaba_ui_Label.new();
+                                wLabel:set_text("w");
+                                wLabel:set_horizontalAlignment(1);
+                                wLabel:set_verticalAlignment(1);
+                                local wHBox = __sunaba_ui_HBoxContainer.new();
+                                wHBox:addChild(wLabel);
+                                wHBox:addChild(wSpinBox);
+                                vec4Vbox:addChild(wHBox);
+                                propertyContainer:addChild(vec4Vbox);
+                              else
+                                if (propertyDictType == 24) then 
+                                  local resButton = __sunaba_ui_Button.new();
+                                  resButton:set_text("Edit");
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  resButton:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName) 
+                                    do return function() 
+                                      _gthis:openResource(propertyDict[0], false, propertyName[0]:asString(), nil, objectData);
+                                    end end;
+                                  end)(propertyDict, propertyName));
+                                  propertyContainer:addChild(resButton);
+                                end;
+                              end;
+                            end;
+                          end;
+                        end;
+                      end;
+                    end;
+                  else
+                    if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("path")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("classType"))) then 
+                      local resButton = __sunaba_ui_Button.new();
+                      resButton:set_text("Edit");
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      resButton:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName) 
+                        do return function() 
+                          _gthis:openScriptableObject(propertyDict[0], propertyName[0]:asString(), nil, objectData);
+                        end end;
+                      end)(propertyDict, propertyName));
+                      propertyContainer:addChild(resButton);
+                    end;
+                  end;
+                end;
+              end;
+            end;
+          end;
+        end;
+      end;
+    end;
+  end;
+end
+__sunaba_studio_ResourceInspector.prototype.buildInspectorFromObject = function(self) 
+  local _gthis = self;
+  local _g = 0;
+  local _g1 = self.inspectorVbox:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local inspectorVboxChild = self.inspectorVbox:getChild(i);
+    inspectorVboxChild:queueFree();
+  end;
+  if (self.selectedIndex == -1) then 
+    do return end;
+  end;
+  local ret = self.scriptableObjectList.h[self.selectedIndex];
+  if (ret == __haxe_ds_IntMap.tnull) then 
+    ret = nil;
+  end;
+  if (ret == nil) then 
+    do return end;
+  end;
+  local ret = self.scriptableObjectList.h[self.selectedIndex];
+  if (ret == __haxe_ds_IntMap.tnull) then 
+    ret = nil;
+  end;
+  local objectData = ret;
+  local propertyNames = objectData:keys();
+  local _g = 0;
+  local _g1 = propertyNames:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local propertyName = _hx_tab_array({[0]=propertyNames:get(i)}, 1);
+    local propertyValue = objectData:get(propertyName[0]);
+    local propertyContainer = __sunaba_ui_HBoxContainer.new();
+    local propertyLabel = __sunaba_ui_Label.new();
+    propertyLabel:set_text(propertyName[0]:asString());
+    propertyLabel:set_horizontalAlignment(0);
+    propertyLabel:set_verticalAlignment(1);
+    local x = 0.0;
+    local y = 20.0;
+    if (y == nil) then 
+      y = 0;
+    end;
+    if (x == nil) then 
+      x = 0;
+    end;
+    propertyLabel:set_customMinimumSize(Vector2.new(x, y));
+    propertyLabel:set_clipText(true);
+    propertyContainer:addChild(propertyLabel);
+    propertyLabel:set_sizeFlagsHorizontal(3);
+    if (propertyValue:getType() == 4) then 
+      local strLineEdit = __sunaba_ui_LineEdit.new();
+      strLineEdit:set_text(propertyValue:asString());
+      local x = 150.0;
+      local y = 20.0;
+      if (y == nil) then 
+        y = 0;
+      end;
+      if (x == nil) then 
+        x = 0;
+      end;
+      strLineEdit:set_customMinimumSize(Vector2.new(x, y));
+      __sunaba_core__Signal_Signal_Impl_.add(strLineEdit:get_textChanged(), (function(propertyName) 
+        do return function(newValue) 
+          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromString(newValue));
+          local k = _gthis.selectedIndex;
+          local _this = _gthis.scriptableObjectList;
+          if (objectData == nil) then 
+            _this.h[k] = __haxe_ds_IntMap.tnull;
+          else
+            _this.h[k] = objectData;
+          end;
+          do return objectData end;
+        end end;
+      end)(propertyName));
+      propertyContainer:addChild(strLineEdit);
+    else
+      if (propertyValue:getType() == 3) then 
+        local floatSpinBox = __sunaba_ui_SpinBox.new();
+        floatSpinBox:set_maxValue(500);
+        floatSpinBox:set_minValue(-500);
+        floatSpinBox:set_allowGreater(true);
+        floatSpinBox:set_allowLesser(true);
+        floatSpinBox:set_step(0.001);
+        floatSpinBox:set_value(propertyValue:asFloat());
+        local x = 150.0;
+        local y = 20.0;
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+        __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName) 
+          do return function(newValue) 
+            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromFloat(newValue));
+            local k = _gthis.selectedIndex;
+            local _this = _gthis.scriptableObjectList;
+            if (objectData == nil) then 
+              _this.h[k] = __haxe_ds_IntMap.tnull;
+            else
+              _this.h[k] = objectData;
+            end;
+            do return objectData end;
+          end end;
+        end)(propertyName));
+        propertyContainer:addChild(floatSpinBox);
+      else
+        if (propertyValue:getType() == 2) then 
+          local floatSpinBox = __sunaba_ui_SpinBox.new();
+          floatSpinBox:set_maxValue(2147483648);
+          floatSpinBox:set_minValue(-2147483648);
+          floatSpinBox:set_allowGreater(true);
+          floatSpinBox:set_allowLesser(true);
+          floatSpinBox:set_step(0.001);
+          floatSpinBox:set_value(propertyValue:asInt());
+          local x = 150.0;
+          local y = 20.0;
+          if (y == nil) then 
+            y = 0;
+          end;
+          if (x == nil) then 
+            x = 0;
+          end;
+          floatSpinBox:set_customMinimumSize(Vector2.new(x, y));
+          __sunaba_core__Signal_Signal_Impl_.add(floatSpinBox:get_valueChanged(), (function(propertyName) 
+            do return function(newValue) 
+              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromInt(Std.int(newValue)));
+              local k = _gthis.selectedIndex;
+              local _this = _gthis.scriptableObjectList;
+              if (objectData == nil) then 
+                _this.h[k] = __haxe_ds_IntMap.tnull;
+              else
+                _this.h[k] = objectData;
+              end;
+              do return objectData end;
+            end end;
+          end)(propertyName));
+          propertyContainer:addChild(floatSpinBox);
+        else
+          if (propertyValue:getType() == 1) then 
+            local boolCheckBox = __sunaba_ui_CheckBox.new();
+            boolCheckBox:set_buttonPressed(propertyValue:asBool());
+            local x = 0.0;
+            local y = 20.0;
+            if (y == nil) then 
+              y = 0;
+            end;
+            if (x == nil) then 
+              x = 0;
+            end;
+            boolCheckBox:set_customMinimumSize(Vector2.new(x, y));
+            boolCheckBox:set_flat(true);
+            __sunaba_core__Signal_Signal_Impl_.add(boolCheckBox:get_toggled(), (function(propertyName) 
+              do return function(newValue) 
+                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromBool(newValue));
+                local k = _gthis.selectedIndex;
+                local _this = _gthis.scriptableObjectList;
+                if (objectData == nil) then 
+                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                else
+                  _this.h[k] = objectData;
+                end;
+                do return objectData end;
+              end end;
+            end)(propertyName));
+            propertyContainer:addChild(boolCheckBox);
+          else
+            if (propertyValue:getType() == 27) then 
+              local propertyDict = _hx_tab_array({[0]=propertyValue:asDictionary()}, 1);
+              if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                local propertyDictType = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt();
+                local propertyDictValue = propertyDict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value"));
+                if (propertyDictType == 5) then 
+                  local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2()}, 1);
+                  local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                  local xSpinBox = __sunaba_ui_SpinBox.new();
+                  xSpinBox:set_maxValue(500);
+                  xSpinBox:set_minValue(-500);
+                  xSpinBox:set_allowGreater(true);
+                  xSpinBox:set_allowLesser(true);
+                  xSpinBox:set_step(0.001);
+                  xSpinBox:set_value(vec2[0].x);
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                    do return function(newValue) 
+                      vec2[0].x = newValue;
+                      objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.scriptableObjectList;
+                      if (objectData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = objectData;
+                      end;
+                      do return objectData end;
+                    end end;
+                  end)(vec2, propertyName));
+                  local xLabel = __sunaba_ui_Label.new();
+                  xLabel:set_text("x");
+                  xLabel:set_horizontalAlignment(1);
+                  xLabel:set_verticalAlignment(1);
+                  local xHBox = __sunaba_ui_HBoxContainer.new();
+                  xHBox:addChild(xLabel);
+                  xHBox:addChild(xSpinBox);
+                  vec2Vbox:addChild(xHBox);
+                  local ySpinBox = __sunaba_ui_SpinBox.new();
+                  ySpinBox:set_maxValue(500);
+                  ySpinBox:set_minValue(-500);
+                  ySpinBox:set_allowGreater(true);
+                  ySpinBox:set_allowLesser(true);
+                  ySpinBox:set_step(0.001);
+                  ySpinBox:set_value(vec2[0].y);
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                    do return function(newValue) 
+                      vec2[0].y = newValue;
+                      objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2(vec2[0]))));
+                      local k = _gthis.selectedIndex;
+                      local _this = _gthis.scriptableObjectList;
+                      if (objectData == nil) then 
+                        _this.h[k] = __haxe_ds_IntMap.tnull;
+                      else
+                        _this.h[k] = objectData;
+                      end;
+                      do return objectData end;
+                    end end;
+                  end)(vec2, propertyName));
+                  local yLabel = __sunaba_ui_Label.new();
+                  yLabel:set_text("y");
+                  yLabel:set_horizontalAlignment(1);
+                  yLabel:set_verticalAlignment(1);
+                  local yHBox = __sunaba_ui_HBoxContainer.new();
+                  yHBox:addChild(yLabel);
+                  yHBox:addChild(ySpinBox);
+                  vec2Vbox:addChild(yHBox);
+                  propertyContainer:addChild(vec2Vbox);
+                else
+                  if (propertyDictType == 9) then 
+                    local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3()}, 1);
+                    local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                    local xSpinBox = __sunaba_ui_SpinBox.new();
+                    xSpinBox:set_maxValue(500);
+                    xSpinBox:set_minValue(-500);
+                    xSpinBox:set_allowGreater(true);
+                    xSpinBox:set_allowLesser(true);
+                    xSpinBox:set_step(0.001);
+                    xSpinBox:set_value(vec3[0].x);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                      do return function(newValue) 
+                        vec3[0].x = newValue;
+                        objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.scriptableObjectList;
+                        if (objectData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = objectData;
+                        end;
+                        do return objectData end;
+                      end end;
+                    end)(vec3, propertyName));
+                    local xLabel = __sunaba_ui_Label.new();
+                    xLabel:set_text("x");
+                    xLabel:set_horizontalAlignment(1);
+                    xLabel:set_verticalAlignment(1);
+                    local xHBox = __sunaba_ui_HBoxContainer.new();
+                    xHBox:addChild(xLabel);
+                    xHBox:addChild(xSpinBox);
+                    vec3Vbox:addChild(xHBox);
+                    local ySpinBox = __sunaba_ui_SpinBox.new();
+                    ySpinBox:set_maxValue(500);
+                    ySpinBox:set_minValue(-500);
+                    ySpinBox:set_allowGreater(true);
+                    ySpinBox:set_allowLesser(true);
+                    ySpinBox:set_step(0.001);
+                    ySpinBox:set_value(vec3[0].y);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                      do return function(newValue) 
+                        vec3[0].y = newValue;
+                        objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.scriptableObjectList;
+                        if (objectData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = objectData;
+                        end;
+                        do return objectData end;
+                      end end;
+                    end)(vec3, propertyName));
+                    local yLabel = __sunaba_ui_Label.new();
+                    yLabel:set_text("y");
+                    yLabel:set_horizontalAlignment(1);
+                    yLabel:set_verticalAlignment(1);
+                    local yHBox = __sunaba_ui_HBoxContainer.new();
+                    yHBox:addChild(yLabel);
+                    yHBox:addChild(ySpinBox);
+                    vec3Vbox:addChild(yHBox);
+                    local zSpinBox = __sunaba_ui_SpinBox.new();
+                    zSpinBox:set_maxValue(500);
+                    zSpinBox:set_minValue(-500);
+                    zSpinBox:set_allowGreater(true);
+                    zSpinBox:set_allowLesser(true);
+                    zSpinBox:set_step(0.001);
+                    zSpinBox:set_value(vec3[0].z);
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                      do return function(newValue) 
+                        vec3[0].z = newValue;
+                        objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3(vec3[0]))));
+                        local k = _gthis.selectedIndex;
+                        local _this = _gthis.scriptableObjectList;
+                        if (objectData == nil) then 
+                          _this.h[k] = __haxe_ds_IntMap.tnull;
+                        else
+                          _this.h[k] = objectData;
+                        end;
+                        do return objectData end;
+                      end end;
+                    end)(vec3, propertyName));
+                    local zLabel = __sunaba_ui_Label.new();
+                    zLabel:set_text("z");
+                    zLabel:set_horizontalAlignment(1);
+                    zLabel:set_verticalAlignment(1);
+                    local zHBox = __sunaba_ui_HBoxContainer.new();
+                    zHBox:addChild(zLabel);
+                    zHBox:addChild(zSpinBox);
+                    vec3Vbox:addChild(zHBox);
+                    propertyContainer:addChild(vec3Vbox);
+                  else
+                    if (propertyDictType == 12) then 
+                      local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4()}, 1);
+                      local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                      local xSpinBox = __sunaba_ui_SpinBox.new();
+                      xSpinBox:set_maxValue(500);
+                      xSpinBox:set_minValue(-500);
+                      xSpinBox:set_allowGreater(true);
+                      xSpinBox:set_allowLesser(true);
+                      xSpinBox:set_step(0.001);
+                      xSpinBox:set_value(vec4[0].x);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                        do return function(newValue) 
+                          vec4[0].x = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec4, propertyName));
+                      local xLabel = __sunaba_ui_Label.new();
+                      xLabel:set_text("x");
+                      xLabel:set_horizontalAlignment(1);
+                      xLabel:set_verticalAlignment(1);
+                      local xHBox = __sunaba_ui_HBoxContainer.new();
+                      xHBox:addChild(xLabel);
+                      xHBox:addChild(xSpinBox);
+                      vec4Vbox:addChild(xHBox);
+                      local ySpinBox = __sunaba_ui_SpinBox.new();
+                      ySpinBox:set_maxValue(500);
+                      ySpinBox:set_minValue(-500);
+                      ySpinBox:set_allowGreater(true);
+                      ySpinBox:set_allowLesser(true);
+                      ySpinBox:set_step(0.001);
+                      ySpinBox:set_value(vec4[0].y);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                        do return function(newValue) 
+                          vec4[0].y = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec4, propertyName));
+                      local yLabel = __sunaba_ui_Label.new();
+                      yLabel:set_text("y");
+                      yLabel:set_horizontalAlignment(1);
+                      yLabel:set_verticalAlignment(1);
+                      local yHBox = __sunaba_ui_HBoxContainer.new();
+                      yHBox:addChild(yLabel);
+                      yHBox:addChild(ySpinBox);
+                      vec4Vbox:addChild(yHBox);
+                      local zSpinBox = __sunaba_ui_SpinBox.new();
+                      zSpinBox:set_maxValue(500);
+                      zSpinBox:set_minValue(-500);
+                      zSpinBox:set_allowGreater(true);
+                      zSpinBox:set_allowLesser(true);
+                      zSpinBox:set_step(0.001);
+                      zSpinBox:set_value(vec4[0].z);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                        do return function(newValue) 
+                          vec4[0].z = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec4, propertyName));
+                      local zLabel = __sunaba_ui_Label.new();
+                      zLabel:set_text("z");
+                      zLabel:set_horizontalAlignment(1);
+                      zLabel:set_verticalAlignment(1);
+                      local zHBox = __sunaba_ui_HBoxContainer.new();
+                      zHBox:addChild(zLabel);
+                      zHBox:addChild(zSpinBox);
+                      vec4Vbox:addChild(zHBox);
+                      local wSpinBox = __sunaba_ui_SpinBox.new();
+                      wSpinBox:set_maxValue(500);
+                      wSpinBox:set_minValue(-500);
+                      wSpinBox:set_allowGreater(true);
+                      wSpinBox:set_allowLesser(true);
+                      wSpinBox:set_step(0.001);
+                      wSpinBox:set_value(vec4[0].w);
+                      local x = 150.0;
+                      local y = 20.0;
+                      if (y == nil) then 
+                        y = 0;
+                      end;
+                      if (x == nil) then 
+                        x = 0;
+                      end;
+                      wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                      __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                        do return function(newValue) 
+                          vec4[0].w = newValue;
+                          objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4(vec4[0]))));
+                          local k = _gthis.selectedIndex;
+                          local _this = _gthis.scriptableObjectList;
+                          if (objectData == nil) then 
+                            _this.h[k] = __haxe_ds_IntMap.tnull;
+                          else
+                            _this.h[k] = objectData;
+                          end;
+                          do return objectData end;
+                        end end;
+                      end)(vec4, propertyName));
+                      local wLabel = __sunaba_ui_Label.new();
+                      wLabel:set_text("w");
+                      wLabel:set_horizontalAlignment(1);
+                      wLabel:set_verticalAlignment(1);
+                      local wHBox = __sunaba_ui_HBoxContainer.new();
+                      wHBox:addChild(wLabel);
+                      wHBox:addChild(wSpinBox);
+                      vec4Vbox:addChild(wHBox);
+                      propertyContainer:addChild(vec4Vbox);
+                    else
+                      if (propertyDictType == 6) then 
+                        local vec2 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector2i()}, 1);
+                        local vec2Vbox = __sunaba_ui_VBoxContainer.new();
+                        local xSpinBox = __sunaba_ui_SpinBox.new();
+                        xSpinBox:set_maxValue(500);
+                        xSpinBox:set_minValue(-500);
+                        xSpinBox:set_allowGreater(true);
+                        xSpinBox:set_allowLesser(true);
+                        xSpinBox:set_step(1);
+                        xSpinBox:set_value(vec2[0].x);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                          do return function(newValue) 
+                            vec2[0].x = Std.int(newValue);
+                            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.scriptableObjectList;
+                            if (objectData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = objectData;
+                            end;
+                            do return objectData end;
+                          end end;
+                        end)(vec2, propertyName));
+                        local xLabel = __sunaba_ui_Label.new();
+                        xLabel:set_text("x");
+                        xLabel:set_horizontalAlignment(1);
+                        xLabel:set_verticalAlignment(1);
+                        local xHBox = __sunaba_ui_HBoxContainer.new();
+                        xHBox:addChild(xLabel);
+                        xHBox:addChild(xSpinBox);
+                        vec2Vbox:addChild(xHBox);
+                        local ySpinBox = __sunaba_ui_SpinBox.new();
+                        ySpinBox:set_maxValue(500);
+                        ySpinBox:set_minValue(-500);
+                        ySpinBox:set_allowGreater(true);
+                        ySpinBox:set_allowLesser(true);
+                        ySpinBox:set_step(1);
+                        ySpinBox:set_value(vec2[0].y);
+                        local x = 150.0;
+                        local y = 20.0;
+                        if (y == nil) then 
+                          y = 0;
+                        end;
+                        if (x == nil) then 
+                          x = 0;
+                        end;
+                        ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                        __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec2,propertyName) 
+                          do return function(newValue) 
+                            vec2[0].y = Std.int(newValue);
+                            objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector2i(vec2[0]))));
+                            local k = _gthis.selectedIndex;
+                            local _this = _gthis.scriptableObjectList;
+                            if (objectData == nil) then 
+                              _this.h[k] = __haxe_ds_IntMap.tnull;
+                            else
+                              _this.h[k] = objectData;
+                            end;
+                            do return objectData end;
+                          end end;
+                        end)(vec2, propertyName));
+                        local yLabel = __sunaba_ui_Label.new();
+                        yLabel:set_text("y");
+                        yLabel:set_horizontalAlignment(1);
+                        yLabel:set_verticalAlignment(1);
+                        local yHBox = __sunaba_ui_HBoxContainer.new();
+                        yHBox:addChild(yLabel);
+                        yHBox:addChild(ySpinBox);
+                        vec2Vbox:addChild(yHBox);
+                        propertyContainer:addChild(vec2Vbox);
+                      else
+                        if (propertyDictType == 10) then 
+                          local vec3 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector3i()}, 1);
+                          local vec3Vbox = __sunaba_ui_VBoxContainer.new();
+                          local xSpinBox = __sunaba_ui_SpinBox.new();
+                          xSpinBox:set_maxValue(500);
+                          xSpinBox:set_minValue(-500);
+                          xSpinBox:set_allowGreater(true);
+                          xSpinBox:set_allowLesser(true);
+                          xSpinBox:set_step(1);
+                          xSpinBox:set_value(vec3[0].x);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                            do return function(newValue) 
+                              vec3[0].x = Std.int(newValue);
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec3, propertyName));
+                          local xLabel = __sunaba_ui_Label.new();
+                          xLabel:set_text("x");
+                          xLabel:set_horizontalAlignment(1);
+                          xLabel:set_verticalAlignment(1);
+                          local xHBox = __sunaba_ui_HBoxContainer.new();
+                          xHBox:addChild(xLabel);
+                          xHBox:addChild(xSpinBox);
+                          vec3Vbox:addChild(xHBox);
+                          local ySpinBox = __sunaba_ui_SpinBox.new();
+                          ySpinBox:set_maxValue(500);
+                          ySpinBox:set_minValue(-500);
+                          ySpinBox:set_allowGreater(true);
+                          ySpinBox:set_allowLesser(true);
+                          ySpinBox:set_step(1);
+                          ySpinBox:set_value(vec3[0].y);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                            do return function(newValue) 
+                              vec3[0].y = Std.int(newValue);
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec3, propertyName));
+                          local yLabel = __sunaba_ui_Label.new();
+                          yLabel:set_text("y");
+                          yLabel:set_horizontalAlignment(1);
+                          yLabel:set_verticalAlignment(1);
+                          local yHBox = __sunaba_ui_HBoxContainer.new();
+                          yHBox:addChild(yLabel);
+                          yHBox:addChild(ySpinBox);
+                          vec3Vbox:addChild(yHBox);
+                          local zSpinBox = __sunaba_ui_SpinBox.new();
+                          zSpinBox:set_maxValue(500);
+                          zSpinBox:set_minValue(-500);
+                          zSpinBox:set_allowGreater(true);
+                          zSpinBox:set_allowLesser(true);
+                          zSpinBox:set_step(1);
+                          zSpinBox:set_value(vec3[0].z);
+                          local x = 150.0;
+                          local y = 20.0;
+                          if (y == nil) then 
+                            y = 0;
+                          end;
+                          if (x == nil) then 
+                            x = 0;
+                          end;
+                          zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                          __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec3,propertyName) 
+                            do return function(newValue) 
+                              vec3[0].z = Std.int(newValue);
+                              objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector3i(vec3[0]))));
+                              local k = _gthis.selectedIndex;
+                              local _this = _gthis.scriptableObjectList;
+                              if (objectData == nil) then 
+                                _this.h[k] = __haxe_ds_IntMap.tnull;
+                              else
+                                _this.h[k] = objectData;
+                              end;
+                              do return objectData end;
+                            end end;
+                          end)(vec3, propertyName));
+                          local zLabel = __sunaba_ui_Label.new();
+                          zLabel:set_text("z");
+                          zLabel:set_horizontalAlignment(1);
+                          zLabel:set_verticalAlignment(1);
+                          local zHBox = __sunaba_ui_HBoxContainer.new();
+                          zHBox:addChild(zLabel);
+                          zHBox:addChild(zSpinBox);
+                          vec3Vbox:addChild(zHBox);
+                          propertyContainer:addChild(vec3Vbox);
+                        else
+                          if (propertyDictType == 13) then 
+                            local vec4 = _hx_tab_array({[0]=__sunaba_DataUtils.dictToVar(propertyDict[0]):asVector4i()}, 1);
+                            local vec4Vbox = __sunaba_ui_VBoxContainer.new();
+                            local xSpinBox = __sunaba_ui_SpinBox.new();
+                            xSpinBox:set_maxValue(500);
+                            xSpinBox:set_minValue(-500);
+                            xSpinBox:set_allowGreater(true);
+                            xSpinBox:set_allowLesser(true);
+                            xSpinBox:set_step(1);
+                            xSpinBox:set_value(vec4[0].x);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            xSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(xSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                              do return function(newValue) 
+                                vec4[0].x = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec4, propertyName));
+                            local xLabel = __sunaba_ui_Label.new();
+                            xLabel:set_text("x");
+                            xLabel:set_horizontalAlignment(1);
+                            xLabel:set_verticalAlignment(1);
+                            local xHBox = __sunaba_ui_HBoxContainer.new();
+                            xHBox:addChild(xLabel);
+                            xHBox:addChild(xSpinBox);
+                            vec4Vbox:addChild(xHBox);
+                            local ySpinBox = __sunaba_ui_SpinBox.new();
+                            ySpinBox:set_maxValue(500);
+                            ySpinBox:set_minValue(-500);
+                            ySpinBox:set_allowGreater(true);
+                            ySpinBox:set_allowLesser(true);
+                            ySpinBox:set_step(1);
+                            ySpinBox:set_value(vec4[0].y);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            ySpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(ySpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                              do return function(newValue) 
+                                vec4[0].y = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec4, propertyName));
+                            local yLabel = __sunaba_ui_Label.new();
+                            yLabel:set_text("y");
+                            yLabel:set_horizontalAlignment(1);
+                            yLabel:set_verticalAlignment(1);
+                            local yHBox = __sunaba_ui_HBoxContainer.new();
+                            yHBox:addChild(yLabel);
+                            yHBox:addChild(ySpinBox);
+                            vec4Vbox:addChild(yHBox);
+                            local zSpinBox = __sunaba_ui_SpinBox.new();
+                            zSpinBox:set_maxValue(500);
+                            zSpinBox:set_minValue(-500);
+                            zSpinBox:set_allowGreater(true);
+                            zSpinBox:set_allowLesser(true);
+                            zSpinBox:set_step(1);
+                            zSpinBox:set_value(vec4[0].z);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            zSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(zSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                              do return function(newValue) 
+                                vec4[0].z = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec4, propertyName));
+                            local zLabel = __sunaba_ui_Label.new();
+                            zLabel:set_text("z");
+                            zLabel:set_horizontalAlignment(1);
+                            zLabel:set_verticalAlignment(1);
+                            local zHBox = __sunaba_ui_HBoxContainer.new();
+                            zHBox:addChild(zLabel);
+                            zHBox:addChild(zSpinBox);
+                            vec4Vbox:addChild(zHBox);
+                            local wSpinBox = __sunaba_ui_SpinBox.new();
+                            wSpinBox:set_maxValue(500);
+                            wSpinBox:set_minValue(-500);
+                            wSpinBox:set_allowGreater(true);
+                            wSpinBox:set_allowLesser(true);
+                            wSpinBox:set_step(1);
+                            wSpinBox:set_value(vec4[0].w);
+                            local x = 150.0;
+                            local y = 20.0;
+                            if (y == nil) then 
+                              y = 0;
+                            end;
+                            if (x == nil) then 
+                              x = 0;
+                            end;
+                            wSpinBox:set_customMinimumSize(Vector2.new(x, y));
+                            __sunaba_core__Signal_Signal_Impl_.add(wSpinBox:get_valueChanged(), (function(vec4,propertyName) 
+                              do return function(newValue) 
+                                vec4[0].w = Std.int(newValue);
+                                objectData:set(propertyName[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromVector4i(vec4[0]))));
+                                local k = _gthis.selectedIndex;
+                                local _this = _gthis.scriptableObjectList;
+                                if (objectData == nil) then 
+                                  _this.h[k] = __haxe_ds_IntMap.tnull;
+                                else
+                                  _this.h[k] = objectData;
+                                end;
+                                do return objectData end;
+                              end end;
+                            end)(vec4, propertyName));
+                            local wLabel = __sunaba_ui_Label.new();
+                            wLabel:set_text("w");
+                            wLabel:set_horizontalAlignment(1);
+                            wLabel:set_verticalAlignment(1);
+                            local wHBox = __sunaba_ui_HBoxContainer.new();
+                            wHBox:addChild(wLabel);
+                            wHBox:addChild(wSpinBox);
+                            vec4Vbox:addChild(wHBox);
+                            propertyContainer:addChild(vec4Vbox);
+                          else
+                            if (propertyDictType == 24) then 
+                              local resButton = __sunaba_ui_Button.new();
+                              resButton:set_text("Edit");
+                              local x = 150.0;
+                              local y = 20.0;
+                              if (y == nil) then 
+                                y = 0;
+                              end;
+                              if (x == nil) then 
+                                x = 0;
+                              end;
+                              resButton:set_customMinimumSize(Vector2.new(x, y));
+                              __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName) 
+                                do return function() 
+                                  _gthis:openResource(propertyDict[0], false, propertyName[0]:asString(), nil, objectData);
+                                end end;
+                              end)(propertyDict, propertyName));
+                              propertyContainer:addChild(resButton);
+                            end;
+                          end;
+                        end;
+                      end;
+                    end;
+                  end;
+                end;
+              else
+                if (propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("path")) and propertyDict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("classType"))) then 
+                  local resButton = __sunaba_ui_Button.new();
+                  resButton:set_text("Edit");
+                  local x = 150.0;
+                  local y = 20.0;
+                  if (y == nil) then 
+                    y = 0;
+                  end;
+                  if (x == nil) then 
+                    x = 0;
+                  end;
+                  resButton:set_customMinimumSize(Vector2.new(x, y));
+                  __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(propertyDict,propertyName) 
+                    do return function() 
+                      _gthis:openScriptableObject(propertyDict[0], propertyName[0]:asString(), nil, objectData);
+                    end end;
+                  end)(propertyDict, propertyName));
+                  propertyContainer:addChild(resButton);
+                end;
+              end;
+            end;
+          end;
+        end;
+      end;
+    end;
+  end;
+end
 
 __sunaba_studio_ResourceInspector.prototype.__class__ =  __sunaba_studio_ResourceInspector
 __sunaba_studio_ResourceInspector.__super__ = __sunaba_studio_EditorWidget
@@ -40098,7 +44010,7 @@ __sunaba_studio_SceneEditor.prototype.openScene = function(self,path)
   sceneFile:load(path);
   self.scene = sceneFile:instance();
   self.scene.isInEditor = true;
-  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
+  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
   self.scene:set_processMode(4);
   self.viewport:addChild(self.scene);
   local envRes = __sunaba_ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
@@ -41672,7 +45584,7 @@ end
 __sunaba_studio_explorer_NewFileWidget.prototype.open = function(self,pType,pBaseDir) 
   self.pathType = pType;
   self.baseDir = pBaseDir;
-  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\explorer\\NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
+  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/explorer/NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
   if (not StringTools.endsWith(self.baseDir, "/")) then 
     local tmp = self;
     tmp.baseDir = Std.string(tmp.baseDir) .. Std.string("/");
@@ -41981,7 +45893,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -42054,7 +45966,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onUpdate = function(self,deltaT
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -42439,7 +46351,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=157,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=157,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -43334,12 +47246,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=692,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=692,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=694,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=695,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=694,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=695,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=697,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=697,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -43375,7 +47287,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=728,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=728,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
@@ -43397,7 +47309,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="C:\\Users\\mintkat\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=750,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=750,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;
@@ -44192,6 +48104,26 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                         end;
                       end;
                     end;
+                  end;
+                else
+                  if (dict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("path")) and dict[0]:has(__sunaba_core__Variant_Variant_Impl_.fromString("classType"))) then 
+                    local resButton = __sunaba_ui_Button.new();
+                    resButton:set_text("Edit");
+                    local x = 150.0;
+                    local y = 20.0;
+                    if (y == nil) then 
+                      y = 0;
+                    end;
+                    if (x == nil) then 
+                      x = 0;
+                    end;
+                    resButton:set_customMinimumSize(Vector2.new(x, y));
+                    __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(dict,key) 
+                      do return function() 
+                        _gthis:getEditor().resourceInspector:openScriptableObject(dict[0], key[0]:asString(), _gthis.selectedEntity);
+                      end end;
+                    end)(dict, key));
+                    propertyContainer:addChild(resButton);
                   end;
                 end;
               end;

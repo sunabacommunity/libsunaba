@@ -4,24 +4,32 @@
 [ext_resource type="StyleBox" uid="uid://u83jrys7n2qn" path="res://Engine/Theme/button_focus.tres" id="2_hb0t5"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://Engine/Theme/button_blue.tres" id="2_y606b"]
 [ext_resource type="Texture2D" uid="uid://iuq6u6o8uybw" path="res://Engine/Theme/dark/grey_button13.png" id="3_os7c4"]
-[ext_resource type="Texture2D" uid="uid://bkakxjyqac6wc" path="res://Engine/Theme/dark/hover_button13.png" id="3_vpgiu"]
+[ext_resource type="Texture2D" uid="uid://bsteg2d648ih" path="res://Engine/Theme/hover_button10.png" id="3_vpgiu"]
 [ext_resource type="StyleBox" uid="uid://dblfb66ahi7w8" path="res://Engine/Theme/button_dark.tres" id="4_at747"]
 [ext_resource type="FontFile" uid="uid://btoh80w8pdwdj" path="res://Engine/Theme/fonts/FiraCode-Regular.ttf" id="6_clcbm"]
 [ext_resource type="Texture2D" uid="uid://6sfbvfg3atf7" path="res://Engine/Theme/dark/grey_panel.png" id="6_hwutb"]
+[ext_resource type="FontFile" uid="uid://b6784stmn10i4" path="res://Engine/Theme/fonts/FragmentMono-Regular.ttf" id="7_8cu2s"]
 [ext_resource type="StyleBox" uid="uid://vsre08ftarbp" path="res://Engine/Theme/tab_bg.tres" id="8_tw88j"]
 [ext_resource type="StyleBox" uid="uid://nlmo78inhosd" path="res://Engine/Theme/empty.tres" id="9_1cga8"]
 [ext_resource type="StyleBox" uid="uid://bw2nalo6mrfem" path="res://Engine/Theme/panel_focus.tres" id="9_pwen5"]
 [ext_resource type="StyleBox" uid="uid://de1k7xu0s8ba2" path="res://Engine/Theme/tab_fg.tres" id="10_8tbvk"]
 [ext_resource type="Texture2D" uid="uid://bgffefa6ul6au" path="res://Engine/Theme/dark/grey_tab.png" id="11_a7ote"]
-[ext_resource type="Texture2D" uid="uid://cci1ldqasmqhr" path="res://Engine/Theme/dark/focus_button13.png" id="11_pplix"]
+[ext_resource type="Texture2D" uid="uid://k426oot8llyf" path="res://Engine/Theme/focus_button13.png" id="11_pplix"]
 [ext_resource type="Texture2D" uid="uid://dwpd2a4wc4v1t" path="res://Engine/Theme/collapse.png" id="12_rwawf"]
 [ext_resource type="Texture2D" uid="uid://byb3sj4xvhp6y" path="res://Engine/Theme/expand.png" id="13_7wdem"]
 [ext_resource type="Texture2D" uid="uid://cqe50bdau567b" path="res://Engine/Theme/dark/window.png" id="15_h3xky"]
-[ext_resource type="FontFile" uid="uid://8mh3yfoq37h3" path="res://Engine/Theme/fonts/Oxygen-Bold.ttf" id="15_hpgrm"]
+[ext_resource type="FontFile" uid="uid://cwpcp5tic3f10" path="res://Engine/Theme/fonts/NunitoSans-Bold.ttf" id="15_hpgrm"]
 [ext_resource type="Texture2D" uid="uid://d2qlqkqsuico2" path="res://Engine/Theme/windowIcons/close20dark.png" id="16_il6h1"]
 [ext_resource type="Texture2D" uid="uid://dafpvty7c2x6q" path="res://Engine/Theme/dark/banner.png" id="18_c2xtr"]
-[ext_resource type="FontFile" uid="uid://wgmjhpg8t35s" path="res://Engine/Theme/fonts/Oxygen-Regular.ttf" id="21_unv6f"]
-[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://Engine/Theme/fonts/sans_serif.tres" id="22_8cu2s"]
+[ext_resource type="FontFile" uid="uid://d2fx2sayq5pyt" path="res://Engine/Theme/fonts/NunitoSans-Regular.ttf" id="22_8cu2s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghsb1"]
+texture = ExtResource("6_hwutb")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufuef"]
 texture = ExtResource("1_ove3i")
@@ -106,14 +114,6 @@ texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghsb1"]
-texture = ExtResource("6_hwutb")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-region_rect = Rect2(0, 0, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4270"]
 texture = ExtResource("18_c2xtr")
@@ -255,15 +255,13 @@ texture_margin_left = 10.0
 texture_margin_top = 40.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
-expand_margin_left = 2.0
-expand_margin_top = 30.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+expand_margin_top = 28.0
 region_rect = Rect2(0, 0, 100, 100)
 
 [resource]
 default_font = ExtResource("22_8cu2s")
 default_font_size = 13
+AcceptDialog/styles/panel = SubResource("StyleBoxTexture_ghsb1")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_color_disabled = Color(1, 1, 1, 0.486275)
 Button/colors/font_disabled_color = Color(1, 1, 1, 0.486275)
@@ -273,6 +271,8 @@ Button/styles/disabled_mirrored = SubResource("StyleBoxTexture_ufuef")
 Button/styles/focus = ExtResource("2_hb0t5")
 Button/styles/hover = SubResource("StyleBoxTexture_oyphn")
 Button/styles/hover_mirrored = SubResource("StyleBoxTexture_oyphn")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_oyphn")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_oyphn")
 Button/styles/normal = ExtResource("4_at747")
 Button/styles/normal_mirrored = ExtResource("4_at747")
 Button/styles/pressed = ExtResource("2_y606b")
@@ -293,7 +293,7 @@ CheckBox/styles/hover = null
 CheckBox/styles/hover_pressed = null
 CheckBox/styles/normal = null
 CheckBox/styles/pressed = null
-CodeEdit/fonts/font = ExtResource("6_clcbm")
+CodeEdit/fonts/font = ExtResource("7_8cu2s")
 FileDialog/colors/file_icon_modulate = Color(0.2, 0.72549, 0.94902, 1)
 FileDialog/colors/folder_icon_modulate = Color(0.2, 0.72549, 0.94902, 1)
 FoldableContainer/styles/focus = SubResource("StyleBoxEmpty_c4270")
@@ -353,10 +353,10 @@ Popup/styles/panel = SubResource("StyleBoxTexture_16jl1")
 PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 0.8)
 PopupMenu/colors/font_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_color_accel = Color(1, 1, 1, 0.8)
-PopupMenu/colors/font_color_disabled = Color(1, 1, 1, 0.8)
+PopupMenu/colors/font_color_disabled = Color(0.7204674, 0.7204675, 0.7204674, 0.8)
 PopupMenu/colors/font_color_hover = Color(1, 1, 1, 1)
 PopupMenu/colors/font_color_separator = Color(1, 1, 1, 1)
-PopupMenu/colors/font_disabled_color = Color(1, 1, 1, 0.8)
+PopupMenu/colors/font_disabled_color = Color(0.72156864, 0.72156864, 0.72156864, 0.8)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_separator_color = Color(1, 1, 1, 1)
 PopupMenu/styles/hover = SubResource("StyleBoxTexture_el07l")
@@ -375,7 +375,7 @@ RichTextLabel/colors/font_selected_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/selection_color = Color(0.129412, 0.666667, 0.894118, 0.8)
 RichTextLabel/fonts/bold_font = ExtResource("15_hpgrm")
 RichTextLabel/fonts/mono_font = ExtResource("6_clcbm")
-RichTextLabel/fonts/normal_font = ExtResource("21_unv6f")
+RichTextLabel/fonts/normal_font = ExtResource("22_8cu2s")
 TabBar/colors/font_color_bg = Color(1, 1, 1, 1)
 TabBar/colors/font_color_disabled = Color(0.129412, 0.129412, 0.129412, 0.2)
 TabBar/colors/font_color_fg = Color(1, 1, 1, 1)
@@ -457,10 +457,11 @@ VSlider/styles/slider = SubResource("StyleBoxTexture_0w288")
 Window/colors/title_color = Color(1, 1, 1, 1)
 Window/colors/title_outline_modulate = Color(1, 1, 1, 1)
 Window/constants/close_h_offset = 24
-Window/constants/close_v_offset = 26
-Window/constants/title_height = 32
+Window/constants/close_v_offset = 24
+Window/constants/title_height = 30
 Window/font_sizes/title_font_size = 14
 Window/icons/close = ExtResource("16_il6h1")
 Window/icons/close_pressed = ExtResource("16_il6h1")
 Window/styles/embedded_border = SubResource("StyleBoxTexture_aotmt")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_aotmt")
 Window/styles/panel = SubResource("StyleBoxTexture_aotmt")

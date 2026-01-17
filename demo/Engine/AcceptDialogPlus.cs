@@ -13,7 +13,7 @@ public partial class AcceptDialogPlus : AcceptDialog
         Warning,
         Info,
     }
-    
+	
     private int _type = (int)TypeEnum.Info;
     [Export(PropertyHint.Enum, "Error,Warning,Info")]
     public int Type
@@ -40,9 +40,9 @@ public partial class AcceptDialogPlus : AcceptDialog
     }
 
     private TextureRect iconRect;
-    
+	
     private HBoxContainer _hBoxContainer;
-    
+	
     public Label Label;
 
     [Export]
@@ -51,33 +51,21 @@ public partial class AcceptDialogPlus : AcceptDialog
         get => Label.Text;
         set => Label.Text = value;
     }
-    
+	
     public AcceptDialogPlus()
     {
-        PackedScene boxScene = GD.Load<PackedScene>("res://Engine/ErrorBox.tscn");
-        if (_type == (int)TypeEnum.Warning)
-        {
-            boxScene = GD.Load<PackedScene>("res://Engine/WarnBox.tscn");
-        }
-        else if (_type == (int)TypeEnum.Info)
-        {
-            boxScene = GD.Load<PackedScene>("res://Engine/InfoBox.tscn");
-        }
-        else
-        {
-            return;
-        }
+        PackedScene boxScene = boxScene = GD.Load<PackedScene>("res://Engine/InfoBox.tscn");
 
         _hBoxContainer = (HBoxContainer)boxScene.Instantiate<HBoxContainer>();
         AddChild(_hBoxContainer);
-        Label = (Label)_hBoxContainer.GetNode("Label");
+        Label = (Label)_hBoxContainer.GetNode("VBoxContainer/Label");
         iconRect = _hBoxContainer.GetNode<TextureRect>("IconHolder/Icon");
     }
 
     public override void _Ready()
     {
         var displayScale = DisplayServer.ScreenGetScale(CurrentScreen);
-        if (OS.GetName() != "macOS")
+        if (OS.GetName() == "Windows")
         {
             var dpi = DisplayServer.ScreenGetDpi(CurrentScreen);
             displayScale = dpi * 0.01f;
