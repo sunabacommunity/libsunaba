@@ -5,7 +5,9 @@ enum abstract DuplicateFlags(Int) from Int to Int {
 	var groups = cast 2;
 	var scripts = cast 4;
 	var useInstantiation = cast 8;
-	public static var values = [signals, groups, scripts, useInstantiation];
+	var _default = cast 15;
+	var internalState = cast 16;
+	public static var values = [signals, groups, scripts, useInstantiation, _default, internalState];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -13,6 +15,8 @@ enum abstract DuplicateFlags(Int) from Int to Int {
 			case "groups": cast 2;
 			case "scripts": cast 4;
 			case "useInstantiation": cast 8;
+			case "_default": cast 15;
+			case "internalState": cast 16;
 			case _: null;
 		}
 	}

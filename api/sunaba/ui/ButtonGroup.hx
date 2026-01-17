@@ -38,6 +38,10 @@ class ButtonGroup extends Resource {
 	    return _pressed;
 	}
 
+  public function getButtons(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_buttons', args);
+  }
   public function getPressedButton(): BaseButton {
       var args = new ArrayList();
       var ref: NativeObject = native.call('get_pressed_button', args);

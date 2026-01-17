@@ -68,7 +68,7 @@ class AnimationLibrary extends Resource {
   }
   public function getAnimationList(): ArrayList {
       var args = new ArrayList();
-      return native.call('get_animation_list_size', args);
+      return native.call('get_animation_list', args);
   }
   public function getAnimationListSize(): Int {
       var args = new ArrayList();

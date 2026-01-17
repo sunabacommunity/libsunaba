@@ -69,7 +69,7 @@ class RegEx extends Reference {
       return new RegExMatch(ref);
   }
   public function searchAll(subject: String, ?offset: Int, ?end: Int): ArrayList {
-    var args = new ArrayList();
+      var args = new ArrayList();
       args.append(subject);
       if (offset != null) {
           args.append(offset);
@@ -77,7 +77,7 @@ class RegEx extends Reference {
       if (end != null) {
           args.append(end);
       }
-      return native.call('search', args);
+      return native.call('search_all', args);
   }
   public function sub(subject: String, replacement: String, ?all: Bool, ?offset: Int, ?end: Int): String {
       var args = new ArrayList();

@@ -11,11 +11,7 @@ enum abstract AreaParameter(Int) from Int to Int {
 	var angularDampOverrideMode = cast 7;
 	var angularDamp = cast 8;
 	var priority = cast 9;
-	var windForceMagnitude = cast 10;
-	var windSource = cast 11;
-	var windDirection = cast 12;
-	var windAttenuationFactor = cast 13;
-	public static var values = [gravityOverrideMode, gravity, gravityVector, gravityIsPoint, gravityPointUnitDistance, linearDampOverrideMode, linearDamp, angularDampOverrideMode, angularDamp, priority, windForceMagnitude, windSource, windDirection, windAttenuationFactor];
+	public static var values = [gravityOverrideMode, gravity, gravityVector, gravityIsPoint, gravityPointUnitDistance, linearDampOverrideMode, linearDamp, angularDampOverrideMode, angularDamp, priority];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -29,10 +25,6 @@ enum abstract AreaParameter(Int) from Int to Int {
 			case "angularDampOverrideMode": cast 7;
 			case "angularDamp": cast 8;
 			case "priority": cast 9;
-			case "windForceMagnitude": cast 10;
-			case "windSource": cast 11;
-			case "windDirection": cast 12;
-			case "windAttenuationFactor": cast 13;
 			case _: null;
 		}
 	}

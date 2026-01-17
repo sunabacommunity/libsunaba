@@ -419,6 +419,10 @@ class Viewport extends Node {
       args.append(layer);
       return native.call('get_canvas_cull_mask_bit', args);
   }
+  public function getEmbeddedSubwindows(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_embedded_subwindows', args);
+  }
   public function getMousePosition(): Vector2 {
       var args = new ArrayList();
       return native.call('get_mouse_position', args);

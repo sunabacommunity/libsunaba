@@ -53,6 +53,30 @@ class CodeEdit extends TextEdit {
       native.set('code_completion_enabled', value);
         return value;
     }
+    public var codeCompletionPrefixes(get, set): ArrayList;
+    function get_codeCompletionPrefixes(): ArrayList {
+        return native.get('code_completion_prefixes');
+    }
+    function set_codeCompletionPrefixes(value: ArrayList): ArrayList {
+      native.set('code_completion_prefixes', value);
+        return value;
+    }
+    public var delimiterComments(get, set): ArrayList;
+    function get_delimiterComments(): ArrayList {
+        return native.get('delimiter_comments');
+    }
+    function set_delimiterComments(value: ArrayList): ArrayList {
+      native.set('delimiter_comments', value);
+        return value;
+    }
+    public var delimiterStrings(get, set): ArrayList;
+    function get_delimiterStrings(): ArrayList {
+        return native.get('delimiter_strings');
+    }
+    function set_delimiterStrings(value: ArrayList): ArrayList {
+      native.set('delimiter_strings', value);
+        return value;
+    }
     public var guttersDrawBookmarks(get, set): Bool;
     function get_guttersDrawBookmarks(): Bool {
         return native.get('gutters_draw_bookmarks');
@@ -109,6 +133,14 @@ class CodeEdit extends TextEdit {
       native.set('indent_automatic', value);
         return value;
     }
+    public var indentAutomaticPrefixes(get, set): ArrayList;
+    function get_indentAutomaticPrefixes(): ArrayList {
+        return native.get('indent_automatic_prefixes');
+    }
+    function set_indentAutomaticPrefixes(value: ArrayList): ArrayList {
+      native.set('indent_automatic_prefixes', value);
+        return value;
+    }
     public var indentSize(get, set): Int;
     function get_indentSize(): Int {
         return native.get('indent_size');
@@ -131,6 +163,14 @@ class CodeEdit extends TextEdit {
     }
     function set_lineFolding(value: Bool): Bool {
       native.set('line_folding', value);
+        return value;
+    }
+    public var lineLengthGuidelines(get, set): ArrayList;
+    function get_lineLengthGuidelines(): ArrayList {
+        return native.get('line_length_guidelines');
+    }
+    function set_lineLengthGuidelines(value: ArrayList): ArrayList {
+      native.set('line_length_guidelines', value);
         return value;
     }
     public var symbolLookupOnClick(get, set): Bool;
@@ -327,6 +367,10 @@ class CodeEdit extends TextEdit {
       args.append(index);
       return native.call('get_code_completion_option', args);
   }
+  public function getCodeCompletionOptions(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_code_completion_options', args);
+  }
   public function getCodeCompletionSelectedIndex(): Int {
       var args = new ArrayList();
       return native.call('get_code_completion_selected_index', args);
@@ -364,6 +408,10 @@ class CodeEdit extends TextEdit {
   public function getExecutingLines(): TypedArray<Int> {
       var args = new ArrayList();
       return native.call('get_executing_lines', args);
+  }
+  public function getFoldedLines(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_folded_lines', args);
   }
   public function getTextForCodeCompletion(): String {
       var args = new ArrayList();

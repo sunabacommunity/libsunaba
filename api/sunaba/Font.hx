@@ -22,6 +22,14 @@ class Font extends Resource {
         scriptLoader.call('loadScript', args);
     }
 
+    public var fallbacks(get, set): ArrayList;
+    function get_fallbacks(): ArrayList {
+        return native.get('fallbacks');
+    }
+    function set_fallbacks(value: ArrayList): ArrayList {
+      native.set('fallbacks', value);
+        return value;
+    }
 
 
   public function drawChar(canvasItem: Int, pos: Vector2, char: Int, fontSize: Int, ?modulate: Color, ?oversampling: Float): Float {
@@ -313,6 +321,10 @@ class Font extends Resource {
   public function getOtNameStrings(): Dictionary {
       var args = new ArrayList();
       return native.call('get_ot_name_strings', args);
+  }
+  public function getRids(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_rids', args);
   }
   public function getSpacing(spacing: Int): Int {
       var args = new ArrayList();

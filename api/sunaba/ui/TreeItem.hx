@@ -177,6 +177,10 @@ class TreeItem extends Object {
       var args = new ArrayList();
       return native.call('get_child_count', args);
   }
+  public function getChildren(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_children', args);
+  }
   public function getCustomBgColor(column: Int): Color {
       var args = new ArrayList();
       args.append(column);

@@ -8,8 +8,9 @@ enum abstract SpaceParameter(Int) from Int to Int {
 	var bodyLinearVelocitySleepThreshold = cast 4;
 	var bodyAngularVelocitySleepThreshold = cast 5;
 	var bodyTimeToSleep = cast 6;
-	var solverIterations = cast 7;
-	public static var values = [contactRecycleRadius, contactMaxSeparation, contactMaxAllowedPenetration, contactDefaultBias, bodyLinearVelocitySleepThreshold, bodyAngularVelocitySleepThreshold, bodyTimeToSleep, solverIterations];
+	var constraintDefaultBias = cast 7;
+	var solverIterations = cast 8;
+	public static var values = [contactRecycleRadius, contactMaxSeparation, contactMaxAllowedPenetration, contactDefaultBias, bodyLinearVelocitySleepThreshold, bodyAngularVelocitySleepThreshold, bodyTimeToSleep, constraintDefaultBias, solverIterations];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -20,7 +21,8 @@ enum abstract SpaceParameter(Int) from Int to Int {
 			case "bodyLinearVelocitySleepThreshold": cast 4;
 			case "bodyAngularVelocitySleepThreshold": cast 5;
 			case "bodyTimeToSleep": cast 6;
-			case "solverIterations": cast 7;
+			case "constraintDefaultBias": cast 7;
+			case "solverIterations": cast 8;
 			case _: null;
 		}
 	}

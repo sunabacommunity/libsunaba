@@ -9,12 +9,10 @@ enum abstract OperatorEnum(Int) from Int to Int {
 	var pow = cast 5;
 	var max = cast 6;
 	var min = cast 7;
-	var cross = cast 8;
-	var atan2 = cast 9;
-	var reflect = cast 10;
-	var step = cast 11;
-	var enumSize = cast 12;
-	public static var values = [add, sub, mul, div, mod, pow, max, min, cross, atan2, reflect, step, enumSize];
+	var atan2 = cast 8;
+	var step = cast 9;
+	var enumSize = cast 10;
+	public static var values = [add, sub, mul, div, mod, pow, max, min, atan2, step, enumSize];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -26,11 +24,9 @@ enum abstract OperatorEnum(Int) from Int to Int {
 			case "pow": cast 5;
 			case "max": cast 6;
 			case "min": cast 7;
-			case "cross": cast 8;
-			case "atan2": cast 9;
-			case "reflect": cast 10;
-			case "step": cast 11;
-			case "enumSize": cast 12;
+			case "atan2": cast 8;
+			case "step": cast 9;
+			case "enumSize": cast 10;
 			case _: null;
 		}
 	}

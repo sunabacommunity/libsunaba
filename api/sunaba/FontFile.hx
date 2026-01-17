@@ -346,6 +346,12 @@ class FontFile extends Font {
       args.append(glyphPair);
       return native.call('get_kerning', args);
   }
+  public function getKerningList(cacheIndex: Int, size: Int): ArrayList {
+      var args = new ArrayList();
+      args.append(cacheIndex);
+      args.append(size);
+      return native.call('get_kerning_list', args);
+  }
   public function getLanguageSupportOverride(language: String): Bool {
       var args = new ArrayList();
       args.append(language);
@@ -363,6 +369,11 @@ class FontFile extends Font {
   public function getScriptSupportOverrides(): TypedArray<String> {
       var args = new ArrayList();
       return native.call('get_script_support_overrides', args);
+  }
+  public function getSizeCacheList(cacheIndex: Int): ArrayList {
+      var args = new ArrayList();
+      args.append(cacheIndex);
+      return native.call('get_size_cache_list', args);
   }
   public function getTextureCount(cacheIndex: Int, size: Vector2i): Int {
       var args = new ArrayList();

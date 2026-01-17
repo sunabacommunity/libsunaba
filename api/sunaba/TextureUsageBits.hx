@@ -11,7 +11,8 @@ enum abstract TextureUsageBits(Int) from Int to Int {
 	var canCopyFromBit = cast 128;
 	var canCopyToBit = cast 256;
 	var inputAttachmentBit = cast 512;
-	public static var values = [samplingBit, colorAttachmentBit, depthStencilAttachmentBit, storageBit, storageAtomicBit, cpuReadBit, canUpdateBit, canCopyFromBit, canCopyToBit, inputAttachmentBit];
+	var depthResolveAttachmentBit = cast 4096;
+	public static var values = [samplingBit, colorAttachmentBit, depthStencilAttachmentBit, storageBit, storageAtomicBit, cpuReadBit, canUpdateBit, canCopyFromBit, canCopyToBit, inputAttachmentBit, depthResolveAttachmentBit];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -25,6 +26,7 @@ enum abstract TextureUsageBits(Int) from Int to Int {
 			case "canCopyFromBit": cast 128;
 			case "canCopyToBit": cast 256;
 			case "inputAttachmentBit": cast 512;
+			case "depthResolveAttachmentBit": cast 4096;
 			case _: null;
 		}
 	}

@@ -1,16 +1,18 @@
 package sunaba;
 
 enum abstract PinJointParam(Int) from Int to Int {
-	var bias = cast 0;
-	var damping = cast 1;
-	var impulseClamp = cast 2;
-	public static var values = [bias, damping, impulseClamp];
+	var softness = cast 0;
+	var limitUpper = cast 1;
+	var limitLower = cast 2;
+	var motorTargetVelocity = cast 3;
+	public static var values = [softness, limitUpper, limitLower, motorTargetVelocity];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "bias": cast 0;
-			case "damping": cast 1;
-			case "impulseClamp": cast 2;
+			case "softness": cast 0;
+			case "limitUpper": cast 1;
+			case "limitLower": cast 2;
+			case "motorTargetVelocity": cast 3;
 			case _: null;
 		}
 	}

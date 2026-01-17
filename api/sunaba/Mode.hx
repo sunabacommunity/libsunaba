@@ -1,20 +1,20 @@
 package sunaba;
 
 enum abstract Mode(Int) from Int to Int {
-	var spatial = cast 0;
-	var canvasItem = cast 1;
-	var particles = cast 2;
-	var sky = cast 3;
-	var fog = cast 4;
-	public static var values = [spatial, canvasItem, particles, sky, fog];
+	var ecbEncrypt = cast 0;
+	var ecbDecrypt = cast 1;
+	var cbcEncrypt = cast 2;
+	var cbcDecrypt = cast 3;
+	var max = cast 4;
+	public static var values = [ecbEncrypt, ecbDecrypt, cbcEncrypt, cbcDecrypt, max];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "spatial": cast 0;
-			case "canvasItem": cast 1;
-			case "particles": cast 2;
-			case "sky": cast 3;
-			case "fog": cast 4;
+			case "ecbEncrypt": cast 0;
+			case "ecbDecrypt": cast 1;
+			case "cbcEncrypt": cast 2;
+			case "cbcDecrypt": cast 3;
+			case "max": cast 4;
 			case _: null;
 		}
 	}

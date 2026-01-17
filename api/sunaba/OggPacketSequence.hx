@@ -28,6 +28,14 @@ class OggPacketSequence extends Resource {
       native.set('granule_positions', value);
         return value;
     }
+    public var packetData(get, set): ArrayList;
+    function get_packetData(): ArrayList {
+        return native.get('packet_data');
+    }
+    function set_packetData(value: ArrayList): ArrayList {
+      native.set('packet_data', value);
+        return value;
+    }
     public var samplingRate(get, set): Float;
     function get_samplingRate(): Float {
         return native.get('sampling_rate');

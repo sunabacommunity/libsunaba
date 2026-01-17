@@ -40,8 +40,16 @@ enum abstract Format(Int) from Int to Int {
 	var astc4x4Hdr = cast 36;
 	var astc8x8 = cast 37;
 	var astc8x8Hdr = cast 38;
-	var max = cast 39;
-	public static var values = [l8, la8, r8, rg8, rgb8, rgba8, rgba4444, rgb565, rf, rgf, rgbf, rgbaf, rh, rgh, rgbh, rgbah, rgbe9995, dxt1, dxt3, dxt5, rgtcR, rgtcRg, bptcRgba, bptcRgbf, bptcRgbfu, etc, etc2r11, etc2r11s, etc2Rg11, etc2Rg11s, etc2Rgb8, etc2Rgba8, etc2Rgb8a1, etc2RaAsRg, dxt5RaAsRg, astc4x4, astc4x4Hdr, astc8x8, astc8x8Hdr, max];
+	var r16 = cast 39;
+	var rg16 = cast 40;
+	var rgb16 = cast 41;
+	var rgba16 = cast 42;
+	var r16i = cast 43;
+	var rg16i = cast 44;
+	var rgb16i = cast 45;
+	var rgba16i = cast 46;
+	var max = cast 47;
+	public static var values = [l8, la8, r8, rg8, rgb8, rgba8, rgba4444, rgb565, rf, rgf, rgbf, rgbaf, rh, rgh, rgbh, rgbah, rgbe9995, dxt1, dxt3, dxt5, rgtcR, rgtcRg, bptcRgba, bptcRgbf, bptcRgbfu, etc, etc2r11, etc2r11s, etc2Rg11, etc2Rg11s, etc2Rgb8, etc2Rgba8, etc2Rgb8a1, etc2RaAsRg, dxt5RaAsRg, astc4x4, astc4x4Hdr, astc8x8, astc8x8Hdr, r16, rg16, rgb16, rgba16, r16i, rg16i, rgb16i, rgba16i, max];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -84,7 +92,15 @@ enum abstract Format(Int) from Int to Int {
 			case "astc4x4Hdr": cast 36;
 			case "astc8x8": cast 37;
 			case "astc8x8Hdr": cast 38;
-			case "max": cast 39;
+			case "r16": cast 39;
+			case "rg16": cast 40;
+			case "rgb16": cast 41;
+			case "rgba16": cast 42;
+			case "r16i": cast 43;
+			case "rg16i": cast 44;
+			case "rgb16i": cast 45;
+			case "rgba16i": cast 46;
+			case "max": cast 47;
 			case _: null;
 		}
 	}

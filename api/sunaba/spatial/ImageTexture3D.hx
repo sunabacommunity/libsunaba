@@ -21,7 +21,7 @@ class ImageTexture3D extends Texture3D {
 
 
 
-  public function create(format: Int, width: Int, height: Int, depth: Int, useMipmaps: Bool, data: Variant): Int {
+  public function create(format: Int, width: Int, height: Int, depth: Int, useMipmaps: Bool, data: ArrayList): Int {
       var args = new ArrayList();
       args.append(format);
       args.append(width);
@@ -31,7 +31,7 @@ class ImageTexture3D extends Texture3D {
       args.append(data);
       return native.call('create', args);
   }
-  public function update(data: Variant): Void {
+  public function update(data: ArrayList): Void {
       var args = new ArrayList();
       args.append(data);
       native.call('update', args);

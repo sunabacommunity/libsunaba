@@ -363,6 +363,20 @@ class Node extends Object {
       var ref: NativeObject = native.call('find_child', args);
       return new Node(ref);
   }
+  public function findChildren(pattern: String, ?type: String, ?recursive: Bool, ?owned: Bool): ArrayList {
+      var args = new ArrayList();
+      args.append(pattern);
+      if (type != null) {
+          args.append(type);
+      }
+      if (recursive != null) {
+          args.append(recursive);
+      }
+      if (owned != null) {
+          args.append(owned);
+      }
+      return native.call('find_children', args);
+  }
   public function findParent(pattern: String): Node {
       var args = new ArrayList();
       args.append(pattern);
@@ -388,6 +402,17 @@ class Node extends Object {
           args.append(includeInternal);
       }
       return native.call('get_child_count', args);
+  }
+  public function getChildren(?includeInternal: Bool): ArrayList {
+      var args = new ArrayList();
+      if (includeInternal != null) {
+          args.append(includeInternal);
+      }
+      return native.call('get_children', args);
+  }
+  public function getGroups(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_groups', args);
   }
   public function getIndex(?includeInternal: Bool): Int {
       var args = new ArrayList();
@@ -425,6 +450,10 @@ class Node extends Object {
   public function getNodeRpcConfig(): Variant {
       var args = new ArrayList();
       return native.call('get_node_rpc_config', args);
+  }
+  public static function getOrphanNodeIds(): ArrayList {
+      var args = new ArrayList();
+      return NativeObject.callStatic('Node', 'get_orphan_node_ids', args);
   }
   public function getParent(): Node {
       var args = new ArrayList();

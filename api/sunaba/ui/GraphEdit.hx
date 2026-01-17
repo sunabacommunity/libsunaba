@@ -46,6 +46,14 @@ class GraphEdit extends Control {
       native.set('connection_lines_thickness', value);
         return value;
     }
+    public var connections(get, set): ArrayList;
+    function get_connections(): ArrayList {
+        return native.get('connections');
+    }
+    function set_connections(value: ArrayList): ArrayList {
+      native.set('connections', value);
+        return value;
+    }
     public var gridPattern(get, set): Int;
     function get_gridPattern(): Int {
         return native.get('grid_pattern');
@@ -426,6 +434,11 @@ class GraphEdit extends Control {
       var args = new ArrayList();
       native.call('force_connection_drag_end', args);
   }
+  public function getAttachedNodesOfFrame(frame: String): ArrayList {
+      var args = new ArrayList();
+      args.append(frame);
+      return native.call('get_attached_nodes_of_frame', args);
+  }
   public function getClosestConnectionAtPoint(point: Vector2, ?maxDistance: Float): Dictionary {
       var args = new ArrayList();
       args.append(point);
@@ -445,6 +458,16 @@ class GraphEdit extends Control {
       args.append(fromNode);
       args.append(toNode);
       return native.call('get_connection_line', args);
+  }
+  public function getConnectionListFromNode(node: String): ArrayList {
+      var args = new ArrayList();
+      args.append(node);
+      return native.call('get_connection_list_from_node', args);
+  }
+  public function getConnectionsIntersectingWithRect(rect: Rect2): ArrayList {
+      var args = new ArrayList();
+      args.append(rect);
+      return native.call('get_connections_intersecting_with_rect', args);
   }
   public function getElementFrame(element: String): GraphFrame {
       var args = new ArrayList();

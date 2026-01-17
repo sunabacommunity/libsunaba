@@ -95,6 +95,11 @@ class VisualShader extends Shader {
       args.append(toPort);
       native.call('disconnect_nodes', args);
   }
+  public function getNodeConnections(type: Int): ArrayList {
+      var args = new ArrayList();
+      args.append(type);
+      return native.call('get_node_connections', args);
+  }
   public function getNodeList(type: Int): TypedArray<Int> {
       var args = new ArrayList();
       args.append(type);

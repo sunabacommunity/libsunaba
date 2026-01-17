@@ -23,12 +23,44 @@ class Control extends CanvasItem {
         this.native = _native;
     }
 
+    public var accessibilityControlsNodes(get, set): ArrayList;
+    function get_accessibilityControlsNodes(): ArrayList {
+        return native.get('accessibility_controls_nodes');
+    }
+    function set_accessibilityControlsNodes(value: ArrayList): ArrayList {
+      native.set('accessibility_controls_nodes', value);
+        return value;
+    }
+    public var accessibilityDescribedByNodes(get, set): ArrayList;
+    function get_accessibilityDescribedByNodes(): ArrayList {
+        return native.get('accessibility_described_by_nodes');
+    }
+    function set_accessibilityDescribedByNodes(value: ArrayList): ArrayList {
+      native.set('accessibility_described_by_nodes', value);
+        return value;
+    }
     public var accessibilityDescription(get, set): String;
     function get_accessibilityDescription(): String {
         return native.get('accessibility_description');
     }
     function set_accessibilityDescription(value: String): String {
       native.set('accessibility_description', value);
+        return value;
+    }
+    public var accessibilityFlowToNodes(get, set): ArrayList;
+    function get_accessibilityFlowToNodes(): ArrayList {
+        return native.get('accessibility_flow_to_nodes');
+    }
+    function set_accessibilityFlowToNodes(value: ArrayList): ArrayList {
+      native.set('accessibility_flow_to_nodes', value);
+        return value;
+    }
+    public var accessibilityLabeledByNodes(get, set): ArrayList;
+    function get_accessibilityLabeledByNodes(): ArrayList {
+        return native.get('accessibility_labeled_by_nodes');
+    }
+    function set_accessibilityLabeledByNodes(value: ArrayList): ArrayList {
+      native.set('accessibility_labeled_by_nodes', value);
         return value;
     }
     public var accessibilityLive(get, set): Int;

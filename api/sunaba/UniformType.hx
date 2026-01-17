@@ -11,8 +11,10 @@ enum abstract UniformType(Int) from Int to Int {
 	var uniformBuffer = cast 7;
 	var storageBuffer = cast 8;
 	var inputAttachment = cast 9;
-	var max = cast 10;
-	public static var values = [sampler, samplerWithTexture, texture, image, textureBuffer, samplerWithTextureBuffer, imageBuffer, uniformBuffer, storageBuffer, inputAttachment, max];
+	var uniformBufferDynamic = cast 10;
+	var storageBufferDynamic = cast 11;
+	var max = cast 12;
+	public static var values = [sampler, samplerWithTexture, texture, image, textureBuffer, samplerWithTextureBuffer, imageBuffer, uniformBuffer, storageBuffer, inputAttachment, uniformBufferDynamic, storageBufferDynamic, max];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -26,7 +28,9 @@ enum abstract UniformType(Int) from Int to Int {
 			case "uniformBuffer": cast 7;
 			case "storageBuffer": cast 8;
 			case "inputAttachment": cast 9;
-			case "max": cast 10;
+			case "uniformBufferDynamic": cast 10;
+			case "storageBufferDynamic": cast 11;
+			case "max": cast 12;
 			case _: null;
 		}
 	}

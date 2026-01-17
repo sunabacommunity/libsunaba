@@ -19,6 +19,14 @@ class Compositor extends Resource {
         scriptLoader.call('loadScript', args);
     }
 
+    public var compositorEffects(get, set): ArrayList;
+    function get_compositorEffects(): ArrayList {
+        return native.get('compositor_effects');
+    }
+    function set_compositorEffects(value: ArrayList): ArrayList {
+      native.set('compositor_effects', value);
+        return value;
+    }
 
 
 }

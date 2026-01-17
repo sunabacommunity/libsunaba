@@ -725,6 +725,16 @@ class TextEdit extends Control {
       var args = new ArrayList();
       return native.call('get_line_height', args);
   }
+  public function getLineRangesFromCarets(?onlySelections: Bool, ?mergeAdjacent: Bool): ArrayList {
+      var args = new ArrayList();
+      if (onlySelections != null) {
+          args.append(onlySelections);
+      }
+      if (mergeAdjacent != null) {
+          args.append(mergeAdjacent);
+      }
+      return native.call('get_line_ranges_from_carets', args);
+  }
   public function getLineWidth(line: Int, ?wrapIndex: Int): Int {
       var args = new ArrayList();
       args.append(line);

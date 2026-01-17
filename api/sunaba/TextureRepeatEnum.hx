@@ -1,18 +1,20 @@
 package sunaba;
 
 enum abstract TextureRepeatEnum(Int) from Int to Int {
-	var _default = cast 0;
-	var enabled = cast 1;
-	var disabled = cast 2;
-	var max = cast 3;
-	public static var values = [_default, enabled, disabled, max];
+	var parentNode = cast 0;
+	var disabled = cast 1;
+	var enabled = cast 2;
+	var mirror = cast 3;
+	var max = cast 4;
+	public static var values = [parentNode, disabled, enabled, mirror, max];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "_default": cast 0;
-			case "enabled": cast 1;
-			case "disabled": cast 2;
-			case "max": cast 3;
+			case "parentNode": cast 0;
+			case "disabled": cast 1;
+			case "enabled": cast 2;
+			case "mirror": cast 3;
+			case "max": cast 4;
 			case _: null;
 		}
 	}

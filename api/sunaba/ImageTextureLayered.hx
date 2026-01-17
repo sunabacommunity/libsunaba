@@ -21,7 +21,7 @@ class ImageTextureLayered extends TextureLayered {
 
 
 
-  public function createFromImages(images: Variant): Int {
+  public function createFromImages(images: ArrayList): Int {
       var args = new ArrayList();
       args.append(images);
       return native.call('create_from_images', args);

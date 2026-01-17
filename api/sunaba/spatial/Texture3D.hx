@@ -28,6 +28,10 @@ class Texture3D extends Texture {
       var ref: NativeReference = native.call('create_placeholder', args);
       return new Resource(ref);
   }
+  public function getData(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_data', args);
+  }
   public function getDepth(): Int {
       var args = new ArrayList();
       return native.call('get_depth', args);

@@ -39,6 +39,19 @@ class Noise extends Resource {
       var ref: NativeReference = native.call('get_image', args);
       return new Image(ref);
   }
+  public function getImage3d(width: Int, height: Int, depth: Int, ?invert: Bool, ?normalize: Bool): ArrayList {
+      var args = new ArrayList();
+      args.append(width);
+      args.append(height);
+      args.append(depth);
+      if (invert != null) {
+          args.append(invert);
+      }
+      if (normalize != null) {
+          args.append(normalize);
+      }
+      return native.call('get_image_3d', args);
+  }
   public function getNoise1d(x: Float): Float {
       var args = new ArrayList();
       args.append(x);
@@ -85,5 +98,21 @@ class Noise extends Resource {
       }
       var ref: NativeReference = native.call('get_seamless_image', args);
       return new Image(ref);
+  }
+  public function getSeamlessImage3d(width: Int, height: Int, depth: Int, ?invert: Bool, ?skirt: Float, ?normalize: Bool): ArrayList {
+      var args = new ArrayList();
+      args.append(width);
+      args.append(height);
+      args.append(depth);
+      if (invert != null) {
+          args.append(invert);
+      }
+      if (skirt != null) {
+          args.append(skirt);
+      }
+      if (normalize != null) {
+          args.append(normalize);
+      }
+      return native.call('get_seamless_image_3d', args);
   }
 }

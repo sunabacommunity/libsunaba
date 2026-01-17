@@ -1,16 +1,16 @@
 package sunaba;
 
 enum abstract BlendModeEnum(Int) from Int to Int {
-	var add = cast 0;
-	var sub = cast 1;
-	var mix = cast 2;
-	public static var values = [add, sub, mix];
+	var interpolated = cast 0;
+	var discrete = cast 1;
+	var discreteCarry = cast 2;
+	public static var values = [interpolated, discrete, discreteCarry];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "add": cast 0;
-			case "sub": cast 1;
-			case "mix": cast 2;
+			case "interpolated": cast 0;
+			case "discrete": cast 1;
+			case "discreteCarry": cast 2;
 			case _: null;
 		}
 	}

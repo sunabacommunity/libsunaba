@@ -1,20 +1,16 @@
 package sunaba;
 
 enum abstract UpdateMode(Int) from Int to Int {
-	var disabled = cast 0;
-	var once = cast 1;
-	var whenVisible = cast 2;
-	var whenParentVisible = cast 3;
-	var always = cast 4;
-	public static var values = [disabled, once, whenVisible, whenParentVisible, always];
+	var continuous = cast 0;
+	var discrete = cast 1;
+	var capture = cast 2;
+	public static var values = [continuous, discrete, capture];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "disabled": cast 0;
-			case "once": cast 1;
-			case "whenVisible": cast 2;
-			case "whenParentVisible": cast 3;
-			case "always": cast 4;
+			case "continuous": cast 0;
+			case "discrete": cast 1;
+			case "capture": cast 2;
 			case _: null;
 		}
 	}

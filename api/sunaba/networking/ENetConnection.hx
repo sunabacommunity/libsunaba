@@ -122,6 +122,10 @@ class ENetConnection extends Reference {
       var args = new ArrayList();
       return native.call('get_max_channels', args);
   }
+  public function getPeers(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_peers', args);
+  }
   public function popStatistic(statistic: Int): Float {
       var args = new ArrayList();
       args.append(statistic);

@@ -8,7 +8,9 @@ enum abstract Customization(Int) from Int to Int {
 	var favorites = cast 4;
 	var recent = cast 5;
 	var layout = cast 6;
-	public static var values = [hiddenFiles, createFolder, fileFilter, fileSort, favorites, recent, layout];
+	var overwriteWarning = cast 7;
+	var delete = cast 8;
+	public static var values = [hiddenFiles, createFolder, fileFilter, fileSort, favorites, recent, layout, overwriteWarning, delete];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -19,6 +21,8 @@ enum abstract Customization(Int) from Int to Int {
 			case "favorites": cast 4;
 			case "recent": cast 5;
 			case "layout": cast 6;
+			case "overwriteWarning": cast 7;
+			case "delete": cast 8;
 			case _: null;
 		}
 	}

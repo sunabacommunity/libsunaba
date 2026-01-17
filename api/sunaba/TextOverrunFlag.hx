@@ -7,7 +7,8 @@ enum abstract TextOverrunFlag(Int) from Int to Int {
 	var addEllipsis = cast 4;
 	var enforceEllipsis = cast 8;
 	var justificationAware = cast 16;
-	public static var values = [noTrim, trim, trimWordOnly, addEllipsis, enforceEllipsis, justificationAware];
+	var shortStringEllipsis = cast 32;
+	public static var values = [noTrim, trim, trimWordOnly, addEllipsis, enforceEllipsis, justificationAware, shortStringEllipsis];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
@@ -17,6 +18,7 @@ enum abstract TextOverrunFlag(Int) from Int to Int {
 			case "addEllipsis": cast 4;
 			case "enforceEllipsis": cast 8;
 			case "justificationAware": cast 16;
+			case "shortStringEllipsis": cast 32;
 			case _: null;
 		}
 	}

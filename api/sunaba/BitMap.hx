@@ -66,6 +66,14 @@ class BitMap extends Resource {
       args.append(rect);
       native.call('grow_mask', args);
   }
+  public function opaqueToPolygons(rect: Rect2i, ?epsilon: Float): ArrayList {
+      var args = new ArrayList();
+      args.append(rect);
+      if (epsilon != null) {
+          args.append(epsilon);
+      }
+      return native.call('opaque_to_polygons', args);
+  }
   public function resize(newSize: Vector2i): Void {
       var args = new ArrayList();
       args.append(newSize);
