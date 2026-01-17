@@ -1,18 +1,16 @@
 package sunaba;
 
 enum abstract AlignmentMode(Int) from Int to Int {
-	var left = cast 0;
+	var begin = cast 0;
 	var center = cast 1;
-	var right = cast 2;
-	var max = cast 3;
-	public static var values = [left, center, right, max];
+	var end = cast 2;
+	public static var values = [begin, center, end];
 
 	public static function fromString(s:String):Null<Int> {
 		return switch (s) {
-			case "left": cast 0;
+			case "begin": cast 0;
 			case "center": cast 1;
-			case "right": cast 2;
-			case "max": cast 3;
+			case "end": cast 2;
 			case _: null;
 		}
 	}
