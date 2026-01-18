@@ -25,6 +25,7 @@ class MapFile extends BaseClass {
         var mapNodeEntity = new Entity();
         var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
         mapNodeTransform.node = mapNode;
+        mapNodeEntity.name = "MapEntity";
 
         var mapContents = io.loadText(path);
         var newMapPath = "user://" + path.split("/").pop();
