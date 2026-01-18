@@ -40,6 +40,12 @@ class AppView extends Runtime {
 		native.call("load_app", args);
 	}
 
+	public function loadLibrary(path: String): Void {
+		var args = new ArrayList();
+		args.append(path);
+		native.call("load_library", args);
+	}
+
 	public function enableDebugging() {
 		var args = new ArrayList();
 		native.call("enable_debugging", args);
