@@ -1,5 +1,6 @@
 package sunaba.core;
 
+import haxe.crypto.Base64;
 import haxe.io.Bytes;
 
 @:native("ByteArray")
@@ -45,7 +46,25 @@ class ByteArrayUtils {
 		return bytes;
 	}
 
+	public static inline function binaryDataToBase64(binaryData: ByteArray) : String {
+		var size = binaryData.size();
+		var bytes = Bytes.alloc(size);
+		for (i in 0...size) {
+			bytes.set(i, binaryData.get(i).getInt());
+		}
+		return Base64.encode(bytes);
+	}
+
 	public static inline function bytesToBinaryData(bytes: Bytes) : ByteArray {
+		var binaryData = new ByteArray();
+		for (i in 0...bytes.length) {
+			binaryData.append(ByteObject.fromInt(bytes.get(i)));
+		}
+		return binaryData;
+	}
+
+	public static inline function base64ToBinaryData(base64: String) : ByteArray {
+		var bytes = Base64.decode(base64);
 		var binaryData = new ByteArray();
 		for (i in 0...bytes.length) {
 			binaryData.append(ByteObject.fromInt(bytes.get(i)));
