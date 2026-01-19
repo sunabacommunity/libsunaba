@@ -1,0 +1,315 @@
+{
+	"children": [
+		{
+			"children": [
+				{
+					"children": [],
+					"classType": "sunaba.EntityData",
+					"components": [
+						{
+							"data": {
+								"position": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.542878031730652,
+										0.0
+									]
+								},
+								"rotation": {
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								"scale": {
+									"type": 9,
+									"value": [
+										1.0,
+										1.0,
+										1.0
+									]
+								}
+							},
+							"type": "sunaba.spatial.SpatialTransform"
+						},
+						{
+							"data": {
+								"cullMask": 1048575,
+								"current": false,
+								"dopplerTracking": 0,
+								"far": 4000.0,
+								"fov": 75.0,
+								"frustumOffset": {
+									"type": 5,
+									"value": [
+										0.0,
+										0.0
+									]
+								},
+								"hOffset": 0.0,
+								"keepAspect": 1.0,
+								"near": 0.0500000007450581,
+								"projection": 0,
+								"size": 1.0,
+								"vOffset": 0.0
+							},
+							"type": "sunaba.spatial.Camera"
+						}
+					],
+					"name": "Camera",
+					"path": ""
+				}
+			],
+			"classType": "sunaba.EntityData",
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								0.0,
+								1.0,
+								0.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				},
+				{
+					"data": {
+						"castShadow": 1,
+						"customAabb": {
+							"type": 16,
+							"value": [
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								}
+							]
+						},
+						"extraCullMargin": 0.0,
+						"giMode": 1,
+						"ignoreOcclusionCulling": false,
+						"layerMask": 0,
+						"lightmapScale": 0,
+						"lightmapTexelScale": 0.0,
+						"lodBias": 1.0,
+						"skeleton": "..",
+						"sortingOffset": 0.0,
+						"sortingUseAabbCenter": true,
+						"transparancy": 0.0,
+						"visibilityRangeBegin": 0.0,
+						"visibilityRangeBeginMargin": 0.0,
+						"visibilityRangeEnd": 0.0,
+						"visibilityRangeEndMargin": 0.0,
+						"visibilityRangeFadeMode": 0.0
+					},
+					"type": "sunaba.spatial.mesh.MeshDisplay"
+				},
+				{
+					"data": {
+						"addUv2": false,
+						"customAabb": {
+							"type": 16,
+							"value": [
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								},
+								{
+									"type": 9,
+									"value": [
+										0.0,
+										0.0,
+										0.0
+									]
+								}
+							]
+						},
+						"flipFaces": false,
+						"height": 2.0,
+						"material": {
+							"type": 24,
+							"value": {
+								"class": "Material",
+								"path": "?",
+								"properties": {
+									"next_pass": {
+										"type": 24
+									},
+									"render_priority": {
+										"type": 2,
+										"value": 0
+									},
+									"resource_local_to_scene": {
+										"type": 1,
+										"value": false
+									},
+									"resource_name": {
+										"type": 4,
+										"value": ""
+									},
+									"resource_path": {
+										"type": 4,
+										"value": ""
+									},
+									"resource_scene_unique_id": {
+										"type": 4,
+										"value": ""
+									}
+								}
+							}
+						},
+						"radialSegments": 64,
+						"radius": 0.5,
+						"rings": 8,
+						"uv2Padding": 2.0
+					},
+					"type": "sunaba.spatial.mesh.CapsuleMesh"
+				},
+				{
+					"data": {
+						"axisLockAngularX": false,
+						"axisLockAngularY": false,
+						"axisLockAngularZ": false,
+						"axisLockLinearX": false,
+						"axisLockLinearY": false,
+						"axisLockLinearZ": false,
+						"collisionLayer": 1,
+						"collisionMask": 1,
+						"collisionPriority": 1.0,
+						"disableMode": 0,
+						"floorBlockOnWall": true,
+						"floorConstantSpeed": false,
+						"floorMaxAngle": 0.785398185253143,
+						"floorSnapLength": 0.100000001490116,
+						"floorStopOnSlope": true,
+						"inputCaptureOnDrag": false,
+						"inputRayPickable": true,
+						"maxSlides": 6,
+						"motionMode": 0,
+						"platformFloorLayers": -1,
+						"platformOnLeave": 0,
+						"platformWallLayers": 0,
+						"safeMargin": 0.00100000004749745,
+						"slideOnCeiling": true,
+						"upDirection": {
+							"type": 9,
+							"value": [
+								0.0,
+								1.0,
+								0.0
+							]
+						},
+						"velocity": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"wallMinSlideAngle": 0.261799395084381
+					},
+					"type": "sunaba.spatial.physics.CharacterBody"
+				},
+				{
+					"data": {
+						"customSolverBias": 0.0,
+						"height": 2.0,
+						"margin": 0.0399999991059303,
+						"radius": 0.5
+					},
+					"type": "sunaba.spatial.physics.CapsuleShape"
+				}
+			],
+			"name": "Body",
+			"path": ""
+		}
+	],
+	"classType": "sunaba.Prefab",
+	"components": [
+		{
+			"data": {
+				"position": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"rotation": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"scale": {
+					"type": 9,
+					"value": [
+						1.0,
+						1.0,
+						1.0
+					]
+				}
+			},
+			"type": "sunaba.spatial.SpatialTransform"
+		}
+	],
+	"name": "Player",
+	"path": "app://Player.vpfb"
+}
