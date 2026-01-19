@@ -1,5 +1,9 @@
 package;
 
+import sunaba.Prefab;
+import sunaba.spatial.SpatialTransform;
+import sunaba.Debug;
+import sunaba.spatial.MapFile;
 import sunaba.App;
 import sunaba.SceneFile;
 import sunaba.Node;
@@ -23,10 +27,10 @@ class Main extends App {
 	}
 
 	public override function init() {
-		//var sceneFile = new SceneFile();
-		//sceneFile.load("app://Scene.vscn");
+		var mapFile = new MapFile("app://test1.map");
 
-		//var scene = sceneFile.instance();
+		var scene = mapFile.instantiate();
+		scene.isInEditor = false;
 
 		var envRes = ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
 		var environment = new Environment(envRes.native);
@@ -34,8 +38,19 @@ class Main extends App {
 		worldEnv.native.set("environment", environment.native);
 		rootNode.addChild(worldEnv);
 
-		//rootNode.addChild(scene);
+		rootNode.addChild(scene);
 
-		trace("");
+		var spawnPointEntity = scene.find("Spawn");
+		trace(spawnPointEntity == null);
+
+		var spawnPoint = spawnPointEntity.getComponent(SpatialTransform);
+		
+		var playerPrefab = new Prefab();
+		playerPrefab.load("app://Player.vpfb");
+
+		var player = playerPrefab.instance();
+		var playerTransform = player.getComponent(SpatialTransform);
+		playerTransform.transform = spawnPoint.transform;
+		scene.addEntity(player);
 	}
 }

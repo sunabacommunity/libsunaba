@@ -179,6 +179,6 @@
 {
 "classname" "func_prefab"
 "origin" "-120 -8 -24"
-"path" "app://Player.vpfb"
-"name" "Player"
+"path" "app://SpawnPoint.vpfb"
+"name" "Spawn"
 }
