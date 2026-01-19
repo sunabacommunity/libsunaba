@@ -22,7 +22,7 @@ class MapFile extends BaseClass {
 
     public function new(p: String) {
         path = p;
-        textureDirs.push("basetxt://textures/");
+        textureDirs.push("basetxt://blockout/textures/");
         io = new IoManager(untyped __lua__("_G.__ioManager"));
     }
 
