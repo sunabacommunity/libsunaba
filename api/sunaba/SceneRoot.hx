@@ -93,9 +93,12 @@ class SceneRoot extends Node {
 	}
 
 	public override function onExitTree() {
-		for (entity in entities) {
-			entity.exitTree();
+		if (entities != null) {
+			for (entity in entities) {
+				entity.exitTree();
+			}
 		}
+		
 	}
 
 	public override function onReady() {
@@ -144,6 +147,7 @@ class SceneRoot extends Node {
 
 	public function destroy() {
 		for (entity in entities) {
+			entity.exitTree();
 			entity.destroy();
 		}
 		entities = null;
