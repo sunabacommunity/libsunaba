@@ -1,5 +1,6 @@
 package sunaba.spatial;
 
+import sunaba.core.Signal;
 import haxe.Json;
 import sunaba.core.ByteArray.ByteArrayUtils;
 import lua.Coroutine;
@@ -8,6 +9,7 @@ import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
 import sunaba.core.native.NativeObject;
 import sunaba.core.native.ScriptType;
+import sunaba.core.VariantType;
 
 class MapFile extends BaseClass {
     public var path: String;
@@ -78,11 +80,40 @@ class MapFile extends BaseClass {
         var mapSettings: NativeReference = mapNativeObj.get("map_settings");
         mapSettings.set("base_texture_dir", realTextureDir);
 
+        var sceneNode = new SceneRoot();
+        
+        var buildComplete = Signal.createFromObject(mapNativeObj, "build_complete");
+        buildComplete.add(() -> {
+            for (i in 0...mapNode.getChildCount()) {
+                var node = mapNode.getChild(i);
+                if (node.native.get("map_properties").getType() == VariantType.dictionary) {
+                    var prefabPath: String = node.native.get("prefab_path");
+                    var prefabName: String = node.native.get("prefab_name");
+                    trace(prefabName);
+                    trace(prefabPath);
+
+                    var prefab: Prefab = new Prefab();
+                    prefab.load(prefabPath);
+
+                    var prefabEntity = prefab.instance();
+                    prefabEntity.name = prefabName;
+                    var prefabTranform = prefabEntity.getComponent(SpatialTransform);
+                    if (prefabTranform != null) {
+                        prefabTranform.transform = node.native.get("transform");
+                    }
+                    sceneNode.addEntity(prefabEntity);
+                }
+            }
+        });
+        var buildFailed = Signal.createFromObject(mapNativeObj, "build_failed");
+        buildFailed.add(()-> {
+            throw "Failed to build map";
+        });
+
         var realMapPath = io.getFilePath(newMapPath);
         mapNativeObj.set("local_map_file", realMapPath);
         mapNativeObj.call("build", new ArrayList());
 
-        var sceneNode = new SceneRoot();
         sceneNode.addEntity(mapNodeEntity);
         return sceneNode;
     }
@@ -162,13 +193,44 @@ class MapFile extends BaseClass {
         mapSettings.set("base_texture_dir", realTextureDir);
         Coroutine.yield();
 
+        var sceneNode = new SceneRoot();
+        Coroutine.yield();
+
+        var buildComplete = Signal.createFromObject(mapNativeObj, "build_complete");
+        buildComplete.add(() -> {
+            for (i in 0...mapNode.getChildCount()) {
+                var node = mapNode.getChild(i);
+                if (node.native.get("map_properties").getType() == VariantType.dictionary) {
+                    var prefabPath: String = node.native.get("prefab_path");
+                    var prefabName: String = node.native.get("prefab_name");
+                    trace(prefabName);
+                    trace(prefabPath);
+
+                    var prefab: Prefab = new Prefab();
+                    prefab.load(prefabPath);
+
+                    var prefabEntity = prefab.instance();
+                    prefabEntity.name = prefabName;
+                    var prefabTranform = prefabEntity.getComponent(SpatialTransform);
+                    if (prefabTranform != null) {
+                        prefabTranform.transform = node.native.get("transform");
+                    }
+                    sceneNode.addEntity(prefabEntity);
+                }
+            }
+        });
+        var buildFailed = Signal.createFromObject(mapNativeObj, "build_failed");
+        buildFailed.add(()-> {
+            throw "Failed to build map";
+        });
+        Coroutine.yield();
+
         var realMapPath = io.getFilePath(newMapPath);
         mapNativeObj.set("local_map_file", realMapPath);
         Coroutine.yield();
         mapNativeObj.call("build", new ArrayList());
         Coroutine.yield();
 
-        var sceneNode = new SceneRoot();
         sceneNode.addEntity(mapNodeEntity);
         Coroutine.yield();
         return sceneNode;
