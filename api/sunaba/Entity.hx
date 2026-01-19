@@ -278,6 +278,11 @@ class Entity extends BaseClass {
 			comp.onStart();
 		}
 		for (child in children) {
+			if (child.scene == null) {
+				if (scene != null) {
+					child.scene = scene;
+				}
+			}
 			child.start();
 		}
 		_started = true;
