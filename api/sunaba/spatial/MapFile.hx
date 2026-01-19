@@ -1,5 +1,8 @@
 package sunaba.spatial;
 
+import haxe.Json;
+import sunaba.core.ByteArray.ByteArrayUtils;
+import lua.Coroutine;
 import sunaba.io.IoManager;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
@@ -22,6 +25,7 @@ class MapFile extends BaseClass {
     public function instantiate() {
         var mapNativeObj: NativeObject = new NativeReference("res://Engine/MapSceneInstancer.cs", new ArrayList(), ScriptType.csharp).call("Instantiate", new ArrayList());
         var mapNode = new Node(mapNativeObj);
+        mapNode.sceneFilePath = "";
         var mapNodeEntity = new Entity();
         var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
         mapNodeTransform.node = mapNode;
@@ -35,25 +39,138 @@ class MapFile extends BaseClass {
         if (!io.directoryExists(newTextureDir)) {
             io.createDirectory(newTextureDir);
         }
+        var savedTextures: Array<String> = new Array();
+        var savedTexturesJsonPath = newTextureDir + "saveTextures.json";
+        if (io.fileExists(savedTexturesJsonPath)) {
+            savedTextures = Json.parse(io.loadText(savedTexturesJsonPath));
+        }
         for (textureDir in textureDirs) {
             var textureList = io.getFileList(textureDir);
             for (i in 0...textureList.size()) {
-                var texturePath: String = textureList.get(i);
+                var texturePath: String = textureList.get(i);Coroutine.yield();
+                if (StringTools.endsWith(texturePath, "/")) {
+                    continue;
+                }
+                if (savedTextures.contains(texturePath)) {
+                    continue;
+                }
+                else {
+                    savedTextures.push(texturePath);
+                }
                 var textureData = io.loadBytes(texturePath);
-                var newTexturePath = newTextureDir + texturePath.split("/").pop();
+                var texturePathArray = texturePath.split("/");
+                var newTexturePath = newTextureDir + texturePathArray.pop();
+                var texturePathDirArray = texturePathArray.slice(0, texturePathArray.length - 1);
+                var newTexturePathDir = texturePathDirArray.join("/");
+                if (!StringTools.endsWith(newTexturePathDir, "/")) {
+                    newTexturePathDir += "/";
+                }
+                if (!io.directoryExists(newTexturePathDir)) {
+                    io.createDirectory(newTexturePathDir);
+                }
+                trace(newTexturePath);
                 io.saveBytes(newTexturePath, textureData);
             }
         }
+        io.saveText(savedTexturesJsonPath, Json.stringify(savedTextures));
         var realTextureDir = io.getFilePath(newTextureDir);
 
         var mapSettings: NativeReference = mapNativeObj.get("map_settings");
         mapSettings.set("base_texture_dir", realTextureDir);
 
-        mapNativeObj.set("local_map_file", io.getFilePath(newMapPath));
+        var realMapPath = io.getFilePath(newMapPath);
+        mapNativeObj.set("local_map_file", realMapPath);
         mapNativeObj.call("build", new ArrayList());
 
         var sceneNode = new SceneRoot();
         sceneNode.addEntity(mapNodeEntity);
+        return sceneNode;
+    }
+
+    public function instantiateCoroutine() {
+        var mapNativeObj: NativeObject = new NativeReference("res://Engine/MapSceneInstancer.cs", new ArrayList(), ScriptType.csharp).call("Instantiate", new ArrayList());
+        var mapNode = new Node(mapNativeObj);
+        mapNode.sceneFilePath = "";
+        var mapNodeEntity = new Entity();
+        var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
+        mapNodeTransform.node = mapNode;
+        mapNodeEntity.name = "MapEntity";
+        Coroutine.yield();
+
+        var mapContents = io.loadText(path);
+        var newMapPath = "user://" + path.split("/").pop();
+        io.saveText(newMapPath, mapContents);
+        Coroutine.yield();
+
+        var newTextureDir = "user://textures/";
+        if (!io.directoryExists(newTextureDir)) {
+            io.createDirectory(newTextureDir);
+        }
+        var savedTextures: Array<String> = new Array();
+        var savedTexturesJsonPath = newTextureDir + "saveTextures.json";
+        if (io.fileExists(savedTexturesJsonPath)) {
+            savedTextures = Json.parse(io.loadText(savedTexturesJsonPath));
+        }
+        Coroutine.yield();
+        for (textureDir in textureDirs) {
+            Coroutine.yield();
+            var textureList = io.getFileList(textureDir);
+            Coroutine.yield();
+            for (i in 0...textureList.size()) {
+                var texturePath: String = textureList.get(i);
+                if (StringTools.endsWith(texturePath, "/")) {
+                    continue;
+                }
+                if (savedTextures.contains(texturePath)) {
+                    continue;
+                }
+                else {
+                    savedTextures.push(texturePath);
+                }
+                var textureData = io.loadBytes(texturePath);
+                var texturePathArray = texturePath.split("/");
+                var texturePathDirArray = texturePathArray.slice(0, texturePathArray.length - 1);
+                var newTexturePathDir = texturePathDirArray.join("/");
+                newTexturePathDir = StringTools.replace(newTexturePathDir, textureDir, newTextureDir);
+                if (!StringTools.endsWith(newTexturePathDir, "/")) {
+                    newTexturePathDir += "/";
+                }
+                if(!io.directoryExists(newTexturePathDir)) {
+                    io.createDirectory(newTexturePathDir);
+                }
+                var newTexturePath = newTexturePathDir + texturePathArray.pop();
+                trace(newTexturePath);
+                if (io.fileExists(newTexturePath)) {
+                    if (ByteArrayUtils.binaryDataToBase64(io.loadBytes(newTexturePath)) == ByteArrayUtils.binaryDataToBase64(textureData)) {
+                        Coroutine.yield();
+                        continue;
+                    }
+                }
+                io.saveBytes(newTexturePath, textureData);
+                Coroutine.yield();
+            }
+            Coroutine.yield();
+        }
+        Coroutine.yield();
+        io.saveText(savedTexturesJsonPath, Json.stringify(savedTextures));
+        Coroutine.yield();
+        var realTextureDir = io.getFilePath(newTextureDir);
+        Coroutine.yield();
+        trace(realTextureDir);
+
+        var mapSettings: NativeReference = mapNativeObj.get("map_settings");
+        mapSettings.set("base_texture_dir", realTextureDir);
+        Coroutine.yield();
+
+        var realMapPath = io.getFilePath(newMapPath);
+        mapNativeObj.set("local_map_file", realMapPath);
+        Coroutine.yield();
+        mapNativeObj.call("build", new ArrayList());
+        Coroutine.yield();
+
+        var sceneNode = new SceneRoot();
+        sceneNode.addEntity(mapNodeEntity);
+        Coroutine.yield();
         return sceneNode;
     }
 }
