@@ -175,3 +175,10 @@
 ( -16 160 -16 ) ( -16 160 -15 ) ( -16 161 -16 ) blockout/blue_light_check [ 0 1 0 0 ] [ 0 0 -1 0 ] 90 0.0625 0.0625
 }
 }
+// entity 5
+{
+"classname" "func_prefab"
+"origin" "-120 -8 -24"
+"path" "app://Player.vpfb"
+"name" "Player"
+}
