@@ -18,10 +18,17 @@ class MapFile extends BaseClass {
 
     public var io: IoManager;
 
+    public var isRunningInCoroutine: Bool = false;
+
     public function new(p: String) {
         path = p;
         textureDirs.push("basetxt://textures/");
         io = new IoManager(untyped __lua__("_G.__ioManager"));
+    }
+
+    private inline function yield() {
+        if (isRunningInCoroutine == true)
+            Coroutine.yield();
     }
 
     public function instantiate() {
@@ -32,10 +39,12 @@ class MapFile extends BaseClass {
         var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
         mapNodeTransform.node = mapNode;
         mapNodeEntity.name = "MapEntity";
+        yield();
 
         var mapContents = io.loadText(path);
         var newMapPath = "user://" + path.split("/").pop();
         io.saveText(newMapPath, mapContents);
+        yield();
 
         var newTextureDir = "user://textures/";
         if (!io.directoryExists(newTextureDir)) {
@@ -46,107 +55,11 @@ class MapFile extends BaseClass {
         if (io.fileExists(savedTexturesJsonPath)) {
             savedTextures = Json.parse(io.loadText(savedTexturesJsonPath));
         }
+        yield();
         for (textureDir in textureDirs) {
+            yield();
             var textureList = io.getFileList(textureDir);
-            for (i in 0...textureList.size()) {
-                var texturePath: String = textureList.get(i);Coroutine.yield();
-                if (StringTools.endsWith(texturePath, "/")) {
-                    continue;
-                }
-                if (savedTextures.contains(texturePath)) {
-                    continue;
-                }
-                else {
-                    savedTextures.push(texturePath);
-                }
-                var textureData = io.loadBytes(texturePath);
-                var texturePathArray = texturePath.split("/");
-                var newTexturePath = newTextureDir + texturePathArray.pop();
-                var texturePathDirArray = texturePathArray.slice(0, texturePathArray.length - 1);
-                var newTexturePathDir = texturePathDirArray.join("/");
-                if (!StringTools.endsWith(newTexturePathDir, "/")) {
-                    newTexturePathDir += "/";
-                }
-                if (!io.directoryExists(newTexturePathDir)) {
-                    io.createDirectory(newTexturePathDir);
-                }
-                trace(newTexturePath);
-                io.saveBytes(newTexturePath, textureData);
-            }
-        }
-        io.saveText(savedTexturesJsonPath, Json.stringify(savedTextures));
-        var realTextureDir = io.getFilePath(newTextureDir);
-
-        var mapSettings: NativeReference = mapNativeObj.get("map_settings");
-        mapSettings.set("base_texture_dir", realTextureDir);
-
-        var sceneNode = new SceneRoot();
-        
-        var buildComplete = Signal.createFromObject(mapNativeObj, "build_complete");
-        buildComplete.add(() -> {
-            for (i in 0...mapNode.getChildCount()) {
-                var node = mapNode.getChild(i);
-                if (node.native.get("map_properties").getType() == VariantType.dictionary) {
-                    var prefabPath: String = node.native.get("prefab_path");
-                    var prefabName: String = node.native.get("prefab_name");
-                    trace(prefabName);
-                    trace(prefabPath);
-
-                    var prefab: Prefab = new Prefab();
-                    prefab.load(prefabPath);
-
-                    var prefabEntity = prefab.instance();
-                    prefabEntity.name = prefabName;
-                    var prefabTranform = prefabEntity.getComponent(SpatialTransform);
-                    if (prefabTranform != null) {
-                        prefabTranform.transform = node.native.get("transform");
-                    }
-                    sceneNode.addEntity(prefabEntity);
-                }
-            }
-        });
-        var buildFailed = Signal.createFromObject(mapNativeObj, "build_failed");
-        buildFailed.add(()-> {
-            throw "Failed to build map";
-        });
-
-        var realMapPath = io.getFilePath(newMapPath);
-        mapNativeObj.set("local_map_file", realMapPath);
-        mapNativeObj.call("build", new ArrayList());
-
-        sceneNode.addEntity(mapNodeEntity);
-        return sceneNode;
-    }
-
-    public function instantiateCoroutine() {
-        var mapNativeObj: NativeObject = new NativeReference("res://Engine/MapSceneInstancer.cs", new ArrayList(), ScriptType.csharp).call("Instantiate", new ArrayList());
-        var mapNode = new Node(mapNativeObj);
-        mapNode.sceneFilePath = "";
-        var mapNodeEntity = new Entity();
-        var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
-        mapNodeTransform.node = mapNode;
-        mapNodeEntity.name = "MapEntity";
-        Coroutine.yield();
-
-        var mapContents = io.loadText(path);
-        var newMapPath = "user://" + path.split("/").pop();
-        io.saveText(newMapPath, mapContents);
-        Coroutine.yield();
-
-        var newTextureDir = "user://textures/";
-        if (!io.directoryExists(newTextureDir)) {
-            io.createDirectory(newTextureDir);
-        }
-        var savedTextures: Array<String> = new Array();
-        var savedTexturesJsonPath = newTextureDir + "saveTextures.json";
-        if (io.fileExists(savedTexturesJsonPath)) {
-            savedTextures = Json.parse(io.loadText(savedTexturesJsonPath));
-        }
-        Coroutine.yield();
-        for (textureDir in textureDirs) {
-            Coroutine.yield();
-            var textureList = io.getFileList(textureDir);
-            Coroutine.yield();
+            yield();
             for (i in 0...textureList.size()) {
                 var texturePath: String = textureList.get(i);
                 if (StringTools.endsWith(texturePath, "/")) {
@@ -173,28 +86,28 @@ class MapFile extends BaseClass {
                 trace(newTexturePath);
                 if (io.fileExists(newTexturePath)) {
                     if (ByteArrayUtils.binaryDataToBase64(io.loadBytes(newTexturePath)) == ByteArrayUtils.binaryDataToBase64(textureData)) {
-                        Coroutine.yield();
+                        yield();
                         continue;
                     }
                 }
                 io.saveBytes(newTexturePath, textureData);
-                Coroutine.yield();
+                yield();
             }
-            Coroutine.yield();
+            yield();
         }
-        Coroutine.yield();
+        yield();
         io.saveText(savedTexturesJsonPath, Json.stringify(savedTextures));
-        Coroutine.yield();
+        yield();
         var realTextureDir = io.getFilePath(newTextureDir);
-        Coroutine.yield();
+        yield();
         trace(realTextureDir);
 
         var mapSettings: NativeReference = mapNativeObj.get("map_settings");
         mapSettings.set("base_texture_dir", realTextureDir);
-        Coroutine.yield();
+        yield();
 
         var sceneNode = new SceneRoot();
-        Coroutine.yield();
+        yield();
 
         var buildComplete = Signal.createFromObject(mapNativeObj, "build_complete");
         buildComplete.add(() -> {
@@ -223,16 +136,16 @@ class MapFile extends BaseClass {
         buildFailed.add(()-> {
             throw "Failed to build map";
         });
-        Coroutine.yield();
+        yield();
 
         var realMapPath = io.getFilePath(newMapPath);
         mapNativeObj.set("local_map_file", realMapPath);
-        Coroutine.yield();
+        yield();
         mapNativeObj.call("build", new ArrayList());
-        Coroutine.yield();
+        yield();
 
         sceneNode.addEntity(mapNodeEntity);
-        Coroutine.yield();
+        yield();
         return sceneNode;
     }
 }
