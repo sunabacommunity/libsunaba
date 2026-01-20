@@ -182,3 +182,11 @@
 "path" "app://SpawnPoint.vpfb"
 "name" "Spawn"
 }
+// entity 6
+{
+"classname" "func_prefab"
+"origin" "-8 -8 -24"
+"path" "app://DirectionalLight.vpfb"
+"name" "DirectionalLight"
+"angle" "0"
+}
