@@ -62,10 +62,10 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y gcc-multilib g++-multilib
 
-      - name: Install make
+      - name: Install arm deps
         if: ${{ matrix.target.platform == 'linux' && matrix.target.os == 'ubuntu-22.04-arm-m' }}
         run: |
-          sudo apt-get update && sudo apt-get install -y make
+          sudo apt-get update && sudo apt-get install -y make gcc g++
     
       - name: Install MinGW
         if: ${{ matrix.target.platform == 'windows' && matrix.target.os == 'ubuntu-latest' }}
