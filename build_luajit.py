@@ -52,7 +52,19 @@ def build_luajit(env, extension=False):
                 if (host_arch == 'x86_64' and env['arch'] == 'x86_32'):
                     host_cc = env['luaapi_host_cc'] + ' -m32'
                     run('make HOST_CC="%s" CROSS="%s" BUILDMODE="static" CFLAGS="-fPIC"' % (host_cc, env['CC'].replace("-gcc", "-").replace("-clang", "-")))
-
+                elif env['arch'] in ['arm64', 'aarch64']:
+                    # Cross-compile to ARM64
+                    # Extract the cross-compiler prefix from CC if available
+                    cc = env.get('CC', '')
+                    if 'aarch64' in cc or 'arm64' in cc:
+                        # Use the provided cross-compiler
+                        cross_prefix = cc.replace("-gcc", "-").replace("-clang", "-")
+                    else:
+                        # Default to aarch64-linux-gnu- prefix
+                        cross_prefix = "aarch64-linux-gnu-"
+                    
+                    host_cc = env.get('luaapi_host_cc', 'gcc')
+                    run('make HOST_CC="%s" CROSS="%s" TARGET_SYS=Linux BUILDMODE="static" CFLAGS="-fPIC"' % (host_cc, cross_prefix))
                 else:
                     print("ERROR: Unsupported cross compile!")
                     sys.exit(-1)
