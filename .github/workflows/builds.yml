@@ -61,6 +61,11 @@ jobs:
         if: ${{ matrix.target.platform == 'linux' && matrix.target.arch == 'x86_32' }}
         run: |
           sudo apt-get update && sudo apt-get install -y gcc-multilib g++-multilib
+
+      - name: Install multilib support
+        if: ${{ matrix.target.platform == 'linux' && matrix.target.os == 'ubuntu-22.04-arm-m' }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y make
     
       - name: Install MinGW
         if: ${{ matrix.target.platform == 'windows' && matrix.target.os == 'ubuntu-latest' }}
