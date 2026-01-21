@@ -22,8 +22,8 @@ jobs:
           [
             { platform: linux, arch: x86_64, os: ubuntu-22.04, lua_runtime: luajit },
             #{ platform: linux, arch: x86_32, os: ubuntu-22.04, lua_runtime: luajit },
-            { platform: linux, arch: arm64, os: ubuntu-22.04-arm-m, lua_runtime: luajit },
-            { platform: linux, arch: arm32, os: ubuntu-22.04-arm-m, lua_runtime: luajit },
+            { platform: linux, arch: arm64, os: ubuntu-22.04-arm-m, lua_runtime: lua },
+            { platform: linux, arch: arm32, os: ubuntu-22.04-arm-m, lua_runtime: lua },
             { platform: windows, arch: x86_64, os: windows-latest, lua_runtime: luajit },
             { platform: windows, arch: x86_32, os: windows-latest, lua_runtime: luajit },
             { platform: windows, arch: arm64, os: windows-latest, lua_runtime: lua },
@@ -65,7 +65,7 @@ jobs:
       - name: Install arm deps
         if: ${{ matrix.target.platform == 'linux' && matrix.target.os == 'ubuntu-22.04-arm-m' }}
         run: |
-          sudo apt-get update && sudo apt-get install -y make gcc g++
+          sudo apt-get update && sudo apt-get install -y make gcc g++ build-essential
     
       - name: Install MinGW
         if: ${{ matrix.target.platform == 'windows' && matrix.target.os == 'ubuntu-latest' }}
