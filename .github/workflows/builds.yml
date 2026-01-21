@@ -62,7 +62,7 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y gcc-multilib g++-multilib
 
-      - name: Install multilib support
+      - name: Install make
         if: ${{ matrix.target.platform == 'linux' && matrix.target.os == 'ubuntu-22.04-arm-m' }}
         run: |
           sudo apt-get update && sudo apt-get install -y make
