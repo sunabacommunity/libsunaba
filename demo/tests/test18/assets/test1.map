@@ -181,6 +181,7 @@
 "origin" "-120 -8 -24"
 "path" "app://SpawnPoint.vpfb"
 "name" "Spawn"
+"test18.MyComponent/name" "World"
 }
 // entity 6
 {

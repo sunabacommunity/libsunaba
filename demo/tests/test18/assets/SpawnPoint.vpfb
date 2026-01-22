@@ -68,6 +68,12 @@
 				}
 			},
 			"type": "sunaba.spatial.SpatialTransform"
+		},
+		{
+			"data": {
+				"name": "<insert name here>"
+			},
+			"type": "test18.MyComponent"
 		}
 	],
 	"name": "SpawnPoint",
