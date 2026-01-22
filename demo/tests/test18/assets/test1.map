@@ -177,7 +177,7 @@
 }
 // entity 5
 {
-"classname" "func_prefab"
+"classname" "info_prefab"
 "origin" "-120 -8 -24"
 "path" "app://SpawnPoint.vpfb"
 "name" "Spawn"
