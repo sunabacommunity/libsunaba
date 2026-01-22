@@ -1,5 +1,8 @@
 package sunaba.spatial;
 
+import sunaba.core.VariantNative;
+import sunaba.core.Variant;
+import sunaba.core.Dictionary;
 import sunaba.core.Signal;
 import haxe.Json;
 import sunaba.core.ByteArray.ByteArrayUtils;
@@ -100,7 +103,6 @@ class MapFile extends BaseClass {
         yield();
         var realTextureDir = io.getFilePath(newTextureDir);
         yield();
-        trace(realTextureDir);
 
         var mapSettings: NativeReference = mapNativeObj.get("map_settings");
         mapSettings.set("base_texture_dir", realTextureDir);
@@ -116,8 +118,6 @@ class MapFile extends BaseClass {
                 if (node.native.get("map_properties").getType() == VariantType.dictionary) {
                     var prefabPath: String = node.native.get("prefab_path");
                     var prefabName: String = node.native.get("prefab_name");
-                    trace(prefabName);
-                    trace(prefabPath);
 
                     var prefab: Prefab = new Prefab();
                     prefab.load(prefabPath);
@@ -129,6 +129,59 @@ class MapFile extends BaseClass {
                         prefabTranform.transform = node.native.get("transform");
                     }
                     sceneNode.addEntity(prefabEntity);
+
+                    var mapProperties: Dictionary = node.native.get("map_properties");
+                    for (mapPropertyKeyV in mapProperties.keys()) {
+                        var mapPropertyKey: String = mapPropertyKeyV;
+                        var mapPropertyValueV = mapProperties.get(mapPropertyKey);
+                        if (mapPropertyValueV.getType() != VariantType.string) continue;
+                        var mapPropertyValue: String = mapPropertyValueV;
+                        
+                        if (StringTools.contains(mapPropertyKey, "/")) {
+                            var mapPropertyKeyArr = mapPropertyKey.split("/");
+                            var componentName = mapPropertyKeyArr[0];
+                            if (mapPropertyKeyArr.length != 2) continue;
+                            var componentPropertyName = mapPropertyKeyArr[1];
+
+                            for (prefabComponent in prefabEntity.getConponents()) {
+                                var componentClass = std.Type.getClass(prefabComponent);
+                                if (std.Type.getClassName(componentClass) == componentName) {
+                                    var data = prefabComponent.getData();
+                                    if (data.keys().has(componentPropertyName)) {
+                                        var ogPropertyValue = data.get(componentPropertyName);
+                                        var newPropertyValue: Variant = new VariantNative();
+                                        if (ogPropertyValue.getType() == VariantType.string) {
+                                            newPropertyValue = mapPropertyValue;
+                                        }
+                                        else if (ogPropertyValue.getType() == VariantType.int) {
+                                            newPropertyValue = Std.parseInt(mapPropertyValue);
+                                        }
+                                        else if (ogPropertyValue.getType() == VariantType.float) {
+                                            newPropertyValue = Std.parseFloat(mapPropertyValue);
+                                        }
+                                        else if (ogPropertyValue.getType() == VariantType.bool) {
+                                            if (mapPropertyValue == "false" || mapPropertyValue == "0") {
+                                                newPropertyValue = false;
+                                            }
+                                            else if (mapPropertyValue == "true" || mapPropertyValue == "1") {
+                                                newPropertyValue = true;
+                                            }
+                                        }
+                                        else if (ogPropertyValue.getType() == VariantType.dictionary) {
+                                            var propertyValueDict: Dictionary = ogPropertyValue;
+                                            var newPropertyValueDict = propertyValueDict.duplicate(true);
+                                            if (propertyValueDict.has("type") && propertyValueDict.has("value")) {
+                                                newPropertyValueDict.set("value", JSON.parseString(mapPropertyValue));
+                                            }
+                                            newPropertyValue = newPropertyValueDict;
+                                        }
+                                        data.set(componentPropertyName, newPropertyValue);
+                                    }
+                                    prefabComponent.setData(data);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
