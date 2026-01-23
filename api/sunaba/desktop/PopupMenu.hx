@@ -68,6 +68,22 @@ class PopupMenu extends Popup {
       native.set('prefer_native_menu', value);
         return value;
     }
+    public var shrinkHeight(get, set): Bool;
+    function get_shrinkHeight(): Bool {
+        return native.get('shrink_height');
+    }
+    function set_shrinkHeight(value: Bool): Bool {
+      native.set('shrink_height', value);
+        return value;
+    }
+    public var shrinkWidth(get, set): Bool;
+    function get_shrinkWidth(): Bool {
+        return native.get('shrink_width');
+    }
+    function set_shrinkWidth(value: Bool): Bool {
+      native.set('shrink_width', value);
+        return value;
+    }
     public var submenuPopupDelay(get, set): Float;
     function get_submenuPopupDelay(): Float {
         return native.get('submenu_popup_delay');

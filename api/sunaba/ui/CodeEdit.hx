@@ -117,6 +117,14 @@ class CodeEdit extends TextEdit {
       native.set('gutters_draw_line_numbers', value);
         return value;
     }
+    public var guttersLineNumbersMinDigits(get, set): Int;
+    function get_guttersLineNumbersMinDigits(): Int {
+        return native.get('gutters_line_numbers_min_digits');
+    }
+    function set_guttersLineNumbersMinDigits(value: Int): Int {
+      native.set('gutters_line_numbers_min_digits', value);
+        return value;
+    }
     public var guttersZeroPadLineNumbers(get, set): Bool;
     function get_guttersZeroPadLineNumbers(): Bool {
         return native.get('gutters_zero_pad_line_numbers');

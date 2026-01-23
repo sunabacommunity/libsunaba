@@ -7,6 +7,7 @@ import sunaba.core.Reference;
 import sunaba.core.Object;
 import sunaba.core.ArrayList;
 import sunaba.OggPacketSequence;
+import sunaba.core.Dictionary;
 import sunaba.core.Signal;
 import sunaba.core.ByteArray;
 
@@ -68,6 +69,14 @@ class AudioStreamOggVorbis extends AudioStream {
     }
     function set_packetSequence(value: OggPacketSequence): OggPacketSequence {
       native.set('packet_sequence', value.native);
+        return value;
+    }
+    public var tags(get, set): Dictionary;
+    function get_tags(): Dictionary {
+        return native.get('tags');
+    }
+    function set_tags(value: Dictionary): Dictionary {
+      native.set('tags', value);
         return value;
     }
 

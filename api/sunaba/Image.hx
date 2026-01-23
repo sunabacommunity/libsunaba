@@ -286,6 +286,11 @@ class Image extends Resource {
       args.append(buffer);
       return native.call('load_dds_from_buffer', args);
   }
+  public function loadExrFromBuffer(buffer: ByteArray): Int {
+      var args = new ArrayList();
+      args.append(buffer);
+      return native.call('load_exr_from_buffer', args);
+  }
   public static function loadFromFile(path: String): Image {
       var args = new ArrayList();
       args.append(path);

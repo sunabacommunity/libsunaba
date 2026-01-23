@@ -681,6 +681,22 @@ class Environment extends Resource {
       native.set('ssr_max_steps', value);
         return value;
     }
+    public var tonemapAgxContrast(get, set): Float;
+    function get_tonemapAgxContrast(): Float {
+        return native.get('tonemap_agx_contrast');
+    }
+    function set_tonemapAgxContrast(value: Float): Float {
+      native.set('tonemap_agx_contrast', value);
+        return value;
+    }
+    public var tonemapAgxWhite(get, set): Float;
+    function get_tonemapAgxWhite(): Float {
+        return native.get('tonemap_agx_white');
+    }
+    function set_tonemapAgxWhite(value: Float): Float {
+      native.set('tonemap_agx_white', value);
+        return value;
+    }
     public var tonemapExposure(get, set): Float;
     function get_tonemapExposure(): Float {
         return native.get('tonemap_exposure');

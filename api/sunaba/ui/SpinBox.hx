@@ -24,6 +24,14 @@ class SpinBox extends Range {
       native.set('alignment', value);
         return value;
     }
+    public var customArrowRound(get, set): Bool;
+    function get_customArrowRound(): Bool {
+        return native.get('custom_arrow_round');
+    }
+    function set_customArrowRound(value: Bool): Bool {
+      native.set('custom_arrow_round', value);
+        return value;
+    }
     public var customArrowStep(get, set): Float;
     function get_customArrowStep(): Float {
         return native.get('custom_arrow_step');

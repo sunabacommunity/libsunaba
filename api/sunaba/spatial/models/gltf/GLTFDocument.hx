@@ -104,15 +104,6 @@ class GLTFDocument extends Resource {
       }
       return native.call('append_from_scene', args);
   }
-  public static function exportObjectModelProperty(state: GLTFState, nodePath: String, godotNode: Node, gltfNodeIndex: Int): GLTFObjectModelProperty {
-      var args = new ArrayList();
-      args.append(state.native);
-      args.append(nodePath);
-      args.append(godotNode.native);
-      args.append(gltfNodeIndex);
-      var ref: NativeReference = NativeObject.callStatic('GLTFDocument', 'export_object_model_property', args);
-      return new GLTFObjectModelProperty(ref);
-  }
   public function generateBuffer(state: GLTFState): ByteArray {
       var args = new ArrayList();
       args.append(state.native);
@@ -136,13 +127,6 @@ class GLTFDocument extends Resource {
   public static function getSupportedGltfExtensions(): TypedArray<String> {
       var args = new ArrayList();
       return NativeObject.callStatic('GLTFDocument', 'get_supported_gltf_extensions', args);
-  }
-  public static function importObjectModelProperty(state: GLTFState, jsonPointer: String): GLTFObjectModelProperty {
-      var args = new ArrayList();
-      args.append(state.native);
-      args.append(jsonPointer);
-      var ref: NativeReference = NativeObject.callStatic('GLTFDocument', 'import_object_model_property', args);
-      return new GLTFObjectModelProperty(ref);
   }
   public static function registerGltfDocumentExtension(extension: GLTFDocumentExtension, ?firstPriority: Bool): Void {
       var args = new ArrayList();

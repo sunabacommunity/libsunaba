@@ -126,6 +126,14 @@ class ItemList extends Control {
       native.set('same_column_width', value);
         return value;
     }
+    public var scrollHintMode(get, set): Int;
+    function get_scrollHintMode(): Int {
+        return native.get('scroll_hint_mode');
+    }
+    function set_scrollHintMode(value: Int): Int {
+      native.set('scroll_hint_mode', value);
+        return value;
+    }
     public var selectMode(get, set): Int;
     function get_selectMode(): Int {
         return native.get('select_mode');
@@ -140,6 +148,14 @@ class ItemList extends Control {
     }
     function set_textOverrunBehavior(value: Int): Int {
       native.set('text_overrun_behavior', value);
+        return value;
+    }
+    public var tileScrollHint(get, set): Bool;
+    function get_tileScrollHint(): Bool {
+        return native.get('tile_scroll_hint');
+    }
+    function set_tileScrollHint(value: Bool): Bool {
+      native.set('tile_scroll_hint', value);
         return value;
     }
     public var wraparoundItems(get, set): Bool;

@@ -56,6 +56,12 @@ class ImporterMesh extends Resource {
       var args = new ArrayList();
       native.call('clear', args);
   }
+  public static function fromMesh(mesh: Variant): ImporterMesh {
+      var args = new ArrayList();
+      args.append(mesh);
+      var ref: NativeReference = NativeObject.callStatic('ImporterMesh', 'from_mesh', args);
+      return new ImporterMesh(ref);
+  }
   public function generateLods(normalMergeAngle: Float, normalSplitAngle: Float, boneTransformArray: ArrayList): Void {
       var args = new ArrayList();
       args.append(normalMergeAngle);

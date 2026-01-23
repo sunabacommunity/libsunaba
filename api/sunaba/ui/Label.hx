@@ -27,6 +27,14 @@ class Label extends Control {
       native.set('autowrap_mode', value);
         return value;
     }
+    public var autowrapTrimFlags(get, set): Int;
+    function get_autowrapTrimFlags(): Int {
+        return native.get('autowrap_trim_flags');
+    }
+    function set_autowrapTrimFlags(value: Int): Int {
+      native.set('autowrap_trim_flags', value);
+        return value;
+    }
     public var clipText(get, set): Bool;
     function get_clipText(): Bool {
         return native.get('clip_text');

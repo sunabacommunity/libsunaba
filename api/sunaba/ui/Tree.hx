@@ -74,6 +74,14 @@ class Tree extends Control {
       native.set('drop_mode_flags', value);
         return value;
     }
+    public var enableDragUnfolding(get, set): Bool;
+    function get_enableDragUnfolding(): Bool {
+        return native.get('enable_drag_unfolding');
+    }
+    function set_enableDragUnfolding(value: Bool): Bool {
+      native.set('enable_drag_unfolding', value);
+        return value;
+    }
     public var enableRecursiveFolding(get, set): Bool;
     function get_enableRecursiveFolding(): Bool {
         return native.get('enable_recursive_folding');
@@ -98,6 +106,14 @@ class Tree extends Control {
       native.set('hide_root', value);
         return value;
     }
+    public var scrollHintMode(get, set): Int;
+    function get_scrollHintMode(): Int {
+        return native.get('scroll_hint_mode');
+    }
+    function set_scrollHintMode(value: Int): Int {
+      native.set('scroll_hint_mode', value);
+        return value;
+    }
     public var scrollHorizontalEnabled(get, set): Bool;
     function get_scrollHorizontalEnabled(): Bool {
         return native.get('scroll_horizontal_enabled');
@@ -120,6 +136,14 @@ class Tree extends Control {
     }
     function set_selectMode(value: Int): Int {
       native.set('select_mode', value);
+        return value;
+    }
+    public var tileScrollHint(get, set): Bool;
+    function get_tileScrollHint(): Bool {
+        return native.get('tile_scroll_hint');
+    }
+    function set_tileScrollHint(value: Bool): Bool {
+      native.set('tile_scroll_hint', value);
         return value;
     }
 
@@ -309,6 +333,11 @@ class Tree extends Control {
       args.append(column);
       return native.call('get_column_title_language', args);
   }
+  public function getColumnTitleTooltipText(column: Int): String {
+      var args = new ArrayList();
+      args.append(column);
+      return native.call('get_column_title_tooltip_text', args);
+  }
   public function getColumnWidth(column: Int): Int {
       var args = new ArrayList();
       args.append(column);
@@ -442,6 +471,12 @@ class Tree extends Control {
       args.append(column);
       args.append(language);
       native.call('set_column_title_language', args);
+  }
+  public function setColumnTitleTooltipText(column: Int, tooltipText: String): Void {
+      var args = new ArrayList();
+      args.append(column);
+      args.append(tooltipText);
+      native.call('set_column_title_tooltip_text', args);
   }
   public function setSelected(item: TreeItem, column: Int): Void {
       var args = new ArrayList();

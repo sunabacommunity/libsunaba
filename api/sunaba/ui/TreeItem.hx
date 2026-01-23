@@ -202,6 +202,12 @@ class TreeItem extends Object {
       args.append(column);
       return native.call('get_custom_font_size', args);
   }
+  public function getCustomStylebox(column: Int): StyleBox {
+      var args = new ArrayList();
+      args.append(column);
+      var ref: NativeReference = native.call('get_custom_stylebox', args);
+      return new StyleBox(ref);
+  }
   public function getDescription(column: Int): String {
       var args = new ArrayList();
       args.append(column);
@@ -549,6 +555,12 @@ class TreeItem extends Object {
       args.append(column);
       args.append(fontSize);
       native.call('set_custom_font_size', args);
+  }
+  public function setCustomStylebox(column: Int, stylebox: StyleBox): Void {
+      var args = new ArrayList();
+      args.append(column);
+      args.append(stylebox.native);
+      native.call('set_custom_stylebox', args);
   }
   public function setDescription(column: Int, description: String): Void {
       var args = new ArrayList();

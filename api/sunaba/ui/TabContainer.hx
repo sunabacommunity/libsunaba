@@ -60,6 +60,14 @@ class TabContainer extends Container {
       native.set('drag_to_rearrange_enabled', value);
         return value;
     }
+    public var switchOnDragHover(get, set): Bool;
+    function get_switchOnDragHover(): Bool {
+        return native.get('switch_on_drag_hover');
+    }
+    function set_switchOnDragHover(value: Bool): Bool {
+      native.set('switch_on_drag_hover', value);
+        return value;
+    }
     public var tabAlignment(get, set): Int;
     function get_tabAlignment(): Int {
         return native.get('tab_alignment');

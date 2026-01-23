@@ -6,6 +6,7 @@ import sunaba.core.Variant;
 import sunaba.core.Reference;
 import sunaba.core.Object;
 import sunaba.core.ArrayList;
+import sunaba.core.TypedArray;
 import sunaba.core.Signal;
 
 class SplitContainer extends Container {
@@ -80,6 +81,14 @@ class SplitContainer extends Container {
       native.set('split_offset', value);
         return value;
     }
+    public var splitOffsets(get, set): TypedArray<Int>;
+    function get_splitOffsets(): TypedArray<Int> {
+        return native.get('split_offsets');
+    }
+    function set_splitOffsets(value: TypedArray<Int>): TypedArray<Int> {
+      native.set('split_offsets', value);
+        return value;
+    }
     public var touchDraggerEnabled(get, set): Bool;
     function get_touchDraggerEnabled(): Bool {
         return native.get('touch_dragger_enabled');
@@ -122,13 +131,20 @@ class SplitContainer extends Container {
 	    return _dragged;
 	}
 
-  public function clampSplitOffset(): Void {
+  public function clampSplitOffset(?priorityIndex: Int): Void {
       var args = new ArrayList();
+      if (priorityIndex != null) {
+          args.append(priorityIndex);
+      }
       native.call('clamp_split_offset', args);
   }
   public function getDragAreaControl(): Control {
       var args = new ArrayList();
       var ref: NativeObject = native.call('get_drag_area_control', args);
       return new Control(ref);
+  }
+  public function getDragAreaControls(): ArrayList {
+      var args = new ArrayList();
+      return native.call('get_drag_area_controls', args);
   }
 }

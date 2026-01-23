@@ -9,6 +9,7 @@ import sunaba.core.ArrayList;
 import sunaba.Resource;
 import sunaba.core.TypedArray;
 import sunaba.core.Signal;
+import sunaba.core.Dictionary;
 
 class GLTFAccessor extends Resource {
     public override function nativeInit(?_native: NativeReference) {
@@ -143,4 +144,14 @@ class GLTFAccessor extends Resource {
     }
 
 
+  public static function fromDictionary(dictionary: Dictionary): GLTFAccessor {
+      var args = new ArrayList();
+      args.append(dictionary);
+      var ref: NativeReference = NativeObject.callStatic('GLTFAccessor', 'from_dictionary', args);
+      return new GLTFAccessor(ref);
+  }
+  public function toDictionary(): Dictionary {
+      var args = new ArrayList();
+      return native.call('to_dictionary', args);
+  }
 }

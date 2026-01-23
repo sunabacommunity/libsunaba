@@ -16,6 +16,14 @@ class LinkButton extends BaseButton {
         this.native = _native;
     }
 
+    public var ellipsisChar(get, set): String;
+    function get_ellipsisChar(): String {
+        return native.get('ellipsis_char');
+    }
+    function set_ellipsisChar(value: String): String {
+      native.set('ellipsis_char', value);
+        return value;
+    }
     public var language(get, set): String;
     function get_language(): String {
         return native.get('language');
@@ -54,6 +62,14 @@ class LinkButton extends BaseButton {
     }
     function set_textDirection(value: Int): Int {
       native.set('text_direction', value);
+        return value;
+    }
+    public var textOverrunBehavior(get, set): Int;
+    function get_textOverrunBehavior(): Int {
+        return native.get('text_overrun_behavior');
+    }
+    function set_textOverrunBehavior(value: Int): Int {
+      native.set('text_overrun_behavior', value);
         return value;
     }
     public var underline(get, set): Int;

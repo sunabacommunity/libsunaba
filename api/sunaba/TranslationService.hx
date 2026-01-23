@@ -44,6 +44,12 @@ class TranslationService extends BaseClass {
       args.append(localeB);
       return getNative().call('compare_locales', args);
   }
+  public static function formatNumber(number: String, locale: String): String {
+      var args = new ArrayList();
+      args.append(number);
+      args.append(locale);
+      return getNative().call('format_number', args);
+  }
   public static function getAllCountries(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_all_countries', args);
@@ -79,6 +85,16 @@ class TranslationService extends BaseClass {
       args.append(locale);
       return getNative().call('get_locale_name', args);
   }
+  public static function getPercentSign(locale: String): String {
+      var args = new ArrayList();
+      args.append(locale);
+      return getNative().call('get_percent_sign', args);
+  }
+  public static function getPluralRules(locale: String): String {
+      var args = new ArrayList();
+      args.append(locale);
+      return getNative().call('get_plural_rules', args);
+  }
   public static function getScriptName(script: String): String {
       var args = new ArrayList();
       args.append(script);
@@ -98,6 +114,23 @@ class TranslationService extends BaseClass {
       var args = new ArrayList();
       args.append(domain);
       return getNative().call('has_domain', args);
+  }
+  public static function hasTranslation(translation: Translation): Bool {
+      var args = new ArrayList();
+      args.append(translation.native);
+      return getNative().call('has_translation', args);
+  }
+  public static function hasTranslationForLocale(locale: String, exact: Bool): Bool {
+      var args = new ArrayList();
+      args.append(locale);
+      args.append(exact);
+      return getNative().call('has_translation_for_locale', args);
+  }
+  public static function parseNumber(number: String, locale: String): String {
+      var args = new ArrayList();
+      args.append(number);
+      args.append(locale);
+      return getNative().call('parse_number', args);
   }
   public static function pseudolocalize(message: String): String {
       var args = new ArrayList();

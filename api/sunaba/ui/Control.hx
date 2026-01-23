@@ -311,6 +311,14 @@ class Control extends CanvasItem {
       native.set('pivot_offset', value);
         return value;
     }
+    public var pivotOffsetRatio(get, set): Vector2;
+    function get_pivotOffsetRatio(): Vector2 {
+        return native.get('pivot_offset_ratio');
+    }
+    function set_pivotOffsetRatio(value: Vector2): Vector2 {
+      native.set('pivot_offset_ratio', value);
+        return value;
+    }
     public var position(get, set): Vector2;
     function get_position(): Vector2 {
         return native.get('position');
@@ -582,6 +590,10 @@ class Control extends CanvasItem {
       var args = new ArrayList();
       return native.call('get_combined_minimum_size', args);
   }
+  public function getCombinedPivotOffset(): Vector2 {
+      var args = new ArrayList();
+      return native.call('get_combined_pivot_offset', args);
+  }
   public function getCursorShape(?position: Vector2): Int {
       var args = new ArrayList();
       if (position != null) {
@@ -711,12 +723,18 @@ class Control extends CanvasItem {
       var args = new ArrayList();
       native.call('grab_click_focus', args);
   }
-  public function grabFocus(): Void {
+  public function grabFocus(?hideFocus: Bool): Void {
       var args = new ArrayList();
+      if (hideFocus != null) {
+          args.append(hideFocus);
+      }
       native.call('grab_focus', args);
   }
-  public function hasFocus(): Bool {
+  public function hasFocus(?ignoreHiddenFocus: Bool): Bool {
       var args = new ArrayList();
+      if (ignoreHiddenFocus != null) {
+          args.append(ignoreHiddenFocus);
+      }
       return native.call('has_focus', args);
   }
   public function hasThemeColor(name: String, ?themeType: String): Bool {

@@ -287,6 +287,40 @@ class CanvasItem extends Node {
       }
       native.call('draw_dashed_line', args);
   }
+  public function drawEllipse(position: Vector2, major: Float, minor: Float, color: Color, ?filled: Bool, ?width: Float, ?antialiased: Bool): Void {
+      var args = new ArrayList();
+      args.append(position);
+      args.append(major);
+      args.append(minor);
+      args.append(color);
+      if (filled != null) {
+          args.append(filled);
+      }
+      if (width != null) {
+          args.append(width);
+      }
+      if (antialiased != null) {
+          args.append(antialiased);
+      }
+      native.call('draw_ellipse', args);
+  }
+  public function drawEllipseArc(center: Vector2, major: Float, minor: Float, startAngle: Float, endAngle: Float, pointCount: Int, color: Color, ?width: Float, ?antialiased: Bool): Void {
+      var args = new ArrayList();
+      args.append(center);
+      args.append(major);
+      args.append(minor);
+      args.append(startAngle);
+      args.append(endAngle);
+      args.append(pointCount);
+      args.append(color);
+      if (width != null) {
+          args.append(width);
+      }
+      if (antialiased != null) {
+          args.append(antialiased);
+      }
+      native.call('draw_ellipse_arc', args);
+  }
   public function drawEndAnimation(): Void {
       var args = new ArrayList();
       native.call('draw_end_animation', args);

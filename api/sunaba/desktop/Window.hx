@@ -10,6 +10,7 @@ import sunaba.Viewport;
 import sunaba.core.Vector2i;
 import sunaba.core.Vector2;
 import sunaba.core.TypedArray;
+import sunaba.core.Rect2i;
 import sunaba.ui.Theme;
 import sunaba.core.Signal;
 import sunaba.core.Color;
@@ -17,7 +18,6 @@ import sunaba.Font;
 import sunaba.Texture2D;
 import sunaba.ui.StyleBox;
 import sunaba.core.Vector2;
-import sunaba.core.Rect2i;
 import sunaba.Node;
 
 class Window extends Viewport {
@@ -220,6 +220,14 @@ class Window extends Viewport {
       native.set('mouse_passthrough_polygon', value);
         return value;
     }
+    public var nonclientArea(get, set): Rect2i;
+    function get_nonclientArea(): Rect2i {
+        return native.get('nonclient_area');
+    }
+    function set_nonclientArea(value: Rect2i): Rect2i {
+      native.set('nonclient_area', value);
+        return value;
+    }
     public var popupWindow(get, set): Bool;
     function get_popupWindow(): Bool {
         return native.get('popup_window');
@@ -413,6 +421,14 @@ class Window extends Viewport {
 	        _mouseExited = Signal.createFromObject(native, 'mouse_exited');
 	    }
 	    return _mouseExited;
+	}
+	private var _nonclientWindowInput: Signal;
+	public var nonclientWindowInput(get, default): Signal;
+	function get_nonclientWindowInput(): Signal {
+	    if (_nonclientWindowInput == null) {
+	        _nonclientWindowInput = Signal.createFromObject(native, 'nonclient_window_input');
+	    }
+	    return _nonclientWindowInput;
 	}
 	private var _themeChanged: Signal;
 	public var themeChanged(get, default): Signal;

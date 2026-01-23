@@ -18,22 +18,28 @@ class OpenXRInteractionProfileMetadata extends Object {
 
 
 
-  public function registerInteractionProfile(displayName: String, openxrPath: String, openxrExtensionName: String): Void {
+  public function registerInteractionProfile(displayName: String, openxrPath: String, openxrExtensionNames: String): Void {
       var args = new ArrayList();
       args.append(displayName);
       args.append(openxrPath);
-      args.append(openxrExtensionName);
+      args.append(openxrExtensionNames);
       native.call('register_interaction_profile', args);
   }
-  public function registerIoPath(interactionProfile: String, displayName: String, toplevelPath: String, openxrPath: String, openxrExtensionName: String, actionType: Int): Void {
+  public function registerIoPath(interactionProfile: String, displayName: String, toplevelPath: String, openxrPath: String, openxrExtensionNames: String, actionType: Int): Void {
       var args = new ArrayList();
       args.append(interactionProfile);
       args.append(displayName);
       args.append(toplevelPath);
       args.append(openxrPath);
-      args.append(openxrExtensionName);
+      args.append(openxrExtensionNames);
       args.append(actionType);
       native.call('register_io_path', args);
+  }
+  public function registerPathRename(oldName: String, newName: String): Void {
+      var args = new ArrayList();
+      args.append(oldName);
+      args.append(newName);
+      native.call('register_path_rename', args);
   }
   public function registerProfileRename(oldName: String, newName: String): Void {
       var args = new ArrayList();
@@ -41,11 +47,11 @@ class OpenXRInteractionProfileMetadata extends Object {
       args.append(newName);
       native.call('register_profile_rename', args);
   }
-  public function registerTopLevelPath(displayName: String, openxrPath: String, openxrExtensionName: String): Void {
+  public function registerTopLevelPath(displayName: String, openxrPath: String, openxrExtensionNames: String): Void {
       var args = new ArrayList();
       args.append(displayName);
       args.append(openxrPath);
-      args.append(openxrExtensionName);
+      args.append(openxrExtensionNames);
       native.call('register_top_level_path', args);
   }
 }

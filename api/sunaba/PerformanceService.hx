@@ -8,6 +8,7 @@ import sunaba.core.Object;
 import sunaba.BaseClass;
 import sunaba.core.Signal;
 import sunaba.core.ArrayList;
+import sunaba.core.TypedArray;
 
 class PerformanceService extends BaseClass {
      private static var _native: NativeObject;
@@ -20,12 +21,15 @@ class PerformanceService extends BaseClass {
 
 
 
-  public static function addCustomMonitor(id: String, callable: Variant, ?arguments: ArrayList): Void {
+  public static function addCustomMonitor(id: String, callable: Variant, ?arguments: ArrayList, ?type: Int): Void {
       var args = new ArrayList();
       args.append(id);
       args.append(callable);
       if (arguments != null) {
           args.append(arguments);
+      }
+      if (type != null) {
+          args.append(type);
       }
       getNative().call('add_custom_monitor', args);
   }
@@ -33,6 +37,10 @@ class PerformanceService extends BaseClass {
       var args = new ArrayList();
       args.append(id);
       return getNative().call('get_custom_monitor', args);
+  }
+  public static function getCustomMonitorTypes(): TypedArray<Int> {
+      var args = new ArrayList();
+      return getNative().call('get_custom_monitor_types', args);
   }
   public static function getMonitor(monitor: Int): Float {
       var args = new ArrayList();

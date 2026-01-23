@@ -12,6 +12,7 @@ import sunaba.audio.AudioEffect;
 import sunaba.audio.AudioBusLayout;
 import sunaba.audio.AudioEffectInstance;
 import sunaba.core.TypedArray;
+import sunaba.core.Vector2;
 import sunaba.audio.AudioStream;
 
 class AudioService extends BaseClass {
@@ -162,9 +163,22 @@ class AudioService extends BaseClass {
       var args = new ArrayList();
       return getNative().call('get_driver_name', args);
   }
+  public static function getInputBufferLengthFrames(): Int {
+      var args = new ArrayList();
+      return getNative().call('get_input_buffer_length_frames', args);
+  }
   public static function getInputDeviceList(): TypedArray<String> {
       var args = new ArrayList();
       return getNative().call('get_input_device_list', args);
+  }
+  public static function getInputFrames(frames: Int): TypedArray<Vector2> {
+      var args = new ArrayList();
+      args.append(frames);
+      return getNative().call('get_input_frames', args);
+  }
+  public static function getInputFramesAvailable(): Int {
+      var args = new ArrayList();
+      return getNative().call('get_input_frames_available', args);
   }
   public static function getInputMixRate(): Float {
       var args = new ArrayList();
@@ -304,6 +318,11 @@ class AudioService extends BaseClass {
       var args = new ArrayList();
       args.append(enable);
       getNative().call('set_enable_tagging_used_audio_streams', args);
+  }
+  public static function setInputDeviceActive(active: Bool): Int {
+      var args = new ArrayList();
+      args.append(active);
+      return getNative().call('set_input_device_active', args);
   }
   public static function swapBusEffects(busIdx: Int, effectIdx: Int, byEffectIdx: Int): Void {
       var args = new ArrayList();

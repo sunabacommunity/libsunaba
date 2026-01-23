@@ -35,6 +35,14 @@ class AudioStreamRandomizer extends AudioStream {
       native.set('random_pitch', value);
         return value;
     }
+    public var randomPitchSemitones(get, set): Float;
+    function get_randomPitchSemitones(): Float {
+        return native.get('random_pitch_semitones');
+    }
+    function set_randomPitchSemitones(value: Float): Float {
+      native.set('random_pitch_semitones', value);
+        return value;
+    }
     public var randomVolumeOffsetDb(get, set): Float;
     function get_randomVolumeOffsetDb(): Float {
         return native.get('random_volume_offset_db');

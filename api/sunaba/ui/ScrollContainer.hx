@@ -48,6 +48,14 @@ class ScrollContainer extends Container {
       native.set('scroll_deadzone', value);
         return value;
     }
+    public var scrollHintMode(get, set): Int;
+    function get_scrollHintMode(): Int {
+        return native.get('scroll_hint_mode');
+    }
+    function set_scrollHintMode(value: Int): Int {
+      native.set('scroll_hint_mode', value);
+        return value;
+    }
     public var scrollHorizontal(get, set): Int;
     function get_scrollHorizontal(): Int {
         return native.get('scroll_horizontal');
@@ -78,6 +86,14 @@ class ScrollContainer extends Container {
     }
     function set_scrollVerticalCustomStep(value: Float): Float {
       native.set('scroll_vertical_custom_step', value);
+        return value;
+    }
+    public var tileScrollHint(get, set): Bool;
+    function get_tileScrollHint(): Bool {
+        return native.get('tile_scroll_hint');
+    }
+    function set_tileScrollHint(value: Bool): Bool {
+      native.set('tile_scroll_hint', value);
         return value;
     }
     public var verticalScrollMode(get, set): Int;

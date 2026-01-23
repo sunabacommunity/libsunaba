@@ -52,6 +52,14 @@ class FileDialog extends ConfirmationDialog {
       native.set('current_path', value);
         return value;
     }
+    public var deletingEnabled(get, set): Bool;
+    function get_deletingEnabled(): Bool {
+        return native.get('deleting_enabled');
+    }
+    function set_deletingEnabled(value: Bool): Bool {
+      native.set('deleting_enabled', value);
+        return value;
+    }
     public var displayMode(get, set): Int;
     function get_displayMode(): Int {
         return native.get('display_mode');
@@ -148,6 +156,14 @@ class FileDialog extends ConfirmationDialog {
       native.set('option_count', value);
         return value;
     }
+    public var overwriteWarningEnabled(get, set): Bool;
+    function get_overwriteWarningEnabled(): Bool {
+        return native.get('overwrite_warning_enabled');
+    }
+    function set_overwriteWarningEnabled(value: Bool): Bool {
+      native.set('overwrite_warning_enabled', value);
+        return value;
+    }
     public var recentListEnabled(get, set): Bool;
     function get_recentListEnabled(): Bool {
         return native.get('recent_list_enabled');
@@ -214,11 +230,14 @@ class FileDialog extends ConfirmationDialog {
 	    return _filesSelected;
 	}
 
-  public function addFilter(filter: String, ?description: String): Void {
+  public function addFilter(filter: String, ?description: String, ?mimeType: String): Void {
       var args = new ArrayList();
       args.append(filter);
       if (description != null) {
           args.append(description);
+      }
+      if (mimeType != null) {
+          args.append(mimeType);
       }
       native.call('add_filter', args);
   }
@@ -241,6 +260,10 @@ class FileDialog extends ConfirmationDialog {
       var args = new ArrayList();
       native.call('deselect_all', args);
   }
+  public static function getFavoriteList(): TypedArray<String> {
+      var args = new ArrayList();
+      return NativeObject.callStatic('FileDialog', 'get_favorite_list', args);
+  }
   public function getLineEdit(): LineEdit {
       var args = new ArrayList();
       var ref: NativeObject = native.call('get_line_edit', args);
@@ -261,6 +284,10 @@ class FileDialog extends ConfirmationDialog {
       args.append(option);
       return native.call('get_option_values', args);
   }
+  public static function getRecentList(): TypedArray<String> {
+      var args = new ArrayList();
+      return NativeObject.callStatic('FileDialog', 'get_recent_list', args);
+  }
   public function getSelectedOptions(): Dictionary {
       var args = new ArrayList();
       return native.call('get_selected_options', args);
@@ -279,11 +306,30 @@ class FileDialog extends ConfirmationDialog {
       args.append(flag);
       return native.call('is_customization_flag_enabled', args);
   }
+  public function popupFileDialog(): Void {
+      var args = new ArrayList();
+      native.call('popup_file_dialog', args);
+  }
   public function setCustomizationFlagEnabled(flag: Int, enabled: Bool): Void {
       var args = new ArrayList();
       args.append(flag);
       args.append(enabled);
       native.call('set_customization_flag_enabled', args);
+  }
+  public static function setFavoriteList(favorites: TypedArray<String>): Void {
+      var args = new ArrayList();
+      args.append(favorites);
+      NativeObject.callStatic('FileDialog', 'set_favorite_list', args);
+  }
+  public static function setGetIconCallback(callback: Variant): Void {
+      var args = new ArrayList();
+      args.append(callback);
+      NativeObject.callStatic('FileDialog', 'set_get_icon_callback', args);
+  }
+  public static function setGetThumbnailCallback(callback: Variant): Void {
+      var args = new ArrayList();
+      args.append(callback);
+      NativeObject.callStatic('FileDialog', 'set_get_thumbnail_callback', args);
   }
   public function setOptionDefault(option: Int, defaultValueIndex: Int): Void {
       var args = new ArrayList();
@@ -302,5 +348,10 @@ class FileDialog extends ConfirmationDialog {
       args.append(option);
       args.append(values);
       native.call('set_option_values', args);
+  }
+  public static function setRecentList(recents: TypedArray<String>): Void {
+      var args = new ArrayList();
+      args.append(recents);
+      NativeObject.callStatic('FileDialog', 'set_recent_list', args);
   }
 }

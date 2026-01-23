@@ -146,6 +146,14 @@ class LineEdit extends Control {
       native.set('flat', value);
         return value;
     }
+    public var iconExpandMode(get, set): Int;
+    function get_iconExpandMode(): Int {
+        return native.get('icon_expand_mode');
+    }
+    function set_iconExpandMode(value: Int): Int {
+      native.set('icon_expand_mode', value);
+        return value;
+    }
     public var keepEditingOnTextSubmit(get, set): Bool;
     function get_keepEditingOnTextSubmit(): Bool {
         return native.get('keep_editing_on_text_submit');
@@ -193,6 +201,14 @@ class LineEdit extends Control {
     }
     function set_rightIcon(value: Texture2D): Texture2D {
       native.set('right_icon', value.native);
+        return value;
+    }
+    public var rightIconScale(get, set): Float;
+    function get_rightIconScale(): Float {
+        return native.get('right_icon_scale');
+    }
+    function set_rightIconScale(value: Float): Float {
+      native.set('right_icon_scale', value);
         return value;
     }
     public var secret(get, set): Bool;
@@ -351,8 +367,11 @@ class LineEdit extends Control {
       var args = new ArrayList();
       native.call('deselect', args);
   }
-  public function edit(): Void {
+  public function edit(?hideFocus: Bool): Void {
       var args = new ArrayList();
+      if (hideFocus != null) {
+          args.append(hideFocus);
+      }
       native.call('edit', args);
   }
   public function getMenu(): PopupMenu {

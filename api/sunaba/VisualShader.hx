@@ -31,10 +31,10 @@ class VisualShader extends Shader {
     }
 
 
-  public function addNode(type: Int, node: Variant, position: Vector2, id: Int): Void {
+  public function addNode(type: Int, node: VisualShaderNode, position: Vector2, id: Int): Void {
       var args = new ArrayList();
       args.append(type);
-      args.append(node);
+      args.append(node.native);
       args.append(position);
       args.append(id);
       native.call('add_node', args);
@@ -94,6 +94,13 @@ class VisualShader extends Shader {
       args.append(toNode);
       args.append(toPort);
       native.call('disconnect_nodes', args);
+  }
+  public function getNode(type: Int, id: Int): VisualShaderNode {
+      var args = new ArrayList();
+      args.append(type);
+      args.append(id);
+      var ref: NativeReference = native.call('get_node', args);
+      return new VisualShaderNode(ref);
   }
   public function getNodeConnections(type: Int): ArrayList {
       var args = new ArrayList();

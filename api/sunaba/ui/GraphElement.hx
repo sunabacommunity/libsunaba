@@ -41,6 +41,14 @@ class GraphElement extends Container {
       native.set('resizable', value);
         return value;
     }
+    public var scalingMenus(get, set): Bool;
+    function get_scalingMenus(): Bool {
+        return native.get('scaling_menus');
+    }
+    function set_scalingMenus(value: Bool): Bool {
+      native.set('scaling_menus', value);
+        return value;
+    }
     public var selectable(get, set): Bool;
     function get_selectable(): Bool {
         return native.get('selectable');

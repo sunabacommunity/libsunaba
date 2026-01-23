@@ -12,6 +12,7 @@ import sunaba.core.Vector3;
 import sunaba.core.Dictionary;
 import sunaba.core.Vector2;
 import sunaba.Resource;
+import sunaba.core.Color;
 
 class InputService extends BaseClass {
      private static var _native: NativeObject;
@@ -185,6 +186,11 @@ class InputService extends BaseClass {
       }
       return getNative().call('get_vector', args);
   }
+  public static function hasJoyLight(device: Int): Bool {
+      var args = new ArrayList();
+      args.append(device);
+      return getNative().call('has_joy_light', args);
+  }
   public static function isActionJustPressed(action: String, ?exactMatch: Bool): Bool {
       var args = new ArrayList();
       args.append(action);
@@ -304,6 +310,12 @@ class InputService extends BaseClass {
       var args = new ArrayList();
       args.append(value);
       getNative().call('set_gyroscope', args);
+  }
+  public static function setJoyLight(device: Int, color: Color): Void {
+      var args = new ArrayList();
+      args.append(device);
+      args.append(color);
+      getNative().call('set_joy_light', args);
   }
   public static function setMagnetometer(value: Vector3): Void {
       var args = new ArrayList();

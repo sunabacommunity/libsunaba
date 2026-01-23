@@ -80,6 +80,14 @@ class GLTFState extends Resource {
       native.set('glb_data', value);
         return value;
     }
+    public var handleBinaryImageMode(get, set): Int;
+    function get_handleBinaryImageMode(): Int {
+        return native.get('handle_binary_image_mode');
+    }
+    function set_handleBinaryImageMode(value: Int): Int {
+      native.set('handle_binary_image_mode', value);
+        return value;
+    }
     public var importAsSkeletonBones(get, set): Bool;
     function get_importAsSkeletonBones(): Bool {
         return native.get('import_as_skeleton_bones');
@@ -166,9 +174,9 @@ class GLTFState extends Resource {
       args.append(extensionName);
       return native.call('get_additional_data', args);
   }
-  public function getAnimationPlayersCount(idx: Int): Int {
+  public function getAnimationPlayersCount(animPlayerIndex: Int): Int {
       var args = new ArrayList();
-      args.append(idx);
+      args.append(animPlayerIndex);
       return native.call('get_animation_players_count', args);
   }
   public function getAnimations(): ArrayList {
@@ -212,9 +220,9 @@ class GLTFState extends Resource {
       var args = new ArrayList();
       return native.call('get_nodes', args);
   }
-  public function getSceneNode(idx: Int): Node {
+  public function getSceneNode(gltfNodeIndex: Int): Node {
       var args = new ArrayList();
-      args.append(idx);
+      args.append(gltfNodeIndex);
       var ref: NativeObject = native.call('get_scene_node', args);
       return new Node(ref);
   }

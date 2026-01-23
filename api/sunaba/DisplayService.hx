@@ -44,13 +44,16 @@ class DisplayService extends BaseClass {
       }
       return getNative().call('accessibility_create_sub_element', args);
   }
-  public static function accessibilityCreateSubTextEditElements(parentRid: Variant, shapedText: Variant, minHeight: Float, ?insertPos: Int): Variant {
+  public static function accessibilityCreateSubTextEditElements(parentRid: Variant, shapedText: Variant, minHeight: Float, ?insertPos: Int, ?isLastLine: Bool): Variant {
       var args = new ArrayList();
       args.append(parentRid);
       args.append(shapedText);
       args.append(minHeight);
       if (insertPos != null) {
           args.append(insertPos);
+      }
+      if (isLastLine != null) {
+          args.append(isLastLine);
       }
       return getNative().call('accessibility_create_sub_text_edit_elements', args);
   }
@@ -1583,6 +1586,11 @@ class DisplayService extends BaseClass {
           args.append(windowId);
       }
       getNative().call('window_request_attention', args);
+  }
+  public static function windowSetColor(color: Color): Void {
+      var args = new ArrayList();
+      args.append(color);
+      getNative().call('window_set_color', args);
   }
   public static function windowSetCurrentScreen(screen: Int, ?windowId: Int): Void {
       var args = new ArrayList();

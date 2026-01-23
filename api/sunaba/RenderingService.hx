@@ -203,6 +203,18 @@ class RenderingService extends BaseClass {
       args.append(ignore);
       getNative().call('canvas_item_add_clip_ignore', args);
   }
+  public static function canvasItemAddEllipse(item: Variant, pos: Vector2, major: Float, minor: Float, color: Color, ?antialiased: Bool): Void {
+      var args = new ArrayList();
+      args.append(item);
+      args.append(pos);
+      args.append(major);
+      args.append(minor);
+      args.append(color);
+      if (antialiased != null) {
+          args.append(antialiased);
+      }
+      getNative().call('canvas_item_add_ellipse', args);
+  }
   public static function canvasItemAddLcdTextureRectRegion(item: Variant, rect: Rect2, texture: Variant, srcRect: Rect2, modulate: Color): Void {
       var args = new ArrayList();
       args.append(item);
@@ -1224,6 +1236,11 @@ class RenderingService extends BaseClass {
       args.append(depthTolerance);
       getNative().call('environment_set_ssr', args);
   }
+  public static function environmentSetSsrHalfSize(halfSize: Bool): Void {
+      var args = new ArrayList();
+      args.append(halfSize);
+      getNative().call('environment_set_ssr_half_size', args);
+  }
   public static function environmentSetSsrRoughnessQuality(quality: Int): Void {
       var args = new ArrayList();
       args.append(quality);
@@ -1236,6 +1253,12 @@ class RenderingService extends BaseClass {
       args.append(exposure);
       args.append(white);
       getNative().call('environment_set_tonemap', args);
+  }
+  public static function environmentSetTonemapAgxContrast(env: Variant, agxContrast: Float): Void {
+      var args = new ArrayList();
+      args.append(env);
+      args.append(agxContrast);
+      getNative().call('environment_set_tonemap_agx_contrast', args);
   }
   public static function environmentSetVolumetricFog(env: Variant, enable: Bool, density: Float, albedo: Color, emission: Color, emissionEnergy: Float, anisotropy: Float, length: Float, pDetailSpread: Float, giInject: Float, temporalReprojection: Bool, temporalReprojectionAmount: Float, ambientInject: Float, skyAffect: Float): Void {
       var args = new ArrayList();
@@ -1823,6 +1846,11 @@ class RenderingService extends BaseClass {
       args.append(shader);
       getNative().call('material_set_shader', args);
   }
+  public static function materialSetUseDebanding(enable: Bool): Void {
+      var args = new ArrayList();
+      args.append(enable);
+      getNative().call('material_set_use_debanding', args);
+  }
   public static function meshAddSurface(mesh: Variant, surface: Dictionary): Void {
       var args = new ArrayList();
       args.append(mesh);
@@ -2090,6 +2118,11 @@ class RenderingService extends BaseClass {
       args.append(index);
       args.append(transform);
       getNative().call('multimesh_instance_set_transform_2d', args);
+  }
+  public static function multimeshInstancesResetPhysicsInterpolation(multimesh: Variant): Void {
+      var args = new ArrayList();
+      args.append(multimesh);
+      getNative().call('multimesh_instances_reset_physics_interpolation', args);
   }
   public static function multimeshSetBuffer(multimesh: Variant, buffer: TypedArray<Float>): Void {
       var args = new ArrayList();
@@ -2576,6 +2609,16 @@ class RenderingService extends BaseClass {
           args.append(useFilter);
       }
       getNative().call('set_boot_image', args);
+  }
+  public static function setBootImageWithStretch(image: Image, color: Color, stretchMode: Int, ?useFilter: Bool): Void {
+      var args = new ArrayList();
+      args.append(image.native);
+      args.append(color);
+      args.append(stretchMode);
+      if (useFilter != null) {
+          args.append(useFilter);
+      }
+      getNative().call('set_boot_image_with_stretch', args);
   }
   public static function setDebugGenerateWireframes(generate: Bool): Void {
       var args = new ArrayList();

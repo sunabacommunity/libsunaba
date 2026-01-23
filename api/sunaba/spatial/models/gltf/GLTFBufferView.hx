@@ -8,6 +8,7 @@ import sunaba.core.Object;
 import sunaba.core.ArrayList;
 import sunaba.Resource;
 import sunaba.core.Signal;
+import sunaba.core.Dictionary;
 import sunaba.core.ByteArray;
 
 class GLTFBufferView extends Resource {
@@ -71,9 +72,19 @@ class GLTFBufferView extends Resource {
     }
 
 
+  public static function fromDictionary(dictionary: Dictionary): GLTFBufferView {
+      var args = new ArrayList();
+      args.append(dictionary);
+      var ref: NativeReference = NativeObject.callStatic('GLTFBufferView', 'from_dictionary', args);
+      return new GLTFBufferView(ref);
+  }
   public function loadBufferViewData(state: GLTFState): ByteArray {
       var args = new ArrayList();
       args.append(state.native);
       return native.call('load_buffer_view_data', args);
+  }
+  public function toDictionary(): Dictionary {
+      var args = new ArrayList();
+      return native.call('to_dictionary', args);
   }
 }

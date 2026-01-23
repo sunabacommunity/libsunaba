@@ -28,6 +28,14 @@ class Translation extends Resource {
       native.set('locale', value);
         return value;
     }
+    public var pluralRulesOverride(get, set): String;
+    function get_pluralRulesOverride(): String {
+        return native.get('plural_rules_override');
+    }
+    function set_pluralRulesOverride(value: String): String {
+      native.set('plural_rules_override', value);
+        return value;
+    }
 
 
   public function addMessage(srcMessage: String, xlatedMessage: String, ?context: String): Void {

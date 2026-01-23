@@ -308,6 +308,11 @@ class NativeMenuService extends BaseClass {
       args.append(menuId);
       return getNative().call('get_system_menu_name', args);
   }
+  public static function getSystemMenuText(menuId: Int): String {
+      var args = new ArrayList();
+      args.append(menuId);
+      return getNative().call('get_system_menu_text', args);
+  }
   public static function hasFeature(feature: Int): Bool {
       var args = new ArrayList();
       args.append(feature);
@@ -517,5 +522,11 @@ class NativeMenuService extends BaseClass {
       args.append(rid);
       args.append(callback);
       getNative().call('set_popup_open_callback', args);
+  }
+  public static function setSystemMenuText(menuId: Int, name: String): Void {
+      var args = new ArrayList();
+      args.append(menuId);
+      args.append(name);
+      getNative().call('set_system_menu_text', args);
   }
 }

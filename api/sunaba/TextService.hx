@@ -855,6 +855,11 @@ class TextService extends BaseClass {
       args.append(locale);
       return getNative().call('is_locale_right_to_left', args);
   }
+  public static function isLocaleUsingSupportData(locale: String): Bool {
+      var args = new ArrayList();
+      args.append(locale);
+      return getNative().call('is_locale_using_support_data', args);
+  }
   public static function isValidIdentifier(string: String): Bool {
       var args = new ArrayList();
       args.append(string);
@@ -1072,6 +1077,11 @@ class TextService extends BaseClass {
       }
       getNative().call('shaped_text_draw_outline', args);
   }
+  public static function shapedTextDuplicate(rid: Variant): Variant {
+      var args = new ArrayList();
+      args.append(rid);
+      return getNative().call('shaped_text_duplicate', args);
+  }
   public static function shapedTextFitToWidth(shaped: Variant, width: Float, ?justificationFlags: Int): Float {
       var args = new ArrayList();
       args.append(shaped);
@@ -1273,6 +1283,12 @@ class TextService extends BaseClass {
           args.append(skipGraphemeFlags);
       }
       return getNative().call('shaped_text_get_word_breaks', args);
+  }
+  public static function shapedTextHasObject(shaped: Variant, key: Variant): Bool {
+      var args = new ArrayList();
+      args.append(shaped);
+      args.append(key);
+      return getNative().call('shaped_text_has_object', args);
   }
   public static function shapedTextHasVisibleChars(shaped: Variant): Bool {
       var args = new ArrayList();

@@ -140,6 +140,16 @@ class GraphNode extends GraphElement {
       var ref: NativeReference = native.call('get_slot_custom_icon_right', args);
       return new Texture2D(ref);
   }
+  public function getSlotMetadataLeft(slotIndex: Int): Variant {
+      var args = new ArrayList();
+      args.append(slotIndex);
+      return native.call('get_slot_metadata_left', args);
+  }
+  public function getSlotMetadataRight(slotIndex: Int): Variant {
+      var args = new ArrayList();
+      args.append(slotIndex);
+      return native.call('get_slot_metadata_right', args);
+  }
   public function getSlotTypeLeft(slotIndex: Int): Int {
       var args = new ArrayList();
       args.append(slotIndex);
@@ -231,6 +241,18 @@ class GraphNode extends GraphElement {
       args.append(slotIndex);
       args.append(enable);
       native.call('set_slot_enabled_right', args);
+  }
+  public function setSlotMetadataLeft(slotIndex: Int, value: Variant): Void {
+      var args = new ArrayList();
+      args.append(slotIndex);
+      args.append(value);
+      native.call('set_slot_metadata_left', args);
+  }
+  public function setSlotMetadataRight(slotIndex: Int, value: Variant): Void {
+      var args = new ArrayList();
+      args.append(slotIndex);
+      args.append(value);
+      native.call('set_slot_metadata_right', args);
   }
   public function setSlotTypeLeft(slotIndex: Int, type: Int): Void {
       var args = new ArrayList();

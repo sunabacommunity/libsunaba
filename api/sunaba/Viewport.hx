@@ -101,6 +101,14 @@ class Viewport extends Node {
       native.set('gui_disable_input', value);
         return value;
     }
+    public var guiDragThreshold(get, set): Int;
+    function get_guiDragThreshold(): Int {
+        return native.get('gui_drag_threshold');
+    }
+    function set_guiDragThreshold(value: Int): Int {
+      native.set('gui_drag_threshold', value);
+        return value;
+    }
     public var guiEmbedSubwindows(get, set): Bool;
     function get_guiEmbedSubwindows(): Bool {
         return native.get('gui_embed_subwindows');

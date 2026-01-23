@@ -1,0 +1,12 @@
+<Project Sdk="Godot.NET.Sdk/4.6.0-rc.1">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>Sunaba</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Mono.Posix.NETStandard" Version="5.20.1-preview" />
+    <PackageReference Include="MoonSharp" Version="2.0.0" />
+  </ItemGroup>
+</Project>
