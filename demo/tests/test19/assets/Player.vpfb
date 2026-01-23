@@ -273,9 +273,9 @@
 		},
 		{
 			"data": {
-			
+
 			},
-			"type": "test18.CharacterController"
+			"type": "test19.CharacterController"
 		}
 	],
 	"name": "Player",

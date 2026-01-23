@@ -1,5 +1,6 @@
 package;
 
+import sunaba.spatial.BaseTextures;
 import sunaba.Prefab;
 import sunaba.spatial.SpatialTransform;
 import sunaba.Debug;
@@ -28,6 +29,7 @@ class Main extends App {
 
 	public override function init() {
 		var mapFile = new MapFile("app://base.map");
+		mapFile.textureDirs.push(BaseTextures.Water);
 
 		var scene = mapFile.instantiate();
 		scene.isInEditor = false;
