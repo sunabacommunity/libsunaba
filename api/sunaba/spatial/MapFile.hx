@@ -25,7 +25,8 @@ class MapFile extends BaseClass {
 
     public function new(p: String) {
         path = p;
-        textureDirs.push("basetxt://blockout/textures/");
+        textureDirs.push(BaseTextures.Blockout);
+        textureDirs.push(BaseTextures.Special);
         io = new IoManager(untyped __lua__("_G.__ioManager"));
     }
 
