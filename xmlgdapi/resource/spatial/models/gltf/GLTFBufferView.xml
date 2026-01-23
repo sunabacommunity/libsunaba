@@ -7,9 +7,20 @@
 	<tutorials>
 	</tutorials>
 	<methods>
+		<method name="from_dictionary" qualifiers="static">
+			<return type="GLTFBufferView" />
+			<param index="0" name="dictionary" type="Dictionary" />
+			<description>
+			</description>
+		</method>
 		<method name="load_buffer_view_data" qualifiers="const">
 			<return type="PackedByteArray" />
 			<param index="0" name="state" type="GLTFState" />
+			<description>
+			</description>
+		</method>
+		<method name="to_dictionary" qualifiers="const">
+			<return type="Dictionary" />
 			<description>
 			</description>
 		</method>

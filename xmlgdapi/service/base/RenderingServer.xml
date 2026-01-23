@@ -178,6 +178,17 @@
 			<description>
 			</description>
 		</method>
+		<method name="canvas_item_add_ellipse">
+			<return type="void" />
+			<param index="0" name="item" type="RID" />
+			<param index="1" name="pos" type="Vector2" />
+			<param index="2" name="major" type="float" />
+			<param index="3" name="minor" type="float" />
+			<param index="4" name="color" type="Color" />
+			<param index="5" name="antialiased" type="bool" default="false" />
+			<description>
+			</description>
+		</method>
 		<method name="canvas_item_add_lcd_texture_rect_region">
 			<return type="void" />
 			<param index="0" name="item" type="RID" />
@@ -1263,6 +1274,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="environment_set_ssr_half_size">
+			<return type="void" />
+			<param index="0" name="half_size" type="bool" />
+			<description>
+			</description>
+		</method>
 		<method name="environment_set_ssr_roughness_quality">
 			<return type="void" />
 			<param index="0" name="quality" type="int" enum="RenderingServer.EnvironmentSSRRoughnessQuality" />
@@ -1275,6 +1292,13 @@
 			<param index="1" name="tone_mapper" type="int" enum="RenderingServer.EnvironmentToneMapper" />
 			<param index="2" name="exposure" type="float" />
 			<param index="3" name="white" type="float" />
+			<description>
+			</description>
+		</method>
+		<method name="environment_set_tonemap_agx_contrast">
+			<return type="void" />
+			<param index="0" name="env" type="RID" />
+			<param index="1" name="agx_contrast" type="float" />
 			<description>
 			</description>
 		</method>
@@ -1975,6 +1999,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="material_set_use_debanding">
+			<return type="void" />
+			<param index="0" name="enable" type="bool" />
+			<description>
+			</description>
+		</method>
 		<method name="mesh_add_surface">
 			<return type="void" />
 			<param index="0" name="mesh" type="RID" />
@@ -2306,6 +2336,12 @@
 			<param index="0" name="multimesh" type="RID" />
 			<param index="1" name="index" type="int" />
 			<param index="2" name="transform" type="Transform2D" />
+			<description>
+			</description>
+		</method>
+		<method name="multimesh_instances_reset_physics_interpolation">
+			<return type="void" />
+			<param index="0" name="multimesh" type="RID" />
 			<description>
 			</description>
 		</method>
@@ -2877,6 +2913,15 @@
 			<param index="0" name="image" type="Image" />
 			<param index="1" name="color" type="Color" />
 			<param index="2" name="scale" type="bool" />
+			<param index="3" name="use_filter" type="bool" default="true" />
+			<description>
+			</description>
+		</method>
+		<method name="set_boot_image_with_stretch">
+			<return type="void" />
+			<param index="0" name="image" type="Image" />
+			<param index="1" name="color" type="Color" />
+			<param index="2" name="stretch_mode" type="int" enum="RenderingServer.SplashStretchMode" />
 			<param index="3" name="use_filter" type="bool" default="true" />
 			<description>
 			</description>
@@ -4719,6 +4764,18 @@
 		<constant name="PIPELINE_SOURCE_SPECIALIZATION" value="4" enum="PipelineSource">
 		</constant>
 		<constant name="PIPELINE_SOURCE_MAX" value="5" enum="PipelineSource">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_DISABLED" value="0" enum="SplashStretchMode">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_KEEP" value="1" enum="SplashStretchMode">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_KEEP_WIDTH" value="2" enum="SplashStretchMode">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_KEEP_HEIGHT" value="3" enum="SplashStretchMode">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_COVER" value="4" enum="SplashStretchMode">
+		</constant>
+		<constant name="SPLASH_STRETCH_MODE_IGNORE" value="5" enum="SplashStretchMode">
 		</constant>
 		<constant name="FEATURE_SHADERS" value="0" enum="Features">
 		</constant>

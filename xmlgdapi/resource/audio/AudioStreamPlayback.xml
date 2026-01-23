@@ -18,12 +18,12 @@
 			<description>
 			</description>
 		</method>
-		<method name="_get_playback_position" qualifiers="virtual const">
+		<method name="_get_playback_position" qualifiers="virtual required const">
 			<return type="float" />
 			<description>
 			</description>
 		</method>
-		<method name="_is_playing" qualifiers="virtual const">
+		<method name="_is_playing" qualifiers="virtual required const">
 			<return type="bool" />
 			<description>
 			</description>
@@ -49,13 +49,13 @@
 			<description>
 			</description>
 		</method>
-		<method name="_start" qualifiers="virtual">
+		<method name="_start" qualifiers="virtual required">
 			<return type="void" />
 			<param index="0" name="from_pos" type="float" />
 			<description>
 			</description>
 		</method>
-		<method name="_stop" qualifiers="virtual">
+		<method name="_stop" qualifiers="virtual required">
 			<return type="void" />
 			<description>
 			</description>

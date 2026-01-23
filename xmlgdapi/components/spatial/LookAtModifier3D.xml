@@ -60,6 +60,8 @@
 		</member>
 		<member name="primary_rotation_axis" type="int" setter="set_primary_rotation_axis" getter="get_primary_rotation_axis" enum="Vector3.Axis" default="1">
 		</member>
+		<member name="relative" type="bool" setter="set_relative" getter="is_relative" default="true">
+		</member>
 		<member name="secondary_damp_threshold" type="float" setter="set_secondary_damp_threshold" getter="get_secondary_damp_threshold">
 		</member>
 		<member name="secondary_limit_angle" type="float" setter="set_secondary_limit_angle" getter="get_secondary_limit_angle">

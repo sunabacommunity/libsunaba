@@ -47,7 +47,7 @@
 			<description>
 			</description>
 		</method>
-		<method name="_instantiate_playback" qualifiers="virtual const">
+		<method name="_instantiate_playback" qualifiers="virtual required const">
 			<return type="AudioStreamPlayback" />
 			<description>
 			</description>

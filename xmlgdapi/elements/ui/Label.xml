@@ -38,6 +38,8 @@
 	<members>
 		<member name="autowrap_mode" type="int" setter="set_autowrap_mode" getter="get_autowrap_mode" enum="TextServer.AutowrapMode" default="0">
 		</member>
+		<member name="autowrap_trim_flags" type="int" setter="set_autowrap_trim_flags" getter="get_autowrap_trim_flags" enum="TextServer.LineBreakFlag" is_bitfield="true" default="192">
+		</member>
 		<member name="clip_text" type="bool" setter="set_clip_text" getter="is_clipping_text" default="false">
 		</member>
 		<member name="ellipsis_char" type="String" setter="set_ellipsis_char" getter="get_ellipsis_char" default="&quot;…&quot;">
@@ -103,6 +105,8 @@
 		<theme_item name="font" data_type="font" type="Font">
 		</theme_item>
 		<theme_item name="font_size" data_type="font_size" type="int">
+		</theme_item>
+		<theme_item name="focus" data_type="style" type="StyleBox">
 		</theme_item>
 		<theme_item name="normal" data_type="style" type="StyleBox">
 		</theme_item>

@@ -11,6 +11,7 @@
 			<return type="void" />
 			<param index="0" name="filter" type="String" />
 			<param index="1" name="description" type="String" default="&quot;&quot;" />
+			<param index="2" name="mime_type" type="String" default="&quot;&quot;" />
 			<description>
 			</description>
 		</method>
@@ -37,6 +38,11 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_favorite_list" qualifiers="static">
+			<return type="PackedStringArray" />
+			<description>
+			</description>
+		</method>
 		<method name="get_line_edit">
 			<return type="LineEdit" />
 			<description>
@@ -57,6 +63,11 @@
 		<method name="get_option_values" qualifiers="const">
 			<return type="PackedStringArray" />
 			<param index="0" name="option" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_recent_list" qualifiers="static">
+			<return type="PackedStringArray" />
 			<description>
 			</description>
 		</method>
@@ -81,10 +92,33 @@
 			<description>
 			</description>
 		</method>
+		<method name="popup_file_dialog">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
 		<method name="set_customization_flag_enabled">
 			<return type="void" />
 			<param index="0" name="flag" type="int" enum="FileDialog.Customization" />
 			<param index="1" name="enabled" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="set_favorite_list" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="favorites" type="PackedStringArray" />
+			<description>
+			</description>
+		</method>
+		<method name="set_get_icon_callback" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="callback" type="Callable" />
+			<description>
+			</description>
+		</method>
+		<method name="set_get_thumbnail_callback" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="callback" type="Callable" />
 			<description>
 			</description>
 		</method>
@@ -109,6 +143,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="set_recent_list" qualifiers="static">
+			<return type="void" />
+			<param index="0" name="recents" type="PackedStringArray" />
+			<description>
+			</description>
+		</method>
 	</methods>
 	<members>
 		<member name="access" type="int" setter="set_access" getter="get_access" enum="FileDialog.Access" default="0">
@@ -118,6 +158,8 @@
 		<member name="current_file" type="String" setter="set_current_file" getter="get_current_file">
 		</member>
 		<member name="current_path" type="String" setter="set_current_path" getter="get_current_path">
+		</member>
+		<member name="deleting_enabled" type="bool" setter="set_customization_flag_enabled" getter="is_customization_flag_enabled" default="true">
 		</member>
 		<member name="dialog_hide_on_ok" type="bool" setter="set_hide_on_ok" getter="get_hide_on_ok" overrides="AcceptDialog" default="false" />
 		<member name="display_mode" type="int" setter="set_display_mode" getter="get_display_mode" enum="FileDialog.DisplayMode" default="0">
@@ -143,6 +185,8 @@
 		<member name="mode_overrides_title" type="bool" setter="set_mode_overrides_title" getter="is_mode_overriding_title" default="true">
 		</member>
 		<member name="option_count" type="int" setter="set_option_count" getter="get_option_count" default="0">
+		</member>
+		<member name="overwrite_warning_enabled" type="bool" setter="set_customization_flag_enabled" getter="is_customization_flag_enabled" default="true">
 		</member>
 		<member name="recent_list_enabled" type="bool" setter="set_customization_flag_enabled" getter="is_customization_flag_enabled" default="true">
 		</member>
@@ -211,6 +255,10 @@
 		<constant name="CUSTOMIZATION_RECENT" value="5" enum="Customization">
 		</constant>
 		<constant name="CUSTOMIZATION_LAYOUT" value="6" enum="Customization">
+		</constant>
+		<constant name="CUSTOMIZATION_OVERWRITE_WARNING" value="7" enum="Customization">
+		</constant>
+		<constant name="CUSTOMIZATION_DELETE" value="8" enum="Customization">
 		</constant>
 	</constants>
 	<theme_items>

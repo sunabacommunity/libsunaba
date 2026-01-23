@@ -11,7 +11,7 @@
 			<return type="void" />
 			<param index="0" name="display_name" type="String" />
 			<param index="1" name="openxr_path" type="String" />
-			<param index="2" name="openxr_extension_name" type="String" />
+			<param index="2" name="openxr_extension_names" type="String" />
 			<description>
 			</description>
 		</method>
@@ -21,8 +21,15 @@
 			<param index="1" name="display_name" type="String" />
 			<param index="2" name="toplevel_path" type="String" />
 			<param index="3" name="openxr_path" type="String" />
-			<param index="4" name="openxr_extension_name" type="String" />
+			<param index="4" name="openxr_extension_names" type="String" />
 			<param index="5" name="action_type" type="int" enum="OpenXRAction.ActionType" />
+			<description>
+			</description>
+		</method>
+		<method name="register_path_rename">
+			<return type="void" />
+			<param index="0" name="old_name" type="String" />
+			<param index="1" name="new_name" type="String" />
 			<description>
 			</description>
 		</method>
@@ -37,7 +44,7 @@
 			<return type="void" />
 			<param index="0" name="display_name" type="String" />
 			<param index="1" name="openxr_path" type="String" />
-			<param index="2" name="openxr_extension_name" type="String" />
+			<param index="2" name="openxr_extension_names" type="String" />
 			<description>
 			</description>
 		</method>

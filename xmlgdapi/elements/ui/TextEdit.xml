@@ -1026,7 +1026,6 @@
 		</member>
 		<member name="caret_type" type="int" setter="set_caret_type" getter="get_caret_type" enum="TextEdit.CaretType" default="0">
 		</member>
-		<member name="clip_contents" type="bool" setter="set_clip_contents" getter="is_clipping_contents" overrides="Control" default="true" />
 		<member name="context_menu_enabled" type="bool" setter="set_context_menu_enabled" getter="is_context_menu_enabled" default="true">
 		</member>
 		<member name="custom_word_separators" type="String" setter="set_custom_word_separators" getter="get_custom_word_separators" default="&quot;&quot;">
@@ -1276,6 +1275,8 @@
 		<theme_item name="line_spacing" data_type="constant" type="int" default="4">
 		</theme_item>
 		<theme_item name="outline_size" data_type="constant" type="int" default="0">
+		</theme_item>
+		<theme_item name="wrap_offset" data_type="constant" type="int" default="10">
 		</theme_item>
 		<theme_item name="font" data_type="font" type="Font">
 		</theme_item>

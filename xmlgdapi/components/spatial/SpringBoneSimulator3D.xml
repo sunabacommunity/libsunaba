@@ -86,7 +86,7 @@
 			</description>
 		</method>
 		<method name="get_end_bone_direction" qualifiers="const">
-			<return type="int" enum="SpringBoneSimulator3D.BoneDirection" />
+			<return type="int" enum="SkeletonModifier3D.BoneDirection" />
 			<param index="0" name="index" type="int" />
 			<description>
 			</description>
@@ -183,7 +183,7 @@
 			</description>
 		</method>
 		<method name="get_joint_rotation_axis" qualifiers="const">
-			<return type="int" enum="SpringBoneSimulator3D.RotationAxis" />
+			<return type="int" enum="SkeletonModifier3D.RotationAxis" />
 			<param index="0" name="index" type="int" />
 			<param index="1" name="joint" type="int" />
 			<description>
@@ -228,7 +228,7 @@
 			</description>
 		</method>
 		<method name="get_rotation_axis" qualifiers="const">
-			<return type="int" enum="SpringBoneSimulator3D.RotationAxis" />
+			<return type="int" enum="SkeletonModifier3D.RotationAxis" />
 			<param index="0" name="index" type="int" />
 			<description>
 			</description>
@@ -342,7 +342,7 @@
 		<method name="set_end_bone_direction">
 			<return type="void" />
 			<param index="0" name="index" type="int" />
-			<param index="1" name="bone_direction" type="int" enum="SpringBoneSimulator3D.BoneDirection" />
+			<param index="1" name="bone_direction" type="int" enum="SkeletonModifier3D.BoneDirection" />
 			<description>
 			</description>
 		</method>
@@ -446,7 +446,7 @@
 			<return type="void" />
 			<param index="0" name="index" type="int" />
 			<param index="1" name="joint" type="int" />
-			<param index="2" name="axis" type="int" enum="SpringBoneSimulator3D.RotationAxis" />
+			<param index="2" name="axis" type="int" enum="SkeletonModifier3D.RotationAxis" />
 			<description>
 			</description>
 		</method>
@@ -497,7 +497,7 @@
 		<method name="set_rotation_axis">
 			<return type="void" />
 			<param index="0" name="index" type="int" />
-			<param index="1" name="axis" type="int" enum="SpringBoneSimulator3D.RotationAxis" />
+			<param index="1" name="axis" type="int" enum="SkeletonModifier3D.RotationAxis" />
 			<description>
 			</description>
 		</method>
@@ -526,39 +526,17 @@
 	<members>
 		<member name="external_force" type="Vector3" setter="set_external_force" getter="get_external_force" default="Vector3(0, 0, 0)">
 		</member>
+		<member name="mutable_bone_axes" type="bool" setter="set_mutable_bone_axes" getter="are_bone_axes_mutable" default="true">
+		</member>
 		<member name="setting_count" type="int" setter="set_setting_count" getter="get_setting_count" default="0">
 		</member>
 	</members>
 	<constants>
-		<constant name="BONE_DIRECTION_PLUS_X" value="0" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_MINUS_X" value="1" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_PLUS_Y" value="2" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_MINUS_Y" value="3" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_PLUS_Z" value="4" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_MINUS_Z" value="5" enum="BoneDirection">
-		</constant>
-		<constant name="BONE_DIRECTION_FROM_PARENT" value="6" enum="BoneDirection">
-		</constant>
 		<constant name="CENTER_FROM_WORLD_ORIGIN" value="0" enum="CenterFrom">
 		</constant>
 		<constant name="CENTER_FROM_NODE" value="1" enum="CenterFrom">
 		</constant>
 		<constant name="CENTER_FROM_BONE" value="2" enum="CenterFrom">
-		</constant>
-		<constant name="ROTATION_AXIS_X" value="0" enum="RotationAxis">
-		</constant>
-		<constant name="ROTATION_AXIS_Y" value="1" enum="RotationAxis">
-		</constant>
-		<constant name="ROTATION_AXIS_Z" value="2" enum="RotationAxis">
-		</constant>
-		<constant name="ROTATION_AXIS_ALL" value="3" enum="RotationAxis">
-		</constant>
-		<constant name="ROTATION_AXIS_CUSTOM" value="4" enum="RotationAxis">
 		</constant>
 	</constants>
 </class>

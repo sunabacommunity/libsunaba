@@ -29,112 +29,112 @@
 			<description>
 			</description>
 		</method>
-		<method name="get_accessors">
+		<method name="get_accessors" qualifiers="const">
 			<return type="GLTFAccessor[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_additional_data">
+		<method name="get_additional_data" qualifiers="const">
 			<return type="Variant" />
 			<param index="0" name="extension_name" type="StringName" />
 			<description>
 			</description>
 		</method>
-		<method name="get_animation_player">
+		<method name="get_animation_player" qualifiers="const">
 			<return type="AnimationPlayer" />
-			<param index="0" name="idx" type="int" />
+			<param index="0" name="anim_player_index" type="int" />
 			<description>
 			</description>
 		</method>
-		<method name="get_animation_players_count">
+		<method name="get_animation_players_count" qualifiers="const">
 			<return type="int" />
-			<param index="0" name="idx" type="int" />
+			<param index="0" name="anim_player_index" type="int" />
 			<description>
 			</description>
 		</method>
-		<method name="get_animations">
+		<method name="get_animations" qualifiers="const">
 			<return type="GLTFAnimation[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_buffer_views">
+		<method name="get_buffer_views" qualifiers="const">
 			<return type="GLTFBufferView[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_cameras">
+		<method name="get_cameras" qualifiers="const">
 			<return type="GLTFCamera[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_handle_binary_image">
+		<method name="get_handle_binary_image" qualifiers="const">
 			<return type="int" />
 			<description>
 			</description>
 		</method>
-		<method name="get_images">
+		<method name="get_images" qualifiers="const">
 			<return type="Texture2D[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_lights">
+		<method name="get_lights" qualifiers="const">
 			<return type="GLTFLight[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_materials">
+		<method name="get_materials" qualifiers="const">
 			<return type="Material[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_meshes">
+		<method name="get_meshes" qualifiers="const">
 			<return type="GLTFMesh[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_node_index">
+		<method name="get_node_index" qualifiers="const">
 			<return type="int" />
 			<param index="0" name="scene_node" type="Node" />
 			<description>
 			</description>
 		</method>
-		<method name="get_nodes">
+		<method name="get_nodes" qualifiers="const">
 			<return type="GLTFNode[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_scene_node">
+		<method name="get_scene_node" qualifiers="const">
 			<return type="Node" />
-			<param index="0" name="idx" type="int" />
+			<param index="0" name="gltf_node_index" type="int" />
 			<description>
 			</description>
 		</method>
-		<method name="get_skeletons">
+		<method name="get_skeletons" qualifiers="const">
 			<return type="GLTFSkeleton[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_skins">
+		<method name="get_skins" qualifiers="const">
 			<return type="GLTFSkin[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_texture_samplers">
+		<method name="get_texture_samplers" qualifiers="const">
 			<return type="GLTFTextureSampler[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_textures">
+		<method name="get_textures" qualifiers="const">
 			<return type="GLTFTexture[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_unique_animation_names">
+		<method name="get_unique_animation_names" qualifiers="const">
 			<return type="String[]" />
 			<description>
 			</description>
 		</method>
-		<method name="get_unique_names">
+		<method name="get_unique_names" qualifiers="const">
 			<return type="String[]" />
 			<description>
 			</description>
@@ -258,6 +258,8 @@
 		</member>
 		<member name="glb_data" type="PackedByteArray" setter="set_glb_data" getter="get_glb_data" default="PackedByteArray()">
 		</member>
+		<member name="handle_binary_image_mode" type="int" setter="set_handle_binary_image_mode" getter="get_handle_binary_image_mode" enum="GLTFState.HandleBinaryImageMode" default="1">
+		</member>
 		<member name="import_as_skeleton_bones" type="bool" setter="set_import_as_skeleton_bones" getter="get_import_as_skeleton_bones" default="false">
 		</member>
 		<member name="json" type="Dictionary" setter="set_json" getter="get_json" default="{}">
@@ -274,6 +276,14 @@
 		</member>
 	</members>
 	<constants>
+		<constant name="HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES" value="0" enum="HandleBinaryImageMode">
+		</constant>
+		<constant name="HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES" value="1" enum="HandleBinaryImageMode">
+		</constant>
+		<constant name="HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU" value="2" enum="HandleBinaryImageMode">
+		</constant>
+		<constant name="HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED" value="3" enum="HandleBinaryImageMode">
+		</constant>
 		<constant name="HANDLE_BINARY_DISCARD_TEXTURES" value="0">
 		</constant>
 		<constant name="HANDLE_BINARY_EXTRACT_TEXTURES" value="1">

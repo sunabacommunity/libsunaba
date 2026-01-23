@@ -6,6 +6,19 @@
 	</description>
 	<tutorials>
 	</tutorials>
+	<methods>
+		<method name="from_dictionary" qualifiers="static">
+			<return type="GLTFAccessor" />
+			<param index="0" name="dictionary" type="Dictionary" />
+			<description>
+			</description>
+		</method>
+		<method name="to_dictionary" qualifiers="const">
+			<return type="Dictionary" />
+			<description>
+			</description>
+		</method>
+	</methods>
 	<members>
 		<member name="accessor_type" type="int" setter="set_accessor_type" getter="get_accessor_type" enum="GLTFAccessor.GLTFAccessorType" default="0">
 		</member>

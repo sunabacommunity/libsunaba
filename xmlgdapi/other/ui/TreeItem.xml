@@ -171,6 +171,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_custom_stylebox" qualifiers="const">
+			<return type="StyleBox" />
+			<param index="0" name="column" type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="get_description" qualifiers="const">
 			<return type="String" />
 			<param index="0" name="column" type="int" />
@@ -552,6 +558,13 @@
 			<return type="void" />
 			<param index="0" name="column" type="int" />
 			<param index="1" name="font_size" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="set_custom_stylebox">
+			<return type="void" />
+			<param index="0" name="column" type="int" />
+			<param index="1" name="stylebox" type="StyleBox" />
 			<description>
 			</description>
 		</method>

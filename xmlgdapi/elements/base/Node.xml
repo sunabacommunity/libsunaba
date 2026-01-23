@@ -830,6 +830,10 @@
 		</constant>
 		<constant name="DUPLICATE_USE_INSTANTIATION" value="8" enum="DuplicateFlags">
 		</constant>
+		<constant name="DUPLICATE_INTERNAL_STATE" value="16" enum="DuplicateFlags">
+		</constant>
+		<constant name="DUPLICATE_DEFAULT" value="15" enum="DuplicateFlags">
+		</constant>
 		<constant name="INTERNAL_MODE_DISABLED" value="0" enum="InternalMode">
 		</constant>
 		<constant name="INTERNAL_MODE_FRONT" value="1" enum="InternalMode">

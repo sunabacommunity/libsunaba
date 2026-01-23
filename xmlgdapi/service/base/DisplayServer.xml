@@ -28,6 +28,7 @@
 			<param index="1" name="shaped_text" type="RID" />
 			<param index="2" name="min_height" type="float" />
 			<param index="3" name="insert_pos" type="int" default="-1" />
+			<param index="4" name="is_last_line" type="bool" default="false" />
 			<description>
 			</description>
 		</method>
@@ -1658,6 +1659,12 @@
 		<method name="window_request_attention">
 			<return type="void" />
 			<param index="0" name="window_id" type="int" default="0" />
+			<description>
+			</description>
+		</method>
+		<method name="window_set_color">
+			<return type="void" />
+			<param index="0" name="color" type="Color" />
 			<description>
 			</description>
 		</method>

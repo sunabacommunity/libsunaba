@@ -12,6 +12,7 @@
 			<param index="0" name="id" type="StringName" />
 			<param index="1" name="callable" type="Callable" />
 			<param index="2" name="arguments" type="Array" default="[]" />
+			<param index="3" name="type" type="int" enum="Performance.MonitorType" default="0" />
 			<description>
 			</description>
 		</method>
@@ -23,6 +24,11 @@
 		</method>
 		<method name="get_custom_monitor_names">
 			<return type="StringName[]" />
+			<description>
+			</description>
+		</method>
+		<method name="get_custom_monitor_types">
+			<return type="PackedInt32Array" />
 			<description>
 			</description>
 		</method>
@@ -170,6 +176,14 @@
 		<constant name="NAVIGATION_3D_OBSTACLE_COUNT" value="58" enum="Monitor">
 		</constant>
 		<constant name="MONITOR_MAX" value="59" enum="Monitor">
+		</constant>
+		<constant name="MONITOR_TYPE_QUANTITY" value="0" enum="MonitorType">
+		</constant>
+		<constant name="MONITOR_TYPE_MEMORY" value="1" enum="MonitorType">
+		</constant>
+		<constant name="MONITOR_TYPE_TIME" value="2" enum="MonitorType">
+		</constant>
+		<constant name="MONITOR_TYPE_PERCENTAGE" value="3" enum="MonitorType">
 		</constant>
 	</constants>
 </class>

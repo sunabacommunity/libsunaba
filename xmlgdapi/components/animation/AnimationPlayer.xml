@@ -48,7 +48,7 @@
 			</description>
 		</method>
 		<method name="get_queue">
-			<return type="PackedStringArray" />
+			<return type="StringName[]" />
 			<description>
 			</description>
 		</method>
@@ -68,6 +68,11 @@
 			</description>
 		</method>
 		<method name="has_section" qualifiers="const">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="is_animation_active" qualifiers="const">
 			<return type="bool" />
 			<description>
 			</description>
@@ -217,11 +222,11 @@
 		</method>
 	</methods>
 	<members>
-		<member name="assigned_animation" type="String" setter="set_assigned_animation" getter="get_assigned_animation">
+		<member name="assigned_animation" type="StringName" setter="set_assigned_animation" getter="get_assigned_animation">
 		</member>
-		<member name="autoplay" type="String" setter="set_autoplay" getter="get_autoplay" default="&quot;&quot;">
+		<member name="autoplay" type="StringName" setter="set_autoplay" getter="get_autoplay" default="&amp;&quot;&quot;">
 		</member>
-		<member name="current_animation" type="String" setter="set_current_animation" getter="get_current_animation" default="&quot;&quot;">
+		<member name="current_animation" type="StringName" setter="set_current_animation" getter="get_current_animation" default="&amp;&quot;&quot;">
 		</member>
 		<member name="current_animation_length" type="float" setter="" getter="get_current_animation_length">
 		</member>
@@ -250,7 +255,7 @@
 			</description>
 		</signal>
 		<signal name="current_animation_changed">
-			<param index="0" name="name" type="String" />
+			<param index="0" name="name" type="StringName" />
 			<description>
 			</description>
 		</signal>

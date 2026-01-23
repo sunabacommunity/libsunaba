@@ -6,4 +6,10 @@
 	</description>
 	<tutorials>
 	</tutorials>
+	<theme_items>
+		<theme_item name="padding_bottom" data_type="constant" type="int" default="0">
+		</theme_item>
+		<theme_item name="padding_top" data_type="constant" type="int" default="0">
+		</theme_item>
+	</theme_items>
 </class>

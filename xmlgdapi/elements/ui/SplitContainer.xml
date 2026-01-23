@@ -9,11 +9,17 @@
 	<methods>
 		<method name="clamp_split_offset">
 			<return type="void" />
+			<param index="0" name="priority_index" type="int" default="0" />
 			<description>
 			</description>
 		</method>
 		<method name="get_drag_area_control">
 			<return type="Control" />
+			<description>
+			</description>
+		</method>
+		<method name="get_drag_area_controls">
+			<return type="Control[]" />
 			<description>
 			</description>
 		</method>
@@ -34,6 +40,8 @@
 		<member name="dragging_enabled" type="bool" setter="set_dragging_enabled" getter="is_dragging_enabled" default="true">
 		</member>
 		<member name="split_offset" type="int" setter="set_split_offset" getter="get_split_offset" default="0">
+		</member>
+		<member name="split_offsets" type="PackedInt32Array" setter="set_split_offsets" getter="get_split_offsets" default="PackedInt32Array(0)">
 		</member>
 		<member name="touch_dragger_enabled" type="bool" setter="set_touch_dragger_enabled" getter="is_touch_dragger_enabled" default="false">
 		</member>

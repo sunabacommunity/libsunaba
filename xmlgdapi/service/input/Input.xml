@@ -145,6 +145,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="has_joy_light" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="device" type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="is_action_just_pressed" qualifiers="const">
 			<return type="bool" />
 			<param index="0" name="action" type="StringName" />
@@ -265,6 +271,13 @@
 		<method name="set_gyroscope">
 			<return type="void" />
 			<param index="0" name="value" type="Vector3" />
+			<description>
+			</description>
+		</method>
+		<method name="set_joy_light">
+			<return type="void" />
+			<param index="0" name="device" type="int" />
+			<param index="1" name="color" type="Color" />
 			<description>
 			</description>
 		</method>

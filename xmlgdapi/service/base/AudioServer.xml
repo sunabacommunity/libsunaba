@@ -102,8 +102,24 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_input_buffer_length_frames">
+			<return type="int" />
+			<description>
+			</description>
+		</method>
 		<method name="get_input_device_list">
 			<return type="PackedStringArray" />
+			<description>
+			</description>
+		</method>
+		<method name="get_input_frames">
+			<return type="PackedVector2Array" />
+			<param index="0" name="frames" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_input_frames_available">
+			<return type="int" />
 			<description>
 			</description>
 		</method>
@@ -270,6 +286,12 @@
 		<method name="set_enable_tagging_used_audio_streams">
 			<return type="void" />
 			<param index="0" name="enable" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="set_input_device_active">
+			<return type="int" enum="Error" />
+			<param index="0" name="active" type="bool" />
 			<description>
 			</description>
 		</method>

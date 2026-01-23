@@ -270,6 +270,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_system_menu_text" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="menu_id" type="int" enum="NativeMenu.SystemMenus" />
+			<description>
+			</description>
+		</method>
 		<method name="has_feature" qualifiers="const">
 			<return type="bool" />
 			<param index="0" name="feature" type="int" enum="NativeMenu.Feature" />
@@ -510,6 +516,13 @@
 			<return type="void" />
 			<param index="0" name="rid" type="RID" />
 			<param index="1" name="callback" type="Callable" />
+			<description>
+			</description>
+		</method>
+		<method name="set_system_menu_text">
+			<return type="void" />
+			<param index="0" name="menu_id" type="int" enum="NativeMenu.SystemMenus" />
+			<param index="1" name="name" type="String" />
 			<description>
 			</description>
 		</method>

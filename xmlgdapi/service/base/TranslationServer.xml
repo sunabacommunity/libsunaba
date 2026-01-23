@@ -25,6 +25,20 @@
 			<description>
 			</description>
 		</method>
+		<method name="find_translations" qualifiers="const">
+			<return type="Translation[]" />
+			<param index="0" name="locale" type="String" />
+			<param index="1" name="exact" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="format_number" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="number" type="String" />
+			<param index="1" name="locale" type="String" />
+			<description>
+			</description>
+		</method>
 		<method name="get_all_countries" qualifiers="const">
 			<return type="PackedStringArray" />
 			<description>
@@ -74,6 +88,18 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_percent_sign" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="locale" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="get_plural_rules" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="locale" type="String" />
+			<description>
+			</description>
+		</method>
 		<method name="get_script_name" qualifiers="const">
 			<return type="String" />
 			<param index="0" name="script" type="String" />
@@ -91,9 +117,34 @@
 			<description>
 			</description>
 		</method>
+		<method name="get_translations" qualifiers="const">
+			<return type="Translation[]" />
+			<description>
+			</description>
+		</method>
 		<method name="has_domain" qualifiers="const">
 			<return type="bool" />
 			<param index="0" name="domain" type="StringName" />
+			<description>
+			</description>
+		</method>
+		<method name="has_translation" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="translation" type="Translation" />
+			<description>
+			</description>
+		</method>
+		<method name="has_translation_for_locale" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="locale" type="String" />
+			<param index="1" name="exact" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="parse_number" qualifiers="const">
+			<return type="String" />
+			<param index="0" name="number" type="String" />
+			<param index="1" name="locale" type="String" />
 			<description>
 			</description>
 		</method>

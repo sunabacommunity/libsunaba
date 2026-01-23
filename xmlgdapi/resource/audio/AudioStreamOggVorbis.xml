@@ -33,5 +33,7 @@
 		</member>
 		<member name="packet_sequence" type="OggPacketSequence" setter="set_packet_sequence" getter="get_packet_sequence">
 		</member>
+		<member name="tags" type="Dictionary" setter="set_tags" getter="get_tags" default="{}">
+		</member>
 	</members>
 </class>

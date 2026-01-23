@@ -979,6 +979,12 @@
 			<description>
 			</description>
 		</method>
+		<method name="is_locale_using_support_data" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="locale" type="String" />
+			<description>
+			</description>
+		</method>
 		<method name="is_valid_identifier" qualifiers="const">
 			<return type="bool" />
 			<param index="0" name="string" type="String" />
@@ -1193,6 +1199,12 @@
 			<param index="5" name="outline_size" type="int" default="1" />
 			<param index="6" name="color" type="Color" default="Color(1, 1, 1, 1)" />
 			<param index="7" name="oversampling" type="float" default="0.0" />
+			<description>
+			</description>
+		</method>
+		<method name="shaped_text_duplicate">
+			<return type="RID" />
+			<param index="0" name="rid" type="RID" />
 			<description>
 			</description>
 		</method>
@@ -1424,6 +1436,13 @@
 			<param index="0" name="shaped" type="RID" />
 			<param index="1" name="grapheme_flags" type="int" enum="TextServer.GraphemeFlag" is_bitfield="true" default="264" />
 			<param index="2" name="skip_grapheme_flags" type="int" enum="TextServer.GraphemeFlag" is_bitfield="true" default="4" />
+			<description>
+			</description>
+		</method>
+		<method name="shaped_text_has_object" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="shaped" type="RID" />
+			<param index="1" name="key" type="Variant" />
 			<description>
 			</description>
 		</method>
@@ -1748,6 +1767,8 @@
 		<constant name="OVERRUN_ENFORCE_ELLIPSIS" value="8" enum="TextOverrunFlag" is_bitfield="true">
 		</constant>
 		<constant name="OVERRUN_JUSTIFICATION_AWARE" value="16" enum="TextOverrunFlag" is_bitfield="true">
+		</constant>
+		<constant name="OVERRUN_SHORT_STRING_ELLIPSIS" value="32" enum="TextOverrunFlag" is_bitfield="true">
 		</constant>
 		<constant name="GRAPHEME_IS_VALID" value="1" enum="GraphemeFlag" is_bitfield="true">
 		</constant>
