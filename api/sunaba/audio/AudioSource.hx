@@ -144,7 +144,7 @@ class AudioSource extends Behavior {
 		pitchScale = data.get("pitchScale");
 		playbackType = data.get("playbackType");
 		playing = data.get("playing");
-		stream = new AudioStream(DataUtils.dictToVar(data.get("stream")));
+		stream = new AudioStream(DataUtils.dictToVar(data.get("stream"), entity.io));
 		streamPaused =data.get("streamPaused");
 		volumeDb = data.get("volumeDb");
 		volumeLinear = data.get("volumeLinear");
