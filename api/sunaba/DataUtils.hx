@@ -581,17 +581,17 @@ class DataUtils {
 				shader.native.set("asset_path",  path);
 				variant = shader.native;
 			}
-			else if (className == "AudioStreamOggVorbis") {
+			else if (className == "AudioStreamOggVorbis" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var oggVorbis = AudioStreamOggVorbis.loadFromBuffer(audioData);
 				variant = oggVorbis.native;
 			}
-			else if (className == "AudioStreamWAV") {
+			else if (className == "AudioStreamWAV" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var wav = AudioStreamWAV.loadFromBuffer(audioData);
 				variant = wav.native;
 			}
-			else if (className == "AudioStreamMP3") {
+			else if (className == "AudioStreamMP3" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var mp3 = AudioStreamMP3.loadFromBuffer(audioData);
 				variant = mp3.native;
