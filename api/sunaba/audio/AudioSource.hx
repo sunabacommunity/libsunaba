@@ -73,7 +73,7 @@ class AudioSource extends Behavior {
 		return node.streamPaused;
 	}
 	function set_streamPaused(value:Bool):Bool {
-		return this.streamPaused = value;
+		return node.streamPaused = value;
 	}
 
 	public var volumeDb(get, set): Float;
