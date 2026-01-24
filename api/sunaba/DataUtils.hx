@@ -26,6 +26,9 @@ import sunaba.core.TypedArray;
 import sunaba.core.VariantNative;
 import sunaba.core.native.NativeObject;
 import sunaba.core.native.NativeReference;
+import sunaba.audio.AudioStreamOggVorbis;
+import sunaba.audio.AudioStreamWAV;
+import sunaba.audio.AudioStreamMP3;
 import haxe.macro.Expr.Var;
 import haxe.Int32;
 import haxe.Log.Log.trace;
@@ -577,6 +580,21 @@ class DataUtils {
 				shader.code = code;
 				shader.native.set("asset_path",  path);
 				variant = shader.native;
+			}
+			else if (className == "AudioStreamOggVorbis") {
+				var audioData = ioInterface.loadBytes(path);
+				var oggVorbis = AudioStreamOggVorbis.loadFromBuffer(audioData);
+				variant = oggVorbis.native;
+			}
+			else if (className == "AudioStreamWAV") {
+				var audioData = ioInterface.loadBytes(path);
+				var wav = AudioStreamWAV.loadFromBuffer(audioData);
+				variant = wav.native;
+			}
+			else if (className == "AudioStreamMP3") {
+				var audioData = ioInterface.loadBytes(path);
+				var mp3 = AudioStreamMP3.loadFromBuffer(audioData);
+				variant = mp3.native;
 			}
 			else {
 				var nativeObj = new NativeReference(className);
