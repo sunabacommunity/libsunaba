@@ -584,16 +584,19 @@ class DataUtils {
 			else if (className == "AudioStreamOggVorbis" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var oggVorbis = AudioStreamOggVorbis.loadFromBuffer(audioData);
+				oggVorbis.native.set("asset_path",  path);
 				variant = oggVorbis.native;
 			}
 			else if (className == "AudioStreamWAV" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var wav = AudioStreamWAV.loadFromBuffer(audioData);
+				wav.native.set("asset_path",  path);
 				variant = wav.native;
 			}
 			else if (className == "AudioStreamMP3" && path !=  "?") {
 				var audioData = ioInterface.loadBytes(path);
 				var mp3 = AudioStreamMP3.loadFromBuffer(audioData);
+				mp3.native.set("asset_path",  path);
 				variant = mp3.native;
 			}
 			else {
