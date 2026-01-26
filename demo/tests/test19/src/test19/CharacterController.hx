@@ -1,5 +1,11 @@
 package test19;
 
+import sunaba.core.ArrayList;
+import sunaba.Debug;
+import sunaba.audio.AudioSource;
+import sunaba.audio.AudioStreamOggVorbis;
+import lua.Io;
+import sunaba.audio.AudioStream;
 import sunaba.spatial.physics.RigidBody;
 import sunaba.spatial.Camera;
 import sunaba.Entity;
@@ -17,6 +23,7 @@ import sunaba.input.InputEventKey;
 import sunaba.core.Reference;
 import sunaba.input.InputEvent;
 import sunaba.Behavior;
+import sunaba.Timer;
 
 class CharacterController extends Behavior {
     public var speed: Float;
@@ -36,6 +43,18 @@ class CharacterController extends Behavior {
     public var snapVector: Vector3;
 
     public var timesJumped: Int;
+
+    private var footsounds: ArrayList;
+    private var currentFootSoundIdx: Int = 0;
+    private var footSoundMaxIdx: Int = 0;
+    private var canPlayWalkSound: Bool = true;
+    private var footSoundTimer: Timer;
+    private var footSoundPlayer: AudioSource;
+
+    private var jumpSoundPlayer: AudioSource;
+
+    private var defaultWalkSoundTime: Float = 0.35;
+    private var sprintWalkSoundTime: Float = 0.25;
 
     public var isStarted: Bool;
     public var _isActive: Bool;
@@ -82,7 +101,11 @@ class CharacterController extends Behavior {
         timesJumped = 0;
 
         isStarted = false;
-        
+
+        defaultWalkSoundTime = 0.35;
+        sprintWalkSoundTime = 0.25;
+
+        canPlayWalkSound = true;
     }
 
     public override function onStart() {
@@ -101,6 +124,56 @@ class CharacterController extends Behavior {
         InputMapService.addAction("sprint");
         InputMapService.addAction("crouch");
         InputMapService.addAction("pause");
+
+        footsounds = new Array();
+        trace(entity.io == null);
+        var footSoundsList = entity.io.getFileList("basesfx://walk/", "");
+        trace(footSoundsList == null);
+        for (i in 0...footSoundsList.size()) {
+            var footSoundPath: String = footSoundsList.get(i);
+            var footSoundBytes = entity.io.loadBytes(footSoundPath);
+            var footSound = AudioStreamOggVorbis.loadFromBuffer(footSoundBytes);
+            footSound.loop = false;
+            footsounds.append(footSound.native);
+            footSoundMaxIdx = i;
+        }
+
+        footSoundTimer = new Timer();
+        footSoundTimer.waitTime = defaultWalkSoundTime;
+        footSoundTimer.timeout.add(() -> {
+            canPlayWalkSound = true;
+        });
+        if (entity.node != null) {
+            entity.node.addChild(footSoundTimer);
+        }
+
+        var fspEntity = entity.find("FootSoundPlayer");
+        if (fspEntity == null) {
+            Debug.error("FootSoundPlayer entity doesn't exist");
+            return;
+        }
+
+        if (!scene.isInEditor) {
+            footSoundPlayer = fspEntity.addComponent(AudioSource);
+            if (footSoundPlayer == null) {
+                Debug.error("FootSoundPlayer doesn't exist");
+                return;
+            }
+
+            footSoundPlayer.stream = new AudioStream(footsounds[0]);
+        }
+
+        var jspEntity = entity.find("JumpSoundPlayer");
+        if (jspEntity == null) {
+            Debug.error("JumpSoundPlayer entity doesn't exist");
+            return;
+        }
+
+        jumpSoundPlayer = jspEntity.getComponent(AudioSource);
+        if (jumpSoundPlayer == null) {
+            Debug.error("JumpSoundPlayer doesn't exist");
+            return;
+        }
 
         if (!scene.isInEditor) {
             _isActive = true;
@@ -209,12 +282,31 @@ class CharacterController extends Behavior {
     // In onPhysicsUpdate, ensure this order and logic:
     public override function onPhysicsUpdate(deltaTime:Float) {
         if (isActive) {
+            if (body.velocity.length() == 0) {
+                //
+            }
+            else {
+                if (canPlayWalkSound) {
+                    footSoundPlayer.stream = new AudioStream(footsounds.pickRandom());    
+                    footSoundPlayer.play();
+                    footSoundTimer.start();
+                    canPlayWalkSound = false;
+                }
+                if (speed == defaultSpeed) {
+                }
+                else if (speed == sprintSpeed) {
+                }
+            }
+            
             speed = defaultSpeed;
+            footSoundTimer.waitTime = defaultWalkSoundTime;
             var inputVector = getInputVector();
             var direction = getDirection(inputVector);
 
-            if (InputService.isActionPressed("sprint"))
-                speed = sprintSpeed;
+            if (InputService.isActionPressed("sprint")) {
+                speed = sprintSpeed; 
+                footSoundTimer.waitTime = sprintWalkSoundTime;
+            }
         
             jump();
             applyMovement(direction, deltaTime);
@@ -333,6 +425,7 @@ class CharacterController extends Behavior {
     inline function jump() {
         if (InputService.isActionJustPressed("jump")) {
             if (body.isOnFloor()) {
+                jumpSoundPlayer.play();
                 snapVector = Vector3.zero();
                 var velocity = body.velocity;
                 velocity.y = jumpImpulse;

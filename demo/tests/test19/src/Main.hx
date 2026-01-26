@@ -32,6 +32,7 @@ class Main extends App {
 		mapFile.textureDirs.push(BaseTextures.Water);
 
 		var scene = mapFile.instantiate();
+		scene.io = io;
 		scene.isInEditor = false;
 
 		rootNode.addChild(scene);

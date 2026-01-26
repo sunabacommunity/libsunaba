@@ -59,6 +59,43 @@
 			],
 			"name": "Camera",
 			"path": ""
+		},
+		{
+			"children": [],
+			"classType": "sunaba.EntityData",
+			"components": [],
+			"name": "FootSoundPlayer",
+			"path": ""
+		},
+		{
+			"children": [],
+			"classType": "sunaba.EntityData",
+			"components": [
+				{
+					"data": {
+						"autoplay": false,
+						"bus": "Master",
+						"maxPolyphony": 1,
+						"mixTarget": 0,
+						"pitchScale": 1.0,
+						"playbackType": 0,
+						"playing": false,
+						"stream": {
+							"type": 24,
+							"value": {
+								"class": "AudioStreamOggVorbis",
+								"path": "basesfx://jump.ogg"
+							}
+						},
+						"streamPaused": false,
+						"volumeDb": 0.0,
+						"volumeLinear": 1.0
+					},
+					"type": "sunaba.audio.AudioSource"
+				}
+			],
+			"name": "JumpSoundPlayer",
+			"path": ""
 		}
 	],
 	"classType": "sunaba.Prefab",
@@ -276,6 +313,46 @@
 
 			},
 			"type": "test19.CharacterController"
+		},
+		{
+			"data": {
+				"autoplay": false,
+				"bus": "Master",
+				"maxPolyphony": 1,
+				"mixTarget": 0,
+				"pitchScale": 1.0,
+				"playbackType": 0,
+				"playing": false,
+				"stream": {
+					"type": 24,
+					"value": {
+						"class": "AudioStream",
+						"path": "?",
+						"properties": {
+							"resource_local_to_scene": {
+								"type": 1,
+								"value": false
+							},
+							"resource_name": {
+								"type": 4,
+								"value": ""
+							},
+							"resource_path": {
+								"type": 4,
+								"value": ""
+							},
+							"resource_scene_unique_id": {
+								"type": 4,
+								"value": ""
+							}
+						}
+					}
+				},
+				"streamPaused": false,
+				"volumeDb": 0.0,
+				"volumeLinear": 1.0
+			},
+			"type": "sunaba.audio.AudioSource"
 		}
 	],
 	"name": "Player",
