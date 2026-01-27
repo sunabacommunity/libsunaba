@@ -22,6 +22,33 @@ class SceneRoot extends Node {
 		return null;
 	}
 
+	@:generic
+	function __findByNode(entity: Entity, node: Node): Null<Entity> {
+		if (entity.node.native.eq(node.native)) {
+			return entity;
+		}
+		for (i in 0...entity.getChildCount()) {
+			var child = entity.getChild(i);
+
+			var result = __findByNode(child, node);
+			if (result != null) {
+				return result;
+			}
+		}
+
+		return null;
+	}
+
+	public function findByNode(node: Node): Null<Entity> {
+		for (entity in entities) {
+			var result = __findByNode(entity, node);
+			if (result != null) {
+				return result;
+			}
+		}
+		return null;
+	}
+
 	private var started: Bool = false;
 	private var enteredTree: Bool = false;
 
@@ -98,7 +125,7 @@ class SceneRoot extends Node {
 				entity.exitTree();
 			}
 		}
-		
+
 	}
 
 	public override function onReady() {
