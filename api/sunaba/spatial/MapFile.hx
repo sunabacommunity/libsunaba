@@ -42,6 +42,8 @@ class MapFile extends BaseClass {
         var mapNodeEntity = new Entity();
         var mapNodeTransform = mapNodeEntity.addComponent(SpatialTransform);
         mapNodeTransform.node = mapNode;
+        var map3d = mapNodeEntity.addComponent(Map3D);
+        map3d.node = mapNode;
         mapNodeEntity.name = "MapEntity";
         yield();
 
