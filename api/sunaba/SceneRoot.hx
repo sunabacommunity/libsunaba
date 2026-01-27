@@ -22,7 +22,6 @@ class SceneRoot extends Node {
 		return null;
 	}
 
-	@:generic
 	function __findByNode(entity: Entity, node: Node): Null<Entity> {
 		if (entity.node.native.eq(node.native)) {
 			return entity;
