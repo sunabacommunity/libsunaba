@@ -1,5 +1,6 @@
 package test19;
 
+import sunaba.spatial.Water;
 import sunaba.core.ArrayList;
 import sunaba.Debug;
 import sunaba.audio.AudioSource;
@@ -24,6 +25,7 @@ import sunaba.core.Reference;
 import sunaba.input.InputEvent;
 import sunaba.Behavior;
 import sunaba.Timer;
+import sunaba.spatial.Map3D;
 
 class CharacterController extends Behavior {
     public var speed: Float;
@@ -43,6 +45,16 @@ class CharacterController extends Behavior {
     public var snapVector: Vector3;
 
     public var timesJumped: Int;
+
+    public var isOnWater(get, default): Bool;
+    function get_isOnWater() {
+        if (collidingWaterBodies.length != 0) {
+            return true;
+        }
+        return false;
+    }
+    private var collidingWaterBodies: Array<Water>;
+
 
     private var footsounds: ArrayList;
     private var currentFootSoundIdx: Int = 0;
@@ -106,6 +118,7 @@ class CharacterController extends Behavior {
         sprintWalkSoundTime = 0.25;
 
         canPlayWalkSound = true;
+        collidingWaterBodies = new Array();
     }
 
     public override function onStart() {
@@ -174,6 +187,27 @@ class CharacterController extends Behavior {
             Debug.error("JumpSoundPlayer doesn't exist");
             return;
         }
+
+        var mapEntity = scene.find("MapEntity");
+        if (mapEntity != null) {
+            var map3d = mapEntity.getComponent(Map3D);
+            if (map3d != null) {
+                var waterBodies = map3d.getAllWaterTriggers();
+                for (water in waterBodies) {
+                    water.bodyEntered.add((ent) -> {
+                        if (ent == entity) {
+                            collidingWaterBodies.push(water);
+                        }
+                    });
+                    water.bodyExited.add((ent) -> {
+                        if (ent == entity) {
+                            collidingWaterBodies.remove(water);
+                        }
+                    });
+                }
+            }
+        }
+
 
         if (!scene.isInEditor) {
             _isActive = true;
@@ -431,6 +465,17 @@ class CharacterController extends Behavior {
                 velocity.y = jumpImpulse;
                 body.velocity = velocity;
                 timesJumped++;
+            }
+            else if (isOnWater) {
+                snapVector = Vector3.zero();
+                var velocity = body.velocity;
+                velocity.y = jumpImpulse / 8;
+                body.velocity = velocity;
+            }
+            else if (body.velocity.y > jumpImpulse / 2.0) {
+                var velocity = body.velocity;
+                velocity.y = jumpImpulse / 2.0;
+                body.velocity = velocity;
             }
         }
     }
