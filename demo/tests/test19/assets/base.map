@@ -127,7 +127,7 @@
 }
 // entity 2
 {
-"classname" "func_prefab"
+"classname" "info_prefab"
 "origin" "152 8 24"
 "path" "app://DirectionalLight.vpfb"
 "name" "DirectionalLight"
@@ -148,6 +148,6 @@
 }
 // entity 4
 {
-"classname" "info_environmet_standard"
+"classname" "info_environmet_daytime"
 "origin" "-168 168 24"
 }
