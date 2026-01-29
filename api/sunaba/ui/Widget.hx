@@ -122,6 +122,19 @@ class Widget extends Control {
 					if (offsetRightAtt != null) {
 						offsetRight = Std.parseFloat(offsetRightAtt);
 					}
+					var customMinimumSizeAtt = firstElement.get("customMinimumSize");
+					if (customMinimumSizeAtt != null) {
+						customMinimumSizeAtt = StringTools.replace(customMinimumSizeAtt, " ", "");
+						var customMinimumSizeAttArr = customMinimumSizeAtt.split(",");
+						customMinimumSize = new Vector2(
+							Std.parseFloat(
+								customMinimumSizeAttArr[0]
+							), 
+							Std.parseFloat(
+								customMinimumSizeAttArr[1]
+							)
+						);
+					}
 				}
 
 				var nameAtt = firstElement.get("name");
