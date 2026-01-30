@@ -120,15 +120,15 @@
 }
 // entity 1
 {
-"classname" "info_prefab"
-"origin" "-168 0 20"
+"classname" "info_player_start"
+"origin" "-168 0 24"
 "path" "app://SpawnPoint.vpfb"
 "name" "Spawn"
 }
 // entity 2
 {
 "classname" "info_prefab"
-"origin" "152 8 24"
+"origin" "168 8 24"
 "path" "app://DirectionalLight.vpfb"
 "name" "DirectionalLight"
 "angle" "0"
