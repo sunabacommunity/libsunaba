@@ -181,8 +181,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 			sol::lib::count, g );*/
 		lua_state["sandboxed"] = false;
 #ifdef SUNABA_LUASOCKET_ENABLED
-		luaopen_socket_core(lua_state);
-		luaopen_mime_core(lua_state);
+		luaopen_socket_core(lua_state.lua_state());
+		luaopen_mime_core(lua_state.lua_state());
 #endif
 	}
 	else {
