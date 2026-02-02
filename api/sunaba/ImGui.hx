@@ -8,9 +8,14 @@ import sunaba.core.Object;
 import sunaba.core.ArrayList;
 import sunaba.core.Signal;
 import sunaba.core.Vector2;
+import sunaba.imgui.ImGuiMultiSelectIOPtr;
 import sunaba.core.Color;
-import sunaba.Texture2D;
-import sunaba.imgui.*;
+import sunaba.imgui.ImGuiWindowClassPtr;
+import sunaba.imgui.ImDrawListPtr;
+import sunaba.imgui.ImGuiIOPtr;
+import sunaba.imgui.ImGuiStylePtr;
+import sunaba.imgui.ImGuiListClipperPtr;
+import sunaba.imgui.ImGuiTableSortSpecsPtr;
 
 class ImGui extends Object {
     public override function nativeInit(?_native: NativeObject) {
