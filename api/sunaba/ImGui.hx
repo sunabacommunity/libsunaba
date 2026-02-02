@@ -10,6 +10,7 @@ import sunaba.core.Signal;
 import sunaba.core.Vector2;
 import sunaba.core.Color;
 import sunaba.Texture2D;
+import sunaba.imgui.*;
 
 class ImGui extends Object {
     public override function nativeInit(?_native: NativeObject) {
