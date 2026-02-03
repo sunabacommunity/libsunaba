@@ -55,8 +55,8 @@ class App extends BaseClass {
 			init();
         }
 		catch (e: Exception) {
-			trace(e);
-			Debug.error(e.message);
+			trace(e.toString());
+			Debug.error(e.toString());
 		}
     }
 
