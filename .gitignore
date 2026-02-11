@@ -73,6 +73,7 @@ ct.lua
 demo/.vs/
 demo/export_presets.cfg
 libsunaba.iml
+/.cache/*
 /demo/tests/test11/.haxelib/gamepak/0,0,0/Gamepak.hx
 /demo/tests/test11/.haxelib/gamepak/0,0,0/haxelib.json
 /demo/tests/test11/.haxelib/gamepak/0,0,0/HeaderFile.hx

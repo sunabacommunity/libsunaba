@@ -19,7 +19,7 @@ void Runtime::luaopen_Variant() {
 	luaopen_Variant_arrayMethods();
 
 	// Add object-related as* methods
-	luaopen_Variant_objectMethods();
+	luaopen_Variant_objectMethods(Array());
 
 	// Add script-related as* methods
 	luaopen_Variant_scriptMethods();

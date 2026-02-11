@@ -74,7 +74,7 @@ public:
 	void luaopen_Variant_fromMethods();
 	void luaopen_Variant_asMethods();
 	void luaopen_Variant_arrayMethods();
-	void luaopen_Variant_objectMethods();
+	void luaopen_Variant_objectMethods(const Array &classnames);
 	void luaopen_Variant_scriptMethods();
 	void luaopen_Variant_sandboxed(const Array& classnames);
 	void luaopen_NativeObject_sandboxed(const Array& classnames);

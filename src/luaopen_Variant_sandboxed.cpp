@@ -19,7 +19,7 @@ void Runtime::luaopen_Variant_sandboxed(const Array &classnames) {
 	luaopen_Variant_arrayMethods();
 
 	// Add object-related as* methods (these might need filtering based on classnames)
-	luaopen_Variant_objectMethods();
+	luaopen_Variant_objectMethods(classnames);
 
 	// Add script-related as* methods
 	luaopen_Variant_scriptMethods();
