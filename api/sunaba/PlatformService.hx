@@ -29,4 +29,19 @@ class PlatformService {
 		args.append(feature);
 		return getNative().call("hasFeature", args);
 	}
+
+	public static function getVersion(): String {
+		var args = new ArrayList();
+		return getNative().call("GetVersion", args);
+	}
+
+	public static function getCompDate(): String {
+		var args = new ArrayList();
+		return getNative().call("GetCompDate", args);
+	}
+
+	public static function getEngineVersion(): String {
+		var args = new ArrayList();
+		return getNative().call("GetEngineVersion", args);
+	}
 }
