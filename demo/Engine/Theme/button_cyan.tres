@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://br13kw6bw8k0j"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://br13kw6bw8k0j"]
 
 [ext_resource type="Texture2D" uid="uid://bt1gpxo1pyltb" path="res://Engine/Theme/cyan_button13.png" id="1_4tq4k"]
 

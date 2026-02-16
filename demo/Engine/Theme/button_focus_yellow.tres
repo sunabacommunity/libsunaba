@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://dpmofa7nf6jja"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dpmofa7nf6jja"]
 
 [ext_resource type="Texture2D" uid="uid://bt6jroscnl1la" path="res://Engine/Theme/focus_button13_yellow.png" id="1_8cfmo"]
 

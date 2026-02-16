@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://bgstw2b1aqj4t"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bgstw2b1aqj4t"]
 
 [ext_resource type="Texture2D" uid="uid://d6aeica3xm7e" path="res://Engine/Theme/blurple_button13.png" id="1_vredw"]
 
