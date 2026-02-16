@@ -6,6 +6,9 @@
 #include "io/ByteArray.h"
 #include  "ScriptObject.h"
 
+#define DEBUGGER_LUA_IMPLEMENTATION
+#include "debugger_lua.h"
+
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/json.hpp>
 #include <godot_cpp/classes/os.hpp>
@@ -150,6 +153,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 	luaopen_Projection();
 	io::luaopen_ByteArray(lua_state);
 	io::luaopen_Byte(lua_state);
+
+	lua_State* L = lua_state;
 	if (p_sandboxed) {
 		luaopen_Variant_sandboxed(classnames);
 		luaopen_NativeObject_sandboxed(classnames);
@@ -191,6 +196,8 @@ void Runtime::initState(bool p_sandboxed, const Array& classnames) {
 			sol::lib::table, sol::lib::utf8, sol::lib::package);
 		lua_state["sandboxed"] = true;
 	}
+
+	dbg_setup_default(L);
 
 	auto execPath = OS::get_singleton()->get_executable_path();
 	lua_state["execPath"] = execPath.utf8().get_data();

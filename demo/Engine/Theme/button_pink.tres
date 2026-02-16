@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://g8cxlmx8xejb"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://g8cxlmx8xejb"]
 
 [ext_resource type="Texture2D" uid="uid://d0ayf736euk2j" path="res://Engine/Theme/pink_button13.png" id="1_yo56o"]
 

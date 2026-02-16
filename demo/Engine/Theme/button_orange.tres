@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://2m8kdh1qf116"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://2m8kdh1qf116"]
 
 [ext_resource type="Texture2D" uid="uid://maw4b1ugubdi" path="res://Engine/Theme/orange_button13.png" id="1_gni87"]
 
