@@ -60,6 +60,17 @@ class App extends BaseClass {
 		}
     }
 
+	public static function loadlib(path: String): String {
+		var __rootNode: NativeObject = untyped __lua__("_G.__rootNode");
+		var args = new ArrayList();
+		args.append(path);
+		var res: String = __rootNode.call("load_library", args);
+		if (res == "") {
+			throw "Failed to load library - " + path;
+		}
+		return res;
+	}
+
     public function init() {
 
     }
