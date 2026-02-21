@@ -379,21 +379,21 @@ class Skeleton extends Behavior {
             var propName = parts[2];
 
             if (!boneDataMap.exists(boneIdx)) {
-                boneDataMap.set(boneIdx, new Map());
+                boneDataMap.set(boneIdx, new Map<String, Variant>());
             }
             if (boneIdx > maxBone) {
                 maxBone = boneIdx;
             }
 
             trace("boneIdx: " + boneIdx + " propName: " + propName + " data: " + JSON.stringify(boneProperties.get(propKey).toDictionary().get("value")));
-            boneDataMap.get(boneIdx).set(propName, 
+            boneDataMap.get(boneIdx).set(propName,
                 DataUtils.dictToVar(boneProperties.get(propKey).toDictionary()));
         }
 
         for (boneIdx in 0...maxBone + 1) {
             var bone = boneDataMap.get(boneIdx);
             if (bone == null) continue;
-            
+
             var name = bone.get("name");
             addBone(name);
 
@@ -404,7 +404,7 @@ class Skeleton extends Behavior {
 
             var name = bone.get("name");
             setBoneName(boneIdx, name);
-            
+
             var parent = bone.get("parent");
             setBoneParent(boneIdx, parent);
 
@@ -428,7 +428,7 @@ class Skeleton extends Behavior {
 
     public override function onInit() {
         node = new Node(new NativeObject("Skeleton3D"));
-        
+
         var transform = getComponent(SpatialTransform);
         if (transform != null) {
             transform.node = node;
