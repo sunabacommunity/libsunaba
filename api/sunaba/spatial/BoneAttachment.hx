@@ -1,4 +1,5 @@
 package sunaba.spatial;
+import sunaba.core.Dictionary;
 import sunaba.core.native.NativeObject;
 
 class BoneAttachment extends Behavior {
@@ -48,6 +49,28 @@ class BoneAttachment extends Behavior {
 	function set_useExternalSkeleton(value:Bool):Bool {
 		node.native.set("use_external_skeleton", value);
 		return value;
+	}
+
+	public override function getData():Dictionary {
+		var data = super.getData();
+
+		data.set("boneName", boneName);
+		data.set("boneIdx", boneIdx);
+		data.set("overridePose", overridePose);
+		data.set("useExternalSkeleton", useExternalSkeleton);
+		data.set("externalSkeleton", externalSkeleton);
+
+		return data;
+	}
+
+	public override function setData(data:Dictionary) {
+		super.setData(data);
+
+		boneName = data.get("boneName");
+		boneIdx = data.get("boneIdx");
+		overridePose = data.get("overridePose");
+		useExternalSkeleton = data.get("useExternalSkeleton");
+		externalSkeleton = data.get("externalSkeleton");
 	}
 
 	public override function onInit() {
