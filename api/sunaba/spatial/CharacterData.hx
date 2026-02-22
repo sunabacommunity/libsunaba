@@ -17,6 +17,8 @@ class CharacterData extends ScriptableObject {
 
 	public var clothes: Array<Texture2D> = new Array();
 
+	public var headwearList: Array<Prefab> = new Array();
+
 	public override function getData() {
 		var data = super.getData();
 
@@ -33,6 +35,11 @@ class CharacterData extends ScriptableObject {
 			clothesArr.append(DataUtils.varToDict(clothing));
 		}
 		data.set("clothes", clothesArr);
+		var headwearArr = new ArrayList();
+		for (headwear in headwearList) {
+			headwearArr.append(headwear.getData());
+		}
+		data.set("headwearList", headwearArr);
 
 		return data;
 	}
@@ -48,9 +55,19 @@ class CharacterData extends ScriptableObject {
 		legThickness = data.get("legThickness");
 		maleArmThickness = data.get("maleArmThickness");
 		faceTexture = new Texture2D(DataUtils.dictToVar(data.get("faceTexture")));
-		var clothesArr: ArrayList = data.get("clothesArr");
+		var clothesArr: ArrayList = data.get("clothes");
 		for (clothing in clothesArr) {
-			clothes.push(new Texture2D(DataUtils.dictToVar(clothing)));
+			clothes.push(
+				new Texture2D(
+					DataUtils.dictToVar(clothing)
+				)
+			);
+		}
+		var headwearArr: ArrayList = data.get("headwearList");
+		for (headwearData in headwearArr) {
+			var headwear = new Prefab();
+			headwear.setData(headwearData);
+			headwearList.push(headwear);
 		}
 	}
 }
