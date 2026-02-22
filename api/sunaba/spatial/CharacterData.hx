@@ -7,8 +7,6 @@ import sunaba.core.ArrayList;
 class CharacterData extends ScriptableObject {
 	public var skinTone: Color = new Color(1, 1, 1, 1);
 	public var bodyType: BodyType = BodyType.male;
-	public var bodyHeight: Float = 0.0;
-	public var bodySize: Float = 0.0;
 	public var femaleChestSize: Float = 0.0;
 	public var legThickness: Float = 0.0;
 	public var maleArmThickness: Float = 0.0;
@@ -24,8 +22,6 @@ class CharacterData extends ScriptableObject {
 
 		data.set("skinTone", DataUtils.varToDict(skinTone));
 		data.set("bodyType", Variant.fromInt(bodyType));
-		data.set("bodyHeight", bodyHeight);
-		data.set("bodySize", bodySize);
 		data.set("femaleChestSize", femaleChestSize);
 		data.set("legThickness", legThickness);
 		data.set("maleArmThickness", maleArmThickness);
@@ -49,8 +45,6 @@ class CharacterData extends ScriptableObject {
 
 		skinTone = DataUtils.dictToVar(data.get("skinTone"));
 		bodyType = data.get("bodyType");
-		bodyHeight= data.get("bodyHeight");
-		bodySize = data.get("bodySize");
 		femaleChestSize = data.get("femaleChestSize");
 		legThickness = data.get("legThickness");
 		maleArmThickness = data.get("maleArmThickness");
