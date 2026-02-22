@@ -3,6 +3,7 @@
 import sunaba.core.Color;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
+import sunaba.core.Variant;
 
 class CharacterData extends ScriptableObject {
 	public var name: String;
@@ -52,7 +53,7 @@ class CharacterData extends ScriptableObject {
 		name = data.get("name");
 		desc = data.get("desc");
 		skinTone = DataUtils.dictToVar(data.get("skinTone"));
-		bodyType = data.get("bodyType");
+		bodyType = data.get("bodyType").toInt();
 		femaleChestSize = data.get("femaleChestSize");
 		legThickness = data.get("legThickness");
 		maleArmThickness = data.get("maleArmThickness");
