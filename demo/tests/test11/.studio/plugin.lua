@@ -213,6 +213,8 @@ __haxe_NativeStackTrace = _hx_e()
 __haxe__Rest_Rest_Impl_ = _hx_e()
 __haxe_ValueException = _hx_e()
 __haxe_io_Bytes = _hx_e()
+__haxe_crypto_Base64 = _hx_e()
+__haxe_crypto_BaseCode = _hx_e()
 __haxe_crypto_Crc32 = _hx_e()
 __haxe_ds_IntMap = _hx_e()
 __haxe_ds_List = _hx_e()
@@ -271,6 +273,7 @@ __sunaba__FileDialogMode_FileDialogMode_Impl_ = _hx_e()
 __sunaba__FocusModeEnum_FocusModeEnum_Impl_ = _hx_e()
 __sunaba_Font = _hx_e()
 __sunaba_GameEvent = _hx_e()
+__sunaba_GameEvent_func_sunaba_Entity_Void = _hx_e()
 __sunaba_Gc = _hx_e()
 __sunaba__HorizontalAlignment_HorizontalAlignment_Impl_ = _hx_e()
 __sunaba_Image = _hx_e()
@@ -292,6 +295,7 @@ __sunaba_Material = _hx_e()
 __sunaba__MouseButton_MouseButton_Impl_ = _hx_e()
 __sunaba__MouseMode_MouseMode_Impl_ = _hx_e()
 __sunaba_OSService = _hx_e()
+__sunaba_OggPacketSequence = _hx_e()
 __sunaba__Planes_Planes_Impl_ = _hx_e()
 __sunaba_PlatformService = _hx_e()
 __sunaba_Prefab = _hx_e()
@@ -317,6 +321,13 @@ __sunaba_animation_Animation = _hx_e()
 __sunaba_animation_AnimationLibrary = _hx_e()
 __sunaba_animation_AnimationMixer = _hx_e()
 __sunaba_animation_AnimationPlayer = _hx_e()
+__sunaba_audio_AudioSource = _hx_e()
+__sunaba_audio_AudioStream = _hx_e()
+__sunaba_audio_AudioStreamMP3 = _hx_e()
+__sunaba_audio_AudioStreamOggVorbis = _hx_e()
+__sunaba_audio_AudioStreamPlayback = _hx_e()
+__sunaba_audio_AudioStreamPlayer = _hx_e()
+__sunaba_audio_AudioStreamWAV = _hx_e()
 __sunaba_core__ArrayList_ArrayList_Impl_ = _hx_e()
 __sunaba_core_ArrayListIterator = _hx_e()
 __sunaba_core__Basis_Basis_Impl_ = _hx_e()
@@ -359,6 +370,7 @@ __sunaba_input_InputEventMouseButton = _hx_e()
 __sunaba_input_InputEventMouseMotion = _hx_e()
 __sunaba_input_InputService = _hx_e()
 __sunaba_input_Shortcut = _hx_e()
+__sunaba_internal_ProcessSpawner = _hx_e()
 __sunaba_io_IoInterface = _hx_e()
 __sunaba_io_SystemIoBase = _hx_e()
 __sunaba_io_FileSystemIo = _hx_e()
@@ -367,15 +379,23 @@ __sunaba_networking_MultiplayerAPI = _hx_e()
 __sunaba_networking_PacketPeer = _hx_e()
 __sunaba_networking_MultiplayerPeer = _hx_e()
 __sunaba_spatial_BaseMaterial3D = _hx_e()
+__sunaba_spatial_BoneAttachment = _hx_e()
+__sunaba_spatial_BoneMap = _hx_e()
 __sunaba_spatial_Camera = _hx_e()
 __sunaba_spatial_CameraAttributes = _hx_e()
+__sunaba_spatial_CharacterBoneMapper = _hx_e()
 __sunaba_spatial_IVisualInstance = _hx_e()
 __sunaba_spatial_IGeometryInstance = _hx_e()
+__sunaba_spatial_Map3D = _hx_e()
+__sunaba_spatial_MapFile = _hx_e()
 __sunaba_spatial_Skeleton = _hx_e()
+__sunaba_spatial_SkeletonProfile = _hx_e()
 __sunaba_spatial_Skin = _hx_e()
 __sunaba_spatial_SkinReference = _hx_e()
 __sunaba_spatial_Sky = _hx_e()
 __sunaba_spatial_SpatialTransform = _hx_e()
+__sunaba_spatial_Trigger = _hx_e()
+__sunaba_spatial_Water = _hx_e()
 __sunaba_spatial_World3D = _hx_e()
 __sunaba_spatial_lighting_ILight = _hx_e()
 __sunaba_spatial_lighting_DirectionalLight = _hx_e()
@@ -402,7 +422,6 @@ __sunaba_spatial_models_gltf_GLTFDocumentExtension = _hx_e()
 __sunaba_spatial_models_gltf_GLTFLight = _hx_e()
 __sunaba_spatial_models_gltf_GLTFMesh = _hx_e()
 __sunaba_spatial_models_gltf_GLTFNode = _hx_e()
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty = _hx_e()
 __sunaba_spatial_physics_ICollisionObject = _hx_e()
 __sunaba_spatial_physics_IPhysicsBody = _hx_e()
 __sunaba_spatial_physics_StaticBody = _hx_e()
@@ -424,10 +443,12 @@ __sunaba_studio_Console = _hx_e()
 __sunaba_studio_Editor = _hx_e()
 __sunaba_studio_Explorer = _hx_e()
 __sunaba_studio_Gizmo3D = _hx_e()
+__sunaba_studio_MapViewer = _hx_e()
 __sunaba_studio_ModelImportService = _hx_e()
 __sunaba_studio_ResourceInspector = _hx_e()
 __sunaba_studio_SceneEditor = _hx_e()
 __sunaba_studio_StudioUtils = _hx_e()
+__sunaba_studio_TextureListEditor = _hx_e()
 __sunaba_studio_codeEditor_CodeEditorPlugin = _hx_e()
 __sunaba_studio_codeEditor_HaxePlugin = _hx_e()
 __sunaba_studio_debugDraw_DebugDrawService3D = _hx_e()
@@ -438,6 +459,7 @@ __sunaba_studio_explorer_FileHandler = _hx_e()
 __sunaba_studio_explorer_FileTemplate = _hx_e()
 __sunaba_studio_explorer_NewFileWidget = _hx_e()
 __sunaba_studio_fileHandlers_HxFileHandler = _hx_e()
+__sunaba_studio_fileHandlers_MapFileHandler = _hx_e()
 __sunaba_studio_fileHandlers_SmdlBinaryFileHandler = _hx_e()
 __sunaba_studio_fileHandlers_SmdlFileHandler = _hx_e()
 __sunaba_studio_fileHandlers_VpfbFileHandler = _hx_e()
@@ -1037,7 +1059,7 @@ Gamepak.new = function()
 end
 Gamepak.super = function(self) 
   self.useExternApi = false;
-  self.resourceFormats = _hx_tab_array({[0]=".vscn", ".vpfb", ".vres"}, 3);
+  self.resourceFormats = _hx_tab_array({[0]=".vscn", ".vpfb", ".vres", ".smdl", ".ftd"}, 5);
   self.markExecutable = true;
   self.haxePath = "haxe";
   self.zipOutputPath = "";
@@ -1089,9 +1111,9 @@ Gamepak.prototype.build = function(self,snbprojPath)
         if (self.zipOutputPath == "") then 
           self.zipOutputPath = Std.string(Std.string(Std.string(self.projDirPath) .. Std.string("/bin/")) .. Std.string(self.sprojJson.name)) .. Std.string(".snb");
         else
-          if (StringTools.endsWith(self.zipOutputPath, ".nlib")) then 
-            _G.print("Warning: Output path ends with .nlib, changing to .snb");
-            self.zipOutputPath = StringTools.replace(self.zipOutputPath, ".nlib", ".snb");
+          if (StringTools.endsWith(self.zipOutputPath, ".slib")) then 
+            _G.print("Warning: Output path ends with .slib, changing to .snb");
+            self.zipOutputPath = StringTools.replace(self.zipOutputPath, ".slib", ".snb");
           else
             if (not StringTools.endsWith(self.zipOutputPath, ".snb")) then 
               local tmp = self;
@@ -1100,17 +1122,17 @@ Gamepak.prototype.build = function(self,snbprojPath)
           end;
         end;
       else
-        if (self.sprojJson.type == "library") then 
+        if ((self.sprojJson.type == "library") or (self.sprojJson.type == "plugin")) then 
           if (self.zipOutputPath == "") then 
-            self.zipOutputPath = Std.string(Std.string(Std.string(self.projDirPath) .. Std.string("/bin/")) .. Std.string(self.sprojJson.name)) .. Std.string(".nlib");
+            self.zipOutputPath = Std.string(Std.string(Std.string(self.projDirPath) .. Std.string("/bin/")) .. Std.string(self.sprojJson.name)) .. Std.string(".slib");
           else
             if (StringTools.endsWith(self.zipOutputPath, ".snb")) then 
-              _G.print("Warning: Output path ends with .snb, changing to .nlib");
-              self.zipOutputPath = StringTools.replace(self.zipOutputPath, ".snb", ".nlib");
+              _G.print("Warning: Output path ends with .snb, changing to .slib");
+              self.zipOutputPath = StringTools.replace(self.zipOutputPath, ".snb", ".slib");
             else
-              if (not StringTools.endsWith(self.zipOutputPath, ".nlib")) then 
+              if (not StringTools.endsWith(self.zipOutputPath, ".slib")) then 
                 local tmp = self;
-                tmp.zipOutputPath = Std.string(tmp.zipOutputPath) .. Std.string(".nlib");
+                tmp.zipOutputPath = Std.string(tmp.zipOutputPath) .. Std.string(".slib");
               end;
             end;
           end;
@@ -1327,9 +1349,9 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       if (_gthis.zipOutputPath == "") then 
         _gthis.zipOutputPath = Std.string(Std.string(Std.string(_gthis.projDirPath) .. Std.string("/bin/")) .. Std.string(_gthis.sprojJson.name)) .. Std.string(".snb");
       else
-        if (StringTools.endsWith(_gthis.zipOutputPath, ".nlib")) then 
-          _G.print("Warning: Output path ends with .nlib, changing to .snb");
-          _gthis.zipOutputPath = StringTools.replace(_gthis.zipOutputPath, ".nlib", ".snb");
+        if (StringTools.endsWith(_gthis.zipOutputPath, ".slib")) then 
+          _G.print("Warning: Output path ends with .slib, changing to .snb");
+          _gthis.zipOutputPath = StringTools.replace(_gthis.zipOutputPath, ".slib", ".snb");
         else
           if (not StringTools.endsWith(_gthis.zipOutputPath, ".snb")) then 
             local _gthis = _gthis;
@@ -1338,17 +1360,17 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
         end;
       end;
     else
-      if (_gthis.sprojJson.type == "library") then 
+      if ((_gthis.sprojJson.type == "library") or (_gthis.sprojJson.type == "plugin")) then 
         if (_gthis.zipOutputPath == "") then 
-          _gthis.zipOutputPath = Std.string(Std.string(Std.string(_gthis.projDirPath) .. Std.string("/bin/")) .. Std.string(_gthis.sprojJson.name)) .. Std.string(".nlib");
+          _gthis.zipOutputPath = Std.string(Std.string(Std.string(_gthis.projDirPath) .. Std.string("/bin/")) .. Std.string(_gthis.sprojJson.name)) .. Std.string(".slib");
         else
           if (StringTools.endsWith(_gthis.zipOutputPath, ".snb")) then 
-            _G.print("Warning: Output path ends with .snb, changing to .nlib");
-            _gthis.zipOutputPath = StringTools.replace(_gthis.zipOutputPath, ".snb", ".nlib");
+            _G.print("Warning: Output path ends with .snb, changing to .slib");
+            _gthis.zipOutputPath = StringTools.replace(_gthis.zipOutputPath, ".snb", ".slib");
           else
-            if (not StringTools.endsWith(_gthis.zipOutputPath, ".nlib")) then 
+            if (not StringTools.endsWith(_gthis.zipOutputPath, ".slib")) then 
               local _gthis = _gthis;
-              _gthis.zipOutputPath = Std.string(_gthis.zipOutputPath) .. Std.string(".nlib");
+              _gthis.zipOutputPath = Std.string(_gthis.zipOutputPath) .. Std.string(".slib");
             end;
           end;
         end;
@@ -1382,7 +1404,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     _G.print("Haxe build command executed successfully.");
     _G.coroutine.yield();
     local mainLuaPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(_gthis.sprojJson.luabin);
-    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="/Users/Shared/studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=417,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
+    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="G:\\gamepak\\libsrc\\Gamepak.hx",lineNumber=419,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
     if (not __sys_FileSystem.exists(mainLuaPath)) then 
       _G.print(Std.string(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)));
       _G.error(__haxe_Exception.thrown(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)),0);
@@ -1453,7 +1475,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       while (assetKey:hasNext()) do _hx_do_first_1 = false;
         
         local assetKey = assetKey:next();
-        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=491,className="Gamepak",methodName="buildCoroutine"}));
+        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\gamepak\\libsrc\\Gamepak.hx",lineNumber=493,className="Gamepak",methodName="buildCoroutine"}));
         local ret = assets.h[assetKey];
         local assetContent = (function() 
           local _hx_4
@@ -1603,6 +1625,9 @@ end
 Gamepak.prototype.useExternApi= nil;
 Gamepak.prototype.generateHaxeBuildHxml = function(self) 
   local command = Std.string(Std.string(Std.string(Std.string("--class-path \"") .. Std.string(self.sprojJson.scriptdir)) .. Std.string("\"\n-main ")) .. Std.string(self.sprojJson.entrypoint)) .. Std.string("\n--library libsunaba");
+  if (self.sprojJson.type == "plugin") then 
+    command = Std.string(Std.string(Std.string(Std.string("--class-path \"") .. Std.string(self.sprojJson.scriptdir)) .. Std.string("\"\n-main ")) .. Std.string(self.sprojJson.pluginEntrypoint)) .. Std.string("\n--library libsunaba\n--library sunaba-studio\n--library gamepak");
+  end;
   if (self.sprojJson.apisymbols ~= false) then 
     command = Std.string(command) .. Std.string("\n--xml types.xml");
   end;
@@ -2336,8 +2361,8 @@ TestPlugin.main = function()
 end
 TestPlugin.prototype = _hx_e();
 TestPlugin.prototype.init = function(self) 
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
-  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
   self:get_editor():pushBehaviorClass(__myComponents_RotateComponent);
   self:get_editor():pushBehaviorClass(__myComponents_FreeLook3D);
 end
@@ -3107,6 +3132,18 @@ end
 __haxe__Rest_Rest_Impl_.new = {}
 _hxClasses["haxe._Rest.Rest_Impl_"] = __haxe__Rest_Rest_Impl_
 __haxe__Rest_Rest_Impl_.__name__ = "haxe._Rest.Rest_Impl_"
+__haxe__Rest_Rest_Impl_.of = function(array) 
+  local ret = ({});
+  local _g = 0;
+  local _g1 = array.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local idx = _g - 1;
+    ret[idx + 1] = array[idx];
+  end;
+  do return ret end;
+end
 __haxe__Rest_Rest_Impl_.toArray = function(this1) 
   local length = nil;
   local tab = __lua_PairTools.copy(this1);
@@ -3219,6 +3256,149 @@ __haxe_io_Bytes.prototype.toString = function(self)
 end
 
 __haxe_io_Bytes.prototype.__class__ =  __haxe_io_Bytes
+
+__haxe_crypto_Base64.new = {}
+_hxClasses["haxe.crypto.Base64"] = __haxe_crypto_Base64
+__haxe_crypto_Base64.__name__ = "haxe.crypto.Base64"
+__haxe_crypto_Base64.encode = function(bytes,complement) 
+  if (complement == nil) then 
+    complement = true;
+  end;
+  local str = __haxe_crypto_BaseCode.new(__haxe_crypto_Base64.BYTES):encodeBytes(bytes):toString();
+  if (complement) then 
+    local _g = _G.math.fmod(bytes.length, 3);
+    if (_g) == 1 then 
+      str = Std.string(str) .. Std.string("==");
+    elseif (_g) == 2 then 
+      str = Std.string(str) .. Std.string("=");else end;
+  end;
+  do return str end;
+end
+__haxe_crypto_Base64.decode = function(str,complement) 
+  if (complement == nil) then 
+    complement = true;
+  end;
+  if (complement) then 
+    while (_G.string.byte(str, (#str - 1) + 1) == 61) do _hx_do_first_1 = false;
+      
+      str = String.prototype.substr(str, 0, -1);
+    end;
+  end;
+  do return __haxe_crypto_BaseCode.new(__haxe_crypto_Base64.BYTES):decodeBytes(__haxe_io_Bytes.ofString(str)) end;
+end
+
+__haxe_crypto_BaseCode.new = function(base) 
+  local self = _hx_new(__haxe_crypto_BaseCode.prototype)
+  __haxe_crypto_BaseCode.super(self,base)
+  return self
+end
+__haxe_crypto_BaseCode.super = function(self,base) 
+  local len = base.length;
+  local nbits = 1;
+  while (len > (_hx_bit.lshift(1,nbits))) do _hx_do_first_1 = false;
+    
+    nbits = nbits + 1;
+  end;
+  if ((nbits > 8) or (len ~= (_hx_bit.lshift(1,nbits)))) then 
+    _G.error(__haxe_Exception.thrown("BaseCode : base length must be a power of two."),0);
+  end;
+  self.base = base;
+  self.nbits = nbits;
+end
+_hxClasses["haxe.crypto.BaseCode"] = __haxe_crypto_BaseCode
+__haxe_crypto_BaseCode.__name__ = "haxe.crypto.BaseCode"
+__haxe_crypto_BaseCode.prototype = _hx_e();
+__haxe_crypto_BaseCode.prototype.base= nil;
+__haxe_crypto_BaseCode.prototype.nbits= nil;
+__haxe_crypto_BaseCode.prototype.tbl= nil;
+__haxe_crypto_BaseCode.prototype.encodeBytes = function(self,b) 
+  local nbits = self.nbits;
+  local base = self.base;
+  local size = Std.int((b.length * 8) / nbits);
+  local out = __haxe_io_Bytes.alloc(size + (function() 
+    local _hx_1
+    if ((_G.math.fmod(b.length * 8, nbits)) == 0) then 
+    _hx_1 = 0; else 
+    _hx_1 = 1; end
+    return _hx_1
+  end )());
+  local buf = 0;
+  local curbits = 0;
+  local mask = (_hx_bit.lshift(1,nbits)) - 1;
+  local pin = 0;
+  local pout = 0;
+  while (pout < size) do _hx_do_first_1 = false;
+    
+    while (curbits < nbits) do _hx_do_first_2 = false;
+      
+      curbits = curbits + 8;
+      buf = _hx_bit.lshift(buf,8);
+      pin = pin + 1;
+      buf = _hx_bit.bor(buf,b.b[pin - 1]);
+    end;
+    curbits = curbits - nbits;
+    pout = pout + 1;
+    out.b[pout - 1] = _hx_bit.band(base.b[_hx_bit.band(_hx_bit.arshift(buf,curbits),mask)],255);
+  end;
+  if (curbits > 0) then 
+    pout = pout + 1;
+    out.b[pout - 1] = _hx_bit.band(base.b[_hx_bit.band(_hx_bit.lshift(buf,nbits - curbits),mask)],255);
+  end;
+  do return out end
+end
+__haxe_crypto_BaseCode.prototype.initTable = function(self) 
+  local tbl = Array.new();
+  local _g = 0;
+  while (_g < 256) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    tbl[i] = -1;
+  end;
+  local _g = 0;
+  local _g1 = self.base.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    tbl[self.base.b[i]] = i;
+  end;
+  self.tbl = tbl;
+end
+__haxe_crypto_BaseCode.prototype.decodeBytes = function(self,b) 
+  local nbits = self.nbits;
+  local base = self.base;
+  if (self.tbl == nil) then 
+    self:initTable();
+  end;
+  local tbl = self.tbl;
+  local size = _hx_bit.arshift(b.length * nbits,3);
+  local out = __haxe_io_Bytes.alloc(size);
+  local buf = 0;
+  local curbits = 0;
+  local pin = 0;
+  local pout = 0;
+  while (pout < size) do _hx_do_first_1 = false;
+    
+    while (curbits < 8) do _hx_do_first_2 = false;
+      
+      curbits = curbits + nbits;
+      buf = _hx_bit.lshift(buf,nbits);
+      pin = pin + 1;
+      local i = tbl[b.b[pin - 1]];
+      if (i == -1) then 
+        _G.error(__haxe_Exception.thrown("BaseCode : invalid encoded char"),0);
+      end;
+      buf = _hx_bit.bor(buf,i);
+    end;
+    curbits = curbits - 8;
+    pout = pout + 1;
+    out.b[pout - 1] = _hx_bit.band(_hx_bit.band(_hx_bit.arshift(buf,curbits),255),255);
+  end;
+  do return out end
+end
+
+__haxe_crypto_BaseCode.prototype.__class__ =  __haxe_crypto_BaseCode
 
 __haxe_crypto_Crc32.new = {}
 _hxClasses["haxe.crypto.Crc32"] = __haxe_crypto_Crc32
@@ -4075,7 +4255,7 @@ __haxe_io_Output.__name__ = "haxe.io.Output"
 __haxe_io_Output.prototype = _hx_e();
 __haxe_io_Output.prototype.bigEndian= nil;
 __haxe_io_Output.prototype.writeByte = function(self,c) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/std/haxe/io/Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
 end
 __haxe_io_Output.prototype.writeBytes = function(self,s,pos,len) 
   if (((pos < 0) or (len < 0)) or ((pos + len) > s.length)) then 
@@ -4223,7 +4403,7 @@ __haxe_io_Input.__name__ = "haxe.io.Input"
 __haxe_io_Input.prototype = _hx_e();
 __haxe_io_Input.prototype.bigEndian= nil;
 __haxe_io_Input.prototype.readByte = function(self) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/std/haxe/io/Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
 end
 __haxe_io_Input.prototype.readBytes = function(self,s,pos,len) 
   local k = len;
@@ -5638,6 +5818,9 @@ end
 __sunaba_Behavior.prototype.getComponent_sunaba_spatial_mesh_MeshDisplay = function(self,type) 
   do return self.entity:getComponent_getComponent_T(type) end
 end
+__sunaba_Behavior.prototype.getComponent_sunaba_spatial_Skeleton = function(self,type) 
+  do return self.entity:getComponent_getComponent_T(type) end
+end
 __sunaba_Behavior.prototype.getComponent_sunaba_spatial_SpatialTransform = function(self,type) 
   do return self.entity:getComponent_getComponent_T(type) end
 end
@@ -5751,7 +5934,7 @@ __myComponents_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -5824,7 +6007,7 @@ __myComponents_FreeLook3D.prototype.onUpdate = function(self,deltaTime)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -6043,8 +6226,25 @@ __sunaba_App.super = function(self)
   elseif not _hx_status then 
     local _g = _hx_result;
     local e = __haxe_Exception.caught(_g);
-    __haxe_Log.trace(e, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
-    __sunaba_Debug.error(e:get_message());
+    local tmp = __haxe_Log.trace;
+    local tmp1 = Std.string(e:get_message()) .. Std.string(" -> ");
+    local tmp2 = e:get_stack();
+    tmp(Std.string(tmp1) .. Std.string(((function() 
+      local _hx_1
+      if (tmp2 == nil) then 
+      _hx_1 = "null"; else 
+      _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp2); end
+      return _hx_1
+    end )())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
+    local tmp = Std.string(e:get_message()) .. Std.string(" -> ");
+    local tmp1 = e:get_stack();
+    __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+      local _hx_2
+      if (tmp1 == nil) then 
+      _hx_2 = "null"; else 
+      _hx_2 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+      return _hx_2
+    end )())));
   elseif _hx_result ~= _hx_pcall_default then
     return _hx_result
   end;
@@ -6059,6 +6259,16 @@ __sunaba_App.get_resDir = function()
 end
 __sunaba_App.get_shareDir = function() 
   do return _G.shareDir end;
+end
+__sunaba_App.loadlib = function(path) 
+  local __rootNode = _G.__rootNode;
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  local res = __rootNode:call("load_library", args):asString();
+  if (res == "") then 
+    _G.error(__haxe_Exception.thrown(Std.string("Failed to load library - ") .. Std.string(path)),0);
+  end;
+  do return res end;
 end
 __sunaba_App.exit = function(code) 
   if (code == nil) then 
@@ -6139,6 +6349,10 @@ __sunaba_Node.super = function(self,native)
 end
 _hxClasses["sunaba.Node"] = __sunaba_Node
 __sunaba_Node.__name__ = "sunaba.Node"
+__sunaba_Node.getOrphanNodeIds = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return NativeObject.callStatic("Node", "get_orphan_node_ids", args):asArrayList() end;
+end
 __sunaba_Node.printOrphanNodes = function() 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   NativeObject.callStatic("Node", "print_orphan_nodes", args);
@@ -6473,6 +6687,20 @@ __sunaba_Node.prototype.findChild = function(self,pattern,recursive,owned)
   local ref = self.native:call("find_child", args):asObject();
   do return __sunaba_Node.new(ref) end
 end
+__sunaba_Node.prototype.findChildren = function(self,pattern,type,recursive,owned) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(pattern));
+  if (type ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(type));
+  end;
+  if (recursive ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(recursive));
+  end;
+  if (owned ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(owned));
+  end;
+  do return self.native:call("find_children", args):asArrayList() end
+end
 __sunaba_Node.prototype.findParent = function(self,pattern) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(pattern));
@@ -6498,6 +6726,17 @@ __sunaba_Node.prototype.getChildCount = function(self,includeInternal)
     args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(includeInternal));
   end;
   do return self.native:call("get_child_count", args):asInt() end
+end
+__sunaba_Node.prototype.getChildren = function(self,includeInternal) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (includeInternal ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(includeInternal));
+  end;
+  do return self.native:call("get_children", args):asArrayList() end
+end
+__sunaba_Node.prototype.getGroups = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_groups", args):asArrayList() end
 end
 __sunaba_Node.prototype.getIndex = function(self,includeInternal) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -6962,6 +7201,11 @@ __sunaba_AppView.prototype.loadApp = function(self,path)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
   self.native:call("load_app", args);
 end
+__sunaba_AppView.prototype.loadLibrary = function(self,path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  self.native:call("load_library", args);
+end
 __sunaba_AppView.prototype.enableDebugging = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   self.native:call("enable_debugging", args);
@@ -7233,6 +7477,40 @@ __sunaba_CanvasItem.prototype.drawDashedLine = function(self,from,to,color,width
     args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(antialiased));
   end;
   self.native:call("draw_dashed_line", args);
+end
+__sunaba_CanvasItem.prototype.drawEllipse = function(self,position,major,minor,color,filled,width,antialiased) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(position));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(major));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(minor));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  if (filled ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(filled));
+  end;
+  if (width ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(width));
+  end;
+  if (antialiased ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(antialiased));
+  end;
+  self.native:call("draw_ellipse", args);
+end
+__sunaba_CanvasItem.prototype.drawEllipseArc = function(self,center,major,minor,startAngle,endAngle,pointCount,color,width,antialiased) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(center));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(major));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(minor));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(startAngle));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(endAngle));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(pointCount));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  if (width ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(width));
+  end;
+  if (antialiased ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(antialiased));
+  end;
+  self.native:call("draw_ellipse_arc", args);
 end
 __sunaba_CanvasItem.prototype.drawEndAnimation = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -8606,10 +8884,31 @@ __sunaba_DataUtils.dictToVar = function(dict,ioInterface)
                                                                   shader.native:set("asset_path", __sunaba_core__Variant_Variant_Impl_.fromString(path));
                                                                   variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(shader.native);
                                                                 else
-                                                                  local nativeObj = NativeReference.new(className);
-                                                                  if (not nativeObj:isNull()) then 
-                                                                    if (nativeObj:isClass("Resource")) then 
-                                                                      variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(__sunaba_DataUtils.dictToRes(resDict, ioInterface));
+                                                                  if ((className == "AudioStreamOggVorbis") and (path ~= "?")) then 
+                                                                    local audioData = ioInterface:loadBytes(path);
+                                                                    local oggVorbis = __sunaba_audio_AudioStreamOggVorbis.loadFromBuffer(audioData);
+                                                                    oggVorbis.native:set("asset_path", __sunaba_core__Variant_Variant_Impl_.fromString(path));
+                                                                    variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(oggVorbis.native);
+                                                                  else
+                                                                    if ((className == "AudioStreamWAV") and (path ~= "?")) then 
+                                                                      local audioData = ioInterface:loadBytes(path);
+                                                                      local wav = __sunaba_audio_AudioStreamWAV.loadFromBuffer(audioData);
+                                                                      wav.native:set("asset_path", __sunaba_core__Variant_Variant_Impl_.fromString(path));
+                                                                      variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(wav.native);
+                                                                    else
+                                                                      if ((className == "AudioStreamMP3") and (path ~= "?")) then 
+                                                                        local audioData = ioInterface:loadBytes(path);
+                                                                        local mp3 = __sunaba_audio_AudioStreamMP3.loadFromBuffer(audioData);
+                                                                        mp3.native:set("asset_path", __sunaba_core__Variant_Variant_Impl_.fromString(path));
+                                                                        variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(mp3.native);
+                                                                      else
+                                                                        local nativeObj = NativeReference.new(className);
+                                                                        if (not nativeObj:isNull()) then 
+                                                                          if (nativeObj:isClass("Resource")) then 
+                                                                            variant = __sunaba_core__Variant_Variant_Impl_.fromNativeReference(__sunaba_DataUtils.dictToRes(resDict, ioInterface));
+                                                                          end;
+                                                                        end;
+                                                                      end;
                                                                     end;
                                                                   end;
                                                                 end;
@@ -8651,12 +8950,12 @@ __sunaba_DataUtils.resToDict = function(res)
   local path = "?";
   local className = res:getClass();
   data:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString(className));
-  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=599,className="sunaba.DataUtils",methodName="resToDict"}));
-  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=600,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=620,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=621,className="sunaba.DataUtils",methodName="resToDict"}));
   if (res:get("asset_path"):getType() == 4) then 
     if (res:get("asset_path"):asString() ~= "") then 
       path = res:get("asset_path"):asString();
-      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=604,className="sunaba.DataUtils",methodName="resToDict"}));
+      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=625,className="sunaba.DataUtils",methodName="resToDict"}));
     end;
   end;
   if (path == "<null>") then 
@@ -8835,13 +9134,16 @@ __sunaba_DisplayService.accessibilityCreateSubElement = function(parentRid,role,
   end;
   do return __sunaba_DisplayService.getNative():call("accessibility_create_sub_element", args) end;
 end
-__sunaba_DisplayService.accessibilityCreateSubTextEditElements = function(parentRid,shapedText,minHeight,insertPos) 
+__sunaba_DisplayService.accessibilityCreateSubTextEditElements = function(parentRid,shapedText,minHeight,insertPos,isLastLine) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(parentRid);
   args:append(shapedText);
   args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(minHeight));
   if (insertPos ~= nil) then 
     args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(insertPos));
+  end;
+  if (isLastLine ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(isLastLine));
   end;
   do return __sunaba_DisplayService.getNative():call("accessibility_create_sub_text_edit_elements", args) end;
 end
@@ -10375,6 +10677,11 @@ __sunaba_DisplayService.windowRequestAttention = function(windowId)
   end;
   __sunaba_DisplayService.getNative():call("window_request_attention", args);
 end
+__sunaba_DisplayService.windowSetColor = function(color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  __sunaba_DisplayService.getNative():call("window_set_color", args);
+end
 __sunaba_DisplayService.windowSetCurrentScreen = function(screen,windowId) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(screen));
@@ -10726,6 +11033,21 @@ __sunaba_Entity.prototype.getComponent_sunaba_spatial_physics_RigidBody = functi
     end;
   end;
   do return nil end
+end
+__sunaba_Entity.prototype.addComponent_sunaba_spatial_Map3D = function(self,type) 
+  local behaviorT = Type.createEmptyInstance(type);
+  local behavior = behaviorT;
+  behavior.entity = self;
+  behavior.name = type.__name__;
+  self.components:push(behavior);
+  behavior:onInit();
+  if (self._hasEnteredTree) then 
+    behavior:onEnterTree();
+  end;
+  if (self._started == true) then 
+    behavior:onStart();
+  end;
+  do return behaviorT end
 end
 __sunaba_Entity.prototype.getComponent_sunaba_spatial_Camera = function(self,type) 
   local compName = type.__name__;
@@ -11099,6 +11421,11 @@ __sunaba_Entity.prototype.start = function(self)
     
     local child = _g1[_g];
     _g = _g + 1;
+    if (child.scene == nil) then 
+      if (self.scene ~= nil) then 
+        child.scene = self.scene;
+      end;
+    end;
     child:start();
   end;
   self._started = true;
@@ -11415,8 +11742,9 @@ __sunaba_EntityData.prototype.createFromEntity = function(self,entity)
     local child = entity:getChild(i);
     local childData;
     if (child:isPrefab()) then 
-      childData = __sunaba_PrefabPath.new();
-      childData.path = child:get_prefabPath();
+      local prefabPath = __sunaba_PrefabPath.new();
+      prefabPath:createFromEntity(child);
+      childData = prefabPath;
     else
       childData = __sunaba_EntityData.fromEntity(child);
     end;
@@ -11465,6 +11793,43 @@ __sunaba_EntityData.prototype.toEntity = function(self)
       prefab.io = self.io;
       prefab:load(childData.path);
       child = prefab:instance();
+      local _g = 0;
+      local _g1 = prefab.components:size();
+      local _hx_continue_2 = false;
+      while (_g < _g1) do _hx_do_first_2 = false;
+        repeat 
+        _g = _g + 1;
+        local i = _g - 1;
+        local compDict = prefab.components:get(i):asDictionary();
+        local compType = compDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asString();
+        local compData = compDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("data")):asDictionary();
+        local typeClass = Type.resolveClass(compType);
+        if (typeClass == nil) then 
+          break;
+        end;
+        local instance = nil;
+        local _g = 0;
+        local _g1 = child:getConponents();
+        while (_g < _g1.length) do _hx_do_first_3 = false;
+          
+          local comp = _g1[_g];
+          _g = _g + 1;
+          if (Type.getClass(comp) == typeClass) then 
+            instance = comp;
+            break;
+          end;
+        end;
+        if (instance == nil) then 
+          break;
+        end;
+        local behavior = instance;
+        behavior:setData(compData);until true
+        if _hx_continue_2 then 
+        _hx_continue_2 = false;
+        break;
+        end;
+        
+      end;
     else
       local entityData = childData;
       child = entityData:toEntity();
@@ -11527,6 +11892,9 @@ end
 _hxClasses["sunaba.core.Reference"] = __sunaba_core_Reference
 __sunaba_core_Reference.__name__ = "sunaba.core.Reference"
 __sunaba_core_Reference.castTo_sunaba_ImageTexture = function(ref,type) 
+  do return Type.createInstance(type, _hx_tab_array({[0]=ref.native}, 1)) end;
+end
+__sunaba_core_Reference.castTo_sunaba_spatial_BoneMap = function(ref,type) 
   do return Type.createInstance(type, _hx_tab_array({[0]=ref.native}, 1)) end;
 end
 __sunaba_core_Reference.castTo_sunaba_Font = function(ref,type) 
@@ -12293,6 +12661,20 @@ __sunaba_Environment.prototype.set_ssrMaxSteps = function(self,value)
   self.native:set("ssr_max_steps", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_Environment.prototype.get_tonemapAgxContrast = function(self) 
+  do return self.native:get("tonemap_agx_contrast"):asFloat() end
+end
+__sunaba_Environment.prototype.set_tonemapAgxContrast = function(self,value) 
+  self.native:set("tonemap_agx_contrast", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_Environment.prototype.get_tonemapAgxWhite = function(self) 
+  do return self.native:get("tonemap_agx_white"):asFloat() end
+end
+__sunaba_Environment.prototype.set_tonemapAgxWhite = function(self,value) 
+  self.native:set("tonemap_agx_white", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
 __sunaba_Environment.prototype.get_tonemapExposure = function(self) 
   do return self.native:get("tonemap_exposure"):asFloat() end
 end
@@ -12580,6 +12962,13 @@ __sunaba_Font.prototype.nativeInit = function(self,_native)
   local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
   local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("Font"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
   scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_Font.prototype.get_fallbacks = function(self) 
+  do return self.native:get("fallbacks"):asArrayList() end
+end
+__sunaba_Font.prototype.set_fallbacks = function(self,value) 
+  self.native:set("fallbacks", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
 end
 __sunaba_Font.prototype.drawChar = function(self,canvasItem,pos,char,fontSize,modulate,oversampling) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -12871,6 +13260,10 @@ __sunaba_Font.prototype.getOtNameStrings = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_ot_name_strings", args):asDictionary() end
 end
+__sunaba_Font.prototype.getRids = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_rids", args):asArrayList() end
+end
 __sunaba_Font.prototype.getSpacing = function(self,spacing) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(spacing));
@@ -12988,6 +13381,44 @@ __sunaba_GameEvent.prototype.call = function(self,...)
 end
 
 __sunaba_GameEvent.prototype.__class__ =  __sunaba_GameEvent
+
+__sunaba_GameEvent_func_sunaba_Entity_Void.new = function() 
+  local self = _hx_new(__sunaba_GameEvent_func_sunaba_Entity_Void.prototype)
+  __sunaba_GameEvent_func_sunaba_Entity_Void.super(self)
+  return self
+end
+__sunaba_GameEvent_func_sunaba_Entity_Void.super = function(self) 
+  self.functions = _hx_tab_array({}, 0);
+end
+_hxClasses["sunaba.GameEvent_func_sunaba_Entity_Void"] = __sunaba_GameEvent_func_sunaba_Entity_Void
+__sunaba_GameEvent_func_sunaba_Entity_Void.__name__ = "sunaba.GameEvent_func_sunaba_Entity_Void"
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype = _hx_e();
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.functions= nil;
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.clear = function(self) 
+  self.functions = _hx_tab_array({}, 0);
+end
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.add = function(self,func) 
+  self.functions:push(func);
+end
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.remove = function(self,func) 
+  self.functions:remove(func);
+end
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.has = function(self,func) 
+  do return self.functions:contains(func) end
+end
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.call = function(self,...) 
+  local args = {...}
+  local _g = 0;
+  local _g1 = self.functions;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local func = _g1[_g];
+    _g = _g + 1;
+    Reflect.callMethod(nil,func,__haxe__Rest_Rest_Impl_.toArray(args));
+  end;
+end
+
+__sunaba_GameEvent_func_sunaba_Entity_Void.prototype.__class__ =  __sunaba_GameEvent_func_sunaba_Entity_Void
 
 __sunaba_Gc.new = {}
 _hxClasses["sunaba.Gc"] = __sunaba_Gc
@@ -13296,6 +13727,11 @@ __sunaba_Image.prototype.loadDdsFromBuffer = function(self,buffer)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(buffer));
   do return self.native:call("load_dds_from_buffer", args):asInt() end
+end
+__sunaba_Image.prototype.loadExrFromBuffer = function(self,buffer) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(buffer));
+  do return self.native:call("load_exr_from_buffer", args):asInt() end
 end
 __sunaba_Image.prototype.loadJpgFromBuffer = function(self,buffer) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -15146,6 +15582,56 @@ __sunaba_OSService.prototype.__class__ =  __sunaba_OSService
 __sunaba_OSService.__super__ = __sunaba_BaseClass
 setmetatable(__sunaba_OSService.prototype,{__index=__sunaba_BaseClass.prototype})
 
+__sunaba_OggPacketSequence.new = function(native) 
+  local self = _hx_new(__sunaba_OggPacketSequence.prototype)
+  __sunaba_OggPacketSequence.super(self,native)
+  return self
+end
+__sunaba_OggPacketSequence.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.OggPacketSequence"] = __sunaba_OggPacketSequence
+__sunaba_OggPacketSequence.__name__ = "sunaba.OggPacketSequence"
+__sunaba_OggPacketSequence.prototype = _hx_e();
+__sunaba_OggPacketSequence.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("OggPacketSequence");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("OggPacketSequence"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_OggPacketSequence.prototype.get_granulePositions = function(self) 
+  do return self.native:get("granule_positions"):asIntArray64() end
+end
+__sunaba_OggPacketSequence.prototype.set_granulePositions = function(self,value) 
+  self.native:set("granule_positions", __sunaba_core__Variant_Variant_Impl_.fromIntArray64(value));
+  do return value end
+end
+__sunaba_OggPacketSequence.prototype.get_packetData = function(self) 
+  do return self.native:get("packet_data"):asArrayList() end
+end
+__sunaba_OggPacketSequence.prototype.set_packetData = function(self,value) 
+  self.native:set("packet_data", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_OggPacketSequence.prototype.get_samplingRate = function(self) 
+  do return self.native:get("sampling_rate"):asFloat() end
+end
+__sunaba_OggPacketSequence.prototype.set_samplingRate = function(self,value) 
+  self.native:set("sampling_rate", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_OggPacketSequence.prototype.getLength = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_length", args):asFloat() end
+end
+
+__sunaba_OggPacketSequence.prototype.__class__ =  __sunaba_OggPacketSequence
+__sunaba_OggPacketSequence.__super__ = __sunaba_Resource
+setmetatable(__sunaba_OggPacketSequence.prototype,{__index=__sunaba_Resource.prototype})
+
 __sunaba__Planes_Planes_Impl_.new = {}
 _hxClasses["sunaba._Planes.Planes_Impl_"] = __sunaba__Planes_Planes_Impl_
 __sunaba__Planes_Planes_Impl_.__name__ = "sunaba._Planes.Planes_Impl_"
@@ -15187,6 +15673,18 @@ __sunaba_PlatformService.hasFeature = function(feature)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(feature));
   do return __sunaba_PlatformService.getNative():call("hasFeature", args):asBool() end;
+end
+__sunaba_PlatformService.getVersion = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_PlatformService.getNative():call("GetVersion", args):asString() end;
+end
+__sunaba_PlatformService.getCompDate = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_PlatformService.getNative():call("GetCompDate", args):asString() end;
+end
+__sunaba_PlatformService.getEngineVersion = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return __sunaba_PlatformService.getNative():call("GetEngineVersion", args):asString() end;
 end
 
 __sunaba_Prefab.new = function() 
@@ -15241,6 +15739,24 @@ end
 _hxClasses["sunaba.PrefabPath"] = __sunaba_PrefabPath
 __sunaba_PrefabPath.__name__ = "sunaba.PrefabPath"
 __sunaba_PrefabPath.prototype = _hx_e();
+__sunaba_PrefabPath.prototype.createFromEntity = function(self,entity) 
+  self.name = entity.name;
+  self.path = entity:get_prefabPath();
+  local components = entity:getConponents();
+  local _g = 0;
+  while (_g < components.length) do _hx_do_first_1 = false;
+    
+    local component = components[_g];
+    _g = _g + 1;
+    local compData = component:getData();
+    local compDict = Dictionary.new();
+    compDict:set(__sunaba_core__Variant_Variant_Impl_.fromString("data"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(compData));
+    local compClass = Type.getClass(component);
+    local compName = compClass.__name__;
+    compDict:set(__sunaba_core__Variant_Variant_Impl_.fromString("type"), __sunaba_core__Variant_Variant_Impl_.fromString(compName));
+    self.components:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(compDict));
+  end;
+end
 
 __sunaba_PrefabPath.prototype.__class__ =  __sunaba_PrefabPath
 __sunaba_PrefabPath.__super__ = __sunaba_EntityBaseData
@@ -15321,7 +15837,7 @@ __sunaba_RegEx.prototype.searchAll = function(self,subject,offset,_end)
   if (_end ~= nil) then 
     args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(_end));
   end;
-  do return self.native:call("search", args):asArrayList() end
+  do return self.native:call("search_all", args):asArrayList() end
 end
 __sunaba_RegEx.prototype.sub = function(self,subject,replacement,all,offset,_end) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -15586,8 +16102,9 @@ __sunaba_SceneFile.create = function(scene,type)
     local entity = scene:getEntity(i);
     local entityData;
     if (entity:isPrefab()) then 
-      entityData = __sunaba_PrefabPath.new();
-      entityData.path = entity:get_prefabPath();
+      local prefabPath = __sunaba_PrefabPath.new();
+      prefabPath:createFromEntity(entity);
+      entityData = prefabPath;
     else
       entityData = __sunaba_EntityData.fromEntity(entity);
     end;
@@ -15613,6 +16130,43 @@ __sunaba_SceneFile.prototype.instance = function(self)
       prefab.io = self.io;
       prefab:load(entData.path);
       entity = prefab:instance();
+      local _g = 0;
+      local _g1 = prefab.components:size();
+      local _hx_continue_2 = false;
+      while (_g < _g1) do _hx_do_first_2 = false;
+        repeat 
+        _g = _g + 1;
+        local i = _g - 1;
+        local compDict = prefab.components:get(i):asDictionary();
+        local compType = compDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asString();
+        local compData = compDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("data")):asDictionary();
+        local typeClass = Type.resolveClass(compType);
+        if (typeClass == nil) then 
+          break;
+        end;
+        local instance = nil;
+        local _g = 0;
+        local _g1 = entity:getConponents();
+        while (_g < _g1.length) do _hx_do_first_3 = false;
+          
+          local comp = _g1[_g];
+          _g = _g + 1;
+          if (Type.getClass(comp) == typeClass) then 
+            instance = comp;
+            break;
+          end;
+        end;
+        if (instance == nil) then 
+          break;
+        end;
+        local behavior = instance;
+        behavior:setData(compData);until true
+        if _hx_continue_2 then 
+        _hx_continue_2 = false;
+        break;
+        end;
+        
+      end;
     else
       local entityData = entData;
       entity = entityData:toEntity();
@@ -15696,6 +16250,38 @@ __sunaba_SceneRoot.prototype.findEnt = function(self,path,index)
   end;
   do return nil end
 end
+__sunaba_SceneRoot.prototype.__findByNode = function(self,entity,node) 
+  if (entity:get_node().native:eq(node.native)) then 
+    do return entity end;
+  end;
+  local _g = 0;
+  local _g1 = entity:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local child = entity:getChild(i);
+    local result = self:__findByNode(child, node);
+    if (result ~= nil) then 
+      do return result end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_SceneRoot.prototype.findByNode = function(self,node) 
+  local _g = 0;
+  local _g1 = self.entities;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local entity = _g1[_g];
+    _g = _g + 1;
+    local result = self:__findByNode(entity, node);
+    if (result ~= nil) then 
+      do return result end;
+    end;
+  end;
+  do return nil end
+end
 __sunaba_SceneRoot.prototype.started= nil;
 __sunaba_SceneRoot.prototype.enteredTree= nil;
 __sunaba_SceneRoot.prototype.isInEditor= nil;
@@ -15770,13 +16356,15 @@ __sunaba_SceneRoot.prototype.onEnterTree = function(self)
   self.enteredTree = true;
 end
 __sunaba_SceneRoot.prototype.onExitTree = function(self) 
-  local _g = 0;
-  local _g1 = self.entities;
-  while (_g < _g1.length) do _hx_do_first_1 = false;
-    
-    local entity = _g1[_g];
-    _g = _g + 1;
-    entity:exitTree();
+  if (self.entities ~= nil) then 
+    local _g = 0;
+    local _g1 = self.entities;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local entity = _g1[_g];
+      _g = _g + 1;
+      entity:exitTree();
+    end;
   end;
 end
 __sunaba_SceneRoot.prototype.onReady = function(self) 
@@ -15955,7 +16543,7 @@ __sunaba_ShellConsole.prototype.nativeInit = function(self,_native)
       
       local arg = args[_g];
       _g = _g + 1;
-      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
+      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
       _gthis:cmd(arg);
     end;
     do return 0 end;
@@ -16148,6 +16736,13 @@ __sunaba_Viewport.prototype.get_guiDisableInput = function(self)
 end
 __sunaba_Viewport.prototype.set_guiDisableInput = function(self,value) 
   self.native:set("gui_disable_input", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_Viewport.prototype.get_guiDragThreshold = function(self) 
+  do return self.native:get("gui_drag_threshold"):asInt() end
+end
+__sunaba_Viewport.prototype.set_guiDragThreshold = function(self,value) 
+  self.native:set("gui_drag_threshold", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
 __sunaba_Viewport.prototype.get_guiEmbedSubwindows = function(self) 
@@ -16429,6 +17024,10 @@ __sunaba_Viewport.prototype.getCanvasCullMaskBit = function(self,layer)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(layer));
   do return self.native:call("get_canvas_cull_mask_bit", args):asBool() end
+end
+__sunaba_Viewport.prototype.getEmbeddedSubwindows = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_embedded_subwindows", args):asArrayList() end
 end
 __sunaba_Viewport.prototype.getMousePosition = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -17524,7 +18123,7 @@ __sunaba_animation_AnimationLibrary.prototype.getAnimation = function(self,name)
 end
 __sunaba_animation_AnimationLibrary.prototype.getAnimationList = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  do return self.native:call("get_animation_list_size", args):asArrayList() end
+  do return self.native:call("get_animation_list", args):asArrayList() end
 end
 __sunaba_animation_AnimationLibrary.prototype.getAnimationListSize = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -17767,7 +18366,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
     local animationLibrary = __sunaba_animation_AnimationLibrary.new(__sunaba_DataUtils.dictToVar(animationLibraryData):asReference());
     local propertiesData = animationLibraryData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
     local animationListData = propertiesData:get(__sunaba_core__Variant_Variant_Impl_.fromString("_data")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(animationListData))));
     local _g = 0;
     local this1 = animationListData:keys();
@@ -17789,8 +18388,8 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
       local value = animationListData:get(__sunaba_core__Variant_Variant_Impl_.fromString(key));
       local animation = __sunaba_animation_Animation.new(__sunaba_DataUtils.dictToVar(value:asDictionary()):asReference());
       animation:clear();
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(value)));
       local animationPropertyData = value:asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
       local trackData = __haxe_ds_IntMap.new();
@@ -17811,7 +18410,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
         local propKeyv = _g1[_g];
         _g = _g + 1;
         local propKey = propKeyv:asString();
-        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
         if (StringTools.startsWith(propKey, "tracks/")) then 
           local parts = String.prototype.split(propKey, "/");
           local trackIdx = Std.parseInt(parts[1]);
@@ -17824,7 +18423,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
               trackData.h[trackIdx] = value;
             end;
           end;
-          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           local ret = trackData.h[trackIdx];
           if (ret == __haxe_ds_IntMap.tnull) then 
             ret = nil;
@@ -17873,7 +18472,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           godotTrackIdx = animation:addTrack(3);
         elseif (trackType1) == "value" then 
           godotTrackIdx = animation:addTrack(0);else
-        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
+        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
         if (godotTrackIdx >= 0) then 
           animation:trackSetPath(godotTrackIdx, trackPath);
           if (track.h.enabled ~= nil) then 
@@ -17960,13 +18559,13 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
                 step = 5;else
               step = 2; end;
               if ((_G.math.fmod(keys.length, step)) ~= 0) then 
-                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
               end;
             else
-              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
             end;
           else
-            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
           local propKey = Std.string(Std.string("tracks/") .. Std.string(godotTrackIdx)) .. Std.string("/keys");
           local keysArray = Variant.new():asFloatArray();
@@ -17998,10 +18597,10 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
             else
               keysArray:add(variant:asFloat());
             end;
-            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
-          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           animation.native:set(propKey, __sunaba_core__Variant_Variant_Impl_.fromFloatArray(keysArray));
           if (track.h.enabled ~= nil) then 
             local ret = track.h.enabled;
@@ -18045,11 +18644,11 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           end;
         end;
       end;
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animation.native))))));
       animationLibrary:addAnimation(key, animation);
     end;
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animationLibrary.native))))));
     self:addAnimationLibrary(animationLibraryName, animationLibrary);
   end;
@@ -18449,6 +19048,673 @@ end
 __sunaba_animation_AnimationPlayer.prototype.__class__ =  __sunaba_animation_AnimationPlayer
 __sunaba_animation_AnimationPlayer.__super__ = __sunaba_animation_AnimationMixer
 setmetatable(__sunaba_animation_AnimationPlayer.prototype,{__index=__sunaba_animation_AnimationMixer.prototype})
+
+__sunaba_audio_AudioSource.new = function() 
+  local self = _hx_new(__sunaba_audio_AudioSource.prototype)
+  __sunaba_audio_AudioSource.super(self)
+  return self
+end
+__sunaba_audio_AudioSource.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.audio.AudioSource"] = __sunaba_audio_AudioSource
+__sunaba_audio_AudioSource.__name__ = "sunaba.audio.AudioSource"
+__sunaba_audio_AudioSource.prototype = _hx_e();
+__sunaba_audio_AudioSource.prototype.node= nil;
+__sunaba_audio_AudioSource.prototype.get_autoplay = function(self) 
+  do return self.node:get_autoplay() end
+end
+__sunaba_audio_AudioSource.prototype.set_autoplay = function(self,value) 
+  do return self.node:set_autoplay(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_bus = function(self) 
+  do return self.node:get_bus() end
+end
+__sunaba_audio_AudioSource.prototype.set_bus = function(self,value) 
+  do return self.node:set_bus(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_maxPolyphony = function(self) 
+  do return self.node:get_maxPolyphony() end
+end
+__sunaba_audio_AudioSource.prototype.set_maxPolyphony = function(self,value) 
+  do return self.node:set_maxPolyphony(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_mixTarget = function(self) 
+  do return self.node:get_mixTarget() end
+end
+__sunaba_audio_AudioSource.prototype.set_mixTarget = function(self,value) 
+  do return self.node:set_mixTarget(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_pitchScale = function(self) 
+  do return self.node:get_pitchScale() end
+end
+__sunaba_audio_AudioSource.prototype.set_pitchScale = function(self,value) 
+  do return self.node:set_pitchScale(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_playbackType = function(self) 
+  do return self.node:get_playbackType() end
+end
+__sunaba_audio_AudioSource.prototype.set_playbackType = function(self,value) 
+  do return self.node:set_playbackType(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_playing = function(self) 
+  do return self.node:get_playing() end
+end
+__sunaba_audio_AudioSource.prototype.set_playing = function(self,value) 
+  do return self.node:set_playing(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_stream = function(self) 
+  do return self.node:get_stream() end
+end
+__sunaba_audio_AudioSource.prototype.set_stream = function(self,value) 
+  do return self.node:set_stream(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_streamPaused = function(self) 
+  do return self.node:get_streamPaused() end
+end
+__sunaba_audio_AudioSource.prototype.set_streamPaused = function(self,value) 
+  do return self.node:set_streamPaused(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_volumeDb = function(self) 
+  do return self.node:get_volumeDb() end
+end
+__sunaba_audio_AudioSource.prototype.set_volumeDb = function(self,value) 
+  do return self.node:set_volumeDb(value) end
+end
+__sunaba_audio_AudioSource.prototype.get_volumeLinear = function(self) 
+  do return self.node:get_volumeLinear() end
+end
+__sunaba_audio_AudioSource.prototype.set_volumeLinear = function(self,value) 
+  do return self.node:set_volumeLinear(value) end
+end
+__sunaba_audio_AudioSource.prototype.getPlaybackPosition = function(self) 
+  do return self.node:getPlaybackPosition() end
+end
+__sunaba_audio_AudioSource.prototype.getStreamPlayback = function(self) 
+  do return self.node:getStreamPlayback() end
+end
+__sunaba_audio_AudioSource.prototype.hasStreamPlayback = function(self) 
+  do return self.node:hasStreamPlayback() end
+end
+__sunaba_audio_AudioSource.prototype.play = function(self,fromPosition) 
+  if (fromPosition == nil) then 
+    fromPosition = 0.0;
+  end;
+  self.node:play(fromPosition);
+end
+__sunaba_audio_AudioSource.prototype.seek = function(self,toPosition) 
+  self.node:seek(toPosition);
+end
+__sunaba_audio_AudioSource.prototype.stop = function(self) 
+  self.node:stop();
+end
+__sunaba_audio_AudioSource.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("autoplay"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_autoplay()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("bus"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_bus()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("maxPolyphony"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_maxPolyphony()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("mixTarget"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_mixTarget()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("pitchScale"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_pitchScale()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playbackType"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_playbackType()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("playing"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_playing()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("stream"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromReference(self:get_stream()))));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("streamPaused"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_streamPaused()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("volumeDb"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_volumeDb()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("volumeLinear"), __sunaba_core__Variant_Variant_Impl_.fromFloat(self:get_volumeLinear()));
+  do return data end
+end
+__sunaba_audio_AudioSource.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_autoplay(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("autoplay")):asBool());
+  self:set_bus(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("bus")):asString());
+  self:set_maxPolyphony(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("maxPolyphony")):asInt());
+  self:set_mixTarget(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("mixTarget")):asInt());
+  self:set_pitchScale(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("pitchScale")):asFloat());
+  self:set_playbackType(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playbackType")):asInt());
+  self:set_playing(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("playing")):asBool());
+  self:set_stream(__sunaba_audio_AudioStream.new(__sunaba_DataUtils.dictToVar(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("stream")):asDictionary(), self.entity:get_io()):asReference()));
+  self:set_streamPaused(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("streamPaused")):asBool());
+  self:set_volumeDb(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("volumeDb")):asFloat());
+  self:set_volumeLinear(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("volumeLinear")):asFloat());
+end
+__sunaba_audio_AudioSource.prototype.onInit = function(self) 
+  self.node = __sunaba_audio_AudioStreamPlayer.new();
+end
+__sunaba_audio_AudioSource.prototype.onStart = function(self) 
+  if (self.entity:get_node() ~= nil) then 
+    self.entity:get_node():addChild(self.node);
+  else
+    self.entity:set_node(self.node);
+  end;
+end
+
+__sunaba_audio_AudioSource.prototype.__class__ =  __sunaba_audio_AudioSource
+__sunaba_audio_AudioSource.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_audio_AudioSource.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_audio_AudioStream.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStream.prototype)
+  __sunaba_audio_AudioStream.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStream.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStream"] = __sunaba_audio_AudioStream
+__sunaba_audio_AudioStream.__name__ = "sunaba.audio.AudioStream"
+__sunaba_audio_AudioStream.prototype = _hx_e();
+__sunaba_audio_AudioStream.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AudioStream");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("AudioStream"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_audio_AudioStream.prototype._parameterListChanged= nil;
+__sunaba_audio_AudioStream.prototype.parameterListChanged= nil;
+__sunaba_audio_AudioStream.prototype.get_parameterListChanged = function(self) 
+  if (self._parameterListChanged == nil) then 
+    self._parameterListChanged = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "parameter_list_changed");
+  end;
+  do return self._parameterListChanged end
+end
+__sunaba_audio_AudioStream.prototype.canBeSampled = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("can_be_sampled", args):asBool() end
+end
+__sunaba_audio_AudioStream.prototype.getLength = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_length", args):asFloat() end
+end
+__sunaba_audio_AudioStream.prototype.instantiatePlayback = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("instantiate_playback", args):asReference();
+  do return __sunaba_audio_AudioStreamPlayback.new(ref) end
+end
+__sunaba_audio_AudioStream.prototype.isMetaStream = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_meta_stream", args):asBool() end
+end
+__sunaba_audio_AudioStream.prototype.isMonophonic = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_monophonic", args):asBool() end
+end
+
+__sunaba_audio_AudioStream.prototype.__class__ =  __sunaba_audio_AudioStream
+__sunaba_audio_AudioStream.__super__ = __sunaba_Resource
+setmetatable(__sunaba_audio_AudioStream.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_audio_AudioStreamMP3.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStreamMP3.prototype)
+  __sunaba_audio_AudioStreamMP3.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStreamMP3.super = function(self,native) 
+  __sunaba_audio_AudioStream.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStreamMP3"] = __sunaba_audio_AudioStreamMP3
+__sunaba_audio_AudioStreamMP3.__name__ = "sunaba.audio.AudioStreamMP3"
+__sunaba_audio_AudioStreamMP3.loadFromBuffer = function(streamData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(streamData));
+  local ref = NativeObject.callStatic("AudioStreamMP3", "load_from_buffer", args):asReference();
+  do return __sunaba_audio_AudioStreamMP3.new(ref) end;
+end
+__sunaba_audio_AudioStreamMP3.loadFromFile = function(path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  local ref = NativeObject.callStatic("AudioStreamMP3", "load_from_file", args):asReference();
+  do return __sunaba_audio_AudioStreamMP3.new(ref) end;
+end
+__sunaba_audio_AudioStreamMP3.prototype = _hx_e();
+__sunaba_audio_AudioStreamMP3.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AudioStreamMP3");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamMP3"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_barBeats = function(self) 
+  do return self.native:get("bar_beats"):asInt() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_barBeats = function(self,value) 
+  self.native:set("bar_beats", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_beatCount = function(self) 
+  do return self.native:get("beat_count"):asInt() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_beatCount = function(self,value) 
+  self.native:set("beat_count", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_bpm = function(self) 
+  do return self.native:get("bpm"):asFloat() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_bpm = function(self,value) 
+  self.native:set("bpm", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_data = function(self) 
+  do return self.native:get("data"):asByteArray() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_data = function(self,value) 
+  self.native:set("data", __sunaba_core__Variant_Variant_Impl_.fromByteArray(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_loop = function(self) 
+  do return self.native:get("loop"):asBool() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_loop = function(self,value) 
+  self.native:set("loop", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamMP3.prototype.get_loopOffset = function(self) 
+  do return self.native:get("loop_offset"):asFloat() end
+end
+__sunaba_audio_AudioStreamMP3.prototype.set_loopOffset = function(self,value) 
+  self.native:set("loop_offset", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+
+__sunaba_audio_AudioStreamMP3.prototype.__class__ =  __sunaba_audio_AudioStreamMP3
+__sunaba_audio_AudioStreamMP3.__super__ = __sunaba_audio_AudioStream
+setmetatable(__sunaba_audio_AudioStreamMP3.prototype,{__index=__sunaba_audio_AudioStream.prototype})
+
+__sunaba_audio_AudioStreamOggVorbis.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStreamOggVorbis.prototype)
+  __sunaba_audio_AudioStreamOggVorbis.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStreamOggVorbis.super = function(self,native) 
+  __sunaba_audio_AudioStream.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStreamOggVorbis"] = __sunaba_audio_AudioStreamOggVorbis
+__sunaba_audio_AudioStreamOggVorbis.__name__ = "sunaba.audio.AudioStreamOggVorbis"
+__sunaba_audio_AudioStreamOggVorbis.loadFromBuffer = function(streamData) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(streamData));
+  local ref = NativeObject.callStatic("AudioStreamOggVorbis", "load_from_buffer", args):asReference();
+  do return __sunaba_audio_AudioStreamOggVorbis.new(ref) end;
+end
+__sunaba_audio_AudioStreamOggVorbis.loadFromFile = function(path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  local ref = NativeObject.callStatic("AudioStreamOggVorbis", "load_from_file", args):asReference();
+  do return __sunaba_audio_AudioStreamOggVorbis.new(ref) end;
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype = _hx_e();
+__sunaba_audio_AudioStreamOggVorbis.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AudioStreamOggVorbis");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamOggVorbis"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_barBeats = function(self) 
+  do return self.native:get("bar_beats"):asInt() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_barBeats = function(self,value) 
+  self.native:set("bar_beats", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_beatCount = function(self) 
+  do return self.native:get("beat_count"):asInt() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_beatCount = function(self,value) 
+  self.native:set("beat_count", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_bpm = function(self) 
+  do return self.native:get("bpm"):asFloat() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_bpm = function(self,value) 
+  self.native:set("bpm", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_loop = function(self) 
+  do return self.native:get("loop"):asBool() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_loop = function(self,value) 
+  self.native:set("loop", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_loopOffset = function(self) 
+  do return self.native:get("loop_offset"):asFloat() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_loopOffset = function(self,value) 
+  self.native:set("loop_offset", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_packetSequence = function(self) 
+  local ref = self.native:get("packet_sequence"):asReference();
+  do return __sunaba_OggPacketSequence.new(ref) end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_packetSequence = function(self,value) 
+  self.native:set("packet_sequence", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.get_tags = function(self) 
+  do return self.native:get("tags"):asDictionary() end
+end
+__sunaba_audio_AudioStreamOggVorbis.prototype.set_tags = function(self,value) 
+  self.native:set("tags", __sunaba_core__Variant_Variant_Impl_.fromDictionary(value));
+  do return value end
+end
+
+__sunaba_audio_AudioStreamOggVorbis.prototype.__class__ =  __sunaba_audio_AudioStreamOggVorbis
+__sunaba_audio_AudioStreamOggVorbis.__super__ = __sunaba_audio_AudioStream
+setmetatable(__sunaba_audio_AudioStreamOggVorbis.prototype,{__index=__sunaba_audio_AudioStream.prototype})
+
+__sunaba_audio_AudioStreamPlayback.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStreamPlayback.prototype)
+  __sunaba_audio_AudioStreamPlayback.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStreamPlayback.super = function(self,native) 
+  __sunaba_core_Reference.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStreamPlayback"] = __sunaba_audio_AudioStreamPlayback
+__sunaba_audio_AudioStreamPlayback.__name__ = "sunaba.audio.AudioStreamPlayback"
+__sunaba_audio_AudioStreamPlayback.prototype = _hx_e();
+__sunaba_audio_AudioStreamPlayback.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AudioStreamPlayback");
+  end;
+  self.native = _native;
+end
+__sunaba_audio_AudioStreamPlayback.prototype.getLoopCount = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_loop_count", args):asInt() end
+end
+__sunaba_audio_AudioStreamPlayback.prototype.getPlaybackPosition = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_playback_position", args):asFloat() end
+end
+__sunaba_audio_AudioStreamPlayback.prototype.isPlaying = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("is_playing", args):asBool() end
+end
+__sunaba_audio_AudioStreamPlayback.prototype.mixAudio = function(self,rateScale,frames) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(rateScale));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(frames));
+  do return self.native:call("mix_audio", args):asVector2Array() end
+end
+__sunaba_audio_AudioStreamPlayback.prototype.seek = function(self,time) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (time ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(time));
+  end;
+  self.native:call("seek", args);
+end
+__sunaba_audio_AudioStreamPlayback.prototype.setSamplePlayback = function(self,playbackSample) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(playbackSample);
+  self.native:call("set_sample_playback", args);
+end
+__sunaba_audio_AudioStreamPlayback.prototype.start = function(self,fromPos) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (fromPos ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(fromPos));
+  end;
+  self.native:call("start", args);
+end
+__sunaba_audio_AudioStreamPlayback.prototype.stop = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("stop", args);
+end
+
+__sunaba_audio_AudioStreamPlayback.prototype.__class__ =  __sunaba_audio_AudioStreamPlayback
+__sunaba_audio_AudioStreamPlayback.__super__ = __sunaba_core_Reference
+setmetatable(__sunaba_audio_AudioStreamPlayback.prototype,{__index=__sunaba_core_Reference.prototype})
+
+__sunaba_audio_AudioStreamPlayer.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStreamPlayer.prototype)
+  __sunaba_audio_AudioStreamPlayer.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStreamPlayer.super = function(self,native) 
+  __sunaba_Node.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStreamPlayer"] = __sunaba_audio_AudioStreamPlayer
+__sunaba_audio_AudioStreamPlayer.__name__ = "sunaba.audio.AudioStreamPlayer"
+__sunaba_audio_AudioStreamPlayer.prototype = _hx_e();
+__sunaba_audio_AudioStreamPlayer.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("AudioStreamPlayer");
+  end;
+  self.native = _native;
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_autoplay = function(self) 
+  do return self.native:get("autoplay"):asBool() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_autoplay = function(self,value) 
+  self.native:set("autoplay", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_bus = function(self) 
+  do return self.native:get("bus"):asString() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_bus = function(self,value) 
+  self.native:set("bus", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_maxPolyphony = function(self) 
+  do return self.native:get("max_polyphony"):asInt() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_maxPolyphony = function(self,value) 
+  self.native:set("max_polyphony", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_mixTarget = function(self) 
+  do return self.native:get("mix_target"):asInt() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_mixTarget = function(self,value) 
+  self.native:set("mix_target", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_pitchScale = function(self) 
+  do return self.native:get("pitch_scale"):asFloat() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_pitchScale = function(self,value) 
+  self.native:set("pitch_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_playbackType = function(self) 
+  do return self.native:get("playback_type"):asInt() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_playbackType = function(self,value) 
+  self.native:set("playback_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_playing = function(self) 
+  do return self.native:get("playing"):asBool() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_playing = function(self,value) 
+  self.native:set("playing", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_stream = function(self) 
+  local ref = self.native:get("stream"):asReference();
+  do return __sunaba_audio_AudioStream.new(ref) end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_stream = function(self,value) 
+  self.native:set("stream", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_streamPaused = function(self) 
+  do return self.native:get("stream_paused"):asBool() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_streamPaused = function(self,value) 
+  self.native:set("stream_paused", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_volumeDb = function(self) 
+  do return self.native:get("volume_db"):asFloat() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_volumeDb = function(self,value) 
+  self.native:set("volume_db", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.get_volumeLinear = function(self) 
+  do return self.native:get("volume_linear"):asFloat() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.set_volumeLinear = function(self,value) 
+  self.native:set("volume_linear", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamPlayer.prototype._finished= nil;
+__sunaba_audio_AudioStreamPlayer.prototype.finished= nil;
+__sunaba_audio_AudioStreamPlayer.prototype.get_finished = function(self) 
+  if (self._finished == nil) then 
+    self._finished = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "finished");
+  end;
+  do return self._finished end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.getPlaybackPosition = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_playback_position", args):asFloat() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.getStreamPlayback = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  local ref = self.native:call("get_stream_playback", args):asReference();
+  do return __sunaba_audio_AudioStreamPlayback.new(ref) end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.hasStreamPlayback = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("has_stream_playback", args):asBool() end
+end
+__sunaba_audio_AudioStreamPlayer.prototype.play = function(self,fromPosition) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (fromPosition ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(fromPosition));
+  end;
+  self.native:call("play", args);
+end
+__sunaba_audio_AudioStreamPlayer.prototype.seek = function(self,toPosition) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromFloat(toPosition));
+  self.native:call("seek", args);
+end
+__sunaba_audio_AudioStreamPlayer.prototype.stop = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("stop", args);
+end
+
+__sunaba_audio_AudioStreamPlayer.prototype.__class__ =  __sunaba_audio_AudioStreamPlayer
+__sunaba_audio_AudioStreamPlayer.__super__ = __sunaba_Node
+setmetatable(__sunaba_audio_AudioStreamPlayer.prototype,{__index=__sunaba_Node.prototype})
+
+__sunaba_audio_AudioStreamWAV.new = function(native) 
+  local self = _hx_new(__sunaba_audio_AudioStreamWAV.prototype)
+  __sunaba_audio_AudioStreamWAV.super(self,native)
+  return self
+end
+__sunaba_audio_AudioStreamWAV.super = function(self,native) 
+  __sunaba_audio_AudioStream.super(self,native);
+end
+_hxClasses["sunaba.audio.AudioStreamWAV"] = __sunaba_audio_AudioStreamWAV
+__sunaba_audio_AudioStreamWAV.__name__ = "sunaba.audio.AudioStreamWAV"
+__sunaba_audio_AudioStreamWAV.loadFromBuffer = function(streamData,options) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromByteArray(streamData));
+  if (options ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(options));
+  end;
+  local ref = NativeObject.callStatic("AudioStreamWAV", "load_from_buffer", args):asReference();
+  do return __sunaba_audio_AudioStreamWAV.new(ref) end;
+end
+__sunaba_audio_AudioStreamWAV.loadFromFile = function(path,options) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  if (options ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(options));
+  end;
+  local ref = NativeObject.callStatic("AudioStreamWAV", "load_from_file", args):asReference();
+  do return __sunaba_audio_AudioStreamWAV.new(ref) end;
+end
+__sunaba_audio_AudioStreamWAV.prototype = _hx_e();
+__sunaba_audio_AudioStreamWAV.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("AudioStreamWAV");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamWAV"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_data = function(self) 
+  do return self.native:get("data"):asByteArray() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_data = function(self,value) 
+  self.native:set("data", __sunaba_core__Variant_Variant_Impl_.fromByteArray(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_format = function(self) 
+  do return self.native:get("format"):asInt() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_format = function(self,value) 
+  self.native:set("format", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_loopBegin = function(self) 
+  do return self.native:get("loop_begin"):asInt() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_loopBegin = function(self,value) 
+  self.native:set("loop_begin", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_loopEnd = function(self) 
+  do return self.native:get("loop_end"):asInt() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_loopEnd = function(self,value) 
+  self.native:set("loop_end", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_loopMode = function(self) 
+  do return self.native:get("loop_mode"):asInt() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_loopMode = function(self,value) 
+  self.native:set("loop_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_mixRate = function(self) 
+  do return self.native:get("mix_rate"):asInt() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_mixRate = function(self,value) 
+  self.native:set("mix_rate", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_stereo = function(self) 
+  do return self.native:get("stereo"):asBool() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_stereo = function(self,value) 
+  self.native:set("stereo", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.get_tags = function(self) 
+  do return self.native:get("tags"):asDictionary() end
+end
+__sunaba_audio_AudioStreamWAV.prototype.set_tags = function(self,value) 
+  self.native:set("tags", __sunaba_core__Variant_Variant_Impl_.fromDictionary(value));
+  do return value end
+end
+__sunaba_audio_AudioStreamWAV.prototype.saveToWav = function(self,path) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(path));
+  do return self.native:call("save_to_wav", args):asInt() end
+end
+
+__sunaba_audio_AudioStreamWAV.prototype.__class__ =  __sunaba_audio_AudioStreamWAV
+__sunaba_audio_AudioStreamWAV.__super__ = __sunaba_audio_AudioStream
+setmetatable(__sunaba_audio_AudioStreamWAV.prototype,{__index=__sunaba_audio_AudioStream.prototype})
 
 __sunaba_core__ArrayList_ArrayList_Impl_.new = {}
 _hxClasses["sunaba.core._ArrayList.ArrayList_Impl_"] = __sunaba_core__ArrayList_ArrayList_Impl_
@@ -18858,7 +20124,34 @@ __sunaba_core_ByteArrayUtils.binaryDataToBytes = function(binaryData)
   end;
   do return bytes end;
 end
+__sunaba_core_ByteArrayUtils.binaryDataToBase64 = function(binaryData) 
+  local size = binaryData:size();
+  local bytes = __haxe_io_Bytes.alloc(size);
+  local _g = 0;
+  local _g1 = size;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local v = binaryData:get(i):getInt64();
+    bytes.b[i] = _hx_bit.band(v,255);
+  end;
+  do return __haxe_crypto_Base64.encode(bytes) end;
+end
 __sunaba_core_ByteArrayUtils.bytesToBinaryData = function(bytes) 
+  local binaryData = ByteArray.new();
+  local _g = 0;
+  local _g1 = bytes.length;
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    binaryData:append(Byte.new(bytes.b[i]));
+  end;
+  do return binaryData end;
+end
+__sunaba_core_ByteArrayUtils.base64ToBinaryData = function(base64) 
+  local bytes = __haxe_crypto_Base64.decode(base64);
   local binaryData = ByteArray.new();
   local _g = 0;
   local _g1 = bytes.length;
@@ -22118,6 +23411,13 @@ __sunaba_desktop_Window.prototype.set_mousePassthroughPolygon = function(self,va
   self.native:set("mouse_passthrough_polygon", __sunaba_core__Variant_Variant_Impl_.fromVector2Array(value));
   do return value end
 end
+__sunaba_desktop_Window.prototype.get_nonclientArea = function(self) 
+  do return self.native:get("nonclient_area"):asRect2i() end
+end
+__sunaba_desktop_Window.prototype.set_nonclientArea = function(self,value) 
+  self.native:set("nonclient_area", __sunaba_core__Variant_Variant_Impl_.fromRect2i(value));
+  do return value end
+end
 __sunaba_desktop_Window.prototype.get_popupWindow = function(self) 
   do return self.native:get("popup_window"):asBool() end
 end
@@ -22295,6 +23595,14 @@ __sunaba_desktop_Window.prototype.get_mouseExited = function(self)
     self._mouseExited = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "mouse_exited");
   end;
   do return self._mouseExited end
+end
+__sunaba_desktop_Window.prototype._nonclientWindowInput= nil;
+__sunaba_desktop_Window.prototype.nonclientWindowInput= nil;
+__sunaba_desktop_Window.prototype.get_nonclientWindowInput = function(self) 
+  if (self._nonclientWindowInput == nil) then 
+    self._nonclientWindowInput = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "nonclient_window_input");
+  end;
+  do return self._nonclientWindowInput end
 end
 __sunaba_desktop_Window.prototype._themeChanged= nil;
 __sunaba_desktop_Window.prototype.themeChanged= nil;
@@ -22918,6 +24226,34 @@ __sunaba_desktop_FileDialog.super = function(self,native)
 end
 _hxClasses["sunaba.desktop.FileDialog"] = __sunaba_desktop_FileDialog
 __sunaba_desktop_FileDialog.__name__ = "sunaba.desktop.FileDialog"
+__sunaba_desktop_FileDialog.getFavoriteList = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return NativeObject.callStatic("FileDialog", "get_favorite_list", args):asStringArray() end;
+end
+__sunaba_desktop_FileDialog.getRecentList = function() 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return NativeObject.callStatic("FileDialog", "get_recent_list", args):asStringArray() end;
+end
+__sunaba_desktop_FileDialog.setFavoriteList = function(favorites) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromStringArray(favorites));
+  NativeObject.callStatic("FileDialog", "set_favorite_list", args);
+end
+__sunaba_desktop_FileDialog.setGetIconCallback = function(callback) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(callback);
+  NativeObject.callStatic("FileDialog", "set_get_icon_callback", args);
+end
+__sunaba_desktop_FileDialog.setGetThumbnailCallback = function(callback) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(callback);
+  NativeObject.callStatic("FileDialog", "set_get_thumbnail_callback", args);
+end
+__sunaba_desktop_FileDialog.setRecentList = function(recents) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromStringArray(recents));
+  NativeObject.callStatic("FileDialog", "set_recent_list", args);
+end
 __sunaba_desktop_FileDialog.prototype = _hx_e();
 __sunaba_desktop_FileDialog.prototype.nativeInit = function(self,_native) 
   if (_native == nil) then 
@@ -22951,6 +24287,13 @@ __sunaba_desktop_FileDialog.prototype.get_currentPath = function(self)
 end
 __sunaba_desktop_FileDialog.prototype.set_currentPath = function(self,value) 
   self.native:set("current_path", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_desktop_FileDialog.prototype.get_deletingEnabled = function(self) 
+  do return self.native:get("deleting_enabled"):asBool() end
+end
+__sunaba_desktop_FileDialog.prototype.set_deletingEnabled = function(self,value) 
+  self.native:set("deleting_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_desktop_FileDialog.prototype.get_displayMode = function(self) 
@@ -23037,6 +24380,13 @@ __sunaba_desktop_FileDialog.prototype.set_optionCount = function(self,value)
   self.native:set("option_count", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_desktop_FileDialog.prototype.get_overwriteWarningEnabled = function(self) 
+  do return self.native:get("overwrite_warning_enabled"):asBool() end
+end
+__sunaba_desktop_FileDialog.prototype.set_overwriteWarningEnabled = function(self,value) 
+  self.native:set("overwrite_warning_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
 __sunaba_desktop_FileDialog.prototype.get_recentListEnabled = function(self) 
   do return self.native:get("recent_list_enabled"):asBool() end
 end
@@ -23097,11 +24447,14 @@ __sunaba_desktop_FileDialog.prototype.get_filesSelected = function(self)
   end;
   do return self._filesSelected end
 end
-__sunaba_desktop_FileDialog.prototype.addFilter = function(self,filter,description) 
+__sunaba_desktop_FileDialog.prototype.addFilter = function(self,filter,description,mimeType) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(filter));
   if (description ~= nil) then 
     args:append(__sunaba_core__Variant_Variant_Impl_.fromString(description));
+  end;
+  if (mimeType ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromString(mimeType));
   end;
   self.native:call("add_filter", args);
 end
@@ -23161,6 +24514,10 @@ __sunaba_desktop_FileDialog.prototype.isCustomizationFlagEnabled = function(self
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(flag));
   do return self.native:call("is_customization_flag_enabled", args):asBool() end
+end
+__sunaba_desktop_FileDialog.prototype.popupFileDialog = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  self.native:call("popup_file_dialog", args);
 end
 __sunaba_desktop_FileDialog.prototype.setCustomizationFlagEnabled = function(self,flag,enabled) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -23485,6 +24842,11 @@ __sunaba_desktop_NativeMenuService.getSystemMenuName = function(menuId)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(menuId));
   do return __sunaba_desktop_NativeMenuService.getNative():call("get_system_menu_name", args):asString() end;
 end
+__sunaba_desktop_NativeMenuService.getSystemMenuText = function(menuId) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(menuId));
+  do return __sunaba_desktop_NativeMenuService.getNative():call("get_system_menu_text", args):asString() end;
+end
 __sunaba_desktop_NativeMenuService.hasFeature = function(feature) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(feature));
@@ -23695,6 +25057,12 @@ __sunaba_desktop_NativeMenuService.setPopupOpenCallback = function(rid,callback)
   args:append(callback);
   __sunaba_desktop_NativeMenuService.getNative():call("set_popup_open_callback", args);
 end
+__sunaba_desktop_NativeMenuService.setSystemMenuText = function(menuId,name) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(menuId));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(name));
+  __sunaba_desktop_NativeMenuService.getNative():call("set_system_menu_text", args);
+end
 __sunaba_desktop_NativeMenuService.prototype = _hx_e();
 
 __sunaba_desktop_NativeMenuService.prototype.__class__ =  __sunaba_desktop_NativeMenuService
@@ -23788,6 +25156,20 @@ __sunaba_desktop_PopupMenu.prototype.get_preferNativeMenu = function(self)
 end
 __sunaba_desktop_PopupMenu.prototype.set_preferNativeMenu = function(self,value) 
   self.native:set("prefer_native_menu", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_desktop_PopupMenu.prototype.get_shrinkHeight = function(self) 
+  do return self.native:get("shrink_height"):asBool() end
+end
+__sunaba_desktop_PopupMenu.prototype.set_shrinkHeight = function(self,value) 
+  self.native:set("shrink_height", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_desktop_PopupMenu.prototype.get_shrinkWidth = function(self) 
+  do return self.native:get("shrink_width"):asBool() end
+end
+__sunaba_desktop_PopupMenu.prototype.set_shrinkWidth = function(self,value) 
+  self.native:set("shrink_width", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_desktop_PopupMenu.prototype.get_submenuPopupDelay = function(self) 
@@ -24901,6 +26283,11 @@ __sunaba_input_InputService.getVector = function(negativeX,positiveX,negativeY,p
   end;
   do return __sunaba_input_InputService.getNative():call("get_vector", args):asVector2() end;
 end
+__sunaba_input_InputService.hasJoyLight = function(device) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(device));
+  do return __sunaba_input_InputService.getNative():call("has_joy_light", args):asBool() end;
+end
 __sunaba_input_InputService.isActionJustPressed = function(action,exactMatch) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(action));
@@ -25021,6 +26408,12 @@ __sunaba_input_InputService.setGyroscope = function(value)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(value));
   __sunaba_input_InputService.getNative():call("set_gyroscope", args);
 end
+__sunaba_input_InputService.setJoyLight = function(device,color) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(device));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromColor(color));
+  __sunaba_input_InputService.getNative():call("set_joy_light", args);
+end
 __sunaba_input_InputService.setMagnetometer = function(value) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromVector3(value));
@@ -25112,6 +26505,37 @@ end
 __sunaba_input_Shortcut.prototype.__class__ =  __sunaba_input_Shortcut
 __sunaba_input_Shortcut.__super__ = __sunaba_Resource
 setmetatable(__sunaba_input_Shortcut.prototype,{__index=__sunaba_Resource.prototype})
+
+__sunaba_internal_ProcessSpawner.new = function(native) 
+  local self = _hx_new(__sunaba_internal_ProcessSpawner.prototype)
+  __sunaba_internal_ProcessSpawner.super(self,native)
+  return self
+end
+__sunaba_internal_ProcessSpawner.super = function(self,native) 
+  __sunaba_Node.super(self,native);
+end
+_hxClasses["sunaba.internal.ProcessSpawner"] = __sunaba_internal_ProcessSpawner
+__sunaba_internal_ProcessSpawner.__name__ = "sunaba.internal.ProcessSpawner"
+__sunaba_internal_ProcessSpawner.prototype = _hx_e();
+__sunaba_internal_ProcessSpawner.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeObject.new("res://Engine/ProcessSpawner.cs", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 2);
+  end;
+  self.native = _native;
+end
+__sunaba_internal_ProcessSpawner.prototype.spawn = function(self,cmdName,args) 
+  local spawnArgs = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  spawnArgs:append(__sunaba_core__Variant_Variant_Impl_.fromString(cmdName));
+  spawnArgs:append(__sunaba_core__Variant_Variant_Impl_.fromStringArray(args));
+  self.native:call("Spawn", spawnArgs);
+end
+__sunaba_internal_ProcessSpawner.prototype.stop = function(self) 
+  self.native:call("Stop", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+end
+
+__sunaba_internal_ProcessSpawner.prototype.__class__ =  __sunaba_internal_ProcessSpawner
+__sunaba_internal_ProcessSpawner.__super__ = __sunaba_Node
+setmetatable(__sunaba_internal_ProcessSpawner.prototype,{__index=__sunaba_Node.prototype})
 
 __sunaba_io_IoInterface.new = function(native) 
   local self = _hx_new(__sunaba_io_IoInterface.prototype)
@@ -26656,6 +28080,155 @@ __sunaba_spatial_BaseMaterial3D.prototype.__class__ =  __sunaba_spatial_BaseMate
 __sunaba_spatial_BaseMaterial3D.__super__ = __sunaba_Material
 setmetatable(__sunaba_spatial_BaseMaterial3D.prototype,{__index=__sunaba_Material.prototype})
 
+__sunaba_spatial_BoneAttachment.new = function() 
+  local self = _hx_new(__sunaba_spatial_BoneAttachment.prototype)
+  __sunaba_spatial_BoneAttachment.super(self)
+  return self
+end
+__sunaba_spatial_BoneAttachment.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.BoneAttachment"] = __sunaba_spatial_BoneAttachment
+__sunaba_spatial_BoneAttachment.__name__ = "sunaba.spatial.BoneAttachment"
+__sunaba_spatial_BoneAttachment.prototype = _hx_e();
+__sunaba_spatial_BoneAttachment.prototype.node= nil;
+__sunaba_spatial_BoneAttachment.prototype.get_boneIdx = function(self) 
+  do return self.node.native:get("bone_idx"):asInt() end
+end
+__sunaba_spatial_BoneAttachment.prototype.set_boneIdx = function(self,value) 
+  self.node.native:set("bone_idx", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_BoneAttachment.prototype.get_boneName = function(self) 
+  do return self.node.native:get("bone_name"):asString() end
+end
+__sunaba_spatial_BoneAttachment.prototype.set_boneName = function(self,value) 
+  self.node.native:set("bone_name", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_BoneAttachment.prototype.get_externalSkeleton = function(self) 
+  do return self.node.native:get("external_skeleton"):asString() end
+end
+__sunaba_spatial_BoneAttachment.prototype.set_externalSkeleton = function(self,value) 
+  self.node.native:set("external_skeleton", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_BoneAttachment.prototype.get_overridePose = function(self) 
+  do return self.node.native:get("override_pose"):asBool() end
+end
+__sunaba_spatial_BoneAttachment.prototype.set_overridePose = function(self,value) 
+  self.node.native:set("override_pose", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BoneAttachment.prototype.get_useExternalSkeleton = function(self) 
+  do return self.node.native:get("use_external_skeleton"):asBool() end
+end
+__sunaba_spatial_BoneAttachment.prototype.set_useExternalSkeleton = function(self,value) 
+  self.node.native:set("use_external_skeleton", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_spatial_BoneAttachment.prototype.getData = function(self) 
+  local data = __sunaba_Behavior.prototype.getData(self);
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("boneName"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_boneName()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("boneIdx"), __sunaba_core__Variant_Variant_Impl_.fromInt(self:get_boneIdx()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("overridePose"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_overridePose()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("useExternalSkeleton"), __sunaba_core__Variant_Variant_Impl_.fromBool(self:get_useExternalSkeleton()));
+  data:set(__sunaba_core__Variant_Variant_Impl_.fromString("externalSkeleton"), __sunaba_core__Variant_Variant_Impl_.fromString(self:get_externalSkeleton()));
+  do return data end
+end
+__sunaba_spatial_BoneAttachment.prototype.setData = function(self,data) 
+  __sunaba_Behavior.prototype.setData(self,data);
+  self:set_boneName(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("boneName")):asString());
+  self:set_boneIdx(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("boneIdx")):asInt());
+  self:set_overridePose(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("overridePose")):asBool());
+  self:set_useExternalSkeleton(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("useExternalSkeleton")):asBool());
+  self:set_externalSkeleton(data:get(__sunaba_core__Variant_Variant_Impl_.fromString("externalSkeleton")):asString());
+end
+__sunaba_spatial_BoneAttachment.prototype.onInit = function(self) 
+  self.node = __sunaba_Node.new(NativeObject.new("BoneAttachment3D"));
+  local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  if (transform ~= nil) then 
+    transform:set_node(self.node);
+  end;
+end
+__sunaba_spatial_BoneAttachment.prototype.onStart = function(self) 
+  if (self.node:getParent():isNull()) then 
+    local transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+    if (transform ~= nil) then 
+      transform:set_node(self.node);
+    end;
+  end;
+end
+
+__sunaba_spatial_BoneAttachment.prototype.__class__ =  __sunaba_spatial_BoneAttachment
+__sunaba_spatial_BoneAttachment.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_BoneAttachment.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_BoneMap.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_BoneMap.prototype)
+  __sunaba_spatial_BoneMap.super(self,native)
+  return self
+end
+__sunaba_spatial_BoneMap.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.BoneMap"] = __sunaba_spatial_BoneMap
+__sunaba_spatial_BoneMap.__name__ = "sunaba.spatial.BoneMap"
+__sunaba_spatial_BoneMap.prototype = _hx_e();
+__sunaba_spatial_BoneMap.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("BoneMap");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("BoneMap"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_BoneMap.prototype.get_profile = function(self) 
+  local ref = self.native:get("profile"):asReference();
+  do return __sunaba_spatial_SkeletonProfile.new(ref) end
+end
+__sunaba_spatial_BoneMap.prototype.set_profile = function(self,value) 
+  self.native:set("profile", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_spatial_BoneMap.prototype._boneMapUpdated= nil;
+__sunaba_spatial_BoneMap.prototype.boneMapUpdated= nil;
+__sunaba_spatial_BoneMap.prototype.get_boneMapUpdated = function(self) 
+  if (self._boneMapUpdated == nil) then 
+    self._boneMapUpdated = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "bone_map_updated");
+  end;
+  do return self._boneMapUpdated end
+end
+__sunaba_spatial_BoneMap.prototype._profileUpdated= nil;
+__sunaba_spatial_BoneMap.prototype.profileUpdated= nil;
+__sunaba_spatial_BoneMap.prototype.get_profileUpdated = function(self) 
+  if (self._profileUpdated == nil) then 
+    self._profileUpdated = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "profile_updated");
+  end;
+  do return self._profileUpdated end
+end
+__sunaba_spatial_BoneMap.prototype.findProfileBoneName = function(self,skeletonBoneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(skeletonBoneName));
+  do return self.native:call("find_profile_bone_name", args):asString() end
+end
+__sunaba_spatial_BoneMap.prototype.getSkeletonBoneName = function(self,profileBoneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(profileBoneName));
+  do return self.native:call("get_skeleton_bone_name", args):asString() end
+end
+__sunaba_spatial_BoneMap.prototype.setSkeletonBoneName = function(self,profileBoneName,skeletonBoneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(profileBoneName));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(skeletonBoneName));
+  self.native:call("set_skeleton_bone_name", args);
+end
+
+__sunaba_spatial_BoneMap.prototype.__class__ =  __sunaba_spatial_BoneMap
+__sunaba_spatial_BoneMap.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_BoneMap.prototype,{__index=__sunaba_Resource.prototype})
+
 __sunaba_spatial_Camera.new = function() 
   local self = _hx_new(__sunaba_spatial_Camera.prototype)
   __sunaba_spatial_Camera.super(self)
@@ -26958,6 +28531,41 @@ __sunaba_spatial_CameraAttributes.prototype.__class__ =  __sunaba_spatial_Camera
 __sunaba_spatial_CameraAttributes.__super__ = __sunaba_Resource
 setmetatable(__sunaba_spatial_CameraAttributes.prototype,{__index=__sunaba_Resource.prototype})
 
+__sunaba_spatial_CharacterBoneMapper.new = function() 
+  local self = _hx_new(__sunaba_spatial_CharacterBoneMapper.prototype)
+  __sunaba_spatial_CharacterBoneMapper.super(self)
+  return self
+end
+__sunaba_spatial_CharacterBoneMapper.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.CharacterBoneMapper"] = __sunaba_spatial_CharacterBoneMapper
+__sunaba_spatial_CharacterBoneMapper.__name__ = "sunaba.spatial.CharacterBoneMapper"
+__sunaba_spatial_CharacterBoneMapper.prototype = _hx_e();
+__sunaba_spatial_CharacterBoneMapper.prototype.onStart = function(self) 
+  local resource = __sunaba_ResourceLoaderService.load("res://Engine/new_bone_map.tres");
+  local boneMap = __sunaba_core_Reference.castTo_sunaba_spatial_BoneMap(resource, __sunaba_spatial_BoneMap);
+  local skeleton = self:getComponent_sunaba_spatial_Skeleton(__sunaba_spatial_Skeleton);
+  if (skeleton ~= nil) then 
+    local _g = 0;
+    local _g1 = skeleton:getBoneCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local boneName = skeleton:getBoneName(i);
+      local newBoneName = boneMap:findProfileBoneName(boneName);
+      if (newBoneName ~= "") then 
+        skeleton:setBoneName(i, newBoneName);
+      end;
+    end;
+  end;
+end
+
+__sunaba_spatial_CharacterBoneMapper.prototype.__class__ =  __sunaba_spatial_CharacterBoneMapper
+__sunaba_spatial_CharacterBoneMapper.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_CharacterBoneMapper.prototype,{__index=__sunaba_Behavior.prototype})
+
 __sunaba_spatial_IVisualInstance.new = function() 
   local self = _hx_new(__sunaba_spatial_IVisualInstance.prototype)
   __sunaba_spatial_IVisualInstance.super(self)
@@ -27167,6 +28775,363 @@ end
 __sunaba_spatial_IGeometryInstance.prototype.__class__ =  __sunaba_spatial_IGeometryInstance
 __sunaba_spatial_IGeometryInstance.__super__ = __sunaba_spatial_IVisualInstance
 setmetatable(__sunaba_spatial_IGeometryInstance.prototype,{__index=__sunaba_spatial_IVisualInstance.prototype})
+
+__sunaba_spatial_Map3D.new = function() 
+  local self = _hx_new(__sunaba_spatial_Map3D.prototype)
+  __sunaba_spatial_Map3D.super(self)
+  return self
+end
+__sunaba_spatial_Map3D.super = function(self) 
+  __sunaba_Behavior.super(self);
+end
+_hxClasses["sunaba.spatial.Map3D"] = __sunaba_spatial_Map3D
+__sunaba_spatial_Map3D.__name__ = "sunaba.spatial.Map3D"
+__sunaba_spatial_Map3D.prototype = _hx_e();
+__sunaba_spatial_Map3D.prototype.node= nil;
+__sunaba_spatial_Map3D.prototype.getTrigger = function(self,name) 
+  local childNode = self.node:getNode(name);
+  if (not childNode:isNull()) then 
+    if (childNode.native:isClass("Area3D")) then 
+      do return __sunaba_spatial_Trigger.new(self:get_scene(), childNode.native) end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_spatial_Map3D.prototype.getAllTriggers = function(self) 
+  local triggers = Array.new();
+  local _g = 0;
+  local _g1 = self.node:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local childNode = self.node:getChild(i);
+    if (childNode.native:isClass("Area3D")) then 
+      triggers:push(__sunaba_spatial_Trigger.new(self:get_scene(), childNode.native));
+    end;
+  end;
+  do return triggers end
+end
+__sunaba_spatial_Map3D.prototype.getWater = function(self,name) 
+  local childNode = self.node:getNode(name);
+  if (not childNode:isNull()) then 
+    if (childNode.native:isClass("Area3D")) then 
+      if (childNode.native:get("isWater"):getType() == 1) then 
+        do return __sunaba_spatial_Water.new(self:get_scene(), childNode.native) end;
+      end;
+    end;
+  end;
+  do return nil end
+end
+__sunaba_spatial_Map3D.prototype.getAllWaterTriggers = function(self) 
+  local waterTriggers = Array.new();
+  local _g = 0;
+  local _g1 = self.node:getChildCount();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local childNode = self.node:getChild(i);
+    if (childNode.native:isClass("Area3D")) then 
+      if (childNode.native:get("isWater"):getType() == 1) then 
+        waterTriggers:push(__sunaba_spatial_Water.new(self:get_scene(), childNode.native));
+      end;
+    end;
+  end;
+  do return waterTriggers end
+end
+
+__sunaba_spatial_Map3D.prototype.__class__ =  __sunaba_spatial_Map3D
+__sunaba_spatial_Map3D.__super__ = __sunaba_Behavior
+setmetatable(__sunaba_spatial_Map3D.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_MapFile.new = function(p) 
+  local self = _hx_new(__sunaba_spatial_MapFile.prototype)
+  __sunaba_spatial_MapFile.super(self,p)
+  return self
+end
+__sunaba_spatial_MapFile.super = function(self,p) 
+  self.isRunningInCoroutine = false;
+  self.textureDirs = Array.new();
+  self.path = p;
+  self.textureDirs:push("basetxt://blockout/textures/");
+  self.textureDirs:push("basetxt://special/textures/");
+  self.io = __sunaba_io_IoManager.new(_G.__ioManager);
+end
+_hxClasses["sunaba.spatial.MapFile"] = __sunaba_spatial_MapFile
+__sunaba_spatial_MapFile.__name__ = "sunaba.spatial.MapFile"
+__sunaba_spatial_MapFile.prototype = _hx_e();
+__sunaba_spatial_MapFile.prototype.path= nil;
+__sunaba_spatial_MapFile.prototype.textureDirs= nil;
+__sunaba_spatial_MapFile.prototype.io= nil;
+__sunaba_spatial_MapFile.prototype.isRunningInCoroutine= nil;
+__sunaba_spatial_MapFile.prototype.yield = function(self) 
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+end
+__sunaba_spatial_MapFile.prototype.instantiate = function(self) 
+  local mapNativeObj = NativeReference.new("res://Engine/MapSceneInstancer.cs", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 2):call("Instantiate", __sunaba_core__ArrayList_ArrayList_Impl_._new()):asObject();
+  local mapNode = __sunaba_Node.new(mapNativeObj);
+  mapNode:set_sceneFilePath("");
+  local mapNodeEntity = __sunaba_Entity.new();
+  local mapNodeTransform = mapNodeEntity:addComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  mapNodeTransform:set_node(mapNode);
+  local map3d = mapNodeEntity:addComponent_sunaba_spatial_Map3D(__sunaba_spatial_Map3D);
+  map3d.node = mapNode;
+  mapNodeEntity.name = "MapEntity";
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local mapContents = self.io:loadText(self.path);
+  local newMapPath = Std.string("user://") .. Std.string(String.prototype.split(self.path, "/"):pop());
+  self.io:saveText(newMapPath, mapContents);
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local newTextureDir = "user://textures/";
+  if (not self.io:directoryExists(newTextureDir)) then 
+    self.io:createDirectory(newTextureDir);
+  end;
+  local savedTextures = Array.new();
+  local savedTexturesJsonPath = Std.string(newTextureDir) .. Std.string("saveTextures.json");
+  if (self.io:fileExists(savedTexturesJsonPath)) then 
+    savedTextures = __haxe_Json.parse(self.io:loadText(savedTexturesJsonPath));
+  end;
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local _g = 0;
+  local _g1 = self.textureDirs;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local textureDir = _g1[_g];
+    _g = _g + 1;
+    if (self.isRunningInCoroutine == true) then 
+      _G.coroutine.yield();
+    end;
+    local textureList = self.io:getFileList(textureDir);
+    if (self.isRunningInCoroutine == true) then 
+      _G.coroutine.yield();
+    end;
+    local _g = 0;
+    local _g1 = textureList:size();
+    local _hx_continue_2 = false;
+    while (_g < _g1) do _hx_do_first_2 = false;
+      repeat 
+      _g = _g + 1;
+      local i = _g - 1;
+      local texturePath = textureList:get(i):asString();
+      if (StringTools.endsWith(texturePath, "/")) then 
+        break;
+      end;
+      if (savedTextures:contains(texturePath)) then 
+        break;
+      else
+        savedTextures:push(texturePath);
+      end;
+      local textureData = self.io:loadBytes(texturePath);
+      local texturePathArray = String.prototype.split(texturePath, "/");
+      local texturePathDirArray = texturePathArray:slice(0, texturePathArray.length - 1);
+      local newTexturePathDir = texturePathDirArray:join("/");
+      newTexturePathDir = StringTools.replace(newTexturePathDir, textureDir, newTextureDir);
+      if (not StringTools.endsWith(newTexturePathDir, "/")) then 
+        newTexturePathDir = Std.string(newTexturePathDir) .. Std.string("/");
+      end;
+      if (not self.io:directoryExists(newTexturePathDir)) then 
+        self.io:createDirectory(newTexturePathDir);
+      end;
+      local newTexturePath = Std.string(newTexturePathDir) .. Std.string(texturePathArray:pop());
+      __haxe_Log.trace(newTexturePath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\MapFile.hx",lineNumber=92,className="sunaba.spatial.MapFile",methodName="instantiate"}));
+      if (self.io:fileExists(newTexturePath)) then 
+        local binaryData = self.io:loadBytes(newTexturePath);
+        local size = binaryData:size();
+        local bytes = __haxe_io_Bytes.alloc(size);
+        local _g = 0;
+        local _g1 = size;
+        while (_g < _g1) do _hx_do_first_3 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local v = binaryData:get(i):getInt64();
+          bytes.b[i] = _hx_bit.band(v,255);
+        end;
+        local tmp = __haxe_crypto_Base64.encode(bytes);
+        local size = textureData:size();
+        local bytes = __haxe_io_Bytes.alloc(size);
+        local _g = 0;
+        local _g1 = size;
+        while (_g < _g1) do _hx_do_first_3 = false;
+          
+          _g = _g + 1;
+          local i = _g - 1;
+          local v = textureData:get(i):getInt64();
+          bytes.b[i] = _hx_bit.band(v,255);
+        end;
+        if (tmp == __haxe_crypto_Base64.encode(bytes)) then 
+          if (self.isRunningInCoroutine == true) then 
+            _G.coroutine.yield();
+          end;
+          break;
+        end;
+      end;
+      self.io:saveBytes(newTexturePath, textureData);
+      if (self.isRunningInCoroutine == true) then 
+        _G.coroutine.yield();
+      end;until true
+      if _hx_continue_2 then 
+      _hx_continue_2 = false;
+      break;
+      end;
+      
+    end;
+    if (self.isRunningInCoroutine == true) then 
+      _G.coroutine.yield();
+    end;
+  end;
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  self.io:saveText(savedTexturesJsonPath, __haxe_Json.stringify(savedTextures));
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local realTextureDir = self.io:getFilePath(newTextureDir);
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local mapSettings = mapNativeObj:get("map_settings"):asReference();
+  mapSettings:set("base_texture_dir", __sunaba_core__Variant_Variant_Impl_.fromString(realTextureDir));
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local sceneNode = __sunaba_SceneRoot.new();
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local buildComplete = __sunaba_core__Signal_Signal_Impl_.createFromObject(mapNativeObj, "build_complete");
+  __sunaba_core__Signal_Signal_Impl_.add(buildComplete, function() 
+    local _g = 0;
+    local _g1 = mapNode:getChildCount();
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local node = mapNode:getChild(i);
+      if (node.native:get("map_properties"):getType() == 27) then 
+        local prefabPath = node.native:get("prefab_path"):asString();
+        local prefabName = node.native:get("prefab_name"):asString();
+        local prefab = __sunaba_Prefab.new();
+        prefab:load(prefabPath);
+        local prefabEntity = prefab:instance();
+        prefabEntity.name = prefabName;
+        local prefabTranform = prefabEntity:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+        if (prefabTranform ~= nil) then 
+          prefabTranform:set_transform(node.native:get("transform"):asTransform3D());
+        end;
+        sceneNode:addEntity(prefabEntity);
+        local mapProperties = node.native:get("map_properties"):asDictionary();
+        local mapPropertyKeyV = __sunaba_core__ArrayList_ArrayList_Impl_.iterator(mapProperties:keys());
+        local _hx_continue_2 = false;
+        while (mapPropertyKeyV:hasNext()) do _hx_do_first_2 = false;
+          repeat 
+          local mapPropertyKeyV = mapPropertyKeyV:next();
+          local mapPropertyKey = mapPropertyKeyV:asString();
+          local mapPropertyValueV = mapProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(mapPropertyKey));
+          if (mapPropertyValueV:getType() ~= 4) then 
+            break;
+          end;
+          local mapPropertyValue = mapPropertyValueV:asString();
+          if (String.prototype.indexOf(mapPropertyKey, "/") ~= -1) then 
+            local mapPropertyKeyArr = String.prototype.split(mapPropertyKey, "/");
+            local componentName = mapPropertyKeyArr[0];
+            if (mapPropertyKeyArr.length ~= 2) then 
+              break;
+            end;
+            local componentPropertyName = mapPropertyKeyArr[1];
+            local _g = 0;
+            local _g1 = prefabEntity:getConponents();
+            while (_g < _g1.length) do _hx_do_first_3 = false;
+              
+              local prefabComponent = _g1[_g];
+              _g = _g + 1;
+              local componentClass = Type.getClass(prefabComponent);
+              if (componentClass.__name__ == componentName) then 
+                local data = prefabComponent:getData();
+                if (data:keys():has(__sunaba_core__Variant_Variant_Impl_.fromString(componentPropertyName))) then 
+                  local ogPropertyValue = data:get(__sunaba_core__Variant_Variant_Impl_.fromString(componentPropertyName));
+                  local newPropertyValue = Variant.new();
+                  if (ogPropertyValue:getType() == 4) then 
+                    newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromString(mapPropertyValue);
+                  else
+                    if (ogPropertyValue:getType() == 2) then 
+                      newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromInt(Std.parseInt(mapPropertyValue));
+                    else
+                      if (ogPropertyValue:getType() == 3) then 
+                        newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromFloat(Std.parseFloat(mapPropertyValue));
+                      else
+                        if (ogPropertyValue:getType() == 1) then 
+                          if ((mapPropertyValue == "false") or (mapPropertyValue == "0")) then 
+                            newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromBool(false);
+                          else
+                            if ((mapPropertyValue == "true") or (mapPropertyValue == "1")) then 
+                              newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromBool(true);
+                            end;
+                          end;
+                        else
+                          if (ogPropertyValue:getType() == 27) then 
+                            local propertyValueDict = ogPropertyValue:asDictionary();
+                            local newPropertyValueDict = propertyValueDict:duplicate(true);
+                            if (propertyValueDict:has(__sunaba_core__Variant_Variant_Impl_.fromString("type")) and propertyValueDict:has(__sunaba_core__Variant_Variant_Impl_.fromString("value"))) then 
+                              newPropertyValueDict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_JSON.parseString(mapPropertyValue));
+                            end;
+                            newPropertyValue = __sunaba_core__Variant_Variant_Impl_.fromDictionary(newPropertyValueDict);
+                          end;
+                        end;
+                      end;
+                    end;
+                  end;
+                  data:set(__sunaba_core__Variant_Variant_Impl_.fromString(componentPropertyName), newPropertyValue);
+                end;
+                prefabComponent:setData(data);
+              end;
+            end;
+          end;until true
+          if _hx_continue_2 then 
+          _hx_continue_2 = false;
+          break;
+          end;
+          
+        end;
+      end;
+    end;
+  end);
+  local buildFailed = __sunaba_core__Signal_Signal_Impl_.createFromObject(mapNativeObj, "build_failed");
+  __sunaba_core__Signal_Signal_Impl_.add(buildFailed, function() 
+    _G.error(__haxe_Exception.thrown("Failed to build map"),0);
+  end);
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  local realMapPath = self.io:getFilePath(newMapPath);
+  mapNativeObj:set("local_map_file", __sunaba_core__Variant_Variant_Impl_.fromString(realMapPath));
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  mapNativeObj:call("build", __sunaba_core__ArrayList_ArrayList_Impl_._new());
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  sceneNode:addEntity(mapNodeEntity);
+  if (self.isRunningInCoroutine == true) then 
+    _G.coroutine.yield();
+  end;
+  do return sceneNode end
+end
+
+__sunaba_spatial_MapFile.prototype.__class__ =  __sunaba_spatial_MapFile
+__sunaba_spatial_MapFile.__super__ = __sunaba_BaseClass
+setmetatable(__sunaba_spatial_MapFile.prototype,{__index=__sunaba_BaseClass.prototype})
 
 __sunaba_spatial_Skeleton.new = function() 
   local self = _hx_new(__sunaba_spatial_Skeleton.prototype)
@@ -27500,7 +29465,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     local propKeyv = _g1[_g];
     _g = _g + 1;
     local propKey = propKeyv:asString();
-    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local parts = String.prototype.split(propKey, "/");
     local boneIdx = Std.parseInt(parts[1]);
     local propName = parts[2];
@@ -27515,7 +29480,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     if (boneIdx > maxBone) then 
       maxBone = boneIdx;
     end;
-    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local ret = boneDataMap_h[boneIdx];
     if (ret == __haxe_ds_IntMap.tnull) then 
       ret = nil;
@@ -27662,6 +29627,178 @@ end
 __sunaba_spatial_Skeleton.prototype.__class__ =  __sunaba_spatial_Skeleton
 __sunaba_spatial_Skeleton.__super__ = __sunaba_Behavior
 setmetatable(__sunaba_spatial_Skeleton.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_SkeletonProfile.new = function(native) 
+  local self = _hx_new(__sunaba_spatial_SkeletonProfile.prototype)
+  __sunaba_spatial_SkeletonProfile.super(self,native)
+  return self
+end
+__sunaba_spatial_SkeletonProfile.super = function(self,native) 
+  __sunaba_Resource.super(self,native);
+end
+_hxClasses["sunaba.spatial.SkeletonProfile"] = __sunaba_spatial_SkeletonProfile
+__sunaba_spatial_SkeletonProfile.__name__ = "sunaba.spatial.SkeletonProfile"
+__sunaba_spatial_SkeletonProfile.prototype = _hx_e();
+__sunaba_spatial_SkeletonProfile.prototype.nativeInit = function(self,_native) 
+  if (_native == nil) then 
+    _native = NativeReference.new("SkeletonProfile");
+  end;
+  self.native = _native;
+  local scriptLoader = NativeReference.new("res://Engine/SrciptLoader.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString("SkeletonProfile"), __sunaba_core__Variant_Variant_Impl_.fromNativeReference(self.native)}, 2);
+  scriptLoader:call("loadScript", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
+end
+__sunaba_spatial_SkeletonProfile.prototype.get_boneSize = function(self) 
+  do return self.native:get("bone_size"):asInt() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.set_boneSize = function(self,value) 
+  self.native:set("bone_size", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_SkeletonProfile.prototype.get_groupSize = function(self) 
+  do return self.native:get("group_size"):asInt() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.set_groupSize = function(self,value) 
+  self.native:set("group_size", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_spatial_SkeletonProfile.prototype.get_rootBone = function(self) 
+  do return self.native:get("root_bone"):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.set_rootBone = function(self,value) 
+  self.native:set("root_bone", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_SkeletonProfile.prototype.get_scaleBaseBone = function(self) 
+  do return self.native:get("scale_base_bone"):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.set_scaleBaseBone = function(self,value) 
+  self.native:set("scale_base_bone", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_spatial_SkeletonProfile.prototype._profileUpdated= nil;
+__sunaba_spatial_SkeletonProfile.prototype.profileUpdated= nil;
+__sunaba_spatial_SkeletonProfile.prototype.get_profileUpdated = function(self) 
+  if (self._profileUpdated == nil) then 
+    self._profileUpdated = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "profile_updated");
+  end;
+  do return self._profileUpdated end
+end
+__sunaba_spatial_SkeletonProfile.prototype.findBone = function(self,boneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(boneName));
+  do return self.native:call("find_bone", args):asInt() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getBoneName = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_bone_name", args):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getBoneParent = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_bone_parent", args):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getBoneTail = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_bone_tail", args):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getGroup = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_group", args):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getGroupName = function(self,groupIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(groupIdx));
+  do return self.native:call("get_group_name", args):asString() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getHandleOffset = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_handle_offset", args):asVector2() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getTailDirection = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("get_tail_direction", args):asInt() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.getTexture = function(self,groupIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(groupIdx));
+  local ref = self.native:call("get_texture", args):asReference();
+  do return __sunaba_Texture2D.new(ref) end
+end
+__sunaba_spatial_SkeletonProfile.prototype.isRequired = function(self,boneIdx) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  do return self.native:call("is_required", args):asBool() end
+end
+__sunaba_spatial_SkeletonProfile.prototype.setBoneName = function(self,boneIdx,boneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(boneName));
+  self.native:call("set_bone_name", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setBoneParent = function(self,boneIdx,boneParent) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(boneParent));
+  self.native:call("set_bone_parent", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setBoneTail = function(self,boneIdx,boneTail) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(boneTail));
+  self.native:call("set_bone_tail", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setGroup = function(self,boneIdx,group) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(group));
+  self.native:call("set_group", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setGroupName = function(self,groupIdx,groupName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(groupIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(groupName));
+  self.native:call("set_group_name", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setHandleOffset = function(self,boneIdx,handleOffset) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromVector2(handleOffset));
+  self.native:call("set_handle_offset", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setReferencePose = function(self,boneIdx,boneName) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(boneName);
+  self.native:call("set_reference_pose", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setRequired = function(self,boneIdx,required) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(required));
+  self.native:call("set_required", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setTailDirection = function(self,boneIdx,tailDirection) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(boneIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(tailDirection));
+  self.native:call("set_tail_direction", args);
+end
+__sunaba_spatial_SkeletonProfile.prototype.setTexture = function(self,groupIdx,texture) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(groupIdx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(texture.native));
+  self.native:call("set_texture", args);
+end
+
+__sunaba_spatial_SkeletonProfile.prototype.__class__ =  __sunaba_spatial_SkeletonProfile
+__sunaba_spatial_SkeletonProfile.__super__ = __sunaba_Resource
+setmetatable(__sunaba_spatial_SkeletonProfile.prototype,{__index=__sunaba_Resource.prototype})
 
 __sunaba_spatial_Skin.new = function(native) 
   local self = _hx_new(__sunaba_spatial_Skin.prototype)
@@ -28110,6 +30247,92 @@ end
 __sunaba_spatial_SpatialTransform.prototype.__class__ =  __sunaba_spatial_SpatialTransform
 __sunaba_spatial_SpatialTransform.__super__ = __sunaba_Behavior
 setmetatable(__sunaba_spatial_SpatialTransform.prototype,{__index=__sunaba_Behavior.prototype})
+
+__sunaba_spatial_Trigger.new = function(_scene,_native) 
+  local self = _hx_new(__sunaba_spatial_Trigger.prototype)
+  __sunaba_spatial_Trigger.super(self,_scene,_native)
+  return self
+end
+__sunaba_spatial_Trigger.super = function(self,_scene,_native) 
+  __sunaba_Node.super(self,_native);
+  self.scene = _scene;
+end
+_hxClasses["sunaba.spatial.Trigger"] = __sunaba_spatial_Trigger
+__sunaba_spatial_Trigger.__name__ = "sunaba.spatial.Trigger"
+__sunaba_spatial_Trigger.prototype = _hx_e();
+__sunaba_spatial_Trigger.prototype.scene= nil;
+__sunaba_spatial_Trigger.prototype._bodyEnteredS= nil;
+__sunaba_spatial_Trigger.prototype._bodyEntered= nil;
+__sunaba_spatial_Trigger.prototype.bodyEntered= nil;
+__sunaba_spatial_Trigger.prototype.get_bodyEntered = function(self) 
+  do return self._bodyEntered end
+end
+__sunaba_spatial_Trigger.prototype._bodyExitedS= nil;
+__sunaba_spatial_Trigger.prototype._bodyExited= nil;
+__sunaba_spatial_Trigger.prototype.bodyExited= nil;
+__sunaba_spatial_Trigger.prototype.get_bodyExited = function(self) 
+  do return self._bodyExited end
+end
+__sunaba_spatial_Trigger.prototype.nativeInit = function(self,_native) 
+  local _gthis = self;
+  __sunaba_Node.prototype.nativeInit(self,_native);
+  self._bodyEnteredS = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "body_entered");
+  self._bodyExitedS = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.native, "body_exited");
+  self._bodyEntered = __sunaba_GameEvent_func_sunaba_Entity_Void.new();
+  self._bodyExited = __sunaba_GameEvent_func_sunaba_Entity_Void.new();
+  __sunaba_core__Signal_Signal_Impl_.add(self._bodyEnteredS, function(nobj) 
+    local node = __sunaba_Node.new(nobj);
+    local entity = _gthis.scene:findByNode(node);
+    if (entity ~= nil) then 
+      local _this = _gthis._bodyEntered;
+      local args = __haxe__Rest_Rest_Impl_.of(_hx_tab_array({[0]=entity}, 1));
+      local _g = 0;
+      local _g1 = _this.functions;
+      while (_g < _g1.length) do _hx_do_first_1 = false;
+        
+        local func = _g1[_g];
+        _g = _g + 1;
+        Reflect.callMethod(nil,func,__haxe__Rest_Rest_Impl_.toArray(args));
+      end;
+    end;
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self._bodyExitedS, function(nobj) 
+    local node = __sunaba_Node.new(nobj);
+    local entity = _gthis.scene:findByNode(node);
+    if (entity ~= nil) then 
+      local _this = _gthis._bodyExited;
+      local args = __haxe__Rest_Rest_Impl_.of(_hx_tab_array({[0]=entity}, 1));
+      local _g = 0;
+      local _g1 = _this.functions;
+      while (_g < _g1.length) do _hx_do_first_1 = false;
+        
+        local func = _g1[_g];
+        _g = _g + 1;
+        Reflect.callMethod(nil,func,__haxe__Rest_Rest_Impl_.toArray(args));
+      end;
+    end;
+  end);
+end
+
+__sunaba_spatial_Trigger.prototype.__class__ =  __sunaba_spatial_Trigger
+__sunaba_spatial_Trigger.__super__ = __sunaba_Node
+setmetatable(__sunaba_spatial_Trigger.prototype,{__index=__sunaba_Node.prototype})
+
+__sunaba_spatial_Water.new = function(_scene,_native) 
+  local self = _hx_new(__sunaba_spatial_Water.prototype)
+  __sunaba_spatial_Water.super(self,_scene,_native)
+  return self
+end
+__sunaba_spatial_Water.super = function(self,_scene,_native) 
+  __sunaba_spatial_Trigger.super(self,_scene,_native);
+end
+_hxClasses["sunaba.spatial.Water"] = __sunaba_spatial_Water
+__sunaba_spatial_Water.__name__ = "sunaba.spatial.Water"
+__sunaba_spatial_Water.prototype = _hx_e();
+
+__sunaba_spatial_Water.prototype.__class__ =  __sunaba_spatial_Water
+__sunaba_spatial_Water.__super__ = __sunaba_spatial_Trigger
+setmetatable(__sunaba_spatial_Water.prototype,{__index=__sunaba_spatial_Trigger.prototype})
 
 __sunaba_spatial_World3D.new = function(native) 
   local self = _hx_new(__sunaba_spatial_World3D.prototype)
@@ -29019,6 +31242,12 @@ __sunaba_spatial_mesh_ImporterMesh.super = function(self,native)
 end
 _hxClasses["sunaba.spatial.mesh.ImporterMesh"] = __sunaba_spatial_mesh_ImporterMesh
 __sunaba_spatial_mesh_ImporterMesh.__name__ = "sunaba.spatial.mesh.ImporterMesh"
+__sunaba_spatial_mesh_ImporterMesh.fromMesh = function(mesh) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(mesh);
+  local ref = NativeObject.callStatic("ImporterMesh", "from_mesh", args):asReference();
+  do return __sunaba_spatial_mesh_ImporterMesh.new(ref) end;
+end
 __sunaba_spatial_mesh_ImporterMesh.prototype = _hx_e();
 __sunaba_spatial_mesh_ImporterMesh.prototype.nativeInit = function(self,_native) 
   if (_native == nil) then 
@@ -29875,25 +32104,9 @@ __sunaba_spatial_models_gltf_GLTFDocument.super = function(self,native)
 end
 _hxClasses["sunaba.spatial.models.gltf.GLTFDocument"] = __sunaba_spatial_models_gltf_GLTFDocument
 __sunaba_spatial_models_gltf_GLTFDocument.__name__ = "sunaba.spatial.models.gltf.GLTFDocument"
-__sunaba_spatial_models_gltf_GLTFDocument.exportObjectModelProperty = function(state,nodePath,godotNode,gltfNodeIndex) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeObject(godotNode.native));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(gltfNodeIndex));
-  local ref = NativeObject.callStatic("GLTFDocument", "export_object_model_property", args):asReference();
-  do return __sunaba_spatial_models_gltf_GLTFObjectModelProperty.new(ref) end;
-end
 __sunaba_spatial_models_gltf_GLTFDocument.getSupportedGltfExtensions = function() 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return NativeObject.callStatic("GLTFDocument", "get_supported_gltf_extensions", args):asStringArray() end;
-end
-__sunaba_spatial_models_gltf_GLTFDocument.importObjectModelProperty = function(state,jsonPointer) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(state.native));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(jsonPointer));
-  local ref = NativeObject.callStatic("GLTFDocument", "import_object_model_property", args):asReference();
-  do return __sunaba_spatial_models_gltf_GLTFObjectModelProperty.new(ref) end;
 end
 __sunaba_spatial_models_gltf_GLTFDocument.registerGltfDocumentExtension = function(extension,firstPriority) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -30116,6 +32329,13 @@ __sunaba_spatial_models_gltf_GLTFState.prototype.set_glbData = function(self,val
   self.native:set("glb_data", __sunaba_core__Variant_Variant_Impl_.fromByteArray(value));
   do return value end
 end
+__sunaba_spatial_models_gltf_GLTFState.prototype.get_handleBinaryImageMode = function(self) 
+  do return self.native:get("handle_binary_image_mode"):asInt() end
+end
+__sunaba_spatial_models_gltf_GLTFState.prototype.set_handleBinaryImageMode = function(self,value) 
+  self.native:set("handle_binary_image_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_spatial_models_gltf_GLTFState.prototype.get_importAsSkeletonBones = function(self) 
   do return self.native:get("import_as_skeleton_bones"):asBool() end
 end
@@ -30193,9 +32413,9 @@ __sunaba_spatial_models_gltf_GLTFState.prototype.getAdditionalData = function(se
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(extensionName));
   do return self.native:call("get_additional_data", args) end
 end
-__sunaba_spatial_models_gltf_GLTFState.prototype.getAnimationPlayersCount = function(self,idx) 
+__sunaba_spatial_models_gltf_GLTFState.prototype.getAnimationPlayersCount = function(self,animPlayerIndex) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(animPlayerIndex));
   do return self.native:call("get_animation_players_count", args):asInt() end
 end
 __sunaba_spatial_models_gltf_GLTFState.prototype.getAnimations = function(self) 
@@ -30239,9 +32459,9 @@ __sunaba_spatial_models_gltf_GLTFState.prototype.getNodes = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_nodes", args):asArrayList() end
 end
-__sunaba_spatial_models_gltf_GLTFState.prototype.getSceneNode = function(self,idx) 
+__sunaba_spatial_models_gltf_GLTFState.prototype.getSceneNode = function(self,gltfNodeIndex) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(idx));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(gltfNodeIndex));
   local ref = self.native:call("get_scene_node", args):asObject();
   do return __sunaba_Node.new(ref) end
 end
@@ -30849,85 +33069,6 @@ end
 __sunaba_spatial_models_gltf_GLTFNode.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFNode
 __sunaba_spatial_models_gltf_GLTFNode.__super__ = __sunaba_Resource
 setmetatable(__sunaba_spatial_models_gltf_GLTFNode.prototype,{__index=__sunaba_Resource.prototype})
-
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.new = function(native) 
-  local self = _hx_new(__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype)
-  __sunaba_spatial_models_gltf_GLTFObjectModelProperty.super(self,native)
-  return self
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.super = function(self,native) 
-  __sunaba_core_Reference.super(self,native);
-end
-_hxClasses["sunaba.spatial.models.gltf.GLTFObjectModelProperty"] = __sunaba_spatial_models_gltf_GLTFObjectModelProperty
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.__name__ = "sunaba.spatial.models.gltf.GLTFObjectModelProperty"
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype = _hx_e();
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.nativeInit = function(self,_native) 
-  if (_native == nil) then 
-    _native = NativeReference.new("GLTFObjectModelProperty");
-  end;
-  self.native = _native;
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_jsonPointers = function(self) 
-  do return self.native:get("json_pointers"):asArrayList() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_jsonPointers = function(self,value) 
-  self.native:set("json_pointers", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
-  do return value end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_nodePaths = function(self) 
-  do return self.native:get("node_paths"):asArrayList() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_nodePaths = function(self,value) 
-  self.native:set("node_paths", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
-  do return value end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_objectModelType = function(self) 
-  do return self.native:get("object_model_type"):asInt() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_objectModelType = function(self,value) 
-  self.native:set("object_model_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
-  do return value end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.get_variantType = function(self) 
-  do return self.native:get("variant_type"):asInt() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.set_variantType = function(self,value) 
-  self.native:set("variant_type", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
-  do return value end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.appendNodePath = function(self,nodePath) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
-  self.native:call("append_node_path", args);
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.appendPathToProperty = function(self,nodePath,propName) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(nodePath));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(propName));
-  self.native:call("append_path_to_property", args);
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.getAccessorType = function(self) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  do return self.native:call("get_accessor_type", args):asInt() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.hasJsonPointers = function(self) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  do return self.native:call("has_json_pointers", args):asBool() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.hasNodePaths = function(self) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  do return self.native:call("has_node_paths", args):asBool() end
-end
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.setTypes = function(self,variantType,objModelType) 
-  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(variantType));
-  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(objModelType));
-  self.native:call("set_types", args);
-end
-
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype.__class__ =  __sunaba_spatial_models_gltf_GLTFObjectModelProperty
-__sunaba_spatial_models_gltf_GLTFObjectModelProperty.__super__ = __sunaba_core_Reference
-setmetatable(__sunaba_spatial_models_gltf_GLTFObjectModelProperty.prototype,{__index=__sunaba_core_Reference.prototype})
 
 __sunaba_spatial_physics_ICollisionObject.new = function() 
   local self = _hx_new(__sunaba_spatial_physics_ICollisionObject.prototype)
@@ -32558,11 +34699,39 @@ __sunaba_ui_Control.prototype.nativeInit = function(self,_native)
   end;
   self.native = _native;
 end
+__sunaba_ui_Control.prototype.get_accessibilityControlsNodes = function(self) 
+  do return self.native:get("accessibility_controls_nodes"):asArrayList() end
+end
+__sunaba_ui_Control.prototype.set_accessibilityControlsNodes = function(self,value) 
+  self.native:set("accessibility_controls_nodes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_Control.prototype.get_accessibilityDescribedByNodes = function(self) 
+  do return self.native:get("accessibility_described_by_nodes"):asArrayList() end
+end
+__sunaba_ui_Control.prototype.set_accessibilityDescribedByNodes = function(self,value) 
+  self.native:set("accessibility_described_by_nodes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
 __sunaba_ui_Control.prototype.get_accessibilityDescription = function(self) 
   do return self.native:get("accessibility_description"):asString() end
 end
 __sunaba_ui_Control.prototype.set_accessibilityDescription = function(self,value) 
   self.native:set("accessibility_description", __sunaba_core__Variant_Variant_Impl_.fromString(value));
+  do return value end
+end
+__sunaba_ui_Control.prototype.get_accessibilityFlowToNodes = function(self) 
+  do return self.native:get("accessibility_flow_to_nodes"):asArrayList() end
+end
+__sunaba_ui_Control.prototype.set_accessibilityFlowToNodes = function(self,value) 
+  self.native:set("accessibility_flow_to_nodes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_Control.prototype.get_accessibilityLabeledByNodes = function(self) 
+  do return self.native:get("accessibility_labeled_by_nodes"):asArrayList() end
+end
+__sunaba_ui_Control.prototype.set_accessibilityLabeledByNodes = function(self,value) 
+  self.native:set("accessibility_labeled_by_nodes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
   do return value end
 end
 __sunaba_ui_Control.prototype.get_accessibilityLive = function(self) 
@@ -32780,6 +34949,13 @@ __sunaba_ui_Control.prototype.get_pivotOffset = function(self)
 end
 __sunaba_ui_Control.prototype.set_pivotOffset = function(self,value) 
   self.native:set("pivot_offset", __sunaba_core__Variant_Variant_Impl_.fromVector2(value));
+  do return value end
+end
+__sunaba_ui_Control.prototype.get_pivotOffsetRatio = function(self) 
+  do return self.native:get("pivot_offset_ratio"):asVector2() end
+end
+__sunaba_ui_Control.prototype.set_pivotOffsetRatio = function(self,value) 
+  self.native:set("pivot_offset_ratio", __sunaba_core__Variant_Variant_Impl_.fromVector2(value));
   do return value end
 end
 __sunaba_ui_Control.prototype.get_position = function(self) 
@@ -33038,6 +35214,10 @@ __sunaba_ui_Control.prototype.getCombinedMinimumSize = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_combined_minimum_size", args):asVector2() end
 end
+__sunaba_ui_Control.prototype.getCombinedPivotOffset = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_combined_pivot_offset", args):asVector2() end
+end
 __sunaba_ui_Control.prototype.getCursorShape = function(self,position) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   if (position ~= nil) then 
@@ -33167,12 +35347,18 @@ __sunaba_ui_Control.prototype.grabClickFocus = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   self.native:call("grab_click_focus", args);
 end
-__sunaba_ui_Control.prototype.grabFocus = function(self) 
+__sunaba_ui_Control.prototype.grabFocus = function(self,hideFocus) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (hideFocus ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(hideFocus));
+  end;
   self.native:call("grab_focus", args);
 end
-__sunaba_ui_Control.prototype.hasFocus = function(self) 
+__sunaba_ui_Control.prototype.hasFocus = function(self,ignoreHiddenFocus) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (ignoreHiddenFocus ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(ignoreHiddenFocus));
+  end;
   do return self.native:call("has_focus", args):asBool() end
 end
 __sunaba_ui_Control.prototype.hasThemeColor = function(self,name,themeType) 
@@ -33645,6 +35831,20 @@ __sunaba_ui_Widget.prototype.instantiate = function(self,xml)
         local offsetRightAtt = firstElement:get("offsetRight");
         if (offsetRightAtt ~= nil) then 
           self:set_offsetRight(Std.parseFloat(offsetRightAtt));
+        end;
+        local customMinimumSizeAtt = firstElement:get("customMinimumSize");
+        if (customMinimumSizeAtt ~= nil) then 
+          customMinimumSizeAtt = StringTools.replace(customMinimumSizeAtt, " ", "");
+          local customMinimumSizeAttArr = String.prototype.split(customMinimumSizeAtt, ",");
+          local x = Std.parseFloat(customMinimumSizeAttArr[0]);
+          local y = Std.parseFloat(customMinimumSizeAttArr[1]);
+          if (y == nil) then 
+            y = 0;
+          end;
+          if (x == nil) then 
+            x = 0;
+          end;
+          self:set_customMinimumSize(Vector2.new(x, y));
         end;
       end;
       local nameAtt = firstElement:get("name");
@@ -34576,12 +36776,12 @@ __sunaba_ui_Widget.prototype.isValueTexture = function(self,node,propName)
 end
 __sunaba_ui_Widget.prototype.isTextureType = function(self,value) 
   local nativeRef = value:asReference();
-  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=755,className="sunaba.ui.Widget",methodName="isTextureType"}));
-  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=756,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=768,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=769,className="sunaba.ui.Widget",methodName="isTextureType"}));
   if (nativeRef ~= nil) then 
-    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=758,className="sunaba.ui.Widget",methodName="isTextureType"}));
+    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=771,className="sunaba.ui.Widget",methodName="isTextureType"}));
     if (nativeRef:isValid()) then 
-      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=760,className="sunaba.ui.Widget",methodName="isTextureType"}));
+      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=773,className="sunaba.ui.Widget",methodName="isTextureType"}));
       if (nativeRef:isClass("Texture")) then 
         do return true end;
       end;
@@ -34765,7 +36965,7 @@ __sunaba_studio_Console.prototype.editorInit = function(self)
   local outputColor = self.output:getThemeColor("default_color");
   local i = self:getNode("vbox/input");
   if (i == nil) then 
-    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
+    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
     do return end;
   end;
   self.input = self:getNodeT_sunaba_ui_LineEdit(__sunaba_ui_LineEdit, "vbox/hbox/input");
@@ -34920,6 +37120,7 @@ __sunaba_studio_Editor.new = function(_io)
 end
 __sunaba_studio_Editor.super = function(self,_io) 
   self.showDialog = false;
+  self.playOnBuild = false;
   self.isGamePaused = false;
   self.buildSystem = Gamepak.new();
   self.isSaveKeyPressed = false;
@@ -34927,14 +37128,21 @@ __sunaba_studio_Editor.super = function(self,_io)
   self.buildTask = nil;
   self.pluginBuilt = false;
   self.hasGrabedFocus = false;
+  self.rightSidebarToggled = true;
+  self.leftSidebarToggled = true;
+  self.rightSidebarVisible = true;
+  self.leftSidebarVisible = true;
   self.plugins = Array.new();
   self.debugMenu = nil;
+  self.toolsMenu = nil;
   self.playerAppView = nil;
   self.playerSubViewportContainer = nil;
   self._projectFile = nil;
+  self.toolFunctions = Array.new();
   self.resizeThresholdBottomRight = 0.25;
   self.resizeThreshold = 10.0;
   self.resizePreview = true;
+  self.windowIsMaximized = false;
   self.subtitle = "";
   self.timeSinceClick = 0.1;
   self.clickcount = 0;
@@ -34972,6 +37180,8 @@ __sunaba_studio_Editor.prototype.saveFileButton= nil;
 __sunaba_studio_Editor.prototype.undoButton= nil;
 __sunaba_studio_Editor.prototype.redoButton= nil;
 __sunaba_studio_Editor.prototype.reloadButton= nil;
+__sunaba_studio_Editor.prototype.publishButton= nil;
+__sunaba_studio_Editor.prototype.trenchbroomButton= nil;
 __sunaba_studio_Editor.prototype.buildButton= nil;
 __sunaba_studio_Editor.prototype.playButton= nil;
 __sunaba_studio_Editor.prototype.pauseButton= nil;
@@ -34984,6 +37194,7 @@ __sunaba_studio_Editor.prototype.clickcount= nil;
 __sunaba_studio_Editor.prototype.timeSinceClick= nil;
 __sunaba_studio_Editor.prototype.windowTitle= nil;
 __sunaba_studio_Editor.prototype.subtitle= nil;
+__sunaba_studio_Editor.prototype.windowIsMaximized= nil;
 __sunaba_studio_Editor.prototype.playBuildWindow= nil;
 __sunaba_studio_Editor.prototype.pluginBuildWindow= nil;
 __sunaba_studio_Editor.prototype.explorer= nil;
@@ -34995,6 +37206,7 @@ __sunaba_studio_Editor.prototype.sourceIo= nil;
 __sunaba_studio_Editor.prototype.resizePreview= nil;
 __sunaba_studio_Editor.prototype.resizeThreshold= nil;
 __sunaba_studio_Editor.prototype.resizeThresholdBottomRight= nil;
+__sunaba_studio_Editor.prototype.toolFunctions= nil;
 __sunaba_studio_Editor.prototype._projectFile= nil;
 __sunaba_studio_Editor.prototype.projectFile= nil;
 __sunaba_studio_Editor.prototype.get_projectFile = function(self) 
@@ -35017,8 +37229,13 @@ __sunaba_studio_Editor.prototype.set_customTitlebar = function(self,value)
 end
 __sunaba_studio_Editor.prototype.playerSubViewportContainer= nil;
 __sunaba_studio_Editor.prototype.playerAppView= nil;
+__sunaba_studio_Editor.prototype.toolsMenu= nil;
 __sunaba_studio_Editor.prototype.debugMenu= nil;
 __sunaba_studio_Editor.prototype.plugins= nil;
+__sunaba_studio_Editor.prototype.leftSidebarVisible= nil;
+__sunaba_studio_Editor.prototype.rightSidebarVisible= nil;
+__sunaba_studio_Editor.prototype.leftSidebarToggled= nil;
+__sunaba_studio_Editor.prototype.rightSidebarToggled= nil;
 __sunaba_studio_Editor.prototype.init = function(self) 
   local _gthis = self;
   self:load("studio://Editor.suml");
@@ -35035,6 +37252,7 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.centerTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/vsplit/workspace");
   self.centerTabContainer:getTabBar():set_tabCloseDisplayPolicy(1);
   self.bottomCenterTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/vsplit/dock");
+  self.bottomCenterTabContainer:set_tabsPosition(1);
   self.rightTabContainer = self:getNodeT_sunaba_ui_TabContainer(__sunaba_ui_TabContainer, "vbox/hbox/hsplit1/hsplit2/rightSidebar");
   self.rightTabContainer:hide();
   self.rightTabContainer:set_tabsVisible(false);
@@ -35051,10 +37269,56 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.reloadButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     _gthis:buildPlugin();
   end));
-  self.buildButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/build");
+  self.publishButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/publish");
+  self.trenchbroomButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/leftToolbar/trenchbroom");
+  __sunaba_core__Signal_Signal_Impl_.add(self.trenchbroomButton:get_pressed(), function() 
+    local mapPath = "";
+    local processSpawner = __sunaba_internal_ProcessSpawner.new();
+    local toolchaindir = __sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory();
+    local nrProgramName = "radiant";
+    if (Sys.systemName() == "Windows") then 
+      toolchaindir = StringTools.replace(toolchaindir, "\\/", "\\");
+      toolchaindir = StringTools.replace(toolchaindir, "/\\", "\\");
+      toolchaindir = StringTools.replace(toolchaindir, "/", "\\");
+      if (not StringTools.endsWith(toolchaindir, "\\")) then 
+        toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
+      end;
+      nrProgramName = Std.string(nrProgramName) .. Std.string(".exe");
+    else
+      if (not StringTools.endsWith(toolchaindir, "/")) then 
+        toolchaindir = Std.string(toolchaindir) .. Std.string("/");
+      end;
+      if (String.prototype.indexOf(toolchaindir, "//") ~= -1) then 
+        toolchaindir = StringTools.replace(toolchaindir, "//", "/");
+      end;
+      if (Sys.systemName() == "Linux") then 
+        nrProgramName = Std.string(nrProgramName) .. Std.string(".x86_64");
+      end;
+      if (Sys.systemName() == "macOS") then 
+        nrProgramName = Std.string(nrProgramName) .. Std.string(".arm64");
+        if (not __sys_FileSystem.exists(nrProgramName)) then 
+          __sunaba_Debug.error("NetRadiant Custom is not supported on Intel Macs running macOS");
+        end;
+      end;
+    end;
+    local radiantExecutablePath = Std.string(toolchaindir) .. Std.string(nrProgramName);
+    if (String.prototype.indexOf(radiantExecutablePath, " ") ~= -1) then 
+      radiantExecutablePath = Std.string(Std.string("\"") .. Std.string(radiantExecutablePath)) .. Std.string("\"");
+    end;
+    if (String.prototype.indexOf(mapPath, " ") ~= -1) then 
+      mapPath = Std.string(Std.string("\"") .. Std.string(mapPath)) .. Std.string("\"");
+    end;
+    processSpawner:spawn(radiantExecutablePath, __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]=mapPath}, 1)));
+  end);
+  self.buildButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/rightToolbar/build");
   self.playButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/rightToolbar/play");
   self.pauseButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/rightToolbar/pause");
   self.stopButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/rightToolbar/stop");
+  self.buildButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
+    if (_gthis.isGameRunning == false) then 
+      _gthis:buildProject();
+    end;
+  end));
   self.playButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     if ((_gthis.isGameRunning == true) and (_gthis.isGamePaused == true)) then 
       _gthis:unpause();
@@ -35075,6 +37339,36 @@ __sunaba_studio_Editor.prototype.init = function(self)
   self.windowTitle = self:getNodeT_sunaba_ui_Label(__sunaba_ui_Label, "vbox/menuBarControl/windowTitle");
   self.windowTitle:show();
   self.windowTitle:addThemeFontOverride("font", __sunaba_core_Reference.castTo_sunaba_Font(__sunaba_ResourceLoaderService.load("res://Engine/Theme/fonts/NunitoSans-Medium.ttf"), __sunaba_Font));
+  local leftSidebarToggle = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/statusbar/hbox/left/leftSidebarToggle");
+  self.leftSidebarToggled = true;
+  __sunaba_core__Signal_Signal_Impl_.add(leftSidebarToggle:get_pressed(), function() 
+    _gthis.leftSidebarToggled = not _gthis.leftSidebarToggled;
+    _gthis.leftTabBar:set_visible(_gthis.leftSidebarToggled);
+    if (_gthis.leftSidebarToggled == true) then 
+      _gthis.leftTabContainer:set_visible(_gthis.leftSidebarVisible);
+    else
+      _gthis.leftTabContainer:hide();
+    end;
+  end);
+  local rightSidebarToggle = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/statusbar/hbox/left/rightSidebarToggle");
+  self.rightSidebarToggled = true;
+  __sunaba_core__Signal_Signal_Impl_.add(rightSidebarToggle:get_pressed(), function() 
+    _gthis.rightSidebarToggled = not _gthis.rightSidebarToggled;
+    _gthis.rightTabBar:set_visible(_gthis.rightSidebarToggled);
+    if (_gthis.rightSidebarToggled == true) then 
+      _gthis.rightTabContainer:set_visible(_gthis.rightSidebarVisible);
+    else
+      _gthis.rightTabContainer:hide();
+    end;
+  end);
+  local dockToggle = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/statusbar/hbox/left/dockToggle");
+  __sunaba_core__Signal_Signal_Impl_.add(dockToggle:get_pressed(), function() 
+    do return _gthis.bottomCenterTabContainer:set_visible(not _gthis.bottomCenterTabContainer:get_visible()) end;
+  end);
+  local workspacesToggle = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/statusbar/hbox/left/workspacesToggle");
+  __sunaba_core__Signal_Signal_Impl_.add(workspacesToggle:get_pressed(), function() 
+    do return _gthis.centerTabContainer:set_visible(not _gthis.centerTabContainer:get_visible()) end;
+  end);
   self.playBuildWindow = self:getNodeT_sunaba_desktop_Window(__sunaba_desktop_Window, "playBuildWindow");
   self.playBuildWindow:hide();
   self.pluginBuildWindow = self:getNodeT_sunaba_desktop_Window(__sunaba_desktop_Window, "pluginBuildWindow");
@@ -35086,9 +37380,9 @@ __sunaba_studio_Editor.prototype.init = function(self)
     local appMenu = __sunaba_desktop_NativeMenuService.getSystemMenu(2);
     __sunaba_desktop_NativeMenuService.addSeparator(appMenu);
     local settingsIdx = __sunaba_desktop_NativeMenuService.addItem(appMenu, "Settings", __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=235,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=299,className="sunaba.studio.Editor",methodName="init"}));
     end)), __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=238,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=302,className="sunaba.studio.Editor",methodName="init"}));
     end)), Variant.new(), _hx_bit.bor(134217728,44));
     local iconBytes = self.io:loadBytes("studio://icons/16/gear.png");
     local tmp;
@@ -35129,6 +37423,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   self.window:set_extendToTitle(true);
   self.window:set_mode(2);
   self.window:set_unresizable(false);
+  self.windowIsMaximized = true;
   if (__sunaba_OSService.getName() == "macOS") then 
     local x = 35;
     local y = 37;
@@ -35171,6 +37466,21 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     end;
     self.window:set_borderless(useCustomTitlebar);
   end;
+  local windowSize = self.pluginBuildWindow:get_size();
+  local scaleFactor = self:getWindow():get_contentScaleFactor();
+  local tmp = self.pluginBuildWindow;
+  local x = Std.int(windowSize.x * scaleFactor);
+  local y = Std.int(windowSize.y * scaleFactor);
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  tmp:set_minSize(Vector2i.new(x, y));
+  self.pluginBuildWindow:set_contentScaleFactor(scaleFactor);
+  self.playBuildWindow:set_minSize(self.pluginBuildWindow:get_minSize());
+  self.playBuildWindow:set_contentScaleFactor(scaleFactor);
   self.haxePath = Std.string(__sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory()) .. Std.string("/haxe");
   if (Sys.systemName() == "Windows") then 
     local tmp = self;
@@ -35178,7 +37488,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   end;
   local _hx_status, _hx_result = pcall(function() 
   
-      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=286,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=358,className="sunaba.studio.Editor",methodName="onReady"}));
       local menuBarControl = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/hbox/spacer");
       local eventFunc = function(eventN) 
         if (_gthis.window == nil) then 
@@ -35187,7 +37497,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         if ((_gthis:get_customTitlebar() == false) and (__sunaba_OSService.getName() ~= "macOS")) then 
           do return end;
         end;
-        if (((__sunaba_input_InputService.isMouseButtonPressed(1) and not _gthis.titlebarLmbPressed) and (_gthis.window:get_mode() == 0)) and (_gthis.clickcount == 0)) then 
+        if (((__sunaba_input_InputService.isMouseButtonPressed(1) and not _gthis.titlebarLmbPressed) and (_gthis.windowIsMaximized == false)) and (_gthis.clickcount == 0)) then 
           _gthis.titlebarLmbPressed = true;
           if (eventN:isClass("InputEventMouseButton")) then 
             local eventMouseButton = __sunaba_input_InputEventMouseButton.new(eventN);
@@ -35220,26 +37530,28 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
         if (_gthis.clickcount == 2) then 
-          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=335,className="sunaba.studio.Editor",methodName="onReady"}));
+          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=407,className="sunaba.studio.Editor",methodName="onReady"}));
           _gthis.clickcount = 0;
           local maximizeButton = _gthis:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/maximizeButton");
-          if (_gthis.window:get_mode() == 2) then 
+          if (_gthis.windowIsMaximized == true) then 
             local maximizedSize = _gthis.window:get_size();
             _gthis.window:set_mode(0);
+            _gthis.windowIsMaximized = false;
             if ((_gthis.window:get_size().x == maximizedSize.x) and (_gthis.window:get_size().y == maximizedSize.y)) then 
               _gthis.window:set_size(_gthis.ogWindowSize);
               _gthis.window:moveToCenter();
             else
-              _gthis.window:set_size(_gthis.windowSize);
+              _gthis.window:set_size(windowSize);
             end;
             maximizeButton:set_text("🗖");
             if (__sunaba_OSService.getName() == "Windows") then 
               maximizeButton:set_text("");
             end;
           else
-            if (_gthis.window:get_mode() == 0) then 
-              _gthis.windowSize = _gthis.window:get_size();
+            if (_gthis.windowIsMaximized == false) then 
+              windowSize = _gthis.window:get_size();
               _gthis.window:set_mode(2);
+              _gthis.windowIsMaximized = true;
               maximizeButton:set_text("🗗");
               if (__sunaba_OSService.getName() == "Windows") then 
                 maximizeButton:set_text("");
@@ -35341,9 +37653,40 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end));
       local viewMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/View");
       viewMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
+        if (id == 0) then 
+          _gthis.leftSidebarToggled = not _gthis.leftSidebarToggled;
+          _gthis.leftTabBar:set_visible(_gthis.leftSidebarToggled);
+          if (_gthis.leftSidebarToggled == true) then 
+            _gthis.leftTabContainer:set_visible(_gthis.leftSidebarVisible);
+          else
+            _gthis.leftTabContainer:hide();
+          end;
+        else
+          if (id == 1) then 
+            _gthis.rightSidebarToggled = not _gthis.rightSidebarToggled;
+            _gthis.rightTabBar:set_visible(_gthis.rightSidebarToggled);
+            if (_gthis.rightSidebarToggled == true) then 
+              _gthis.rightTabContainer:set_visible(_gthis.rightSidebarVisible);
+            else
+              _gthis.rightTabContainer:hide();
+            end;
+          else
+            if (id == 2) then 
+              _gthis.centerTabContainer:set_visible(not _gthis.centerTabContainer:get_visible());
+            else
+              if (id == 3) then 
+                _gthis.bottomCenterTabContainer:set_visible(not _gthis.bottomCenterTabContainer:get_visible());
+              end;
+            end;
+          end;
+        end;
       end));
-      local toolsMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Tools");
-      toolsMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
+      self.toolsMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Tools");
+      self.toolsMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
+        local func = _gthis.toolFunctions[id];
+        if (func ~= nil) then 
+          func();
+        end;
       end));
       self.debugMenu = self:getNodeT_sunaba_desktop_PopupMenu(__sunaba_desktop_PopupMenu, "vbox/menuBarControl/hbox/menuBarContainer/menuBar/Debug");
       self.debugMenu:get_idPressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(id) 
@@ -35375,46 +37718,14 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end));
       local styleBoxEmpty = __sunaba_ui_StyleBoxEmpty.new();
       local buttonFont = __sunaba_SystemFont.new();
+      local buttonSysFont = __sunaba_SystemFont.new();
       if (__sunaba_OSService.getName() == "Windows") then 
-        buttonFont:set_fontNames(__sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="Segoe Fluent icons", "Segoe MDL2 Assets"}, 2)));
+        buttonSysFont:set_fontNames(__sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="Segoe Fluent icons", "Segoe MDL2 Assets"}, 2)));
+        buttonFont = buttonSysFont;
       else
         if (__sunaba_OSService.getName() == "Linux") then 
-          local fontNames = buttonFont:get_fontNames();
-          fontNames:add("Noto Sans Symbols2");
-          fontNames:add("DejaVu Sans");
-          buttonFont:set_fontNames(fontNames);
-          local tmp = __haxe_Log.trace;
-          local s = fontNames;
-          local array = _hx_tab_array({}, 0);
-          local _g = 0;
-          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
-          while (_g < _g1) do _hx_do_first_1 = false;
-            
-            _g = _g + 1;
-            local i = _g - 1;
-            local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
-            if (value == nil) then 
-              _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
-            end;
-            array:push(value);
-          end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=487,className="sunaba.studio.Editor",methodName="onReady"}));
-          local tmp = __haxe_Log.trace;
-          local s = buttonFont:get_fontNames();
-          local array = _hx_tab_array({}, 0);
-          local _g = 0;
-          local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
-          while (_g < _g1) do _hx_do_first_1 = false;
-            
-            _g = _g + 1;
-            local i = _g - 1;
-            local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
-            if (value == nil) then 
-              _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
-            end;
-            array:push(value);
-          end;
-          tmp(array:toString(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=488,className="sunaba.studio.Editor",methodName="onReady"}));
+          local fontRes = __sunaba_ResourceLoaderService.load("res://Engine/Theme/fonts/NotoSansSymbols2-Regular.ttf");
+          buttonFont = __sunaba_core_Reference.castTo_sunaba_Font(fontRes, __sunaba_Font);
         end;
       end;
       local minimizeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/minimizeButton");
@@ -35432,7 +37743,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local isMaximized = true;
       __sunaba_core__Signal_Signal_Impl_.add(minimizeButton:get_pressed(), function() 
         if (_gthis.window:get_mode() ~= 1) then 
-          isMaximized = _gthis.window:get_mode() == 2;
+          isMaximized = _gthis.windowIsMaximized == true;
           do return _gthis.window:set_mode(1) end;
         else
           if (isMaximized == true) then 
@@ -35451,7 +37762,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       if (__sunaba_OSService.getName() == "Windows") then 
         maximizeButton:set_customMinimumSize(newCustomMinimumSize);
       end;
-      if (self.window:get_mode() == 2) then 
+      if (self.windowIsMaximized == true) then 
         maximizeButton:set_text("🗗");
         if (__sunaba_OSService.getName() == "Windows") then 
           maximizeButton:set_text("");
@@ -35463,27 +37774,29 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         end;
       end;
       __sunaba_core__Signal_Signal_Impl_.add(maximizeButton:get_pressed(), function() 
-        if (_gthis.window:get_mode() == 2) then 
+        if (_gthis.windowIsMaximized == true) then 
           maximizeButton:set_text("🗖");
           if (__sunaba_OSService.getName() == "Windows") then 
             maximizeButton:set_text("");
           end;
           local maximizedSize = _gthis.window:get_size();
           _gthis.window:set_mode(0);
+          _gthis.windowIsMaximized = false;
           if ((_gthis.window:get_size().x == maximizedSize.x) and (_gthis.window:get_size().y == maximizedSize.y)) then 
             _gthis.window:set_size(_gthis.ogWindowSize);
             _gthis.window:moveToCenter();
           else
-            _gthis.window:set_size(_gthis.windowSize);
+            _gthis.window:set_size(windowSize);
           end;
         else
-          if (_gthis.window:get_mode() == 0) then 
+          if (_gthis.windowIsMaximized == false) then 
             maximizeButton:set_text("🗗");
             if (__sunaba_OSService.getName() == "Windows") then 
               maximizeButton:set_text("");
             end;
-            _gthis.windowSize = _gthis.window:get_size();
+            windowSize = _gthis.window:get_size();
             _gthis.window:set_mode(2);
+            _gthis.windowIsMaximized = true;
           end;
         end;
       end);
@@ -35508,7 +37821,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       self:refreshLeftSidebar();
       self:refreshRightSidebar();
-      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=589,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=691,className="sunaba.studio.Editor",methodName="onReady"}));
       local args = _G.__args;
       local s = args;
       local array = _hx_tab_array({}, 0);
@@ -35541,30 +37854,33 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(self.sProjPath)}, 1);
       self.sProjPath = String.prototype.split(__sys_FileSystem.getNative():call("AbsolutePath", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asString(), "\\"):join("/");
-      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=605,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=707,className="sunaba.studio.Editor",methodName="onReady"}));
       local projJson = "";
       if (self.sProjPath ~= "") then 
         projJson = __sys_io_File.getContent(self.sProjPath);
       end;
-      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=612,className="sunaba.studio.Editor",methodName="onReady"}));
-      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=613,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=714,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=715,className="sunaba.studio.Editor",methodName="onReady"}));
       if ((self.sProjPath == "") or (projJson == "")) then 
         __sunaba_Debug.error("Project not found.");
         __sunaba_App.exit(-1);
         do return end;
       end;
       self._projectFile = __haxe_Json.parse(projJson);
+      if (self._projectFile.type ~= "executable") then 
+        self.playButton:set_disabled(true);
+      end;
       local sprojPathArr = String.prototype.split(self.sProjPath, "/");
       sprojPathArr:slice(0, sprojPathArr.length - 1);
       local dirPath = sprojPathArr:join("/");
       dirPath = Std.string(dirPath) .. Std.string("/");
       local assetPath = Std.string(dirPath) .. Std.string(self._projectFile.assetsdir);
-      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=629,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=735,className="sunaba.studio.Editor",methodName="onReady"}));
       while (not StringTools.endsWith(assetPath, self._projectFile.assetsdir)) do _hx_do_first_1 = false;
         
         assetPath = Std.string(assetPath) .. Std.string(self._projectFile.assetsdir);
       end;
-      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=633,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=739,className="sunaba.studio.Editor",methodName="onReady"}));
       local recentProjectsPath = "user://recentProjects.json";
       if (self.io:fileExists(recentProjectsPath)) then 
         local recentProjectsStr = self.io:loadText(recentProjectsPath);
@@ -35595,6 +37911,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_VpfbFileHandler.new(self.explorer));
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_SmdlFileHandler.new(self.explorer));
       self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.new(self.explorer));
+      self.explorer.fileHandlers:push(__sunaba_studio_fileHandlers_MapFileHandler.new(self.explorer));
       self.explorer.newFileWidget:addAssetFileTemplate("Empty Scene", ".vscn", self.explorer:loadIcon("studio://icons/16_2x/clapperboard.png"), function(path) 
         local sceneRoot = __sunaba_SceneRoot.new();
         local sceneFile = __sunaba_SceneFile.create(sceneRoot);
@@ -35605,6 +37922,165 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         _gthis.sourceIo:saveText(path, "");
       end);
       self.explorer:startExplorer();
+      local iconBytes = self.io:loadBytes("studio://icons/16/images-stack.png");
+      local tmp;
+      if (iconBytes ~= nil) then 
+        local iconImage = __sunaba_Image.new();
+        iconImage:loadPngFromBuffer(iconBytes);
+        local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+        tmp = iconTexture;
+      else
+        tmp = nil;
+      end;
+      self:addToolFunction(function() 
+        local textureListEditorAcceptDialog = __sunaba_desktop_AcceptDialog.new();
+        textureListEditorAcceptDialog:set_contentScaleFactor(_gthis:getWindow():get_contentScaleFactor());
+        local textureListEditorAcceptDialog1 = textureListEditorAcceptDialog;
+        local x = Std.int(450 * textureListEditorAcceptDialog:get_contentScaleFactor());
+        local y = Std.int(350 * textureListEditorAcceptDialog:get_contentScaleFactor());
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        textureListEditorAcceptDialog1:set_minSize(Vector2i.new(x, y));
+        textureListEditorAcceptDialog:set_title("Edit Texture Path List");
+        __sunaba_core__Signal_Signal_Impl_.add(textureListEditorAcceptDialog:get_closeRequested(), function() 
+          textureListEditorAcceptDialog:queueFree();
+        end);
+        __sunaba_core__Signal_Signal_Impl_.add(textureListEditorAcceptDialog:get_confirmed(), function() 
+          textureListEditorAcceptDialog:queueFree();
+        end);
+        local textureListEditor = __sunaba_studio_TextureListEditor.new();
+        textureListEditor.editor = _gthis;
+        textureListEditorAcceptDialog:addChild(textureListEditor);
+        _gthis:addChild(textureListEditorAcceptDialog);
+        textureListEditorAcceptDialog:popupCentered();
+      end, "Edit Texture Path List", tmp);
+      local iconBytes = self.io:loadBytes("studio://icons/16/netradiant.png");
+      local tmp;
+      if (iconBytes ~= nil) then 
+        local iconImage = __sunaba_Image.new();
+        iconImage:loadPngFromBuffer(iconBytes);
+        local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+        tmp = iconTexture;
+      else
+        tmp = nil;
+      end;
+      self:addToolFunction(function() 
+        local mapPath = "";
+        local processSpawner = __sunaba_internal_ProcessSpawner.new();
+        local toolchaindir = __sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory();
+        local nrProgramName = "radiant";
+        if (Sys.systemName() == "Windows") then 
+          toolchaindir = StringTools.replace(toolchaindir, "\\/", "\\");
+          toolchaindir = StringTools.replace(toolchaindir, "/\\", "\\");
+          toolchaindir = StringTools.replace(toolchaindir, "/", "\\");
+          if (not StringTools.endsWith(toolchaindir, "\\")) then 
+            toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
+          end;
+          nrProgramName = Std.string(nrProgramName) .. Std.string(".exe");
+        else
+          if (not StringTools.endsWith(toolchaindir, "/")) then 
+            toolchaindir = Std.string(toolchaindir) .. Std.string("/");
+          end;
+          if (String.prototype.indexOf(toolchaindir, "//") ~= -1) then 
+            toolchaindir = StringTools.replace(toolchaindir, "//", "/");
+          end;
+          if (Sys.systemName() == "Linux") then 
+            nrProgramName = Std.string(nrProgramName) .. Std.string(".x86_64");
+          end;
+          if (Sys.systemName() == "macOS") then 
+            nrProgramName = Std.string(nrProgramName) .. Std.string(".arm64");
+            if (not __sys_FileSystem.exists(nrProgramName)) then 
+              __sunaba_Debug.error("NetRadiant Custom is not supported on Intel Macs running macOS");
+            end;
+          end;
+        end;
+        local radiantExecutablePath = Std.string(toolchaindir) .. Std.string(nrProgramName);
+        if (String.prototype.indexOf(radiantExecutablePath, " ") ~= -1) then 
+          radiantExecutablePath = Std.string(Std.string("\"") .. Std.string(radiantExecutablePath)) .. Std.string("\"");
+        end;
+        if (String.prototype.indexOf(mapPath, " ") ~= -1) then 
+          mapPath = Std.string(Std.string("\"") .. Std.string(mapPath)) .. Std.string("\"");
+        end;
+        processSpawner:spawn(radiantExecutablePath, __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]=mapPath}, 1)));
+      end, "NetRadiant Custom", tmp);
+      local iconBytes = self.io:loadBytes("studio://icons/16/block.png");
+      local tmp;
+      if (iconBytes ~= nil) then 
+        local iconImage = __sunaba_Image.new();
+        iconImage:loadPngFromBuffer(iconBytes);
+        local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+        tmp = iconTexture;
+      else
+        tmp = nil;
+      end;
+      self:addToolFunction(function() 
+        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=813,className="sunaba.studio.Editor",methodName="onReady"}));
+        local fileDialog = __sunaba_desktop_FileDialog.new();
+        fileDialog:set_fileMode(0);
+        fileDialog:set_useNativeDialog(true);
+        fileDialog:set_access(2);
+        fileDialog:set_title("Open 3D Model");
+        fileDialog:addFilter("*.gltf", "GLTF");
+        fileDialog:addFilter("*.glb", "GLTF Binary");
+        fileDialog:addFilter("*.fbx", "FBX");
+        _gthis:addChild(fileDialog);
+        fileDialog:get_fileSelected():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(srcPath) 
+          local fileDialog2 = __sunaba_desktop_FileDialog.new();
+          fileDialog2:set_fileMode(4);
+          fileDialog2:set_access(2);
+          fileDialog2:set_currentDir(_gthis.projectIo:getFilePath(_gthis._projectFile.rootUrl));
+          fileDialog2:set_title("Select 3D Model Destination");
+          fileDialog2:addFilter("*.smdl", "Sunaba 3D Model");
+          _gthis:addChild(fileDialog2);
+          fileDialog2:get_fileSelected():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function(_destPath) 
+            local _hx_status, _hx_result = pcall(function() 
+            
+                local destPath = _gthis.projectIo:getFileUrl(_destPath);
+                __haxe_Log.trace(srcPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=836,className="sunaba.studio.Editor",methodName="onReady",customParams=_hx_tab_array({[0]=destPath}, 1)}));
+                __sunaba_studio_ModelImportService.inport(srcPath, destPath);
+              return _hx_pcall_default
+            end)
+            if not _hx_status and _hx_result == "_hx_pcall_break" then
+            elseif not _hx_status then 
+              local _g = _hx_result;
+              local e = __haxe_Exception.caught(_g);
+              local tmp = Std.string(e:get_message()) .. Std.string(" : ");
+              local tmp1 = e:get_stack();
+              __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+                local _hx_1
+                if (tmp1 == nil) then 
+                _hx_1 = "null"; else 
+                _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+                return _hx_1
+              end )())));
+            elseif _hx_result ~= _hx_pcall_default then
+              return _hx_result
+            end;
+            fileDialog2:queueFree();
+            fileDialog:queueFree();
+          end));
+          __sunaba_core__Signal_Signal_Impl_.add(fileDialog2:get_canceled(), function() 
+            fileDialog2:queueFree();
+            fileDialog:queueFree();
+          end);
+          __sunaba_core__Signal_Signal_Impl_.add(fileDialog2:get_closeRequested(), function() 
+            fileDialog2:queueFree();
+            fileDialog:queueFree();
+          end);
+          fileDialog2:popupCentered();
+        end));
+        __sunaba_core__Signal_Signal_Impl_.add(fileDialog:get_canceled(), function() 
+          fileDialog:queueFree();
+        end);
+        __sunaba_core__Signal_Signal_Impl_.add(fileDialog:get_closeRequested(), function() 
+          fileDialog:queueFree();
+        end);
+        fileDialog:popupCentered();
+      end, "Import 3D Model", tmp);
       local hiddenDir = Std.string(self.explorer.projectDirectory) .. Std.string("/.studio");
       self.localPluginIo = __sunaba_io_FileSystemIo.new();
       self.localPluginIo:open(hiddenDir, "plugin://");
@@ -35640,11 +38116,11 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           local tmp = Std.string(e:get_message()) .. Std.string(" : ");
           local tmp1 = e:get_stack();
           _gthis:error(Std.string(tmp) .. Std.string(((function() 
-            local _hx_1
+            local _hx_2
             if (tmp1 == nil) then 
-            _hx_1 = "null"; else 
-            _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
-            return _hx_1
+            _hx_2 = "null"; else 
+            _hx_2 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+            return _hx_2
           end )())));
           do return -1 end;
         elseif _hx_result ~= _hx_pcall_default then
@@ -35669,11 +38145,11 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           local tmp = Std.string(e:get_message()) .. Std.string(" : ");
           local tmp1 = e:get_stack();
           _gthis:error(Std.string(tmp) .. Std.string(((function() 
-            local _hx_2
+            local _hx_3
             if (tmp1 == nil) then 
-            _hx_2 = "null"; else 
-            _hx_2 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
-            return _hx_2
+            _hx_3 = "null"; else 
+            _hx_3 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+            return _hx_3
           end )())));
           do return -1 end;
         elseif _hx_result ~= _hx_pcall_default then
@@ -35734,9 +38210,6 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     if (not StringTools.endsWith(toolchaindir, "\\")) then 
       toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
     end;
-    if (String.prototype.indexOf(toolchaindir, " ") ~= -1) then 
-      toolchaindir = StringTools.replace(toolchaindir, " ", "\" \"");
-    end;
     local asmDir = __sunaba_studio_StudioUtils.get_singleton():getBaseDirectory();
     asmDir = StringTools.replace(asmDir, "\\/", "\\");
     asmDir = StringTools.replace(asmDir, "/\\", "\\");
@@ -35744,20 +38217,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     if (not StringTools.endsWith(asmDir, "\\")) then 
       asmDir = Std.string(asmDir) .. Std.string("\\");
     end;
-    if (String.prototype.indexOf(asmDir, " ") ~= -1) then 
-      asmDir = StringTools.replace(asmDir, " ", "\" \"");
-    end;
-    if (String.prototype.indexOf(self.haxePath, " ") ~= -1) then 
-      self.haxePath = StringTools.replace(self.haxePath, " ", "\" \"");
-    end;
-    local batContent = Std.string(Std.string("@echo off\r\nset PATH=") .. Std.string(toolchaindir)) .. Std.string(";");
+    local batContent = Std.string(Std.string("@echo off\r\nset PATH=\"") .. Std.string(toolchaindir)) .. Std.string("\";");
     local haxelibPath = Std.string(toolchaindir) .. Std.string("haxelib.exe");
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" newrepo")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("msgpack-haxe.zip")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("libsunaba.zip")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("gamepak.zip")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && ") .. Std.string(haxelibPath)) .. Std.string(" install ")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip")));
-    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && ") .. Std.string(self.haxePath)) .. Std.string(" %*")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && \"") .. Std.string(haxelibPath)) .. Std.string("\" newrepo")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && \"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("libsunaba.zip\"")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && \"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("gamepak.zip\"")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(Std.string(Std.string(" && \"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
+    batContent = Std.string(batContent) .. Std.string((Std.string(Std.string(" && \"") .. Std.string(self.haxePath)) .. Std.string("\" %*")));
     __sys_io_File.saveContent(wrapper, batContent);
     self.haxePath = StringTools.replace(wrapper, ".bat", "");
   else
@@ -35798,26 +38264,195 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     else
       if (__sunaba_OSService.getName() == "Linux") then 
         shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\nexport LD_LIBRARY_PATH=\"") .. Std.string(toolchaindir)) .. Std.string("\":$LD_LIBRARY_PATH")));
+        shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\nexport HAXE_STD_PATH=\"") .. Std.string(toolchaindir)) .. Std.string("/std\":$HAXE_STD_PATH")));
       end;
     end;
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" newrepo")));
-    shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("msgpack-haxe.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("libsunaba.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("gamepak.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(self.haxePath)) .. Std.string("\" \"$@\" ")));
     __sys_io_File.saveContent(wrapper, shContent);
-    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=838,className="sunaba.studio.Editor",methodName="onReady"}));
+    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1025,className="sunaba.studio.Editor",methodName="onReady"}));
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", wrapper}, 2)));
     self.haxePath = wrapper;
+  end;
+  local baseDirectory = __sunaba_studio_StudioUtils.get_singleton():getBaseDirectory();
+  if (not StringTools.endsWith(baseDirectory, "/")) then 
+    baseDirectory = Std.string(baseDirectory) .. Std.string("/");
+  end;
+  if (String.prototype.indexOf(baseDirectory, "//") ~= -1) then 
+    baseDirectory = StringTools.replace(baseDirectory, "//", "/");
+  end;
+  if (String.prototype.indexOf(baseDirectory, "\\") ~= -1) then 
+    baseDirectory = StringTools.replace(baseDirectory, "\\", "/");
+  end;
+  local basePluginDir = Std.string(baseDirectory) .. Std.string("plugins/");
+  if (__sys_FileSystem.exists(basePluginDir)) then 
+    local dir = basePluginDir;
+    local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+    if (not __sys_FileSystem.getNative():call("IsDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asBool()) then 
+      __sunaba_Debug.error("Invalid Directory");
+    else
+      if (String.prototype.indexOf(dir, "\\") ~= -1) then 
+        dir = StringTools.replace(dir, "\\", "/");
+      end;
+      if (not StringTools.endsWith(dir, "/")) then 
+        dir = Std.string(dir) .. Std.string("/");
+      end;
+      local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+      local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
+      local s = result;
+      local array = _hx_tab_array({}, 0);
+      local _g = 0;
+      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+        if (value == nil) then 
+          _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+        end;
+        array:push(value);
+      end;
+      local files = array;
+      local _g = 0;
+      while (_g < files.length) do _hx_do_first_1 = false;
+        
+        local file = files[_g];
+        _g = _g + 1;
+        local pluginPath = Std.string(dir) .. Std.string(file);
+        if (StringTools.endsWith(dir, ".slib")) then 
+          local _hx_status, _hx_result = pcall(function() 
+          
+              local rootUrl = __sunaba_App.loadlib(pluginPath);
+              local headerStr = self.io:loadText(Std.string(rootUrl) .. Std.string("header.json"));
+              local header = __haxe_Json.parse(headerStr);
+              local path = header.luabin;
+              local loader = __sunaba_LibraryLoader.new();
+              loader.libraryName = self:get_name();
+              loader:loadLibrary(path);
+              loader:main();
+              local pluginEnv = loader:get_env();
+              local plugin = pluginEnv['plugin'];
+              if (plugin ~= nil) then 
+                self.plugins:push(plugin);
+                plugin:init();
+              end;
+            return _hx_pcall_default
+          end)
+          if not _hx_status and _hx_result == "_hx_pcall_break" then
+            break
+          elseif not _hx_status then 
+            local _g = _hx_result;
+            local e = __haxe_Exception.caught(_g);
+            local tmp = Std.string(Std.string(Std.string(Std.string("Failed to load plugin - ") .. Std.string(pluginPath)) .. Std.string(" : ")) .. Std.string(e:get_message())) .. Std.string(" - ");
+            local tmp1 = e:get_stack();
+            __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+              local _hx_4
+              if (tmp1 == nil) then 
+              _hx_4 = "null"; else 
+              _hx_4 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+              return _hx_4
+            end )())), "Plugin loading error");
+          elseif _hx_result ~= _hx_pcall_default then
+            return _hx_result
+          end;
+        end;
+      end;
+    end;
+  end;
+  local sprojPathArr = String.prototype.split(self.sProjPath, "/");
+  sprojPathArr:slice(0, sprojPathArr.length - 1);
+  local dirPath = sprojPathArr:join("/");
+  dirPath = Std.string(dirPath) .. Std.string("/");
+  local projectPluginDir = Std.string(dirPath) .. Std.string("plugins/");
+  if (__sys_FileSystem.exists(projectPluginDir)) then 
+    local dir = projectPluginDir;
+    local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+    if (not __sys_FileSystem.getNative():call("IsDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asBool()) then 
+      __sunaba_Debug.error("Invalid Directory");
+    else
+      if (String.prototype.indexOf(dir, "\\") ~= -1) then 
+        dir = StringTools.replace(dir, "\\", "/");
+      end;
+      if (not StringTools.endsWith(dir, "/")) then 
+        dir = Std.string(dir) .. Std.string("/");
+      end;
+      local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+      local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
+      local s = result;
+      local array = _hx_tab_array({}, 0);
+      local _g = 0;
+      local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+      while (_g < _g1) do _hx_do_first_1 = false;
+        
+        _g = _g + 1;
+        local i = _g - 1;
+        local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+        if (value == nil) then 
+          _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+        end;
+        array:push(value);
+      end;
+      local files = array;
+      local _g = 0;
+      while (_g < files.length) do _hx_do_first_1 = false;
+        
+        local file = files[_g];
+        _g = _g + 1;
+        local pluginPath = Std.string(dir) .. Std.string(file);
+        if (StringTools.endsWith(dir, ".slib")) then 
+          local _hx_status, _hx_result = pcall(function() 
+          
+              local rootUrl = __sunaba_App.loadlib(pluginPath);
+              local headerStr = self.io:loadText(Std.string(rootUrl) .. Std.string("header.json"));
+              local header = __haxe_Json.parse(headerStr);
+              local path = header.luabin;
+              local loader = __sunaba_LibraryLoader.new();
+              loader.libraryName = self:get_name();
+              loader:loadLibrary(path);
+              loader:main();
+              local pluginEnv = loader:get_env();
+              local plugin = pluginEnv['plugin'];
+              if (plugin ~= nil) then 
+                self.plugins:push(plugin);
+                plugin:init();
+              end;
+            return _hx_pcall_default
+          end)
+          if not _hx_status and _hx_result == "_hx_pcall_break" then
+            break
+          elseif not _hx_status then 
+            local _g = _hx_result;
+            local e = __haxe_Exception.caught(_g);
+            local tmp = Std.string(Std.string(Std.string(Std.string("Failed to load plugin - ") .. Std.string(pluginPath)) .. Std.string(" : ")) .. Std.string(e:get_message())) .. Std.string(" - ");
+            local tmp1 = e:get_stack();
+            __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+              local _hx_5
+              if (tmp1 == nil) then 
+              _hx_5 = "null"; else 
+              _hx_5 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+              return _hx_5
+            end )())), "Plugin loading error");
+          elseif _hx_result ~= _hx_pcall_default then
+            return _hx_result
+          end;
+        end;
+      end;
+    end;
   end;
 end
 __sunaba_studio_Editor.prototype.localPluginIo= nil;
 __sunaba_studio_Editor.prototype.showAboutDialog = function(self) 
   local aboutString = "Sunaba Studio\n";
-  aboutString = Std.string(aboutString) .. Std.string("Version 0.7.6\n");
-  aboutString = Std.string(aboutString) .. Std.string("(C) 2022-2025 mintkat\n");
+  aboutString = Std.string(aboutString) .. Std.string("Version ");
+  aboutString = Std.string(aboutString) .. Std.string(__sunaba_PlatformService.getVersion());
+  aboutString = Std.string(aboutString) .. Std.string("\n(C) 2022-2026 mintkat\n");
   aboutString = Std.string(aboutString) .. Std.string("\n");
+  local engineVersion = __sunaba_PlatformService.getEngineVersion();
+  aboutString = Std.string(aboutString) .. Std.string((Std.string(Std.string("Engine Version: ") .. Std.string(engineVersion)) .. Std.string("\n")));
   local osname = __sunaba_OSService.getName();
   aboutString = Std.string(aboutString) .. Std.string((Std.string(Std.string("OS: ") .. Std.string(osname)) .. Std.string("\n")));
   local deviceTypeStr = "Unknown";
@@ -35837,6 +38472,8 @@ __sunaba_studio_Editor.prototype.showAboutDialog = function(self)
     end;
   end;
   aboutString = Std.string(aboutString) .. Std.string((Std.string(Std.string("Device Type: ") .. Std.string(deviceTypeStr)) .. Std.string("\n")));
+  local buildDate = __sunaba_PlatformService.getCompDate();
+  aboutString = Std.string(aboutString) .. Std.string((Std.string(Std.string("Build Date: ") .. Std.string(buildDate)) .. Std.string("\n")));
   __sunaba_Debug.info(aboutString, "About Sunaba Studio");
 end
 __sunaba_studio_Editor.prototype.hasGrabedFocus= nil;
@@ -35894,7 +38531,15 @@ __sunaba_studio_Editor.prototype.onProcess = function(self,deltaTime)
     else
       self.gamepakBuildCoroutine = nil;
       self.playBuildWindow:hide();
-      self:play();
+      if (self.playOnBuild == true) then 
+        self:play();
+      else
+        self.playButton:set_disabled(false);
+        self.buildButton:set_disabled(false);
+        if (self._projectFile.type ~= "executable") then 
+          self.playButton:set_disabled(true);
+        end;
+      end;
     end;
   end;
   if (self.buildTask ~= nil) then 
@@ -35955,11 +38600,22 @@ __sunaba_studio_Editor.prototype.onProcess = function(self,deltaTime)
     end;
   end;
 end
+__sunaba_studio_Editor.prototype.addToolFunction = function(self,func,title,icon) 
+  self.toolFunctions:push(func);
+  self.toolsMenu:addIconItem(icon, title, self.toolFunctions:indexOf(func));
+end
+__sunaba_studio_Editor.prototype.removeToolFunctions = function(self,func) 
+  if (not self.toolFunctions:contains(func)) then 
+    _G.error(__haxe_Exception.thrown("Tool function has not been added"),0);
+  end;
+  self.toolsMenu:removeItem(self.toolFunctions:indexOf(func));
+  self.toolFunctions:remove(func);
+end
 __sunaba_studio_Editor.prototype.buildTask= nil;
 __sunaba_studio_Editor.prototype.buildPlugin = function(self) 
   local _gthis = self;
   if (self:get_projectFilePath() == "") then 
-    __sunaba_Debug.error("No project opened. Please open a project first.");
+    self.pluginBuilt = false;
     do return end;
   end;
   if ((self:get_projectFile().pluginEntrypoint == nil) or (self:get_projectFile().pluginEntrypoint == "")) then 
@@ -35989,21 +38645,8 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
   command = Std.string(command) .. Std.string((Std.string(" ") .. Std.string(self:get_projectFile().compilerFlags:join(" "))));
   local command = command;
   self.buildTask = _G.coroutine.create(function() 
-    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1016,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1255,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     if (_gthis.pluginBuildWindow ~= nil) then 
-      local windowSize = _gthis.pluginBuildWindow:get_size();
-      local scaleFactor = _gthis:getWindow():get_contentScaleFactor();
-      local _gthis1 = _gthis.pluginBuildWindow;
-      local x = Std.int(windowSize.x * scaleFactor);
-      local y = Std.int(windowSize.y * scaleFactor);
-      if (y == nil) then 
-        y = 0;
-      end;
-      if (x == nil) then 
-        x = 0;
-      end;
-      _gthis1:set_minSize(Vector2i.new(x, y));
-      _gthis.pluginBuildWindow:set_contentScaleFactor(scaleFactor);
       _gthis.pluginBuildWindow:popupCentered();
     end;
     _G.coroutine.yield();
@@ -36015,7 +38658,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       end;
     end;
     _G.coroutine.yield();
-    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1035,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1270,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     local args = __sunaba_core_StringArray.create();
     local cmdArr = String.prototype.split(command, " ");
     local commandName = cmdArr[0];
@@ -36053,7 +38696,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       array:push(value);
     end;
     local exitCode = Sys.command(commandName, array);
-    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1051,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1286,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     _G.coroutine.yield();
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:hide();
@@ -36106,6 +38749,116 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
     end;
   end);
   _G.coroutine.resume(self.buildTask);
+end
+__sunaba_studio_Editor.prototype.loadPluginDir = function(self,dir) 
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+  if (not __sys_FileSystem.getNative():call("IsDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asBool()) then 
+    __sunaba_Debug.error("Invalid Directory");
+    do return end;
+  end;
+  if (String.prototype.indexOf(dir, "\\") ~= -1) then 
+    dir = StringTools.replace(dir, "\\", "/");
+  end;
+  if (not StringTools.endsWith(dir, "/")) then 
+    dir = Std.string(dir) .. Std.string("/");
+  end;
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+  local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
+  local s = result;
+  local array = _hx_tab_array({}, 0);
+  local _g = 0;
+  local _g1 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  local files = array;
+  local _g = 0;
+  while (_g < files.length) do _hx_do_first_1 = false;
+    
+    local file = files[_g];
+    _g = _g + 1;
+    local pluginPath = Std.string(dir) .. Std.string(file);
+    if (StringTools.endsWith(dir, ".slib")) then 
+      local _hx_status, _hx_result = pcall(function() 
+      
+          local rootUrl = __sunaba_App.loadlib(pluginPath);
+          local headerStr = self.io:loadText(Std.string(rootUrl) .. Std.string("header.json"));
+          local header = __haxe_Json.parse(headerStr);
+          local path = header.luabin;
+          local loader = __sunaba_LibraryLoader.new();
+          loader.libraryName = self:get_name();
+          loader:loadLibrary(path);
+          loader:main();
+          local pluginEnv = loader:get_env();
+          local plugin = pluginEnv['plugin'];
+          if (plugin ~= nil) then 
+            self.plugins:push(plugin);
+            plugin:init();
+          end;
+        return _hx_pcall_default
+      end)
+      if not _hx_status and _hx_result == "_hx_pcall_break" then
+        break
+      elseif not _hx_status then 
+        local _g = _hx_result;
+        local e = __haxe_Exception.caught(_g);
+        local tmp = Std.string(Std.string(Std.string(Std.string("Failed to load plugin - ") .. Std.string(pluginPath)) .. Std.string(" : ")) .. Std.string(e:get_message())) .. Std.string(" - ");
+        local tmp1 = e:get_stack();
+        __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+          local _hx_1
+          if (tmp1 == nil) then 
+          _hx_1 = "null"; else 
+          _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+          return _hx_1
+        end )())), "Plugin loading error");
+      elseif _hx_result ~= _hx_pcall_default then
+        return _hx_result
+      end;
+    end;
+  end;
+end
+__sunaba_studio_Editor.prototype.loadPluginLibrary = function(self,pluginPath) 
+  local _hx_status, _hx_result = pcall(function() 
+  
+      local rootUrl = __sunaba_App.loadlib(pluginPath);
+      local headerStr = self.io:loadText(Std.string(rootUrl) .. Std.string("header.json"));
+      local header = __haxe_Json.parse(headerStr);
+      local path = header.luabin;
+      local loader = __sunaba_LibraryLoader.new();
+      loader.libraryName = self:get_name();
+      loader:loadLibrary(path);
+      loader:main();
+      local pluginEnv = loader:get_env();
+      local plugin = pluginEnv['plugin'];
+      if (plugin ~= nil) then 
+        self.plugins:push(plugin);
+        plugin:init();
+      end;
+    return _hx_pcall_default
+  end)
+  if not _hx_status and _hx_result == "_hx_pcall_break" then
+  elseif not _hx_status then 
+    local _g = _hx_result;
+    local e = __haxe_Exception.caught(_g);
+    local tmp = Std.string(Std.string(Std.string(Std.string("Failed to load plugin - ") .. Std.string(pluginPath)) .. Std.string(" : ")) .. Std.string(e:get_message())) .. Std.string(" - ");
+    local tmp1 = e:get_stack();
+    __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
+      local _hx_1
+      if (tmp1 == nil) then 
+      _hx_1 = "null"; else 
+      _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp1); end
+      return _hx_1
+    end )())), "Plugin loading error");
+  elseif _hx_result ~= _hx_pcall_default then
+    return _hx_result
+  end;
 end
 __sunaba_studio_Editor.prototype.loadProjectPlugin = function(self) 
   local pluginName = self:get_projectFile().name;
@@ -36179,6 +38932,16 @@ __sunaba_studio_Editor.prototype.pushBehaviorClass = function(self,_class)
   local className = _class.__name__;
   _hxClasses[className] = _class;
   if (self.sceneInspector ~= nil) then 
+    local _g = 0;
+    local _g1 = self.sceneInspector.componentClasses;
+    while (_g < _g1.length) do _hx_do_first_1 = false;
+      
+      local componentClass = _g1[_g];
+      _g = _g + 1;
+      if (componentClass.__name__ == _class.__name__) then 
+        self.sceneInspector.componentClasses:remove(componentClass);
+      end;
+    end;
     self.sceneInspector.componentClasses:push(_class);
   end;
 end
@@ -36254,7 +39017,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1211,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1485,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
@@ -36284,10 +39047,12 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
         if ((_gthis.leftTabContainer:get_currentTab() ~= i[0]) or (_gthis.leftTabContainer:get_visible() == false)) then 
           _gthis.leftTabContainer:set_currentTab(i[0]);
           _gthis.leftTabContainer:show();
+          _gthis.leftSidebarVisible = true;
           _gthis:checkLeftSideBar();
         else
           if (_gthis.leftTabContainer:get_currentTab() == i[0]) then 
             _gthis.leftTabContainer:hide();
+            _gthis.leftSidebarVisible = false;
           end;
         end;
       end end;
@@ -36356,10 +39121,12 @@ __sunaba_studio_Editor.prototype.refreshRightSidebar = function(self)
         if ((_gthis.rightTabContainer:get_currentTab() ~= i[0]) or (_gthis.rightTabContainer:get_visible() == false)) then 
           _gthis.rightTabContainer:set_currentTab(i[0]);
           _gthis.rightTabContainer:show();
+          _gthis.rightSidebarVisible = true;
           _gthis:checkRightSidebar();
         else
-          if (_gthis.leftTabContainer:get_currentTab() == i[0]) then 
+          if (_gthis.rightTabContainer:get_currentTab() == i[0]) then 
             _gthis.rightTabContainer:hide();
+            _gthis.rightSidebarVisible = false;
           end;
         end;
       end end;
@@ -36591,11 +39358,54 @@ end
 __sunaba_studio_Editor.prototype.buildSystem= nil;
 __sunaba_studio_Editor.prototype.gamepakBuildCoroutine= nil;
 __sunaba_studio_Editor.prototype.isGamePaused= nil;
+__sunaba_studio_Editor.prototype.playOnBuild= nil;
 __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self) 
   if (self.isGameRunning) then 
     do return end;
   end;
   self.playButton:set_disabled(true);
+  self.buildButton:set_disabled(true);
+  self.debugMenu:setItemDisabled(0, true);
+  if (self.playBuildWindow ~= nil) then 
+    local scaleFactor = self.window:get_contentScaleFactor();
+    self.playBuildWindow:popupCentered();
+  end;
+  self.buildSystem.haxePath = self.haxePath;
+  self.buildSystem.chmodder = function(shpath) 
+    __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", shpath}, 2)));
+   end;
+  self.buildSystem.jsonToMsgpackConverter = function(json) 
+    local data = __sunaba_JSON.parseString(json):asDictionary();
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1872,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
+    local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
+    local res = script:call("encode", args):asDictionary();
+    local bytes = res:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asByteArray();
+    local size = bytes:size();
+    local bytes1 = __haxe_io_Bytes.alloc(size);
+    local _g = 0;
+    local _g1 = size;
+    while (_g < _g1) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local v = bytes:get(i):getInt64();
+      bytes1.b[i] = _hx_bit.band(v,255);
+    end;
+    local haxeBytes = bytes1;
+    do return haxeBytes end
+   end;
+  self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
+  self.playOnBuild = true;
+  _G.coroutine.resume(self.gamepakBuildCoroutine);
+end
+__sunaba_studio_Editor.prototype.buildProject = function(self) 
+  if (self.isGameRunning) then 
+    do return end;
+  end;
+  self.playButton:set_disabled(true);
+  self.buildButton:set_disabled(true);
   self.debugMenu:setItemDisabled(0, true);
   if (self.playBuildWindow ~= nil) then 
     local scaleFactor = self.window:get_contentScaleFactor();
@@ -36619,7 +39429,7 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
     local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Editor.hx",lineNumber=1595,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1913,className="sunaba.studio.Editor",methodName="buildProject"}));
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
@@ -36640,6 +39450,7 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
     do return haxeBytes end
    end;
   self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
+  self.playOnBuild = false;
   _G.coroutine.resume(self.gamepakBuildCoroutine);
 end
 __sunaba_studio_Editor.prototype.unpause = function(self) 
@@ -36668,6 +39479,7 @@ __sunaba_studio_Editor.prototype.stop = function(self)
   self.playButton:set_disabled(false);
   self.pauseButton:set_disabled(true);
   self.stopButton:set_disabled(true);
+  self.buildButton:set_disabled(false);
   self.debugMenu:setItemDisabled(0, false);
   self.debugMenu:setItemDisabled(1, true);
   self.debugMenu:setItemDisabled(2, true);
@@ -36705,7 +39517,7 @@ __sunaba_studio_Editor.prototype.play = function(self)
   self.centerTabContainer:set_currentTab(index);
   local subViewport = __sunaba_SubViewport.new();
   self.playerSubViewportContainer:addChild(subViewport);
-  subViewport:set_guiEmbedSubwindows(true);
+  subViewport:set_guiEmbedSubwindows(false);
   local snbPath = self.buildSystem.zipOutputPath;
   self.playerAppView = __sunaba_DesktopAppView.new(NativeObject.new("res://Studio/game_view.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1));
   self.playerOnPrint = __sunaba_core__Signal_Signal_Impl_.createFromObject(self.playerAppView.native, "on_print");
@@ -36714,6 +39526,11 @@ __sunaba_studio_Editor.prototype.play = function(self)
   end);
   subViewport:addChild(self.playerAppView);
   self.playerAppView:init(false);
+  local studioUtils = __sunaba_studio_StudioUtils.get_singleton();
+  local baseDir = studioUtils:getBaseDirectory();
+  studioUtils:queueFree();
+  self.playerAppView:loadLibrary(Std.string(baseDir) .. Std.string("basetxt.slib"));
+  self.playerAppView:loadLibrary(Std.string(baseDir) .. Std.string("basesfx.slib"));
   self.playerAppView:loadApp(snbPath);
 end
 __sunaba_studio_Editor.prototype.showDialog= nil;
@@ -36731,6 +39548,79 @@ __sunaba_studio_Editor.prototype.loadIcon = function(self,path)
     do return iconTexture end;
   end;
   do return nil end
+end
+__sunaba_studio_Editor.prototype.openTrenchbroom = function(self,mapPath) 
+  if (mapPath == nil) then 
+    mapPath = "";
+  end;
+  local processSpawner = __sunaba_internal_ProcessSpawner.new();
+  local toolchaindir = __sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory();
+  local nrProgramName = "TrenchBroom";
+  if (Sys.systemName() == "Windows") then 
+    toolchaindir = StringTools.replace(toolchaindir, "\\/", "\\");
+    toolchaindir = StringTools.replace(toolchaindir, "/\\", "\\");
+    toolchaindir = StringTools.replace(toolchaindir, "/", "\\");
+    if (not StringTools.endsWith(toolchaindir, "\\")) then 
+      toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
+    end;
+    nrProgramName = Std.string(nrProgramName) .. Std.string(".exe");
+  else
+    if (not StringTools.endsWith(toolchaindir, "/")) then 
+      toolchaindir = Std.string(toolchaindir) .. Std.string("/");
+    end;
+    if (String.prototype.indexOf(toolchaindir, "//") ~= -1) then 
+      toolchaindir = StringTools.replace(toolchaindir, "//", "/");
+    end;
+    if (Sys.systemName() == "Linux") then 
+      nrProgramName = "trenchbroom";
+    end;
+    if (Sys.systemName() == "macOS") then 
+      nrProgramName = Std.string(nrProgramName) .. Std.string(".app");
+    end;
+  end;
+  local radiantExecutablePath = Std.string(toolchaindir) .. Std.string(nrProgramName);
+  processSpawner:spawn(radiantExecutablePath, __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]=mapPath}, 1)));
+end
+__sunaba_studio_Editor.prototype.openNetRadiant = function(self,mapPath) 
+  if (mapPath == nil) then 
+    mapPath = "";
+  end;
+  local processSpawner = __sunaba_internal_ProcessSpawner.new();
+  local toolchaindir = __sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory();
+  local nrProgramName = "radiant";
+  if (Sys.systemName() == "Windows") then 
+    toolchaindir = StringTools.replace(toolchaindir, "\\/", "\\");
+    toolchaindir = StringTools.replace(toolchaindir, "/\\", "\\");
+    toolchaindir = StringTools.replace(toolchaindir, "/", "\\");
+    if (not StringTools.endsWith(toolchaindir, "\\")) then 
+      toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
+    end;
+    nrProgramName = Std.string(nrProgramName) .. Std.string(".exe");
+  else
+    if (not StringTools.endsWith(toolchaindir, "/")) then 
+      toolchaindir = Std.string(toolchaindir) .. Std.string("/");
+    end;
+    if (String.prototype.indexOf(toolchaindir, "//") ~= -1) then 
+      toolchaindir = StringTools.replace(toolchaindir, "//", "/");
+    end;
+    if (Sys.systemName() == "Linux") then 
+      nrProgramName = Std.string(nrProgramName) .. Std.string(".x86_64");
+    end;
+    if (Sys.systemName() == "macOS") then 
+      nrProgramName = Std.string(nrProgramName) .. Std.string(".arm64");
+      if (not __sys_FileSystem.exists(nrProgramName)) then 
+        __sunaba_Debug.error("NetRadiant Custom is not supported on Intel Macs running macOS");
+      end;
+    end;
+  end;
+  local radiantExecutablePath = Std.string(toolchaindir) .. Std.string(nrProgramName);
+  if (String.prototype.indexOf(radiantExecutablePath, " ") ~= -1) then 
+    radiantExecutablePath = Std.string(Std.string("\"") .. Std.string(radiantExecutablePath)) .. Std.string("\"");
+  end;
+  if (String.prototype.indexOf(mapPath, " ") ~= -1) then 
+    mapPath = Std.string(Std.string("\"") .. Std.string(mapPath)) .. Std.string("\"");
+  end;
+  processSpawner:spawn(radiantExecutablePath, __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]=mapPath}, 1)));
 end
 
 __sunaba_studio_Editor.prototype.__class__ =  __sunaba_studio_Editor
@@ -36777,7 +39667,7 @@ __sunaba_studio_Explorer.prototype.newFileDialog= nil;
 __sunaba_studio_Explorer.prototype.newFileWidget= nil;
 __sunaba_studio_Explorer.prototype.editorInit = function(self) 
   local _gthis = self;
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
   self:getEditor():setLeftSidebarTabTitle(self, "Project Explorer");
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/blue-folder-stand.png");
   local iconImage = __sunaba_Image.new();
@@ -36791,8 +39681,8 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
   self.throbberParent = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar1/hbox/throbber");
   self.throbberRect = self:getNodeT_sunaba_ui_TextureRect(__sunaba_ui_TextureRect, "vbox/toolbar1/hbox/throbber/textureRect");
   local throbberPath = "studio://throbber-animated";
-  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
-  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local throbberTxtListN = self.io:getFileList(throbberPath, ".png", false);
   local result = Array.new();
   local _g = 0;
@@ -36814,12 +39704,12 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
       if (self.io:fileExists(iconPath)) then 
         throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
       else
-        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
         break;
       end;
     end;
   end;
-  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local _g = 0;
   while (_g < throbberTxtList.length) do _hx_do_first_1 = false;
     
@@ -36833,7 +39723,9 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
     self.throbberMaxNumber = self.throbberMaxNumber + 1;
   end;
   local texture = self.throbberTextures[0];
-  self.throbberRect:set_texture(texture);
+  if ((texture ~= nil) and texture:isObjectValid()) then 
+    self.throbberRect:set_texture(texture);
+  end;
   self.reloadButton:get_pressed():connect(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
     if (_gthis.projectDirectory ~= "") then 
       _gthis:buildTreeRoot();
@@ -36854,15 +39746,15 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
   local projFilePathArray = String.prototype.split(String.prototype.split(self:getEditor():get_projectFilePath(), "\\"):join("/"), "/");
   if (projFilePathArray.length > 0) then 
     self.projectDirectory = projFilePathArray:slice(0, projFilePathArray.length - 1):join("/");
-    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=116,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=118,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (((self:getEditor():get_projectFile().assetsdir ~= nil) and (self:getEditor():get_projectFile().assetsdir ~= "")) and (String.prototype.indexOf(self:getEditor():get_projectFile().assetsdir, "null") == -1)) then 
       self.assetsDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().assetsdir)) .. Std.string("/");
     else
       self.assetsDirectory = "";
     end;
     self.sourceDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().scriptdir)) .. Std.string("/");
-    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=127,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=128,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=129,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=130,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (self.assetsDirectory ~= "") then 
       local projectIo = __sunaba_io_FileSystemIo.new();
       projectIo:open(self.assetsDirectory, self:getEditor():get_projectFile().rootUrl);
@@ -36879,7 +39771,7 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/blue-folder.png"), "Folder");
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/document.png"), "File");
     __sunaba_core__Signal_Signal_Impl_.add(newMenu:get_idPressed(), function(id) 
-      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=151,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=153,className="sunaba.studio.Explorer",methodName="startExplorer"}));
       if (id == 0) then 
         __sunaba_Debug.error("Folder creation not implemented.");
       else
@@ -36896,9 +39788,9 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
               dirPath = dirPathArray:join("/");
             end;
             local pathType = -1;
-            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=167,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=168,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=170,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=171,className="sunaba.studio.Explorer",methodName="startExplorer"}));
             if (StringTools.startsWith(dirPath, _gthis.assetsDirectory)) then 
               pathType = 0;
             else
@@ -36991,7 +39883,9 @@ __sunaba_studio_Explorer.prototype.onProcess = function(self,deltaTime)
   if (self.timeAccumulator >= self.milisec) then 
     local tmp = self;
     tmp.timeAccumulator = tmp.timeAccumulator - self.milisec;
-    self.throbberRect:set_texture(self.throbberTextures[self.lastThrobberIndex]);
+    if ((self.throbberTextures[self.lastThrobberIndex] ~= nil) and self.throbberTextures[self.lastThrobberIndex]:isObjectValid()) then 
+      self.throbberRect:set_texture(self.throbberTextures[self.lastThrobberIndex]);
+    end;
     if (self.lastThrobberIndex == (self.throbberMaxNumber - 1)) then 
       self.lastThrobberIndex = 0;
     else
@@ -37038,10 +39932,14 @@ __sunaba_studio_Explorer.prototype.buildDirTree = function(self,dirPath,parentIt
     end;
     local entries = array;
     local _g = 0;
+    local _hx_continue_1 = false;
     while (_g < entries.length) do _hx_do_first_1 = false;
-      
+      repeat 
       local entry = entries[_g];
       _g = _g + 1;
+      if (StringTools.startsWith(entry, ".")) then 
+        break;
+      end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(Std.string(dirPath) .. Std.string(entry))}, 1);
       if (__sys_FileSystem.getNative():call("IsDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asBool()) then 
         local dirItem = _gthis.singleColumnTree:createItem(parentItem);
@@ -37074,7 +39972,12 @@ __sunaba_studio_Explorer.prototype.buildDirTree = function(self,dirPath,parentIt
           end;
         end;
       end;
-      _G.coroutine.yield();
+      _G.coroutine.yield();until true
+      if _hx_continue_1 then 
+      _hx_continue_1 = false;
+      break;
+      end;
+      
     end;
   end);
   self.dirTreeCoroutines:push(dirTreeCoroutine);
@@ -37277,6 +40180,408 @@ __sunaba_studio_Gizmo3D.prototype.__class__ =  __sunaba_studio_Gizmo3D
 __sunaba_studio_Gizmo3D.__super__ = __sunaba_Behavior
 setmetatable(__sunaba_studio_Gizmo3D.prototype,{__index=__sunaba_Behavior.prototype})
 
+__sunaba_studio_MapViewer.new = function(parent,area) 
+  local self = _hx_new(__sunaba_studio_MapViewer.prototype)
+  __sunaba_studio_MapViewer.super(self,parent,area)
+  return self
+end
+__sunaba_studio_MapViewer.super = function(self,parent,area) 
+  self.isReloadKeyPressed = false;
+  self.milisec = 0.05;
+  self.timeAccumulator = 1.0;
+  self.lastThrobberIndex = 0;
+  self.mapBuildCoroutine = nil;
+  self.throbberMaxNumber = 0;
+  self.throbberTextures = Array.new();
+  self.sceneName = "";
+  __sunaba_studio_EditorWidget.super(self,parent,area);
+end
+_hxClasses["sunaba.studio.MapViewer"] = __sunaba_studio_MapViewer
+__sunaba_studio_MapViewer.__name__ = "sunaba.studio.MapViewer"
+__sunaba_studio_MapViewer.prototype = _hx_e();
+__sunaba_studio_MapViewer.prototype.filePath= nil;
+__sunaba_studio_MapViewer.prototype.viewport= nil;
+__sunaba_studio_MapViewer.prototype.scene= nil;
+__sunaba_studio_MapViewer.prototype.editorScene= nil;
+__sunaba_studio_MapViewer.prototype.sceneName= nil;
+__sunaba_studio_MapViewer.prototype.throbberTextures= nil;
+__sunaba_studio_MapViewer.prototype.throbberMaxNumber= nil;
+__sunaba_studio_MapViewer.prototype.throbberParent= nil;
+__sunaba_studio_MapViewer.prototype.throbberRect= nil;
+__sunaba_studio_MapViewer.prototype.reloadButton= nil;
+__sunaba_studio_MapViewer.prototype.editButton= nil;
+__sunaba_studio_MapViewer.prototype.editorInit = function(self) 
+  local _gthis = self;
+  self:load("studio://MapViewer.suml");
+  if (not self.io:directoryExists("user://models/")) then 
+    self.io:createDirectory("user://models/");
+  end;
+  if (not self.io:fileExists("user://models/info_player_start.glb")) then 
+    local file = self.io:loadBytes("studio://models/info_player_start.glb");
+    self.io:saveBytes("user://models/info_player_start.glb", file);
+  end;
+  self.viewport = self:getNodeT_sunaba_SubViewport(__sunaba_SubViewport, "vbox/container/viewport");
+  self.reloadButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/reload");
+  __sunaba_core__Signal_Signal_Impl_.add(self.reloadButton:get_pressed(), function() 
+    _gthis:buildMap();
+  end);
+  self.editButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/toolbar/hbox/edit");
+  __sunaba_core__Signal_Signal_Impl_.add(self.editButton:get_pressed(), function() 
+    local _this = _gthis:getEditor();
+    local mapPath = _gthis.io:getFilePath(_gthis.filePath);
+    if (mapPath == nil) then 
+      mapPath = "";
+    end;
+    local processSpawner = __sunaba_internal_ProcessSpawner.new();
+    local toolchaindir = __sunaba_studio_StudioUtils.get_singleton():getToolchainDirectory();
+    local nrProgramName = "radiant";
+    if (Sys.systemName() == "Windows") then 
+      toolchaindir = StringTools.replace(toolchaindir, "\\/", "\\");
+      toolchaindir = StringTools.replace(toolchaindir, "/\\", "\\");
+      toolchaindir = StringTools.replace(toolchaindir, "/", "\\");
+      if (not StringTools.endsWith(toolchaindir, "\\")) then 
+        toolchaindir = Std.string(toolchaindir) .. Std.string("\\");
+      end;
+      nrProgramName = Std.string(nrProgramName) .. Std.string(".exe");
+    else
+      if (not StringTools.endsWith(toolchaindir, "/")) then 
+        toolchaindir = Std.string(toolchaindir) .. Std.string("/");
+      end;
+      if (String.prototype.indexOf(toolchaindir, "//") ~= -1) then 
+        toolchaindir = StringTools.replace(toolchaindir, "//", "/");
+      end;
+      if (Sys.systemName() == "Linux") then 
+        nrProgramName = Std.string(nrProgramName) .. Std.string(".x86_64");
+      end;
+      if (Sys.systemName() == "macOS") then 
+        nrProgramName = Std.string(nrProgramName) .. Std.string(".arm64");
+        if (not __sys_FileSystem.exists(nrProgramName)) then 
+          __sunaba_Debug.error("NetRadiant Custom is not supported on Intel Macs running macOS");
+        end;
+      end;
+    end;
+    local radiantExecutablePath = Std.string(toolchaindir) .. Std.string(nrProgramName);
+    if (String.prototype.indexOf(radiantExecutablePath, " ") ~= -1) then 
+      radiantExecutablePath = Std.string(Std.string("\"") .. Std.string(radiantExecutablePath)) .. Std.string("\"");
+    end;
+    if (String.prototype.indexOf(mapPath, " ") ~= -1) then 
+      mapPath = Std.string(Std.string("\"") .. Std.string(mapPath)) .. Std.string("\"");
+    end;
+    processSpawner:spawn(radiantExecutablePath, __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]=mapPath}, 1)));
+  end);
+  self.throbberParent = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar/hbox/throbber");
+  self.throbberRect = self:getNodeT_sunaba_ui_TextureRect(__sunaba_ui_TextureRect, "vbox/toolbar/hbox/throbber/textureRect");
+  local throbberPath = "studio://throbber-animated";
+  local throbberTxtListN = self.io:getFileList(throbberPath, ".png", false);
+  local result = Array.new();
+  local _g = 0;
+  local _g1 = throbberTxtListN:size();
+  while (_g < _g1) do _hx_do_first_1 = false;
+    
+    _g = _g + 1;
+    local i = _g - 1;
+    result[i] = throbberTxtListN:get(i);
+  end;
+  local throbberTxtList = result;
+  if (__sunaba_OSService.getName() == "macOS") then 
+    local _g = 0;
+    while (_g < 40) do _hx_do_first_1 = false;
+      
+      _g = _g + 1;
+      local i = _g - 1;
+      local iconPath = Std.string(Std.string(Std.string(throbberPath) .. Std.string("/icon")) .. Std.string(i)) .. Std.string(".png");
+      if (self.io:fileExists(iconPath)) then 
+        throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
+      else
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\MapViewer.hx",lineNumber=77,className="sunaba.studio.MapViewer",methodName="editorInit"}));
+        break;
+      end;
+    end;
+  end;
+  local _g = 0;
+  while (_g < throbberTxtList.length) do _hx_do_first_1 = false;
+    
+    local txtPath = throbberTxtList[_g];
+    _g = _g + 1;
+    local txtBytes = self.io:loadBytes(txtPath:asString());
+    local image = __sunaba_Image.new();
+    image:loadPngFromBuffer(txtBytes);
+    local imageTexture = __sunaba_ImageTexture.createFromImage(image);
+    self.throbberTextures:push(imageTexture);
+    self.throbberMaxNumber = self.throbberMaxNumber + 1;
+  end;
+  local texture = self.throbberTextures[0];
+  if ((texture ~= nil) and texture:isObjectValid()) then 
+    self.throbberRect:set_texture(texture);
+  end;
+end
+__sunaba_studio_MapViewer.prototype.mapBuildCoroutine= nil;
+__sunaba_studio_MapViewer.prototype.openMap = function(self,path) 
+  self.filePath = path;
+  local name = String.prototype.split(path, "/"):pop();
+  self:getEditor():setWorkspaceTabTitle(self, name);
+  self.sceneName = name;
+  self:buildMap();
+  self:initializeEditorScene();
+end
+__sunaba_studio_MapViewer.prototype.buildMap = function(self) 
+  if (self.scene ~= nil) then 
+    self.scene:destroy();
+  end;
+  local texturepathsFilepath = Std.string(self:getEditor().projectIo:get_pathUrl()) .. Std.string(".texturepaths.json");
+  local texturepaths = _hx_tab_array({}, 0);
+  if (self.io:fileExists(texturepathsFilepath)) then 
+    local texturepathsJson = self.io:loadText(texturepathsFilepath);
+    texturepaths = __haxe_Json.parse(texturepathsJson);
+  end;
+  local mapFile = __sunaba_spatial_MapFile.new(self.filePath);
+  local _g = 0;
+  while (_g < texturepaths.length) do _hx_do_first_1 = false;
+    
+    local texturepath = texturepaths[_g];
+    _g = _g + 1;
+    mapFile.textureDirs:push(texturepath);
+  end;
+  self.scene = mapFile:instantiate();
+  self.scene.isInEditor = true;
+  self.scene:set_processMode(4);
+  self.viewport:addChild(self.scene);
+end
+__sunaba_studio_MapViewer.prototype.camera= nil;
+__sunaba_studio_MapViewer.prototype.freeLook3d= nil;
+__sunaba_studio_MapViewer.prototype.largeGridTransform= nil;
+__sunaba_studio_MapViewer.prototype.smallGridTransform= nil;
+__sunaba_studio_MapViewer.prototype.initializeEditorScene = function(self) 
+  self.editorScene = __sunaba_SceneRoot.new();
+  self.editorScene:set_name("EditorScene");
+  local cameraEntity = __sunaba_Entity.new();
+  cameraEntity.name = "EditorCamera";
+  local cameraTransform = cameraEntity:addComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  self.editorScene:addEntity(cameraEntity);
+  local x = 4;
+  local y = 4;
+  local z = 4;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  cameraTransform:set_position(Vector3.new(x, y, z));
+  local x = 30.8;
+  local y = -30.8;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  cameraTransform:set_rotation(Vector3.new(x, y, z));
+  self.camera = cameraEntity:addComponent_sunaba_spatial_Camera(__sunaba_spatial_Camera);
+  self.camera:set_current(true);
+  self.freeLook3d = cameraEntity:addComponent_sunaba_studio_sceneEditor_FreeLook3D(__sunaba_studio_sceneEditor_FreeLook3D);
+  self.viewport:addChild(self.editorScene);
+  self.freeLook3d:onStart();
+  self.freeLook3d.transform = cameraTransform;
+  local largeGridEntity = __sunaba_Entity.new();
+  largeGridEntity.name = "LargeGrid";
+  self.largeGridTransform = largeGridEntity:addComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  self.editorScene:addEntity(largeGridEntity);
+  local x = 1000;
+  local y = 1;
+  local z = 1000;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  self.largeGridTransform:set_scale(Vector3.new(x, y, z));
+  local smallGridEntity = __sunaba_Entity.new();
+  smallGridEntity.name = "LargeGrid";
+  self.smallGridTransform = smallGridEntity:addComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
+  self.editorScene:addEntity(smallGridEntity);
+  local x = 10;
+  local y = 1;
+  local z = 10;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  self.smallGridTransform:set_scale(Vector3.new(x, y, z));
+end
+__sunaba_studio_MapViewer.prototype.setMbcNull = function(self) 
+  self.mapBuildCoroutine = nil;
+end
+__sunaba_studio_MapViewer.prototype.lastThrobberIndex= nil;
+__sunaba_studio_MapViewer.prototype.timeAccumulator= nil;
+__sunaba_studio_MapViewer.prototype.milisec= nil;
+__sunaba_studio_MapViewer.prototype.onProcess = function(self,deltaTime) 
+  if (self.camera == nil) then 
+    do return end;
+  end;
+  self.camera:set_current(true);
+  self.freeLook3d.active = self:get_visible();
+  local tmp = self;
+  tmp.timeAccumulator = tmp.timeAccumulator + deltaTime;
+  if (self.timeAccumulator >= self.milisec) then 
+    local tmp = self;
+    tmp.timeAccumulator = tmp.timeAccumulator - self.milisec;
+    if ((self.throbberTextures[self.lastThrobberIndex] ~= nil) and self.throbberTextures[self.lastThrobberIndex]:isObjectValid()) then 
+      self.throbberRect:set_texture(self.throbberTextures[self.lastThrobberIndex]);
+    end;
+    if (self.lastThrobberIndex == (self.throbberMaxNumber - 1)) then 
+      self.lastThrobberIndex = 0;
+    else
+      self.lastThrobberIndex = self.lastThrobberIndex + 1;
+    end;
+  end;
+  if (self.mapBuildCoroutine ~= nil) then 
+    if (_G.coroutine.status(self.mapBuildCoroutine) ~= "dead") then 
+      self.throbberParent:show();
+      _G.coroutine.resume(self.mapBuildCoroutine);
+    else
+      self.throbberParent:hide();
+      self.mapBuildCoroutine = nil;
+    end;
+  else
+    self.throbberParent:hide();
+  end;
+  local scopeConfig = __sunaba_studio_debugDraw_DebugDrawService3D.newScopedConfig():setViewport(self.viewport):setThickness(0.015);
+  local tg = self.largeGridTransform:get_globalTransform();
+  local tn = self.largeGridTransform:get_transform().origin;
+  local x = 250;
+  local y = 250;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  __sunaba_studio_debugDraw_DebugDrawService3D.drawGrid(tg.origin, tg.basis.x, tg.basis.z, Vector2i.new(x, y), Color.new(0.5, 0.5, 0.5, 1), true);
+  scopeConfig = scopeConfig:setThickness(0.005);
+  local x = 1000;
+  local y = 1000;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  __sunaba_studio_debugDraw_DebugDrawService3D.drawGrid(tg.origin, tg.basis.x, tg.basis.z, Vector2i.new(x, y), Color.new(0.5, 0.5, 0.5, 1), true);
+  scopeConfig = scopeConfig:setThickness(0.030);
+  local x = 1000;
+  local y = 0.025;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local this1 = Vector3.new(x, y, z);
+  local x = -1000;
+  local y = 0.025;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  __sunaba_studio_debugDraw_DebugDrawService3D.drawLine(this1, Vector3.new(x, y, z), Color.new(1, 0, 0, 1));
+  local x = 0;
+  local y = 0.025;
+  local z = 1000;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local this1 = Vector3.new(x, y, z);
+  local x = 0;
+  local y = 0.025;
+  local z = -1000;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  __sunaba_studio_debugDraw_DebugDrawService3D.drawLine(this1, Vector3.new(x, y, z), Color.new(0, 0, 1, 1));
+  local x = 0;
+  local y = -1000;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  local this1 = Vector3.new(x, y, z);
+  local x = 0;
+  local y = 1000;
+  local z = 0;
+  if (z == nil) then 
+    z = 0;
+  end;
+  if (y == nil) then 
+    y = 0;
+  end;
+  if (x == nil) then 
+    x = 0;
+  end;
+  __sunaba_studio_debugDraw_DebugDrawService3D.drawLine(this1, Vector3.new(x, y, z), Color.new(0, 1, 0, 1));
+  scopeConfig = nil;
+  collectgarbage();
+end
+__sunaba_studio_MapViewer.prototype.isReloadKeyPressed= nil;
+__sunaba_studio_MapViewer.prototype.onInput = function(self,event) 
+  if (self:getEditor():isControlKeyPressed() and __sunaba_input_InputService.isKeyPressed(82)) then 
+    if (not self.isReloadKeyPressed) then 
+      self.isReloadKeyPressed = true;
+      self:buildMap();
+    end;
+  else
+    self.isReloadKeyPressed = false;
+  end;
+end
+
+__sunaba_studio_MapViewer.prototype.__class__ =  __sunaba_studio_MapViewer
+__sunaba_studio_MapViewer.__super__ = __sunaba_studio_EditorWidget
+setmetatable(__sunaba_studio_MapViewer.prototype,{__index=__sunaba_studio_EditorWidget.prototype})
+
 __sunaba_studio_ModelImportService.new = {}
 _hxClasses["sunaba.studio.ModelImportService"] = __sunaba_studio_ModelImportService
 __sunaba_studio_ModelImportService.__name__ = "sunaba.studio.ModelImportService"
@@ -37369,7 +40674,7 @@ __sunaba_studio_ModelImportService.inport = function(srcPath,destPath,binaryFile
     local modelImages = modelState:getImages();
     local lossyQuality = modelDocument:get_lossyQuality();
     __sunaba_studio_ModelImportService.yeild();
-    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
+    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
     local textureDb = Array.new();
     local tmp = imageFormat ~= "None";
     __sunaba_studio_ModelImportService.yeild();
@@ -37560,6 +40865,7 @@ __sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode
         __sunaba_studio_ModelImportService.yeild();
       end;
       __sunaba_studio_ModelImportService.yeild();
+      local textureIdx = 0;
       local _g = 0;
       local _g1 = meshData.surfaceMaterials:size();
       while (_g < _g1) do _hx_do_first_1 = false;
@@ -37583,7 +40889,9 @@ __sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode
                 __sunaba_studio_ModelImportService.yeild();
                 local ogTextureBytes = ogTexture:getImage():saveWebpToBuffer(false);
                 __sunaba_studio_ModelImportService.yeild();
-                local textureName = Std.string(Std.string(Std.string(entity.name) .. Std.string("_")) .. Std.string(Std.string(param))) .. Std.string(".webp");
+                local textureName = Std.string(Std.string(Std.string(entity.name) .. Std.string("_")) .. Std.string(Std.string(textureIdx))) .. Std.string(".webp");
+                __sunaba_studio_ModelImportService.yeild();
+                textureIdx = textureIdx + 1;
                 __sunaba_studio_ModelImportService.yeild();
                 io:saveBytes(Std.string(modelDir) .. Std.string(textureName), ogTextureBytes);
                 __sunaba_studio_ModelImportService.yeild();
@@ -37594,7 +40902,7 @@ __sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode
             __sunaba_studio_ModelImportService.yeild();
           end;
           __sunaba_studio_ModelImportService.yeild();
-          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=371,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
+          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=375,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
           param = param + 1;
         end;
         __sunaba_studio_ModelImportService.yeild();
@@ -37712,7 +41020,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
       local childIdx = children[_g];
       _g = _g + 1;
       __sunaba_studio_ModelImportService.yeild();
-      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=463,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=467,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
       __sunaba_studio_ModelImportService.yeild();
       local childNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(childIdx):asReference());
       __sunaba_studio_ModelImportService.yeild();
@@ -37736,7 +41044,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
     end;
     __sunaba_studio_ModelImportService.yeild();
   else
-    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=483,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=487,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
     __sunaba_studio_ModelImportService.yeild();
     local rootNodes = state:get_rootNodes();
     local nodes = state:getNodes();
@@ -37757,7 +41065,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_1 = "null"; else 
           _hx_1 = nodeIdx:asString(); end
           return _hx_1
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=492,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=496,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37795,7 +41103,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         local i = _g - 1;
         __sunaba_studio_ModelImportService.yeild();
         local nodeIdx = __sunaba_core__TypedArray_TypedArray_Impl_.get(rootNodes, i);
-        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=519,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=523,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37837,7 +41145,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_2 = "null"; else 
           _hx_2 = nodeIdx:asString(); end
           return _hx_2
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=543,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=547,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -37852,7 +41160,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         __sunaba_studio_ModelImportService.yeild();
         local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
         __sunaba_studio_ModelImportService.yeild();
-        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/ModelImportService.hx",lineNumber=557,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=561,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         if (result ~= nil) then 
           __sunaba_studio_ModelImportService.yeild();
           do return result end;
@@ -44010,7 +47318,7 @@ __sunaba_studio_SceneEditor.prototype.openScene = function(self,path)
   sceneFile:load(path);
   self.scene = sceneFile:instance();
   self.scene.isInEditor = true;
-  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
+  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
   self.scene:set_processMode(4);
   self.viewport:addChild(self.scene);
   local envRes = __sunaba_ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
@@ -44414,6 +47722,472 @@ end
 __sunaba_studio_StudioUtils.prototype.__class__ =  __sunaba_studio_StudioUtils
 __sunaba_studio_StudioUtils.__super__ = __sunaba_Node
 setmetatable(__sunaba_studio_StudioUtils.prototype,{__index=__sunaba_Node.prototype})
+
+__sunaba_studio_TextureListEditor.new = function(_io) 
+  local self = _hx_new(__sunaba_studio_TextureListEditor.prototype)
+  __sunaba_studio_TextureListEditor.super(self,_io)
+  return self
+end
+__sunaba_studio_TextureListEditor.super = function(self,_io) 
+  self.selectedTexturePath = "";
+  self.texturePathList = Array.new();
+  __sunaba_ui_Widget.super(self,_io);
+end
+_hxClasses["sunaba.studio.TextureListEditor"] = __sunaba_studio_TextureListEditor
+__sunaba_studio_TextureListEditor.__name__ = "sunaba.studio.TextureListEditor"
+__sunaba_studio_TextureListEditor.prototype = _hx_e();
+__sunaba_studio_TextureListEditor.prototype.editor= nil;
+__sunaba_studio_TextureListEditor.prototype.texturePathList= nil;
+__sunaba_studio_TextureListEditor.prototype.addButton= nil;
+__sunaba_studio_TextureListEditor.prototype.removeButton= nil;
+__sunaba_studio_TextureListEditor.prototype.tree= nil;
+__sunaba_studio_TextureListEditor.prototype.selectedTexturePath= nil;
+__sunaba_studio_TextureListEditor.prototype.init = function(self) 
+  local _gthis = self;
+  self:load("studio://TextureListEditor.suml");
+  self.addButton = self:getNodeT_sunaba_ui_MenuButton(__sunaba_ui_MenuButton, "vbox/topbar/hbox/add");
+  self.removeButton = self:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/topbar/hbox/remove");
+  self.tree = self:getNodeT_sunaba_ui_Tree(__sunaba_ui_Tree, "vbox/tree");
+  self.tree:set_hideRoot(true);
+  __sunaba_core__Signal_Signal_Impl_.add(self.tree:get_itemSelected(), function() 
+    local item = _gthis.tree:getSelected();
+    _gthis.selectedTexturePath = item:getText(0) do return _gthis.selectedTexturePath end;
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self.tree:get_nothingSelected(), function() 
+    _gthis.selectedTexturePath = "" do return _gthis.selectedTexturePath end;
+  end);
+  self.addButton:set_flat(false);
+  local addButtonPopup = self.addButton:getPopup();
+  addButtonPopup:addItem("Builtin path", 0);
+  addButtonPopup:addItem("Project path", 1);
+  __sunaba_core__Signal_Signal_Impl_.add(addButtonPopup:get_idPressed(), function(id) 
+    if (id == 0) then 
+      local confirmDialog = __sunaba_desktop_ConfirmationDialog.new();
+      confirmDialog:set_contentScaleFactor(_gthis:getWindow():get_contentScaleFactor());
+      local confirmDialog1 = confirmDialog;
+      local x = Std.int(450 * confirmDialog:get_contentScaleFactor());
+      local y = Std.int(350 * confirmDialog:get_contentScaleFactor());
+      if (y == nil) then 
+        y = 0;
+      end;
+      if (x == nil) then 
+        x = 0;
+      end;
+      confirmDialog1:set_minSize(Vector2i.new(x, y));
+      confirmDialog:set_title("Select Builtin Path");
+      local confirmDialogTree = __sunaba_ui_Tree.new();
+      confirmDialogTree:set_hideRoot(true);
+      local confirmDialogTreeRoot = confirmDialogTree:createItem();
+      local selectedItem = nil;
+      __sunaba_core__Signal_Signal_Impl_.add(confirmDialogTree:get_itemSelected(), function() 
+        local selected = confirmDialogTree:getSelected();
+        local selectedMetadata = selected:getMetadata(0);
+        if (selectedMetadata:getType() == 4) then 
+          selectedItem = selectedMetadata:asString();
+          do return selectedItem end;
+        else
+          selectedItem = nil;
+          do return selectedItem end;
+        end;
+      end);
+      __sunaba_core__Signal_Signal_Impl_.add(confirmDialogTree:get_itemActivated(), function() 
+        local selected = confirmDialogTree:getSelected();
+        local selectedMetadata = selected:getMetadata(0);
+        if (selectedMetadata:getType() == 4) then 
+          selectedItem = selectedMetadata:asString();
+        else
+          selectedItem = nil;
+        end;
+        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\TextureListEditor.hx",lineNumber=80,className="sunaba.studio.TextureListEditor",methodName="init"}));
+        if (selectedItem ~= nil) then 
+          _gthis.texturePathList:push(selectedItem);
+          local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
+          local pathUrl = _gthis.editor.projectIo:get_pathUrl();
+          local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+          _gthis.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+          _gthis.tree:clear();
+          local treeRoot = _gthis.tree:createItem();
+          local _g = 0;
+          local _g1 = _gthis.texturePathList;
+          while (_g < _g1.length) do _hx_do_first_1 = false;
+            
+            local texturePath = _g1[_g];
+            _g = _g + 1;
+            local treeItem = _gthis.tree:createItem(treeRoot);
+            treeItem:setText(0, texturePath);
+            local iconBytes = _gthis.editor.io:loadBytes("studio://icons/16/images-stack.png");
+            local tmp;
+            if (iconBytes ~= nil) then 
+              local iconImage = __sunaba_Image.new();
+              iconImage:loadPngFromBuffer(iconBytes);
+              local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+              tmp = iconTexture;
+            else
+              tmp = nil;
+            end;
+            treeItem:setIcon(0, tmp);
+          end;
+        end;
+        confirmDialog:queueFree();
+      end);
+      __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_confirmed(), function() 
+        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\TextureListEditor.hx",lineNumber=87,className="sunaba.studio.TextureListEditor",methodName="init"}));
+        if (selectedItem ~= nil) then 
+          _gthis.texturePathList:push(selectedItem);
+          local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
+          local pathUrl = _gthis.editor.projectIo:get_pathUrl();
+          local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+          _gthis.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+          _gthis.tree:clear();
+          local treeRoot = _gthis.tree:createItem();
+          local _g = 0;
+          local _g1 = _gthis.texturePathList;
+          while (_g < _g1.length) do _hx_do_first_1 = false;
+            
+            local texturePath = _g1[_g];
+            _g = _g + 1;
+            local treeItem = _gthis.tree:createItem(treeRoot);
+            treeItem:setText(0, texturePath);
+            local iconBytes = _gthis.editor.io:loadBytes("studio://icons/16/images-stack.png");
+            local tmp;
+            if (iconBytes ~= nil) then 
+              local iconImage = __sunaba_Image.new();
+              iconImage:loadPngFromBuffer(iconBytes);
+              local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+              tmp = iconTexture;
+            else
+              tmp = nil;
+            end;
+            treeItem:setIcon(0, tmp);
+          end;
+        end;
+        confirmDialog:queueFree();
+      end);
+      __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_canceled(), function() 
+        confirmDialog:queueFree();
+      end);
+      __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_closeRequested(), function() 
+        confirmDialog:queueFree();
+      end);
+      local baseTexturesItem = confirmDialogTree:createItem(confirmDialogTreeRoot);
+      baseTexturesItem:setText(0, "Base Textures");
+      local addBaseTexturePathItem = function(path) 
+        local pathItem = confirmDialogTree:createItem(baseTexturesItem);
+        pathItem:setText(0, path);
+        pathItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(path));
+        local iconBytes = _gthis.editor.io:loadBytes("studio://icons/16/images-stack.png");
+        local addBaseTexturePathItem;
+        if (iconBytes ~= nil) then 
+          local iconImage = __sunaba_Image.new();
+          iconImage:loadPngFromBuffer(iconBytes);
+          local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+          addBaseTexturePathItem = iconTexture;
+        else
+          addBaseTexturePathItem = nil;
+        end;
+        pathItem:setIcon(0, addBaseTexturePathItem);
+      end;
+      addBaseTexturePathItem("basetxt://3D_Grass/textures/");
+      addBaseTexturePathItem("basetxt://Animal/textures/");
+      addBaseTexturePathItem("basetxt://Black_Asphalt/textures/");
+      addBaseTexturePathItem("basetxt://BlueNebula/textures/");
+      addBaseTexturePathItem("basetxt://Box/textures/");
+      addBaseTexturePathItem("basetxt://Brick/textures/");
+      addBaseTexturePathItem("basetxt://Brick_Version/textures/");
+      addBaseTexturePathItem("basetxt://Bricks/textures/");
+      addBaseTexturePathItem("basetxt://BrushedAluminum/textures/");
+      addBaseTexturePathItem("basetxt://Building/textures/");
+      addBaseTexturePathItem("basetxt://BumpySky/textures/");
+      addBaseTexturePathItem("basetxt://CartoonGrass/textures/");
+      addBaseTexturePathItem("basetxt://Cloth/textures/");
+      addBaseTexturePathItem("basetxt://CloudySky/textures/");
+      addBaseTexturePathItem("basetxt://Colors/textures/");
+      addBaseTexturePathItem("basetxt://Concrete/textures/");
+      addBaseTexturePathItem("basetxt://Crate_Factory/textures/");
+      addBaseTexturePathItem("basetxt://DiamondPlate/textures/");
+      addBaseTexturePathItem("basetxt://Dirt/textures/");
+      addBaseTexturePathItem("basetxt://DNA_Lavalamp/textures/");
+      addBaseTexturePathItem("basetxt://Electricity/textures/");
+      addBaseTexturePathItem("basetxt://Elements/textures/");
+      addBaseTexturePathItem("basetxt://Elements2/textures/");
+      addBaseTexturePathItem("basetxt://Explosion/textures/");
+      addBaseTexturePathItem("basetxt://FadingSky/textures/");
+      addBaseTexturePathItem("basetxt://Fire/textures/");
+      addBaseTexturePathItem("basetxt://FuzzySky/textures/");
+      addBaseTexturePathItem("basetxt://Gem/textures/");
+      addBaseTexturePathItem("basetxt://GradientSky/textures/");
+      addBaseTexturePathItem("basetxt://Grass/textures/");
+      addBaseTexturePathItem("basetxt://Grass2/textures/");
+      addBaseTexturePathItem("basetxt://Grating/textures/");
+      addBaseTexturePathItem("basetxt://GreenNebula/textures/");
+      addBaseTexturePathItem("basetxt://Ground/textures/");
+      addBaseTexturePathItem("basetxt://HazardStripes/textures/");
+      addBaseTexturePathItem("basetxt://Ice/textures/");
+      addBaseTexturePathItem("basetxt://LavaGrow/textures/");
+      addBaseTexturePathItem("basetxt://Metal/textures/");
+      addBaseTexturePathItem("basetxt://Metal2/textures/");
+      addBaseTexturePathItem("basetxt://Misc/textures/");
+      addBaseTexturePathItem("basetxt://MoreRoughWood/textures/");
+      addBaseTexturePathItem("basetxt://Neon/textures/");
+      addBaseTexturePathItem("basetxt://OldWoodPanel/textures/");
+      addBaseTexturePathItem("basetxt://Organic/textures/");
+      addBaseTexturePathItem("basetxt://Paper/textures/");
+      addBaseTexturePathItem("basetxt://ParquetRough/textures/");
+      addBaseTexturePathItem("basetxt://Pebbles/textures/");
+      addBaseTexturePathItem("basetxt://Plant/textures/");
+      addBaseTexturePathItem("basetxt://Plaster/textures/");
+      addBaseTexturePathItem("basetxt://PuffySky/textures/");
+      addBaseTexturePathItem("basetxt://PurpleNebula/textures/");
+      addBaseTexturePathItem("basetxt://Road_Texture/textures/");
+      addBaseTexturePathItem("basetxt://Roof/textures/");
+      addBaseTexturePathItem("basetxt://Roofs/textures/");
+      addBaseTexturePathItem("basetxt://Route_66/textures/");
+      addBaseTexturePathItem("basetxt://Rust/textures/");
+      addBaseTexturePathItem("basetxt://Sand/textures/");
+      addBaseTexturePathItem("basetxt://SandRiple/textures/");
+      addBaseTexturePathItem("basetxt://Simple Sky/textures/");
+      addBaseTexturePathItem("basetxt://Starfields/textures/");
+      addBaseTexturePathItem("basetxt://Stone/textures/");
+      addBaseTexturePathItem("basetxt://Stone2/textures/");
+      addBaseTexturePathItem("basetxt://SwissCheese/textures/");
+      addBaseTexturePathItem("basetxt://Terrain/textures/");
+      addBaseTexturePathItem("basetxt://Tile/textures/");
+      addBaseTexturePathItem("basetxt://Tile2/textures/");
+      addBaseTexturePathItem("basetxt://Trees/textures/");
+      addBaseTexturePathItem("basetxt://TVSignalLost/textures/");
+      addBaseTexturePathItem("basetxt://vintage_clay_tile/textures/");
+      addBaseTexturePathItem("basetxt://Wall/textures/");
+      addBaseTexturePathItem("basetxt://Water/textures/");
+      addBaseTexturePathItem("basetxt://Weave/textures/");
+      addBaseTexturePathItem("basetxt://WispySky/textures/");
+      addBaseTexturePathItem("basetxt://Wood/textures/");
+      addBaseTexturePathItem("basetxt://Wood2/textures/");
+      addBaseTexturePathItem("basetxt://WoodFortress/textures/");
+      addBaseTexturePathItem("basetxt://Woven/textures/");
+      confirmDialog:addChild(confirmDialogTree);
+      _gthis:addChild(confirmDialog);
+      confirmDialog:popupCentered();
+    else
+      if (id == 1) then 
+        local fileDialog = __sunaba_desktop_FileDialog.new();
+        fileDialog:set_fileMode(2);
+        fileDialog:set_rootSubfolder(_gthis.editor.explorer.assetsDirectory);
+        fileDialog:set_currentDir(_gthis.editor.explorer.assetsDirectory);
+        fileDialog:set_access(2);
+        fileDialog:set_title("Open Project Texture Path");
+        _gthis:addChild(fileDialog);
+        fileDialog:hide();
+        fileDialog:set_currentDir(_gthis.editor.explorer.assetsDirectory);
+        local fileDialogScaleFactor = _gthis:getWindow():get_contentScaleFactor();
+        fileDialog:set_contentScaleFactor(fileDialogScaleFactor);
+        local fileDialog1 = fileDialog;
+        local x = Std.int(580 * fileDialogScaleFactor);
+        local y = Std.int(460 * fileDialogScaleFactor);
+        if (y == nil) then 
+          y = 0;
+        end;
+        if (x == nil) then 
+          x = 0;
+        end;
+        fileDialog1:set_minSize(Vector2i.new(x, y));
+        __sunaba_core__Signal_Signal_Impl_.add(fileDialog:get_dirSelected(), function(path) 
+          fileDialog:hide();
+          fileDialog:queueFree();
+          if (path == "") then 
+            do return end;
+          end;
+          local ioPath = _gthis.editor.projectIo:getFileUrl(path);
+          _gthis.texturePathList:push(ioPath);
+          local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
+          local pathUrl = _gthis.editor.projectIo:get_pathUrl();
+          local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+          _gthis.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+          _gthis.tree:clear();
+          local treeRoot = _gthis.tree:createItem();
+          local _g = 0;
+          local _g1 = _gthis.texturePathList;
+          while (_g < _g1.length) do _hx_do_first_1 = false;
+            
+            local texturePath = _g1[_g];
+            _g = _g + 1;
+            local treeItem = _gthis.tree:createItem(treeRoot);
+            treeItem:setText(0, texturePath);
+            local iconBytes = _gthis.editor.io:loadBytes("studio://icons/16/images-stack.png");
+            local tmp;
+            if (iconBytes ~= nil) then 
+              local iconImage = __sunaba_Image.new();
+              iconImage:loadPngFromBuffer(iconBytes);
+              local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+              tmp = iconTexture;
+            else
+              tmp = nil;
+            end;
+            treeItem:setIcon(0, tmp);
+          end;
+        end);
+        fileDialog:popupCentered();
+      end;
+    end;
+  end);
+  __sunaba_core__Signal_Signal_Impl_.add(self.removeButton:get_pressed(), function() 
+    if (_gthis.selectedTexturePath ~= "") then 
+      _gthis.texturePathList:remove(_gthis.selectedTexturePath);
+      local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
+      local pathUrl = _gthis.editor.projectIo:get_pathUrl();
+      local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+      _gthis.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+      _gthis.tree:clear();
+      local treeRoot = _gthis.tree:createItem();
+      local _g = 0;
+      local _g1 = _gthis.texturePathList;
+      while (_g < _g1.length) do _hx_do_first_1 = false;
+        
+        local texturePath = _g1[_g];
+        _g = _g + 1;
+        local treeItem = _gthis.tree:createItem(treeRoot);
+        treeItem:setText(0, texturePath);
+        local iconBytes = _gthis.editor.io:loadBytes("studio://icons/16/images-stack.png");
+        local tmp;
+        if (iconBytes ~= nil) then 
+          local iconImage = __sunaba_Image.new();
+          iconImage:loadPngFromBuffer(iconBytes);
+          local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+          tmp = iconTexture;
+        else
+          tmp = nil;
+        end;
+        treeItem:setIcon(0, tmp);
+      end;
+      _gthis.selectedTexturePath = "";
+    end;
+  end);
+end
+__sunaba_studio_TextureListEditor.prototype.onReady = function(self) 
+  local pathUrl = self.editor.projectIo:get_pathUrl();
+  local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+  if (self.editor.projectIo:fileExists(texturePathListPath)) then 
+    local texturePathListJson = self.editor.projectIo:loadText(texturePathListPath);
+    self.texturePathList = __haxe_Json.parse(texturePathListJson);
+  end;
+  self.tree:clear();
+  local treeRoot = self.tree:createItem();
+  local _g = 0;
+  local _g1 = self.texturePathList;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local texturePath = _g1[_g];
+    _g = _g + 1;
+    local treeItem = self.tree:createItem(treeRoot);
+    treeItem:setText(0, texturePath);
+    local iconBytes = self.editor.io:loadBytes("studio://icons/16/images-stack.png");
+    local tmp;
+    if (iconBytes ~= nil) then 
+      local iconImage = __sunaba_Image.new();
+      iconImage:loadPngFromBuffer(iconBytes);
+      local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+      tmp = iconTexture;
+    else
+      tmp = nil;
+    end;
+    treeItem:setIcon(0, tmp);
+  end;
+end
+__sunaba_studio_TextureListEditor.prototype.addTexturePath = function(self,path) 
+  self.texturePathList:push(path);
+  local texturePathListJson = __haxe_Json.stringify(self.texturePathList, nil, "\t");
+  local pathUrl = self.editor.projectIo:get_pathUrl();
+  local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+  self.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+  self.tree:clear();
+  local treeRoot = self.tree:createItem();
+  local _g = 0;
+  local _g1 = self.texturePathList;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local texturePath = _g1[_g];
+    _g = _g + 1;
+    local treeItem = self.tree:createItem(treeRoot);
+    treeItem:setText(0, texturePath);
+    local iconBytes = self.editor.io:loadBytes("studio://icons/16/images-stack.png");
+    local tmp;
+    if (iconBytes ~= nil) then 
+      local iconImage = __sunaba_Image.new();
+      iconImage:loadPngFromBuffer(iconBytes);
+      local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+      tmp = iconTexture;
+    else
+      tmp = nil;
+    end;
+    treeItem:setIcon(0, tmp);
+  end;
+end
+__sunaba_studio_TextureListEditor.prototype.removeTexturePath = function(self,path) 
+  self.texturePathList:remove(path);
+  local texturePathListJson = __haxe_Json.stringify(self.texturePathList, nil, "\t");
+  local pathUrl = self.editor.projectIo:get_pathUrl();
+  local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+  self.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+  self.tree:clear();
+  local treeRoot = self.tree:createItem();
+  local _g = 0;
+  local _g1 = self.texturePathList;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local texturePath = _g1[_g];
+    _g = _g + 1;
+    local treeItem = self.tree:createItem(treeRoot);
+    treeItem:setText(0, texturePath);
+    local iconBytes = self.editor.io:loadBytes("studio://icons/16/images-stack.png");
+    local tmp;
+    if (iconBytes ~= nil) then 
+      local iconImage = __sunaba_Image.new();
+      iconImage:loadPngFromBuffer(iconBytes);
+      local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+      tmp = iconTexture;
+    else
+      tmp = nil;
+    end;
+    treeItem:setIcon(0, tmp);
+  end;
+end
+__sunaba_studio_TextureListEditor.prototype.refresh = function(self) 
+  self.tree:clear();
+  local treeRoot = self.tree:createItem();
+  local _g = 0;
+  local _g1 = self.texturePathList;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local texturePath = _g1[_g];
+    _g = _g + 1;
+    local treeItem = self.tree:createItem(treeRoot);
+    treeItem:setText(0, texturePath);
+    local iconBytes = self.editor.io:loadBytes("studio://icons/16/images-stack.png");
+    local tmp;
+    if (iconBytes ~= nil) then 
+      local iconImage = __sunaba_Image.new();
+      iconImage:loadPngFromBuffer(iconBytes);
+      local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+      tmp = iconTexture;
+    else
+      tmp = nil;
+    end;
+    treeItem:setIcon(0, tmp);
+  end;
+end
+__sunaba_studio_TextureListEditor.prototype.getJsonPath = function(self) 
+  local pathUrl = self.editor.projectIo:get_pathUrl();
+  do return Std.string(pathUrl) .. Std.string(".texturepaths.json") end
+end
+__sunaba_studio_TextureListEditor.prototype.save = function(self) 
+  local texturePathListJson = __haxe_Json.stringify(self.texturePathList, nil, "\t");
+  local pathUrl = self.editor.projectIo:get_pathUrl();
+  local texturePathListPath = Std.string(pathUrl) .. Std.string(".texturepaths.json");
+  self.editor.projectIo:saveText(texturePathListPath, texturePathListJson);
+end
+
+__sunaba_studio_TextureListEditor.prototype.__class__ =  __sunaba_studio_TextureListEditor
+__sunaba_studio_TextureListEditor.__super__ = __sunaba_ui_Widget
+setmetatable(__sunaba_studio_TextureListEditor.prototype,{__index=__sunaba_ui_Widget.prototype})
 
 __sunaba_studio_codeEditor_CodeEditorPlugin.new = function() 
   local self = _hx_new(__sunaba_studio_codeEditor_CodeEditorPlugin.prototype)
@@ -45584,7 +49358,7 @@ end
 __sunaba_studio_explorer_NewFileWidget.prototype.open = function(self,pType,pBaseDir) 
   self.pathType = pType;
   self.baseDir = pBaseDir;
-  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/explorer/NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
+  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\explorer\\NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
   if (not StringTools.endsWith(self.baseDir, "/")) then 
     local tmp = self;
     tmp.baseDir = Std.string(tmp.baseDir) .. Std.string("/");
@@ -45708,6 +49482,32 @@ end
 __sunaba_studio_fileHandlers_HxFileHandler.prototype.__class__ =  __sunaba_studio_fileHandlers_HxFileHandler
 __sunaba_studio_fileHandlers_HxFileHandler.__super__ = __sunaba_studio_explorer_FileHandler
 setmetatable(__sunaba_studio_fileHandlers_HxFileHandler.prototype,{__index=__sunaba_studio_explorer_FileHandler.prototype})
+
+__sunaba_studio_fileHandlers_MapFileHandler.new = function(explorer) 
+  local self = _hx_new(__sunaba_studio_fileHandlers_MapFileHandler.prototype)
+  __sunaba_studio_fileHandlers_MapFileHandler.super(self,explorer)
+  return self
+end
+__sunaba_studio_fileHandlers_MapFileHandler.super = function(self,explorer) 
+  __sunaba_studio_explorer_FileHandler.super(self,explorer);
+end
+_hxClasses["sunaba.studio.fileHandlers.MapFileHandler"] = __sunaba_studio_fileHandlers_MapFileHandler
+__sunaba_studio_fileHandlers_MapFileHandler.__name__ = "sunaba.studio.fileHandlers.MapFileHandler"
+__sunaba_studio_fileHandlers_MapFileHandler.prototype = _hx_e();
+__sunaba_studio_fileHandlers_MapFileHandler.prototype.init = function(self) 
+  self.extension = "map";
+  self.iconPath = "studio://icons/16/clapperboard.png";
+end
+__sunaba_studio_fileHandlers_MapFileHandler.prototype.openFile = function(self,path) 
+  local assetPath = StringTools.replace(path, self:get_explorer().assetsDirectory, self:get_editor().projectIo:get_pathUrl());
+  local mapViewer = __sunaba_studio_MapViewer.new(self:get_editor(), 2);
+  self:get_editor():setWorkspaceTabIcon(mapViewer, self:get_explorer():loadIcon(self.iconPath));
+  mapViewer:openMap(assetPath);
+end
+
+__sunaba_studio_fileHandlers_MapFileHandler.prototype.__class__ =  __sunaba_studio_fileHandlers_MapFileHandler
+__sunaba_studio_fileHandlers_MapFileHandler.__super__ = __sunaba_studio_explorer_FileHandler
+setmetatable(__sunaba_studio_fileHandlers_MapFileHandler.prototype,{__index=__sunaba_studio_explorer_FileHandler.prototype})
 
 __sunaba_studio_fileHandlers_SmdlBinaryFileHandler.new = function(explorer) 
   local self = _hx_new(__sunaba_studio_fileHandlers_SmdlBinaryFileHandler.prototype)
@@ -45893,7 +49693,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -45966,7 +49766,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onUpdate = function(self,deltaT
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -46210,6 +50010,10 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.componentClasses:push(__sunaba_spatial_physics_CapsuleShape);
   self.componentClasses:push(__sunaba_spatial_physics_CylinderShape);
   self.componentClasses:push(__sunaba_spatial_physics_SphereShape);
+  self.componentClasses:push(__sunaba_audio_AudioSource);
+  self.componentClasses:push(__sunaba_spatial_Skeleton);
+  self.componentClasses:push(__sunaba_spatial_BoneAttachment);
+  self.componentClasses:push(__sunaba_spatial_CharacterBoneMapper);
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/clapperboard--pencil.png");
   local iconImage = __sunaba_Image.new();
   iconImage:loadPngFromBuffer(iconBin);
@@ -46351,7 +50155,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=157,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=172,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -47236,9 +51040,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         self.entityText:set_text(selectedEntity.name);
         if (selectedEntity:isPrefab()) then 
           self.entityIcon:set_texture(self.prefabIcon24);
-          if (selectedEntity == self.prefab) then 
-            self:buildComponentTree(selectedEntity);
-          end;
+          self:buildComponentTree(selectedEntity);
         else
           self.entityIcon:set_texture(self.entityIcon24);
           self:buildComponentTree(selectedEntity);
@@ -47246,12 +51048,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=692,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=705,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=694,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=695,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=707,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=708,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=697,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=710,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -47266,9 +51068,6 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
 end
 __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = function(self,entity) 
   local _gthis = self;
-  if ((entity:isPrefab() and (entity ~= self.selectedEntity)) and (entity ~= self.prefab)) then 
-    do return end;
-  end;
   local _g = 0;
   local _g1 = entity:getConponents();
   while (_g < _g1.length) do _hx_do_first_1 = false;
@@ -47287,7 +51086,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=728,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=738,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
@@ -47309,7 +51108,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/Users/Shared/studio/Studio/Editor/src/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=750,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=760,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;
@@ -48081,23 +51880,371 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               propertyContainer:addChild(vec4Vbox);
                             else
                               if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 24) then 
-                                local resButton = __sunaba_ui_Button.new();
-                                resButton:set_text("Edit");
-                                local x = 150.0;
-                                local y = 20.0;
-                                if (y == nil) then 
-                                  y = 0;
+                                local resDict = dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+                                local classType = _hx_tab_array({[0]=resDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):asString()}, 1);
+                                __haxe_Log.trace(classType[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1338,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                if ((((((classType[0] == "Texture2D") or (classType[0] == "ImageTexture")) or (classType[0] == "AudioStream")) or (classType[0] == "AudioStreamOggVorbis")) or (classType[0] == "AudioStreamWAV")) or (classType[0] == "AudioStreamMP3")) then 
+                                  local resHbox = __sunaba_ui_HBoxContainer.new();
+                                  local respath = _hx_tab_array({[0]=resDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString()}, 1);
+                                  local resLineEdit = _hx_tab_array({[0]=__sunaba_ui_LineEdit.new()}, 1);
+                                  resLineEdit[0]:set_sizeFlagsHorizontal(3);
+                                  resLineEdit[0]:set_text(respath[0]);
+                                  local x = 0.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  resLineEdit[0]:set_customMinimumSize(Vector2.new(x, y));
+                                  local setPathFunction = _hx_tab_array({[0]=(function(resLineEdit,respath,key,component) 
+                                    do return function(newPath) 
+                                      local dataToEdit = component[0]:getData();
+                                      local vDict = dataToEdit:get(key[0]):asDictionary();
+                                      local resToEdit = vDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
+                                      resToEdit:set(__sunaba_core__Variant_Variant_Impl_.fromString("path"), __sunaba_core__Variant_Variant_Impl_.fromString(newPath));
+                                      if (resToEdit:has(__sunaba_core__Variant_Variant_Impl_.fromString("properties"))) then 
+                                        resToEdit:erase(__sunaba_core__Variant_Variant_Impl_.fromString("properties"));
+                                      end;
+                                      if (StringTools.endsWith(newPath, ".ogg")) then 
+                                        resToEdit:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamOggVorbis"));
+                                      else
+                                        if (StringTools.endsWith(newPath, ".wav")) then 
+                                          resToEdit:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamWAV"));
+                                        else
+                                          if (StringTools.endsWith(newPath, ".mp3")) then 
+                                            resToEdit:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString("AudioStreamMP3"));
+                                          end;
+                                        end;
+                                      end;
+                                      vDict:set(__sunaba_core__Variant_Variant_Impl_.fromString("value"), __sunaba_core__Variant_Variant_Impl_.fromDictionary(resToEdit));
+                                      dataToEdit:set(key[0], __sunaba_core__Variant_Variant_Impl_.fromDictionary(vDict));
+                                      component[0]:setData(dataToEdit);
+                                      resLineEdit[0]:set_text(newPath);
+                                      respath[0] = newPath;
+                                      _gthis.sceneEditor:checkScene();
+                                    end end;
+                                  end)(resLineEdit, respath, key, component)}, 1);
+                                  __sunaba_core__Signal_Signal_Impl_.add(resLineEdit[0]:get_textSubmitted(), setPathFunction[0]);
+                                  local resFileButton = __sunaba_ui_MenuButton.new();
+                                  if ((classType[0] == "Texture2D") or (classType[0] == "ImageTexture")) then 
+                                    local iconBytes = self:getEditor().io:loadBytes("studio://icons/16/folder-open-image.png");
+                                    local tmp;
+                                    if (iconBytes ~= nil) then 
+                                      local iconImage = __sunaba_Image.new();
+                                      iconImage:loadPngFromBuffer(iconBytes);
+                                      local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                      tmp = iconTexture;
+                                    else
+                                      tmp = nil;
+                                    end;
+                                    resFileButton:set_icon(tmp);
+                                  else
+                                    if ((((classType[0] == "AudioStream") or (classType[0] == "AudioStreamOggVorbis")) or (classType[0] == "AudioStreamWAV")) or (classType[0] == "AudioStreamMP3")) then 
+                                      local iconBytes = self:getEditor().io:loadBytes("studio://icons/16/folder-open-document-music.png");
+                                      local tmp;
+                                      if (iconBytes ~= nil) then 
+                                        local iconImage = __sunaba_Image.new();
+                                        iconImage:loadPngFromBuffer(iconBytes);
+                                        local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                        tmp = iconTexture;
+                                      else
+                                        tmp = nil;
+                                      end;
+                                      resFileButton:set_icon(tmp);
+                                    else
+                                      local iconBytes = self:getEditor().io:loadBytes("studio://icons/16/folder-open-document.png");
+                                      local tmp;
+                                      if (iconBytes ~= nil) then 
+                                        local iconImage = __sunaba_Image.new();
+                                        iconImage:loadPngFromBuffer(iconBytes);
+                                        local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                        tmp = iconTexture;
+                                      else
+                                        tmp = nil;
+                                      end;
+                                      resFileButton:set_icon(tmp);
+                                    end;
+                                  end;
+                                  local x = 20.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  resFileButton:set_customMinimumSize(Vector2.new(x, y));
+                                  local resFileButtonPopup = resFileButton:getPopup();
+                                  resFileButtonPopup:addItem("Builtin path", 0);
+                                  resFileButtonPopup:addItem("Project path", 1);
+                                  __sunaba_core__Signal_Signal_Impl_.add(resFileButtonPopup:get_idPressed(), (function(setPathFunction,respath,classType,key) 
+                                    do return function(id) 
+                                      if (id == 0) then 
+                                        local confirmDialog = __sunaba_desktop_ConfirmationDialog.new();
+                                        confirmDialog:set_contentScaleFactor(_gthis:getWindow():get_contentScaleFactor());
+                                        local confirmDialog1 = confirmDialog;
+                                        local x = Std.int(450 * confirmDialog:get_contentScaleFactor());
+                                        local y = Std.int(350 * confirmDialog:get_contentScaleFactor());
+                                        if (y == nil) then 
+                                          y = 0;
+                                        end;
+                                        if (x == nil) then 
+                                          x = 0;
+                                        end;
+                                        confirmDialog1:set_minSize(Vector2i.new(x, y));
+                                        confirmDialog:set_title("Select Builtin Path");
+                                        local confirmDialogTree = __sunaba_ui_Tree.new();
+                                        confirmDialogTree:set_hideRoot(true);
+                                        local confirmDialogTreeRoot = confirmDialogTree:createItem();
+                                        local selectedItem = nil;
+                                        __sunaba_core__Signal_Signal_Impl_.add(confirmDialogTree:get_itemSelected(), (function() 
+                                          do return function() 
+                                            local selected = confirmDialogTree:getSelected();
+                                            local selectedMetadata = selected:getMetadata(0);
+                                            if (selectedMetadata:getType() == 4) then 
+                                              selectedItem = selectedMetadata:asString();
+                                              do return selectedItem end;
+                                            else
+                                              selectedItem = nil;
+                                              do return selectedItem end;
+                                            end;
+                                          end end;
+                                        end)());
+                                        __sunaba_core__Signal_Signal_Impl_.add(confirmDialogTree:get_itemActivated(), (function(setPathFunction) 
+                                          do return function() 
+                                            local selected = confirmDialogTree:getSelected();
+                                            local selectedMetadata = selected:getMetadata(0);
+                                            if (selectedMetadata:getType() == 4) then 
+                                              selectedItem = selectedMetadata:asString();
+                                            else
+                                              selectedItem = nil;
+                                            end;
+                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1425,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                            if (selectedItem ~= nil) then 
+                                              setPathFunction[0](selectedItem);
+                                            end;
+                                            confirmDialog:queueFree();
+                                          end end;
+                                        end)(setPathFunction));
+                                        __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_confirmed(), (function(setPathFunction) 
+                                          do return function() 
+                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1432,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                            if (selectedItem ~= nil) then 
+                                              setPathFunction[0](selectedItem);
+                                            end;
+                                            confirmDialog:queueFree();
+                                          end end;
+                                        end)(setPathFunction));
+                                        __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_canceled(), (function() 
+                                          do return function() 
+                                            confirmDialog:queueFree();
+                                          end end;
+                                        end)());
+                                        __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_closeRequested(), (function() 
+                                          do return function() 
+                                            confirmDialog:queueFree();
+                                          end end;
+                                        end)());
+                                        local recurseDirFunc;
+                                        local createFileEntry = (function(classType) 
+                                          do return function(path,parent) 
+                                            local fileItem = confirmDialogTree:createItem(parent);
+                                            fileItem:setText(0, String.prototype.split(path, "/"):pop());
+                                            fileItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromString(path));
+                                            if (StringTools.startsWith(classType[0], "AudioStream")) then 
+                                              local iconBytes = _gthis:getEditor().io:loadBytes("studio://icons/16/folder-open-document-music.png");
+                                              local createFileEntry;
+                                              if (iconBytes ~= nil) then 
+                                                local iconImage = __sunaba_Image.new();
+                                                iconImage:loadPngFromBuffer(iconBytes);
+                                                local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                                createFileEntry = iconTexture;
+                                              else
+                                                createFileEntry = nil;
+                                              end;
+                                              fileItem:setIcon(0, createFileEntry);
+                                            else
+                                              if (String.prototype.indexOf(classType[0], "Texture") ~= -1) then 
+                                                local iconBytes = _gthis:getEditor().io:loadBytes("studio://icons/16/folder-open-image.png");
+                                                local createFileEntry;
+                                                if (iconBytes ~= nil) then 
+                                                  local iconImage = __sunaba_Image.new();
+                                                  iconImage:loadPngFromBuffer(iconBytes);
+                                                  local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                                  createFileEntry = iconTexture;
+                                                else
+                                                  createFileEntry = nil;
+                                                end;
+                                                fileItem:setIcon(0, createFileEntry);
+                                              else
+                                                if (String.prototype.indexOf(classType[0], "Texture") ~= -1) then 
+                                                  local iconBytes = _gthis:getEditor().io:loadBytes("studio://icons/16/folder-open-document.png");
+                                                  local createFileEntry;
+                                                  if (iconBytes ~= nil) then 
+                                                    local iconImage = __sunaba_Image.new();
+                                                    iconImage:loadPngFromBuffer(iconBytes);
+                                                    local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                                    createFileEntry = iconTexture;
+                                                  else
+                                                    createFileEntry = nil;
+                                                  end;
+                                                  fileItem:setIcon(0, createFileEntry);
+                                                end;
+                                              end;
+                                            end;
+                                          end end;
+                                        end)(classType);
+                                        recurseDirFunc = (function() 
+                                          do return function(dirpath,parent,name) 
+                                            local dirItem = confirmDialogTree:createItem(parent);
+                                            if (name == nil) then 
+                                              dirItem:setText(0, String.prototype.split(dirpath, "/"):pop());
+                                            else
+                                              dirItem:setText(0, name);
+                                            end;
+                                            local iconBytes = _gthis:getEditor().io:loadBytes("studio://icons/16/folder-horizontal.png");
+                                            local recurseDirFunc1;
+                                            if (iconBytes ~= nil) then 
+                                              local iconImage = __sunaba_Image.new();
+                                              iconImage:loadPngFromBuffer(iconBytes);
+                                              local iconTexture = __sunaba_ImageTexture.createFromImage(iconImage);
+                                              recurseDirFunc1 = iconTexture;
+                                            else
+                                              recurseDirFunc1 = nil;
+                                            end;
+                                            dirItem:setIcon(0, recurseDirFunc1);
+                                            dirItem:set_collapsed(true);
+                                            local dirs = _gthis.io:getFileList(dirpath, "/", false);
+                                            _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromArray(dirs))));
+                                            local _g = 0;
+                                            local _g1 = dirs:size();
+                                            while (_g < _g1) do _hx_do_first_3 = false;
+                                              
+                                              _g = _g + 1;
+                                              local i = _g - 1;
+                                              local subPath = dirs:get(i):asString();
+                                              __haxe_Log.trace(subPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1479,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                              recurseDirFunc(subPath, dirItem);
+                                            end;
+                                            local vorbisFiles = _gthis.io:getFileList(dirpath, ".ogg", false);
+                                            local _g = 0;
+                                            local _g1 = vorbisFiles:size();
+                                            while (_g < _g1) do _hx_do_first_3 = false;
+                                              
+                                              _g = _g + 1;
+                                              local j = _g - 1;
+                                              local filePath = vorbisFiles:get(j);
+                                              createFileEntry(filePath:asString(), dirItem);
+                                            end;
+                                            local mp3Files = _gthis.io:getFileList(dirpath, ".mp3", false);
+                                            local _g = 0;
+                                            local _g1 = mp3Files:size();
+                                            while (_g < _g1) do _hx_do_first_3 = false;
+                                              
+                                              _g = _g + 1;
+                                              local j = _g - 1;
+                                              local filePath = mp3Files:get(j);
+                                              createFileEntry(filePath:asString(), dirItem);
+                                            end;
+                                            local wavFiles = _gthis.io:getFileList(dirpath, ".wav", false);
+                                            local _g = 0;
+                                            local _g1 = wavFiles:size();
+                                            while (_g < _g1) do _hx_do_first_3 = false;
+                                              
+                                              _g = _g + 1;
+                                              local j = _g - 1;
+                                              local filePath = wavFiles:get(j);
+                                              createFileEntry(filePath:asString(), dirItem);
+                                            end;
+                                          end end;
+                                        end)();
+                                        if (StringTools.startsWith(classType[0], "AudioStream")) then 
+                                          recurseDirFunc("basesfx://", nil, "Base Sound Effects");
+                                        end;
+                                        confirmDialog:addChild(confirmDialogTree);
+                                        _gthis:addChild(confirmDialog);
+                                        confirmDialog:popupCentered();
+                                      else
+                                        if (id == 1) then 
+                                          local dialog = __sunaba_desktop_FileDialog.new();
+                                          dialog:set_fileMode(0);
+                                          dialog:set_rootSubfolder(_gthis:getEditor().explorer.assetsDirectory);
+                                          dialog:set_currentDir(_gthis:getEditor().explorer.assetsDirectory);
+                                          if (respath[0] ~= "?") then 
+                                            dialog:set_currentFile(String.prototype.split(respath[0], "/"):pop());
+                                          end;
+                                          dialog:set_access(2);
+                                          if ((classType[0] == "Texture2D") or (classType[0] == "ImageTexture")) then 
+                                            dialog:set_title("Open Texture");
+                                            dialog:addFilter("*.bmp, *.dds, *.jpg, *.jpeg, *.ktx, *.png, *.svg, *.tga, *.webp", "Texture");
+                                          else
+                                            if (((((key[0]:asString() == "stream") or (classType[0] == "AudioStream")) or (classType[0] == "AudioStreamOggVorbis")) or (classType[0] == "AudioStreamWAV")) or (classType[0] == "AudioStreamMP3")) then 
+                                              dialog:set_title("Open Audio File");
+                                              dialog:addFilter("*.ogg, *.mp3, *.wav", "Audio File");
+                                            end;
+                                          end;
+                                          _gthis:addChild(dialog);
+                                          dialog:hide();
+                                          dialog:set_currentDir(_gthis:getEditor().explorer.assetsDirectory);
+                                          local dialogScaleFactor = _gthis:getWindow():get_contentScaleFactor();
+                                          dialog:set_contentScaleFactor(dialogScaleFactor);
+                                          local x = 580;
+                                          local y = 460;
+                                          if (y == nil) then 
+                                            y = 0;
+                                          end;
+                                          if (x == nil) then 
+                                            x = 0;
+                                          end;
+                                          local minSize = Vector2i.new(x, y);
+                                          minSize.x = Std.int(minSize.x * dialogScaleFactor);
+                                          minSize.y = Std.int(minSize.y * dialogScaleFactor);
+                                          dialog:set_minSize(minSize);
+                                          __sunaba_core__Signal_Signal_Impl_.add(dialog:get_fileSelected(), (function(setPathFunction) 
+                                            do return function(newPath) 
+                                              local realPath = _gthis:getEditor().projectIo:getFileUrl(newPath);
+                                              setPathFunction[0](realPath);
+                                              dialog:queueFree();
+                                            end end;
+                                          end)(setPathFunction));
+                                          dialog:popupFileDialog();
+                                        end;
+                                      end;
+                                    end end;
+                                  end)(setPathFunction, respath, classType, key));
+                                  resHbox:addChild(resLineEdit[0]);
+                                  resHbox:addChild(resFileButton);
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  resHbox:set_customMinimumSize(Vector2.new(x, y));
+                                  propertyContainer:addChild(resHbox);
+                                else
+                                  local resButton = __sunaba_ui_Button.new();
+                                  resButton:set_text("Edit");
+                                  local x = 150.0;
+                                  local y = 20.0;
+                                  if (y == nil) then 
+                                    y = 0;
+                                  end;
+                                  if (x == nil) then 
+                                    x = 0;
+                                  end;
+                                  resButton:set_customMinimumSize(Vector2.new(x, y));
+                                  __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(dict,key) 
+                                    do return function() 
+                                      _gthis:getEditor().resourceInspector:openResource(dict[0], false, key[0]:asString(), _gthis.selectedEntity);
+                                    end end;
+                                  end)(dict, key));
+                                  propertyContainer:addChild(resButton);
                                 end;
-                                if (x == nil) then 
-                                  x = 0;
-                                end;
-                                resButton:set_customMinimumSize(Vector2.new(x, y));
-                                __sunaba_core__Signal_Signal_Impl_.add(resButton:get_pressed(), (function(dict,key) 
-                                  do return function() 
-                                    _gthis:getEditor().resourceInspector:openResource(dict[0], false, key[0]:asString(), _gthis.selectedEntity);
-                                  end end;
-                                end)(dict, key));
-                                propertyContainer:addChild(resButton);
                               end;
                             end;
                           end;
@@ -48153,37 +52300,39 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     x = 0;
   end;
   centerContainer:set_customMinimumSize(Vector2.new(x, y));
-  local button = __sunaba_ui_Button.new();
-  button:set_text("Add Component");
-  local x = 200.0;
-  local y = 0.0;
-  if (y == nil) then 
-    y = 0;
-  end;
-  if (x == nil) then 
-    x = 0;
-  end;
-  button:set_customMinimumSize(Vector2.new(x, y));
-  button:set_alignment(1);
-  __sunaba_core__Signal_Signal_Impl_.add(button:get_pressed(), function() 
-    _gthis.addComponentDialogTree:clear();
-    _gthis.addComponentDialogTree:set_hideRoot(true);
-    local rootItem = _gthis.addComponentDialogTree:createItem();
-    rootItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(false));
-    local _g = 0;
-    local _g1 = _gthis.componentClasses;
-    while (_g < _g1.length) do _hx_do_first_1 = false;
-      
-      local componentClass = _g1[_g];
-      _g = _g + 1;
-      local className = componentClass.__name__;
-      local componentItem = _gthis.addComponentDialogTree:createItem(rootItem);
-      componentItem:setText(0, className);
-      componentItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(true));
+  if (not ((entity:isPrefab() and (entity ~= self.selectedEntity)) and (entity ~= self.prefab))) then 
+    local button = __sunaba_ui_Button.new();
+    button:set_text("Add Component");
+    local x = 200.0;
+    local y = 0.0;
+    if (y == nil) then 
+      y = 0;
     end;
-    _gthis.addComponentDialog:popupCentered();
-  end);
-  centerContainer:addChild(button);
+    if (x == nil) then 
+      x = 0;
+    end;
+    button:set_customMinimumSize(Vector2.new(x, y));
+    button:set_alignment(1);
+    __sunaba_core__Signal_Signal_Impl_.add(button:get_pressed(), function() 
+      _gthis.addComponentDialogTree:clear();
+      _gthis.addComponentDialogTree:set_hideRoot(true);
+      local rootItem = _gthis.addComponentDialogTree:createItem();
+      rootItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(false));
+      local _g = 0;
+      local _g1 = _gthis.componentClasses;
+      while (_g < _g1.length) do _hx_do_first_1 = false;
+        
+        local componentClass = _g1[_g];
+        _g = _g + 1;
+        local className = componentClass.__name__;
+        local componentItem = _gthis.addComponentDialogTree:createItem(rootItem);
+        componentItem:setText(0, className);
+        componentItem:setMetadata(0, __sunaba_core__Variant_Variant_Impl_.fromBool(true));
+      end;
+      _gthis.addComponentDialog:popupCentered();
+    end);
+    centerContainer:addChild(button);
+  end;
   self.entityVBox:addChild(centerContainer);
   self.sceneEditor:checkScene();
 end
@@ -48569,6 +52718,10 @@ __sunaba_ui_ButtonGroup.prototype.get_pressed = function(self)
     self._pressed = __sunaba_core__Signal_Signal_Impl_.createFromReference(self.native, "pressed");
   end;
   do return self._pressed end
+end
+__sunaba_ui_ButtonGroup.prototype.getButtons = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_buttons", args):asArrayList() end
 end
 __sunaba_ui_ButtonGroup.prototype.getPressedButton = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -49323,6 +53476,16 @@ __sunaba_ui_TextEdit.prototype.getLineHeight = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_line_height", args):asInt() end
 end
+__sunaba_ui_TextEdit.prototype.getLineRangesFromCarets = function(self,onlySelections,mergeAdjacent) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (onlySelections ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(onlySelections));
+  end;
+  if (mergeAdjacent ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(mergeAdjacent));
+  end;
+  do return self.native:call("get_line_ranges_from_carets", args):asArrayList() end
+end
 __sunaba_ui_TextEdit.prototype.getLineWidth = function(self,line,wrapIndex) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(line));
@@ -50022,6 +54185,27 @@ __sunaba_ui_CodeEdit.prototype.set_codeCompletionEnabled = function(self,value)
   self.native:set("code_completion_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
+__sunaba_ui_CodeEdit.prototype.get_codeCompletionPrefixes = function(self) 
+  do return self.native:get("code_completion_prefixes"):asArrayList() end
+end
+__sunaba_ui_CodeEdit.prototype.set_codeCompletionPrefixes = function(self,value) 
+  self.native:set("code_completion_prefixes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_CodeEdit.prototype.get_delimiterComments = function(self) 
+  do return self.native:get("delimiter_comments"):asArrayList() end
+end
+__sunaba_ui_CodeEdit.prototype.set_delimiterComments = function(self,value) 
+  self.native:set("delimiter_comments", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
+__sunaba_ui_CodeEdit.prototype.get_delimiterStrings = function(self) 
+  do return self.native:get("delimiter_strings"):asArrayList() end
+end
+__sunaba_ui_CodeEdit.prototype.set_delimiterStrings = function(self,value) 
+  self.native:set("delimiter_strings", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
+  do return value end
+end
 __sunaba_ui_CodeEdit.prototype.get_guttersDrawBookmarks = function(self) 
   do return self.native:get("gutters_draw_bookmarks"):asBool() end
 end
@@ -50057,6 +54241,13 @@ __sunaba_ui_CodeEdit.prototype.set_guttersDrawLineNumbers = function(self,value)
   self.native:set("gutters_draw_line_numbers", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
+__sunaba_ui_CodeEdit.prototype.get_guttersLineNumbersMinDigits = function(self) 
+  do return self.native:get("gutters_line_numbers_min_digits"):asInt() end
+end
+__sunaba_ui_CodeEdit.prototype.set_guttersLineNumbersMinDigits = function(self,value) 
+  self.native:set("gutters_line_numbers_min_digits", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_CodeEdit.prototype.get_guttersZeroPadLineNumbers = function(self) 
   do return self.native:get("gutters_zero_pad_line_numbers"):asBool() end
 end
@@ -50069,6 +54260,13 @@ __sunaba_ui_CodeEdit.prototype.get_indentAutomatic = function(self)
 end
 __sunaba_ui_CodeEdit.prototype.set_indentAutomatic = function(self,value) 
   self.native:set("indent_automatic", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_CodeEdit.prototype.get_indentAutomaticPrefixes = function(self) 
+  do return self.native:get("indent_automatic_prefixes"):asArrayList() end
+end
+__sunaba_ui_CodeEdit.prototype.set_indentAutomaticPrefixes = function(self,value) 
+  self.native:set("indent_automatic_prefixes", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
   do return value end
 end
 __sunaba_ui_CodeEdit.prototype.get_indentSize = function(self) 
@@ -50090,6 +54288,13 @@ __sunaba_ui_CodeEdit.prototype.get_lineFolding = function(self)
 end
 __sunaba_ui_CodeEdit.prototype.set_lineFolding = function(self,value) 
   self.native:set("line_folding", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_CodeEdit.prototype.get_lineLengthGuidelines = function(self) 
+  do return self.native:get("line_length_guidelines"):asArrayList() end
+end
+__sunaba_ui_CodeEdit.prototype.set_lineLengthGuidelines = function(self,value) 
+  self.native:set("line_length_guidelines", __sunaba_core__Variant_Variant_Impl_.fromArray(value));
   do return value end
 end
 __sunaba_ui_CodeEdit.prototype.get_symbolLookupOnClick = function(self) 
@@ -50282,6 +54487,10 @@ __sunaba_ui_CodeEdit.prototype.getCodeCompletionOption = function(self,index)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(index));
   do return self.native:call("get_code_completion_option", args):asDictionary() end
 end
+__sunaba_ui_CodeEdit.prototype.getCodeCompletionOptions = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_code_completion_options", args):asArrayList() end
+end
 __sunaba_ui_CodeEdit.prototype.getCodeCompletionSelectedIndex = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_code_completion_selected_index", args):asInt() end
@@ -50319,6 +54528,10 @@ end
 __sunaba_ui_CodeEdit.prototype.getExecutingLines = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_executing_lines", args):asIntArray64() end
+end
+__sunaba_ui_CodeEdit.prototype.getFoldedLines = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_folded_lines", args):asArrayList() end
 end
 __sunaba_ui_CodeEdit.prototype.getTextForCodeCompletion = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -51073,6 +55286,13 @@ __sunaba_ui_SplitContainer.prototype.set_splitOffset = function(self,value)
   self.native:set("split_offset", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_ui_SplitContainer.prototype.get_splitOffsets = function(self) 
+  do return self.native:get("split_offsets"):asIntArray64() end
+end
+__sunaba_ui_SplitContainer.prototype.set_splitOffsets = function(self,value) 
+  self.native:set("split_offsets", __sunaba_core__Variant_Variant_Impl_.fromIntArray64(value));
+  do return value end
+end
 __sunaba_ui_SplitContainer.prototype.get_touchDraggerEnabled = function(self) 
   do return self.native:get("touch_dragger_enabled"):asBool() end
 end
@@ -51111,14 +55331,21 @@ __sunaba_ui_SplitContainer.prototype.get_dragged = function(self)
   end;
   do return self._dragged end
 end
-__sunaba_ui_SplitContainer.prototype.clampSplitOffset = function(self) 
+__sunaba_ui_SplitContainer.prototype.clampSplitOffset = function(self,priorityIndex) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (priorityIndex ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(priorityIndex));
+  end;
   self.native:call("clamp_split_offset", args);
 end
 __sunaba_ui_SplitContainer.prototype.getDragAreaControl = function(self) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   local ref = self.native:call("get_drag_area_control", args):asObject();
   do return __sunaba_ui_Control.new(ref) end
+end
+__sunaba_ui_SplitContainer.prototype.getDragAreaControls = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_drag_area_controls", args):asArrayList() end
 end
 
 __sunaba_ui_SplitContainer.prototype.__class__ =  __sunaba_ui_SplitContainer
@@ -51255,6 +55482,13 @@ __sunaba_ui_ItemList.prototype.set_sameColumnWidth = function(self,value)
   self.native:set("same_column_width", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
+__sunaba_ui_ItemList.prototype.get_scrollHintMode = function(self) 
+  do return self.native:get("scroll_hint_mode"):asInt() end
+end
+__sunaba_ui_ItemList.prototype.set_scrollHintMode = function(self,value) 
+  self.native:set("scroll_hint_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_ItemList.prototype.get_selectMode = function(self) 
   do return self.native:get("select_mode"):asInt() end
 end
@@ -51267,6 +55501,13 @@ __sunaba_ui_ItemList.prototype.get_textOverrunBehavior = function(self)
 end
 __sunaba_ui_ItemList.prototype.set_textOverrunBehavior = function(self,value) 
   self.native:set("text_overrun_behavior", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_ItemList.prototype.get_tileScrollHint = function(self) 
+  do return self.native:get("tile_scroll_hint"):asBool() end
+end
+__sunaba_ui_ItemList.prototype.set_tileScrollHint = function(self,value) 
+  self.native:set("tile_scroll_hint", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_ItemList.prototype.get_wraparoundItems = function(self) 
@@ -51613,6 +55854,13 @@ __sunaba_ui_Label.prototype.set_autowrapMode = function(self,value)
   self.native:set("autowrap_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_ui_Label.prototype.get_autowrapTrimFlags = function(self) 
+  do return self.native:get("autowrap_trim_flags"):asInt() end
+end
+__sunaba_ui_Label.prototype.set_autowrapTrimFlags = function(self,value) 
+  self.native:set("autowrap_trim_flags", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_Label.prototype.get_clipText = function(self) 
   do return self.native:get("clip_text"):asBool() end
 end
@@ -51912,6 +56160,13 @@ __sunaba_ui_LineEdit.prototype.set_flat = function(self,value)
   self.native:set("flat", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
+__sunaba_ui_LineEdit.prototype.get_iconExpandMode = function(self) 
+  do return self.native:get("icon_expand_mode"):asInt() end
+end
+__sunaba_ui_LineEdit.prototype.set_iconExpandMode = function(self,value) 
+  self.native:set("icon_expand_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_LineEdit.prototype.get_keepEditingOnTextSubmit = function(self) 
   do return self.native:get("keep_editing_on_text_submit"):asBool() end
 end
@@ -51953,6 +56208,13 @@ __sunaba_ui_LineEdit.prototype.get_rightIcon = function(self)
 end
 __sunaba_ui_LineEdit.prototype.set_rightIcon = function(self,value) 
   self.native:set("right_icon", __sunaba_core__Variant_Variant_Impl_.fromNativeReference(value.native));
+  do return value end
+end
+__sunaba_ui_LineEdit.prototype.get_rightIconScale = function(self) 
+  do return self.native:get("right_icon_scale"):asFloat() end
+end
+__sunaba_ui_LineEdit.prototype.set_rightIconScale = function(self,value) 
+  self.native:set("right_icon_scale", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
   do return value end
 end
 __sunaba_ui_LineEdit.prototype.get_secret = function(self) 
@@ -52097,8 +56359,11 @@ __sunaba_ui_LineEdit.prototype.deselect = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   self.native:call("deselect", args);
 end
-__sunaba_ui_LineEdit.prototype.edit = function(self) 
+__sunaba_ui_LineEdit.prototype.edit = function(self,hideFocus) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  if (hideFocus ~= nil) then 
+    args:append(__sunaba_core__Variant_Variant_Impl_.fromBool(hideFocus));
+  end;
   self.native:call("edit", args);
 end
 __sunaba_ui_LineEdit.prototype.getMenu = function(self) 
@@ -53512,6 +57777,13 @@ __sunaba_ui_ScrollContainer.prototype.set_scrollDeadzone = function(self,value)
   self.native:set("scroll_deadzone", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_ui_ScrollContainer.prototype.get_scrollHintMode = function(self) 
+  do return self.native:get("scroll_hint_mode"):asInt() end
+end
+__sunaba_ui_ScrollContainer.prototype.set_scrollHintMode = function(self,value) 
+  self.native:set("scroll_hint_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_ScrollContainer.prototype.get_scrollHorizontal = function(self) 
   do return self.native:get("scroll_horizontal"):asInt() end
 end
@@ -53538,6 +57810,13 @@ __sunaba_ui_ScrollContainer.prototype.get_scrollVerticalCustomStep = function(se
 end
 __sunaba_ui_ScrollContainer.prototype.set_scrollVerticalCustomStep = function(self,value) 
   self.native:set("scroll_vertical_custom_step", __sunaba_core__Variant_Variant_Impl_.fromFloat(value));
+  do return value end
+end
+__sunaba_ui_ScrollContainer.prototype.get_tileScrollHint = function(self) 
+  do return self.native:get("tile_scroll_hint"):asBool() end
+end
+__sunaba_ui_ScrollContainer.prototype.set_tileScrollHint = function(self,value) 
+  self.native:set("tile_scroll_hint", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_ScrollContainer.prototype.get_verticalScrollMode = function(self) 
@@ -53605,6 +57884,13 @@ __sunaba_ui_SpinBox.prototype.get_alignment = function(self)
 end
 __sunaba_ui_SpinBox.prototype.set_alignment = function(self,value) 
   self.native:set("alignment", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_SpinBox.prototype.get_customArrowRound = function(self) 
+  do return self.native:get("custom_arrow_round"):asBool() end
+end
+__sunaba_ui_SpinBox.prototype.set_customArrowRound = function(self,value) 
+  self.native:set("custom_arrow_round", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_SpinBox.prototype.get_customArrowStep = function(self) 
@@ -53908,6 +58194,13 @@ __sunaba_ui_TabBar.prototype.get_selectWithRmb = function(self)
 end
 __sunaba_ui_TabBar.prototype.set_selectWithRmb = function(self,value) 
   self.native:set("select_with_rmb", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_TabBar.prototype.get_switchOnDragHover = function(self) 
+  do return self.native:get("switch_on_drag_hover"):asBool() end
+end
+__sunaba_ui_TabBar.prototype.set_switchOnDragHover = function(self,value) 
+  self.native:set("switch_on_drag_hover", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_TabBar.prototype.get_tabAlignment = function(self) 
@@ -54229,6 +58522,13 @@ __sunaba_ui_TabContainer.prototype.get_dragToRearrangeEnabled = function(self)
 end
 __sunaba_ui_TabContainer.prototype.set_dragToRearrangeEnabled = function(self,value) 
   self.native:set("drag_to_rearrange_enabled", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
+__sunaba_ui_TabContainer.prototype.get_switchOnDragHover = function(self) 
+  do return self.native:get("switch_on_drag_hover"):asBool() end
+end
+__sunaba_ui_TabContainer.prototype.set_switchOnDragHover = function(self,value) 
+  self.native:set("switch_on_drag_hover", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_TabContainer.prototype.get_tabAlignment = function(self) 
@@ -55012,6 +59312,13 @@ __sunaba_ui_Tree.prototype.set_dropModeFlags = function(self,value)
   self.native:set("drop_mode_flags", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
   do return value end
 end
+__sunaba_ui_Tree.prototype.get_enableDragUnfolding = function(self) 
+  do return self.native:get("enable_drag_unfolding"):asBool() end
+end
+__sunaba_ui_Tree.prototype.set_enableDragUnfolding = function(self,value) 
+  self.native:set("enable_drag_unfolding", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
+  do return value end
+end
 __sunaba_ui_Tree.prototype.get_enableRecursiveFolding = function(self) 
   do return self.native:get("enable_recursive_folding"):asBool() end
 end
@@ -55033,6 +59340,13 @@ __sunaba_ui_Tree.prototype.set_hideRoot = function(self,value)
   self.native:set("hide_root", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
+__sunaba_ui_Tree.prototype.get_scrollHintMode = function(self) 
+  do return self.native:get("scroll_hint_mode"):asInt() end
+end
+__sunaba_ui_Tree.prototype.set_scrollHintMode = function(self,value) 
+  self.native:set("scroll_hint_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
 __sunaba_ui_Tree.prototype.get_scrollHorizontalEnabled = function(self) 
   do return self.native:get("scroll_horizontal_enabled"):asBool() end
 end
@@ -55052,6 +59366,13 @@ __sunaba_ui_Tree.prototype.get_selectMode = function(self)
 end
 __sunaba_ui_Tree.prototype.set_selectMode = function(self,value) 
   self.native:set("select_mode", __sunaba_core__Variant_Variant_Impl_.fromInt(value));
+  do return value end
+end
+__sunaba_ui_Tree.prototype.get_tileScrollHint = function(self) 
+  do return self.native:get("tile_scroll_hint"):asBool() end
+end
+__sunaba_ui_Tree.prototype.set_tileScrollHint = function(self,value) 
+  self.native:set("tile_scroll_hint", __sunaba_core__Variant_Variant_Impl_.fromBool(value));
   do return value end
 end
 __sunaba_ui_Tree.prototype._buttonClicked= nil;
@@ -55239,6 +59560,11 @@ __sunaba_ui_Tree.prototype.getColumnTitleLanguage = function(self,column)
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
   do return self.native:call("get_column_title_language", args):asString() end
 end
+__sunaba_ui_Tree.prototype.getColumnTitleTooltipText = function(self,column) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  do return self.native:call("get_column_title_tooltip_text", args):asString() end
+end
 __sunaba_ui_Tree.prototype.getColumnWidth = function(self,column) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
@@ -55372,6 +59698,12 @@ __sunaba_ui_Tree.prototype.setColumnTitleLanguage = function(self,column,languag
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
   args:append(__sunaba_core__Variant_Variant_Impl_.fromString(language));
   self.native:call("set_column_title_language", args);
+end
+__sunaba_ui_Tree.prototype.setColumnTitleTooltipText = function(self,column,tooltipText) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromString(tooltipText));
+  self.native:call("set_column_title_tooltip_text", args);
 end
 __sunaba_ui_Tree.prototype.setSelected = function(self,item,column) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -55551,6 +59883,10 @@ __sunaba_ui_TreeItem.prototype.getChildCount = function(self)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   do return self.native:call("get_child_count", args):asInt() end
 end
+__sunaba_ui_TreeItem.prototype.getChildren = function(self) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  do return self.native:call("get_children", args):asArrayList() end
+end
 __sunaba_ui_TreeItem.prototype.getCustomBgColor = function(self,column) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
@@ -55571,6 +59907,12 @@ __sunaba_ui_TreeItem.prototype.getCustomFontSize = function(self,column)
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
   do return self.native:call("get_custom_font_size", args):asInt() end
+end
+__sunaba_ui_TreeItem.prototype.getCustomStylebox = function(self,column) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  local ref = self.native:call("get_custom_stylebox", args):asReference();
+  do return __sunaba_ui_StyleBox.new(ref) end
 end
 __sunaba_ui_TreeItem.prototype.getDescription = function(self,column) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -55919,6 +60261,12 @@ __sunaba_ui_TreeItem.prototype.setCustomFontSize = function(self,column,fontSize
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
   args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(fontSize));
   self.native:call("set_custom_font_size", args);
+end
+__sunaba_ui_TreeItem.prototype.setCustomStylebox = function(self,column,stylebox) 
+  local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromInt(column));
+  args:append(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(stylebox.native));
+  self.native:call("set_custom_stylebox", args);
 end
 __sunaba_ui_TreeItem.prototype.setDescription = function(self,column,description) 
   local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
@@ -56478,6 +60826,10 @@ local _hx_static_init = function()
   Xml.ProcessingInstruction = 5;
   
   Xml.Document = 6;
+  
+  __haxe_crypto_Base64.CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  
+  __haxe_crypto_Base64.BYTES = __haxe_io_Bytes.ofString(__haxe_crypto_Base64.CHARS);
   
   __haxe_ds_IntMap.tnull = ({});
   
