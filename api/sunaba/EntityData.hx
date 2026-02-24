@@ -32,8 +32,9 @@ class EntityData extends EntityBaseData {
 			var child = entity.getChild(i);
 			var childData : EntityBaseData;
 			if (child.isPrefab()) {
-				childData = new PrefabPath();
-				childData.path = child.prefabPath;
+				var prefabPath = new PrefabPath();
+				prefabPath.createFromEntity(child);
+				childData =  prefabPath;
 			}
 			else {
 				childData = fromEntity(child);
@@ -66,6 +67,23 @@ class EntityData extends EntityBaseData {
 				prefab.io = io;
 				prefab.load(childData.path);
 				child = prefab.instance();
+				for (i in 0...prefab.components.size()) {
+					var compDict:Dictionary = prefab.components.get(i);
+					var compType: String = compDict.get("type");
+					var compData: Dictionary = compDict.get("data");
+					var typeClass = Type.resolveClass(compType);
+					if (typeClass == null) continue;
+					var instance = null;//cast typeClass;
+					for (comp in child.getConponents()) {
+						if (Type.getClass(comp) == typeClass) {
+							instance = comp;
+							break;
+						}
+					}
+					if (instance == null) continue;
+					var behavior: Behavior = cast instance;
+					behavior.setData(compData);
+				}
 			}
 			else {
 				var entityData : EntityData = cast childData;
