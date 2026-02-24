@@ -2,6 +2,7 @@ package sunaba;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
 import sunaba.core.Variant;
+import Type;
 
 class SceneFile extends ScriptableObject {
 	public var entities: Array<EntityBaseData> = new Array();
@@ -15,8 +16,9 @@ class SceneFile extends ScriptableObject {
 			var entity = scene.getEntity(i);
 			var entityData: EntityBaseData;
 			if (entity.isPrefab()) {
-				entityData = new PrefabPath();
-				entityData.path = entity.prefabPath;
+				var prefabPath = new PrefabPath();
+				prefabPath.createFromEntity(entity);
+				entityData = prefabPath;
 			}
 			else {
 				entityData = EntityData.fromEntity(entity);
@@ -38,6 +40,23 @@ class SceneFile extends ScriptableObject {
 				prefab.io = io;
 				prefab.load(entData.path);
 				entity = prefab.instance();
+				for (i in 0...prefab.components.size()) {
+					var compDict:Dictionary = prefab.components.get(i);
+					var compType: String = compDict.get("type");
+					var compData: Dictionary = compDict.get("data");
+					var typeClass = Type.resolveClass(compType);
+					if (typeClass == null) continue;
+					var instance = null;//cast typeClass;
+					for (comp in entity.getConponents()) {
+						if (Type.getClass(comp) == typeClass) {
+							instance = comp;
+							break;
+						}
+					}
+					if (instance == null) continue;
+					var behavior: Behavior = cast instance;
+					behavior.setData(compData);
+				}
 			}
 			else {
 				var entityData: EntityData = cast entData;
