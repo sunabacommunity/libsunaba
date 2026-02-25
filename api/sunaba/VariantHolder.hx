@@ -1,11 +1,10 @@
 package sunaba;
-import sunaba.core.Reference;
 import sunaba.core.Variant;
 import sunaba.core.native.NativeObject;
-import sunaba.core.native.NativeReference;
 import sunaba.core.ArrayList;
+import sunaba.core.Object;
 
-class VariantHolder extends Reference {
+class VariantHolder extends Object {
 	public var value(get, set): Variant;
 
 	function get_value():Variant {
@@ -18,9 +17,9 @@ class VariantHolder extends Reference {
 		return value;
 	}
 
-	public override function nativeInit(?_native: NativeReference) {
+	public override function nativeInit(?_native: NativeObject) {
 		if (_native == null) {
-			_native = new NativeReference('res://Engine/VaraintHolder.gd', new ArrayList(), 1);
+			_native = new NativeObject('res://Engine/VaraintHolder.gd', new ArrayList(), 1);
 		}
 		this.native = _native;
 	}
