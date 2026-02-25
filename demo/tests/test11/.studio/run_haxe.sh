@@ -1,16 +1,12 @@
 #!/bin/sh
-chmod +x "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxe"
-chmod +x "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib"
-chmod +x "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/neko"
-export PATH="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/":$PATH
-export DYLD_LIBRARY_PATH="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/":$DYLD_LIBRARY_PATH
-export DYLD_FALLBACK_LIBRARY_PATH="/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/":$DYLD_FALLBACK_LIBRARY_PATH
-install_name_tool -add_rpath "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/" "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" 2>/dev/null || true
-install_name_tool -add_rpath "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/" "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxe" 2>/dev/null || true
-install_name_tool -add_rpath "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/" "/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/neko" 2>/dev/null || true
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" newrepo
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" install "/Users/Shared/studio/.godot/mono/temp/bin/Debug/msgpack-haxe.zip"
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" install "/Users/Shared/studio/.godot/mono/temp/bin/Debug/libsunaba.zip"
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" install "/Users/Shared/studio/.godot/mono/temp/bin/Debug/gamepak.zip"
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxelib" install "/Users/Shared/studio/.godot/mono/temp/bin/Debug/sunaba-studio-api.zip"
-"/Users/Shared/studio/.godot/mono/temp/bin/Debug/toolchain/mac-universal/haxe" "$@" 
+chmod +x "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxe"
+chmod +x "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxelib"
+chmod +x "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/neko"
+export PATH="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/":$PATH
+export LD_LIBRARY_PATH="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/":$LD_LIBRARY_PATH
+export HAXE_STD_PATH="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64//std":$HAXE_STD_PATH
+"/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxelib" newrepo
+"/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxelib" install "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/libsunaba.zip"
+"/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxelib" install "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/gamepak.zip"
+"/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxelib" install "/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/sunaba-studio-api.zip"
+"/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/haxe" "$@" 

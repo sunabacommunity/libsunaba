@@ -1059,6 +1059,7 @@ Gamepak.new = function()
 end
 Gamepak.super = function(self) 
   self.useExternApi = false;
+  self.cnt = 0;
   self.resourceFormats = _hx_tab_array({[0]=".vscn", ".vpfb", ".vres", ".smdl", ".ftd"}, 5);
   self.markExecutable = true;
   self.haxePath = "haxe";
@@ -1305,9 +1306,15 @@ Gamepak.prototype.build = function(self,snbprojPath)
   end;
 end
 Gamepak.prototype.jsonToMsgpackConverter= nil;
+Gamepak.prototype.cnt= nil;
+Gamepak.prototype.yield = function(self) 
+  self.cnt = self.cnt + 1;
+  _G.coroutine.yield();
+end
 Gamepak.prototype.buildCoroutine = function(self,snbprojPath) 
   local _gthis = self;
   do return _G.coroutine.create(function() 
+    _gthis.cnt = 0;
     _G.print(Std.string(Std.string("Building project at: ") .. Std.string(snbprojPath)));
     if (String.prototype.indexOf(snbprojPath, "\\") ~= -1) then 
       snbprojPath = StringTools.replace(snbprojPath, "\\", "/");
@@ -1323,7 +1330,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     else
       _G.print(Std.string(Std.string("Bin directory already exists: ") .. Std.string(binPath)));
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     local entries = __haxe_ds_List.new();
     local _hx_status, _hx_result = pcall(function() 
     
@@ -1344,7 +1351,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     elseif _hx_result ~= _hx_pcall_default then
       return _hx_result
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     if (_gthis.sprojJson.type == "executable") then 
       if (_gthis.zipOutputPath == "") then 
         _gthis.zipOutputPath = Std.string(Std.string(Std.string(_gthis.projDirPath) .. Std.string("/bin/")) .. Std.string(_gthis.sprojJson.name)) .. Std.string(".snb");
@@ -1379,11 +1386,13 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
         _G.error(__haxe_Exception.thrown(Std.string("Unknown project type: ") .. Std.string(_gthis.sprojJson.type)),0);
       end;
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     local command = _gthis:generateHaxeBuildCommand();
     _G.print(Std.string(Std.string("Generated Haxe build command: ") .. Std.string(command)));
     local hxres = -1;
     if (Sys.systemName() == "Windows") then 
+      local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(_gthis.projDirPath)}, 1);
+      NativeObject.callStatic("DirAccess", "change_dir", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args));
       hxres = Sys.command(Std.string(Std.string(Std.string("cd ") .. Std.string(_gthis.projDirPath)) .. Std.string(" && ")) .. Std.string(command));
     else
       local shellscript = "#!/bin/sh\n";
@@ -1402,9 +1411,9 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       _G.error(__haxe_Exception.thrown(Std.string("Haxe build command failed with exit code: ") .. Std.string(hxres)),0);
     end;
     _G.print("Haxe build command executed successfully.");
-    _G.coroutine.yield();
+    _gthis:yield();
     local mainLuaPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(_gthis.sprojJson.luabin);
-    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="G:\\gamepak\\libsrc\\Gamepak.hx",lineNumber=419,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
+    __haxe_Log.trace(mainLuaPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=428,className="Gamepak",methodName="buildCoroutine",customParams=_hx_tab_array({[0]=__sys_FileSystem.exists(mainLuaPath)}, 1)}));
     if (not __sys_FileSystem.exists(mainLuaPath)) then 
       _G.print(Std.string(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)));
       _G.error(__haxe_Exception.thrown(Std.string("Main Lua file does not exist: ") .. Std.string(mainLuaPath)),0);
@@ -1423,7 +1432,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       _G.error(__haxe_Exception.thrown(_hx_1_ret_message),0);
     end;
     _G.print("Added File: main.lua");
-    _G.coroutine.yield();
+    _gthis:yield();
     if (_gthis.sprojJson.sourcemap ~= false) then 
       local sourceMapName = Std.string(_gthis.sprojJson.luabin) .. Std.string(".map");
       local sourceMapPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(sourceMapName);
@@ -1445,7 +1454,7 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       end;
       _G.print(Std.string(Std.string("Added File: ") .. Std.string(sourceMapName)));
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     if (_gthis.sprojJson.apisymbols ~= false) then 
       local typesXmlPath = Std.string(_gthis.projDirPath) .. Std.string("/types.xml");
       if (__sys_FileSystem.exists(typesXmlPath)) then 
@@ -1466,16 +1475,16 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
       end;
       _G.print("Added File: types.xml");
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     local assetPath = Std.string(Std.string(_gthis.projDirPath) .. Std.string("/")) .. Std.string(_gthis.sprojJson.assetsdir);
     if (__sys_FileSystem.exists(assetPath)) then 
       local assets = _gthis:getAllFilesCR(assetPath);
-      _G.coroutine.yield();
+      _gthis:yield();
       local assetKey = assets:keys();
       while (assetKey:hasNext()) do _hx_do_first_1 = false;
         
         local assetKey = assetKey:next();
-        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\gamepak\\libsrc\\Gamepak.hx",lineNumber=493,className="Gamepak",methodName="buildCoroutine"}));
+        __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=502,className="Gamepak",methodName="buildCoroutine"}));
         local ret = assets.h[assetKey];
         local assetContent = (function() 
           local _hx_4
@@ -1484,9 +1493,9 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
           _hx_4 = ret; end
           return _hx_4
         end )();
-        _G.coroutine.yield();
+        _gthis:yield();
         local newAssetPath = assetKey;
-        _G.coroutine.yield();
+        _gthis:yield();
         local _g = 0;
         local _g1 = _gthis.resourceFormats;
         while (_g < _g1.length) do _hx_do_first_2 = false;
@@ -1495,14 +1504,14 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
           _g = _g + 1;
           if (StringTools.endsWith(assetKey, resourceFormat)) then 
             newAssetPath = Std.string(newAssetPath) .. Std.string(".dat");
-            _G.coroutine.yield();
+            _gthis:yield();
             local assetStr = assetContent:toString();
-            _G.coroutine.yield();
+            _gthis:yield();
             assetContent = _gthis.jsonToMsgpackConverter(assetStr);
           end;
-          _G.coroutine.yield();
+          _gthis:yield();
         end;
-        _G.coroutine.yield();
+        _gthis:yield();
         local tmp = StringTools.replace(newAssetPath, "assets/", "");
         local assetContent1 = assetContent.length;
         local assetContent2 = assetContent.length;
@@ -1514,10 +1523,10 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
         d.dUTC = _G.os.date("!*t", Std.int(d.t));
         entries:add(_hx_o({__fields__={fileName=true,fileSize=true,dataSize=true,fileTime=true,data=true,crc32=true,compressed=true},fileName=tmp,fileSize=assetContent1,dataSize=assetContent2,fileTime=d,data=assetContent,crc32=nil,compressed=false}));
         _G.print(Std.string(Std.string("Added File: ") .. Std.string(StringTools.replace(assetKey, "assets/", ""))));
-        _G.coroutine.yield();
+        _gthis:yield();
       end;
     end;
-    _G.coroutine.yield();
+    _gthis:yield();
     local header = _hx_o({__fields__={name=true,version=true,rootUrl=true,luabin=true,runtime=true,type=true},name=_gthis.sprojJson.name,version=_gthis.sprojJson.version,rootUrl=_gthis.sprojJson.rootUrl,luabin=_gthis.sprojJson.luabin,runtime="lua",type=_gthis.sprojJson.type});
     local headerJson = __haxe_Json.stringify(header);
     local headerContent = __haxe_io_Bytes.ofString(headerJson);
@@ -1531,15 +1540,15 @@ Gamepak.prototype.buildCoroutine = function(self,snbprojPath)
     d.dUTC = _G.os.date("!*t", Std.int(d.t));
     entries:add(_hx_o({__fields__={fileName=true,fileSize=true,dataSize=true,fileTime=true,data=true,crc32=true,compressed=true},fileName="header.json",fileSize=headerContent1,dataSize=headerContent2,fileTime=d,data=headerContent,crc32=nil,compressed=false}));
     _G.print("Added File: header.json");
-    _G.coroutine.yield();
+    _gthis:yield();
     local out = __sys_io_File.write(_gthis.zipOutputPath, true);
     local writer = __haxe_zip_Writer.new(out);
     writer:write(entries);
     out:close();
     _G.print(Std.string(Std.string("Zip file created successfully at: ") .. Std.string(_gthis.zipOutputPath)));
-    _G.coroutine.yield();
+    _gthis:yield();
     local _gthis1 = _gthis.markExecutable;
-    _G.coroutine.yield();
+    _gthis:yield();
     _G.print(Std.string(Std.string("Build complete: ") .. Std.string(_gthis.zipOutputPath)));
   end) end
 end
@@ -1592,9 +1601,9 @@ Gamepak.prototype.getAllFilesCR = function(self,dir)
         else
           assets.h[key] = value;
         end;
-        _G.coroutine.yield();
+        self:yield();
       end;
-      _G.coroutine.yield();
+      self:yield();
     else
       local content = __sys_io_File.getBytes(filePath);
       local vfilePath = StringTools.replace(filePath, self.projDirPath, "");
@@ -1606,10 +1615,103 @@ Gamepak.prototype.getAllFilesCR = function(self,dir)
       else
         assets.h[vfilePath] = content;
       end;
-      _G.coroutine.yield();
+      self:yield();
     end;
   end;
   do return assets end
+end
+Gamepak.prototype.buildCoroutineCount = function(self,snbprojPath) 
+  local count = 1;
+  count = count + 1;
+  count = count + 1;
+  count = count + 1;
+  count = count + 1;
+  count = count + 1;
+  count = count + 1;
+  local assetPath = Std.string(Std.string(self.projDirPath) .. Std.string("/")) .. Std.string(self.sprojJson.assetsdir);
+  if (__sys_FileSystem.exists(assetPath)) then 
+    local assets = self:getAllFiles(assetPath);
+    count = count + self:getAllFilesCount(assetPath);
+    count = count + 1;
+    local assetKey = assets:keys();
+    while (assetKey:hasNext()) do _hx_do_first_1 = false;
+      
+      local assetKey = assetKey:next();
+      __haxe_Log.trace(assetKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/gamepak/0,0,0/Gamepak.hx",lineNumber=667,className="Gamepak",methodName="buildCoroutineCount"}));
+      local ret = assets.h[assetKey];
+      local assetContent = (function() 
+        local _hx_1
+        if (ret == __haxe_ds_StringMap.tnull) then 
+        _hx_1 = nil; else 
+        _hx_1 = ret; end
+        return _hx_1
+      end )();
+      count = count + 1;
+      local newAssetPath = assetKey;
+      count = count + 1;
+      local _g = 0;
+      local _g1 = self.resourceFormats;
+      while (_g < _g1.length) do _hx_do_first_2 = false;
+        
+        local resourceFormat = _g1[_g];
+        _g = _g + 1;
+        if (StringTools.endsWith(assetKey, resourceFormat)) then 
+          count = count + 1;
+          local assetStr = assetContent:toString();
+          count = count + 1;
+        end;
+        count = count + 1;
+      end;
+      count = count + 1;
+      count = count + 1;
+    end;
+  end;
+  count = count + 1;
+  count = count + 1;
+  count = count + 1;
+  local tmp = self.markExecutable;
+  count = count + 1;
+  do return count end
+end
+Gamepak.prototype.getAllFilesCount = function(self,dir) 
+  local count = 0;
+  if (not __sys_FileSystem.exists(dir)) then 
+    _G.error(__haxe_Exception.thrown(Std.string("Directory does not exist: ") .. Std.string(dir)),0);
+  end;
+  local vdir = StringTools.replace(dir, self.projDirPath, "");
+  local assets_h = ({});
+  local _g = 0;
+  local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(dir)}, 1);
+  local result = __sys_FileSystem.getNative():call("ReadDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asStringArray();
+  local s = result;
+  local array = _hx_tab_array({}, 0);
+  local _g1 = 0;
+  local _g2 = __sunaba_core__TypedArray_TypedArray_Impl_.size(s);
+  while (_g1 < _g2) do _hx_do_first_1 = false;
+    
+    _g1 = _g1 + 1;
+    local i = _g1 - 1;
+    local value = __sunaba_core__TypedArray_TypedArray_Impl_.get(s, i);
+    if (value == nil) then 
+      _G.error(__haxe_Exception.thrown(Std.string("TypedArray.toArray: null value at index ") .. Std.string(i)),0);
+    end;
+    array:push(value);
+  end;
+  local _g1 = array;
+  while (_g < _g1.length) do _hx_do_first_1 = false;
+    
+    local f = _g1[_g];
+    _g = _g + 1;
+    local filePath = Std.string(Std.string(dir) .. Std.string("/")) .. Std.string(f);
+    local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(filePath)}, 1);
+    if (__sys_FileSystem.getNative():call("IsDirectory", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asBool()) then 
+      local subAssets = self:getAllFilesCount(filePath);
+      count = count + subAssets;
+    else
+      count = count + 1;
+    end;
+  end;
+  do return count end
 end
 Gamepak.prototype.generateHaxeBuildCommand = function(self) 
   local hxml = self:generateHaxeBuildHxml();
@@ -2361,8 +2463,8 @@ TestPlugin.main = function()
 end
 TestPlugin.prototype = _hx_e();
 TestPlugin.prototype.init = function(self) 
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
-  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=11,className="TestPlugin",methodName="init"}));
+  __haxe_Log.trace(self:get_editor() ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/libsunaba/demo/tests/test11/src/TestPlugin.hx",lineNumber=12,className="TestPlugin",methodName="init"}));
   self:get_editor():pushBehaviorClass(__myComponents_RotateComponent);
   self:get_editor():pushBehaviorClass(__myComponents_FreeLook3D);
 end
@@ -4255,7 +4357,7 @@ __haxe_io_Output.__name__ = "haxe.io.Output"
 __haxe_io_Output.prototype = _hx_e();
 __haxe_io_Output.prototype.bigEndian= nil;
 __haxe_io_Output.prototype.writeByte = function(self,c) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/std/haxe/io/Output.hx",lineNumber=47,className="haxe.io.Output",methodName="writeByte"})),0);
 end
 __haxe_io_Output.prototype.writeBytes = function(self,s,pos,len) 
   if (((pos < 0) or (len < 0)) or ((pos + len) > s.length)) then 
@@ -4403,7 +4505,7 @@ __haxe_io_Input.__name__ = "haxe.io.Input"
 __haxe_io_Input.prototype = _hx_e();
 __haxe_io_Input.prototype.bigEndian= nil;
 __haxe_io_Input.prototype.readByte = function(self) 
-  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\.godot\\mono\\temp\\bin\\Debug\\toolchain\\windows-x86_64\\std\\haxe\\io\\Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
+  _G.error(__haxe_exceptions_NotImplementedException.new(nil, nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/data_Sunaba.Studio_linuxbsd_x86_64/toolchain/linux-x86_64/std/haxe/io/Input.hx",lineNumber=53,className="haxe.io.Input",methodName="readByte"})),0);
 end
 __haxe_io_Input.prototype.readBytes = function(self,s,pos,len) 
   local k = len;
@@ -5934,7 +6036,7 @@ __myComponents_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=62,className="myComponents.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -6007,7 +6109,7 @@ __myComponents_FreeLook3D.prototype.onUpdate = function(self,deltaTime)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\demo\\tests\\test11\\src\\myComponents\\FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/libsunaba/demo/tests/test11/src/myComponents/FreeLook3D.hx",lineNumber=121,className="myComponents.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -6235,7 +6337,7 @@ __sunaba_App.super = function(self)
       _hx_1 = "null"; else 
       _hx_1 = _hx_wrap_if_string_field(__haxe__CallStack_CallStack_Impl_,'toString')(tmp2); end
       return _hx_1
-    end )())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
+    end )())), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/App.hx",lineNumber=58,className="sunaba.App",methodName="new"}));
     local tmp = Std.string(e:get_message()) .. Std.string(" -> ");
     local tmp1 = e:get_stack();
     __sunaba_Debug.error(Std.string(tmp) .. Std.string(((function() 
@@ -8950,12 +9052,12 @@ __sunaba_DataUtils.resToDict = function(res)
   local path = "?";
   local className = res:getClass();
   data:set(__sunaba_core__Variant_Variant_Impl_.fromString("class"), __sunaba_core__Variant_Variant_Impl_.fromString(className));
-  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=620,className="sunaba.DataUtils",methodName="resToDict"}));
-  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=621,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(className, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=620,className="sunaba.DataUtils",methodName="resToDict"}));
+  __haxe_Log.trace(res:get("asset_path"):asString() ~= "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=621,className="sunaba.DataUtils",methodName="resToDict"}));
   if (res:get("asset_path"):getType() == 4) then 
     if (res:get("asset_path"):asString() ~= "") then 
       path = res:get("asset_path"):asString();
-      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\DataUtils.hx",lineNumber=625,className="sunaba.DataUtils",methodName="resToDict"}));
+      __haxe_Log.trace(path, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/DataUtils.hx",lineNumber=625,className="sunaba.DataUtils",methodName="resToDict"}));
     end;
   end;
   if (path == "<null>") then 
@@ -16543,7 +16645,7 @@ __sunaba_ShellConsole.prototype.nativeInit = function(self,_native)
       
       local arg = args[_g];
       _g = _g + 1;
-      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
+      __haxe_Log.trace(arg, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/ShellConsole.hx",lineNumber=23,className="sunaba.ShellConsole",methodName="nativeInit"}));
       _gthis:cmd(arg);
     end;
     do return 0 end;
@@ -18366,7 +18468,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
     local animationLibrary = __sunaba_animation_AnimationLibrary.new(__sunaba_DataUtils.dictToVar(animationLibraryData):asReference());
     local propertiesData = animationLibraryData:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
     local animationListData = propertiesData:get(__sunaba_core__Variant_Variant_Impl_.fromString("_data")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=266,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(animationListData))));
     local _g = 0;
     local this1 = animationListData:keys();
@@ -18388,8 +18490,8 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
       local value = animationListData:get(__sunaba_core__Variant_Variant_Impl_.fromString(key));
       local animation = __sunaba_animation_Animation.new(__sunaba_DataUtils.dictToVar(value:asDictionary()):asReference());
       animation:clear();
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=274,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace(key, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=275,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(value)));
       local animationPropertyData = value:asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("properties")):asDictionary();
       local trackData = __haxe_ds_IntMap.new();
@@ -18410,7 +18512,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
         local propKeyv = _g1[_g];
         _g = _g + 1;
         local propKey = propKeyv:asString();
-        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+        __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=281,className="sunaba.animation.AnimationMixer",methodName="setData"}));
         if (StringTools.startsWith(propKey, "tracks/")) then 
           local parts = String.prototype.split(propKey, "/");
           local trackIdx = Std.parseInt(parts[1]);
@@ -18423,7 +18525,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
               trackData.h[trackIdx] = value;
             end;
           end;
-          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("trackIdx: ") .. Std.string(trackIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(animationPropertyData:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=291,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           local ret = trackData.h[trackIdx];
           if (ret == __haxe_ds_IntMap.tnull) then 
             ret = nil;
@@ -18472,7 +18574,7 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           godotTrackIdx = animation:addTrack(3);
         elseif (trackType1) == "value" then 
           godotTrackIdx = animation:addTrack(0);else
-        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
+        __haxe_Log.trace(Std.string("WARNING: Unknown track type: ") .. Std.string(trackType), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=309,className="sunaba.animation.AnimationMixer",methodName="setData"})); end;
         if (godotTrackIdx >= 0) then 
           animation:trackSetPath(godotTrackIdx, trackPath);
           if (track.h.enabled ~= nil) then 
@@ -18559,13 +18661,13 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
                 step = 5;else
               step = 2; end;
               if ((_G.math.fmod(keys.length, step)) ~= 0) then 
-                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+                __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("ERROR: Invalid keys array length for track ") .. Std.string(trackIdx)) .. Std.string(". Expected multiple of ")) .. Std.string(step)) .. Std.string(", got ")) .. Std.string(keys.length), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=355,className="sunaba.animation.AnimationMixer",methodName="setData"}));
               end;
             else
-              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+              __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string("WARNING: Empty keys array for track ") .. Std.string(trackIdx)) .. Std.string(" (")) .. Std.string(trackPath)) .. Std.string("). Animation will have no effect."), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=411,className="sunaba.animation.AnimationMixer",methodName="setData"}));
             end;
           else
-            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(Std.string("WARNING: No keys property found for track ") .. Std.string(trackIdx), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=416,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
           local propKey = Std.string(Std.string("tracks/") .. Std.string(godotTrackIdx)) .. Std.string("/keys");
           local keysArray = Variant.new():asFloatArray();
@@ -18597,10 +18699,10 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
             else
               keysArray:add(variant:asFloat());
             end;
-            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+            __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=435,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           end;
-          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
-          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(lastVariantIndex, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=437,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+          __haxe_Log.trace(oldKeysArray:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=438,className="sunaba.animation.AnimationMixer",methodName="setData"}));
           animation.native:set(propKey, __sunaba_core__Variant_Variant_Impl_.fromFloatArray(keysArray));
           if (track.h.enabled ~= nil) then 
             local ret = track.h.enabled;
@@ -18644,11 +18746,11 @@ __sunaba_animation_AnimationMixer.prototype.setData = function(self,data)
           end;
         end;
       end;
-      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+      __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=470,className="sunaba.animation.AnimationMixer",methodName="setData"}));
       _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animation.native))))));
       animationLibrary:addAnimation(key, animation);
     end;
-    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\animation\\AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
+    __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/animation/AnimationMixer.hx",lineNumber=474,className="sunaba.animation.AnimationMixer",methodName="setData"}));
     _G.print(Std.string(__sunaba_JSON.stringify(__sunaba_core__Variant_Variant_Impl_.fromDictionary(__sunaba_DataUtils.varToDict(__sunaba_core__Variant_Variant_Impl_.fromNativeReference(animationLibrary.native))))));
     self:addAnimationLibrary(animationLibraryName, animationLibrary);
   end;
@@ -28942,7 +29044,7 @@ __sunaba_spatial_MapFile.prototype.instantiate = function(self)
         self.io:createDirectory(newTexturePathDir);
       end;
       local newTexturePath = Std.string(newTexturePathDir) .. Std.string(texturePathArray:pop());
-      __haxe_Log.trace(newTexturePath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\MapFile.hx",lineNumber=92,className="sunaba.spatial.MapFile",methodName="instantiate"}));
+      __haxe_Log.trace(newTexturePath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/MapFile.hx",lineNumber=92,className="sunaba.spatial.MapFile",methodName="instantiate"}));
       if (self.io:fileExists(newTexturePath)) then 
         local binaryData = self.io:loadBytes(newTexturePath);
         local size = binaryData:size();
@@ -29465,7 +29567,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     local propKeyv = _g1[_g];
     _g = _g + 1;
     local propKey = propKeyv:asString();
-    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(propKey, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=376,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local parts = String.prototype.split(propKey, "/");
     local boneIdx = Std.parseInt(parts[1]);
     local propName = parts[2];
@@ -29480,7 +29582,7 @@ __sunaba_spatial_Skeleton.prototype.setData = function(self,data)
     if (boneIdx > maxBone) then 
       maxBone = boneIdx;
     end;
-    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\spatial\\Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
+    __haxe_Log.trace(Std.string(Std.string(Std.string(Std.string(Std.string("boneIdx: ") .. Std.string(boneIdx)) .. Std.string(" propName: ")) .. Std.string(propName)) .. Std.string(" data: ")) .. Std.string(__sunaba_JSON.stringify(boneProperties:get(__sunaba_core__Variant_Variant_Impl_.fromString(propKey)):asDictionary():get(__sunaba_core__Variant_Variant_Impl_.fromString("value")))), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/spatial/Skeleton.hx",lineNumber=388,className="sunaba.spatial.Skeleton",methodName="setData"}));
     local ret = boneDataMap_h[boneIdx];
     if (ret == __haxe_ds_IntMap.tnull) then 
       ret = nil;
@@ -35629,6 +35731,11 @@ end
 _hxClasses["sunaba.ui.Widget"] = __sunaba_ui_Widget
 __sunaba_ui_Widget.__name__ = "sunaba.ui.Widget"
 __sunaba_ui_Widget.prototype = _hx_e();
+__sunaba_ui_Widget.prototype.getNodeT_sunaba_ui_ProgressBar = function(self,classT,path) 
+  local node = self:getNode(path);
+  local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
+  do return instance end
+end
 __sunaba_ui_Widget.prototype.getNodeT_sunaba_desktop_PopupMenu = function(self,classT,path) 
   local node = self:getNode(path);
   local instance = Type.createInstance(classT, _hx_tab_array({[0]=node.native}, 1));
@@ -36776,12 +36883,12 @@ __sunaba_ui_Widget.prototype.isValueTexture = function(self,node,propName)
 end
 __sunaba_ui_Widget.prototype.isTextureType = function(self,value) 
   local nativeRef = value:asReference();
-  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=768,className="sunaba.ui.Widget",methodName="isTextureType"}));
-  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=769,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=768,className="sunaba.ui.Widget",methodName="isTextureType"}));
+  __haxe_Log.trace(nativeRef ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=769,className="sunaba.ui.Widget",methodName="isTextureType"}));
   if (nativeRef ~= nil) then 
-    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=771,className="sunaba.ui.Widget",methodName="isTextureType"}));
+    __haxe_Log.trace(nativeRef:isValid(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=771,className="sunaba.ui.Widget",methodName="isTextureType"}));
     if (nativeRef:isValid()) then 
-      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\libsunaba\\api\\sunaba\\ui\\Widget.hx",lineNumber=773,className="sunaba.ui.Widget",methodName="isTextureType"}));
+      __haxe_Log.trace(nativeRef:isClass("Texture"), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/libsunaba/0,0,0/sunaba/ui/Widget.hx",lineNumber=773,className="sunaba.ui.Widget",methodName="isTextureType"}));
       if (nativeRef:isClass("Texture")) then 
         do return true end;
       end;
@@ -36965,7 +37072,7 @@ __sunaba_studio_Console.prototype.editorInit = function(self)
   local outputColor = self.output:getThemeColor("default_color");
   local i = self:getNode("vbox/input");
   if (i == nil) then 
-    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
+    __haxe_Log.trace("Input element not found in ConsoleWidget", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Console.hx",lineNumber=39,className="sunaba.studio.Console",methodName="editorInit"}));
     do return end;
   end;
   self.input = self:getNodeT_sunaba_ui_LineEdit(__sunaba_ui_LineEdit, "vbox/hbox/input");
@@ -37120,8 +37227,10 @@ __sunaba_studio_Editor.new = function(_io)
 end
 __sunaba_studio_Editor.super = function(self,_io) 
   self.showDialog = false;
+  self.buildProgress = nil;
   self.playOnBuild = false;
   self.isGamePaused = false;
+  self.progressBarCoroutine = nil;
   self.buildSystem = Gamepak.new();
   self.isSaveKeyPressed = false;
   self.projectPlugin = nil;
@@ -37380,9 +37489,9 @@ __sunaba_studio_Editor.prototype.init = function(self)
     local appMenu = __sunaba_desktop_NativeMenuService.getSystemMenu(2);
     __sunaba_desktop_NativeMenuService.addSeparator(appMenu);
     local settingsIdx = __sunaba_desktop_NativeMenuService.addItem(appMenu, "Settings", __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=299,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=299,className="sunaba.studio.Editor",methodName="init"}));
     end)), __sunaba_core__Variant_Variant_Impl_.fromCallable(__sunaba_core__Callable_Callable_Impl_.fromFunction(function() 
-      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=302,className="sunaba.studio.Editor",methodName="init"}));
+      __haxe_Log.trace("Hello, Settings (keyCallback)", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=302,className="sunaba.studio.Editor",methodName="init"}));
     end)), Variant.new(), _hx_bit.bor(134217728,44));
     local iconBytes = self.io:loadBytes("studio://icons/16/gear.png");
     local tmp;
@@ -37488,7 +37597,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
   end;
   local _hx_status, _hx_result = pcall(function() 
   
-      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=358,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("hi!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=358,className="sunaba.studio.Editor",methodName="onReady"}));
       local menuBarControl = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/menuBarControl/hbox/spacer");
       local eventFunc = function(eventN) 
         if (_gthis.window == nil) then 
@@ -37530,7 +37639,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
           end;
         end;
         if (_gthis.clickcount == 2) then 
-          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=407,className="sunaba.studio.Editor",methodName="onReady"}));
+          __haxe_Log.trace(_gthis.clickcount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=407,className="sunaba.studio.Editor",methodName="onReady"}));
           _gthis.clickcount = 0;
           local maximizeButton = _gthis:getNodeT_sunaba_ui_Button(__sunaba_ui_Button, "vbox/menuBarControl/hbox/maximizeButton");
           if (_gthis.windowIsMaximized == true) then 
@@ -37821,7 +37930,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       self:refreshLeftSidebar();
       self:refreshRightSidebar();
-      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=691,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=691,className="sunaba.studio.Editor",methodName="onReady"}));
       local args = _G.__args;
       local s = args;
       local array = _hx_tab_array({}, 0);
@@ -37854,13 +37963,13 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       end;
       local args = _hx_tab_array({[0]=__sunaba_core__Variant_Variant_Impl_.fromString(self.sProjPath)}, 1);
       self.sProjPath = String.prototype.split(__sys_FileSystem.getNative():call("AbsolutePath", __sunaba_core__ArrayList_ArrayList_Impl_.fromArray(args)):asString(), "\\"):join("/");
-      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=707,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=707,className="sunaba.studio.Editor",methodName="onReady"}));
       local projJson = "";
       if (self.sProjPath ~= "") then 
         projJson = __sys_io_File.getContent(self.sProjPath);
       end;
-      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=714,className="sunaba.studio.Editor",methodName="onReady"}));
-      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=715,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self.sProjPath == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=714,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(projJson == "", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=715,className="sunaba.studio.Editor",methodName="onReady"}));
       if ((self.sProjPath == "") or (projJson == "")) then 
         __sunaba_Debug.error("Project not found.");
         __sunaba_App.exit(-1);
@@ -37875,12 +37984,12 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
       local dirPath = sprojPathArr:join("/");
       dirPath = Std.string(dirPath) .. Std.string("/");
       local assetPath = Std.string(dirPath) .. Std.string(self._projectFile.assetsdir);
-      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=735,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(self._projectFile.assetsdir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=735,className="sunaba.studio.Editor",methodName="onReady"}));
       while (not StringTools.endsWith(assetPath, self._projectFile.assetsdir)) do _hx_do_first_1 = false;
         
         assetPath = Std.string(assetPath) .. Std.string(self._projectFile.assetsdir);
       end;
-      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=739,className="sunaba.studio.Editor",methodName="onReady"}));
+      __haxe_Log.trace(assetPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=739,className="sunaba.studio.Editor",methodName="onReady"}));
       local recentProjectsPath = "user://recentProjects.json";
       if (self.io:fileExists(recentProjectsPath)) then 
         local recentProjectsStr = self.io:loadText(recentProjectsPath);
@@ -38018,7 +38127,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
         tmp = nil;
       end;
       self:addToolFunction(function() 
-        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=813,className="sunaba.studio.Editor",methodName="onReady"}));
+        __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=813,className="sunaba.studio.Editor",methodName="onReady"}));
         local fileDialog = __sunaba_desktop_FileDialog.new();
         fileDialog:set_fileMode(0);
         fileDialog:set_useNativeDialog(true);
@@ -38040,7 +38149,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
             local _hx_status, _hx_result = pcall(function() 
             
                 local destPath = _gthis.projectIo:getFileUrl(_destPath);
-                __haxe_Log.trace(srcPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=836,className="sunaba.studio.Editor",methodName="onReady",customParams=_hx_tab_array({[0]=destPath}, 1)}));
+                __haxe_Log.trace(srcPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true,customParams=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=836,className="sunaba.studio.Editor",methodName="onReady",customParams=_hx_tab_array({[0]=destPath}, 1)}));
                 __sunaba_studio_ModelImportService.inport(srcPath, destPath);
               return _hx_pcall_default
             end)
@@ -38273,7 +38382,7 @@ __sunaba_studio_Editor.prototype.onReady = function(self)
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string(Std.string(Std.string("\n\"") .. Std.string(haxelibPath)) .. Std.string("\" install \"")) .. Std.string(asmDir)) .. Std.string("sunaba-studio-api.zip\"")));
     shContent = Std.string(shContent) .. Std.string((Std.string(Std.string("\n\"") .. Std.string(self.haxePath)) .. Std.string("\" \"$@\" ")));
     __sys_io_File.saveContent(wrapper, shContent);
-    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1025,className="sunaba.studio.Editor",methodName="onReady"}));
+    __haxe_Log.trace(__sys_FileSystem.exists(wrapper), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1025,className="sunaba.studio.Editor",methodName="onReady"}));
     __sunaba_OSService.execute("chmod", __sunaba_core_StringArray.fromArray(_hx_tab_array({[0]="+x", wrapper}, 2)));
     self.haxePath = wrapper;
   end;
@@ -38527,7 +38636,12 @@ __sunaba_studio_Editor.prototype.onProcess = function(self,deltaTime)
   end;
   if (self.gamepakBuildCoroutine ~= nil) then 
     if (_G.coroutine.status(self.gamepakBuildCoroutine) ~= "dead") then 
-      _hx_box_mr(_hx_table.pack(_G.coroutine.resume(self.gamepakBuildCoroutine)), {"success", "result"});
+      _G.coroutine.resume(self.gamepakBuildCoroutine);
+      if (self.buildProgress == nil) then 
+        self:startTrack();
+      else
+        self.buildProgress:set_value(self.buildSystem.cnt);
+      end;
     else
       self.gamepakBuildCoroutine = nil;
       self.playBuildWindow:hide();
@@ -38645,7 +38759,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
   command = Std.string(command) .. Std.string((Std.string(" ") .. Std.string(self:get_projectFile().compilerFlags:join(" "))));
   local command = command;
   self.buildTask = _G.coroutine.create(function() 
-    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1255,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace("Starting build task...", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1264,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:popupCentered();
     end;
@@ -38658,7 +38772,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       end;
     end;
     _G.coroutine.yield();
-    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1270,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command: ") .. Std.string(command), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1279,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     local args = __sunaba_core_StringArray.create();
     local cmdArr = String.prototype.split(command, " ");
     local commandName = cmdArr[0];
@@ -38696,7 +38810,7 @@ __sunaba_studio_Editor.prototype.buildPlugin = function(self)
       array:push(value);
     end;
     local exitCode = Sys.command(commandName, array);
-    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1286,className="sunaba.studio.Editor",methodName="buildPlugin"}));
+    __haxe_Log.trace(Std.string("Build command result: ") .. Std.string(exitCode), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1295,className="sunaba.studio.Editor",methodName="buildPlugin"}));
     _G.coroutine.yield();
     if (_gthis.pluginBuildWindow ~= nil) then 
       _gthis.pluginBuildWindow:hide();
@@ -39017,7 +39131,7 @@ __sunaba_studio_Editor.prototype.refreshLeftSidebar = function(self)
     
     _g = _g + 1;
     local i = _hx_tab_array({[0]=_g - 1}, 1);
-    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1485,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
+    __haxe_Log.trace(i[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1494,className="sunaba.studio.Editor",methodName="refreshLeftSidebar"}));
     local tabIcon = tabContainerBar:getTabIcon(i[0]);
     local tabTitle = tabContainerBar:getTabTitle(i[0]);
     local tabButton = __sunaba_ui_Button.new();
@@ -39357,6 +39471,7 @@ __sunaba_studio_Editor.prototype.save = function(self)
 end
 __sunaba_studio_Editor.prototype.buildSystem= nil;
 __sunaba_studio_Editor.prototype.gamepakBuildCoroutine= nil;
+__sunaba_studio_Editor.prototype.progressBarCoroutine= nil;
 __sunaba_studio_Editor.prototype.isGamePaused= nil;
 __sunaba_studio_Editor.prototype.playOnBuild= nil;
 __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self) 
@@ -39376,7 +39491,7 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
     local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1872,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1882,className="sunaba.studio.Editor",methodName="buildSnbForPlay"}));
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
@@ -39397,8 +39512,12 @@ __sunaba_studio_Editor.prototype.buildSnbForPlay = function(self)
     do return haxeBytes end
    end;
   self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
+  self.progressBarCoroutine = _G.coroutine.create(function() 
+    do return end;
+  end);
   self.playOnBuild = true;
   _G.coroutine.resume(self.gamepakBuildCoroutine);
+  _G.coroutine.resume(self.progressBarCoroutine);
 end
 __sunaba_studio_Editor.prototype.buildProject = function(self) 
   if (self.isGameRunning) then 
@@ -39429,7 +39548,7 @@ __sunaba_studio_Editor.prototype.buildProject = function(self)
    end;
   self.buildSystem.jsonToMsgpackConverter = function(json) 
     local data = __sunaba_JSON.parseString(json):asDictionary();
-    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Editor.hx",lineNumber=1913,className="sunaba.studio.Editor",methodName="buildProject"}));
+    __haxe_Log.trace(data:keys():size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1925,className="sunaba.studio.Editor",methodName="buildProject"}));
     local script = NativeReference.new("res://Engine/MessagePack.gd", __sunaba_core__ArrayList_ArrayList_Impl_._new(), 1);
     local args = __sunaba_core__ArrayList_ArrayList_Impl_._new();
     args:append(__sunaba_core__Variant_Variant_Impl_.fromDictionary(data));
@@ -39450,8 +39569,28 @@ __sunaba_studio_Editor.prototype.buildProject = function(self)
     do return haxeBytes end
    end;
   self.gamepakBuildCoroutine = self.buildSystem:buildCoroutine(self:get_projectFilePath());
+  self.progressBarCoroutine = _G.coroutine.create(function() 
+    do return end;
+  end);
   self.playOnBuild = false;
   _G.coroutine.resume(self.gamepakBuildCoroutine);
+  _G.coroutine.resume(self.progressBarCoroutine);
+end
+__sunaba_studio_Editor.prototype.getPbcrt = function(self) 
+  do return _G.coroutine.create(function() 
+    do return end;
+  end) end
+end
+__sunaba_studio_Editor.prototype.buildProgress= nil;
+__sunaba_studio_Editor.prototype.startTrack = function(self) 
+  local maxCount = self.buildSystem:buildCoroutineCount(self:get_projectFilePath());
+  __haxe_Log.trace(maxCount, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1962,className="sunaba.studio.Editor",methodName="startTrack"}));
+  self.buildProgress = self:getNodeT_sunaba_ui_ProgressBar(__sunaba_ui_ProgressBar, "playBuildWindow/vbox/buildProgress");
+  if (self.buildProgress == nil) then 
+    __haxe_Log.trace("ARE YOU FOCKING KIDDING ME", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Editor.hx",lineNumber=1966,className="sunaba.studio.Editor",methodName="startTrack"}));
+    __sunaba_App.exit(-1);
+  end;
+  self.buildProgress:set_maxValue(maxCount);
 end
 __sunaba_studio_Editor.prototype.unpause = function(self) 
   self.playButton:set_disabled(true);
@@ -39667,7 +39806,7 @@ __sunaba_studio_Explorer.prototype.newFileDialog= nil;
 __sunaba_studio_Explorer.prototype.newFileWidget= nil;
 __sunaba_studio_Explorer.prototype.editorInit = function(self) 
   local _gthis = self;
-  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace("Hello, World!", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=45,className="sunaba.studio.Explorer",methodName="editorInit"}));
   self:getEditor():setLeftSidebarTabTitle(self, "Project Explorer");
   local iconBin = self.io:loadBytes("studio://icons/16_1-5x/blue-folder-stand.png");
   local iconImage = __sunaba_Image.new();
@@ -39681,8 +39820,8 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
   self.throbberParent = self:getNodeT_sunaba_ui_Control(__sunaba_ui_Control, "vbox/toolbar1/hbox/throbber");
   self.throbberRect = self:getNodeT_sunaba_ui_TextureRect(__sunaba_ui_TextureRect, "vbox/toolbar1/hbox/throbber/textureRect");
   local throbberPath = "studio://throbber-animated";
-  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
-  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:directoryExists(throbberPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=65,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(self.io:fileExists(Std.string(throbberPath) .. Std.string("/icon0.png")), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=66,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local throbberTxtListN = self.io:getFileList(throbberPath, ".png", false);
   local result = Array.new();
   local _g = 0;
@@ -39704,12 +39843,12 @@ __sunaba_studio_Explorer.prototype.editorInit = function(self)
       if (self.io:fileExists(iconPath)) then 
         throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
       else
-        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=75,className="sunaba.studio.Explorer",methodName="editorInit"}));
         break;
       end;
     end;
   end;
-  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
+  __haxe_Log.trace(throbberTxtList.length, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=80,className="sunaba.studio.Explorer",methodName="editorInit"}));
   local _g = 0;
   while (_g < throbberTxtList.length) do _hx_do_first_1 = false;
     
@@ -39746,15 +39885,15 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
   local projFilePathArray = String.prototype.split(String.prototype.split(self:getEditor():get_projectFilePath(), "\\"):join("/"), "/");
   if (projFilePathArray.length > 0) then 
     self.projectDirectory = projFilePathArray:slice(0, projFilePathArray.length - 1):join("/");
-    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=118,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("ProjectTree initialized with directory: ") .. Std.string(self.projectDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=118,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (((self:getEditor():get_projectFile().assetsdir ~= nil) and (self:getEditor():get_projectFile().assetsdir ~= "")) and (String.prototype.indexOf(self:getEditor():get_projectFile().assetsdir, "null") == -1)) then 
       self.assetsDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().assetsdir)) .. Std.string("/");
     else
       self.assetsDirectory = "";
     end;
     self.sourceDirectory = Std.string(Std.string(Std.string(self.projectDirectory) .. Std.string("/")) .. Std.string(self:getEditor():get_projectFile().scriptdir)) .. Std.string("/");
-    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=129,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=130,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Assets Directory: ") .. Std.string(self.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=129,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+    __haxe_Log.trace(Std.string("Source Directory: ") .. Std.string(self.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=130,className="sunaba.studio.Explorer",methodName="startExplorer"}));
     if (self.assetsDirectory ~= "") then 
       local projectIo = __sunaba_io_FileSystemIo.new();
       projectIo:open(self.assetsDirectory, self:getEditor():get_projectFile().rootUrl);
@@ -39771,7 +39910,7 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/blue-folder.png"), "Folder");
     newMenu:addIconItem(self:loadIcon("stduio://icons/16/document.png"), "File");
     __sunaba_core__Signal_Signal_Impl_.add(newMenu:get_idPressed(), function(id) 
-      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=153,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+      __haxe_Log.trace(id, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=153,className="sunaba.studio.Explorer",methodName="startExplorer"}));
       if (id == 0) then 
         __sunaba_Debug.error("Folder creation not implemented.");
       else
@@ -39788,9 +39927,9 @@ __sunaba_studio_Explorer.prototype.startExplorer = function(self)
               dirPath = dirPathArray:join("/");
             end;
             local pathType = -1;
-            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=170,className="sunaba.studio.Explorer",methodName="startExplorer"}));
-            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\Explorer.hx",lineNumber=171,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(dirPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=169,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.assetsDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=170,className="sunaba.studio.Explorer",methodName="startExplorer"}));
+            __haxe_Log.trace(StringTools.startsWith(dirPath, _gthis.sourceDirectory), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/Explorer.hx",lineNumber=171,className="sunaba.studio.Explorer",methodName="startExplorer"}));
             if (StringTools.startsWith(dirPath, _gthis.assetsDirectory)) then 
               pathType = 0;
             else
@@ -40293,7 +40432,7 @@ __sunaba_studio_MapViewer.prototype.editorInit = function(self)
       if (self.io:fileExists(iconPath)) then 
         throbberTxtList:push(__sunaba_core__Variant_Variant_Impl_.fromString(iconPath));
       else
-        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\MapViewer.hx",lineNumber=77,className="sunaba.studio.MapViewer",methodName="editorInit"}));
+        __haxe_Log.trace(Std.string("Throbber icon not found: ") .. Std.string(iconPath), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/MapViewer.hx",lineNumber=77,className="sunaba.studio.MapViewer",methodName="editorInit"}));
         break;
       end;
     end;
@@ -40674,7 +40813,7 @@ __sunaba_studio_ModelImportService.inport = function(srcPath,destPath,binaryFile
     local modelImages = modelState:getImages();
     local lossyQuality = modelDocument:get_lossyQuality();
     __sunaba_studio_ModelImportService.yeild();
-    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
+    __haxe_Log.trace(imageFormat, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=135,className="sunaba.studio.ModelImportService",methodName="inport"}));
     local textureDb = Array.new();
     local tmp = imageFormat ~= "None";
     __sunaba_studio_ModelImportService.yeild();
@@ -40902,7 +41041,7 @@ __sunaba_studio_ModelImportService.createEntity = function(document,state,gdnode
             __sunaba_studio_ModelImportService.yeild();
           end;
           __sunaba_studio_ModelImportService.yeild();
-          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=375,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
+          __haxe_Log.trace(param, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=375,className="sunaba.studio.ModelImportService",methodName="createEntity"}));
           param = param + 1;
         end;
         __sunaba_studio_ModelImportService.yeild();
@@ -41020,7 +41159,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
       local childIdx = children[_g];
       _g = _g + 1;
       __sunaba_studio_ModelImportService.yeild();
-      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=467,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+      __haxe_Log.trace(childIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=467,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
       __sunaba_studio_ModelImportService.yeild();
       local childNode = __sunaba_spatial_models_gltf_GLTFNode.new(nodes:get(childIdx):asReference());
       __sunaba_studio_ModelImportService.yeild();
@@ -41044,7 +41183,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
     end;
     __sunaba_studio_ModelImportService.yeild();
   else
-    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=487,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+    __haxe_Log.trace(gdnode:get_name(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=487,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
     __sunaba_studio_ModelImportService.yeild();
     local rootNodes = state:get_rootNodes();
     local nodes = state:getNodes();
@@ -41065,7 +41204,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_1 = "null"; else 
           _hx_1 = nodeIdx:asString(); end
           return _hx_1
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=496,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=496,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -41103,7 +41242,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         local i = _g - 1;
         __sunaba_studio_ModelImportService.yeild();
         local nodeIdx = __sunaba_core__TypedArray_TypedArray_Impl_.get(rootNodes, i);
-        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=523,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(nodeIdx, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=523,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -41145,7 +41284,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
           _hx_2 = "null"; else 
           _hx_2 = nodeIdx:asString(); end
           return _hx_2
-        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=547,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        end )(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=547,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         __sunaba_studio_ModelImportService.yeild();
         if (nodeIdx == nil) then 
           break;
@@ -41160,7 +41299,7 @@ __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode = function(document,
         __sunaba_studio_ModelImportService.yeild();
         local result = __sunaba_studio_ModelImportService.getGltfNodeFromGodotNode(document, state, gdnode, rootNode);
         __sunaba_studio_ModelImportService.yeild();
-        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\ModelImportService.hx",lineNumber=561,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
+        __haxe_Log.trace(result ~= nil, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/ModelImportService.hx",lineNumber=561,className="sunaba.studio.ModelImportService",methodName="getGltfNodeFromGodotNode"}));
         if (result ~= nil) then 
           __sunaba_studio_ModelImportService.yeild();
           do return result end;
@@ -47318,7 +47457,7 @@ __sunaba_studio_SceneEditor.prototype.openScene = function(self,path)
   sceneFile:load(path);
   self.scene = sceneFile:instance();
   self.scene.isInEditor = true;
-  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
+  __haxe_Log.trace(self.scene:getEntityCount(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/SceneEditor.hx",lineNumber=128,className="sunaba.studio.SceneEditor",methodName="openScene"}));
   self.scene:set_processMode(4);
   self.viewport:addChild(self.scene);
   local envRes = __sunaba_ResourceLoaderService.load("res://Engine/Environments/new_environment.tres");
@@ -47798,7 +47937,7 @@ __sunaba_studio_TextureListEditor.prototype.init = function(self)
         else
           selectedItem = nil;
         end;
-        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\TextureListEditor.hx",lineNumber=80,className="sunaba.studio.TextureListEditor",methodName="init"}));
+        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/TextureListEditor.hx",lineNumber=80,className="sunaba.studio.TextureListEditor",methodName="init"}));
         if (selectedItem ~= nil) then 
           _gthis.texturePathList:push(selectedItem);
           local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
@@ -47831,7 +47970,7 @@ __sunaba_studio_TextureListEditor.prototype.init = function(self)
         confirmDialog:queueFree();
       end);
       __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_confirmed(), function() 
-        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\TextureListEditor.hx",lineNumber=87,className="sunaba.studio.TextureListEditor",methodName="init"}));
+        __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/TextureListEditor.hx",lineNumber=87,className="sunaba.studio.TextureListEditor",methodName="init"}));
         if (selectedItem ~= nil) then 
           _gthis.texturePathList:push(selectedItem);
           local texturePathListJson = __haxe_Json.stringify(_gthis.texturePathList, nil, "\t");
@@ -49358,7 +49497,7 @@ end
 __sunaba_studio_explorer_NewFileWidget.prototype.open = function(self,pType,pBaseDir) 
   self.pathType = pType;
   self.baseDir = pBaseDir;
-  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\explorer\\NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
+  __haxe_Log.trace(self.baseDir, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/explorer/NewFileWidget.hx",lineNumber=171,className="sunaba.studio.explorer.NewFileWidget",methodName="open"}));
   if (not StringTools.endsWith(self.baseDir, "/")) then 
     local tmp = self;
     tmp.baseDir = Std.string(tmp.baseDir) .. Std.string("/");
@@ -49693,7 +49832,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onInput = function(self,event)
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=58,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onInput"}));
       do return end;
     end;
   end;
@@ -49766,7 +49905,7 @@ __sunaba_studio_sceneEditor_FreeLook3D.prototype.onUpdate = function(self,deltaT
   if (self.transform == nil) then 
     self.transform = self:getComponent_sunaba_spatial_SpatialTransform(__sunaba_spatial_SpatialTransform);
     if (self.transform == nil) then 
-      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
+      __haxe_Log.trace("Transform is null", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/FreeLook3D.hx",lineNumber=117,className="sunaba.studio.sceneEditor.FreeLook3D",methodName="onUpdate"}));
       do return end;
     end;
   else
@@ -50155,7 +50294,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.editorInit = function(self)
   self.entityVBox = self:getNodeT_sunaba_ui_VBoxContainer(__sunaba_ui_VBoxContainer, "vsplit/entityInspector/scroll/vbox");
   self.nothingEntityIcon24 = self:getEditor().explorer:loadIcon("studio://icons/16_1-5x/question.png");
   self.nothingEntityText = "Nothing Selected";
-  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=172,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
+  __haxe_Log.trace(self.nothingEntityText, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=172,className="sunaba.studio.sceneEditor.SceneInspector",methodName="editorInit"}));
   self.sceneIcon = self:getEditor().explorer:loadIcon("studio://icons/16/clapperboard.png");
   self.prefabIcon = self:getEditor().explorer:loadIcon("studio://icons/16/block.png");
   self.entityIcon16 = self:getEditor().explorer:loadIcon("studio://icons/16/layer.png");
@@ -51048,12 +51187,12 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.refreshInspector = function
         end;
       else
         if (self.mode == __sunaba_studio_sceneEditor_FileType.SceneType) then 
-          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=705,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace("", _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=705,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           local sceneName = self:getEditor():getWorkspaceTabTitle(self.sceneEditor);
-          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=707,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
-          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=708,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(sceneName, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=707,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityText:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=708,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityText:set_text(sceneName);
-          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=710,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
+          __haxe_Log.trace(self.entityIcon:isNull(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=710,className="sunaba.studio.sceneEditor.SceneInspector",methodName="refreshInspector"}));
           self.entityIcon:set_texture(self.sceneIcon24);
         else
           if (self.mode == __sunaba_studio_sceneEditor_FileType.PrefabType) then 
@@ -51086,7 +51225,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     self.entityVBox:addChild(foldableContainer);
     local iconTextureRect = __sunaba_ui_TextureRect.new();
     local iconPath = component[0].editorIconPath;
-    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=738,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(iconPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=738,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     if (iconPath == nil) then 
       iconPath = "studio://icons/16/lightning.png";
     end;
@@ -51108,7 +51247,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     local data = component[0]:getData();
     local dataKeys = data:keys();
     local dataValues = data:values();
-    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=760,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+    __haxe_Log.trace(dataKeys:size(), _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=760,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
     local _g = 0;
     local _g1 = dataKeys:size();
     while (_g < _g1) do _hx_do_first_2 = false;
@@ -51882,7 +52021,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                               if (dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("type")):asInt() == 24) then 
                                 local resDict = dict[0]:get(__sunaba_core__Variant_Variant_Impl_.fromString("value")):asDictionary();
                                 local classType = _hx_tab_array({[0]=resDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("class")):asString()}, 1);
-                                __haxe_Log.trace(classType[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1338,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                __haxe_Log.trace(classType[0], _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=1338,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
                                 if ((((((classType[0] == "Texture2D") or (classType[0] == "ImageTexture")) or (classType[0] == "AudioStream")) or (classType[0] == "AudioStreamOggVorbis")) or (classType[0] == "AudioStreamWAV")) or (classType[0] == "AudioStreamMP3")) then 
                                   local resHbox = __sunaba_ui_HBoxContainer.new();
                                   local respath = _hx_tab_array({[0]=resDict:get(__sunaba_core__Variant_Variant_Impl_.fromString("path")):asString()}, 1);
@@ -52021,7 +52160,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                                             else
                                               selectedItem = nil;
                                             end;
-                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1425,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=1425,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
                                             if (selectedItem ~= nil) then 
                                               setPathFunction[0](selectedItem);
                                             end;
@@ -52030,7 +52169,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                                         end)(setPathFunction));
                                         __sunaba_core__Signal_Signal_Impl_.add(confirmDialog:get_confirmed(), (function(setPathFunction) 
                                           do return function() 
-                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1432,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                            __haxe_Log.trace(selectedItem, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=1432,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
                                             if (selectedItem ~= nil) then 
                                               setPathFunction[0](selectedItem);
                                             end;
@@ -52125,7 +52264,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
                                               _g = _g + 1;
                                               local i = _g - 1;
                                               local subPath = dirs:get(i):asString();
-                                              __haxe_Log.trace(subPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="G:\\studio\\Studio\\Editor\\src\\sunaba\\studio\\sceneEditor\\SceneInspector.hx",lineNumber=1479,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
+                                              __haxe_Log.trace(subPath, _hx_o({__fields__={fileName=true,lineNumber=true,className=true,methodName=true},fileName="/home/mintkat/.local/share/Steam/steamapps/common/Sunaba Studio/.haxelib/sunaba-studio/0,0,0/sunaba/studio/sceneEditor/SceneInspector.hx",lineNumber=1479,className="sunaba.studio.sceneEditor.SceneInspector",methodName="buildComponentTree"}));
                                               recurseDirFunc(subPath, dirItem);
                                             end;
                                             local vorbisFiles = _gthis.io:getFileList(dirpath, ".ogg", false);
@@ -52300,7 +52439,7 @@ __sunaba_studio_sceneEditor_SceneInspector.prototype.buildComponentTree = functi
     x = 0;
   end;
   centerContainer:set_customMinimumSize(Vector2.new(x, y));
-  if (not ((entity:isPrefab() and (entity ~= self.selectedEntity)) and (entity ~= self.prefab))) then 
+  if (((entity:isPrefab() and (entity ~= self.selectedEntity)) and (entity ~= self.prefab)) == false) then 
     local button = __sunaba_ui_Button.new();
     button:set_text("Add Component");
     local x = 200.0;
