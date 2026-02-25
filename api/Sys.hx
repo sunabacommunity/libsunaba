@@ -91,12 +91,16 @@ class Sys {
 		return haxe.io.Path.join([getCwd(), Lua.arg[0]]);
 	}
 
-	public inline static function getCwd():String
-		return haxe.io.Path.addTrailingSlash(NativeObject.callStatic("DirAccess", "get_current_dir", new ArrayList()));
+	public inline static function getCwd():String {
+		var native = new NativeReference("res://Engine/HxSys.cs", new ArrayList(), ScriptType.csharp);
+		return haxe.io.Path.addTrailingSlash(native.call("GetCwd", new ArrayList()));
+	}
+
 
 	public inline static function setCwd(s:String):Void {
 		var args: Array<Variant> = [s];
-		NativeObject.callStatic("DirAccess", "change_dir", args);
+		var native = new NativeReference("res://Engine/HxSys.cs", new ArrayList(), ScriptType.csharp);
+		native.call("SetCwd", args);
 	}
 
 	public inline static function getEnv(s:String):String {
