@@ -1,0 +1,4 @@
+/.haxelib/*
+/.studio/*
+/bin/*
+types.xml
