@@ -52,6 +52,10 @@ class MeshDisplay extends IGeometryInstance {
 		return node.native.call("get_surface_override_count", new ArrayList());
 	}
 
+	public function getSurfaceOverideMaterial(surface: Int): Material {
+		return new Material(node.native.call("get_surface_overide_material", new ArrayList()));
+	}
+
 	public function setBlendShapeValue(index: Int, value: Float): Void {
 		var args = new ArrayList();
 		args.append(index);
@@ -94,13 +98,13 @@ class MeshDisplay extends IGeometryInstance {
                 var parts = propKey.split("/");
                 var bindIdx = Std.parseInt(parts[1]);
                 var propName = parts[2];
-                    
+
                 if (!bindDataMap.exists(bindIdx)) {
                     bindDataMap.set(bindIdx, new Map());
                 }
-                    
+
 				trace("bindIdx: " + bindIdx + " propName: " + propName + " data: " + JSON.stringify(skinProperties.get(propKey).toDictionary().get("value")));
-                bindDataMap.get(bindIdx).set(propName, 
+                bindDataMap.get(bindIdx).set(propName,
                     DataUtils.dictToVar(skinProperties.get(propKey).toDictionary()));
             }
         }*/
@@ -109,7 +113,7 @@ class MeshDisplay extends IGeometryInstance {
 			var bindData = bindDataMap.get(bindIdx);
 			var bone = bindData.get("bone");
 			var pose = bindData.get("pose");
-			
+
 			skin.addBind(bone.toInt(), pose);
 		}*//*
 		for (bindIdx in bindDataMap.keys()) {
@@ -117,7 +121,7 @@ class MeshDisplay extends IGeometryInstance {
 			var bone = bindData.get("bone");
 			var pose = bindData.get("pose");
 			var name: String = bindData.get("name");
-			
+
 			skin.setBindName(bindIdx, name);
 			skin.setBindBone(bindIdx, bone);
 			skin.setBindPose(bindIdx, pose);
