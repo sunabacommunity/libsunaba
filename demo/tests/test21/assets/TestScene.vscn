@@ -1,0 +1,111 @@
+{
+	"classType": "sunaba.SceneFile",
+	"entities": [
+		{
+			"children": [],
+			"classType": "sunaba.EntityData",
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								4.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				},
+				{
+					"data": {
+						"cullMask": 1048575,
+						"current": false,
+						"dopplerTracking": 0,
+						"far": 4000.0,
+						"fov": 75.0,
+						"frustumOffset": {
+							"type": 5,
+							"value": [
+								0.0,
+								0.0
+							]
+						},
+						"hOffset": 0.0,
+						"keepAspect": 1.0,
+						"near": 0.0500000007450581,
+						"projection": 0,
+						"size": 1.0,
+						"vOffset": 0.0
+					},
+					"type": "sunaba.spatial.Camera"
+				}
+			],
+			"name": "Camera",
+			"path": ""
+		},
+		{
+			"children": [
+			],
+			"classType": "sunaba.EntityData",
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				},
+				{
+					"data": {
+
+					},
+					"type": "test21.CharacterLoader"
+				}
+			],
+			"name": "CharacterLoader",
+			"path": ""
+		}
+	],
+	"path": "",
+	"sceneType": 0
+}
