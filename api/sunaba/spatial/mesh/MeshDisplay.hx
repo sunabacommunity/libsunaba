@@ -52,8 +52,17 @@ class MeshDisplay extends IGeometryInstance {
 		return node.native.call("get_surface_override_count", new ArrayList());
 	}
 
-	public function getSurfaceOverideMaterial(surface: Int): Material {
-		return new Material(node.native.call("get_surface_overide_material", new ArrayList()));
+	public function getSurfaceOverrideMaterial(surface: Int): Material {
+		var args = new ArrayList();
+		args.append(surface);
+		return new Material(node.native.call("get_surface_override_material", args));
+	}
+
+	public function setSurfaceOverrideMaterial(surface: Int, material: Material): Void {
+		var args = new ArrayList();
+		args.append(surface);
+		args.append(material.native);
+		node.native.call("set_surface_override_material", args);
 	}
 
 	public function setBlendShapeValue(index: Int, value: Float): Void {
