@@ -14,6 +14,7 @@ class SceneFile extends ScriptableObject {
 
 		for (i in 0...scene.getEntityCount()) {
 			var entity = scene.getEntity(i);
+			if (entity.hidden) continue;
 			var entityData: EntityBaseData;
 			if (entity.isPrefab()) {
 				var prefabPath = new PrefabPath();
