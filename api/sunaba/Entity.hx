@@ -6,10 +6,12 @@ import sunaba.input.InputEvent;
 
 class Entity extends BaseClass {
 	public function new() {
-
+		hidden = false;
 	}
 
 	private var _freed: Bool = false;
+
+	public var hidden: Bool;
 
 	public var name = "Entity";
 
