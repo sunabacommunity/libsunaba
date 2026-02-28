@@ -30,6 +30,7 @@ class EntityData extends EntityBaseData {
 
 		for (i in 0...entity.getChildCount()) {
 			var child = entity.getChild(i);
+			if (child.hidden == true) continue;
 			var childData : EntityBaseData;
 			if (child.isPrefab()) {
 				var prefabPath = new PrefabPath();
