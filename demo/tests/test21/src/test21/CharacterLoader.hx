@@ -11,7 +11,9 @@ class CharacterLoader extends Behavior {
 		var characterData = new CharacterData();
 		characterData.faceTexture = new FaceTextureData();
 		characterData.faceTexture.load("basechar://data/face_green_xl.ftd");
+
 		characterData.skinTone = Color.html("#ffdbac");
+		characterData.save("user://characterData.vchr");
 
 		var maleCharacterPrefab = new Prefab();
 		maleCharacterPrefab.load("basechar://models/MaleModel.smdl");
