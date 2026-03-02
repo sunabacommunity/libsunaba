@@ -50,6 +50,7 @@ class CharacterRig extends Behavior {
 			var prefab = new Prefab();
 			prefab.load(prefabPath);
 			var prefabEntity = prefab.instance();
+			trace(headwearAttachment != null);
 			if (headwearAttachment != null) {
 				headwearAttachment.addChild(prefabEntity);
 			}
@@ -57,6 +58,7 @@ class CharacterRig extends Behavior {
 
 		if (data.bodyType == BodyType.female) {
 			var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
+			trace(dressLoader.isValid());
 			if (dressLoader.isValid()) {
 				var dress = data.femaleDress;
 				var dressNode: Node = null;
@@ -72,6 +74,8 @@ class CharacterRig extends Behavior {
 				else if (dress.dressType == 4) {
 					dressNode = new Node(dressLoader.call("loadDress4", new ArrayList()));
 				}
+				trace(dressNode != null);
+				trace(!dressNode.isNull());
 				if (dressNode != null && !dressNode.isNull()) {
 					entity.node.addChild(dressNode);
 
