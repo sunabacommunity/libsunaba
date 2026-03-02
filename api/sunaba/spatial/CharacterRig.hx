@@ -109,13 +109,13 @@ class CharacterRig extends Behavior {
 					var outerDressMaterialArgs = new ArrayList();
 					outerDressMaterialArgs.append(0);
 					outerDressMaterialArgs.append(outerDressMaterial);
-					femaleDressMeshNode.call("set_surface_override_material", outerDressMaterialArgs);
+					femaleDressMeshNode.native.call("set_surface_override_material", outerDressMaterialArgs);
 					var innerDressMaterial = new StandardMaterial3D();
 					innerDressMaterial.albedoTexture = dress.innerTexture;
 					var innerDressMaterialArgs = new ArrayList();
 					innerDressMaterialArgs.append(0);
 					innerDressMaterialArgs.append(innerDressMaterial);
-					femaleDressMeshNode.call("set_surface_override_material", innerDressMaterialArgs);
+					femaleDressMeshNode.native.call("set_surface_override_material", innerDressMaterialArgs);
 				}
 			}
 		}
