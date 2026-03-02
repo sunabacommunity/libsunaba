@@ -6,7 +6,7 @@ class FemaleDress extends ScriptableObject {
 	public var desc: String;
 	public var dressType: Int;
 	public var innerTexture: Texture2D;
-	public var outterTexture: Texture2D;
+	public var outerTexture: Texture2D;
 
 	public override function getData() {
 		var data = super.getData();
