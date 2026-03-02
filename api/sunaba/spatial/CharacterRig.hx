@@ -102,6 +102,20 @@ class CharacterRig extends Behavior {
 					rightUpperLegAttachmentRT.remotePath = rightUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D2"));
 					leftLowerLegAttachmentRT.remotePath = leftLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D3"));
 					rightLowerLegAttachmentRT.remotePath = rightLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D4"));
+
+					var femaleDressMeshNode = dressNode.getNode("Rig/Skeleton3D/Dress");
+					var outerDressMaterial = new StandardMaterial3D();
+					outerDressMaterial.albedoTexture = dress.innerTexture;
+					var outerDressMaterialArgs = new ArrayList();
+					outerDressMaterialArgs.append(0);
+					outerDressMaterialArgs.append(outerDressMaterial);
+					femaleDressMeshNode.call("set_surface_override_material", outerDressMaterialArgs);
+					var innerDressMaterial = new StandardMaterial3D();
+					innerDressMaterial.albedoTexture = dress.innerTexture;
+					var innerDressMaterialArgs = new ArrayList();
+					innerDressMaterialArgs.append(0);
+					innerDressMaterialArgs.append(innerDressMaterial);
+					femaleDressMeshNode.call("set_surface_override_material", innerDressMaterialArgs);
 				}
 			}
 		}
