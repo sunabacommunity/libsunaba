@@ -62,8 +62,7 @@
 			"path": ""
 		},
 		{
-			"children": [
-			],
+			"children": [],
 			"classType": "sunaba.EntityData",
 			"components": [
 				{
