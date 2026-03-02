@@ -33,7 +33,9 @@ class CharacterRig extends Behavior {
 		_data = data;
 
 		for (headwear in data.headwearList) {
-			var prefab = headwear.prefab;
+			var prefabPath = headwear.prefab;
+			var prefab = new Prefab();
+			prefab.load(prefabPath);
 			var prefabEntity = prefab.instance();
 			if (headwearAttachment != null) {
 				headwearAttachment.addChild(prefabEntity);
