@@ -7,6 +7,7 @@ import sunaba.core.Vector2i;
 import sunaba.core.Reference;
 import sunaba.core.native.NativeObject;
 import sunaba.core.native.NativeReference;
+import sunaba.core.Vector3;
 
 class CharacterRig extends Behavior {
 	private var _data: CharacterData;
@@ -57,7 +58,7 @@ class CharacterRig extends Behavior {
 		}
 
 		if (data.bodyType == BodyType.female) {
-			var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
+			/*var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
 			trace(dressLoader.isValid());
 			if (dressLoader.isValid()) {
 				var dress = data.femaleDress;
@@ -80,7 +81,9 @@ class CharacterRig extends Behavior {
 					entity.node.addChild(dressNode);
 
 					var dressAttachmentChild = new Entity();
-					dressAttachmentChild.addComponent(SpatialTransform);
+					var datf = dressAttachmentChild.addComponent(SpatialTransform);
+					datf.position = new Vector3(0.0, -0.1, 0.012);
+					datf.rotation = new Vector3(0.1, datf.rotation.y, datf.rotation.z);
 					dressAttachment.addChild(dressAttachmentChild);
 					var leftUpperLegAttachmentChild = new Entity();
 					leftUpperLegAttachmentChild.addComponent(SpatialTransform);
@@ -117,11 +120,11 @@ class CharacterRig extends Behavior {
 					var innerDressMaterial = new StandardMaterial3D();
 					innerDressMaterial.albedoTexture = dress.innerTexture;
 					var innerDressMaterialArgs = new ArrayList();
-					innerDressMaterialArgs.append(0);
+					innerDressMaterialArgs.append(1);
 					innerDressMaterialArgs.append(innerDressMaterial);
 					femaleDressMeshNode.native.call("set_surface_override_material", innerDressMaterialArgs);
 				}
-			}
+			}*/
 		}
 
 		var grad = new Gradient();
