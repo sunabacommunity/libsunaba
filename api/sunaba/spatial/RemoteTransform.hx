@@ -1,6 +1,7 @@
 ﻿package sunaba.spatial;
 import sunaba.core.ArrayList;
 import sunaba.core.Dictionary;
+import sunaba.core.native.NativeObject;
 
 class RemoteTransform extends Behavior {
 	public var node: Node;
@@ -74,5 +75,23 @@ class RemoteTransform extends Behavior {
 		updateRotation = data.get("updateRotation");
 		updateScale = data.get("updateScale");
 		useGlobalCoordinates = data.get("useGlobalCoordinates");
+	}
+
+	public override function onInit() {
+		node = new Node(new NativeObject("RemoteTransform3D"));
+
+		var transform = getComponent(SpatialTransform);
+		if (transform != null) {
+			transform.node = node;
+		}
+	}
+
+	public override function onStart() {
+		if (node.getParent().isNull()) {
+			var transform = getComponent(SpatialTransform);
+			if (transform != null) {
+				transform.node = node;
+			}
+		}
 	}
 }
