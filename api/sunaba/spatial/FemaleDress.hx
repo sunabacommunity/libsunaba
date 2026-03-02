@@ -14,7 +14,8 @@ class FemaleDress extends ScriptableObject {
 		data.set("name", name);
 		data.set("desc", desc);
 		data.set("dressType", dressType);
-		data.set("texture", DataUtils.varToDict(texture.native));
+		data.set("innerTexture", DataUtils.varToDict(innerTexture.native));
+		data.set("outerTexture", DataUtils.varToDict(outerTexture.native));
 
 		return data;
 	}
@@ -25,6 +26,7 @@ class FemaleDress extends ScriptableObject {
 		name = data.get("name");
 		desc = data.get("desc");
 		dressType = data.get("dressType");
-		texture = new Texture2D(DataUtils.dictToVar(data.get("texture")));
+		innerTexture = new Texture2D(DataUtils.dictToVar(data.get("innerTexture")));
+		outerTexture = new Texture2D(DataUtils.dictToVar(data.get("outerTexture")));
 	}
 }
