@@ -6,11 +6,17 @@ import sunaba.core.Rect2i;
 import sunaba.core.Vector2i;
 import sunaba.core.Reference;
 import sunaba.core.native.NativeObject;
+import sunaba.core.native.NativeReference;
 
 class CharacterRig extends Behavior {
 	private var _data: CharacterData;
 
 	public var headwearAttachment: Entity;
+	public var dressAttachment: Entity;
+	public var leftUpperLegAttachment: Entity;
+	public var rightUpperLegAttachment: Entity;
+	public var leftLowerLegAttachment: Entity;
+	public var rightLowerLegAttachment: Entity;
 
 	public var meshEntity: Entity;
 	public var meshDisplay: MeshDisplay;
@@ -21,6 +27,13 @@ class CharacterRig extends Behavior {
 
 	public override function onStart() {
 		headwearAttachment = entity.find("/Rig/Skeleton3D/Head/HeadwearAttachment");
+		dressAttachment = entity.find("/Rig/Skeleton3D/DressAttachment");
+		leftUpperLegAttachment = entity.find("/Rig/Skeleton3D/LeftUpperLegAttachment");
+		rightUpperLegAttachment = entity.find("/Rig/Skeleton3D/RightUpperLegAttachment");
+		leftLowerLegAttachment = entity.find("/Rig/Skeleton3D/LeftLowerLegAttachment");
+		rightLowerLegAttachment = entity.find("/Rig/Skeleton3D/RightLowerLegAttachment");
+
+
 		meshEntity = entity.find("/Rig/Skeleton3D/Mesh");
 		trace(meshEntity == null);
 		if (meshEntity != null) {
@@ -39,6 +52,57 @@ class CharacterRig extends Behavior {
 			var prefabEntity = prefab.instance();
 			if (headwearAttachment != null) {
 				headwearAttachment.addChild(prefabEntity);
+			}
+		}
+
+		if (data.bodyType == BodyType.female) {
+			var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
+			if (dressLoader.isValid()) {
+				var dress = data.femaleDress;
+				var dressNode: Node = null;
+				if (dress.dressType == 0) {
+					dressNode = new Node(dressLoader.call("loadDress1", new ArrayList()));
+				}
+				else if (dress.dressType == 1) {
+					dressNode = new Node(dressLoader.call("loadDress2", new ArrayList()));
+				}
+				else if (dress.dressType == 2) {
+					dressNode = new Node(dressLoader.call("loadDress3", new ArrayList()));
+				}
+				else if (dress.dressType == 4) {
+					dressNode = new Node(dressLoader.call("loadDress4", new ArrayList()));
+				}
+				if (dressNode != null && !dressNode.isNull()) {
+					entity.node.addChild(dressNode);
+
+					var dressAttachmentChild = new Entity();
+					dressAttachmentChild.addComponent(SpatialTransform);
+					dressAttachment.addChild(dressAttachmentChild);
+					var leftUpperLegAttachmentChild = new Entity();
+					leftUpperLegAttachmentChild.addComponent(SpatialTransform);
+					leftUpperLegAttachment.addChild(leftUpperLegAttachmentChild);
+					var rightUpperLegAttachmentChild = new Entity();
+					rightUpperLegAttachmentChild.addComponent(SpatialTransform);
+					rightUpperLegAttachment.addChild(rightUpperLegAttachmentChild);
+					var leftLowerLegAttachmentChild = new Entity();
+					leftLowerLegAttachmentChild.addComponent(SpatialTransform);
+					leftLowerLegAttachment.addChild(leftLowerLegAttachmentChild);
+					var rightLowerLegAttachmentChild = new Entity();
+					rightLowerLegAttachmentChild.addComponent(SpatialTransform);
+					rightLowerLegAttachment.addChild(rightLowerLegAttachmentChild);
+
+					var dressAttachmentRT = dressAttachmentChild.addComponent(RemoteTransform);
+					var leftUpperLegAttachmentRT = leftUpperLegAttachmentChild.addComponent(RemoteTransform);
+					var rightUpperLegAttachmentRT = rightUpperLegAttachmentChild.addComponent(RemoteTransform);
+					var leftLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
+					var rightLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
+
+					dressAttachmentRT.remotePath = dressAttachmentRT.node.getPathTo(dressNode);
+					leftUpperLegAttachmentRT.remotePath = leftUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D"));
+					rightUpperLegAttachmentRT.remotePath = rightUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D2"));
+					leftLowerLegAttachmentRT.remotePath = leftLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D3"));
+					rightLowerLegAttachmentRT.remotePath = rightLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D4"));
+				}
 			}
 		}
 
@@ -79,6 +143,14 @@ class CharacterRig extends Behavior {
 			meshDisplay.setSurfaceOverrideMaterial(0, material0);
 			meshDisplay.setSurfaceOverrideMaterial(1, material1);
 			meshDisplay.setSurfaceOverrideMaterial(2, material2);
+
+			if (data.bodyType == BodyType.female) {
+				meshDisplay.setBlendShapeValue(2, Clamp(data.femaleChestSize, 0.0, 1.0));
+			}
+			else if (data.bodyType == BodyType.male) {
+				meshDisplay.setBlendShapeValue(2, Clamp(data.maleArmThickness, 0.0, 1.0));
+			}
+			meshDisplay.setBlendShapeValue(3, Clamp(data.legThickness, 0.0, 1.0));
 			trace("");
 		}
 		trace("");
@@ -128,5 +200,9 @@ class CharacterRig extends Behavior {
 		vp.addChild(new Node(camera));
 
 		return vp.getTexture();
+	}
+
+	inline function Clamp(value:Float, min:Float, max:Float):Float {
+		return if (value < min) min else if (value > max) max else value;
 	}
 }
