@@ -36,6 +36,7 @@ class CharacterLoader extends Behavior {
 	}
 
 	public function load() {
+		if (path == "") return;
 		var data = new CharacterData();
 		data.load(path);
 		if (data.bodyType == BodyType.male) {
