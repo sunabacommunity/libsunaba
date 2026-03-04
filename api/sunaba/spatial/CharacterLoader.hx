@@ -26,8 +26,13 @@ class CharacterLoader extends Behavior {
 		return animPlayer;
 	}
 
+	public override function onInit() {
+		loaded = false;
+	}
+
 	public override function onStart(){
 		load();
+		loaded = true;
 	}
 
 	public function load() {
@@ -42,6 +47,8 @@ class CharacterLoader extends Behavior {
 	}
 
 	public var characterEntity: Entity = null;
+
+	private var loaded: Bool = false;
 
 	private inline function loadCharacterModel(data: CharacterData, modelPath: String) {
 		var prefab = new Prefab();
@@ -75,5 +82,8 @@ class CharacterLoader extends Behavior {
 		super.setData(data);
 
 		path = data.get("path", path);
+		if (loaded == true) {
+			load();
+		}
 	}
 }
