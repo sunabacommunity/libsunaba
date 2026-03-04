@@ -1,0 +1,51 @@
+{
+	"bodyType": 1,
+	"classType": "sunaba.spatial.CharacterData",
+	"clothes": [
+		{
+			"classType": "sunaba.spatial.Clothing",
+			"desc": "",
+			"name": "Himiko's dress",
+			"path": "",
+			"texture": {
+				"type": 24,
+				"value": {
+					"class": "ImageTexture",
+					"path": "app://HimikoOutfit.png"
+				}
+			}
+		}
+	],
+	"desc": "",
+	"faceTexture": {
+		"classType": "sunaba.spatial.FaceTextureData",
+		"desc": "",
+		"name": "Monolid Girly - Green",
+		"path": "",
+		"texture": {
+			"type": 24,
+			"value": {
+				"class": "ImageTexture",
+				"path": "basechar://textures/face_green_monolid_girly_xl.png"
+			}
+		}
+	},
+	"femaleChestSize": 0.0,
+	"headwearList": [
+		{
+			"classType": "sunaba.spatial.Headwear",
+			"desc": "",
+			"name": "",
+			"path": "",
+			"prefab": "app://HimikoHair.smdl"
+		}
+	],
+	"legThickness": 0.0,
+	"maleArmThickness": 0.0,
+	"name": "",
+	"path": "",
+	"skinTone": {
+		"type": 20,
+		"value": "ffdbacff"
+	}
+}
