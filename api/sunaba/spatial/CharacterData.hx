@@ -32,7 +32,7 @@ class CharacterData extends ScriptableObject {
 		data.set("femaleChestSize", femaleChestSize);
 		data.set("legThickness", legThickness);
 		data.set("maleArmThickness", maleArmThickness);
-		data.set("faceTextures",faceTexture.getData());
+		data.set("faceTexture",faceTexture.getData());
 		var clothesArr = new ArrayList();
 		for (clothing in clothes) {
 			clothesArr.append(clothing.getData());
