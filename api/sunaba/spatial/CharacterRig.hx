@@ -139,7 +139,7 @@ class CharacterRig extends Behavior {
 
 		var faceTextureData = data.faceTexture;
 		var faceTextureSize = faceTextureData.texture.getSize();
-		skinToneTexture.setSizeOverride(new Vector2i(Std.int(faceTextureSize.x), Std.int(faceTextureSize.y)));
+		skinToneTexture.setSizeOverride(new Vector2i(512, 512));
 		var faceTexture = combineTextures([skinToneTexture, faceTextureData.texture], new Vector2i(Std.int(faceTextureSize.x), Std.int(faceTextureSize.y)));
 
 		var clothes = data.clothes;
@@ -149,7 +149,7 @@ class CharacterRig extends Behavior {
 			clothingTextureArray.push(clothing.texture);
 		}
 		var clothingTextureSize = clothingTextureArray[0].getSize();
-		var combinedClothingTexture = combineTextures(clothingTextureArray, new Vector2i(Std.int(faceTextureSize.x), Std.int(faceTextureSize.y)));
+		var combinedClothingTexture = combineTextures(clothingTextureArray, new Vector2i(512, 512));
 
 		if (meshDisplay != null) {
 			var material0 = new StandardMaterial3D();
@@ -157,7 +157,7 @@ class CharacterRig extends Behavior {
 			var material2 = new StandardMaterial3D();// Reference.castTo(meshDisplay.getSurfaceOverideMaterial(2), BaseMaterial3D);
 			trace(material0.isNull());
 
-			material0.albedoTexture = combineTextures([skinToneTexture], new Vector2i(Std.int(faceTextureSize.x), Std.int(faceTextureSize.y)));
+			material0.albedoTexture = combineTextures([skinToneTexture], new Vector2i(32, 32));
 			material1.albedoTexture = faceTexture;
 			material2.albedoTexture = combinedClothingTexture;
 
