@@ -13,7 +13,7 @@ class DotNetInteropService extends BaseClass {
 		var _args = new ArrayList();
 		_args.append(classname);
 		_args.append(args);
-		return new DotNetObject(getObj().call("Instantiate", _args));
+		return new DotNetObject(getObj().call("Instantiate", _args).toNativeReference());
 	}
 
 	public static function callStatic(classname: String, methodname: String, args: ArrayList): Variant {
