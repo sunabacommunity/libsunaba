@@ -43,6 +43,7 @@ class CharacterLoader extends Behavior {
 		himikoDressTexture.native.set("asset_path", himikoDressImagePath);
 		femaleDress.innerTexture = himikoDressTexture;
 		femaleDress.outerTexture = himikoDressTexture;
+		femaleDress.save("user://dress.vdrs");
 		femaleCharacterData.femaleDress = femaleDress;
 
 		femaleCharacterData.skinTone = Color.html("#ffdbac");
