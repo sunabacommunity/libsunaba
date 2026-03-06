@@ -83,9 +83,9 @@ class CharacterRig extends Behavior {
 
 						var dressAttachmentChild = new Entity();
 						var datf = dressAttachmentChild.addComponent(SpatialTransform);
-						datf.position = new Vector3(0.0, -0.1, 0.012);
-						datf.rotation = new Vector3(0.1, datf.rotation.y, datf.rotation.z);
 						dressAttachment.addChild(dressAttachmentChild);
+						datf.position = new Vector3(0.0, -0.106992, 0.013256);
+						datf.globalRotation = new Vector3(0.059921, datf.rotation.y, datf.rotation.z);
 						var leftUpperLegAttachmentChild = new Entity();
 						leftUpperLegAttachmentChild.addComponent(SpatialTransform);
 						leftUpperLegAttachment.addChild(leftUpperLegAttachmentChild);
