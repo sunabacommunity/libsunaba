@@ -58,73 +58,75 @@ class CharacterRig extends Behavior {
 		}
 
 		if (data.bodyType == BodyType.female) {
-			/*var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
+			var dressLoader = new NativeReference("res://Engine/FemaleDressLoader.gd", new ArrayList(), 1);
 			trace(dressLoader.isValid());
 			if (dressLoader.isValid()) {
 				var dress = data.femaleDress;
-				var dressNode: Node = null;
-				if (dress.dressType == 0) {
-					dressNode = new Node(dressLoader.call("loadDress1", new ArrayList()));
-				}
-				else if (dress.dressType == 1) {
-					dressNode = new Node(dressLoader.call("loadDress2", new ArrayList()));
-				}
-				else if (dress.dressType == 2) {
-					dressNode = new Node(dressLoader.call("loadDress3", new ArrayList()));
-				}
-				else if (dress.dressType == 4) {
-					dressNode = new Node(dressLoader.call("loadDress4", new ArrayList()));
-				}
-				trace(dressNode != null);
-				trace(!dressNode.isNull());
-				if (dressNode != null && !dressNode.isNull()) {
-					entity.node.addChild(dressNode);
+				if (dress != null) {
+					var dressNode: Node = null;
+					if (dress.dressType == 0) {
+						dressNode = new Node(dressLoader.call("loadDress1", new ArrayList()));
+					}
+					else if (dress.dressType == 1) {
+						dressNode = new Node(dressLoader.call("loadDress2", new ArrayList()));
+					}
+					else if (dress.dressType == 2) {
+						dressNode = new Node(dressLoader.call("loadDress3", new ArrayList()));
+					}
+					else if (dress.dressType == 4) {
+						dressNode = new Node(dressLoader.call("loadDress4", new ArrayList()));
+					}
+					trace(dressNode != null);
+					trace(!dressNode.isNull());
+					if (dressNode != null && !dressNode.isNull()) {
+						entity.node.addChild(dressNode);
 
-					var dressAttachmentChild = new Entity();
-					var datf = dressAttachmentChild.addComponent(SpatialTransform);
-					datf.position = new Vector3(0.0, -0.1, 0.012);
-					datf.rotation = new Vector3(0.1, datf.rotation.y, datf.rotation.z);
-					dressAttachment.addChild(dressAttachmentChild);
-					var leftUpperLegAttachmentChild = new Entity();
-					leftUpperLegAttachmentChild.addComponent(SpatialTransform);
-					leftUpperLegAttachment.addChild(leftUpperLegAttachmentChild);
-					var rightUpperLegAttachmentChild = new Entity();
-					rightUpperLegAttachmentChild.addComponent(SpatialTransform);
-					rightUpperLegAttachment.addChild(rightUpperLegAttachmentChild);
-					var leftLowerLegAttachmentChild = new Entity();
-					leftLowerLegAttachmentChild.addComponent(SpatialTransform);
-					leftLowerLegAttachment.addChild(leftLowerLegAttachmentChild);
-					var rightLowerLegAttachmentChild = new Entity();
-					rightLowerLegAttachmentChild.addComponent(SpatialTransform);
-					rightLowerLegAttachment.addChild(rightLowerLegAttachmentChild);
+						var dressAttachmentChild = new Entity();
+						var datf = dressAttachmentChild.addComponent(SpatialTransform);
+						datf.position = new Vector3(0.0, -0.1, 0.012);
+						datf.rotation = new Vector3(0.1, datf.rotation.y, datf.rotation.z);
+						dressAttachment.addChild(dressAttachmentChild);
+						var leftUpperLegAttachmentChild = new Entity();
+						leftUpperLegAttachmentChild.addComponent(SpatialTransform);
+						leftUpperLegAttachment.addChild(leftUpperLegAttachmentChild);
+						var rightUpperLegAttachmentChild = new Entity();
+						rightUpperLegAttachmentChild.addComponent(SpatialTransform);
+						rightUpperLegAttachment.addChild(rightUpperLegAttachmentChild);
+						var leftLowerLegAttachmentChild = new Entity();
+						leftLowerLegAttachmentChild.addComponent(SpatialTransform);
+						leftLowerLegAttachment.addChild(leftLowerLegAttachmentChild);
+						var rightLowerLegAttachmentChild = new Entity();
+						rightLowerLegAttachmentChild.addComponent(SpatialTransform);
+						rightLowerLegAttachment.addChild(rightLowerLegAttachmentChild);
 
-					var dressAttachmentRT = dressAttachmentChild.addComponent(RemoteTransform);
-					var leftUpperLegAttachmentRT = leftUpperLegAttachmentChild.addComponent(RemoteTransform);
-					var rightUpperLegAttachmentRT = rightUpperLegAttachmentChild.addComponent(RemoteTransform);
-					var leftLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
-					var rightLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
+						var dressAttachmentRT = dressAttachmentChild.addComponent(RemoteTransform);
+						var leftUpperLegAttachmentRT = leftUpperLegAttachmentChild.addComponent(RemoteTransform);
+						var rightUpperLegAttachmentRT = rightUpperLegAttachmentChild.addComponent(RemoteTransform);
+						var leftLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
+						var rightLowerLegAttachmentRT = leftLowerLegAttachmentChild.addComponent(RemoteTransform);
 
-					dressAttachmentRT.remotePath = dressAttachmentRT.node.getPathTo(dressNode);
-					leftUpperLegAttachmentRT.remotePath = leftUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D"));
-					rightUpperLegAttachmentRT.remotePath = rightUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D2"));
-					leftLowerLegAttachmentRT.remotePath = leftLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D3"));
-					rightLowerLegAttachmentRT.remotePath = rightLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D4"));
+						dressAttachmentRT.remotePath = dressAttachmentRT.node.getPathTo(dressNode);
+						leftUpperLegAttachmentRT.remotePath = leftUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D"));
+						rightUpperLegAttachmentRT.remotePath = rightUpperLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D2"));
+						leftLowerLegAttachmentRT.remotePath = leftLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D3"));
+						rightLowerLegAttachmentRT.remotePath = rightLowerLegAttachmentRT.node.getPathTo(dressNode.getNode("Rig/Skeleton3D/SpringBoneSimulator3D/SpringBoneCollisionCapsule3D4"));
 
-					var femaleDressMeshNode = dressNode.getNode("Rig/Skeleton3D/Dress");
-					var outerDressMaterial = new StandardMaterial3D();
-					outerDressMaterial.albedoTexture = dress.innerTexture;
-					var outerDressMaterialArgs = new ArrayList();
-					outerDressMaterialArgs.append(0);
-					outerDressMaterialArgs.append(outerDressMaterial);
-					femaleDressMeshNode.native.call("set_surface_override_material", outerDressMaterialArgs);
-					var innerDressMaterial = new StandardMaterial3D();
-					innerDressMaterial.albedoTexture = dress.innerTexture;
-					var innerDressMaterialArgs = new ArrayList();
-					innerDressMaterialArgs.append(1);
-					innerDressMaterialArgs.append(innerDressMaterial);
-					femaleDressMeshNode.native.call("set_surface_override_material", innerDressMaterialArgs);
+						var femaleDressMeshNode = dressNode.getNode("Rig/Skeleton3D/Dress");
+						var outerDressMaterial = new StandardMaterial3D();
+						outerDressMaterial.albedoTexture = dress.innerTexture;
+						var outerDressMaterialArgs = new ArrayList();
+						outerDressMaterialArgs.append(0);
+						outerDressMaterialArgs.append(outerDressMaterial);
+						femaleDressMeshNode.native.call("set_surface_override_material", outerDressMaterialArgs);
+						var innerDressMaterial = new StandardMaterial3D();
+						innerDressMaterial.albedoTexture = dress.innerTexture;
+						var innerDressMaterialArgs = new ArrayList();
+						innerDressMaterialArgs.append(1);
+						innerDressMaterialArgs.append(innerDressMaterial);
+						femaleDressMeshNode.native.call("set_surface_override_material", innerDressMaterialArgs);
+					}
 				}
-			}*/
+			}
 		}
 
 		var grad = new Gradient();
