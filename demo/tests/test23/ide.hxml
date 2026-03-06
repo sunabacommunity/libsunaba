@@ -1,0 +1,7 @@
+ --class-path G:/libsunaba/demo/tests/test23/src
+-main TestPlugin
+--library libsunaba
+--library gamepak
+--library sunaba-studio
+-D source-map
+-lua G:/libsunaba/demo/tests/test23/.studio/plugin.lua -D lua-vanilla -D absolute-path
