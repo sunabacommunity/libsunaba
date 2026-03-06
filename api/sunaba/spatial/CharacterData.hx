@@ -4,6 +4,7 @@ import sunaba.core.Color;
 import sunaba.core.Dictionary;
 import sunaba.core.ArrayList;
 import sunaba.core.Variant;
+import sunaba.core.VariantType;
 
 class CharacterData extends ScriptableObject {
 	public var name: String;
@@ -18,7 +19,7 @@ class CharacterData extends ScriptableObject {
 
 	public var clothes: Array<Clothing> = new Array();
 
-	public var femaleDress: FemaleDress;
+	public var femaleDress: FemaleDress = null;
 
 	public var headwearList: Array<Headwear> = new Array();
 
@@ -43,6 +44,9 @@ class CharacterData extends ScriptableObject {
 			headwearArr.append(headwear.getData());
 		}
 		data.set("headwearList", headwearArr);
+		if (femaleDress != null) {
+			data.set("femaleDress", femaleDress.getData());
+		}
 
 		return data;
 	}
@@ -70,6 +74,11 @@ class CharacterData extends ScriptableObject {
 			var headwear = new Headwear();
 			headwear.setData(headwearData);
 			headwearList.push(headwear);
+		}
+		if (data.get("femaleDress").getType() != VariantType.nil) {
+			var femaleDressData = data.get("femaleDress");
+			femaleDress = new FemaleDress();
+			femaleDress.setData(femaleDressData);
 		}
 	}
 }
