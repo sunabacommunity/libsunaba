@@ -35,16 +35,37 @@ class CharacterLoader extends Behavior {
 		loaded = true;
 	}
 
+	private var _data: CharacterData = null;
+
+	public var data(get, set): CharacterData;
+
+	function get_data():CharacterData {
+		return _data;
+	}
+	function set_data(value:CharacterData):CharacterData {
+		_data = value;
+		if (value != null) {
+			if (_data.bodyType == BodyType.male) {
+				loadCharacterModel(_data, "basechar://models/MaleModel.smdl");
+			}
+			else if (_data.bodyType == BodyType.female) {
+				loadCharacterModel(_data, "basechar://models/FemaleModel.smdl");
+			}
+		}
+		else {
+			if (characterEntity != null) {
+				characterEntity.destroy();
+			}
+		}
+		return this.data = value;
+	}
+
+
 	public function load() {
 		if (path == "") return;
 		var data = new CharacterData();
 		data.load(path);
-		if (data.bodyType == BodyType.male) {
-			loadCharacterModel(data, "basechar://models/MaleModel.smdl");
-		}
-		else if (data.bodyType == BodyType.female) {
-			loadCharacterModel(data, "basechar://models/FemaleModel.smdl");
-		}
+		this.data = data;
 	}
 
 	public var characterEntity: Entity = null;
