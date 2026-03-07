@@ -2,9 +2,9 @@
 import sunaba.core.Dictionary;
 
 class FemaleDress extends ScriptableObject {
-	public var name: String;
-	public var desc: String;
-	public var dressType: Int;
+	public var name: String = "";
+	public var desc: String = "";
+	public var dressType: Int = 0;
 	public var innerTexture: Texture2D;
 	public var outerTexture: Texture2D;
 
