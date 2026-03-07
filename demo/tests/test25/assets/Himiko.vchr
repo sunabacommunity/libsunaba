@@ -5,7 +5,7 @@
 		{
 			"classType": "sunaba.spatial.Clothing",
 			"desc": "",
-			"name": "Himiko's dress",
+			"name": "Himiko's Outfit",
 			"path": "",
 			"texture": {
 				"type": 24,
@@ -33,6 +33,7 @@
 	"femaleChestSize": 0.0,
 	"femaleDress": {
 		"classType": "sunaba.spatial.FemaleDress",
+		"name": "Himiko's Dress",
 		"desc": "",
 		"dressType": 0,
 		"innerTexture": {
@@ -56,7 +57,7 @@
 		{
 			"classType": "sunaba.spatial.Headwear",
 			"desc": "",
-			"name": "",
+			"name": "Himiko's Hairstyle",
 			"path": "",
 			"prefab": "app://HimikoHair.smdl"
 		}

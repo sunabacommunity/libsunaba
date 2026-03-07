@@ -1,5 +1,6 @@
 {
 	"classType": "sunaba.spatial.FemaleDress",
+	"name": "Himiko's Dress",
 	"desc": "",
 	"dressType": 0,
 	"innerTexture": {
