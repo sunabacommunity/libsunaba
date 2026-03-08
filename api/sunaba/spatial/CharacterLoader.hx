@@ -57,7 +57,7 @@ class CharacterLoader extends Behavior {
 				characterEntity.destroy();
 			}
 		}
-		return this.data = value;
+		return value;
 	}
 
 
