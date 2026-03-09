@@ -8,6 +8,7 @@ import sunaba.core.Reference;
 import sunaba.core.native.NativeObject;
 import sunaba.core.native.NativeReference;
 import sunaba.core.Vector3;
+import sunaba.core.Variant;
 
 class CharacterRig extends Behavior {
 	private var _data: CharacterData;
@@ -124,6 +125,8 @@ class CharacterRig extends Behavior {
 						innerDressMaterialArgs.append(1);
 						innerDressMaterialArgs.append(innerDressMaterial);
 						femaleDressMeshNode.native.call("set_surface_override_material", innerDressMaterialArgs);
+						var blendShapeArgs: Array<Variant> = [2, data.legThickness];
+						femaleDressMeshNode.native.call("set_blend_shape_value", blendShapeArgs);
 					}
 				}
 			}
