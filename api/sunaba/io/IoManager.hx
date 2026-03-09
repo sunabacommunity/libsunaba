@@ -2,6 +2,7 @@ package sunaba.io;
 import sunaba.core.native.ScriptType;
 import sunaba.core.ArrayList;
 import sunaba.core.native.NativeReference;
+import sunaba.core.TypedArray;
 
 class IoManager extends IoInterface {
 	public override function nativeInit(?native: NativeReference) {
@@ -10,6 +11,10 @@ class IoManager extends IoInterface {
 			native = createScript.call("create_io_manager", new ArrayList());
 		}
 		this.native = native;
+	}
+
+	public function getPathUrls(): TypedArray<String> {
+		return native.call("GetPathUrls", new ArrayList());
 	}
 
 	public function getFileUrl(path: String): String {
