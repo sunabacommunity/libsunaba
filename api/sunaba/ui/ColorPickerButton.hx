@@ -68,6 +68,12 @@ class ColorPickerButton extends Button {
 	    return _popupClosed;
 	}
 
+	public function getPicker(): ColorPicker {
+		var args = new ArrayList();
+		var ref: NativeObject = native.call('get_picker', args);
+		return new ColorPicker(ref);
+	}
+
   public function getPopup(): PopupPanel {
       var args = new ArrayList();
       var ref: NativeObject = native.call('get_popup', args);
