@@ -74,7 +74,7 @@ class CharacterLoader extends Behavior {
 
 	private inline function loadCharacterModel(data: CharacterData, modelPath: String) {
 		var prefab = new Prefab();
-		prefab.load("basechar://models/FemaleModel.smdl");
+		prefab.load(modelPath);
 		if (characterEntity != null) {
 			characterEntity.destroy();
 		}
