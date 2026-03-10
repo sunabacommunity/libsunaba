@@ -9,6 +9,9 @@ import sunaba.core.native.NativeObject;
 import sunaba.core.native.NativeReference;
 import sunaba.core.Vector3;
 import sunaba.core.Variant;
+import sunaba.spatial.mesh.CharacterMesh;
+import sunaba.spatial.mesh.FemaleMesh;
+import sunaba.spatial.mesh.MaleMesh;
 
 class CharacterRig extends Behavior {
 	private var _data: CharacterData;
@@ -156,27 +159,42 @@ class CharacterRig extends Behavior {
 		var clothingTextureSize = clothingTextureArray[0].getSize();
 		var combinedClothingTexture = combineTextures(clothingTextureArray, new Vector2i(512, 512));
 
+		trace(meshDisplay != null);
 		if (meshDisplay != null) {
 			var material0 = new StandardMaterial3D();
 			var material1 = new StandardMaterial3D();
 			var material2 = new StandardMaterial3D();// Reference.castTo(meshDisplay.getSurfaceOverideMaterial(2), BaseMaterial3D);
 			trace(material0.isNull());
+			trace(material1.isNull());
+			trace(material2.isNull());
 
 			material0.albedoTexture = combineTextures([skinToneTexture], new Vector2i(32, 32));
 			material1.albedoTexture = faceTexture;
 			material2.albedoTexture = combinedClothingTexture;
 
-			meshDisplay.setSurfaceOverrideMaterial(0, material0);
-			meshDisplay.setSurfaceOverrideMaterial(1, material1);
-			meshDisplay.setSurfaceOverrideMaterial(2, material2);
+			//meshDisplay.setSurfaceOverrideMaterial(0, material0);
+			//meshDisplay.setSurfaceOverrideMaterial(1, material1);
+			//meshDisplay.setSurfaceOverrideMaterial(2, material2);
 
+			var characterMesh: CharacterMesh = null;
 			if (data.bodyType == BodyType.female) {
 				meshDisplay.setBlendShapeValue(2, Clamp(data.femaleChestSize, 0.0, 1.0));
+				characterMesh = meshEntity.getComponent(FemaleMesh);
 			}
 			else if (data.bodyType == BodyType.male) {
 				meshDisplay.setBlendShapeValue(2, Clamp(data.maleArmThickness, 0.0, 1.0));
+				characterMesh = meshEntity.getComponent(MaleMesh);
 			}
 			meshDisplay.setBlendShapeValue(3, Clamp(data.legThickness, 0.0, 1.0));
+
+			if (characterMesh != null) {
+				if (characterMesh.__res == null) {
+					characterMesh.onStart();
+				}
+				characterMesh.material0 = material0;
+				characterMesh.material1 = material1;
+				characterMesh.material2 = material2;
+			}
 			trace("");
 		}
 		trace("");

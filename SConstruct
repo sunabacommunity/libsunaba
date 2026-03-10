@@ -101,7 +101,6 @@ if env.get('asan'):
 
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
-sources.extend(Glob("src/io/*.cpp"))
 
 ### > LUA STUFF
 
