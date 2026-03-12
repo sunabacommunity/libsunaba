@@ -168,8 +168,8 @@ class CharacterRig extends Behavior {
 			trace(material1.isNull());
 			trace(material2.isNull());
 
-			material0.albedoTexture = combineTextures([skinToneTexture], new Vector2i(32, 32));
-			material1.albedoTexture = faceTexture;
+			material0.albedoTexture = faceTexture;
+			material1.albedoTexture = combineTextures([skinToneTexture], new Vector2i(32, 32));
 			material2.albedoTexture = combinedClothingTexture;
 
 			//meshDisplay.setSurfaceOverrideMaterial(0, material0);
