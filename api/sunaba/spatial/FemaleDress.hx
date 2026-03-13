@@ -11,7 +11,7 @@ class FemaleDress extends ScriptableObject {
 	public override function getData() {
 		var data = super.getData();
 
-		data.set("name", name);
+		data.set("dressName", name);
 		data.set("desc", desc);
 		data.set("dressType", dressType);
 		data.set("innerTexture", DataUtils.varToDict(innerTexture.native));
@@ -23,7 +23,7 @@ class FemaleDress extends ScriptableObject {
 	public override function setData(data: Dictionary) {
 		super.setData(data);
 
-		name = data.get("name");
+		name = data.get("dressName");
 		desc = data.get("desc");
 		dressType = data.get("dressType");
 		innerTexture = new Texture2D(DataUtils.dictToVar(data.get("innerTexture")));
