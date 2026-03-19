@@ -17,6 +17,12 @@ class IoManager extends IoInterface {
 		return native.call("GetPathUrls", new ArrayList());
 	}
 
+	public function getIoInterface(path: String): IoInterface {
+		var args = new ArrayList();
+		args.append(path);
+		return new IoInterface(native.call("GetIoInterface", args));
+	}
+
 	public function getFileUrl(path: String): String {
 		var args = new ArrayList();
 		args.append(path);
