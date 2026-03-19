@@ -6,4 +6,3 @@
 -lua "main.lua"
 -D lua-vanilla
 -D absolute-path
--D SANDBOXED
