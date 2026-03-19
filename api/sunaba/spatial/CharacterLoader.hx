@@ -16,6 +16,12 @@ import sunaba.core.Dictionary;
 import sunaba.animation.AnimationPlayer;
 import sunaba.core.native.NativeReference;
 import sunaba.core.ArrayList;
+import sunaba.spatial.BoneAttachment;
+import sunaba.spatial.Skeleton;
+import sunaba.spatial.mesh.MeshDisplay;
+import sunaba.spatial.mesh.MeshLoader;
+import sunaba.animation.AnimationPlayer;
+
 
 class CharacterLoader extends Behavior {
 	public var path: String;
