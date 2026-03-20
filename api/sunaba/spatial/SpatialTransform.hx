@@ -319,6 +319,7 @@ class SpatialTransform extends Behavior {
 		var data = new Dictionary();
 		data.set("position", DataUtils.varToDict(position));
 		data.set("rotation", DataUtils.varToDict(rotation));
+		data.set("rotationDegrees", DataUtils.varToDict(rotationDegrees));
 		data.set("scale", DataUtils.varToDict(scale));
 		return data;
 	}
@@ -326,6 +327,8 @@ class SpatialTransform extends Behavior {
 	public override function setData(data: Dictionary) {
 		position = DataUtils.dictToVar(data.get("position"));
 		rotation = DataUtils.dictToVar(data.get("rotation"));
+		if (data.has("rotationDegrees"))
+			rotationDegrees = DataUtils.dictToVar(data.get("rotationDegrees"));
 		scale = DataUtils.dictToVar(data.get("scale"));
 	}
 
