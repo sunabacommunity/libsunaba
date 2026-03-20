@@ -139,7 +139,7 @@ class Entity extends BaseClass {
 	}
 
 	@:generic
-	public function addComponent<T>(type: Class<T>): T {
+	public inline function addComponent<T>(type: Class<T>): T {
 		var behaviorT = Type.createEmptyInstance(type);
 		var behavior: Behavior = cast behaviorT;
 		behavior.entity = this;
@@ -156,7 +156,7 @@ class Entity extends BaseClass {
 	}
 
 	@:generic
-	public function removeComponent<T>(type: Class<T>): Void {
+	public inline function removeComponent<T>(type: Class<T>): Void {
 		var compName = Type.getClassName(type);
 		for (component in components) {
 			if (component.name == compName) {
@@ -168,15 +168,15 @@ class Entity extends BaseClass {
 	}
 
 	@:generic
-	public function getComponent<T>(type: Class<T>):Null<T> {
+	public inline function getComponent<T>(type: Class<T>):Null<T> {
+		var compT: T = null;
 		var compName = Type.getClassName(type);
 		for (component in components) {
 			if (component.name == compName) {
-				var compT: T = cast component;
-				return compT;
+				compT = cast component;
 			}
 		}
-		return null;
+		return compT;
 	}
 
 	public function getConponents() {
