@@ -32,6 +32,9 @@ class Trigger extends Node {
 		_bodyExited = new GameEvent();
 		_bodyEnteredS.add((nobj: NativeObject) -> {
 			var node = new Node(nobj);
+			if (node.isNull()) {
+				return;
+			}
 			var entity = scene.findByNode(node);
 			if (entity != null) {
 				_bodyEntered.call(entity);
@@ -39,6 +42,9 @@ class Trigger extends Node {
 		});
 		_bodyExitedS.add((nobj: NativeObject) -> {
 			var node = new Node(nobj);
+			if (node.isNull()) {
+				return;
+			}
 			var entity = scene.findByNode(node);
 			if (entity != null) {
 				_bodyExited.call(entity);
