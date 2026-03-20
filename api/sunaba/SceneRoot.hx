@@ -23,8 +23,10 @@ class SceneRoot extends Node {
 	}
 
 	function __findByNode(entity: Entity, node: Node): Null<Entity> {
-		if (entity.node.native.eq(node.native)) {
-			return entity;
+		if (entity.node != null) {
+			if (entity.node.native.eq(node.native)) {
+				return entity;
+			}
 		}
 		for (i in 0...entity.getChildCount()) {
 			var child = entity.getChild(i);
