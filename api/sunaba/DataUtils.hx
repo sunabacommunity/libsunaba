@@ -1,4 +1,5 @@
 package sunaba;
+import haxe.io.Error;
 import sunaba.core.StringArray;
 import sunaba.core.Dictionary;
 import sunaba.core.Variant;
@@ -537,33 +538,39 @@ class DataUtils {
 			var path: String = resDict.get("path");
 			if (className == "ImageTexture" && path != "?") {
 				var image = new Image();
-				var data = ioInterface.loadBytes(path);
+
 				var error = Error.failed;
-				if (data.size() > 0) {
-					if (StringTools.endsWith(path, ".bmp")) {
-						error = image.loadBmpFromBuffer(data);
+				if (ioInterface.fileExists(path)) {
+					var data = ioInterface.loadBytes(path);
+					if (data.size() > 0) {
+						if (StringTools.endsWith(path, ".bmp")) {
+							error = image.loadBmpFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".dds")) {
+							error = image.loadDdsFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".jpg") || StringTools.endsWith(path, ".jpeg")) {
+							error = image.loadJpgFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".ktx")) {
+							error = image.loadKtxFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".png")) {
+							error = image.loadPngFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".tga")) {
+							error = image.loadTgaFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".svg")) {
+							error = image.loadSvgFromBuffer(data);
+						}
+						else if (StringTools.endsWith(path, ".webp")) {
+							error = image.loadWebpFromBuffer(data);
+						}
 					}
-					else if (StringTools.endsWith(path, ".dds")) {
-						error = image.loadDdsFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".jpg") || StringTools.endsWith(path, ".jpeg")) {
-						error = image.loadJpgFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".ktx")) {
-						error = image.loadKtxFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".png")) {
-						error = image.loadPngFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".tga")) {
-						error = image.loadTgaFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".svg")) {
-						error = image.loadSvgFromBuffer(data);
-					}
-					else if (StringTools.endsWith(path, ".webp")) {
-						error = image.loadWebpFromBuffer(data);
-					}
+				}
+				else {
+					throw "Image '" + path + "' not found";
 				}
 				if (error == Error.ok) {
 					var texture = ImageTexture.createFromImage(image);
