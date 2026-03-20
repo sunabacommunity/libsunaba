@@ -1,0 +1,75 @@
+{
+	"children": [
+		{
+			"children": [],
+			"classType": "sunaba.EntityData",
+			"components": [
+				{
+					"data": {
+						"position": {
+							"type": 9,
+							"value": [
+								0.0,
+								1.0,
+								0.0
+							]
+						},
+						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"scale": {
+							"type": 9,
+							"value": [
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					"type": "sunaba.spatial.SpatialTransform"
+				}
+			],
+			"name": "Point",
+			"path": ""
+		}
+	],
+	"classType": "sunaba.Prefab",
+	"components": [
+		{
+			"data": {
+				"position": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"rotation": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"scale": {
+					"type": 9,
+					"value": [
+						1.0,
+						1.0,
+						1.0
+					]
+				}
+			},
+			"type": "sunaba.spatial.SpatialTransform"
+		}
+	],
+	"name": "SpawnPoint",
+	"path": "app://SpawnPoint.vpfb"
+}

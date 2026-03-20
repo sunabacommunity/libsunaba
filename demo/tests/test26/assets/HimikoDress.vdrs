@@ -1,0 +1,22 @@
+{
+	"classType": "sunaba.spatial.FemaleDress",
+	"name": "",
+	"desc": "",
+	"dressType": 0,
+	"innerTexture": {
+		"type": 24,
+		"value": {
+			"class": "ImageTexture",
+			"path": "app://HimikoDress.png"
+		}
+	},
+	"dressName": "Himiko's Dress",
+	"outerTexture": {
+		"type": 24,
+		"value": {
+			"class": "ImageTexture",
+			"path": "app://HimikoDress.png"
+		}
+	},
+	"path": ""
+}
