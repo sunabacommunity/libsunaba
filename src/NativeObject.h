@@ -1,11 +1,16 @@
 #pragma once
 
+#include "godot_cpp/core/object.hpp"
+#include "godot_cpp/variant/utility_functions.hpp"
+#include <cstddef>
+#include <cstdint>
 #include <godot_cpp/classes/object.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/classes/class_db_singleton.hpp>
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/gd_script.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/core/object_id.hpp>
 #include <sol/sol.hpp>
 
 using namespace godot;
@@ -13,6 +18,7 @@ using namespace godot;
 class NativeObject {
     private:
         Object* native = nullptr;
+        uint64_t instanceId;
     public:
         NativeObject(std::string name, const Array& args = Array(), int scriptType = 0)
         {
@@ -41,11 +47,17 @@ class NativeObject {
         		Object* loader = script->callv( "new",  Array() );
         		native = loader->call( "load_script", name.c_str(), args );
         	}
+            instanceId = native->get_instance_id();
         }
 
         NativeObject(Object* obj)
         {
             native = obj;
+            if (native != nullptr) {
+                if (native != NULL) {
+                    instanceId = native->get_instance_id();;
+                }
+            }
         }
 
         Object* getNative()
@@ -151,8 +163,11 @@ class NativeObject {
         	if (native == nullptr) {
         		return true;
         	}
+            if (native == NULL) {
+        		return true;
+        	}
 
-        	return !UtilityFunctions::is_instance_id_valid(native->get_instance_id());
+        	return !UtilityFunctions::is_instance_id_valid(instanceId);
         }
 
         void free()

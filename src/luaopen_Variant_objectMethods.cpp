@@ -9,7 +9,7 @@ void Runtime::luaopen_Variant_objectMethods(const Array &classnames) {
     auto variant_type = lua_state["Variant"];
 
     variant_type["asObject"] = [classnames](const Variant& v) {
-        Object* gdobj = v.operator Object*();
+        Object* gdobj = v.get_validated_object();
         
         if (classnames.size() != 0) {
             if (!classnames.has(gdobj->get_class())) {
