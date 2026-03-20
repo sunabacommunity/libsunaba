@@ -15,7 +15,7 @@ projectdir = "demo"
 AddOption('--lua_runtime',
           dest='lua_runtime',
           type='string',
-          help="Lua runtime to use (lua or luajit)",
+          help="Lua runtime to use (lua or lua52 or luajit)",
           default='lua')
 env_vars = Variables()
 env_vars.Add(EnumVariable("luaapi_host_cc", "LuaJIT builds some tools to assist with the rest of the build. You can set the host CC to be used here in the case of cross compilation.", "gcc", ("gcc", "clang")))
@@ -24,8 +24,8 @@ if isinstance(lua_runtime, list):
     # Defensive: GetOption might return a single-element list in some environments
     lua_runtime = lua_runtime[0]
 
-if lua_runtime.lower() not in ["lua", "luajit"]:
-    raise ValueError(f"Invalid lua_runtime: expected either 'lua' or 'luajit', got {lua_runtime}")
+if lua_runtime.lower() not in ["lua", "lua52", "luajit"]:
+    raise ValueError(f"Invalid lua_runtime: expected either 'lua' or 'luajit', got ${lua_runtime}")
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 env_vars.Update(localEnv)
@@ -123,6 +123,24 @@ if (env["lua_runtime"] == "lua"):
     lua_sources.extend(Glob("lua-5.4.8/*.cpp"))
     # Exclude onelua.c to avoid duplicate symbols with individual .c files
     all_lua_c = Glob("lua-5.4.8/*.c")
+    exclude_files = ["onelua.c", "lua.c"]
+    lua_c_files = [f for f in all_lua_c if not any(ef in str(f) for ef in exclude_files)]
+    lua_sources.extend(lua_c_files)
+
+    # Only add source files to the sources list
+    sources.extend(lua_sources)
+
+    # lua_file = "{}{}{}".format("luau", env["suffix"], env["SHLIBSUFFIX"])
+    # lua_libraryfile = "bin/{}/{}".format(env["platform"], lua_file)
+    # lua_library = lua_env.StaticLibrary(lua_libraryfile, source=lua_sources)
+elif(env["lua_runtime"] == "lua52"):
+    lua_sources = []
+
+    env.Append(CPPPATH=["lua-5.2.4/src/"])
+    # Add only .c and .cpp source files, not headers
+    lua_sources.extend(Glob("lua-5.2.4/src/*.cpp"))
+    # Exclude onelua.c to avoid duplicate symbols with individual .c files
+    all_lua_c = Glob("lua-5.2.4/src/*.c")
     exclude_files = ["onelua.c", "lua.c"]
     lua_c_files = [f for f in all_lua_c if not any(ef in str(f) for ef in exclude_files)]
     lua_sources.extend(lua_c_files)
