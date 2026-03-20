@@ -21,13 +21,16 @@ import sunaba.spatial.physics.CharacterBody;
 import sunaba.spatial.physics.BoxShape;
 import sunaba.spatial.physics.CapsuleShape;
 import test19.CharacterController;
+import test26.CharacterModelRig;
+import sunaba.spatial.CharacterBoneMapper;
+import sunaba.spatial.CharacterLoader;
 
 class Main extends App {
 	public static function main() {
 		new Main();
 	}
 
-	public override function init() {
+	public function onReady() {
 		var mapFile = new MapFile("app://base.map");
 		mapFile.textureDirs.push(BaseTextures.Water);
 
@@ -45,9 +48,14 @@ class Main extends App {
 		var playerPrefab = new Prefab();
 		playerPrefab.load("app://Player.vpfb");
 
-		var player = playerPrefab.instance();
-		var playerTransform = player.getComponent(SpatialTransform);
-		playerTransform.transform = spawnPoint.transform;
-		scene.addEntity(player);
+		try {
+			var player = playerPrefab.instance();
+			var playerTransform = player.getComponent(SpatialTransform);
+			playerTransform.transform = spawnPoint.transform;
+			scene.addEntity(player);
+		}
+		catch(e) {
+			Debug.error(e.toString());
+		}
 	}
 }

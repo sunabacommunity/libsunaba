@@ -10,11 +10,19 @@
 							"type": 9,
 							"value": [
 								0.0,
-								0.542878031730652,
+								1.17744207382202,
 								0.0
 							]
 						},
 						"rotation": {
+							"type": 9,
+							"value": [
+								0.0,
+								0.0,
+								0.0
+							]
+						},
+						"rotationDegrees": {
 							"type": 9,
 							"value": [
 								0.0,
@@ -118,6 +126,14 @@
 						0.0
 					]
 				},
+				"rotationDegrees": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
 				"scale": {
 					"type": 9,
 					"value": [
@@ -128,130 +144,6 @@
 				}
 			},
 			"type": "sunaba.spatial.SpatialTransform"
-		},
-		{
-			"data": {
-				"castShadow": 1,
-				"customAabb": {
-					"type": 16,
-					"value": [
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						},
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						},
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						}
-					]
-				},
-				"extraCullMargin": 0.0,
-				"giMode": 1,
-				"ignoreOcclusionCulling": false,
-				"layerMask": 0,
-				"lightmapScale": 0,
-				"lightmapTexelScale": 0.0,
-				"lodBias": 1.0,
-				"skeleton": "..",
-				"sortingOffset": 0.0,
-				"sortingUseAabbCenter": true,
-				"transparancy": 0.0,
-				"visibilityRangeBegin": 0.0,
-				"visibilityRangeBeginMargin": 0.0,
-				"visibilityRangeEnd": 0.0,
-				"visibilityRangeEndMargin": 0.0,
-				"visibilityRangeFadeMode": 0.0
-			},
-			"type": "sunaba.spatial.mesh.MeshDisplay"
-		},
-		{
-			"data": {
-				"addUv2": false,
-				"customAabb": {
-					"type": 16,
-					"value": [
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						},
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						},
-						{
-							"type": 9,
-							"value": [
-								0.0,
-								0.0,
-								0.0
-							]
-						}
-					]
-				},
-				"flipFaces": false,
-				"height": 2.0,
-				"material": {
-					"type": 24,
-					"value": {
-						"class": "Material",
-						"path": "?",
-						"properties": {
-							"next_pass": {
-								"type": 24
-							},
-							"render_priority": {
-								"type": 2,
-								"value": 0
-							},
-							"resource_local_to_scene": {
-								"type": 1,
-								"value": false
-							},
-							"resource_name": {
-								"type": 4,
-								"value": ""
-							},
-							"resource_path": {
-								"type": 4,
-								"value": ""
-							},
-							"resource_scene_unique_id": {
-								"type": 4,
-								"value": ""
-							}
-						}
-					}
-				},
-				"radialSegments": 64,
-				"radius": 0.5,
-				"rings": 8,
-				"uv2Padding": 2.0
-			},
-			"type": "sunaba.spatial.mesh.CapsuleMesh"
 		},
 		{
 			"data": {
@@ -302,9 +194,33 @@
 		{
 			"data": {
 				"customSolverBias": 0.0,
-				"height": 2.0,
+				"height": 1.53100001811981,
 				"margin": 0.0399999991059303,
-				"radius": 0.5
+				"position": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.760999977588654,
+						0.0
+					]
+				},
+				"radius": 0.279000014066696,
+				"rotation": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				},
+				"rotationDegrees": {
+					"type": 9,
+					"value": [
+						0.0,
+						0.0,
+						0.0
+					]
+				}
 			},
 			"type": "sunaba.spatial.physics.CapsuleShape"
 		},
@@ -353,6 +269,18 @@
 				"volumeLinear": 1.0
 			},
 			"type": "sunaba.audio.AudioSource"
+		},
+		{
+			"data": {
+				"path": "app://Himiko.vchr"
+			},
+			"type": "sunaba.spatial.CharacterLoader"
+		},
+		{
+			"data": {
+
+			},
+			"type": "test26.CharacterModelRig"
 		}
 	],
 	"name": "Player",
