@@ -47,7 +47,11 @@ class NativeObject {
         		Object* loader = script->callv( "new",  Array() );
         		native = loader->call( "load_script", name.c_str(), args );
         	}
-            instanceId = native->get_instance_id();
+            if (native != nullptr) {
+                if (native != NULL) {
+                    instanceId = native->get_instance_id();;
+                }
+            }
         }
 
         NativeObject(Object* obj)
