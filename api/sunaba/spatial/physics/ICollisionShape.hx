@@ -1,5 +1,6 @@
 package sunaba.spatial.physics;
 
+import sunaba.core.Vector3;
 import sunaba.core.native.NativeObject;
 import sunaba.core.Dictionary;
 import sunaba.core.native.NativeReference;
@@ -27,9 +28,39 @@ abstract class ICollisionShape extends Behavior {
 		return value;
 	}
 
+	public var position(get, set): Vector3;
+	function get_position():Vector3 {
+		return node.native.get("position");
+	}
+	function set_position(value:Vector3):Vector3 {
+		node.native.set("position", value);
+		return value;
+	}
+
+	public var rotationDegrees(get, set): Vector3;
+	function get_rotationDegrees():Vector3 {
+		return node.native.get("rotation_degrees");
+	}
+	function set_rotationDegrees(value:Vector3):Vector3 {
+		node.native.set("rotation_degrees", value);
+		return value;
+	}
+
+	public var rotation(get, set): Vector3;
+	function get_rotation():Vector3 {
+		return node.native.get("rotation");
+	}
+	function set_rotation(value:Vector3):Vector3 {
+		node.native.set("rotation", value);
+		return value;
+	}
+
 	public override function getData():Dictionary {
 		var data = super.getData();
 
+		data.set("position", DataUtils.varToDict(position));
+		data.set("rotation", DataUtils.varToDict(rotation));
+		data.set("rotationDegrees", DataUtils.varToDict(rotationDegrees));
 		data.set("customSolverBias", customSolverBias);
 		data.set("margin", margin);
 
@@ -39,6 +70,12 @@ abstract class ICollisionShape extends Behavior {
 	public override function setData(data:Dictionary) {
 		super.setData(data);
 
+		if (data.has("position"))
+			position = DataUtils.dictToVar(data.get("position"));
+		if (data.has("rotation"))
+			rotation = DataUtils.dictToVar(data.get("rotation"));
+		if (data.has("rotationDegrees"))
+			rotationDegrees = DataUtils.dictToVar(data.get("rotationDegrees"));
 		customSolverBias = data.get("customSolverBias");
 		margin = data.get("margin");
 	}
